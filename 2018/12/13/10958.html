@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="自由自在">
 <meta property="og:description" content="2018年的最后十几天，博客又回来了!沉寂了半年多，折腾了几次，尝试新的东西，但又做了一些浪费时间的事情。接下来，嗯，加油！  【附】博客恢复记录一、初始化并恢复文件1、创建一个hexo目录； 2、进入hexo目录，添加hexo；1cnpm install hexo -g">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-13T02:26:52.496Z">
+<meta property="og:updated_time" content="2019-04-25T02:02:55.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBlog：I&#39;m back!">
 <meta name="twitter:description" content="2018年的最后十几天，博客又回来了!沉寂了半年多，折腾了几次，尝试新的东西，但又做了一些浪费时间的事情。接下来，嗯，加油！  【附】博客恢复记录一、初始化并恢复文件1、创建一个hexo目录； 2、进入hexo目录，添加hexo；1cnpm install hexo -g">
@@ -124,12 +124,13 @@ var _hmt = _hmt || [];
 <p>10、然后到Github里面，点击设置，然后添加SSH keys，添加标题，并将上一步拷贝的内容复制到里面；</p>
 <p>11、点击添加，提示输入github的密码；</p>
 <p>12、测试一下，键入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><br>13、如果出现以下内容，说是主机密钥验证失败，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">“The authenticity of host &apos;github.com (192.30.252.128)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? </span><br><span class="line">**Host key verification failed.**</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rightsand the repository exists.”​</span><br></pre></td></tr></table></figure><br>14、其实这是缺少了 known_hosts 文件, 而且必须生成 github.com 的ip执行内容，输入；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure><br>15、使用hexo g, hexo d测试一下，应该就可以了。</p>
+<p>【附】<br>还要安装abbrlink博客文章链接生成插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/12/13/10958.html" data-id="cjuvzkp6000126kswwbrs9ft7" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2018/12/13/10958.html" data-id="cjuw05w0a0010hgswzjcvlyht" class="article-share-link">分享</a>
       
       
 	
