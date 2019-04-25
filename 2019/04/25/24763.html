@@ -4,22 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>python学习小记 | 自由自在</title>
+  <title>记录贼坑一件事 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、关于if __name__ == ‘__main__‘ 如何正确理解?name 是当前模块名，当模块被直接运行时模块名为 main 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，比如当前文件是test.py,双击运行，或者在IDE中运行，那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确 当模块是被">
-<meta name="keywords" content="杂记">
+  <meta name="description" content="昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。最后发现是空间几何字段的空间参考不一致的问题，233333.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习小记">
-<meta property="og:url" content="http://zyouzz.github.io/2017/02/17/4127.html">
+<meta property="og:title" content="记录贼坑一件事">
+<meta property="og:url" content="http://zyouzz.github.io/2019/04/25/24763.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="1、关于if __name__ == ‘__main__‘ 如何正确理解?name 是当前模块名，当模块被直接运行时模块名为 main 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，比如当前文件是test.py,双击运行，或者在IDE中运行，那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确 当模块是被">
+<meta property="og:description" content="昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。最后发现是空间几何字段的空间参考不一致的问题，233333.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zyouzz.github.io/images/02171.jpg">
-<meta property="og:updated_time" content="2017-02-17T11:07:43.629Z">
+<meta property="og:updated_time" content="2019-04-25T01:38:36.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python学习小记">
-<meta name="twitter:description" content="1、关于if __name__ == ‘__main__‘ 如何正确理解?name 是当前模块名，当模块被直接运行时模块名为 main 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，比如当前文件是test.py,双击运行，或者在IDE中运行，那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确 当模块是被">
-<meta name="twitter:image" content="http://zyouzz.github.io/images/02171.jpg">
+<meta name="twitter:title" content="记录贼坑一件事">
+<meta name="twitter:description" content="昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。最后发现是空间几何字段的空间参考不一致的问题，233333.">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -94,16 +91,12 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-python学习小记" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-记录贼坑一件事" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/17/4127.html" class="article-date">
-  <time datetime="2017-02-17T10:12:00.000Z" itemprop="datePublished">2017-02-17</time>
+    <a href="/2019/04/25/24763.html" class="article-date">
+  <time datetime="2019-04-25T01:10:32.000Z" itemprop="datePublished">2019-04-25</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/杂记/">杂记</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -112,7 +105,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      python学习小记
+      记录贼坑一件事
     </h1>
   
 
@@ -120,22 +113,15 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1、关于if __name__ == ‘__main__‘ 如何正确理解?</strong><br><strong>name</strong> 是当前模块名，当模块被直接运行时模块名为 <strong>main</strong> 。<br>这句话的意思就是，<br>当模块被直接运行时，以下代码块将被运行，<br>比如当前文件是test.py,双击运行，或者在IDE中运行，<br>那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确</p>
-<p>当模块是被导入时，代码块不被运行，<br>比如当前文件test.py被其他文件test123.py导入，<br>即在test123.py中以import test语句导入，<br>则test.py中if __name__ == ‘__main__‘下的语句将不会执行</p>
-<p><strong>2、由于for循环与while循环可配合使用</strong></p>
-<p><strong>3、正则表达式部分字符解释</strong><br><img src="/images/02171.jpg" alt="正则表达式"></p>
-<p><strong>4、Markdown转义字符</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\\ 反斜杠</span><br><span class="line">\` 反引号</span><br><span class="line">\* 星号</span><br><span class="line">\_ 下划线</span><br><span class="line">\&#123;\&#125; 大括号</span><br><span class="line">\[\] 中括号</span><br><span class="line">\(\) 小括号</span><br><span class="line">\# 井号</span><br><span class="line">\+ 加号</span><br><span class="line">\- 减号</span><br><span class="line">\. 英文句号</span><br><span class="line">\! 感叹号</span><br></pre></td></tr></table></figure>
+        <p>昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。<br>最后发现是空间几何字段的空间参考不一致的问题，233333.</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2017/02/17/4127.html" data-id="cjuvzkp6300186kswsy2m5qs9" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="cjuvzkp6x003d6kswzfijznue" class="article-share-link">分享</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂记/">杂记</a></li></ul>
-
 	
 
     </footer>
@@ -144,19 +130,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2017/03/22/15901.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ArcGIS中多个字段同时渲染
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/09/65202.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/04/25/56554.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">网站服务器(Apach)日志读取分析成图及代码</div>
+      <div class="article-nav-title">ArcGIS Enterprise中Portal发布场景服务后无法查看</div>
     </a>
   
 </nav>
