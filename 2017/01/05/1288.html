@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="MVOLyQRxUt">
+  
+  <title>ArcGIS中使用字段计算器生成随机数和自增数 | 自由自在</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcGIS中使用字段计算器生成随机数和自增数">
+<meta property="og:url" content="http://zyouzz.github.io/2017/01/05/1288.html">
+<meta property="og:site_name" content="自由自在">
+<meta property="og:description" content="当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zyouzz.github.io/images/01051.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/01052.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/01053.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/01054.jpg">
+<meta property="og:updated_time" content="2017-01-13T02:13:59.206Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArcGIS中使用字段计算器生成随机数和自增数">
+<meta name="twitter:description" content="当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数">
+<meta name="twitter:image" content="http://zyouzz.github.io/images/01051.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?abe562be75947306c7e1bc11ba952568";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  </head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+	  
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自由自在</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GIS/RS Everywhere</a>
+        </h2>
+      
+	  <form id="search-form">
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="搜一搜" class="search form-control" autocomplete="off" autocorrect="off" searchonload style="height:25px">
+				<i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+	      </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" style="font-weight:bold;font-size:20px" href="/">首页</a>
+        
+          <a class="main-nav-link" style="font-weight:bold;font-size:20px" href="/archives">归档</a>
+        
+          <a class="main-nav-link" style="font-weight:bold;font-size:20px" href="/tags/GIS">GIS</a>
+        
+          <a class="main-nav-link" style="font-weight:bold;font-size:20px" href="/tags/RS">RS</a>
+        
+          <a class="main-nav-link" style="font-weight:bold;font-size:20px" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	  
+           
+      </nav>
+      
+    </div>
+  </div>
+</header>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/search.js"></script>
+
+      <div class="outer">
+        <section id="main"><article id="post-ArcGIS中使用字段计算器生成随机数和自增数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/05/1288.html" class="article-date">
+  <time datetime="2017-01-05T06:17:49.000Z" itemprop="datePublished">2017-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ArcGIS中使用字段计算器生成随机数和自增数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数<br><a id="more"></a><br><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randnum</span><span class="params">()</span>:</span></span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
+<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accumulate</span><span class="params">(increment)</span>:</span></span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></p>
+<p>PS；注意选择是python脚本，以及代码的缩进。</p>
+<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2017/01/05/1288.html" data-id="cjuvzaq68000rucswdt0kcopu" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/10/50334.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ArcGIS知乎网站用户信息爬取与分析【附代码】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/15/4666.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">长城符号制作---图层叠加 vs 制图表达</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section> 
+  </section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+	<h3 class="widget-title">微信公众号：zyouzz</h3>
+	<div class="widget">
+		<img src="/css/images/weixin.jpg">
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/25/undefined.html">记录贼坑一件事</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/56554.html">ArcGIS Enterprise中Portal发布场景服务后无法查看</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/undefined.html">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/28/29651.html">接下来假期的安排</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/28/42280.html">记述二三事</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ArcGIS/">ArcGIS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/RS/">RS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/">ArcGIS</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Datastore/">ArcGIS Datastore</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Enterprise/">ArcGIS Enterprise</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Portal/">ArcGIS Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Pro/">ArcGIS Pro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Server/">ArcGIS Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECW影像/">ECW影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Esri/">Esri</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/">GIS</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelBuilder/">ModelBuilder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portal/">Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python脚本工具/">Python脚本工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RS/">RS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcgis/">arcgis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcmap/">arcmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtopo30/">gtopo30</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modis/">modis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xlsx/">xlsx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三维场景/">三维场景</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/出差/">出差</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地理空间云/">地理空间云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多字段/">多字段</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字段计算器/">字段计算器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安装/">安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/批量/">批量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/武汉/">武汉</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/注意事项/">注意事项</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/点排序/">点排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/符号渲染/">符号渲染</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编号/">编号</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/萤火图/">萤火图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/透视表/">透视表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集群部署/">集群部署</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    <div class="widget-wrap">
+	<h3 class="widget-title">友情链接</h3>
+	<div class="widget">
+		<ul class="entry">
+			<li><a href="http://www.esrichina.com.cn/" title="Esri中国">Esri中国</a></li>
+			<li><a href="http://blog.sina.com.cn/enviidl" title="ENVI-IDL技术殿堂的博客">ENVI-IDL技术殿堂的博客</a></li>
+			<li><a href="http://zhihu.esrichina.com.cn/" title="ArcGIS知乎">ArcGIS知乎</a></li>
+			<li><a href="http://kikitamap.com/" title="kikita&maps">kikita&maps</a></li>
+		</ul>
+	</div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 James Rock<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  </div>
+  
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags/GIS" class="mobile-nav-link">GIS</a>
+  
+    <a href="/tags/RS" class="mobile-nav-link">RS</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='/js/jquery-2.0.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<div id="totop" style="z-index: 9999;position:fixed;bottom:150px;right:20px;cursor: pointer;">
+		<a title="返回顶部"><img src="/css/images/totop.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">      
+     var search_path = "search.xml";
+     if (search_path.length == 0) {
+     	search_path = "search.xml";
+     }
+     var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  </div>
+</body>
+</html>
