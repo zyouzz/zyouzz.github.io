@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>Category: GIS | 自由自在</title>
+  <title>关于多圆（大于2）重叠的面积计算 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="the road that you never walk along">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自由自在">
-<meta property="og:url" content="http://zyouzz.github.io/categories/GIS/index.html">
+  <meta name="description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部 2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于多圆（大于2）重叠的面积计算">
+<meta property="og:url" content="http://zyouzz.github.io/2019/06/24/56673.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="the road that you never walk along">
+<meta property="og:description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部 2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zyouzz.github.io/images/19062401.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/19062403.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/19062404.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/19062402.gif">
+<meta property="og:updated_time" content="2019-06-24T09:31:38.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自由自在">
-<meta name="twitter:description" content="the road that you never walk along">
+<meta name="twitter:title" content="关于多圆（大于2）重叠的面积计算">
+<meta name="twitter:description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部 2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学">
+<meta name="twitter:image" content="http://zyouzz.github.io/images/19062401.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -90,226 +96,84 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/04/24/14122.html" class="archive-article-date">
-  <time datetime="2018-04-24T05:32:34.000Z" itemprop="datePublished">4月 24</time>
+        <section id="main"><article id="post-关于多圆（大于2）重叠的面积计算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/56673.html" class="article-date">
+  <time datetime="2019-06-24T07:51:51.000Z" itemprop="datePublished">2019-06-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/24/14122.html">如何在ArcGIS中绘制漂亮的萤火图</a>
+    <h1 class="article-title" itemprop="name">
+      关于多圆（大于2）重叠的面积计算
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。<br>有以下两种计算方式</p>
+<p>1、ArcGIS<br>使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆<br><img src="/images/19062401.jpg" alt="缓冲区"><br>注意：融合类型选择为全部</p>
+<p>2、自己实现<br>之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。<br>1）两圆重叠—简单！！！<br>2）两个圆以上的重叠精确计算—数学界的世纪难题！！！<br><img src="/images/19062403.jpg" alt="多圆重叠面积"><br>所以，只能通过模拟计算，这也是计算机最初诞生的原因。<br>经典的蒙特卡洛模拟计算真是屡试不爽。</p>
+<p>这里我以前端的JavaScript为例<br>情景：在地图上随机框画了一个圆形区域，框选区域内部有若干个公交站点<br>通过模拟计算的流程是这样：<br><img src="/images/19062404.jpg" alt="画圆"></p>
+<p>代码脚本如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用蒙特卡洛方法模拟计算站点覆盖率</span></span><br><span class="line"><span class="comment"> * @param sample 样本数</span></span><br><span class="line"><span class="comment"> * @param drawCircleToPolygon 所画区域外接多边形</span></span><br><span class="line"><span class="comment"> * @param stopsLngLatList 所画区域内站点坐标</span></span><br><span class="line"><span class="comment"> * @param distance 站点覆盖半径</span></span><br><span class="line"><span class="comment"> * @returns &#123;string&#125; 返回站点覆盖率</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateStopCoverRate</span>(<span class="params">sample, drawCircleToPolygon, stopsLngLatList, distance</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> insidePointsNumber = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> randomPoints = turf.random(<span class="string">'points'</span>, sample, &#123;<span class="attr">bbox</span>: drawCircleToPolygon.getExtent()&#125;).features.map(<span class="function"><span class="params">value</span> =&gt;</span> value.geometry.coordinates);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> m = <span class="number">0</span>, n = randomPoints.length; m &lt; n; m++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = stopsLngLatList.length; i &lt; j; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> centerRandomPoint = ol.proj.fromLonLat([randomPoints[m][<span class="number">0</span>], randomPoints[m][<span class="number">1</span>]]);</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.pow(centerRandomPoint[<span class="number">0</span>] - stopsLngLatList[i][<span class="number">0</span>], <span class="number">2</span>) + <span class="built_in">Math</span>.pow(centerRandomPoint[<span class="number">1</span>] - stopsLngLatList[i][<span class="number">1</span>], <span class="number">2</span>) &lt;= distance * distance) &#123;</span><br><span class="line">        insidePointsNumber = insidePointsNumber + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (insidePointsNumber / sample * <span class="number">100</span>).toFixed(<span class="number">2</span>) + <span class="string">' %'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1）首先引入turf插件，使用turf.random在所画的圆内生成随机点，获取每个随机点的坐标；<br>2）使用openlayers的ol.proj.fromLonLat转换方法，将经纬度转为平面坐标；<br>3）计算随机点是否在圈出的站点300米（distance）范围内，如果在，标记一下，break该点退出，计算下一个随机点，<br>4）用标记到在站点范围的统计数值insidePointsNumber除以样本值就是站点覆盖率，<br>5）同样,覆盖面积就等于所画圆的面积乘以覆盖率</p>
+<p>**<br>sample 样本数数值越大，所需时间越长，计算结果越准确</p>
+<p>关于蒙特卡洛，有很多有趣的事，比如计算Π值，古代的蒲丰投针<br><img src="/images/19062402.gif" alt="计算Π"></p>
+<p>相比精确的数学计算，模拟计算有点玄学的意味，但不失为简单粗暴的途径。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="cjxa6meru0021twx47k8qgq8n" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
   </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/14/38442.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">发现一个大坑！！！</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/04/16/50787.html" class="archive-article-date">
-  <time datetime="2018-04-16T06:11:17.000Z" itemprop="datePublished">4月 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/16/50787.html">近期遇到的问题小汇</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/07/40221.html" class="archive-article-date">
-  <time datetime="2018-03-07T07:56:39.000Z" itemprop="datePublished">3月 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/40221.html">获取周围邻接面的属性</a>
-    </h1>
-  
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/02/11/46502.html" class="archive-article-date">
-  <time datetime="2018-02-11T08:09:28.000Z" itemprop="datePublished">2月 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/11/46502.html">ArcGIS Desktop（ArcMap）10.6、ArcGIS Engine 10.6和ArcGIS Pro2.1无法 打开ECW文件</a>
-    </h1>
-  
+       if (typeof LivereTower === 'function') { return; }
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/12/02/11059.html" class="archive-article-date">
-  <time datetime="2017-12-02T06:31:02.000Z" itemprop="datePublished">12月 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/02/11059.html">ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</a>
-    </h1>
-  
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/19/1100.html" class="archive-article-date">
-  <time datetime="2017-09-19T03:27:49.000Z" itemprop="datePublished">9月 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/19/1100.html">将每个面内所有点的属性赋给面的一个字段中</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/25/61373.html" class="archive-article-date">
-  <time datetime="2017-07-25T01:09:04.000Z" itemprop="datePublished">7月 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/25/61373.html">如何让Arcmap支持加载Excel 2003以上的xlsx格式文件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/16/48872.html" class="archive-article-date">
-  <time datetime="2017-05-16T08:12:16.000Z" itemprop="datePublished">5月 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/16/48872.html">ArcGIS Server集群部署问题和注意事项</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/03/22/15901.html" class="archive-article-date">
-  <time datetime="2017-03-22T10:31:44.000Z" itemprop="datePublished">3月 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/22/15901.html">ArcGIS中多个字段同时渲染</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/18/31842.html" class="archive-article-date">
-  <time datetime="2017-01-18T07:01:52.000Z" itemprop="datePublished">1月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/18/31842.html">与ArcGIS有冲突的软件---黑名单（不定期更新）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/GIS/page/2/">2</a><a class="page-number" href="/categories/GIS/page/3/">3</a><a class="extend next" rel="next" href="/categories/GIS/page/2/">下一页 &raquo;</a>
-  </nav>
-</section>
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section> 
+  </section>
         
           <aside id="sidebar">
   

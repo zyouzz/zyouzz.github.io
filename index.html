@@ -92,6 +92,54 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-关于多圆（大于2）重叠的面积计算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/56673.html" class="article-date">
+  <time datetime="2019-06-24T07:51:51.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/56673.html">关于多圆（大于2）重叠的面积计算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。<br>有以下两种计算方式</p>
+<p>1、ArcGIS<br>使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆<br><img src="/images/19062401.jpg" alt="缓冲区"><br>注意：融合类型选择为全部</p>
+<p>2、自己实现<br>之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。<br>1）两圆重叠—简单！！！<br>2）两个圆以上的重叠精确计算—数学界的世纪难题！！！<br><img src="/images/19062403.jpg" alt="多圆重叠面积"><br>所以，只能通过模拟计算，这也是计算机最初诞生的原因。<br>经典的蒙特卡洛模拟计算真是屡试不爽。</p>
+<p>这里我以前端的JavaScript为例<br>情景：在地图上随机框画了一个圆形区域，框选区域内部有若干个公交站点<br>通过模拟计算的流程是这样：<br><img src="/images/19062404.jpg" alt="画圆"></p>
+<p>代码脚本如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用蒙特卡洛方法模拟计算站点覆盖率</span></span><br><span class="line"><span class="comment"> * @param sample 样本数</span></span><br><span class="line"><span class="comment"> * @param drawCircleToPolygon 所画区域外接多边形</span></span><br><span class="line"><span class="comment"> * @param stopsLngLatList 所画区域内站点坐标</span></span><br><span class="line"><span class="comment"> * @param distance 站点覆盖半径</span></span><br><span class="line"><span class="comment"> * @returns &#123;string&#125; 返回站点覆盖率</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateStopCoverRate</span>(<span class="params">sample, drawCircleToPolygon, stopsLngLatList, distance</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> insidePointsNumber = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> randomPoints = turf.random(<span class="string">'points'</span>, sample, &#123;<span class="attr">bbox</span>: drawCircleToPolygon.getExtent()&#125;).features.map(<span class="function"><span class="params">value</span> =&gt;</span> value.geometry.coordinates);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> m = <span class="number">0</span>, n = randomPoints.length; m &lt; n; m++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = stopsLngLatList.length; i &lt; j; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> centerRandomPoint = ol.proj.fromLonLat([randomPoints[m][<span class="number">0</span>], randomPoints[m][<span class="number">1</span>]]);</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.pow(centerRandomPoint[<span class="number">0</span>] - stopsLngLatList[i][<span class="number">0</span>], <span class="number">2</span>) + <span class="built_in">Math</span>.pow(centerRandomPoint[<span class="number">1</span>] - stopsLngLatList[i][<span class="number">1</span>], <span class="number">2</span>) &lt;= distance * distance) &#123;</span><br><span class="line">        insidePointsNumber = insidePointsNumber + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (insidePointsNumber / sample * <span class="number">100</span>).toFixed(<span class="number">2</span>) + <span class="string">' %'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1）首先引入turf插件，使用turf.random在所画的圆内生成随机点，获取每个随机点的坐标；<br>2）使用openlayers的ol.proj.fromLonLat转换方法，将经纬度转为平面坐标；<br>3）计算随机点是否在圈出的站点300米（distance）范围内，如果在，标记一下，break该点退出，计算下一个随机点，<br>4）用标记到在站点范围的统计数值insidePointsNumber除以样本值就是站点覆盖率，<br>5）同样,覆盖面积就等于所画圆的面积乘以覆盖率</p>
+<p>**<br>sample 样本数数值越大，所需时间越长，计算结果越准确</p>
+<p>关于蒙特卡洛，有很多有趣的事，比如计算Π值，古代的蒲丰投针<br><img src="/images/19062402.gif" alt="计算Π"></p>
+<p>相比精确的数学计算，模拟计算有点玄学的意味，但不失为简单粗暴的途径。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="cjxa6meru0021twx47k8qgq8n" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
     <article id="post-发现一个大坑！！！" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/14/38442.html" class="article-date">
@@ -125,7 +173,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/06/14/38442.html" data-id="cjwyiye9z001x64sw9epgcfjo" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/06/14/38442.html" data-id="cjxa6merx002atwx4l4r9ynxb" class="article-share-link">分享</a>
       
       
 	
@@ -164,7 +212,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="cjwyiyeah003e64swzjl0hf1x" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="cjxa6mesg003mtwx4oszy1wtv" class="article-share-link">分享</a>
       
       
 	
@@ -207,7 +255,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/04/25/56554.html" data-id="cjwyiye92000264swtteasum1" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/04/25/56554.html" data-id="cjxa6meqp0000twx4l91mt0tz" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS-Enterprise/">ArcGIS Enterprise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Portal/">Portal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三维场景/">三维场景</a></li></ul>
@@ -252,7 +300,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/01/28/29651.html" data-id="cjwyiyeaa002u64sw20kxxu8w" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/01/28/29651.html" data-id="cjxa6mes6002ytwx4nqiuoti9" class="article-share-link">分享</a>
       
       
 	
@@ -291,7 +339,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/01/28/42280.html" data-id="cjwyiyeai003g64sw76t98a1p" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/01/28/42280.html" data-id="cjxa6mesi003stwx4rmv8xo0n" class="article-share-link">分享</a>
       
       
 	
@@ -339,7 +387,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/12/17/24576.html" data-id="cjwyiyea8002o64swesga8wa5" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2018/12/17/24576.html" data-id="cjxa6mes3002ptwx4si8nb0pq" class="article-share-link">分享</a>
       
       
 	
@@ -385,7 +433,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/12/13/10958.html" data-id="cjwyiye9l001064sw4wgb4xzs" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2018/12/13/10958.html" data-id="cjxa6merh0013twx40kyfhz74" class="article-share-link">分享</a>
       
       
 	
@@ -428,7 +476,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/05/07/60507.html" data-id="cjwyiyebl006d64sw3dsutko1" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2018/05/07/60507.html" data-id="cjxa6metg006ftwx4pdugd10p" class="article-share-link">分享</a>
       
       
 	
@@ -475,59 +523,10 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/04/24/14122.html" data-id="cjwyiyea0002064swsxnpu0bb" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2018/04/24/14122.html" data-id="cjxa6merw0025twx4ai691mp9" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/萤火图/">萤火图</a></li></ul>
-
-	
-
-    </footer>
-  </div>
-
-</article>
-
-  
-    <article id="post-近期遇到的问题小汇" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/16/50787.html" class="article-date">
-  <time datetime="2018-04-16T06:11:17.000Z" itemprop="datePublished">2018-04-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIS/">GIS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/16/50787.html">近期遇到的问题小汇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>突然发现四月份已过半，近段时间一直在摸索ArcGIS Enterprise的课程，然后上周有一个用户的ArcGIS Server培训，突然发现有了一些方向感。<br>在这段时间主要遇到两个问题，也是积攒了一段时间，算是都有了结果以及合理的解释。列表如下：<br>1、ArcMap的性能问题<br>2、操作系统用户名为esri产生的神奇问题<br>3、ArcGIS Enterprise死活发不了托管要素服务的问题<br>
-        
-          </p><p class="article-more-link" style="text-align:center">
-            <a href="/2018/04/16/50787.html#more">点击继续阅读</a>
-          </p>
-        
-      
-    </div>
-	
-    <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/04/16/50787.html" data-id="cjwyiyeak003k64swffgbz564" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li></ul>
 
 	
 
@@ -561,6 +560,10 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2019/06/24/56673.html">关于多圆（大于2）重叠的面积计算</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/14/38442.html">发现一个大坑！！！</a>
           </li>
         
@@ -576,10 +579,6 @@ var _hmt = _hmt || [];
             <a href="/2019/01/28/29651.html">接下来假期的安排</a>
           </li>
         
-          <li>
-            <a href="/2019/01/28/42280.html">记述二三事</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -589,7 +588,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 
