@@ -4,18 +4,23 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>归档: 2016/11 | 自由自在</title>
+  <title>计算点距离线最近的投影点 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="the road that you never walk along">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自由自在">
-<meta property="og:url" content="http://zyouzz.github.io/archives/2016/11/index.html">
+  <meta name="description" content="之前用惯了ArcGIS，再者是其忠实的拥趸，因此每次遇到稍微拐点弯的问题，都会不厌其烦地去秋名山，。。。。 哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。然而再怎么熟练使用ArcGIS，总觉得导入导出有些影响效率，考虑postgresql本身的空间计算也不弱（丰富的空间函数），于是这几天尝试将一些流程直接迁移至数据库中处理。这里举一个场景：已知一公交站点空间位置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算点距离线最近的投影点">
+<meta property="og:url" content="http://zyouzz.github.io/2019/07/23/4998.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="the road that you never walk along">
+<meta property="og:description" content="之前用惯了ArcGIS，再者是其忠实的拥趸，因此每次遇到稍微拐点弯的问题，都会不厌其烦地去秋名山，。。。。 哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。然而再怎么熟练使用ArcGIS，总觉得导入导出有些影响效率，考虑postgresql本身的空间计算也不弱（丰富的空间函数），于是这几天尝试将一些流程直接迁移至数据库中处理。这里举一个场景：已知一公交站点空间位置">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zyouzz.github.io/images/19072301.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/19072302.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/19072303.jpg">
+<meta property="og:updated_time" content="2019-07-23T09:49:33.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自由自在">
-<meta name="twitter:description" content="the road that you never walk along">
+<meta name="twitter:title" content="计算点距离线最近的投影点">
+<meta name="twitter:description" content="之前用惯了ArcGIS，再者是其忠实的拥趸，因此每次遇到稍微拐点弯的问题，都会不厌其烦地去秋名山，。。。。 哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。然而再怎么熟练使用ArcGIS，总觉得导入导出有些影响效率，考虑postgresql本身的空间计算也不弱（丰富的空间函数），于是这几天尝试将一些流程直接迁移至数据库中处理。这里举一个场景：已知一公交站点空间位置">
+<meta name="twitter:image" content="http://zyouzz.github.io/images/19072301.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -90,79 +95,80 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/22/869.html" class="archive-article-date">
-  <time datetime="2016-11-22T07:39:19.000Z" itemprop="datePublished">11月 22</time>
+        <section id="main"><article id="post-计算点距离线最近的投影点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/23/4998.html" class="article-date">
+  <time datetime="2019-07-23T08:47:30.000Z" itemprop="datePublished">2019-07-23</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/22/869.html">在ArcGIS以弹窗形式挂接图片</a>
+    <h1 class="article-title" itemprop="name">
+      计算点距离线最近的投影点
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/18/56001.html" class="archive-article-date">
-  <time datetime="2016-11-18T10:13:37.000Z" itemprop="datePublished">11月 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/18/56001.html">ArcGIS ModelBuilder的工作空间（workspace)设置问题</a>
-    </h1>
-  
+        <p>之前用惯了ArcGIS，再者是其忠实的拥趸，因此每次遇到稍微拐点弯的问题，都会不厌其烦地去秋名山，。。。。<br><img src="/images/19072301.jpg" alt="秋名山"></p>
+<h2 id="哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。"><a href="#哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。" class="headerlink" title="哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。"></a>哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。</h2><p>然而再怎么熟练使用ArcGIS，总觉得导入导出有些影响效率，考虑postgresql本身的空间计算也不弱（丰富的空间函数），于是这几天尝试将一些流程直接迁移至数据库中处理。<br>这里举一个场景：已知一公交站点空间位置，以及其所在的道路，计算公交站点在该道路上的投影，以及距离道路起点的距离<br>看到这个问题，可能有些同学说这还不简单，直接用ArcGIS的near(邻近分析)和SplitLineAtPoint（在点处分割线）工具不解ok了么。对，我之前经常就是这么解决的。<br><img src="/images/19072302.jpg" alt="上车"><br>实际我觉得再pg中用空间查询计算更简单，主要用到<a href="http://postgis.net/docs/ST_LineLocatePoint.html" target="_blank" rel="noopener">ST_LineLocatePoint(geometry a_linestring, geometry a_point)</a>和<a href="http://postgis.net/docs/ST_LineInterpolatePoint.html" target="_blank" rel="noopener">ST_LineInterpolatePoint(geometry a_linestring, float8 a_fraction)</a>这两个函数;</p>
+<h2 id="学过GIS基础理论的同学都知道，线上一点距离起点的长度叫做M值，也叫空间线性参考，比如我们看新闻有提到某个道路发生追尾事故，位于302国道666公里处，这个666就是M值。"><a href="#学过GIS基础理论的同学都知道，线上一点距离起点的长度叫做M值，也叫空间线性参考，比如我们看新闻有提到某个道路发生追尾事故，位于302国道666公里处，这个666就是M值。" class="headerlink" title="学过GIS基础理论的同学都知道，线上一点距离起点的长度叫做M值，也叫空间线性参考，比如我们看新闻有提到某个道路发生追尾事故，位于302国道666公里处，这个666就是M值。"></a>学过GIS基础理论的同学都知道，线上一点距离起点的长度叫做M值，也叫空间线性参考，比如我们看新闻有提到某个道路发生追尾事故，位于302国道666公里处，这个666就是M值。</h2><p>所以我们可以先通过ST_LineLocatePoint计算站点到道路起始位置的长度百分比及其长度，然后通过长度百分比计算投影点。<br>如下所示：<br>计算长度<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> stop_space_attr <span class="keyword">set</span> milepost=</span><br><span class="line"><span class="keyword">case</span> is_same_dir</span><br><span class="line"><span class="keyword">when</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">then</span> ST_Line_Locate_Point (</span><br><span class="line">	st_transform ( st_geomfromtext ( <span class="keyword">REPLACE</span> ( <span class="keyword">REPLACE</span> ( st_astext ( road_geom ), <span class="string">'MULTILINESTRING(('</span>, <span class="string">'LINESTRING('</span> ), <span class="string">'))'</span>, <span class="string">')'</span> ), <span class="number">4326</span> ), <span class="number">3857</span> ),</span><br><span class="line">	ST_transform ( geom, <span class="number">3857</span> )) * st_length(st_transform(geom,<span class="number">3857</span>)) </span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	(<span class="number">1</span>-ST_Line_Locate_Point (</span><br><span class="line">	st_transform ( st_geomfromtext ( <span class="keyword">REPLACE</span> ( <span class="keyword">REPLACE</span> ( st_astext ( road_geom ), <span class="string">'MULTILINESTRING(('</span>, <span class="string">'LINESTRING('</span> ), <span class="string">'))'</span>, <span class="string">')'</span> ), <span class="number">4326</span> ), <span class="number">3857</span> ),</span><br><span class="line">	ST_transform ( geom, <span class="number">3857</span> ))) * st_length(st_transform(geom,<span class="number">3857</span>))</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p>计算投影点（这里贴出官网的例子）<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ST_AsText(ST_LineInterpolatePoint(foo.the_line, ST_LineLocatePoint(foo.the_line, ST_GeomFromText(<span class="string">'POINT(4 3)'</span>))))</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> ST_GeomFromText(<span class="string">'LINESTRING(1 2, 4 5, 6 7)'</span>) <span class="keyword">As</span> the_line) <span class="keyword">As</span> foo;</span><br></pre></td></tr></table></figure></p>
+<p>注意：</p>
+<h2 id="（1）这两个参数中-线的空间几何必须是简单的linestring，不能是多部件线段multilinestring；"><a href="#（1）这两个参数中-线的空间几何必须是简单的linestring，不能是多部件线段multilinestring；" class="headerlink" title="（1）这两个参数中,线的空间几何必须是简单的linestring，不能是多部件线段multilinestring；"></a>（1）这两个参数中,线的空间几何必须是简单的linestring，不能是多部件线段multilinestring；</h2><h2 id="（2）线和点的空间参考最好是投影坐标（如3857）；"><a href="#（2）线和点的空间参考最好是投影坐标（如3857）；" class="headerlink" title="（2）线和点的空间参考最好是投影坐标（如3857）；"></a>（2）线和点的空间参考最好是投影坐标（如3857）；</h2><h2 id="（3）如果数据量大，使用ST-transform，会影响计算效率，建议提前新建字段，统一空间参考。"><a href="#（3）如果数据量大，使用ST-transform，会影响计算效率，建议提前新建字段，统一空间参考。" class="headerlink" title="（3）如果数据量大，使用ST_transform，会影响计算效率，建议提前新建字段，统一空间参考。"></a>（3）如果数据量大，使用ST_transform，会影响计算效率，建议提前新建字段，统一空间参考。</h2><p><img src="/images/19072303.jpg" alt="孤独求败"></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/01/7022.html" class="archive-article-date">
-  <time datetime="2016-11-01T09:01:14.000Z" itemprop="datePublished">11月 1</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/01/7022.html">欲戴其冠,必承其重---谈谈ArcGIS制图表达</a>
-    </h1>
-  
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="cjyfmmzi8003iyox4zun8b49r" class="article-share-link">分享</a>
+      
+      
+	
 
-    </header>
+    </footer>
   </div>
-</article>
-  
-  
-    </div></section>
-  
 
-</section>
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/02/956.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基于Docker搭建自己的定制化地图服务器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section> 
+  </section>
         
           <aside id="sidebar">
   
