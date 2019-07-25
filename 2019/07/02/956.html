@@ -6,12 +6,12 @@
   
   <title>基于Docker搭建自己的定制化地图服务器 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="–==========================– 产品经理是帮你成长的最强动力。这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；">
+  <meta name="description" content="–==========================– 产品经理是帮你成长的最强动力。这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Docker搭建自己的定制化地图服务器">
 <meta property="og:url" content="http://zyouzz.github.io/2019/07/02/956.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="–==========================– 产品经理是帮你成长的最强动力。这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；">
+<meta property="og:description" content="–==========================– 产品经理是帮你成长的最强动力。这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zyouzz.github.io/images/19070201.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/19070202.jpg">
@@ -22,10 +22,10 @@
 <meta property="og:image" content="http://zyouzz.github.io/images/19070207.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/19070208.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/19070209.jpg">
-<meta property="og:updated_time" content="2019-07-02T10:51:06.937Z">
+<meta property="og:updated_time" content="2019-07-25T06:57:58.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Docker搭建自己的定制化地图服务器">
-<meta name="twitter:description" content="–==========================– 产品经理是帮你成长的最强动力。这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；">
+<meta name="twitter:description" content="–==========================– 产品经理是帮你成长的最强动力。这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色">
 <meta name="twitter:image" content="http://zyouzz.github.io/images/19070201.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
@@ -124,16 +124,17 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>–==========================–</p>
-<h2 id="产品经理是帮你成长的最强动力。"><a href="#产品经理是帮你成长的最强动力。" class="headerlink" title="产品经理是帮你成长的最强动力。"></a>产品经理是帮你成长的最强动力。</h2><p>这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。<br>之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的<br><img src="/images/19070201.jpg" alt="午夜蓝"><br>但是产品经理要求是这样的配色<br><img src="/images/19070202.jpg" alt="产品经理的配色"><br>于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否<br><img src="/images/19070203.jpg" alt="思考人生"><br>遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；<br>打开其官网<a href="https://openmaptiles.com" target="_blank" rel="noopener">OpenMapTiles Map Server</a>，<br>越看越激动，终于有了转机。<br>我们可以基于OpenMapTiles Map Server构建自己的自定义离线底图服务，支持OGC标准的WMS，WMTS，矢量和栅格切片都是ok的。<br>由于基于Docker搭建，过程及其简单，跟将大象装进冰箱一样样的，小伙伴们不用慌。<br>搭建过程如下：<br>一、安装虚拟机和centos系统，版本如下<br>1)vmware：15.0.4 build-12990004，【下载地址：<a href="https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe" target="_blank" rel="noopener">https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe</a>】<br>2)centos: 7.3.1611，【下载地址：<a href="http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/" target="_blank" rel="noopener">http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/</a>】<br>二、安装Docker<br>执行以下语句就ok了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure></p>
+<h2 id="产品经理是帮你成长的最强动力。"><a href="#产品经理是帮你成长的最强动力。" class="headerlink" title="产品经理是帮你成长的最强动力。"></a>产品经理是帮你成长的最强动力。</h2><p>这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。<br>之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的<br><img src="/images/19070201.jpg" alt="午夜蓝"><br>但是产品经理要求是这样的配色<br><a id="more"></a><br><img src="/images/19070202.jpg" alt="产品经理的配色"><br>于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否<br><img src="/images/19070203.jpg" alt="思考人生"><br>遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；<br>打开其官网<a href="https://openmaptiles.com" target="_blank" rel="noopener">OpenMapTiles Map Server</a>，<br>越看越激动，终于有了转机。<br>我们可以基于OpenMapTiles Map Server构建自己的自定义离线底图服务，支持OGC标准的WMS，WMTS，矢量和栅格切片都是ok的。<br>由于基于Docker搭建，过程及其简单，跟将大象装进冰箱一样样的，小伙伴们不用慌。<br>搭建过程如下：<br>一、安装虚拟机和centos系统，版本如下<br>1)vmware：15.0.4 build-12990004，【下载地址：<a href="https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe" target="_blank" rel="noopener">https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe</a>】<br>2)centos: 7.3.1611，【下载地址：<a href="http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/" target="_blank" rel="noopener">http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/</a>】<br>二、安装Docker<br>执行以下语句就ok了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure></p>
 <p>三、安装应用<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm -it -v $(pwd):/data -p 8080:80 klokantech/openmaptiles-server</span><br></pre></td></tr></table></figure></p>
 <p><img src="/images/19070204.jpg" alt="安装应用"><br>这里会提示你在浏览器中通过8080端口访问配置页面<a href="https://localhost:8080" target="_blank" rel="noopener">https://localhost:8080</a><br><img src="/images/19070205.jpg" alt="配置"><br>最主要的是第三步样式配置<br><img src="/images/19070206.jpg" alt="自定义样式配置"><br>这里单击Advanced options,会看到上传样式配置文件json的地方，<br> <img src="/images/19070207.jpg" alt="自定义样式配置"><br> 关于生成json文件的地方，我们可以去自定义样式<a href="https://editor.openmaptiles.org/" target="_blank" rel="noopener">https://editor.openmaptiles.org/</a><br>  <img src="/images/19070208.jpg" alt="自定义样式配置"></p>
+<p>【笔记】：每次开机手动启动docker命令为<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure></p>
 <p> 这样，we choose freedom!<br> <img src="/images/19070209.jpg" alt="freedom"></p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="cjyfmmzhr0028yox41buuibtw" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="cjyfn2dsa00297ox42uo71v4y" class="article-share-link">分享</a>
       
       
 	

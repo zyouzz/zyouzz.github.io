@@ -6,21 +6,21 @@
   
   <title>关于多圆（大于2）重叠的面积计算 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部 2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学">
+  <meta name="description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于多圆（大于2）重叠的面积计算">
 <meta property="og:url" content="http://zyouzz.github.io/2019/06/24/56673.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部 2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学">
+<meta property="og:description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zyouzz.github.io/images/19062401.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/19062403.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/19062404.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/19062402.gif">
-<meta property="og:updated_time" content="2019-06-24T09:32:00.081Z">
+<meta property="og:updated_time" content="2019-07-25T06:55:47.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于多圆（大于2）重叠的面积计算">
-<meta name="twitter:description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部 2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学">
+<meta name="twitter:description" content="这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式 1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部">
 <meta name="twitter:image" content="http://zyouzz.github.io/images/19062401.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
@@ -119,8 +119,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。<br>有以下两种计算方式</p>
-<p>1、ArcGIS<br>使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆<br><img src="/images/19062401.jpg" alt="缓冲区"><br>注意：融合类型选择为全部</p>
-<p>2、自己实现<br>之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。<br>1）两圆重叠—简单！！！<br>2）两个圆以上的重叠精确计算—数学界的世纪难题！！！<br><img src="/images/19062403.jpg" alt="多圆重叠面积"><br>所以，只能通过模拟计算，这也是计算机最初诞生的原因。<br>经典的蒙特卡洛模拟计算真是屡试不爽。</p>
+<p>1、ArcGIS<br>使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆<br><img src="/images/19062401.jpg" alt="缓冲区"><br>注意：融合类型选择为全部<br><a id="more"></a><br>2、自己实现<br>之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。<br>1）两圆重叠—简单！！！<br>2）两个圆以上的重叠精确计算—数学界的世纪难题！！！<br><img src="/images/19062403.jpg" alt="多圆重叠面积"><br>所以，只能通过模拟计算，这也是计算机最初诞生的原因。<br>经典的蒙特卡洛模拟计算真是屡试不爽。</p>
 <p>这里我以前端的JavaScript为例<br>情景：在地图上随机框画了一个圆形区域，框选区域内部有若干个公交站点<br>通过模拟计算的流程是这样：<br><img src="/images/19062404.jpg" alt="画圆"></p>
 <p>代码脚本如下</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用蒙特卡洛方法模拟计算站点覆盖率</span></span><br><span class="line"><span class="comment"> * @param sample 样本数</span></span><br><span class="line"><span class="comment"> * @param drawCircleToPolygon 所画区域外接多边形</span></span><br><span class="line"><span class="comment"> * @param stopsLngLatList 所画区域内站点坐标</span></span><br><span class="line"><span class="comment"> * @param distance 站点覆盖半径</span></span><br><span class="line"><span class="comment"> * @returns &#123;string&#125; 返回站点覆盖率</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateStopCoverRate</span>(<span class="params">sample, drawCircleToPolygon, stopsLngLatList, distance</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> insidePointsNumber = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> randomPoints = turf.random(<span class="string">'points'</span>, sample, &#123;<span class="attr">bbox</span>: drawCircleToPolygon.getExtent()&#125;).features.map(<span class="function"><span class="params">value</span> =&gt;</span> value.geometry.coordinates);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> m = <span class="number">0</span>, n = randomPoints.length; m &lt; n; m++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = stopsLngLatList.length; i &lt; j; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> centerRandomPoint = ol.proj.fromLonLat([randomPoints[m][<span class="number">0</span>], randomPoints[m][<span class="number">1</span>]]);</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.pow(centerRandomPoint[<span class="number">0</span>] - stopsLngLatList[i][<span class="number">0</span>], <span class="number">2</span>) + <span class="built_in">Math</span>.pow(centerRandomPoint[<span class="number">1</span>] - stopsLngLatList[i][<span class="number">1</span>], <span class="number">2</span>) &lt;= distance * distance) &#123;</span><br><span class="line">        insidePointsNumber = insidePointsNumber + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (insidePointsNumber / sample * <span class="number">100</span>).toFixed(<span class="number">2</span>) + <span class="string">' %'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -133,7 +132,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="cjyfmmzhm001xyox4pcmi1sw0" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="cjyfn2ds5001u7ox4swxegmzg" class="article-share-link">分享</a>
       
       
 	
