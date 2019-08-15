@@ -4,24 +4,18 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>ArcGIS中使用字段计算器生成随机数和自增数 | 自由自在</title>
+  <title>归档: 2019/8 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ArcGIS中使用字段计算器生成随机数和自增数">
-<meta property="og:url" content="http://zyouzz.github.io/2017/01/05/1288.html">
+  <meta name="description" content="the road that you never walk along">
+<meta property="og:type" content="website">
+<meta property="og:title" content="自由自在">
+<meta property="og:url" content="http://zyouzz.github.io/archives/2019/08/index.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数">
+<meta property="og:description" content="the road that you never walk along">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zyouzz.github.io/images/01051.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/01052.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/01053.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/01054.jpg">
-<meta property="og:updated_time" content="2017-01-13T02:13:59.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcGIS中使用字段计算器生成随机数和自增数">
-<meta name="twitter:description" content="当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数">
-<meta name="twitter:image" content="http://zyouzz.github.io/images/01051.jpg">
+<meta name="twitter:title" content="自由自在">
+<meta name="twitter:description" content="the road that you never walk along">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -96,87 +90,41 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-ArcGIS中使用字段计算器生成随机数和自增数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/05/1288.html" class="article-date">
-  <time datetime="2017-01-05T06:17:49.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      ArcGIS中使用字段计算器生成随机数和自增数
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/08/15/17967.html" class="archive-article-date">
+  <time datetime="2019-08-15T08:45:34.000Z" itemprop="datePublished">8月 15</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/15/17967.html">一道难倒不少前端面试者的问题</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数<br><a id="more"></a><br><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randnum</span><span class="params">()</span>:</span></span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
-<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accumulate</span><span class="params">(increment)</span>:</span></span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></p>
-<p>PS；注意选择是python脚本，以及代码的缩进。</p>
-<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-
-      
-    </div>
-	
-    <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2017/01/05/1288.html" data-id="cjzcge9hi0009x8x4ilbxbcr9" class="article-share-link">分享</a>
-      
-      
-	
-
-    </footer>
+    </header>
   </div>
-
-    
-<nav id="article-nav">
-  
-    <a href="/2017/01/10/50334.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ArcGIS知乎网站用户信息爬取与分析【附代码】
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/12/15/4666.html" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">长城符号制作---图层叠加 vs 制图表达</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
- <section id="comments">
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
- </section> 
-  </section>
+</section>
         
           <aside id="sidebar">
   
