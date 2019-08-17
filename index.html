@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
 </blockquote>
 </blockquote>
 <hr>
-<p>这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。<br>常规答案如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> numCount = &#123;&#125;, maxCountNum = <span class="number">0</span>, maxNum;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = a.length; i &lt; j; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a[i] <span class="keyword">in</span> numCount) &#123;</span><br><span class="line">	numCount[a[i]] += <span class="number">1</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	numCount[a[i]] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (numCount[a[i]] &gt; maxCountNum) &#123;</span><br><span class="line">	maxNum = a[i];</span><br><span class="line"></span><br><span class="line">	maxCountNum=numCount[a[i]]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(maxNum)</span><br></pre></td></tr></table></figure></p>
+<p>这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。<br>常规答案如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">5</span>];   </span><br><span class="line"><span class="keyword">let</span> numCount = &#123;&#125;, maxCountNum = <span class="number">0</span>, maxNum;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = a.length; i &lt; j; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a[i] <span class="keyword">in</span> numCount) &#123;</span><br><span class="line">	numCount[a[i]] += <span class="number">1</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	numCount[a[i]] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (numCount[a[i]] &gt; maxCountNum) &#123;</span><br><span class="line">	maxNum = a[i];</span><br><span class="line"></span><br><span class="line">	maxCountNum=numCount[a[i]]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(maxNum)</span><br></pre></td></tr></table></figure></p>
 <p>曾经看到有人说通过一句js代码就可以实现，只是这个地方太小，他写不下了。这句话怎么似曾相似呢。。。。</p>
 <blockquote>
 <p>17世纪初，欧洲流传着公元三世纪古希腊数学家丢番图所写的《算术》一书。1621年，费马在巴黎买到此书并利用业余时间书中的不定方程进行了深入研究，从而创立了数论这门数学分支。在数论领域中，费马的巨大成果主要是费马大定理和费马小定理。其中以费马大定理最为著名。</p>
@@ -140,7 +140,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="cjzf47yc00018swx4grj5z20r" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="cjzf4pbxh001svkx4yisisng5" class="article-share-link">分享</a>
       
       
 	
@@ -183,7 +183,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="cjzf47yee006rswx4vt5nuojq" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="cjzf4pby6003jvkx4n2qm25lt" class="article-share-link">分享</a>
       
       
 	
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="cjzf47ycc001xswx4ftf3a2dj" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="cjzf4pbxp002bvkx4vwufs3lm" class="article-share-link">分享</a>
       
       
 	
@@ -271,7 +271,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="cjzf47yca001tswx486jy7q2t" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="cjzf4pbxk0020vkx4vhuoa5v1" class="article-share-link">分享</a>
       
       
 	
@@ -315,7 +315,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/06/14/38442.html" data-id="cjzf47ycd0020swx44byvo32f" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/06/14/38442.html" data-id="cjzf4pbxl0022vkx4c8tf9r1g" class="article-share-link">分享</a>
       
       
 	
@@ -354,7 +354,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="cjzf47ydq005xswx4v1d1bqcq" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="cjzf4pby7003mvkx4k7q3sv8w" class="article-share-link">分享</a>
       
       
 	
@@ -397,7 +397,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/04/25/56554.html" data-id="cjzf47yb80001swx4jb72jwit" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/04/25/56554.html" data-id="cjzf4pbwp0006vkx4dy6oek0x" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS-Enterprise/">ArcGIS Enterprise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Portal/">Portal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三维场景/">三维场景</a></li></ul>
@@ -442,7 +442,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/01/28/29651.html" data-id="cjzf47ydp005vswx494rovk6a" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/01/28/29651.html" data-id="cjzf4pby10038vkx4vea49d0h" class="article-share-link">分享</a>
       
       
 	
@@ -481,7 +481,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/01/28/42280.html" data-id="cjzf47ycu0039swx4km6adpgb" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/01/28/42280.html" data-id="cjzf4pbya003uvkx4kvpgd0if" class="article-share-link">分享</a>
       
       
 	
@@ -529,7 +529,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/12/17/24576.html" data-id="cjzf47ycl002mswx4hzjhy11n" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2018/12/17/24576.html" data-id="cjzf4pbxx002xvkx4rep4lf2o" class="article-share-link">分享</a>
       
       
 	
