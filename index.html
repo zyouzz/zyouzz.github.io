@@ -92,6 +92,53 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-轻松实现Geoserver服务迁移" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/07/8942.html" class="article-date">
+  <time datetime="2019-11-07T03:28:19.000Z" itemprop="datePublished">2019-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/8942.html">轻松实现Geoserver服务迁移</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以西安地图服务为例</p>
+<p>1、在新的geoserver上新建工作区，<br><img src="/images/2019110701.jpg" alt="新建工作区"><br><img src="/images/2019110702.jpg" alt="新建工作区"></p>
+<p>2、创建与mysql数据库的连接存储<br><img src="/images/2019110703.jpg" alt="创建与mysql数据库的连接存储"></p>
+<p>3、工作区选择上一步创建的，然后输入数据源名称和说明，mysql所在的主机名、端口、数据库名称、用户名和密码<br><img src="/images/2019110704.jpg" alt="输入数据源名称和说明"></p>
+<p>4、然后将源geoserver安装路径下索要迁移的城市相关服务配置文件复制，具体是将/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data的styles文件夹和/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data/workspaces下的xian文件夹复制新geoserver的同路径下。</p>
+<p>5、将第3步生成的连接文件datastore.xml（路径为/root/work/apache-tomcat-8.5.38/webapps/geoserver/data/workspaces/xian/mysql116）中的红框内的配置替换到第4步的xian文件夹下的mysql155文件夹下的datastore.xml，<br><img src="/images/2019110705.jpg" alt="datastore.xml"></p>
+<p>6、最后将mysql116文件夹删除，将mysql155文件夹改为mysql116，</p>
+<p>7、由于用到热力图渲染，需要下载wps插件，下载地址为<a href="http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib" target="_blank" rel="noopener">http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib</a><br><img src="/images/2019110706.jpg" alt="下载wps插件"></p>
+<p>8、重启Tomcat,服务迁移完成！</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ck2o5q9bf003o80fmyj555wdw" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
     <article id="post-手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/09/877.html" class="article-date">
@@ -122,7 +169,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/09/877.html" data-id="ck0camt0v00361wx4lpo41g6f" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/09/09/877.html" data-id="ck2o5q9b3002u80fmcbnkubjz" class="article-share-link">分享</a>
       
       
 	
@@ -175,7 +222,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="ck0camt0r002x1wx48prspqf0" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="ck2o5q9b1002o80fm61f27jgx" class="article-share-link">分享</a>
       
       
 	
@@ -214,7 +261,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/29/56203.html" data-id="ck0camt16003x1wx44qowl68x" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/08/29/56203.html" data-id="ck2o5q9bg003r80fmf3qn8ujn" class="article-share-link">分享</a>
       
       
 	
@@ -273,7 +320,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="ck0camt09001q1wx4twfcf4qg" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="ck2o5q9al001k80fmq2txvo3e" class="article-share-link">分享</a>
       
       
 	
@@ -316,7 +363,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="ck0camt13003m1wx4chbg3qqc" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="ck2o5q9bc003g80fmefczjih2" class="article-share-link">分享</a>
       
       
 	
@@ -360,7 +407,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="ck0camt0k002e1wx4psgyo4hs" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="ck2o5q9au002580fmftak13ce" class="article-share-link">分享</a>
       
       
 	
@@ -404,7 +451,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="ck0camt0f00231wx4f2mro3ck" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/06/24/56673.html" data-id="ck2o5q9an001p80fm6j5x92fb" class="article-share-link">分享</a>
       
       
 	
@@ -448,7 +495,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/06/14/38442.html" data-id="ck0camt0j002c1wx4kinfgx1n" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/06/14/38442.html" data-id="ck2o5q9ao001r80fm14187z3r" class="article-share-link">分享</a>
       
       
 	
@@ -487,54 +534,9 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="ck0camt14003q1wx4ub1xl6mq" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/04/25/24763.html" data-id="ck2o5q9be003l80fmvg00bl2f" class="article-share-link">分享</a>
       
       
-	
-
-    </footer>
-  </div>
-
-</article>
-
-  
-    <article id="post-ArcGIS Enterprise中Portal发布场景服务无法查看" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/25/56554.html" class="article-date">
-  <time datetime="2019-04-25T01:01:17.701Z" itemprop="datePublished">2019-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/25/56554.html">ArcGIS Enterprise中Portal发布场景服务后无法查看</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。<br>现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。<br>
-        
-          </p><p class="article-more-link" style="text-align:center">
-            <a href="/2019/04/25/56554.html#more">点击继续阅读</a>
-          </p>
-        
-      
-    </div>
-	
-    <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/04/25/56554.html" data-id="ck0camsza00011wx4mchf42yo" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS-Enterprise/">ArcGIS Enterprise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Portal/">Portal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三维场景/">三维场景</a></li></ul>
-
 	
 
     </footer>
@@ -567,6 +569,10 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2019/11/07/8942.html">轻松实现Geoserver服务迁移</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/09/877.html">手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）</a>
           </li>
         
@@ -582,10 +588,6 @@ var _hmt = _hmt || [];
             <a href="/2019/08/15/17967.html">一道难倒不少前端面试者的问题</a>
           </li>
         
-          <li>
-            <a href="/2019/07/23/4998.html">计算点距离线最近的投影点</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -595,7 +597,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 
