@@ -6,18 +6,18 @@
   
   <title>一道难倒不少前端面试者的问题 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字    这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：1234567891011121314151617let a = [1, 2, 6, 8, 9, 5,">
+  <meta name="description" content="有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字    这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一道难倒不少前端面试者的问题">
 <meta property="og:url" content="http://zyouzz.github.io/2019/08/15/17967.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字    这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：1234567891011121314151617let a = [1, 2, 6, 8, 9, 5,">
+<meta property="og:description" content="有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字    这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zyouzz.github.io/images/19081501.jpg">
-<meta property="og:updated_time" content="2019-08-17T05:56:10.693Z">
+<meta property="og:updated_time" content="2019-11-07T03:37:27.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一道难倒不少前端面试者的问题">
-<meta name="twitter:description" content="有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字    这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：1234567891011121314151617let a = [1, 2, 6, 8, 9, 5,">
+<meta name="twitter:description" content="有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字    这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：">
 <meta name="twitter:image" content="http://zyouzz.github.io/images/19081501.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
@@ -121,7 +121,7 @@ var _hmt = _hmt || [];
 </blockquote>
 </blockquote>
 <hr>
-<p>这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。<br>常规答案如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">5</span>];   </span><br><span class="line"><span class="keyword">let</span> numCount = &#123;&#125;, maxCountNum = <span class="number">0</span>, maxNum;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = a.length; i &lt; j; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a[i] <span class="keyword">in</span> numCount) &#123;</span><br><span class="line">	numCount[a[i]] += <span class="number">1</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	numCount[a[i]] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (numCount[a[i]] &gt; maxCountNum) &#123;</span><br><span class="line">	maxNum = a[i];</span><br><span class="line"></span><br><span class="line">	maxCountNum=numCount[a[i]]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(maxNum)</span><br></pre></td></tr></table></figure></p>
+<p>这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。<br>常规答案如下：<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">5</span>];   </span><br><span class="line"><span class="keyword">let</span> numCount = &#123;&#125;, maxCountNum = <span class="number">0</span>, maxNum;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = a.length; i &lt; j; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a[i] <span class="keyword">in</span> numCount) &#123;</span><br><span class="line">	numCount[a[i]] += <span class="number">1</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	numCount[a[i]] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (numCount[a[i]] &gt; maxCountNum) &#123;</span><br><span class="line">	maxNum = a[i];</span><br><span class="line"></span><br><span class="line">	maxCountNum=numCount[a[i]]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(maxNum)</span><br></pre></td></tr></table></figure></p>
 <p>曾经看到有人说通过一句js代码就可以实现，只是这个地方太小，他写不下了。这句话怎么似曾相似呢。。。。</p>
 <blockquote>
 <p>17世纪初，欧洲流传着公元三世纪古希腊数学家丢番图所写的《算术》一书。1621年，费马在巴黎买到此书并利用业余时间书中的不定方程进行了深入研究，从而创立了数论这门数学分支。在数论领域中，费马的巨大成果主要是费马大定理和费马小定理。其中以费马大定理最为著名。</p>
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="ck2o5q9al001k80fmq2txvo3e" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="ck2o5wtku001nysfmzn14ttjl" class="article-share-link">分享</a>
       
       
 	
