@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[为什么加班到现在，运维是个大坑货！！！]]></title>
+    <url>%2F2019%2F11%2F19%2F14351.html</url>
+    <content type="text"><![CDATA[一套系统，本地运行的没问题，同样的安装流程却无法成功运行。捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：编码一定保持一致呀喂！编码一定保持一致呀喂！编码一定保持一致呀喂！操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[轻松实现Geoserver服务迁移]]></title>
     <url>%2F2019%2F11%2F07%2F8942.html</url>
     <content type="text"><![CDATA[以西安地图服务为例 1、在新的geoserver上新建工作区， 2、创建与mysql数据库的连接存储 3、工作区选择上一步创建的，然后输入数据源名称和说明，mysql所在的主机名、端口、数据库名称、用户名和密码 4、然后将源geoserver安装路径下索要迁移的城市相关服务配置文件复制，具体是将/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data的styles文件夹和/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data/workspaces下的xian文件夹复制新geoserver的同路径下。 5、将第3步生成的连接文件datastore.xml（路径为/root/work/apache-tomcat-8.5.38/webapps/geoserver/data/workspaces/xian/mysql116）中的红框内的配置替换到第4步的xian文件夹下的mysql155文件夹下的datastore.xml， 6、最后将mysql116文件夹删除，将mysql155文件夹改为mysql116， 7、由于用到热力图渲染，需要下载wps插件，下载地址为http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib 8、重启Tomcat,服务迁移完成！]]></content>
@@ -241,8 +246,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>ArcGIS Server</tag>
+        <tag>GIS</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
