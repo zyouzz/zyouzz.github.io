@@ -256,8 +256,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>ArcGIS Server</tag>
+        <tag>GIS</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
