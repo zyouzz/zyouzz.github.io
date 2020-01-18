@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】]]></title>
+    <url>%2F2020%2F01%2F18%2F35298.html</url>
+    <content type="text"><![CDATA[如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。因此，现在需要先安装webpack-parallel-uglify-plugin，1npm i -D webpack-parallel-uglify-plugin 然后修改X\build\路径下的webpack.prod.conf.js文件修改uglifyjs-webpack-plugin模块引入1const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); 为1const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin'); 然后注释掉123456789new UglifyJsPlugin(&#123; uglifyOptions: &#123; compress: &#123; warnings: false &#125; &#125;, sourceMap: config.build.productionSourceMap, parallel: true &#125;), 添加以下语句就可以了 123456789new ParallelUglifyPlugin(&#123; cacheDir: '.cache/', uglifyJS: &#123; output: &#123; comments: false &#125;, warnings: false &#125;&#125;) 就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻..如果碰到VUE打包失败，出现下面的错误1UnhandledPromiseRejectionWarning: CssSyntaxError: 这个意思是说打包的CSS文件有非法字符，大部分是注释不规范造成的我这里是因为CSS文件中误用 // 作为注释造成的，而 // 在SCSS文件中用是没问题的。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[openlayers去除左上角放大缩小【+】【-】控件]]></title>
     <url>%2F2020%2F01%2F15%2F16123.html</url>
     <content type="text"><![CDATA[123456// 去除地图左上角的放大缩小控件map.getControls().forEach(control =&gt; &#123; if (control instanceof ol.control.Zoom) &#123; map.removeControl(control) &#125;&#125;);]]></content>
@@ -256,8 +261,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>ArcGIS Server</tag>
+        <tag>GIS</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
@@ -483,17 +488,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[解决ArcGIS Server因端口被占用，而无法发布地图服务的方法]]></title>
-    <url>%2F2016%2F08%2F20%2F28027.html</url>
-    <content type="text"><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法： 1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。 2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！ 或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[解决xampp服务器因80端口被占用,Apach无法启动的方法]]></title>
     <url>%2F2016%2F08%2F20%2F27324.html</url>
     <content type="text"><![CDATA[之前自己的网站搭建在学校的服务器上的，所以使用起来很方便，但离开学校后，没了服务器，网站所有的内容只能静静地备份在移动硬盘中，周末没其他事来公司，于是在本地搭建起来，想把旧网站中内容转到新网站中，谁知xamppz中Apach却启动不起来，显示有错误，看了一下提示：图中表示80端口被其他进程占用了，于是按照这篇文章解决ArcGIS Server因端口被占用，而无法发布地图服务的方法的思路，着手解决，但结果是行不通，后来一想，原来是之前装了ArcGIS Server，需要开启系统自带的IIS服务器，可能80被他占用了1、于是搜“IIS”，打开IIS管理器2、右击Default Web Site，点击绑定3、80端口果然被其占用，这时，我们只需点击80的记录，修改为其他端口即可4、再回到xampp,Apach成功开启！]]></content>
@@ -503,6 +497,17 @@
       <tags>
         <tag>GIS</tag>
         <tag>RS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决ArcGIS Server因端口被占用，而无法发布地图服务的方法]]></title>
+    <url>%2F2016%2F08%2F20%2F28027.html</url>
+    <content type="text"><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法： 1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。 2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！ 或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -585,13 +590,13 @@
   </entry>
   <entry>
     <title><![CDATA[about]]></title>
-    <url>%2Fabout%2Findex%20-%20%E5%89%AF%E6%9C%AC.html</url>
-    <content type="text"><![CDATA[64mm 255 275 SANGUANG50 MARK]]></content>
+    <url>%2Fabout%2Findex.html</url>
+    <content type="text"><![CDATA[横冲直撞GIS圈！一直在懵逼，梦想去超越！微博：江山一统微信：1693069979邮箱：1693069979@qq.com64mm 255 275 SANGUANG50 MARK]]></content>
   </entry>
   <entry>
     <title><![CDATA[about]]></title>
-    <url>%2Fabout%2Findex.html</url>
-    <content type="text"><![CDATA[横冲直撞GIS圈！一直在懵逼，梦想去超越！微博：江山一统微信：1693069979邮箱：1693069979@qq.com64mm 255 275 SANGUANG50 MARK]]></content>
+    <url>%2Fabout%2Findex%20-%20%E5%89%AF%E6%9C%AC.html</url>
+    <content type="text"><![CDATA[64mm 255 275 SANGUANG50 MARK]]></content>
   </entry>
   <entry>
     <title><![CDATA[ArcGIS知乎站内搜索关键词统计Top50]]></title>

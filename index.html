@@ -92,6 +92,52 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-VUE项目打包失败案例解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/18/35298.html" class="article-date">
+  <time datetime="2020-01-18T10:14:34.000Z" itemprop="datePublished">2020-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/18/35298.html">前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。<br>这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。<br>我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。<br>因此，现在需要先安装webpack-parallel-uglify-plugin，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D webpack-parallel-uglify-plugin</span><br></pre></td></tr></table></figure></p>
+<p>然后修改X\build\路径下的webpack.prod.conf.js文件<br>修改uglifyjs-webpack-plugin模块引入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UglifyJsPlugin = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ParallelUglifyPlugin = <span class="built_in">require</span>(<span class="string">'webpack-parallel-uglify-plugin'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>然后注释掉<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> UglifyJsPlugin(&#123;</span><br><span class="line">      uglifyOptions: &#123;</span><br><span class="line">        compress: &#123;</span><br><span class="line">          warnings: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      sourceMap: config.build.productionSourceMap,</span><br><span class="line">      parallel: <span class="literal">true</span></span><br><span class="line">    &#125;),</span><br></pre></td></tr></table></figure></p>
+<p>添加以下语句就可以了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> ParallelUglifyPlugin(&#123;</span><br><span class="line">  cacheDir: <span class="string">'.cache/'</span>,</span><br><span class="line">  uglifyJS: &#123;</span><br><span class="line">    output: &#123;</span><br><span class="line">      comments: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    warnings: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="就此完毕！是不是很简单-打个包看看，打包速度是不是比以前提升好几倍，嘻嘻"><a href="#就此完毕！是不是很简单-打个包看看，打包速度是不是比以前提升好几倍，嘻嘻" class="headerlink" title="就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻.."></a>就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻..</h1><p>如果碰到VUE打包失败，出现下面的错误<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnhandledPromiseRejectionWarning: CssSyntaxError:</span><br></pre></td></tr></table></figure></p>
+<p>这个意思是说打包的CSS文件有非法字符，大部分是注释不规范造成的<br>我这里是因为CSS文件中误用 // 作为注释造成的，而 // 在SCSS文件中用是没问题的。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/01/18/35298.html" data-id="ck5jh0yy100190wfmzv9funl0" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
     <article id="post-openlayers去除左上角放大缩小【-】【-】控件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/01/15/16123.html" class="article-date">
@@ -119,7 +165,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/01/15/16123.html" data-id="ck5eog26s001d1wfmhuv9gn1q" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/01/15/16123.html" data-id="ck5jh0yy000160wfmm155j3mr" class="article-share-link">分享</a>
       
       
 	
@@ -158,7 +204,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/01/10/47817.html" data-id="ck5eog26400031wfmcksg9hzz" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/01/10/47817.html" data-id="ck5jh0yx000010wfmmaig0zek" class="article-share-link">分享</a>
       
       
 	
@@ -197,7 +243,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/11/19/14351.html" data-id="ck5eog27200201wfmh8ezh13y" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/11/19/14351.html" data-id="ck5jh0yyd001y0wfm7l3v85o3" class="article-share-link">分享</a>
       
       
 	
@@ -241,7 +287,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ck5eog28000491wfm9ndorua8" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ck5jh0yze00460wfmaq8r3taz" class="article-share-link">分享</a>
       
       
 	
@@ -284,7 +330,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/09/877.html" data-id="ck5eog27l00381wfm7a1g8w41" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/09/09/877.html" data-id="ck5jh0yyy00370wfm1qa126kp" class="article-share-link">分享</a>
       
       
 	
@@ -328,7 +374,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="ck5eog27i00331wfmijfdm7nr" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="ck5jh0yyx00350wfms4t1mbgh" class="article-share-link">分享</a>
       
       
 	
@@ -367,7 +413,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/29/56203.html" data-id="ck5eog27z00461wfmd4q68xdq" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/08/29/56203.html" data-id="ck5jh0yzd00440wfmscwwk1ev" class="article-share-link">分享</a>
       
       
 	
@@ -416,7 +462,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="ck5eog26z001u1wfmnufj3ge3" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/08/15/17967.html" data-id="ck5jh0yya001p0wfmba3rmvhw" class="article-share-link">分享</a>
       
       
 	
@@ -459,51 +505,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="ck5eog27u003u1wfmsq7al4da" class="article-share-link">分享</a>
-      
-      
-	
-
-    </footer>
-  </div>
-
-</article>
-
-  
-    <article id="post-基于Docker搭建自己的定制化地图服务器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/02/956.html" class="article-date">
-  <time datetime="2019-07-02T09:58:19.000Z" itemprop="datePublished">2019-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/956.html">基于Docker搭建自己的定制化地图服务器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>–==========================–</p>
-<h2 id="产品经理是帮你成长的最强动力。"><a href="#产品经理是帮你成长的最强动力。" class="headerlink" title="产品经理是帮你成长的最强动力。"></a>产品经理是帮你成长的最强动力。</h2><p>这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。<br>之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的<br><img src="/images/19070201.jpg" alt="午夜蓝"><br>但是产品经理要求是这样的配色<br>
-        
-          </p><p class="article-more-link" style="text-align:center">
-            <a href="/2019/07/02/956.html#more">点击继续阅读</a>
-          </p>
-        
-      
-    </div>
-	
-    <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/07/02/956.html" data-id="ck5eog279002e1wfma579klbf" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/07/23/4998.html" data-id="ck5jh0yz9003t0wfm4pm1v6o1" class="article-share-link">分享</a>
       
       
 	
@@ -538,6 +540,10 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2020/01/18/35298.html">前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</a>
+          </li>
+        
+          <li>
             <a href="/2020/01/15/16123.html">openlayers去除左上角放大缩小【+】【-】控件</a>
           </li>
         
@@ -553,10 +559,6 @@ var _hmt = _hmt || [];
             <a href="/2019/11/07/8942.html">轻松实现Geoserver服务迁移</a>
           </li>
         
-          <li>
-            <a href="/2019/09/09/877.html">手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -566,7 +568,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 

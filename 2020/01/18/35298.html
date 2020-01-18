@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>ArcMap用起来卡的，请进 | 自由自在</title>
+  <title>前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="近期，一些ArcGIS桌面用户反馈说将低版本升级至10.5或者10.6后，在打开mxd工程文档和数据或者处理数据过程中, 感觉速度比以前慢了，有些卡。">
+  <meta name="description" content="如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。因此，现在需要先安装webpack-parallel-uglify-plugin，1npm i -D webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArcMap用起来卡的，请进">
-<meta property="og:url" content="http://zyouzz.github.io/2018/03/26/55332.html">
+<meta property="og:title" content="前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】">
+<meta property="og:url" content="http://zyouzz.github.io/2020/01/18/35298.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="近期，一些ArcGIS桌面用户反馈说将低版本升级至10.5或者10.6后，在打开mxd工程文档和数据或者处理数据过程中, 感觉速度比以前慢了，有些卡。">
+<meta property="og:description" content="如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。因此，现在需要先安装webpack-parallel-uglify-plugin，1npm i -D webpack">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-24T06:48:59.155Z">
+<meta property="og:updated_time" content="2020-01-18T10:43:17.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArcMap用起来卡的，请进">
-<meta name="twitter:description" content="近期，一些ArcGIS桌面用户反馈说将低版本升级至10.5或者10.6后，在打开mxd工程文档和数据或者处理数据过程中, 感觉速度比以前慢了，有些卡。">
+<meta name="twitter:title" content="前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】">
+<meta name="twitter:description" content="如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。因此，现在需要先安装webpack-parallel-uglify-plugin，1npm i -D webpack">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -91,10 +91,10 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-ArcMap用起来卡的，请进" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-VUE项目打包失败案例解决" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/26/55332.html" class="article-date">
-  <time datetime="2018-03-26T07:27:57.000Z" itemprop="datePublished">2018-03-26</time>
+    <a href="/2020/01/18/35298.html" class="article-date">
+  <time datetime="2020-01-18T10:14:34.000Z" itemprop="datePublished">2020-01-18</time>
 </a>
     
   </div>
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      ArcMap用起来卡的，请进
+      前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】
     </h1>
   
 
@@ -113,17 +113,20 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>近期，一些ArcGIS桌面用户反馈说将低版本升级至10.5或者10.6后，在打开mxd工程文档和数据或者处理数据过程中, 感觉速度比以前慢了，有些卡。<br><a id="more"></a><br>是不是新版本的产品的BUG呢？但通过其他大部分用户反馈，使用时并没有类似的感受，所以排除这个。<br>那是不是系统环境的问题呢？之后我做了一个测试，首先在虚拟机上装一个符合ArcGIS桌面要求的操作系统（<a href="https://desktop.arcgis.com/zh-cn/arcmap/latest/get-started/setup/arcgis-desktop-system-requirements.htm" target="_blank" rel="noopener">https://desktop.arcgis.com/zh-cn/arcmap/latest/get-started/setup/arcgis-desktop-system-requirements.htm</a>），先后安装10.5，10.5.1和10.6，测试速度正常，并没有重现慢的现象。</p>
-<p>所以回归常规排除思路来，实际性能这个问题，无论是windows操作系统，还是智能手机系统，在使用一段时间后，速度会不如以前，为了不影响日常操作，我们会进行阶段的系统扫描、硬件资源占用优化和垃圾缓存清理等工作，这些操作能有效解决这些问题。</p>
-<p>那就从这个入手，针对ArcMap慢的问题，我们可以尝试接下来的操作：<br>1、重置ArcMap<br>（1）重命名C:\Users\【当前登录用户名】\AppData\Roaming\ESRI\Desktop10.X\ArcMap\Templates\Normal.mxt为Normal_old.mxt，注意APPData是系统默认隐藏的文件夹；<br>（2）重命名‪C:\Users\【当前登录用户名】\AppData\Roaming\ESRI\Desktop10.X\ArcMap\Templates \Normal.gxt为Normal_old.gxt<br>（3）重命名‪C:\Users\【当前登录用户名】\AppData\Roaming\ESRI\Desktop10.X\ArcMap\Templates \ArcToolbox.dat为ArcToolbox _old.dat<br>（4）点击运行，在窗口中输入regedit，选择HKEY_CURRENT_USER\Software\ESRI，重命名ESRI为ESRI_1<br>（5）点击运行，在窗口中输入%APPDATA%\ESRI， 重命名该文件夹为Esri_old</p>
-<p>2、重新安装<br>注意：一定先解除桌面许可，才能卸载软件，不然许可会丢失，很麻烦的。<br>接下来就可以放心删除以下文件夹<br>（1）删除C:\Users\【当前登录用户名】\AppData\Roaming\ESRI下桌面版本文件夹Desktop10.X<br>（2）删除C:\Users\【当前登录用户名】\AppData\Local下的Esri文件夹<br>（3）删除C:\Users\【当前登录用户名】\Documents下的ArcGIS和ESRI下的文件夹<br>（4）删除C:\Program Files (x86)下的ArcGIS和ESRI下的文件夹<br>（5）删除C:\Program Files (x86)\Common Files下的ArcGIS文件夹<br>最后再重装软件</p>
-<p>3、删除字体<br>如果系统中安装字体过多（超过200个），在C:\Windows\Fonts下删除一些无用或者冗余的字体。<br>注意：删除之前，最好备份一下Font文件夹，不要删除名称以esri开头的字体。</p>
+        <p>如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。<br>这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。<br>我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。<br>因此，现在需要先安装webpack-parallel-uglify-plugin，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D webpack-parallel-uglify-plugin</span><br></pre></td></tr></table></figure></p>
+<p>然后修改X\build\路径下的webpack.prod.conf.js文件<br>修改uglifyjs-webpack-plugin模块引入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UglifyJsPlugin = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ParallelUglifyPlugin = <span class="built_in">require</span>(<span class="string">'webpack-parallel-uglify-plugin'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>然后注释掉<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> UglifyJsPlugin(&#123;</span><br><span class="line">      uglifyOptions: &#123;</span><br><span class="line">        compress: &#123;</span><br><span class="line">          warnings: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      sourceMap: config.build.productionSourceMap,</span><br><span class="line">      parallel: <span class="literal">true</span></span><br><span class="line">    &#125;),</span><br></pre></td></tr></table></figure></p>
+<p>添加以下语句就可以了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> ParallelUglifyPlugin(&#123;</span><br><span class="line">  cacheDir: <span class="string">'.cache/'</span>,</span><br><span class="line">  uglifyJS: &#123;</span><br><span class="line">    output: &#123;</span><br><span class="line">      comments: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    warnings: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="就此完毕！是不是很简单-打个包看看，打包速度是不是比以前提升好几倍，嘻嘻"><a href="#就此完毕！是不是很简单-打个包看看，打包速度是不是比以前提升好几倍，嘻嘻" class="headerlink" title="就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻.."></a>就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻..</h1><p>如果碰到VUE打包失败，出现下面的错误<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnhandledPromiseRejectionWarning: CssSyntaxError:</span><br></pre></td></tr></table></figure></p>
+<p>这个意思是说打包的CSS文件有非法字符，大部分是注释不规范造成的<br>我这里是因为CSS文件中误用 // 作为注释造成的，而 // 在SCSS文件中用是没问题的。</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/03/26/55332.html" data-id="ck5jh0yxu000r0wfmz6l45frm" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/01/18/35298.html" data-id="ck5jh0yy100190wfmzv9funl0" class="article-share-link">分享</a>
       
       
 	
@@ -134,19 +137,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2018/04/16/50787.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          近期遇到的问题小汇
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/07/40221.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/01/15/16123.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">获取周围邻接面的属性</div>
+      <div class="article-nav-title">openlayers去除左上角放大缩小【+】【-】控件</div>
     </a>
   
 </nav>
