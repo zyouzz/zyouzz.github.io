@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[深夜纵有千言胆，天明必悔]]></title>
+    <url>%2F2020%2F05%2F19%2F59224.html</url>
+    <content type="text"><![CDATA[总是钟情于一，难以自拔，这可能是我最大的可悲之处。可能受制于眼界，困囿于自己，无法走出自己的圈子。从未如此长时间的想念一个人这么久、这么频繁，每天每个小时，除了至亲。时不时看到罗曼罗兰的英雄主义，我认为这种阐释很有道理，但是自己却没有深刻体会到。这次身体的异样算是给自己敲响了警钟，各种检查用尽，不知是否虚惊一场，未来是不是也这样。从前排斥的东西，是否需要重新审视，因为我也知道那是在压抑自己，实际自己内心也无比渴望。从前纵情会挥霍的东西，现在也需要收敛抑或是改正了，真的不好，昨天跟人说自己年纪大了，任何事还是悠着点，旁人听完笑说你才多大，不知安慰还是事实，三十而立的坎儿算是来了。周末去和家人好好说说吧，毕竟这次疫情半年多没见面了，我决定摊牌了。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[2020年？？]]></title>
     <url>%2F2020%2F05%2F09%2F14675.html</url>
-    <content type="text"><![CDATA[2020年，什么时候该开始？是么时候又该翻篇呢？]]></content>
+    <content type="text"><![CDATA[2020年，什么时候该开始？什么时候又该翻篇呢？]]></content>
   </entry>
   <entry>
     <title><![CDATA[前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】]]></title>
@@ -239,8 +244,8 @@
     <content type="text"><![CDATA[安装环境软件：操作系统—Redhat 7.2 64位安装版本—ArcGIS 10.5硬件：VMware Pro 12.0虚拟环境双核CPU4G内存PS：强烈建议高于这个配置安装过程笔记 安装前基础知识su为超级用户su – user为某一用户的超级权限vi /etc/hosts 为编辑文件命令，进入文本编辑页面后，输入i插入开始编辑，输入O表示在当前行插入。编辑完之后，按ESC停止编辑，依次输入:wq表示退出cat /etc/hosts表示在命令行界面查看文件ll表示查看当前目录下的文件ls –l与ll相同cp /home/test.ecp /arcgis 表示test.ecp文件复制到arcgis目录下mkdir /mnt/cdrom ////确认是否有该目录，没有的话，新建目录mount /dev/cdrom /mnt/cdrom ////将光驱挂载到/mnt/cdrom下安装前准备 1、关闭防火墙并关闭开机启动root用户下systemctl stop firewalld.service ///关闭防火墙systemctl disable firewalld.service ////关闭防火墙开机启动systemctl status firewalld.service ////查看防火墙状态2、创建server用户组和用户groupadd esrichina ////添加用户组useradd –g esrrichina –m arcgis ////在esrichina下添加arcgis用户passwd arcgis ////为arcgis用户创建密码3、获取机器IPIfconfig //inet后面就是IP地址4、修改机器名hostname和hosts文件Vi /etc/hostname //打开hostname文件修改编辑,也可用hostnamectl set-hostname agsenterprise直接修改AgsenterpriseVi /etc/hosts ////添加如下行192.168.122.1 agsenterprise.esrichina.com agsenterprisehostname 获取机器名hostname –f 获取全限定域名5、复制安装文件到arcgis目录下，解压并获取权限tar –zxvf ArcGISServer.tar.gz ///解压server安装包到当前目录chown –R arcgis:esrichina arcgisserver/ ///获取server安装目录的权限到esrichina组下的arcgischmod –R 755 arcgisserver/ ///开启755权限 正式安装6、安装server首先编辑limits.conf文件vi /etc/security/limits.conf添加如下四行arcgis soft nofile 65535arcgis hard nofile 65535arcgis soft nproc 25059arcgis hard nproc 25059切换至arcgis用户下su – arcgis测试安装环境./ArcGISServer/serverdiag/serverdiag如果没报错就可以开始正式安装server了cd ArcGISServer/ /////切换至ArcGISServer目录下./Setup –m console然后按着安装时的提示进行安装装完之后会提示授权，这是要注意授权时注意授权文件的权限，必须是server用户下有足够的权限，如果不够，可以使用如下命令chown –R arcgis:esrichina arcgisserver105all.ecp //权限转到server用户组下的arcgis用户chmod –R 755 arcgisserver105all.ecp //权限设为7557、安装Datastore安装前先在etc/sysctl.conf文件单行参数echo ‘vm.max_map_count=262144’ &gt;&gt; /etc/sysctl.confecho ‘vm.swappiness=1’ &gt;&gt; /etc/sysctl.conf是上述修改内核的参数生效/sbin/sysctl –p ///从指定的文件加载系统参数，如不指定即从/etc/sysctl.conf中加载同样是诊断安装环境./ArcGISDataStore_Linux/datastorediag/datastorediag开启静默安装./Setup –m silent -1 Yes安装成功后即可配置8、 安装Portal首先需要安装dos2unix，Dos2unix软件包包括工具dos2unix 和 unix2dos，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换在线环境下，使用如下命令行即可安装Yum install dos2unix离线环境下使用离线安装包（dos2unix-7.3.4.tar.gz）安装tar –zxvf dos2unix-7.3.4.tar.gz./configuremakemake install诊断环境./PortalForArcGIS/portaldiag/portaldiag诊断无误后，使用交互安装./Setup –m console安装完后进行配置新portal站点9、配置Web adaptor安装Java的SDK环境解压SDK包jdk-8u131-linux-x64.tar.gzTar –zxvf jdk-8u131-linux-x64.tar.gzMv mv jdk1.8.0_111/ jdk8 ////将jdk1.8.0_111/文件夹下的文件复制到jdk文件夹下编辑/etc/profile文件JAVA_HOME=/home/jdk8CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/tools.jarPATH=$JAVA_HOME/bin:$PATHexport JAVA_HOME CLASSPATH PATH然后使用以下命令，使得上述配置生效source /etc/profile测试安装配置java –version出现版本信息即为正确安装安装tomcat-解压和复制文件tar –zxvf apache-tomcat-8.0.32.tar.gzmv apache-tomcat-8.0.32 tomcat8创建私钥和秘钥请求openssl req -newkey rsa:2048 -nodes -keyout /home/tomcat8/ssl/agsenterprise.key -x509 -days 365 -out /home/tomcat8/ssl/agsenterprise.crt然后按照提示输入参数创建自签名证书openssl pkcs12 -inkey /home/tomcat8/ssl/agsenterprise.key -in /home/tomcat8/ssl/agsenterprise.crt -export -out /home/tomcat8/ssl/agsenterprise.pfx修改Tomcat的server.xml文件vi tomcat8/conf/server.xml修改8080端口为80123&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; redirectPort=&quot;443&quot; /&gt;取消端口号8443对应的connector的注释，将8443端口修改为443，并启用ssl。12&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot; clientAuth=”false” sslProtocol=”TLS” keystoreFile=”/home/tomcat8/ssl/agsenterprise.pfx” keystoreType=”pkcs12” keystorePass=”Super123” /&gt;启动tomcatcd tomcat8/bin/./startup.sh使用https:// agsenterprise.esrichina.com验证Tomcat是否正常开启10、安装webadaptor./Setup –m silent -1 Yes分别部署名为server和arcgis的webadaptor到Tomcat下cp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/arcgis.warcp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/server.war对portal配置webadaptorcd webadaptor10.5/java/tools/./configurewebadaptor.sh -m portal -w https://agsenterprise.esrichina.com/arcgis/webadaptor -g https://agsenterprise.esrichina.com:7443 -u portaladmin -p Super123./configurewebadaptor.sh -m portal -w https://agsenterprise.esrichina.com/server/webadaptor -g https://agsenterprise.esrichina.com:6443 –u server -p Super12311、server与portal联合和托管12、统一更新server和portal的证书Server导航至 machines -&gt; Machines下机器名，如AGSENTERPRISE.ESRICHINA.COM -&gt; sslcertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 Submit。返回至Machines - 机器名即Machine - AGSENTERPRISE.ESRICHINA.COM页面，点击edit。在Edit Machine页面上，，设置 Web server SSL Certificate的值为步骤2中的证书别名如 agsenterprise以引用上述证书，点击 Save Edits。Portal导航至 security -&gt; sslCertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 import。在 sslCertificate 页面上点击 Update。在 Update Web Server Certificate 页面上，输入步骤2中的证书别名引用上述证书，点击 Update。 最终在IE等浏览器中将证书安装到计算机的受信任的根证书颁发机构。]]></content>
       <tags>
         <tag>ArcGIS Enterprise</tag>
-        <tag>Linux</tag>
         <tag>ArcGIS Server</tag>
+        <tag>Linux</tag>
         <tag>ArcGIS Portal</tag>
         <tag>安装</tag>
         <tag>笔记</tag>
@@ -266,8 +271,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>ArcGIS Server</tag>
         <tag>GIS</tag>
+        <tag>ArcGIS Server</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
@@ -493,6 +498,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[解决ArcGIS Server因端口被占用，而无法发布地图服务的方法]]></title>
+    <url>%2F2016%2F08%2F20%2F28027.html</url>
+    <content type="text"><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法： 1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。 2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！ 或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决xampp服务器因80端口被占用,Apach无法启动的方法]]></title>
     <url>%2F2016%2F08%2F20%2F27324.html</url>
     <content type="text"><![CDATA[之前自己的网站搭建在学校的服务器上的，所以使用起来很方便，但离开学校后，没了服务器，网站所有的内容只能静静地备份在移动硬盘中，周末没其他事来公司，于是在本地搭建起来，想把旧网站中内容转到新网站中，谁知xamppz中Apach却启动不起来，显示有错误，看了一下提示：图中表示80端口被其他进程占用了，于是按照这篇文章解决ArcGIS Server因端口被占用，而无法发布地图服务的方法的思路，着手解决，但结果是行不通，后来一想，原来是之前装了ArcGIS Server，需要开启系统自带的IIS服务器，可能80被他占用了1、于是搜“IIS”，打开IIS管理器2、右击Default Web Site，点击绑定3、80端口果然被其占用，这时，我们只需点击80的记录，修改为其他端口即可4、再回到xampp,Apach成功开启！]]></content>
@@ -502,17 +518,6 @@
       <tags>
         <tag>GIS</tag>
         <tag>RS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[解决ArcGIS Server因端口被占用，而无法发布地图服务的方法]]></title>
-    <url>%2F2016%2F08%2F20%2F28027.html</url>
-    <content type="text"><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法： 1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。 2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！ 或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -595,13 +600,13 @@
   </entry>
   <entry>
     <title><![CDATA[about]]></title>
-    <url>%2Fabout%2Findex.html</url>
-    <content type="text"><![CDATA[横冲直撞GIS圈！一直在懵逼，梦想去超越！微博：江山一统微信：1693069979邮箱：1693069979@qq.com64mm 255 275 SANGUANG50 MARK]]></content>
+    <url>%2Fabout%2Findex%20-%20%E5%89%AF%E6%9C%AC.html</url>
+    <content type="text"><![CDATA[64mm 255 275 SANGUANG50 MARK]]></content>
   </entry>
   <entry>
     <title><![CDATA[about]]></title>
-    <url>%2Fabout%2Findex%20-%20%E5%89%AF%E6%9C%AC.html</url>
-    <content type="text"><![CDATA[64mm 255 275 SANGUANG50 MARK]]></content>
+    <url>%2Fabout%2Findex.html</url>
+    <content type="text"><![CDATA[横冲直撞GIS圈！一直在懵逼，梦想去超越！微博：江山一统微信：1693069979邮箱：1693069979@qq.com64mm 255 275 SANGUANG50 MARK]]></content>
   </entry>
   <entry>
     <title><![CDATA[ArcGIS知乎每天站内搜索统计]]></title>
