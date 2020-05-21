@@ -92,6 +92,45 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-geoserver自动发布服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/21/12769.html" class="article-date">
+  <time datetime="2020-05-21T08:50:53.000Z" itemprop="datePublished">2020-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/21/12769.html">geoserver自动发布服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>python安装gsconfig库<br>附上python代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _*_coding:utf-8_*_</span></span><br><span class="line"><span class="keyword">from</span> geoserver.catalog <span class="keyword">import</span> Catalog</span><br><span class="line"><span class="keyword">from</span> geoserver.support <span class="keyword">import</span> JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 地图发布环境</span></span><br><span class="line">ENVIRONMENT_PUBLISH = <span class="string">'XXX_local'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 城市名称</span></span><br><span class="line">CITY = <span class="string">'xixian'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 年</span></span><br><span class="line">YEAR = <span class="number">2020</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 月</span></span><br><span class="line">MONTH = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONFIGURE = &#123;</span><br><span class="line">    <span class="string">'XXX_local'</span>: &#123;</span><br><span class="line">        <span class="string">'CITY'</span>: CITY,</span><br><span class="line">        <span class="string">'GEOSERVER_HOST'</span>: <span class="string">'1.1.1.1'</span>,  <span class="comment"># geoserver地址</span></span><br><span class="line">        <span class="string">'GEOSERVER_PORT'</span>: <span class="string">'8080'</span>,  <span class="comment"># geoserver端口</span></span><br><span class="line">        <span class="string">'USERNAME'</span>: <span class="string">'admin'</span>,  <span class="comment"># geoserver用户名</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'******'</span>,  <span class="comment"># geoserver密码</span></span><br><span class="line">        <span class="string">'DATABASE_MYSQL'</span>: <span class="string">'mysql'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cat = Catalog(<span class="string">'http://%s:%s/geoserver/rest/'</span> % (</span><br><span class="line">CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">'GEOSERVER_HOST'</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">'GEOSERVER_PORT'</span>]),</span><br><span class="line">              CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">'USERNAME'</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">'PASSWORD'</span>])</span><br><span class="line">store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">'DATABASE_MYSQL'</span>], CITY)</span><br><span class="line">geom = JDBCVirtualTableGeometry(<span class="string">'geom'</span>, <span class="string">'LineString'</span>, <span class="string">'4326'</span>)</span><br><span class="line">ft_name = <span class="string">'line_speed_day_%s_%s'</span> % (YEAR, MONTH)</span><br><span class="line">epsg_code = <span class="string">'EPSG:4326'</span></span><br><span class="line">sql = <span class="string">'''SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM line</span></span><br><span class="line"><span class="string">WHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction'''</span> % (</span><br><span class="line">    YEAR, MONTH, YEAR, MONTH)</span><br><span class="line"><span class="keyword">print</span> sql</span><br><span class="line">keyColumn = <span class="literal">None</span></span><br><span class="line">parameters = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">jdbc_vt = JDBCVirtualTable(ft_name, sql, <span class="string">'false'</span>, geom, keyColumn, parameters)</span><br><span class="line">ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)</span><br><span class="line">layer = cat.get_layer(ft_name)</span><br><span class="line">layer.default_style = cat.get_style(<span class="string">'stylefile'</span>)</span><br><span class="line">cat.save(layer)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/05/21/12769.html" data-id="ckagji6dl001cocfmo7zff51n" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
     <article id="post-深夜纵有千言胆，天明必悔" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/19/59224.html" class="article-date">
@@ -120,7 +159,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/05/19/59224.html" data-id="ckadovlra003p24fmruokuoea" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/05/19/59224.html" data-id="ckagji6el003qocfmjm7hdx3c" class="article-share-link">分享</a>
       
       
 	
@@ -159,7 +198,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/05/09/14675.html" data-id="ckadovlpf000624fml1aekpnz" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/05/09/14675.html" data-id="ckagji6cl0005ocfmjxewwsrp" class="article-share-link">分享</a>
       
       
 	
@@ -205,7 +244,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/01/18/35298.html" data-id="ckadovlq1001424fmkeaw0bdg" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/01/18/35298.html" data-id="ckagji6dh0013ocfmnf86k12j" class="article-share-link">分享</a>
       
       
 	
@@ -243,7 +282,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/01/15/16123.html" data-id="ckadovlq7001e24fmt4qvdyvx" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/01/15/16123.html" data-id="ckagji6dm001focfm5qf25wzk" class="article-share-link">分享</a>
       
       
 	
@@ -282,7 +321,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/01/10/47817.html" data-id="ckadovlpb000224fmt9a6kci6" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/01/10/47817.html" data-id="ckagji6ck0004ocfmvcpohygg" class="article-share-link">分享</a>
       
       
 	
@@ -321,7 +360,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/11/19/14351.html" data-id="ckadovlqk002324fmj5887ova" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/11/19/14351.html" data-id="ckagji6dx0025ocfm3ottrotg" class="article-share-link">分享</a>
       
       
 	
@@ -365,7 +404,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ckadovlrm004g24fmegmgkxve" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ckagji6eu004eocfm44bego7u" class="article-share-link">分享</a>
       
       
 	
@@ -408,7 +447,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/09/877.html" data-id="ckadovlr4003b24fmsq6o46vs" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/09/09/877.html" data-id="ckagji6ej003locfm45f7esp7" class="article-share-link">分享</a>
       
       
 	
@@ -452,46 +491,7 @@ var _hmt = _hmt || [];
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="ckadovlr3003824fmamkv5wmy" class="article-share-link">分享</a>
-      
-      
-	
-
-    </footer>
-  </div>
-
-</article>
-
-  
-    <article id="post-软件遇到未知错误，怎么办？" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/29/56203.html" class="article-date">
-  <time datetime="2019-08-29T03:27:29.000Z" itemprop="datePublished">2019-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/56203.html">软件遇到未知错误，怎么办？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>右键属性，以兼容模式解决<br><img src="/images/19082901.jpg" alt="兼容性"><br>然后以管理员身份运行</p>
-
-      
-    </div>
-	
-    <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/08/29/56203.html" data-id="ckadovlrl004c24fmspq5rs21" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="ckagji6ec0031ocfm2zm6gkgd" class="article-share-link">分享</a>
       
       
 	
@@ -526,6 +526,10 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2020/05/21/12769.html">geoserver自动发布服务</a>
+          </li>
+        
+          <li>
             <a href="/2020/05/19/59224.html">深夜纵有千言胆，天明必悔</a>
           </li>
         
@@ -541,10 +545,6 @@ var _hmt = _hmt || [];
             <a href="/2020/01/15/16123.html">openlayers去除左上角放大缩小【+】【-】控件</a>
           </li>
         
-          <li>
-            <a href="/2020/01/10/47817.html">2019全2020初</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -554,7 +554,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 
