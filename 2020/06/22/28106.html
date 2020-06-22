@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>归档: 2017/8 | 自由自在</title>
+  <title>geoserver多个图层要素相同的问题 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="the road that you never walk along">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自由自在">
-<meta property="og:url" content="http://zyouzz.github.io/archives/2017/08/index.html">
+  <meta name="description" content="今天在解决一个BUG的过程中发现：当多个图层layer共用一个Feature时，虽然每个图层的要素使用不同的style，但最后所有图层渲染的效果一样。原因：因为geoserver的layer的source中(有些拗口)包括的Feature都一样，属于引用，所以会以最后一个Feature样式为准。解决方法：使用feature的clone()方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="geoserver多个图层要素相同的问题">
+<meta property="og:url" content="http://zyouzz.github.io/2020/06/22/28106.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="the road that you never walk along">
+<meta property="og:description" content="今天在解决一个BUG的过程中发现：当多个图层layer共用一个Feature时，虽然每个图层的要素使用不同的style，但最后所有图层渲染的效果一样。原因：因为geoserver的layer的source中(有些拗口)包括的Feature都一样，属于引用，所以会以最后一个Feature样式为准。解决方法：使用feature的clone()方法">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-06-22T08:28:33.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自由自在">
-<meta name="twitter:description" content="the road that you never walk along">
+<meta name="twitter:title" content="geoserver多个图层要素相同的问题">
+<meta name="twitter:description" content="今天在解决一个BUG的过程中发现：当多个图层layer共用一个Feature时，虽然每个图层的要素使用不同的style，但最后所有图层渲染的效果一样。原因：因为geoserver的layer的source中(有些拗口)包括的Feature都一样，属于引用，所以会以最后一个Feature样式为准。解决方法：使用feature的clone()方法">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -90,41 +91,75 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/17385.html" class="archive-article-date">
-  <time datetime="2017-08-11T01:11:16.000Z" itemprop="datePublished">8月 11</time>
+        <section id="main"><article id="post-geoserver多个图层要素相同的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/22/28106.html" class="article-date">
+  <time datetime="2020-06-22T08:24:33.000Z" itemprop="datePublished">2020-06-22</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/17385.html">字段值固定位数，位数不够补0位</a>
+    <h1 class="article-title" itemprop="name">
+      geoserver多个图层要素相同的问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在解决一个BUG的过程中发现：当多个图层layer共用一个Feature时，虽然每个图层的要素使用不同的style，但最后所有图层渲染的效果一样。<br>原因：因为geoserver的layer的source中(有些拗口)包括的Feature都一样，属于引用，所以会以最后一个Feature样式为准。<br>解决方法：使用feature的clone()方法</p>
 
-</section>
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/06/22/28106.html" data-id="ckbq8n68600157gfmoku3tmi8" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/21/12769.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">geoserver自动发布服务</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section> 
+  </section>
         
           <aside id="sidebar">
   
