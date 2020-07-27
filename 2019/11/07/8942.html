@@ -19,7 +19,10 @@
 <meta property="og:image" content="http://zyouzz.github.io/images/2019110704.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/2019110705.jpg">
 <meta property="og:image" content="http://zyouzz.github.io/images/2019110706.jpg">
-<meta property="og:updated_time" content="2019-11-07T03:37:58.700Z">
+<meta property="og:image" content="http://zyouzz.github.io/images/20072701.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/20072702.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/20072703.jpg">
+<meta property="og:updated_time" content="2020-07-27T10:18:14.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="轻松实现Geoserver服务迁移">
 <meta name="twitter:description" content="以西安地图服务为例 1、在新的geoserver上新建工作区，">
@@ -129,12 +132,15 @@ var _hmt = _hmt || [];
 <p>6、最后将mysql116文件夹删除，将mysql155文件夹改为mysql116，</p>
 <p>7、由于用到热力图渲染，需要下载wps插件，下载地址为<a href="http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib" target="_blank" rel="noopener">http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib</a><br><img src="/images/2019110706.jpg" alt="下载wps插件"></p>
 <p>8、重启Tomcat,服务迁移完成！</p>
+<p>===<br>2020年07月27日更新<br>可能以上修改并不能成功，可以从上述4步骤开始<br>5、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\namespace.xml中NamespaceInfoImpl修改为图中的<br><img src="/images/20072701.jpg" alt="随便打开一个图层中的featuretype.xml文件"><br><img src="/images/20072702.jpg" alt="namespace.xml"></p>
+<p>6、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\default.xml，\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\workspace.xml<br>中的WorkspaceInfoImpl改为datastore.xml中的<br><img src="/images/20072703.jpg" alt="workspaces"></p>
+<p>7、一定要重新Tomcat才能生效</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ckbyvlfbk0046rgfmqz4mmdp3" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2019/11/07/8942.html" data-id="ckd4czu2b005aa4fmljh7nqbv" class="article-share-link">分享</a>
       
       
 	
