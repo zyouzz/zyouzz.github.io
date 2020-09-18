@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>2020年？？ | 自由自在</title>
+  <title>button造成的异常跳转问题解决一例 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2020年，什么时候该开始？什么时候又该翻篇呢？">
+  <meta name="description" content="今天下午遇到一个比较坑的问题，严格来说是没意识到。情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面解决：click事件添加pre">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020年？？">
-<meta property="og:url" content="http://zyouzz.github.io/2020/05/09/14675.html">
+<meta property="og:title" content="button造成的异常跳转问题解决一例">
+<meta property="og:url" content="http://zyouzz.github.io/2020/09/18/48870.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="2020年，什么时候该开始？什么时候又该翻篇呢？">
+<meta property="og:description" content="今天下午遇到一个比较坑的问题，严格来说是没意识到。情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面解决：click事件添加pre">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-19T08:51:27.015Z">
+<meta property="og:updated_time" content="2020-09-18T09:25:32.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2020年？？">
-<meta name="twitter:description" content="2020年，什么时候该开始？什么时候又该翻篇呢？">
+<meta name="twitter:title" content="button造成的异常跳转问题解决一例">
+<meta name="twitter:description" content="今天下午遇到一个比较坑的问题，严格来说是没意识到。情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面解决：click事件添加pre">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -91,10 +91,10 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-2020年？？" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-button造成的异常跳转问题解决一例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/09/14675.html" class="article-date">
-  <time datetime="2020-05-09T06:23:10.000Z" itemprop="datePublished">2020-05-09</time>
+    <a href="/2020/09/18/48870.html" class="article-date">
+  <time datetime="2020-09-18T09:13:08.000Z" itemprop="datePublished">2020-09-18</time>
 </a>
     
   </div>
@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      2020年？？
+      button造成的异常跳转问题解决一例
     </h1>
   
 
@@ -113,13 +113,14 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2020年，什么时候该开始？什么时候又该翻篇呢？</p>
+        <p>今天下午遇到一个比较坑的问题，严格来说是没意识到。<br>情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性<br>问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面<br>原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面<br>解决：click事件添加prevent属性，阻止button默认的提交事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">"clickTest"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>备注：养成按钮点击事件添加stop或者prevent属性，避免因冒泡或者自身属性的异常问题</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2020/05/09/14675.html" data-id="ckf81febm000688fm1geijrot" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/09/18/48870.html" data-id="ckf81fecc001h88fmi6jjq6l3" class="article-share-link">分享</a>
       
       
 	
@@ -130,19 +131,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2020/05/19/59224.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          深夜纵有千言胆，天明必悔
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/18/35298.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/06/28/35327.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</div>
+      <div class="article-nav-title">geoserver WFS服务 Filter过滤查询踩坑一个</div>
     </a>
   
 </nav>
