@@ -53,7 +53,7 @@
   <entry>
     <title><![CDATA[轻松实现Geoserver服务迁移]]></title>
     <url>%2F2019%2F11%2F07%2F8942.html</url>
-    <content type="text"><![CDATA[以西安地图服务为例 1、在新的geoserver上新建工作区， 2、创建与mysql数据库的连接存储 3、工作区选择上一步创建的，然后输入数据源名称和说明，mysql所在的主机名、端口、数据库名称、用户名和密码 4、然后将源geoserver安装路径下索要迁移的城市相关服务配置文件复制，具体是将/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data的styles文件夹和/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data/workspaces下的xian文件夹复制新geoserver的同路径下。 5、将第3步生成的连接文件datastore.xml（路径为/root/work/apache-tomcat-8.5.38/webapps/geoserver/data/workspaces/xian/mysql116）中的红框内的配置替换到第4步的xian文件夹下的mysql155文件夹下的datastore.xml， 6、最后将mysql116文件夹删除，将mysql155文件夹改为mysql116， 7、由于用到热力图渲染，需要下载wps插件，下载地址为http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib 8、重启Tomcat,服务迁移完成！ ===2020年07月27日更新可能以上修改并不能成功，可以从上述4步骤开始5、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\namespace.xml中NamespaceInfoImpl修改为图中的 6、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\default.xml，\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\workspace.xml中的WorkspaceInfoImpl改为datastore.xml中的 7、一定要重新Tomcat才能生效]]></content>
+    <content type="text"><![CDATA[以西安地图服务为例 1、在新的geoserver上新建工作区， 2、创建与mysql数据库的连接存储 3、工作区选择上一步创建的，然后输入数据源名称和说明，mysql所在的主机名、端口、数据库名称、用户名和密码 4、然后将源geoserver安装路径下索要迁移的城市相关服务配置文件复制，具体是将/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data的styles文件夹和/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data/workspaces下的xian文件夹复制新geoserver的同路径下。 5、将第3步生成的连接文件datastore.xml（路径为/root/work/apache-tomcat-8.5.38/webapps/geoserver/data/workspaces/xian/mysql116）中的红框内的配置替换到第4步的xian文件夹下的mysql155文件夹下的datastore.xml， 6、最后将mysql116文件夹删除，将mysql155文件夹改为mysql116， 7、由于用到热力图渲染，需要下载wps插件，下载地址为http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib 8、重启Tomcat,服务迁移完成！ ===2020年07月27日更新可能以上修改并不能成功，可以从上述4步骤开始5、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\namespace.xml中NamespaceInfoImpl修改为图中的 6、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\default.xml，\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\workspace.xml中的WorkspaceInfoImpl改为datastore.xml中的 7、一定要重新Tomcat才能生效 ===2020年10月19日补充迁移之前最好将其他工作空间文件夹删掉，不然连不上数据库很容易出问题；迁移之后首先修改数据存储的数据库连接]]></content>
   </entry>
   <entry>
     <title><![CDATA[手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）]]></title>
@@ -291,8 +291,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>ArcGIS Server</tag>
         <tag>GIS</tag>
+        <tag>ArcGIS Server</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
@@ -518,17 +518,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[解决ArcGIS Server因端口被占用，而无法发布地图服务的方法]]></title>
-    <url>%2F2016%2F08%2F20%2F28027.html</url>
-    <content type="text"><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法： 1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。 2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！ 或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[解决xampp服务器因80端口被占用,Apach无法启动的方法]]></title>
     <url>%2F2016%2F08%2F20%2F27324.html</url>
     <content type="text"><![CDATA[之前自己的网站搭建在学校的服务器上的，所以使用起来很方便，但离开学校后，没了服务器，网站所有的内容只能静静地备份在移动硬盘中，周末没其他事来公司，于是在本地搭建起来，想把旧网站中内容转到新网站中，谁知xamppz中Apach却启动不起来，显示有错误，看了一下提示：图中表示80端口被其他进程占用了，于是按照这篇文章解决ArcGIS Server因端口被占用，而无法发布地图服务的方法的思路，着手解决，但结果是行不通，后来一想，原来是之前装了ArcGIS Server，需要开启系统自带的IIS服务器，可能80被他占用了1、于是搜“IIS”，打开IIS管理器2、右击Default Web Site，点击绑定3、80端口果然被其占用，这时，我们只需点击80的记录，修改为其他端口即可4、再回到xampp,Apach成功开启！]]></content>
@@ -538,6 +527,17 @@
       <tags>
         <tag>GIS</tag>
         <tag>RS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决ArcGIS Server因端口被占用，而无法发布地图服务的方法]]></title>
+    <url>%2F2016%2F08%2F20%2F28027.html</url>
+    <content type="text"><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法： 1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。 2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！ 或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
