@@ -4,27 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt">
   
-  <title>【20160808】出差工作日志-武汉 | 自由自在</title>
+  <title>A Star算法实现最短路径查找【python】 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2016年08月08日星期一   网络分析现场辅导早晨起床，窗外已经下起了雨，细雨蒙蒙，袅袅生烟，果然是江城–武汉，湖光山色美哉美哉。俗话说武汉人的一天是从一碗热干面开始的，">
-<meta name="keywords" content="Esri,武汉,出差">
+  <meta name="description" content="这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【20160808】出差工作日志-武汉">
-<meta property="og:url" content="http://zyouzz.github.io/2016/08/08/56876.html">
+<meta property="og:title" content="A Star算法实现最短路径查找【python】">
+<meta property="og:url" content="http://zyouzz.github.io/2020/12/07/55752.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="2016年08月08日星期一   网络分析现场辅导早晨起床，窗外已经下起了雨，细雨蒙蒙，袅袅生烟，果然是江城–武汉，湖光山色美哉美哉。俗话说武汉人的一天是从一碗热干面开始的，">
+<meta property="og:description" content="这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zyouzz.github.io/images/P60807-1852291.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/P60807-1852294.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/P60807-1852293.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/P60807-1852292.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/20160808205006211.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/P60807.jpg">
-<meta property="og:updated_time" content="2016-11-08T13:54:12.878Z">
+<meta property="og:updated_time" content="2020-12-08T02:27:05.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【20160808】出差工作日志-武汉">
-<meta name="twitter:description" content="2016年08月08日星期一   网络分析现场辅导早晨起床，窗外已经下起了雨，细雨蒙蒙，袅袅生烟，果然是江城–武汉，湖光山色美哉美哉。俗话说武汉人的一天是从一碗热干面开始的，">
-<meta name="twitter:image" content="http://zyouzz.github.io/images/P60807-1852291.jpg">
+<meta name="twitter:title" content="A Star算法实现最短路径查找【python】">
+<meta name="twitter:description" content="这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -99,10 +91,10 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-【20160808】出差工作日志-武汉" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-A-Star算法实现最短路径查找【python】" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/08/08/56876.html" class="article-date">
-  <time datetime="2016-08-08T12:35:38.000Z" itemprop="datePublished">2016-08-08</time>
+    <a href="/2020/12/07/55752.html" class="article-date">
+  <time datetime="2020-12-07T10:03:44.000Z" itemprop="datePublished">2020-12-07</time>
 </a>
     
   </div>
@@ -113,7 +105,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      【20160808】出差工作日志-武汉
+      A Star算法实现最短路径查找【python】
     </h1>
   
 
@@ -121,17 +113,15 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2016年08月08日星期一   网络分析现场辅导<br>早晨起床，窗外已经下起了雨，细雨蒙蒙，袅袅生烟，果然是江城–武汉，湖光山色美哉美哉。<br><img src="/images/P60807-1852291.jpg" alt="武汉大学校园"><br>俗话说武汉人的一天是从一碗热干面开始的，<a id="more"></a>好久不吃，一下来两份，居然都吃完了。住的地方距离培训的机房非常近，缺少了京城的快节奏，不紧不慢到了培训教室。武汉分公司的同事已经来了，我跟门口两位同事介绍了一下自己和来意，高妮给我引荐了余经理，然后都很热情。不一会，随着络绎不绝的老师签到入座，整个偌大的机房已经爆满，来的老师可真不少，之后得知，由于机位有限，有些老师知道晚了，很是遗憾的没能报上名。培训班正式开始后，武汉分公司彭总、余经理和武汉大学遥感信息工程学院各自作了简短的发言。<br><img src="/images/P60807-1852294.jpg" alt="彭总"><br><img src="/images/P60807-1852293.jpg" alt="秦副院长"><br><img src="/images/P60807-1852292.jpg" alt="余经理"><br>之后是一起到室外拍了个集体照，<strong>一个GIS产品能让许多行业方向、这么多人聚集在一起，感觉很有意义</strong>。<br>今天认识了太原大学、河南科技大学、河南理工大学、长江大学等几位高校的老师，此外还有山西、江西、武汉本地高校“组团”过来的一批老师，适时地作了一些简单地沟通与交流，了解他们来自各行各业，有气象、水文、城市规划、灾害、交通等领域，使用ArcGIS软件也都有不同的需求，对ArcGIS的强大很是赞赏，都希望能有专业的系统培训，以便快速上手使用。我也觉得有必要让更多的人了解这个软件产品，让更多的行业得以应用，使得GIS IS Everywhere能够充分体现。<br>同事们讲的很给力、很生动。奈何自己能力有限，水平一般，其实我也是抱着学习的态度来的，略微只能提供现场的小辅导。感觉今天在与别人学习和交流的过程中，学得很快和丰富。<br>今天主要遇到以下几个问题：<br>1、拍集体照的过程中，有个老师问我ArcGIS的使用权问题，如何才能授权使用正版，我较为详细的介绍了一下，然后说明如有购买意向，可以到公司官网联系售后，以作相应的报价和售后服务介绍；<br>2、有些老师反映自己所在的专业一直在用ArcGIS，但是缺乏ArcGIS软件专业系统的培训，用起来感觉没有效率；<br>3、由于公司每年的ArcGIS培训的专题内容不一样，有的单位每年都会派人来学习，但是每批人员不一样，还有一些老师之前只是接触过ArcGIS，比如查看数据，打开地图等基本简单操作，但是今年的主题是高级分析，他们操作起来着实吃力。所以又回到2的问题，他们希望每年都有ArcGIS整体的系统培训；<br>4、大部分高校教师反映由于接触的实际应用案例较少，加之数据和理论缺乏，希望培训的数据和相关内容能够共享，以便高校教学和软件推广使用；<br><img src="/images/20160808205006211.jpg" alt="QQ群数据共享"><br>5、大部分老师和单位人员使用的是Crack软件，有的问我使用Crack版本和正版有什么区别，根据之前我所了解的生产一线惨痛教训案例，我强烈建议他们单位购买和使用正版。我觉得在每次培训时都可以简短的说一下使用正版ArcGIS软件的好处，并做一些实际发生案例展示；<br>6、许多人对公司的ArcGIS知乎社区、官方微博微信还不太熟悉了解。<br><img src="/images/P60807.jpg" alt="学习资源"></p>
+        <p>这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。<br>这里先起个头。。。</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2016/08/08/56876.html" data-id="ckifd5hli001viofmnhhl1dvi" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2020/12/07/55752.html" data-id="ckifd5hkk0007iofmv48lsl6s" class="article-share-link">分享</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Esri/">Esri</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/出差/">出差</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/武汉/">武汉</a></li></ul>
-
 	
 
     </footer>
@@ -140,19 +130,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/08/09/57324.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          【20160809】出差工作日志-武汉
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/02/42453.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/18/48870.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Modis GTOPO30 土地利用数据说明与下载</div>
+      <div class="article-nav-title">button造成的异常跳转问题解决一例</div>
     </a>
   
 </nav>
