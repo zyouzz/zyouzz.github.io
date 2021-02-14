@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[A Star算法实现最短路径查找【python】]]></title>
     <url>%2F2020%2F12%2F07%2F55752.html</url>
-    <content type="text"><![CDATA[这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。]]></content>
+    <content type="text"><![CDATA[这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。先放个最终实现效果图]]></content>
   </entry>
   <entry>
     <title><![CDATA[button造成的异常跳转问题解决一例]]></title>
@@ -296,8 +296,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>ArcGIS Server</tag>
+        <tag>GIS</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
@@ -625,6 +625,11 @@
   </entry>
   <entry>
     <title><![CDATA[about]]></title>
+    <url>%2Fabout%2Findex%20-%20%E5%89%AF%E6%9C%AC.html</url>
+    <content type="text"><![CDATA[64mm 255 275 SANGUANG50 MARK]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[about]]></title>
     <url>%2Fabout%2Findex.html</url>
     <content type="text"><![CDATA[横冲直撞GIS圈！一直在懵逼，梦想去超越！微博：江山一统微信：1693069979邮箱：1693069979@qq.com64mm 255 275 SANGUANG50 MARK]]></content>
   </entry>
@@ -637,11 +642,6 @@
     <title><![CDATA[ArcGIS知乎站内搜索关键词统计Top50]]></title>
     <url>%2Fhtml%2FArcGIS%E7%9F%A5%E4%B9%8E%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BB%9F%E8%AE%A1Top50.html</url>
     <content type="text"><![CDATA[ArcGIS知乎站内搜索关键词统计Top50 function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); var chart = c3.generate({ data: { x: '关键词', // xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x' columns: [ ['关键词', 'arcgis', 'for', 'server', 'api', 'portal', 'ios', 'to', 'javascript', 'runtime', 'pro', 'js', 'engine', 'the', 'android', 'failed', 'web', 'error', '安装', 'arcengine', 'linux', 'not', 'python', '10.5', 'data', 'sdk', 'gp', 'is', '天地图', 'create', 'arcmap', 'gis', 'desktop', 'service', 'arcpy', 'cityengine', 'java', 'envi', 'enterprise', '3d', 'sde', '三维', '10.2.5', 'in', '切片', 'arcsde', '矢量切片', 'cad', 'webgis', 'geoevent', 'a'], // ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'], ['次数', '2476', '817', '530', '480', '375', '286', '274', '262', '251', '244', '241', '220', '203', '200', '159', '134', '132', '127', '124', '118', '117', '117', '113', '108', '93', '90', '87', '80', '80', '79', '76', '76', '75', '74', '71', '69', '68', '66', '65', '62', '61', '60', '59', '59', '56', '55', '55', '54', '53', '50'], ], type:'bar', labels:{ format:{ 次数: d3.format(''), } } }, axis: { rotated: true, x: { type: 'category', } } });]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[about]]></title>
-    <url>%2Fabout%2Findex%20-%20%E5%89%AF%E6%9C%AC.html</url>
-    <content type="text"><![CDATA[64mm 255 275 SANGUANG50 MARK]]></content>
   </entry>
   <entry>
     <title></title>
