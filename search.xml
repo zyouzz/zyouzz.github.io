@@ -28,6 +28,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>A Star算法实现最短路径查找【python】</title>
+    <url>/2020/12/07/55752.html</url>
+    <content><![CDATA[<p>这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。<br>这里先起个头。。。<br>先放个最终实现效果图<br><img src="/images/2020120701.jpg" alt="效果图"><br>==========</p>
+]]></content>
+  </entry>
+  <entry>
     <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
     <url>/2019/04/25/56554.html</url>
     <content><![CDATA[<p>大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。<br>现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。</p>
@@ -41,12 +47,6 @@
         <tag>Portal</tag>
         <tag>三维场景</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>A Star算法实现最短路径查找【python】</title>
-    <url>/2020/12/07/55752.html</url>
-    <content><![CDATA[<p>这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。<br>这里先起个头。。。<br>先放个最终实现效果图<br><img src="/images/2020120701.jpg" alt="效果图"><br>==========</p>
-]]></content>
   </entry>
   <entry>
     <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
@@ -109,31 +109,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS 全家桶（ArcGIS Enterprise）---Linux安装笔记</title>
-    <url>/2017/06/19/19484.html</url>
-    <content><![CDATA[<p><font size=4><b>安装环境</b></font><br>软件：<br>操作系统—Redhat 7.2 64位<br>安装版本—ArcGIS 10.5<br>硬件：<br>VMware Pro 12.0虚拟环境<br>双核CPU<br>4G内存<br>PS：强烈建议高于这个配置</p>
-<p><font size=4><b>安装过程笔记</b></font></p>
-<p><b>安装前基础知识</b><br>su为超级用户<br>su – user为某一用户的超级权限<br>vi /etc/hosts 为编辑文件命令，进入文本编辑页面后，输入i插入开始编辑，输入O表示在当前行插入。编辑完之后，按ESC停止编辑，依次输入:wq表示退出<br>cat /etc/hosts表示在命令行界面查看文件<br>ll表示查看当前目录下的文件<br>ls –l与ll相同<br>cp /home/test.ecp /arcgis 表示test.ecp文件复制到arcgis目录下<br>mkdir /mnt/cdrom ////确认是否有该目录，没有的话，新建目录<br>mount /dev/cdrom /mnt/cdrom ////将光驱挂载到/mnt/cdrom下</p>
-<span id="more"></span>
-<p><b>安装前准备</b></p>
-<p>1、关闭防火墙并关闭开机启动<br>root用户下<br>systemctl stop firewalld.service  ///关闭防火墙<br>systemctl disable firewalld.service ////关闭防火墙开机启动<br>systemctl status firewalld.service  ////查看防火墙状态<br>2、创建server用户组和用户<br>groupadd esrichina   ////添加用户组<br>useradd –g esrrichina –m arcgis   ////在esrichina下添加arcgis用户<br>passwd arcgis  ////为arcgis用户创建密码<br>3、获取机器IP<br>Ifconfig  //inet后面就是IP地址<br>4、修改机器名hostname和hosts文件<br>Vi /etc/hostname  //打开hostname文件修改编辑,也可用hostnamectl set-hostname agsenterprise直接修改<br>Agsenterprise<br>Vi /etc/hosts   ////添加如下行<br>192.168.122.1 agsenterprise.esrichina.com agsenterprise<br>hostname 获取机器名<br>hostname  –f 获取全限定域名<br>5、复制安装文件到arcgis目录下，解压并获取权限<br>tar –zxvf ArcGISServer.tar.gz ///解压server安装包到当前目录<br>chown –R arcgis:esrichina arcgisserver/    ///获取server安装目录的权限到esrichina组下的arcgis<br>chmod –R 755 arcgisserver/   ///开启755权限</p>
-<p><b>正式安装</b><br>6、安装server<br>首先编辑limits.conf文件<br>vi  /etc/security/limits.conf<br>添加如下四行<br>arcgis soft nofile 65535<br>arcgis hard nofile 65535<br>arcgis soft nproc 25059<br>arcgis hard nproc 25059<br>切换至arcgis用户下<br>su – arcgis<br>测试安装环境<br>./ArcGISServer/serverdiag/serverdiag<br>如果没报错就可以开始正式安装server了<br>cd ArcGISServer/    /////切换至ArcGISServer目录下<br>./Setup –m console<br>然后按着安装时的提示进行安装<br>装完之后会提示授权，这是要注意<br>授权时注意授权文件的权限，必须是server用户下有足够的权限，如果不够，可以使用如下命令<br>chown –R arcgis:esrichina arcgisserver105all.ecp //权限转到server用户组下的arcgis用户<br>chmod –R 755 arcgisserver105all.ecp  //权限设为755<br>7、安装Datastore<br>安装前先在etc/sysctl.conf文件单行参数<br>echo ‘vm.max_map_count=262144’ &gt;&gt; /etc/sysctl.conf<br>echo ‘vm.swappiness=1’ &gt;&gt; /etc/sysctl.conf<br>是上述修改内核的参数生效<br>/sbin/sysctl –p  ///从指定的文件加载系统参数，如不指定即从/etc/sysctl.conf中加载<br>同样是诊断安装环境<br>./ArcGISDataStore_Linux/datastorediag/datastorediag<br>开启静默安装<br>./Setup –m silent -1 Yes<br>安装成功后即可配置<br>8、 安装Portal<br>首先需要安装dos2unix，Dos2unix软件包包括工具dos2unix 和 unix2dos，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换<br>在线环境下，使用如下命令行即可安装<br>Yum install dos2unix<br>离线环境下使用离线安装包（dos2unix-7.3.4.tar.gz）安装<br>tar –zxvf dos2unix-7.3.4.tar.gz<br>./configure<br>make<br>make install<br>诊断环境<br>./PortalForArcGIS/portaldiag/portaldiag<br>诊断无误后，使用交互安装<br>./Setup –m console<br>安装完后进行配置新portal站点<br>9、配置Web adaptor<br>安装Java的SDK环境<br>解压SDK包jdk-8u131-linux-x64.tar.gz<br>Tar –zxvf jdk-8u131-linux-x64.tar.gz<br>Mv mv jdk1.8.0_111/ jdk8  ////将jdk1.8.0_111/文件夹下的文件复制到jdk文件夹下<br>编辑/etc/profile文件<br>JAVA_HOME=/home/jdk8<br>CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/tools.jar<br>PATH=$JAVA_HOME/bin:$PATH<br>export JAVA_HOME CLASSPATH PATH<br>然后使用以下命令，使得上述配置生效<br>source /etc/profile<br>测试安装配置<br>java –version<br>出现版本信息即为正确安装<br>安装tomcat<br>-解压和复制文件<br>tar –zxvf apache-tomcat-8.0.32.tar.gz<br>mv apache-tomcat-8.0.32 tomcat8<br>创建私钥和秘钥请求<br>openssl req -newkey rsa:2048 -nodes -keyout /home/tomcat8/ssl/agsenterprise.key -x509 -days 365 -out /home/tomcat8/ssl/agsenterprise.crt<br>然后按照提示输入参数<br>创建自签名证书<br>openssl pkcs12 -inkey /home/tomcat8/ssl/agsenterprise.key -in /home/tomcat8/ssl/agsenterprise.crt -export -out /home/tomcat8/ssl/agsenterprise.pfx<br>修改Tomcat的server.xml文件<br>vi tomcat8/conf/server.xml<br>修改8080端口为80</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">           connectionTimeout=&quot;20000&quot;</span><br><span class="line">           redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>取消端口号8443对应的connector的注释，将8443端口修改为443，并启用ssl。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span><br><span class="line">           maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot;</span><br></pre></td></tr></table></figure>           clientAuth="false" sslProtocol="TLS" keystoreFile="/home/tomcat8/ssl/agsenterprise.pfx" keystoreType="pkcs12" keystorePass="Super123" />
-<p>启动tomcat<br>cd tomcat8/bin/<br>./startup.sh<br>使用https:// agsenterprise.esrichina.com验证Tomcat是否正常开启<br>10、安装webadaptor<br>./Setup –m silent -1 Yes<br>分别部署名为server和arcgis的webadaptor到Tomcat下<br>cp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/arcgis.war<br>cp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/server.war<br>对portal配置webadaptor<br>cd webadaptor10.5/java/tools/<br>./configurewebadaptor.sh -m portal -w <a href="https://agsenterprise.esrichina.com/arcgis/webadaptor">https://agsenterprise.esrichina.com/arcgis/webadaptor</a> -g <a href="https://agsenterprise.esrichina.com:7443/">https://agsenterprise.esrichina.com:7443</a> -u portaladmin -p Super123<br>./configurewebadaptor.sh -m portal -w <a href="https://agsenterprise.esrichina.com/server/webadaptor">https://agsenterprise.esrichina.com/server/webadaptor</a> -g <a href="https://agsenterprise.esrichina.com:6443/">https://agsenterprise.esrichina.com:6443</a> –u server -p Super123<br>11、server与portal联合和托管<br>12、统一更新server和portal的证书<br>Server<br>导航至 machines -&gt; Machines下机器名，如AGSENTERPRISE.ESRICHINA.COM -&gt; sslcertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 Submit。<br>返回至Machines - 机器名即Machine - AGSENTERPRISE.ESRICHINA.COM页面，点击edit。<br>在Edit Machine页面上，，设置 Web server SSL Certificate的值为步骤2中的证书别名如 agsenterprise以引用上述证书，点击 Save Edits。<br>Portal<br>导航至 security -&gt; sslCertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 import。<br>在 sslCertificate 页面上点击 Update。<br>在 Update Web Server Certificate 页面上，输入步骤2中的证书别名引用上述证书，点击 Update。</p>
-<p>最终在IE等浏览器中将证书安装到计算机的受信任的根证书颁发机构。</p>
-]]></content>
-      <tags>
-        <tag>ArcGIS Enterprise</tag>
-        <tag>Linux</tag>
-        <tag>ArcGIS Server</tag>
-        <tag>ArcGIS Portal</tag>
-        <tag>安装</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS Server集群部署问题和注意事项</title>
     <url>/2017/05/16/48872.html</url>
     <content><![CDATA[<p><font size=4><b>1、关于集群部署</b></font><br>（1）确保集群所有计算机的主DNS后缀相同；<br>![主DNS后缀相同](/images/ArcGIS Server 1.jpg)</p>
@@ -154,6 +129,31 @@
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS 全家桶（ArcGIS Enterprise）---Linux安装笔记</title>
+    <url>/2017/06/19/19484.html</url>
+    <content><![CDATA[<p><font size=4><b>安装环境</b></font><br>软件：<br>操作系统—Redhat 7.2 64位<br>安装版本—ArcGIS 10.5<br>硬件：<br>VMware Pro 12.0虚拟环境<br>双核CPU<br>4G内存<br>PS：强烈建议高于这个配置</p>
+<p><font size=4><b>安装过程笔记</b></font></p>
+<p><b>安装前基础知识</b><br>su为超级用户<br>su – user为某一用户的超级权限<br>vi /etc/hosts 为编辑文件命令，进入文本编辑页面后，输入i插入开始编辑，输入O表示在当前行插入。编辑完之后，按ESC停止编辑，依次输入:wq表示退出<br>cat /etc/hosts表示在命令行界面查看文件<br>ll表示查看当前目录下的文件<br>ls –l与ll相同<br>cp /home/test.ecp /arcgis 表示test.ecp文件复制到arcgis目录下<br>mkdir /mnt/cdrom ////确认是否有该目录，没有的话，新建目录<br>mount /dev/cdrom /mnt/cdrom ////将光驱挂载到/mnt/cdrom下</p>
+<span id="more"></span>
+<p><b>安装前准备</b></p>
+<p>1、关闭防火墙并关闭开机启动<br>root用户下<br>systemctl stop firewalld.service  ///关闭防火墙<br>systemctl disable firewalld.service ////关闭防火墙开机启动<br>systemctl status firewalld.service  ////查看防火墙状态<br>2、创建server用户组和用户<br>groupadd esrichina   ////添加用户组<br>useradd –g esrrichina –m arcgis   ////在esrichina下添加arcgis用户<br>passwd arcgis  ////为arcgis用户创建密码<br>3、获取机器IP<br>Ifconfig  //inet后面就是IP地址<br>4、修改机器名hostname和hosts文件<br>Vi /etc/hostname  //打开hostname文件修改编辑,也可用hostnamectl set-hostname agsenterprise直接修改<br>Agsenterprise<br>Vi /etc/hosts   ////添加如下行<br>192.168.122.1 agsenterprise.esrichina.com agsenterprise<br>hostname 获取机器名<br>hostname  –f 获取全限定域名<br>5、复制安装文件到arcgis目录下，解压并获取权限<br>tar –zxvf ArcGISServer.tar.gz ///解压server安装包到当前目录<br>chown –R arcgis:esrichina arcgisserver/    ///获取server安装目录的权限到esrichina组下的arcgis<br>chmod –R 755 arcgisserver/   ///开启755权限</p>
+<p><b>正式安装</b><br>6、安装server<br>首先编辑limits.conf文件<br>vi  /etc/security/limits.conf<br>添加如下四行<br>arcgis soft nofile 65535<br>arcgis hard nofile 65535<br>arcgis soft nproc 25059<br>arcgis hard nproc 25059<br>切换至arcgis用户下<br>su – arcgis<br>测试安装环境<br>./ArcGISServer/serverdiag/serverdiag<br>如果没报错就可以开始正式安装server了<br>cd ArcGISServer/    /////切换至ArcGISServer目录下<br>./Setup –m console<br>然后按着安装时的提示进行安装<br>装完之后会提示授权，这是要注意<br>授权时注意授权文件的权限，必须是server用户下有足够的权限，如果不够，可以使用如下命令<br>chown –R arcgis:esrichina arcgisserver105all.ecp //权限转到server用户组下的arcgis用户<br>chmod –R 755 arcgisserver105all.ecp  //权限设为755<br>7、安装Datastore<br>安装前先在etc/sysctl.conf文件单行参数<br>echo ‘vm.max_map_count=262144’ &gt;&gt; /etc/sysctl.conf<br>echo ‘vm.swappiness=1’ &gt;&gt; /etc/sysctl.conf<br>是上述修改内核的参数生效<br>/sbin/sysctl –p  ///从指定的文件加载系统参数，如不指定即从/etc/sysctl.conf中加载<br>同样是诊断安装环境<br>./ArcGISDataStore_Linux/datastorediag/datastorediag<br>开启静默安装<br>./Setup –m silent -1 Yes<br>安装成功后即可配置<br>8、 安装Portal<br>首先需要安装dos2unix，Dos2unix软件包包括工具dos2unix 和 unix2dos，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换<br>在线环境下，使用如下命令行即可安装<br>Yum install dos2unix<br>离线环境下使用离线安装包（dos2unix-7.3.4.tar.gz）安装<br>tar –zxvf dos2unix-7.3.4.tar.gz<br>./configure<br>make<br>make install<br>诊断环境<br>./PortalForArcGIS/portaldiag/portaldiag<br>诊断无误后，使用交互安装<br>./Setup –m console<br>安装完后进行配置新portal站点<br>9、配置Web adaptor<br>安装Java的SDK环境<br>解压SDK包jdk-8u131-linux-x64.tar.gz<br>Tar –zxvf jdk-8u131-linux-x64.tar.gz<br>Mv mv jdk1.8.0_111/ jdk8  ////将jdk1.8.0_111/文件夹下的文件复制到jdk文件夹下<br>编辑/etc/profile文件<br>JAVA_HOME=/home/jdk8<br>CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/tools.jar<br>PATH=$JAVA_HOME/bin:$PATH<br>export JAVA_HOME CLASSPATH PATH<br>然后使用以下命令，使得上述配置生效<br>source /etc/profile<br>测试安装配置<br>java –version<br>出现版本信息即为正确安装<br>安装tomcat<br>-解压和复制文件<br>tar –zxvf apache-tomcat-8.0.32.tar.gz<br>mv apache-tomcat-8.0.32 tomcat8<br>创建私钥和秘钥请求<br>openssl req -newkey rsa:2048 -nodes -keyout /home/tomcat8/ssl/agsenterprise.key -x509 -days 365 -out /home/tomcat8/ssl/agsenterprise.crt<br>然后按照提示输入参数<br>创建自签名证书<br>openssl pkcs12 -inkey /home/tomcat8/ssl/agsenterprise.key -in /home/tomcat8/ssl/agsenterprise.crt -export -out /home/tomcat8/ssl/agsenterprise.pfx<br>修改Tomcat的server.xml文件<br>vi tomcat8/conf/server.xml<br>修改8080端口为80</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">           connectionTimeout=&quot;20000&quot;</span><br><span class="line">           redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>取消端口号8443对应的connector的注释，将8443端口修改为443，并启用ssl。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span><br><span class="line">           maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot;</span><br></pre></td></tr></table></figure>           clientAuth="false" sslProtocol="TLS" keystoreFile="/home/tomcat8/ssl/agsenterprise.pfx" keystoreType="pkcs12" keystorePass="Super123" />
+<p>启动tomcat<br>cd tomcat8/bin/<br>./startup.sh<br>使用https:// agsenterprise.esrichina.com验证Tomcat是否正常开启<br>10、安装webadaptor<br>./Setup –m silent -1 Yes<br>分别部署名为server和arcgis的webadaptor到Tomcat下<br>cp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/arcgis.war<br>cp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/server.war<br>对portal配置webadaptor<br>cd webadaptor10.5/java/tools/<br>./configurewebadaptor.sh -m portal -w <a href="https://agsenterprise.esrichina.com/arcgis/webadaptor">https://agsenterprise.esrichina.com/arcgis/webadaptor</a> -g <a href="https://agsenterprise.esrichina.com:7443/">https://agsenterprise.esrichina.com:7443</a> -u portaladmin -p Super123<br>./configurewebadaptor.sh -m portal -w <a href="https://agsenterprise.esrichina.com/server/webadaptor">https://agsenterprise.esrichina.com/server/webadaptor</a> -g <a href="https://agsenterprise.esrichina.com:6443/">https://agsenterprise.esrichina.com:6443</a> –u server -p Super123<br>11、server与portal联合和托管<br>12、统一更新server和portal的证书<br>Server<br>导航至 machines -&gt; Machines下机器名，如AGSENTERPRISE.ESRICHINA.COM -&gt; sslcertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 Submit。<br>返回至Machines - 机器名即Machine - AGSENTERPRISE.ESRICHINA.COM页面，点击edit。<br>在Edit Machine页面上，，设置 Web server SSL Certificate的值为步骤2中的证书别名如 agsenterprise以引用上述证书，点击 Save Edits。<br>Portal<br>导航至 security -&gt; sslCertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 import。<br>在 sslCertificate 页面上点击 Update。<br>在 Update Web Server Certificate 页面上，输入步骤2中的证书别名引用上述证书，点击 Update。</p>
+<p>最终在IE等浏览器中将证书安装到计算机的受信任的根证书颁发机构。</p>
+]]></content>
+      <tags>
+        <tag>ArcGIS Enterprise</tag>
+        <tag>ArcGIS Server</tag>
+        <tag>Linux</tag>
+        <tag>ArcGIS Portal</tag>
+        <tag>安装</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS专题图边框花纹制作</title>
     <url>/2016/10/27/41204.html</url>
     <content><![CDATA[<p>之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观<span id="more"></span><br><img src="/images/102719.jpg" alt="ArcGIS专题图边框花纹制作"><br>现在有时间尝试了一下实现过程，如下：<br>原始专题图如下<br><img src="/images/10277.jpg" alt="ArcGIS专题图边框花纹制作"><br>1、在布局视图下，右击数据框属性；<br><img src="/images/10278.jpg" alt="ArcGIS专题图边框花纹制作"><br>2、在Frame选项卡下，按如下红框操作，<br><img src="/images/10279.jpg" alt="ArcGIS专题图边框花纹制作"><br>3、打开符号选择器，点击符号编辑<br><img src="/images/102710.jpg" alt="ArcGIS专题图边框花纹制作"><br>4、点击左下角“+”，添加一个符号图层<br><img src="/images/102711.jpg" alt="ArcGIS专题图边框花纹制作"><br>5、选择Marker Line Symbol<br><img src="/images/102712.jpg" alt="ArcGIS专题图边框花纹制作"><br>6、点击”Marker Line”下的Symbol<br><img src="/images/102713.jpg" alt="ArcGIS专题图边框花纹制作"><br>7、再次点击符号编辑<br><img src="/images/102714.jpg" alt="ArcGIS专题图边框花纹制作"><br>8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）<br><img src="/images/102715.jpg" alt="ArcGIS专题图边框花纹制作"><br>9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距<br><img src="/images/102716.jpg" alt="ArcGIS专题图边框花纹制作"><br>10、然后为了让花纹有一个黑底，将下层的线加粗即可<br><img src="/images/102717.jpg" alt="ArcGIS专题图边框花纹制作"><br>11、然后多次点击确认，得到黑底的花纹效果<br><img src="/images/102718.jpg" alt="ArcGIS专题图边框花纹制作"></p>
@@ -166,6 +166,19 @@
       <tags>
         <tag>GIS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
+    <url>/2017/01/05/1288.html</url>
+    <content><![CDATA[<p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数</p>
+<span id="more"></span>
+<p><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">randnum</span>():</span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res </span><br></pre></td></tr></table></figure>
+<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">increment</span>):</span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<p>PS；注意选择是python脚本，以及代码的缩进。</p>
+<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+]]></content>
   </entry>
   <entry>
     <title>ArcGIS中使用字段计算器创建日期序列字段</title>
@@ -207,19 +220,6 @@
         <tag>多字段</tag>
         <tag>符号渲染</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
-    <url>/2017/01/05/1288.html</url>
-    <content><![CDATA[<p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数</p>
-<span id="more"></span>
-<p><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">randnum</span>():</span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res </span><br></pre></td></tr></table></figure>
-<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">increment</span>):</span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
-<p>PS；注意选择是python脚本，以及代码的缩进。</p>
-<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-]]></content>
   </entry>
   <entry>
     <title>ArcGIS知乎网站用户信息爬取与分析【附代码】</title>
@@ -369,6 +369,16 @@
 ]]></content>
   </entry>
   <entry>
+    <title>button造成的异常跳转问题解决一例</title>
+    <url>/2020/09/18/48870.html</url>
+    <content><![CDATA[<p>今天下午遇到一个比较坑的问题，严格来说是没意识到。<br>情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性<br>问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面<br>原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面<br>解决：click事件添加prevent属性，阻止button默认的提交事件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">&quot;clickTest&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>备注：养成按钮点击事件添加stop或者prevent属性，避免因冒泡或者自身属性的异常问题</p>
+]]></content>
+  </entry>
+  <entry>
     <title>geoserver WFS服务 Filter过滤查询踩坑一个</title>
     <url>/2020/06/28/35327.html</url>
     <content><![CDATA[<p>有时会通过视图方式发布一个图层，然后变相实现接口调用数据。<br>当数据属性中有id字段，并作为过滤字段查询时，使用in会查不出结果，调取geoserver日志，发现id并没有作为字段名称传入，可以采用or查询结果，但是需要在前端重新拼接一下id数组，</p>
@@ -385,6 +395,11 @@
     <url>/2020/05/21/12769.html</url>
     <content><![CDATA[<p>python安装gsconfig库<br>附上python代码</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _*_coding:utf-8_*_</span></span><br><span class="line"><span class="keyword">from</span> geoserver.catalog <span class="keyword">import</span> Catalog</span><br><span class="line"><span class="keyword">from</span> geoserver.support <span class="keyword">import</span> JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 地图发布环境</span></span><br><span class="line">ENVIRONMENT_PUBLISH = <span class="string">&#x27;XXX_local&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 城市名称</span></span><br><span class="line">CITY = <span class="string">&#x27;xixian&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 年</span></span><br><span class="line">YEAR = <span class="number">2020</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 月</span></span><br><span class="line">MONTH = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONFIGURE = &#123;</span><br><span class="line">    <span class="string">&#x27;XXX_local&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;CITY&#x27;</span>: CITY,</span><br><span class="line">        <span class="string">&#x27;GEOSERVER_HOST&#x27;</span>: <span class="string">&#x27;1.1.1.1&#x27;</span>,  <span class="comment"># geoserver地址</span></span><br><span class="line">        <span class="string">&#x27;GEOSERVER_PORT&#x27;</span>: <span class="string">&#x27;8080&#x27;</span>,  <span class="comment"># geoserver端口</span></span><br><span class="line">        <span class="string">&#x27;USERNAME&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,  <span class="comment"># geoserver用户名</span></span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;******&#x27;</span>,  <span class="comment"># geoserver密码</span></span><br><span class="line">        <span class="string">&#x27;DATABASE_MYSQL&#x27;</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cat = Catalog(<span class="string">&#x27;http://%s:%s/geoserver/rest/&#x27;</span> % (</span><br><span class="line">CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_HOST&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_PORT&#x27;</span>]),</span><br><span class="line">              CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;USERNAME&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;PASSWORD&#x27;</span>])</span><br><span class="line">store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;DATABASE_MYSQL&#x27;</span>], CITY)</span><br><span class="line">geom = JDBCVirtualTableGeometry(<span class="string">&#x27;geom&#x27;</span>, <span class="string">&#x27;LineString&#x27;</span>, <span class="string">&#x27;4326&#x27;</span>)</span><br><span class="line">ft_name = <span class="string">&#x27;line_speed_day_%s_%s&#x27;</span> % (YEAR, MONTH)</span><br><span class="line">epsg_code = <span class="string">&#x27;EPSG:4326&#x27;</span></span><br><span class="line">sql = <span class="string">&#x27;&#x27;&#x27;SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM line</span></span><br><span class="line"><span class="string">WHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction&#x27;&#x27;&#x27;</span> % (</span><br><span class="line">    YEAR, MONTH, YEAR, MONTH)</span><br><span class="line"><span class="built_in">print</span> sql</span><br><span class="line">keyColumn = <span class="literal">None</span></span><br><span class="line">parameters = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">jdbc_vt = JDBCVirtualTable(ft_name, sql, <span class="string">&#x27;false&#x27;</span>, geom, keyColumn, parameters)</span><br><span class="line">ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)</span><br><span class="line">layer = cat.get_layer(ft_name)</span><br><span class="line">layer.default_style = cat.get_style(<span class="string">&#x27;stylefile&#x27;</span>)</span><br><span class="line">cat.save(layer)</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>openlayers去除左上角放大缩小【+】【-】控件</title>
+    <url>/2020/01/15/16123.html</url>
+    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 去除地图左上角的放大缩小控件</span></span><br><span class="line">map.<span class="title function_">getControls</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">control</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (control <span class="keyword">instanceof</span> ol.<span class="property">control</span>.<span class="property">Zoom</span>) &#123;</span><br><span class="line">    map.<span class="title function_">removeControl</span>(control)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>python学习小记</title>
@@ -404,11 +419,6 @@
       <tags>
         <tag>杂记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>openlayers去除左上角放大缩小【+】【-】控件</title>
-    <url>/2020/01/15/16123.html</url>
-    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 去除地图左上角的放大缩小控件</span></span><br><span class="line">map.<span class="title function_">getControls</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">control</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (control <span class="keyword">instanceof</span> ol.<span class="property">control</span>.<span class="property">Zoom</span>) &#123;</span><br><span class="line">    map.<span class="title function_">removeControl</span>(control)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>test glsl</title>
@@ -450,16 +460,6 @@
       </tags>
   </entry>
   <entry>
-    <title>button造成的异常跳转问题解决一例</title>
-    <url>/2020/09/18/48870.html</url>
-    <content><![CDATA[<p>今天下午遇到一个比较坑的问题，严格来说是没意识到。<br>情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性<br>问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面<br>原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面<br>解决：click事件添加prevent属性，阻止button默认的提交事件</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">&quot;clickTest&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-<p>备注：养成按钮点击事件添加stop或者prevent属性，避免因冒泡或者自身属性的异常问题</p>
-]]></content>
-  </entry>
-  <entry>
     <title>【20160811】出差工作日志-武汉</title>
     <url>/2016/08/11/33261.html</url>
     <content><![CDATA[<p>2016年8月11日星期四   影像分析<br>研究生期间跟数据打交道中最多的是遥感影像，对一些遥感理论和常用影像都熟悉。但是管理这些复杂数据的时候，显得很混乱，查找、处理和分析数据的效率不高，耗费不少精力，后来才知道<span id="more"></span>ArcGIS中居然有镶嵌数据集这个极佳的影像数据存储方法，影像数据的预处理、镶嵌、融合等都可以实现。所以今天自己也要好好听听关于影像的系统培训。<br>开始来的时候，大概是武汉刚下过几场雨，感觉天气很凉爽，本来想每天下午回到宾馆，休息一会再出去转转大武汉，而之后这两天，气温陡升，终于领略到武汉的火炉烘烤，热浪扑面，全身360度无死角都能感受到，遂打消了，还是不出去折腾了，在宾馆看看奥运会比赛，学点东西，逛逛知乎也是不错的。<br>今天上午讲的是一些影像数据理论，听起来倒也轻松，之后剩下的一小时，是关于数据集的<br>简单创建，老师们都很给力，基本没什么问题，大家都在进步，很欣慰。<br>中午依然是去星湖园餐厅和余经理以及几位高校的教师吃了饭，其中有一位来自地大的刘老师，土地管理方向，目前在做一些土地确权方面的项目，由于知道消息晚了，今天才专程赶过来，我之前也做过土地确权的实习，当时用的是南方CASS软件成图，而现在我们国家统一采使用ArcGIS平台建立数据库，这次过来也是为了项目顺利开展，想过来学习一下。<br>下午依然是上机操作，过程中，貌似也出现不少问题，不少老师的操作都不能顺利进行下去，有些问题我也是第一次碰到，但最后也算解决。之后分析总结了一下，首先大部分可以排除软件的原因，因为有不少老师都成功创建和添加镶嵌数据集，软件安装环境都是一样，所以有几点原因：<br>1、    本来影像是栅格数据，数据量大，可能是拷贝不全，或者文件损害；<br>2、    操作错误，比如误选文件，保存文件名字前有数字等；<br>3、    栅格数据计算量大，也有计算机硬件的问题<br>4、    其他诡异未知的原因。<br>然后下午在这忙前忙后的过程中，就很快地过去了。今天也预示着为期四天的软件操作培训就结束了，余经理后来给老师们都发了调查问卷，期间是广告时间，宣传了一下公司一系列产品。这几天认识了不少来自全国各地的老师，明天是最后一天，期待与他们的交流，倾听他们的所说所感。<br><img src="/images/70.jpg" alt="Jack 2016UC"><br><img src="/images/82.jpg" alt="Jack 2016UC"></p>
@@ -479,6 +479,17 @@
         <tag>Esri</tag>
         <tag>武汉</tag>
         <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【代码分享】海图数据批量导出</title>
+    <url>/2016/08/28/62898.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#from arcpy import env</span></span><br><span class="line"><span class="comment">#from arcpy import interop</span></span><br><span class="line"><span class="comment">#arcpy.ImportToolbox(&quot;Model Functions&quot;)</span></span><br><span class="line">path=<span class="string">r&quot;C:\Users\Esri\Desktop\S57&quot;</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">   filepath=path+<span class="string">&quot;\\&quot;</span>+filename</span><br><span class="line">   output_gdb = <span class="string">&quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;</span>.gd<span class="string">b&quot;</span></span><br><span class="line"><span class="string">   arcpy.QuickImport_interop(filepath,output_gdb)</span></span><br><span class="line"><span class="string">   print filename+&quot;</span>have done<span class="string">&quot;</span></span><br><span class="line"><span class="string">   print &quot;</span>-------------------------------------------------------<span class="string">&quot;</span></span><br><span class="line"><span class="string">print &quot;</span>&lt;----------All are done !!!----------&gt;<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -528,17 +539,6 @@
 <p>好比在中国是一夫一妻，而在非洲某些国家是一夫多妻，都是合法的，<br>但是如果一个非洲小伙娶了一个中国菇凉，而这个非洲小伙却没有告诉中国菇凉：他在自己国家已经有六个老婆了，到时一见面，那么文化冲突就来了。<br>好像比喻得有些~~~~</p>
 <p>不扯了，通过以上几个软件，可能你发现了：他们默认是随电脑开机启动的，而ArcGIS（特别是桌面）基本不会有随机启动的进程。<br>当一个软件和另一个软件中某个进程使用相同的接口，先开机启动的软件进程会独占该接口，<br>之后使用相同接口的其他软件进程会起不来，对应的功能就用不了了，可想而知，软件卸载和系统重装都是徒劳的。</p>
 ]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【代码分享】海图数据批量导出</title>
-    <url>/2016/08/28/62898.html</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#from arcpy import env</span></span><br><span class="line"><span class="comment">#from arcpy import interop</span></span><br><span class="line"><span class="comment">#arcpy.ImportToolbox(&quot;Model Functions&quot;)</span></span><br><span class="line">path=<span class="string">r&quot;C:\Users\Esri\Desktop\S57&quot;</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">   filepath=path+<span class="string">&quot;\\&quot;</span>+filename</span><br><span class="line">   output_gdb = <span class="string">&quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;</span>.gd<span class="string">b&quot;</span></span><br><span class="line"><span class="string">   arcpy.QuickImport_interop(filepath,output_gdb)</span></span><br><span class="line"><span class="string">   print filename+&quot;</span>have done<span class="string">&quot;</span></span><br><span class="line"><span class="string">   print &quot;</span>-------------------------------------------------------<span class="string">&quot;</span></span><br><span class="line"><span class="string">print &quot;</span>&lt;----------All are done !!!----------&gt;<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>GIS</category>
       </categories>
@@ -646,20 +646,6 @@
       </tags>
   </entry>
   <entry>
-    <title>发现一个大坑！！！</title>
-    <url>/2019/06/14/38442.html</url>
-    <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
-<p>**使用排除法</p>
-<p>1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；<br>2、排除代码错误：都在git上同一分支下；<br>3、排除接口数据：都是同一个后台接口环境；</p>
-<p>以上，那么真相只有一个：都是蛋疼惹的事—依赖版本</p>
-<p>**破案过程：<br>由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；<br>然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，<br><img src="/images/19061402.jpg" alt="element-ui 2.9.1"><br>于是回退版本，这个鸟问题终于解决了！<br>目前的解决方案是将将package.json中的</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;^2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>在ArcGIS以弹窗形式挂接图片</title>
     <url>/2016/11/22/869.html</url>
     <content><![CDATA[<p>1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150<br><img src="/images/11221.jpg" alt="ArcGIS 挂接图片"></p>
@@ -746,33 +732,18 @@
       </tags>
   </entry>
   <entry>
-    <title>将点进行排序并编号---ArcGIS脚本工具的制作</title>
-    <url>/2017/06/16/8578.html</url>
-    <content><![CDATA[<p>好久没更新博客了，就好像好久没谈过恋爱，实际压根没谈过（手动滑稽），今天跟别人说，他们都很诧异，想想自己已近中年（联合国的标准），确实不可思议，所以很遗憾呀！<br>有人说到了什么年龄就该做什么事，这样才不负时光，而我感觉在这十年里，时光仿佛静止了一样，自己停滞不前，任风云万变，如今却一声长叹。<br>唉，又发了个牢骚，人到中年是不是这个状态呢？</p>
-<p>切到正题！<br>前段时间，和同事都接到一个问题，是关于点排序的，用户想将一些点，按照空间位置，从左到右，再从上之下排序编号，如下图所示：<br><img src="/images/06161.jpg" alt="样例"></p>
-<span id="more"></span>
-<p>本来是个很简单的事情，主要使用sort工具就可以。<br>但是用户觉得麻烦，<br>因为详细的步骤还是有些繁琐的，步骤如下：<br>1、先要在点要素属性表中添加X和Y两个字段，<br><img src="/images/06162.jpg" alt="添加XY字段"><br>2、然后将这两个作为排序字段，生成排序后的点数据<br><img src="/images/06163.jpg" alt="使用sort工具"><br>3、之后再添加一个排序结果字段，将OBJECTID字段值赋给这个字段<br><img src="/images/06164.jpg" alt="使用sort工具"><br>确实步骤有些多，最后通过脚本工具一键生成排序序号<br>创建脚本工具的过程如下<br>1、首先创建工具箱<br><img src="/images/06165.jpg" alt="工具箱创建"><br>2、添加脚本<br><img src="/images/06166.jpg" alt="添加脚本"><br>3、打开脚本工具创建向导，填写信息<br><img src="/images/06167.jpg" alt="工具向导"><br>4、添加Python脚本<br>这一步要加载已经写好的Python文件（*.py格式）<br>Python脚本的思路主要为：<br>4.1 首先规划好该工具需要多少个参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-<p>4.2 然后使用arcpy.CopyFeatures_management()将原数据复制一下<br>4.3 再使用arcpy.AddXY_management()将复制得到的数据添加XY两个字段<br>4.3 随后判断一下点排序的大体方向<br>这里要注意一下，由于编码问题，当代码有中文字符，需要使用.decode()方法解码中文，不然工具运行时会报错</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br></pre></td></tr></table></figure>
-<p>4.4 准备好输入参数后，使用arcpy.Sort_management()，生成排序后数据<br>4.5 接着用arcpy.AddField_management()添加排序编号字段<br>4.6 最终使用字段计算工具arcpy.CalculateField_management(),将OBJECTID字段值赋给这个字段</p>
-<p>python脚本完成！</p>
-<p>所有代码如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">tempfea = InputFeature+<span class="built_in">str</span>(time.time()).split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>][-<span class="number">5</span>:-<span class="number">1</span>]</span><br><span class="line">	</span><br><span class="line">arcpy.CopyFeatures_management(InputFeature, tempfea)</span><br><span class="line">arcpy.AddXY_management(tempfea)</span><br><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br><span class="line">arcpy.Sort_management(tempfea,OutputFeature,sortfield)</span><br><span class="line">arcpy.AddField_management(OutputFeature,<span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;DOUBLE&#x27;</span>)</span><br><span class="line">arcpy.CalculateField_management(OutputFeature, <span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;!OBJECTID!&#x27;</span>, <span class="string">&quot;PYTHON_9.3&quot;</span>)</span><br></pre></td></tr></table></figure>
+    <title>发现一个大坑！！！</title>
+    <url>/2019/06/14/38442.html</url>
+    <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
+<p>**使用排除法</p>
+<p>1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；<br>2、排除代码错误：都在git上同一分支下；<br>3、排除接口数据：都是同一个后台接口环境；</p>
+<p>以上，那么真相只有一个：都是蛋疼惹的事—依赖版本</p>
+<p>**破案过程：<br>由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；<br>然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，<br><img src="/images/19061402.jpg" alt="element-ui 2.9.1"><br>于是回退版本，这个鸟问题终于解决了！<br>目前的解决方案是将将package.json中的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;^2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
 
-<p>添加完Python脚本文件后，继续往下<br>5、添加界面参数<br>这一步很重要，各个参数属性要逐个填入，分别如下<br>其中Order、Sort_X、Sort_Y属于list参数<br><img src="/images/06168.jpg" alt="InputFeature"><br><img src="/images/06169.jpg" alt="Order"><br><img src="/images/061610.jpg" alt="Sort_X"><br><img src="/images/061611.jpg" alt="Sort_Y"><br><img src="/images/061612.jpg" alt="OutputFeature"></p>
-<p>6、脚本工具创建向导完后，要对上述的三个参数设置list列表<br>6.1 点击脚本工具的属性<br><img src="/images/061613.jpg" alt="工具属性"><br>6.2 切换至验证选项卡(Validation),点击Edit,编辑验证代码，添加如下3行代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">self.params[<span class="number">1</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&#x27;横向&#x27;</span>,<span class="string">&#x27;纵向&#x27;</span>]</span><br><span class="line">self.params[<span class="number">2</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br><span class="line">self.params[<span class="number">3</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br></pre></td></tr></table></figure>
-<p><img src="/images/061614.jpg" alt="编辑验证代码"><br>至此，ArcGIS的点排序编号脚本工具基本完成，为了方便别人使用，可以添加描述等辅助信息<br><img src="/images/061615.jpg" alt="打开工具描述"><br><img src="/images/061616.jpg" alt="编辑工具信息"></p>
-<p>体验一下该工具<br><img src="/images/061617.jpg" alt="工具界面"><br><img src="/images/061618.jpg" alt="工具结果"><br>查看结果编号<br><img src="/images/061619.jpg" alt="结果"></p>
 ]]></content>
-      <tags>
-        <tag>ArcGIS</tag>
-        <tag>GIS</tag>
-        <tag>Python脚本工具</tag>
-        <tag>点排序</tag>
-        <tag>编号</tag>
-      </tags>
   </entry>
   <entry>
     <title>巧用Excel透视表计算每个公交站点的人数</title>
@@ -835,6 +806,35 @@
 <p>4、最后分别得到行政区和街道办边界节点的txt文本<br><img src="/images/19090616.jpg" alt="txt文本"><br><img src="/images/19090612.jpg" alt="行政区边界节点的txt文本"><br><img src="/images/19090615.jpg" alt="街道办边界节点的txt文本"></p>
 <p>本节结束，这里附上完整的代码和txt文本下载链接<br>链接：<a href="https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow">https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow</a><br>提取码：gnkx<br>或者长按以下二维码获取下载<br><img src="/images/19090610.png" alt="二维码获取下载"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>将点进行排序并编号---ArcGIS脚本工具的制作</title>
+    <url>/2017/06/16/8578.html</url>
+    <content><![CDATA[<p>好久没更新博客了，就好像好久没谈过恋爱，实际压根没谈过（手动滑稽），今天跟别人说，他们都很诧异，想想自己已近中年（联合国的标准），确实不可思议，所以很遗憾呀！<br>有人说到了什么年龄就该做什么事，这样才不负时光，而我感觉在这十年里，时光仿佛静止了一样，自己停滞不前，任风云万变，如今却一声长叹。<br>唉，又发了个牢骚，人到中年是不是这个状态呢？</p>
+<p>切到正题！<br>前段时间，和同事都接到一个问题，是关于点排序的，用户想将一些点，按照空间位置，从左到右，再从上之下排序编号，如下图所示：<br><img src="/images/06161.jpg" alt="样例"></p>
+<span id="more"></span>
+<p>本来是个很简单的事情，主要使用sort工具就可以。<br>但是用户觉得麻烦，<br>因为详细的步骤还是有些繁琐的，步骤如下：<br>1、先要在点要素属性表中添加X和Y两个字段，<br><img src="/images/06162.jpg" alt="添加XY字段"><br>2、然后将这两个作为排序字段，生成排序后的点数据<br><img src="/images/06163.jpg" alt="使用sort工具"><br>3、之后再添加一个排序结果字段，将OBJECTID字段值赋给这个字段<br><img src="/images/06164.jpg" alt="使用sort工具"><br>确实步骤有些多，最后通过脚本工具一键生成排序序号<br>创建脚本工具的过程如下<br>1、首先创建工具箱<br><img src="/images/06165.jpg" alt="工具箱创建"><br>2、添加脚本<br><img src="/images/06166.jpg" alt="添加脚本"><br>3、打开脚本工具创建向导，填写信息<br><img src="/images/06167.jpg" alt="工具向导"><br>4、添加Python脚本<br>这一步要加载已经写好的Python文件（*.py格式）<br>Python脚本的思路主要为：<br>4.1 首先规划好该工具需要多少个参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>4.2 然后使用arcpy.CopyFeatures_management()将原数据复制一下<br>4.3 再使用arcpy.AddXY_management()将复制得到的数据添加XY两个字段<br>4.3 随后判断一下点排序的大体方向<br>这里要注意一下，由于编码问题，当代码有中文字符，需要使用.decode()方法解码中文，不然工具运行时会报错</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br></pre></td></tr></table></figure>
+<p>4.4 准备好输入参数后，使用arcpy.Sort_management()，生成排序后数据<br>4.5 接着用arcpy.AddField_management()添加排序编号字段<br>4.6 最终使用字段计算工具arcpy.CalculateField_management(),将OBJECTID字段值赋给这个字段</p>
+<p>python脚本完成！</p>
+<p>所有代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">tempfea = InputFeature+<span class="built_in">str</span>(time.time()).split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>][-<span class="number">5</span>:-<span class="number">1</span>]</span><br><span class="line">	</span><br><span class="line">arcpy.CopyFeatures_management(InputFeature, tempfea)</span><br><span class="line">arcpy.AddXY_management(tempfea)</span><br><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br><span class="line">arcpy.Sort_management(tempfea,OutputFeature,sortfield)</span><br><span class="line">arcpy.AddField_management(OutputFeature,<span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;DOUBLE&#x27;</span>)</span><br><span class="line">arcpy.CalculateField_management(OutputFeature, <span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;!OBJECTID!&#x27;</span>, <span class="string">&quot;PYTHON_9.3&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>添加完Python脚本文件后，继续往下<br>5、添加界面参数<br>这一步很重要，各个参数属性要逐个填入，分别如下<br>其中Order、Sort_X、Sort_Y属于list参数<br><img src="/images/06168.jpg" alt="InputFeature"><br><img src="/images/06169.jpg" alt="Order"><br><img src="/images/061610.jpg" alt="Sort_X"><br><img src="/images/061611.jpg" alt="Sort_Y"><br><img src="/images/061612.jpg" alt="OutputFeature"></p>
+<p>6、脚本工具创建向导完后，要对上述的三个参数设置list列表<br>6.1 点击脚本工具的属性<br><img src="/images/061613.jpg" alt="工具属性"><br>6.2 切换至验证选项卡(Validation),点击Edit,编辑验证代码，添加如下3行代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">self.params[<span class="number">1</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&#x27;横向&#x27;</span>,<span class="string">&#x27;纵向&#x27;</span>]</span><br><span class="line">self.params[<span class="number">2</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br><span class="line">self.params[<span class="number">3</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br></pre></td></tr></table></figure>
+<p><img src="/images/061614.jpg" alt="编辑验证代码"><br>至此，ArcGIS的点排序编号脚本工具基本完成，为了方便别人使用，可以添加描述等辅助信息<br><img src="/images/061615.jpg" alt="打开工具描述"><br><img src="/images/061616.jpg" alt="编辑工具信息"></p>
+<p>体验一下该工具<br><img src="/images/061617.jpg" alt="工具界面"><br><img src="/images/061618.jpg" alt="工具结果"><br>查看结果编号<br><img src="/images/061619.jpg" alt="结果"></p>
+]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>GIS</tag>
+        <tag>Python脚本工具</tag>
+        <tag>点排序</tag>
+        <tag>编号</tag>
+      </tags>
   </entry>
   <entry>
     <title>手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）</title>
@@ -1111,8 +1111,54 @@
   <entry>
     <title>about</title>
     <url>/about/index.html</url>
-    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#x6a;&#97;&#109;&#101;&#115;&#x72;&#x6f;&#x63;&#107;&#54;&#54;&#54;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x6a;&#97;&#109;&#101;&#115;&#x72;&#x6f;&#x63;&#107;&#54;&#54;&#54;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
+    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#97;&#109;&#101;&#115;&#x72;&#x6f;&#x63;&#107;&#54;&#x36;&#x36;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#106;&#97;&#109;&#101;&#115;&#x72;&#x6f;&#x63;&#107;&#54;&#x36;&#x36;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>ArcGIS知乎每天站内搜索统计</title>
+    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E6%AF%8F%E5%A4%A9%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E7%BB%9F%E8%AE%A1.html</url>
+    <content><![CDATA[<span id="more"></span>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ArcGIS知乎每天站内搜索统计</title>
+    <!-- 加载c3.css文件-->
+    <link href="http://c3js.org/css/c3-b03125fa.css" rel="stylesheet" type="text/css">
+
+    <!-- 加载d3.js和c3.js -->
+    <script src="http://c3js.org/js/d3-3.5.6.min-77adef17.js" charset="utf-8"></script>
+    <script src="http://c3js.org/js/c3.min-4c5bef8f.js"></script>
+	<SCRIPT language=JavaScript> function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
+</head>
+<body>
+
+<!--准备绑定图表的元素-->
+<div id="chart"></div>
+</body>
+<script>
+var chart = c3.generate({
+    data: {
+        x: '日期',
+//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+        columns: [
+['日期', '2017-03-08', '2017-03-09', '2017-03-10', '2017-03-11', '2017-03-12', '2017-03-13', '2017-03-14', '2017-03-15', '2017-03-16', '2017-03-17', '2017-03-18', '2017-03-19', '2017-03-20', '2017-03-21', '2017-03-22', '2017-03-23', '2017-03-24', '2017-03-25', '2017-03-26', '2017-03-27', '2017-03-28', '2017-03-29', '2017-03-30', '2017-03-31', '2017-04-01', '2017-04-02', '2017-04-03', '2017-04-04', '2017-04-05', '2017-04-06', '2017-04-07', '2017-04-08', '2017-04-09', '2017-04-10', '2017-04-11', '2017-04-12', '2017-04-13', '2017-04-14', '2017-04-15', '2017-04-16', '2017-04-17', '2017-04-18', '2017-04-19', '2017-04-20', '2017-04-21', '2017-04-22', '2017-04-23', '2017-04-24', '2017-04-25', '2017-04-26', '2017-04-27', '2017-04-28', '2017-04-29', '2017-04-30', '2017-05-01', '2017-05-02', '2017-05-03', '2017-05-04', '2017-05-05', '2017-05-06', '2017-05-07', '2017-05-08', '2017-05-09', '2017-05-10', '2017-05-11', '2017-05-12', '2017-05-13', '2017-05-14', '2017-05-15', '2017-05-16', '2017-05-17', '2017-05-18', '2017-05-19', '2017-05-20', '2017-05-21', '2017-05-22', '2017-05-23', '2017-05-24', '2017-05-25', '2017-05-26', '2017-05-27', '2017-05-28', '2017-05-29', '2017-05-30', '2017-05-31', '2017-06-01', '2017-06-02', '2017-06-03', '2017-06-04', '2017-06-05', '2017-06-06', '2017-06-07', '2017-06-08', '2017-06-09', '2017-06-10', '2017-06-11', '2017-06-12', '2017-06-13', '2017-06-14', '2017-06-15', '2017-06-16', '2017-06-17', '2017-06-18', '2017-06-19', '2017-06-20', '2017-06-21', '2017-06-22', '2017-06-23', '2017-06-24', '2017-06-25', '2017-06-26', '2017-06-27', '2017-06-28', '2017-06-29', '2017-06-30', '2017-07-01', '2017-07-02', '2017-07-03', '2017-07-04', '2017-07-05', '2017-07-06', '2017-07-07', '2017-07-08', '2017-07-09', '2017-07-10', '2017-07-11', '2017-07-12', '2017-07-13', '2017-07-14', '2017-07-15', '2017-07-16', '2017-07-17', '2017-07-18', '2017-07-19', '2017-07-20', '2017-07-21', '2017-07-22', '2017-07-23', '2017-07-24', '2017-07-25', '2017-07-26', '2017-07-27', '2017-07-28', '2017-07-29', '2017-07-30', '2017-07-31', '2017-08-01', '2017-08-02', '2017-08-03', '2017-08-04', '2017-08-05', '2017-08-06', '2017-08-07', '2017-08-08', '2017-08-09', '2017-08-10', '2017-08-11', '2017-08-12', '2017-08-13', '2017-08-14', '2017-08-15', '2017-08-16', '2017-08-17', '2017-08-18', '2017-08-19', '2017-08-20', '2017-08-21', '2017-08-22', '2017-08-23', '2017-08-24', '2017-08-25', '2017-08-26', '2017-08-27', '2017-08-28', '2017-08-29', '2017-08-30', '2017-08-31', '2017-09-01', '2017-09-02', '2017-09-03', '2017-09-04', '2017-09-05', '2017-09-06', '2017-09-07', '2017-09-08', '2017-09-09', '2017-09-10', '2017-09-11', '2017-09-12', '2017-09-13', '2017-09-14', '2017-09-15', '2017-09-16', '2017-09-17', '2017-09-18', '2017-09-19', '2017-09-20', '2017-09-21', '2017-09-22', '2017-09-23', '2017-09-24', '2017-09-25', '2017-09-26'],
+//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+['次数', '16', '14', '15', '12', '3', '21', '85', '40', '58', '67', '10', '27', '104', '216', '276', '235', '170', '116', '70', '415', '246', '255', '207', '203', '196', '52', '32', '110', '190', '190', '221', '50', '59', '191', '109', '207', '185', '215', '116', '95', '157', '1', '257', '271', '252', '96', '127', '265', '265', '252', '139', '171', '103', '59', '35', '192', '226', '259', '197', '91', '60', '144', '178', '194', '192', '105', '40', '92', '129', '179', '153', '133', '174', '57', '166', '308', '235', '167', '113', '178', '207', '35', '42', '51', '196', '155', '242', '139', '63', '152', '228', '251', '208', '195', '146', '59', '242', '251', '313', '218', '144', '93', '49', '243', '226', '230', '123', '160', '55', '98', '238', '226', '103', '181', '165', '98', '59', '205', '226', '235', '199', '185', '79', '86', '268', '302', '235', '218', '291', '126', '70', '419', '396', '375', '311', '266', '140', '63', '205', '302', '454', '261', '273', '117', '73', '230', '231', '290', '351', '226', '110', '56', '240', '340', '432', '488', '290', '125', '130', '379', '326', '264', '308', '325', '79', '99', '325', '306', '314', '233', '188', '82', '78', '179', '312', '244', '341', '225', '121', '120', '203', '386', '275', '325', '271', '83', '93', '218', '236', '324', '191', '226', '103', '62', '367', '476', '199', '239', '223', '67', '68', '214', '240'],
+        ]
+    },
+    axis: {
+        x: {
+            type: 'timeseries',
+            tick: {
+				format: '%Y-%m-%d',
+				//rotate: 75,
+            }
+        }
+    }
+});
+</script>
+
+</html>]]></content>
   </entry>
   <entry>
     <title>ArcGIS知乎站内搜索关键词统计Top50</title>
@@ -1157,52 +1203,6 @@ var chart = c3.generate({
         x: {
             type: 'category',
             
-        }
-    }
-});
-</script>
-
-</html>]]></content>
-  </entry>
-  <entry>
-    <title>ArcGIS知乎每天站内搜索统计</title>
-    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E6%AF%8F%E5%A4%A9%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E7%BB%9F%E8%AE%A1.html</url>
-    <content><![CDATA[<span id="more"></span>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>ArcGIS知乎每天站内搜索统计</title>
-    <!-- 加载c3.css文件-->
-    <link href="http://c3js.org/css/c3-b03125fa.css" rel="stylesheet" type="text/css">
-
-    <!-- 加载d3.js和c3.js -->
-    <script src="http://c3js.org/js/d3-3.5.6.min-77adef17.js" charset="utf-8"></script>
-    <script src="http://c3js.org/js/c3.min-4c5bef8f.js"></script>
-	<SCRIPT language=JavaScript> function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
-</head>
-<body>
-
-<!--准备绑定图表的元素-->
-<div id="chart"></div>
-</body>
-<script>
-var chart = c3.generate({
-    data: {
-        x: '日期',
-//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-        columns: [
-['日期', '2017-03-08', '2017-03-09', '2017-03-10', '2017-03-11', '2017-03-12', '2017-03-13', '2017-03-14', '2017-03-15', '2017-03-16', '2017-03-17', '2017-03-18', '2017-03-19', '2017-03-20', '2017-03-21', '2017-03-22', '2017-03-23', '2017-03-24', '2017-03-25', '2017-03-26', '2017-03-27', '2017-03-28', '2017-03-29', '2017-03-30', '2017-03-31', '2017-04-01', '2017-04-02', '2017-04-03', '2017-04-04', '2017-04-05', '2017-04-06', '2017-04-07', '2017-04-08', '2017-04-09', '2017-04-10', '2017-04-11', '2017-04-12', '2017-04-13', '2017-04-14', '2017-04-15', '2017-04-16', '2017-04-17', '2017-04-18', '2017-04-19', '2017-04-20', '2017-04-21', '2017-04-22', '2017-04-23', '2017-04-24', '2017-04-25', '2017-04-26', '2017-04-27', '2017-04-28', '2017-04-29', '2017-04-30', '2017-05-01', '2017-05-02', '2017-05-03', '2017-05-04', '2017-05-05', '2017-05-06', '2017-05-07', '2017-05-08', '2017-05-09', '2017-05-10', '2017-05-11', '2017-05-12', '2017-05-13', '2017-05-14', '2017-05-15', '2017-05-16', '2017-05-17', '2017-05-18', '2017-05-19', '2017-05-20', '2017-05-21', '2017-05-22', '2017-05-23', '2017-05-24', '2017-05-25', '2017-05-26', '2017-05-27', '2017-05-28', '2017-05-29', '2017-05-30', '2017-05-31', '2017-06-01', '2017-06-02', '2017-06-03', '2017-06-04', '2017-06-05', '2017-06-06', '2017-06-07', '2017-06-08', '2017-06-09', '2017-06-10', '2017-06-11', '2017-06-12', '2017-06-13', '2017-06-14', '2017-06-15', '2017-06-16', '2017-06-17', '2017-06-18', '2017-06-19', '2017-06-20', '2017-06-21', '2017-06-22', '2017-06-23', '2017-06-24', '2017-06-25', '2017-06-26', '2017-06-27', '2017-06-28', '2017-06-29', '2017-06-30', '2017-07-01', '2017-07-02', '2017-07-03', '2017-07-04', '2017-07-05', '2017-07-06', '2017-07-07', '2017-07-08', '2017-07-09', '2017-07-10', '2017-07-11', '2017-07-12', '2017-07-13', '2017-07-14', '2017-07-15', '2017-07-16', '2017-07-17', '2017-07-18', '2017-07-19', '2017-07-20', '2017-07-21', '2017-07-22', '2017-07-23', '2017-07-24', '2017-07-25', '2017-07-26', '2017-07-27', '2017-07-28', '2017-07-29', '2017-07-30', '2017-07-31', '2017-08-01', '2017-08-02', '2017-08-03', '2017-08-04', '2017-08-05', '2017-08-06', '2017-08-07', '2017-08-08', '2017-08-09', '2017-08-10', '2017-08-11', '2017-08-12', '2017-08-13', '2017-08-14', '2017-08-15', '2017-08-16', '2017-08-17', '2017-08-18', '2017-08-19', '2017-08-20', '2017-08-21', '2017-08-22', '2017-08-23', '2017-08-24', '2017-08-25', '2017-08-26', '2017-08-27', '2017-08-28', '2017-08-29', '2017-08-30', '2017-08-31', '2017-09-01', '2017-09-02', '2017-09-03', '2017-09-04', '2017-09-05', '2017-09-06', '2017-09-07', '2017-09-08', '2017-09-09', '2017-09-10', '2017-09-11', '2017-09-12', '2017-09-13', '2017-09-14', '2017-09-15', '2017-09-16', '2017-09-17', '2017-09-18', '2017-09-19', '2017-09-20', '2017-09-21', '2017-09-22', '2017-09-23', '2017-09-24', '2017-09-25', '2017-09-26'],
-//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-['次数', '16', '14', '15', '12', '3', '21', '85', '40', '58', '67', '10', '27', '104', '216', '276', '235', '170', '116', '70', '415', '246', '255', '207', '203', '196', '52', '32', '110', '190', '190', '221', '50', '59', '191', '109', '207', '185', '215', '116', '95', '157', '1', '257', '271', '252', '96', '127', '265', '265', '252', '139', '171', '103', '59', '35', '192', '226', '259', '197', '91', '60', '144', '178', '194', '192', '105', '40', '92', '129', '179', '153', '133', '174', '57', '166', '308', '235', '167', '113', '178', '207', '35', '42', '51', '196', '155', '242', '139', '63', '152', '228', '251', '208', '195', '146', '59', '242', '251', '313', '218', '144', '93', '49', '243', '226', '230', '123', '160', '55', '98', '238', '226', '103', '181', '165', '98', '59', '205', '226', '235', '199', '185', '79', '86', '268', '302', '235', '218', '291', '126', '70', '419', '396', '375', '311', '266', '140', '63', '205', '302', '454', '261', '273', '117', '73', '230', '231', '290', '351', '226', '110', '56', '240', '340', '432', '488', '290', '125', '130', '379', '326', '264', '308', '325', '79', '99', '325', '306', '314', '233', '188', '82', '78', '179', '312', '244', '341', '225', '121', '120', '203', '386', '275', '325', '271', '83', '93', '218', '236', '324', '191', '226', '103', '62', '367', '476', '199', '239', '223', '67', '68', '214', '240'],
-        ]
-    },
-    axis: {
-        x: {
-            type: 'timeseries',
-            tick: {
-				format: '%Y-%m-%d',
-				//rotate: 75,
-            }
         }
     }
 });
