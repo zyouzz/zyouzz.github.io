@@ -395,6 +395,9 @@
     <url>/2023/05/23/54690.html</url>
     <content><![CDATA[<p>WebGL 提供了一种很方便的机制，即缓冲区对象(buffer obiect)，它可以一次性地向着色器传人多个顶点的数据。<br>缓冲区对象是 WebGL 系统中的一块内存区域，我们可以一次性地向缓冲区对象中填充大量的顶点数据，然后将这些数据保存在其中，供顶点着色器使用。</p>
 ]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
   </entry>
   <entry>
     <title>geoserver多个图层要素相同的问题</title>
@@ -1101,6 +1104,17 @@
     <url>/2019/01/28/42280.html</url>
     <content><![CDATA[<p>1、<br>发现geoserver的一个BUG。使用mysql中的数据发布图层服务，能正常发布和显示加载，但是地图单击后，无法获得属性信息，报未知错误，百思不得其解，排查了好几天，使用排除法，原来是数据库表中的一个字段使用的是tinyint类型，内容是数字，貌似这样geoserver无法处理。。。<br>2、<br>早晨自己写了一个福，扫出来‘敬业福’。自己就是自己最大的福星。<br>3、<br>过去就过去了，回不到过去。就算旧友重拾，也不知道怎么去维护下去。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>缓冲区对象工作流程</title>
+    <url>/2023/05/25/47570.html</url>
+    <content><![CDATA[<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、创建缓冲区对象（gl.createBuffer()）;</span><br><span class="line"><span class="number">2</span>、绑定缓冲区对象（gl.bindBuffer()）;</span><br><span class="line"><span class="number">3</span>、将数据写入缓冲区对象（gl.bufferData()）;</span><br><span class="line"><span class="number">4</span>、将缓冲区对象分配给一个<span class="keyword">attribute</span>变量（gl.vertexAttribPointer()）;</span><br><span class="line"><span class="number">5</span>、开启<span class="keyword">attribute</span>变量（gl.enableVertexAttribArray()）</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/buffer_object20230525.png" alt="缓冲区对象工作流程"></p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
   </entry>
   <entry>
     <title>about</title>
