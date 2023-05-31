@@ -1085,7 +1085,12 @@
   <entry>
     <title>类型化数组</title>
     <url>/2023/05/26/33653.html</url>
-    <content><![CDATA[<p>为了绘制三维图形，WebGL通常需要同时处理大量相同类型的数据，例如顶点的坐标和颜色数据。为了优化性能，WebGL为每种基本数据类型引入了一种特殊的数组（类型化数组）。浏览器事先知道数组中的数据类型，所以处理起来也更加有效率。<br><img src="/images/arrays.jpg" alt="类型化数组"></p>
+    <content><![CDATA[<p>为了绘制三维图形，WebGL通常需要同时处理大量相同类型的数据，例如顶点的坐标和颜色数据。为了优化性能，WebGL为每种基本数据类型引入了一种特殊的数组（类型化数组）。浏览器事先知道数组中的数据类型，所以处理起来也更加有效率。<br><img src="/images/arrays.jpg" alt="类型化数组"><br><img src="/images/array_methods_202305311.jpg" alt="类型化数组方法"><br>注意：</p>
+<ol>
+<li>类型化数组不支持push,pop方法；</li>
+<li>类型化数组初始化唯一方法是new,如 new Float32Array([0.0, 0.5, -0.5, -0.5, 0.5, -0.5])；</li>
+<li>另外，可以通过定义长度初始化一个数组 new Float32Array(4)</li>
+</ol>
 ]]></content>
       <tags>
         <tag>WebGL</tag>
