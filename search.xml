@@ -16,15 +16,21 @@
       </tags>
   </entry>
   <entry>
-    <title>A Star算法实现最短路径查找【python】</title>
-    <url>/2020/12/07/55752.html</url>
-    <content><![CDATA[<p>这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。<br>这里先起个头。。。<br>先放个最终实现效果图<br><img src="/images/2020120701.jpg" alt="效果图"><br>==========</p>
-]]></content>
-  </entry>
-  <entry>
     <title>2019全2020初</title>
     <url>/2020/01/10/47817.html</url>
     <content><![CDATA[<p>今年真是忙的不行呀，暂且开个头。。。<br>呆在贵阳一个多月，一个人住着100多平的房子，每天单调的生活，明天飞回北京，想念想见的人，想见却不能相见的人（时间依然不能让我忘却，所以给自己3年的时间），想念北京的暖气。。。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>2020年？？</title>
+    <url>/2020/05/09/14675.html</url>
+    <content><![CDATA[<p>2020年，什么时候该开始？什么时候又该翻篇呢？</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>A Star算法实现最短路径查找【python】</title>
+    <url>/2020/12/07/55752.html</url>
+    <content><![CDATA[<p>这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。<br>这里先起个头。。。<br>先放个最终实现效果图<br><img src="/images/2020120701.jpg" alt="效果图"><br>==========</p>
 ]]></content>
   </entry>
   <entry>
@@ -91,12 +97,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2020年？？</title>
-    <url>/2020/05/09/14675.html</url>
-    <content><![CDATA[<p>2020年，什么时候该开始？什么时候又该翻篇呢？</p>
-]]></content>
-  </entry>
-  <entry>
     <title>ArcGIS ModelBuilder的工作空间（workspace)设置问题</title>
     <url>/2016/11/18/56001.html</url>
     <content><![CDATA[<p>今天和同事调试了一个用户发来的ModelBuilder，咋一看,模型做得还好呀，每个工具的调用和参数设置都很有逻辑<br><img src="/images/111801.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是一点击运行后，<span id="more"></span>在第一步模型就运行失败了<br><img src="/images/111802.jpg" alt="ArcGIS ModelBuilder,workspace"><br>原来用户使用的是相对引用路径，但是路径中存在gdb，而工作空间中默认也是在gdb下，所以一个路径中同时出现两个gdb，数据存不了，当然无法运行了。<br>由于模型中用户都是这么写的，有很多处，所以只有修改模型的环境参数了，先打开模型属性<br><img src="/images/111803.jpg" alt="ArcGIS ModelBuilder,workspace"><br>点击环境选项卡，勾选Workspace选项，点击下面的Values..<br><img src="/images/111804.jpg" alt="ArcGIS ModelBuilder,workspace"><br>设置Scratch Workspace路径，<br><img src="/images/111805.jpg" alt="ArcGIS ModelBuilder,workspace"><br>确定后点击运行，成功！<br><img src="/images/111806.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是高兴太早，一般使用模型很少会点开编辑界面运行，会直接双击，像GP工具使用，里面都是黑箱了<br>双击工具，点击OK<br><img src="/images/111807.jpg" alt="ArcGIS ModelBuilder,workspace"><br>果然高兴太早，在最后一步出现问题，又同时一个路径中出现两个gdb<br><img src="/images/111808.jpg" alt="ArcGIS ModelBuilder,workspace"><br>这时心里想，不对呀，工作空间（workspace)的路径不是已经改了么，怎么不管用呢<br>和同事琢磨半天，最后发现双击模型工具后，点击界面下方的环境设置<br><img src="/images/111809.jpg" alt="ArcGIS ModelBuilder,workspace"><br>发现路径还是原先的默认带有gdb的路径，<br><img src="/images/111810.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是为什么前面的几步都运行成功了呢？遂再次陷入沉思<br>后才明白，我们把输出结果路径作为模型工具的界面参数，<br><img src="/images/111811.jpg" alt="ArcGIS ModelBuilder,workspace"><br>造成了前面会使用我们修改的模型环境路径，输出结果路径去依然使用该模型工具界面的环境参数路径。<br>于是将结果路径在模型编辑中去掉作为界面参数的设置<br><img src="/images/111812.jpg" alt="ArcGIS ModelBuilder,workspace"><br>再双击模型，完美运行！<br><img src="/images/111813.jpg" alt="ArcGIS ModelBuilder,workspace"><br><img src="/images/111814.jpg" alt="ArcGIS ModelBuilder,workspace"><br>这里不得不提一下ArcGIS ModelBuilder的工作空间（workspace)设置问题，模型属性的环境变量参数设置在模型使用界面中无效，造成后续的参数再次调整，有些不太方便，但不是大的问题。</p>
@@ -129,20 +129,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS专题图边框花纹制作</title>
-    <url>/2016/10/27/41204.html</url>
-    <content><![CDATA[<p>之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观<span id="more"></span><br><img src="/images/102719.jpg" alt="ArcGIS专题图边框花纹制作"><br>现在有时间尝试了一下实现过程，如下：<br>原始专题图如下<br><img src="/images/10277.jpg" alt="ArcGIS专题图边框花纹制作"><br>1、在布局视图下，右击数据框属性；<br><img src="/images/10278.jpg" alt="ArcGIS专题图边框花纹制作"><br>2、在Frame选项卡下，按如下红框操作，<br><img src="/images/10279.jpg" alt="ArcGIS专题图边框花纹制作"><br>3、打开符号选择器，点击符号编辑<br><img src="/images/102710.jpg" alt="ArcGIS专题图边框花纹制作"><br>4、点击左下角“+”，添加一个符号图层<br><img src="/images/102711.jpg" alt="ArcGIS专题图边框花纹制作"><br>5、选择Marker Line Symbol<br><img src="/images/102712.jpg" alt="ArcGIS专题图边框花纹制作"><br>6、点击”Marker Line”下的Symbol<br><img src="/images/102713.jpg" alt="ArcGIS专题图边框花纹制作"><br>7、再次点击符号编辑<br><img src="/images/102714.jpg" alt="ArcGIS专题图边框花纹制作"><br>8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）<br><img src="/images/102715.jpg" alt="ArcGIS专题图边框花纹制作"><br>9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距<br><img src="/images/102716.jpg" alt="ArcGIS专题图边框花纹制作"><br>10、然后为了让花纹有一个黑底，将下层的线加粗即可<br><img src="/images/102717.jpg" alt="ArcGIS专题图边框花纹制作"><br>11、然后多次点击确认，得到黑底的花纹效果<br><img src="/images/102718.jpg" alt="ArcGIS专题图边框花纹制作"></p>
-<p>实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果</p>
-<p>PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。</p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS 全家桶（ArcGIS Enterprise）---Linux安装笔记</title>
     <url>/2017/06/19/19484.html</url>
     <content><![CDATA[<p><font size=4><b>安装环境</b></font><br>软件：<br>操作系统—Redhat 7.2 64位<br>安装版本—ArcGIS 10.5<br>硬件：<br>VMware Pro 12.0虚拟环境<br>双核CPU<br>4G内存<br>PS：强烈建议高于这个配置</p>
@@ -168,17 +154,18 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
-    <url>/2017/01/05/1288.html</url>
-    <content><![CDATA[<p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数</p>
-<span id="more"></span>
-<p><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">randnum</span>():</span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res </span><br></pre></td></tr></table></figure>
-<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">increment</span>):</span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
-<p>PS；注意选择是python脚本，以及代码的缩进。</p>
-<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+    <title>ArcGIS专题图边框花纹制作</title>
+    <url>/2016/10/27/41204.html</url>
+    <content><![CDATA[<p>之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观<span id="more"></span><br><img src="/images/102719.jpg" alt="ArcGIS专题图边框花纹制作"><br>现在有时间尝试了一下实现过程，如下：<br>原始专题图如下<br><img src="/images/10277.jpg" alt="ArcGIS专题图边框花纹制作"><br>1、在布局视图下，右击数据框属性；<br><img src="/images/10278.jpg" alt="ArcGIS专题图边框花纹制作"><br>2、在Frame选项卡下，按如下红框操作，<br><img src="/images/10279.jpg" alt="ArcGIS专题图边框花纹制作"><br>3、打开符号选择器，点击符号编辑<br><img src="/images/102710.jpg" alt="ArcGIS专题图边框花纹制作"><br>4、点击左下角“+”，添加一个符号图层<br><img src="/images/102711.jpg" alt="ArcGIS专题图边框花纹制作"><br>5、选择Marker Line Symbol<br><img src="/images/102712.jpg" alt="ArcGIS专题图边框花纹制作"><br>6、点击”Marker Line”下的Symbol<br><img src="/images/102713.jpg" alt="ArcGIS专题图边框花纹制作"><br>7、再次点击符号编辑<br><img src="/images/102714.jpg" alt="ArcGIS专题图边框花纹制作"><br>8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）<br><img src="/images/102715.jpg" alt="ArcGIS专题图边框花纹制作"><br>9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距<br><img src="/images/102716.jpg" alt="ArcGIS专题图边框花纹制作"><br>10、然后为了让花纹有一个黑底，将下层的线加粗即可<br><img src="/images/102717.jpg" alt="ArcGIS专题图边框花纹制作"><br>11、然后多次点击确认，得到黑底的花纹效果<br><img src="/images/102718.jpg" alt="ArcGIS专题图边框花纹制作"></p>
+<p>实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果</p>
+<p>PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。</p>
 ]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
   </entry>
   <entry>
     <title>ArcGIS中使用字段计算器创建日期序列字段</title>
@@ -240,6 +227,19 @@
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
+    <url>/2017/01/05/1288.html</url>
+    <content><![CDATA[<p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数</p>
+<span id="more"></span>
+<p><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">randnum</span>():</span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res </span><br></pre></td></tr></table></figure>
+<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">increment</span>):</span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<p>PS；注意选择是python脚本，以及代码的缩进。</p>
+<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>ArcMap用起来卡的，请进</title>
     <url>/2018/03/26/55332.html</url>
     <content><![CDATA[<p>近期，一些ArcGIS桌面用户反馈说将低版本升级至10.5或者10.6后，在打开mxd工程文档和数据或者处理数据过程中, 感觉速度比以前慢了，有些卡。</p>
@@ -252,15 +252,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Esri技术认证--桌面高级版 考查比重</title>
-    <url>/2017/11/08/62317.html</url>
-    <content><![CDATA[<p>The following list will familiarize candidates with the exam sections to help guide exam preparation. The relative weight of each section is provided to illustrate the approximate size of each section. Candidates should review this list and assess their knowledge of each skill. Specific preparation resources are available to assist with refreshing in areas where any knowledge gaps are found.</p>
-<p>Data Storage — 21% 数据存储—21%<br>•    Given requirements for a specific project, determine how to design a geodatabase<br>给定一个项目要求，如何设计地理数据库</p>
-<span id="more"></span>
-<p>•    Select appropriate data formats for an intended use<br>对于特定的需求，选择合适的数据格式<br>•    Given a task, determine the data, settings, and parameters for creating a complex data set<br>给定一个任务，创建数据时确定数据、设置和参数<br>•    Given a task, determine the data, settings, and parameters for creating an address locator<br>给定一个任务，创建地址定位器时确定数据、设置和参数<br>•    Given a scenario, determine how to synchronize replicated data<br>给定一个场景，如何决定同步复制数据<br>Managing Data — 26% 数据管理—26%<br>•    Given a scenario, convert and aggregate data to an appropriate format<br>给定一个场景，将数据转换和聚合为合适的格式<br>•    Given a task, determine the necessary schema changes so that the data can support a particular operation<br>给定一个任务，确定必要的改变计划，这样数据能够支持特定操作<br>•    Given datasets that do not align, determine the best workflow to resolve the issue<br>给定的数据集是不统一的，确定解决问题的最佳工作流<br>•    Given a project, determine how to manage coordinate systems<br>给定一个项目，确定如何管理坐标系统<br>•    Given a scenario, determine the method to create a surface dataset<br>给定一个场景，确定创建表面数据集的方法<br>•    Given a scenario, determine how to automate data management<br>给定一个场景，确定如何实现数据自动化管理<br>Visualizing and Sharing Data — 21%<br>数据可视化与共享—21%<br>•    Given a scenario, use advanced cartographic techniques to visualize content across the ArcGIS platform<br>给定一个场景，使用ArcGIS平台先进的制图技术去可视化内容<br>•    Given a scenario, determine how to optimize rendering of maps across the platform<br>给定一个场景，确定在平台上如何优化地图的渲染<br>•    Given a scenario, determine how to create and render scenes<br>给定一个场景，确定如何创建和渲染场景<br>•    Identify procedures to create and publish layers, maps, and apps for a given task<br>给定一个任务，确定创建和发布图层、地图和应用的步骤<br>•    Given a scenario, determine the most effective process for sharing content<br>给定一个场景，确定分享内容最有效的处理<br>•    Given a scenario, determine how to automate visualization and sharing using ArcPy in ArcGIS Desktop<br>给定一个场景，使用ArcGIS桌面中的ArcPy确定如何自动可视化与共享<br>Analysis and Geoprocessing — 31%<br>分析与处理—31%<br>•    Determine how to create and edit a Python script to automate a simple repetitive process in an ArcGIS workflow<br>确定如何创建和编辑Python脚本，在ArcGIS工作流中实现简单的自动化批量处理<br>•    Determine how to create and edit a model in ModelBuilder to automate a complex workflow in ArcGIS for a given task<br>给定一个任务，确定在ModelBuilder中如何创建和编辑模型，以实现复杂的ArcGIS工作流<br>•    Given a failed workflow, determine the cause of the failure<br>给定一个失败的工作流，判定失败的原因<br>•    Given user requirements, determine an appropriate method for sharing a geoprocessing model, script, package, toolbox, etc.<br>给定用户的需求，确定分享地理处理模型、脚本、包等合适的方法<br>•    Determine how to customize the user interface to perform a task<br>对于一个任务，如何自定义用户界面<br>•    Determine how to author tasks in ArcGIS Pro<br>确定如何在ArcGIS Pro中发起任务<br>•    Given a scenario that requires an analysis, determine the workflow, data, tools, settings, and parameters to perform the analysis<br>给定一个需要分析的场景，确定分析操作中的工作流、数据、工具、设置以及参数</p>
-]]></content>
-  </entry>
-  <entry>
     <title>JS的一些骚操作</title>
     <url>/2021/10/29/8679.html</url>
     <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 避免不检查object.family、object.family.brother造成的TypeError</span></span><br><span class="line"><span class="keyword">const</span> ageOfBrother = object?.<span class="property">family</span>?.<span class="property">brother</span>?.<span class="property">age</span>;</span><br></pre></td></tr></table></figure>]]></content>
@@ -268,6 +259,15 @@
         <tag>JavaScript</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Esri技术认证--桌面高级版 考查比重</title>
+    <url>/2017/11/08/62317.html</url>
+    <content><![CDATA[<p>The following list will familiarize candidates with the exam sections to help guide exam preparation. The relative weight of each section is provided to illustrate the approximate size of each section. Candidates should review this list and assess their knowledge of each skill. Specific preparation resources are available to assist with refreshing in areas where any knowledge gaps are found.</p>
+<p>Data Storage — 21% 数据存储—21%<br>•    Given requirements for a specific project, determine how to design a geodatabase<br>给定一个项目要求，如何设计地理数据库</p>
+<span id="more"></span>
+<p>•    Select appropriate data formats for an intended use<br>对于特定的需求，选择合适的数据格式<br>•    Given a task, determine the data, settings, and parameters for creating a complex data set<br>给定一个任务，创建数据时确定数据、设置和参数<br>•    Given a task, determine the data, settings, and parameters for creating an address locator<br>给定一个任务，创建地址定位器时确定数据、设置和参数<br>•    Given a scenario, determine how to synchronize replicated data<br>给定一个场景，如何决定同步复制数据<br>Managing Data — 26% 数据管理—26%<br>•    Given a scenario, convert and aggregate data to an appropriate format<br>给定一个场景，将数据转换和聚合为合适的格式<br>•    Given a task, determine the necessary schema changes so that the data can support a particular operation<br>给定一个任务，确定必要的改变计划，这样数据能够支持特定操作<br>•    Given datasets that do not align, determine the best workflow to resolve the issue<br>给定的数据集是不统一的，确定解决问题的最佳工作流<br>•    Given a project, determine how to manage coordinate systems<br>给定一个项目，确定如何管理坐标系统<br>•    Given a scenario, determine the method to create a surface dataset<br>给定一个场景，确定创建表面数据集的方法<br>•    Given a scenario, determine how to automate data management<br>给定一个场景，确定如何实现数据自动化管理<br>Visualizing and Sharing Data — 21%<br>数据可视化与共享—21%<br>•    Given a scenario, use advanced cartographic techniques to visualize content across the ArcGIS platform<br>给定一个场景，使用ArcGIS平台先进的制图技术去可视化内容<br>•    Given a scenario, determine how to optimize rendering of maps across the platform<br>给定一个场景，确定在平台上如何优化地图的渲染<br>•    Given a scenario, determine how to create and render scenes<br>给定一个场景，确定如何创建和渲染场景<br>•    Identify procedures to create and publish layers, maps, and apps for a given task<br>给定一个任务，确定创建和发布图层、地图和应用的步骤<br>•    Given a scenario, determine the most effective process for sharing content<br>给定一个场景，确定分享内容最有效的处理<br>•    Given a scenario, determine how to automate visualization and sharing using ArcPy in ArcGIS Desktop<br>给定一个场景，使用ArcGIS桌面中的ArcPy确定如何自动可视化与共享<br>Analysis and Geoprocessing — 31%<br>分析与处理—31%<br>•    Determine how to create and edit a Python script to automate a simple repetitive process in an ArcGIS workflow<br>确定如何创建和编辑Python脚本，在ArcGIS工作流中实现简单的自动化批量处理<br>•    Determine how to create and edit a model in ModelBuilder to automate a complex workflow in ArcGIS for a given task<br>给定一个任务，确定在ModelBuilder中如何创建和编辑模型，以实现复杂的ArcGIS工作流<br>•    Given a failed workflow, determine the cause of the failure<br>给定一个失败的工作流，判定失败的原因<br>•    Given user requirements, determine an appropriate method for sharing a geoprocessing model, script, package, toolbox, etc.<br>给定用户的需求，确定分享地理处理模型、脚本、包等合适的方法<br>•    Determine how to customize the user interface to perform a task<br>对于一个任务，如何自定义用户界面<br>•    Determine how to author tasks in ArcGIS Pro<br>确定如何在ArcGIS Pro中发起任务<br>•    Given a scenario that requires an analysis, determine the workflow, data, tools, settings, and parameters to perform the analysis<br>给定一个需要分析的场景，确定分析操作中的工作流、数据、工具、设置以及参数</p>
+]]></content>
   </entry>
   <entry>
     <title>Modis GTOPO30 土地利用数据说明与下载</title>
@@ -397,6 +397,25 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _*_coding:utf-8_*_</span></span><br><span class="line"><span class="keyword">from</span> geoserver.catalog <span class="keyword">import</span> Catalog</span><br><span class="line"><span class="keyword">from</span> geoserver.support <span class="keyword">import</span> JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 地图发布环境</span></span><br><span class="line">ENVIRONMENT_PUBLISH = <span class="string">&#x27;XXX_local&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 城市名称</span></span><br><span class="line">CITY = <span class="string">&#x27;xixian&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 年</span></span><br><span class="line">YEAR = <span class="number">2020</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 月</span></span><br><span class="line">MONTH = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONFIGURE = &#123;</span><br><span class="line">    <span class="string">&#x27;XXX_local&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;CITY&#x27;</span>: CITY,</span><br><span class="line">        <span class="string">&#x27;GEOSERVER_HOST&#x27;</span>: <span class="string">&#x27;1.1.1.1&#x27;</span>,  <span class="comment"># geoserver地址</span></span><br><span class="line">        <span class="string">&#x27;GEOSERVER_PORT&#x27;</span>: <span class="string">&#x27;8080&#x27;</span>,  <span class="comment"># geoserver端口</span></span><br><span class="line">        <span class="string">&#x27;USERNAME&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,  <span class="comment"># geoserver用户名</span></span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;******&#x27;</span>,  <span class="comment"># geoserver密码</span></span><br><span class="line">        <span class="string">&#x27;DATABASE_MYSQL&#x27;</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cat = Catalog(<span class="string">&#x27;http://%s:%s/geoserver/rest/&#x27;</span> % (</span><br><span class="line">CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_HOST&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_PORT&#x27;</span>]),</span><br><span class="line">              CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;USERNAME&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;PASSWORD&#x27;</span>])</span><br><span class="line">store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;DATABASE_MYSQL&#x27;</span>], CITY)</span><br><span class="line">geom = JDBCVirtualTableGeometry(<span class="string">&#x27;geom&#x27;</span>, <span class="string">&#x27;LineString&#x27;</span>, <span class="string">&#x27;4326&#x27;</span>)</span><br><span class="line">ft_name = <span class="string">&#x27;line_speed_day_%s_%s&#x27;</span> % (YEAR, MONTH)</span><br><span class="line">epsg_code = <span class="string">&#x27;EPSG:4326&#x27;</span></span><br><span class="line">sql = <span class="string">&#x27;&#x27;&#x27;SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM line</span></span><br><span class="line"><span class="string">WHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction&#x27;&#x27;&#x27;</span> % (</span><br><span class="line">    YEAR, MONTH, YEAR, MONTH)</span><br><span class="line"><span class="built_in">print</span> sql</span><br><span class="line">keyColumn = <span class="literal">None</span></span><br><span class="line">parameters = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">jdbc_vt = JDBCVirtualTable(ft_name, sql, <span class="string">&#x27;false&#x27;</span>, geom, keyColumn, parameters)</span><br><span class="line">ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)</span><br><span class="line">layer = cat.get_layer(ft_name)</span><br><span class="line">layer.default_style = cat.get_style(<span class="string">&#x27;stylefile&#x27;</span>)</span><br><span class="line">cat.save(layer)</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>python学习小记</title>
+    <url>/2017/02/17/4127.html</url>
+    <content><![CDATA[<p><strong>1、关于if __name__ == ‘__main__‘ 如何正确理解?</strong><br><strong>name</strong> 是当前模块名，当模块被直接运行时模块名为 <strong>main</strong> 。<br>这句话的意思就是，<br>当模块被直接运行时，以下代码块将被运行，<br>比如当前文件是test.py,双击运行，或者在IDE中运行，<br>那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确</p>
+<p>当模块是被导入时，代码块不被运行，<br>比如当前文件test.py被其他文件test123.py导入，<br>即在test123.py中以import test语句导入，<br>则test.py中if __name__ == ‘__main__‘下的语句将不会执行</p>
+<p><strong>2、由于for循环与while循环可配合使用</strong></p>
+<p><strong>3、正则表达式部分字符解释</strong><br><img src="/images/02171.jpg" alt="正则表达式"></p>
+<p><strong>4、Markdown转义字符</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\\ 反斜杠</span><br><span class="line">\` 反引号</span><br><span class="line">\* 星号</span><br><span class="line">\_ 下划线</span><br><span class="line">\&#123;\&#125; 大括号</span><br><span class="line">\[\] 中括号</span><br><span class="line">\(\) 小括号</span><br><span class="line">\# 井号</span><br><span class="line">\+ 加号</span><br><span class="line">\- 减号</span><br><span class="line">\. 英文句号</span><br><span class="line">\! 感叹号</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>openlayers去除左上角放大缩小【+】【-】控件</title>
     <url>/2020/01/15/16123.html</url>
     <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 去除地图左上角的放大缩小控件</span></span><br><span class="line">map.<span class="title function_">getControls</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">control</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (control <span class="keyword">instanceof</span> ol.<span class="property">control</span>.<span class="property">Zoom</span>) &#123;</span><br><span class="line">    map.<span class="title function_">removeControl</span>(control)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
@@ -422,25 +441,6 @@
       </tags>
   </entry>
   <entry>
-    <title>python学习小记</title>
-    <url>/2017/02/17/4127.html</url>
-    <content><![CDATA[<p><strong>1、关于if __name__ == ‘__main__‘ 如何正确理解?</strong><br><strong>name</strong> 是当前模块名，当模块被直接运行时模块名为 <strong>main</strong> 。<br>这句话的意思就是，<br>当模块被直接运行时，以下代码块将被运行，<br>比如当前文件是test.py,双击运行，或者在IDE中运行，<br>那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确</p>
-<p>当模块是被导入时，代码块不被运行，<br>比如当前文件test.py被其他文件test123.py导入，<br>即在test123.py中以import test语句导入，<br>则test.py中if __name__ == ‘__main__‘下的语句将不会执行</p>
-<p><strong>2、由于for循环与while循环可配合使用</strong></p>
-<p><strong>3、正则表达式部分字符解释</strong><br><img src="/images/02171.jpg" alt="正则表达式"></p>
-<p><strong>4、Markdown转义字符</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\\ 反斜杠</span><br><span class="line">\` 反引号</span><br><span class="line">\* 星号</span><br><span class="line">\_ 下划线</span><br><span class="line">\&#123;\&#125; 大括号</span><br><span class="line">\[\] 中括号</span><br><span class="line">\(\) 小括号</span><br><span class="line">\# 井号</span><br><span class="line">\+ 加号</span><br><span class="line">\- 减号</span><br><span class="line">\. 英文句号</span><br><span class="line">\! 感叹号</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>杂记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【20160809】出差工作日志-武汉</title>
     <url>/2016/08/09/57324.html</url>
     <content><![CDATA[<p>2016年8月9日星期二   地统计分析现场辅导<br>早晨起床后，准备在酒店旁边找个地方吃早餐，然后去机房。身后忽然有人喊江老师，扭头一看，<span id="more"></span>原来是培训的老师，年龄大概将近五十，这次的培训到这个岁数的貌似就几个，对其不断学习的劲头风格很是敬佩，然后第一次被人叫老师，而且还是年长者，略显心虚。遂一块儿去吃早餐，这之间了解到其来自江苏南京的南京工程建筑学院，建筑测绘测量方向，属于个人自费专程来学习的，开始聊得很好，最后在路上的一个问题把我给难住了，他说昨天已经听了一天的课，感觉这个软件确实很强大，那到底应用在那些行业，案例有哪些，与我这个方向到底怎么结合起来呢？一时语塞，之前也看了Esri总裁Jack在2016 UC上的演讲，也了解到ArcGIS肯定可以与建筑工程结合起来，但具体是如何运用的，我一时没有这个概念，感觉自己认识面窄了，回去要好好充电了。<br>上午余经理过来，喊我出去一块抬了一捆宣传册资料，感觉其很风趣幽默，中间还带着我去参观了一下武汉大学遥感测绘国家重点实验室，得知武汉大学自己研制的“珞珈一号”卫星马上要发射了，而且该卫星还是国内第一颗可拍摄夜景灯光数据的卫星，非常激动，很是期待。之前还了解该实验室还参与到我国的北斗卫星导航系统关键设计和技术改进，功不可没。作为GIS届的老牌公司，Esri与武汉大学的强强合作，无论是现在还是将来都是具有战略意义的。<br><img src="/images/b2b8455b6e663b086ae083f9301df474.jpg" alt="武汉大学遥感测绘国家重点实验室"><br>中午和一位看到很眼熟的老师聊天，加了联系方式后，得知其是甘肃科学院的，现在是我研究生学校的在职博士生，跟我还是一个学院的，算是师兄了，只怪世界太小，想想都很激动，居然这么远也赶过来了。<br>上午讲的是理论，实际操作比较少，现场辅导大部分问题是功能使用，没有昨天的数据导入和基本操作问题，自己在听的过程中，感觉对地统计分析的认识又上升一个台阶，明白如何科学合理的运用自己的数据进行合理的插值和预测。下午都是上机操作，主讲李才一步步耐心的教各位老师操作操作，下面大部分老师熟悉软件后都跟得上，加之自己以前专门钻过地统计分析，本科毕业和硕士毕业论文也用到过，出现的一些问题都是比较容易解决。其中两个来自江西气象单位的人员，聊到之前不知道ArcGIS还可以做地统计插值，他们一直用的是GRID，使用起来繁琐，参数和界面不太友好，涉及到编程，成图很不容易，反之ArcGIS只需几步点击操作，就可以生成理想的差值图，很是方便快捷。还有两个研究生是经济学专业，他们学了地统计之后，觉得成图很美观实用，问我怎么使用他们自己的数据坐地统计分析，我问清了他们的研究目的后，详细跟他们讲了一下我的想法，随后聊了不少关于基础数据和涉及到的GIS技术，感觉他们缺乏基础的GIS理论和ArcGIS操作，本来很简单易行的技术操作，由于隔行隔山，对于他们可能是技术壁垒，一时难以实现。现在我也认识到，现在的创新首先需要多学科的交叉，比如将其他行业与GIS技术结合，在新的空间维度上，认识更为明晰，可能有更多的发现。<br>这两天培训，才知道原来ArcGIS软件居然可以应用在这么多专业方向上，出乎意料的是老师们对其兴趣很高，静静想想，这款软件产品经过四十多年的不断更新和完善，大概已经契合到社会应用的方方面面，只是我们还没有挖掘到。所以，像早晨那位喊我老师的欧阳长辈一样，要不断地学习进步！</p>
@@ -463,6 +463,28 @@
       </tags>
   </entry>
   <entry>
+    <title>【20160811】出差工作日志-武汉</title>
+    <url>/2016/08/11/33261.html</url>
+    <content><![CDATA[<p>2016年8月11日星期四   影像分析<br>研究生期间跟数据打交道中最多的是遥感影像，对一些遥感理论和常用影像都熟悉。但是管理这些复杂数据的时候，显得很混乱，查找、处理和分析数据的效率不高，耗费不少精力，后来才知道<span id="more"></span>ArcGIS中居然有镶嵌数据集这个极佳的影像数据存储方法，影像数据的预处理、镶嵌、融合等都可以实现。所以今天自己也要好好听听关于影像的系统培训。<br>开始来的时候，大概是武汉刚下过几场雨，感觉天气很凉爽，本来想每天下午回到宾馆，休息一会再出去转转大武汉，而之后这两天，气温陡升，终于领略到武汉的火炉烘烤，热浪扑面，全身360度无死角都能感受到，遂打消了，还是不出去折腾了，在宾馆看看奥运会比赛，学点东西，逛逛知乎也是不错的。<br>今天上午讲的是一些影像数据理论，听起来倒也轻松，之后剩下的一小时，是关于数据集的<br>简单创建，老师们都很给力，基本没什么问题，大家都在进步，很欣慰。<br>中午依然是去星湖园餐厅和余经理以及几位高校的教师吃了饭，其中有一位来自地大的刘老师，土地管理方向，目前在做一些土地确权方面的项目，由于知道消息晚了，今天才专程赶过来，我之前也做过土地确权的实习，当时用的是南方CASS软件成图，而现在我们国家统一采使用ArcGIS平台建立数据库，这次过来也是为了项目顺利开展，想过来学习一下。<br>下午依然是上机操作，过程中，貌似也出现不少问题，不少老师的操作都不能顺利进行下去，有些问题我也是第一次碰到，但最后也算解决。之后分析总结了一下，首先大部分可以排除软件的原因，因为有不少老师都成功创建和添加镶嵌数据集，软件安装环境都是一样，所以有几点原因：<br>1、    本来影像是栅格数据，数据量大，可能是拷贝不全，或者文件损害；<br>2、    操作错误，比如误选文件，保存文件名字前有数字等；<br>3、    栅格数据计算量大，也有计算机硬件的问题<br>4、    其他诡异未知的原因。<br>然后下午在这忙前忙后的过程中，就很快地过去了。今天也预示着为期四天的软件操作培训就结束了，余经理后来给老师们都发了调查问卷，期间是广告时间，宣传了一下公司一系列产品。这几天认识了不少来自全国各地的老师，明天是最后一天，期待与他们的交流，倾听他们的所说所感。<br><img src="/images/70.jpg" alt="Jack 2016UC"><br><img src="/images/82.jpg" alt="Jack 2016UC"></p>
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【代码分享】海图数据批量导出</title>
+    <url>/2016/08/28/62898.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#from arcpy import env</span></span><br><span class="line"><span class="comment">#from arcpy import interop</span></span><br><span class="line"><span class="comment">#arcpy.ImportToolbox(&quot;Model Functions&quot;)</span></span><br><span class="line">path=<span class="string">r&quot;C:\Users\Esri\Desktop\S57&quot;</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">   filepath=path+<span class="string">&quot;\\&quot;</span>+filename</span><br><span class="line">   output_gdb = <span class="string">&quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;</span>.gd<span class="string">b&quot;</span></span><br><span class="line"><span class="string">   arcpy.QuickImport_interop(filepath,output_gdb)</span></span><br><span class="line"><span class="string">   print filename+&quot;</span>have done<span class="string">&quot;</span></span><br><span class="line"><span class="string">   print &quot;</span>-------------------------------------------------------<span class="string">&quot;</span></span><br><span class="line"><span class="string">print &quot;</span>&lt;----------All are done !!!----------&gt;<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【20160812】出差工作日志-武汉</title>
     <url>/2016/08/12/33709.html</url>
     <content><![CDATA[<p>2016年8月12日星期五   ArcGIS新产品介绍与教师经验交流会<br><img src="/images/58.jpg" alt="2016年高校教师GIS技能培训"><br>早晨想着提前把房给退了，走的时候轻松一些。没想到其他人也都是这么想的。。。，<span id="more"></span>到了前台，都排起了队，到我弄完时，已经快九点了，培训会当然已经开始了，所以我就迟到了，前几天都是第一个到机房，到了今天的关键时刻却掉了链子，有点不应该，跟武汉的同事说了抱歉，终于落座。开始是武汉分公司罗雄主讲，是关于ArcGIS平台发布的新产品版本以及Esri其他产品介绍，虽然之前看过相关的PPT，但不同的人介绍之后，感觉对ArcGIS新产品特性又有新的认识。随后是进行高校教师GIS教学经验交流会，有三个老师分别作了演讲，他们来自武汉大学和中国地质大学，以及还邀请了我的本科母校学院老师，让我激动好一会儿。各位老师讲的很生动细致，并将GIS教学中的切实可行经验与其他老师分享，想想我现在学到GIS知识都得益于母校老师创新的教学方法。他山石，可攻玉，最后老师们在一块儿作了深入的讨论，互相坦诚交流经验，反映自己的问题，寻求解决的方案，核心的宗旨是让GIS更加深入人心，广泛传播。<br><img src="/images/69.jpg" alt="2016年高校教师GIS技能培训"><br>不知不觉到了中午的十二点，交流会结束了，也预示着2016年的培训会告一段落。送走最后一批老师后，整理了一下会场，已经快到一点，余经理请大家一起去吃饭，但是距高铁开车时间所剩无几，就在会场与武汉同事道了别，感谢他们这一周的热情招待。<br><img src="/images/71.jpg" alt="2016年高校教师GIS技能培训"><br>这次行程，确实收获不少，虽然是现场辅导，但初入职场，还属于技术行列，更多的是学习和锻炼，也认识不少的人，交流的机会大大增多，通过亲自体验，放宽了眼界，了解了GIS的强大甚至是无所不能。<br><img src="/images/182.jpg" alt="2016年高校教师GIS技能培训"></p>
@@ -472,6 +494,12 @@
         <tag>武汉</tag>
         <tag>出差</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>七牛视频外链测试</title>
+    <url>/2016/08/29/9863.html</url>
+    <content><![CDATA[<p>【简介】今年暑期上映的科幻大片《独立日2：卷入重来》，又一次带动了国内的票房市场，其绚丽的特效令人惊叹，各种科幻场面令人目不暇接、眼花缭乱，可能你想不到的是：<span id="more"></span>其中的一些3D模型和场景是由ArcGIS平台产品搭建和渲染的，amazing吧，是不是很酷，同样在一些游戏画面中可能也会有类似的应用。但是GIS在3D方面不单单能实现专业的视觉效果，它也构成了城市蓬勃发展的基础，建立智慧的社区和城市指日可待，GIS几乎是无处不在并将改变我们周围的一切。随着现场主持人深情并茂的诗意解读，一起沉浸于ArcGIS创建的未来世界吧。<br><video  height="710 " src="http://zyzz.qiniudn.com/%E7%89%87%E5%A4%B4.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://zyzz.qiniudn.com/0-ArcGIS%E9%AB%98%E7%BA%A7%E5%88%B6%E5%9B%BE%E9%AD%85%E5%8A%9B.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://v2.huangguofeng.com/pcs_download.php?id=18131&link=%2Fapps%2Fhgf_blog%2F%E3%80%90%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%E5%AD%97%E5%B9%95%E3%80%915157-smart-3d-cities_960.mp4" poster=" " controls="controls"><br></video></p>
+]]></content>
   </entry>
   <entry>
     <title>一道难倒不少前端面试者的问题</title>
@@ -503,21 +531,22 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【代码分享】海图数据批量导出</title>
-    <url>/2016/08/28/62898.html</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#from arcpy import env</span></span><br><span class="line"><span class="comment">#from arcpy import interop</span></span><br><span class="line"><span class="comment">#arcpy.ImportToolbox(&quot;Model Functions&quot;)</span></span><br><span class="line">path=<span class="string">r&quot;C:\Users\Esri\Desktop\S57&quot;</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">   filepath=path+<span class="string">&quot;\\&quot;</span>+filename</span><br><span class="line">   output_gdb = <span class="string">&quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;</span>.gd<span class="string">b&quot;</span></span><br><span class="line"><span class="string">   arcpy.QuickImport_interop(filepath,output_gdb)</span></span><br><span class="line"><span class="string">   print filename+&quot;</span>have done<span class="string">&quot;</span></span><br><span class="line"><span class="string">   print &quot;</span>-------------------------------------------------------<span class="string">&quot;</span></span><br><span class="line"><span class="string">print &quot;</span>&lt;----------All are done !!!----------&gt;<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
+    <title>使用ModelBuilder批量处理和命名问题解决</title>
+    <url>/2017/01/12/50252.html</url>
+    <content><![CDATA[<h2 id="社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。"><a href="#社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。" class="headerlink" title="社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。"></a>社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。</h2><p>这不，因为分工，我们可能得到一个地区不同部分的数据，这时想将其合并在一块，两三个还行，使用merge（合并）工具轻松解决，如果是10个，100个甚至成千上万个，那就难办了，<br>这时使用ModelBuilder是最方便快捷的。</p>
+<span id="more"></span>
+<p>首先我们在catalog中右击新创建一个工具箱，命名为“批处理”<br><img src="/images/01121.jpg" alt="创建工具箱"><br>然后右击批处理工具箱，新建一个模型工具<br><img src="/images/01122.jpg" alt="创建模型工具"><br>然后我们看到出现的模型构建器界面如下：<br><img src="/images/01123.jpg" alt="模型构建器"><br>现在我们有一些shp文件（放在同一个文件夹），所以先插入要素选择迭代器，目的是选取所有的shp文件<br><img src="/images/01124.jpg" alt="要素选择迭代器"><br>然后双击下图中的六边形<br><img src="/images/01125.jpg" alt="双击六边形"><br>选择shp文件所在的文件夹,然后点击确定<br><img src="/images/01126.jpg" alt="文件夹选择"><br>接下来插入collect value (不会翻译:-D)，目的是将选取的所有shp文件放在一起<br><img src="/images/01127.jpg" alt="collect value"><br>最后是全场核心合并工具上场，在系统工具箱中找到合并工具，直接拖到ModelBuilder中，PS：我这里是直接通过搜索找到，更为方便快捷，平时我们想实现某种功能时，可以使用关键字在搜索框中尝试搜索<br><img src="/images/01128.jpg" alt="合并工具"><br>点击模型验证，确认整个模型是否OK，确认无误后，就可以执行批量合并处理了<br><img src="/images/01129.jpg" alt="批量合并处理"><br>实际上在ModelBuilder中批量处理本质就是先能找到数据，然后合理的组织、处理和输出。</p>
+<hr>
+<h2 id="这里还有个问题是：比如但我们使用Zonal-Statistics-as-Table工具，利用ModelBuilder批量统计栅格区域时，"><a href="#这里还有个问题是：比如但我们使用Zonal-Statistics-as-Table工具，利用ModelBuilder批量统计栅格区域时，" class="headerlink" title="这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，"></a>这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，</h2><p><img src="/images/011210.jpg" alt="Zonal Statistics as Table工具"><br>输出表格名字为%Name%，运行会出现报错，提示名字不合法<br><img src="/images/011211.jpg" alt="报错"><br>目前还没有直接的解决办法，我这里提供办法是：将tif文件都导入gdb中，能够完美解决，可能是因为Esri鼓励大家将数据存储到gdb中，然后进行处理操作。</p>
+<hr>
+]]></content>
       <categories>
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
+        <tag>ModelBuilder</tag>
+        <tag>批量</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>七牛视频外链测试</title>
-    <url>/2016/08/29/9863.html</url>
-    <content><![CDATA[<p>【简介】今年暑期上映的科幻大片《独立日2：卷入重来》，又一次带动了国内的票房市场，其绚丽的特效令人惊叹，各种科幻场面令人目不暇接、眼花缭乱，可能你想不到的是：<span id="more"></span>其中的一些3D模型和场景是由ArcGIS平台产品搭建和渲染的，amazing吧，是不是很酷，同样在一些游戏画面中可能也会有类似的应用。但是GIS在3D方面不单单能实现专业的视觉效果，它也构成了城市蓬勃发展的基础，建立智慧的社区和城市指日可待，GIS几乎是无处不在并将改变我们周围的一切。随着现场主持人深情并茂的诗意解读，一起沉浸于ArcGIS创建的未来世界吧。<br><video  height="710 " src="http://zyzz.qiniudn.com/%E7%89%87%E5%A4%B4.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://zyzz.qiniudn.com/0-ArcGIS%E9%AB%98%E7%BA%A7%E5%88%B6%E5%9B%BE%E9%AD%85%E5%8A%9B.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://v2.huangguofeng.com/pcs_download.php?id=18131&link=%2Fapps%2Fhgf_blog%2F%E3%80%90%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%E5%AD%97%E5%B9%95%E3%80%915157-smart-3d-cities_960.mp4" poster=" " controls="controls"><br></video></p>
-]]></content>
   </entry>
   <entry>
     <title>与ArcGIS有冲突的软件---黑名单（不定期更新）</title>
@@ -539,21 +568,30 @@
       </tags>
   </entry>
   <entry>
-    <title>【20160811】出差工作日志-武汉</title>
-    <url>/2016/08/11/33261.html</url>
-    <content><![CDATA[<p>2016年8月11日星期四   影像分析<br>研究生期间跟数据打交道中最多的是遥感影像，对一些遥感理论和常用影像都熟悉。但是管理这些复杂数据的时候，显得很混乱，查找、处理和分析数据的效率不高，耗费不少精力，后来才知道<span id="more"></span>ArcGIS中居然有镶嵌数据集这个极佳的影像数据存储方法，影像数据的预处理、镶嵌、融合等都可以实现。所以今天自己也要好好听听关于影像的系统培训。<br>开始来的时候，大概是武汉刚下过几场雨，感觉天气很凉爽，本来想每天下午回到宾馆，休息一会再出去转转大武汉，而之后这两天，气温陡升，终于领略到武汉的火炉烘烤，热浪扑面，全身360度无死角都能感受到，遂打消了，还是不出去折腾了，在宾馆看看奥运会比赛，学点东西，逛逛知乎也是不错的。<br>今天上午讲的是一些影像数据理论，听起来倒也轻松，之后剩下的一小时，是关于数据集的<br>简单创建，老师们都很给力，基本没什么问题，大家都在进步，很欣慰。<br>中午依然是去星湖园餐厅和余经理以及几位高校的教师吃了饭，其中有一位来自地大的刘老师，土地管理方向，目前在做一些土地确权方面的项目，由于知道消息晚了，今天才专程赶过来，我之前也做过土地确权的实习，当时用的是南方CASS软件成图，而现在我们国家统一采使用ArcGIS平台建立数据库，这次过来也是为了项目顺利开展，想过来学习一下。<br>下午依然是上机操作，过程中，貌似也出现不少问题，不少老师的操作都不能顺利进行下去，有些问题我也是第一次碰到，但最后也算解决。之后分析总结了一下，首先大部分可以排除软件的原因，因为有不少老师都成功创建和添加镶嵌数据集，软件安装环境都是一样，所以有几点原因：<br>1、    本来影像是栅格数据，数据量大，可能是拷贝不全，或者文件损害；<br>2、    操作错误，比如误选文件，保存文件名字前有数字等；<br>3、    栅格数据计算量大，也有计算机硬件的问题<br>4、    其他诡异未知的原因。<br>然后下午在这忙前忙后的过程中，就很快地过去了。今天也预示着为期四天的软件操作培训就结束了，余经理后来给老师们都发了调查问卷，期间是广告时间，宣传了一下公司一系列产品。这几天认识了不少来自全国各地的老师，明天是最后一天，期待与他们的交流，倾听他们的所说所感。<br><img src="/images/70.jpg" alt="Jack 2016UC"><br><img src="/images/82.jpg" alt="Jack 2016UC"></p>
-]]></content>
-      <tags>
-        <tag>Esri</tag>
-        <tag>武汉</tag>
-        <tag>出差</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>为什么加班到现在，运维是个大坑货！！！</title>
     <url>/2019/11/19/14351.html</url>
     <content><![CDATA[<p>一套系统，本地运行的没问题，同样的安装流程却无法成功运行。<br>捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：<br>编码一定保持一致呀喂！<br>编码一定保持一致呀喂！<br>编码一定保持一致呀喂！<br>操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。<br>运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>使用Python进行语音识别---将音频转为文字</title>
+    <url>/2017/03/31/13689.html</url>
+    <content><![CDATA[<p>自从入职以来，一直在做关于ArcGIS视频的中英字幕，前前后后已经做了不少。基本都上传到网上了，有兴趣的可以看看<a href="http://i.youku.com/arcgis">http://i.youku.com/arcgis</a><br>说实话，这是个挺废时间的工作，一般一个5-6分钟的视频，从听写字幕脚本到时间轴校对，校对完之后逐句翻译，本着自己的水平，不求信达雅，只求通畅就行，然后再加一些DuangDuang字幕特效，最后将字幕和视频进行，基本是3-4个小时，可能看起来不可思议，有兴趣的可以亲自去尝试一下。<br>虽然过程是枯燥乏味的，但是最终看到自己的成果，成就感也是油然而生的。<br><img src="/images/03311.jpg" alt="中英字幕 小样"></p>
+<span id="more"></span>
+<p>前段时间美国Esri举办了全球的开发者大会，我在YouTube上看到陆续有上传的现场视频，于是下了下来，想着翻译一些，然后在ArcGIS知乎上等渠道做一下传播推广。但是有个问题是，这些视频没有字幕脚本，更坑爹的是，里面大部分是印度人主讲，带着印度咖喱腔的英语，听起来着实费解，所以翻译进度远不如之前，慢得出其，让我很困惑。做了几个视频的字幕后，实在没动力了，于是就暂停了。。。。<br>今天看了一篇报道，说是语音识别的技术，成熟度已经很可观了。突然想到：能不能将视频转为音频，然后使用一些语音识别的技术，完成这个艰巨的活呢。于是说干就干，百度搜索了许多音频转文字的技术。最后发现IBM公司有这项技术，对音频的识别率很高，并且提供有1000分钟的免费API（可以在<a href="https://console.ng.bluemix.net/">https://console.ng.bluemix.net</a>注册一下，获取API用户名和密码，后续会有用，这个很关键！！！），<br><img src="/images/03315.jpg" alt="IBM注册 应用部署"><br><img src="/images/03316.jpg" alt="账户密码"><br>正好也支持Python调用，整个过程很简单，就是先安装IBM的模块，这里我使用的是speechrecognition模块，在pycharm直接可以搜索到并安装，<br><img src="/images/03312.jpg" alt="speechrecognition模块"><br>speechrecognition模块不仅包含了IBM的语音识别API，还有微软、谷歌的语音识别API等等，带上github项目地址<a href="https://github.com/Uberi/speech_recognition#readme">https://github.com/Uberi/speech_recognition#readme</a><br><img src="/images/03313.jpg" alt="speechrecognition模块"><br>感叹到：Python的功能真是应有尽有，没有你想不到的。<br>然后我写了不多的几行代码，这个艰难的事情就迎刃而解了<br>思路主要如下，就是将视频转为WAV格式的音频（转为MP3等其他格式，可能识别不了），然后调用识别模块，就静静的等着或者去忙其他的事，最后会返回识别出来的文本<br><img src="/images/03314.jpg" alt="返回的识别文本"><br>准确率还是很高的，估摸有80%-90%<br>如果你手上正好有一堆的音频想转为文字，赶紧来试试，解放生产力的时候到了！！哈哈~~~<br>附上我写的拙劣代码<br>见笑见笑！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*-coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">&#x27;jiang&#x27;</span></span><br><span class="line"><span class="comment"># import eyed3</span></span><br><span class="line"><span class="comment"># import wave</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> speech_recognition <span class="keyword">as</span> sr</span><br><span class="line"><span class="comment"># from pydub import AudioSegment</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># ##获取音频时长</span></span><br><span class="line"><span class="comment"># f = wave.open(r&quot;C:\Users\Esri\Desktop\speech.wav&quot;,&quot;rb&quot;)</span></span><br><span class="line"><span class="comment"># timelength=int(f.getparams()[3]/f.getparams()[2])</span></span><br><span class="line"><span class="comment"># print(int(5.6))</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ##音频分割输出</span></span><br><span class="line"><span class="comment"># readaudio=AudioSegment.from_wav(r&#x27;C:\Users\Esri\Desktop\speech.wav&#x27;)</span></span><br><span class="line"><span class="comment"># kn=int(timelength/30)+1</span></span><br><span class="line"><span class="comment"># for i in range(kn):</span></span><br><span class="line"><span class="comment">#      readaudio[i*30*1000:((i+1)*30+2)*1000].export(r&#x27;C:\Users\Esri\Desktop\speech\speech%d.wav&#x27;%(i+1), format=&quot;wav&quot;)</span></span><br><span class="line"><span class="comment">##获取文件夹下的音频文件名</span></span><br><span class="line">starttime = datetime.datetime.now()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> os.listdir(<span class="string">r&#x27;C:\Users\Esri\Desktop\speech&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d %s 开始转换&quot;</span> % (i, name))</span><br><span class="line">    <span class="comment">##音频分块识别</span></span><br><span class="line">    r = sr.Recognizer()</span><br><span class="line">    <span class="comment"># for i in range(kn):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> sr.WavFile(<span class="string">r&#x27;C:\Users\Esri\Desktop\speech\%s&#x27;</span> % name) <span class="keyword">as</span> source:</span><br><span class="line">            audio = r.record(source)</span><br><span class="line">            IBM_USERNAME = <span class="string">&#x27;*******************&#x27;</span></span><br><span class="line">            IBM_PASSWORD = <span class="string">&#x27;*****&#x27;</span></span><br><span class="line">            text = r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD, language=<span class="string">&#x27;en-US&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(text)</span><br><span class="line">            <span class="built_in">open</span>(<span class="string">r&#x27;C:\Users\Esri\Desktop\text\%s.txt&#x27;</span> % name, <span class="string">&#x27;a+&#x27;</span>).write(text)</span><br><span class="line">            time.sleep(<span class="number">5</span>)</span><br><span class="line">            temptime = datetime.datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;%s %d %s 已完成&#x27;</span> % (temptime,i, name))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        temptime = datetime.datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;%s %d %s 未完成&#x27;</span> % (temptime, i, name))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">jietime = datetime.datetime.now()</span><br><span class="line">last=jietime-starttime</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;总共花费时间：%s&#x27;</span>%last)</span><br></pre></td></tr></table></figure>
+
+<p><font size=4><b><br>测试结果分析：<br>1、IBM的API能识别英语、中文等好几种语言，识别的正确率很不错；<br>2、经过我的初步测试，IBM的识别机制是按照这样来的：先是将你的音频传到IBM的服务器，然后是打开音频实时识别，听起来很拗口，意思就是将音频放一遍，服务器边放边识别，最后将所有的识别以文本的形式（貌似是JSON格式，但是在speechrecognition模块中，已经转为文本）返回给你；<br>3、看完上面的识别机制，你可能会产生疑问：如果音频时间比较长，中间出现网络中断，之前识别的内容不就没了么。因此最好采取分段的方法，将音频分割为较短的几段，等效于实时的返回，减少丢失的问题；<br>4、经过测试，又有新问题，如果分段的话，超过10段以上，远程服务器会中断服务，也就是说：不能频繁的调接口，跟网站的发爬虫一样。多进程就别想了。最后部门石经理提供的解决办法是：识别一段后。等个5秒左右再循环下一个，照此方法可行。由于我自己的视频不长，数量也不多，就没做等待处理；<br>5、IBM的语音识别着实厉害，其他的语音识别等有时间再做测试。<br></b></font></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>python</tag>
+        <tag>多字段</tag>
+        <tag>符号渲染</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用python多进程爬取全国航班数据与可视化【附代码与excel数据（包含经纬度坐标）】</title>
@@ -583,22 +621,18 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">geturl</span>(<span class="params">url</span>):</span><br><span class="line">    headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36&#x27;</span>&#125;</span><br><span class="line">    hbpage = requests.get(url, headers=headers).text</span><br><span class="line">    <span class="built_in">print</span> hbpage</span><br><span class="line">    <span class="keyword">return</span> hbpage</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flyin</span>(<span class="params">city_citys,numm</span>):</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;&gt;&gt;&gt;&gt;&gt;进程%d开始&gt;&gt;&gt;&gt;&gt;&#x27;</span>%(numm+<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># time.sleep(5)</span></span><br><span class="line">    pageinfo = []</span><br><span class="line">    <span class="keyword">for</span> city_city <span class="keyword">in</span> city_citys:</span><br><span class="line">        hbpage=geturl(city_city)</span><br><span class="line">        <span class="comment"># print hbpage</span></span><br><span class="line">        bg=<span class="built_in">str</span>(city_city.split(<span class="string">&#x27;=&#x27;</span>)[-<span class="number">2</span>]).replace(<span class="string">&#x27;&amp;arrival&#x27;</span>,<span class="string">&#x27;&#x27;</span>)<span class="comment">#始发</span></span><br><span class="line">        dg=city_city.split(<span class="string">&#x27;=&#x27;</span>)[-<span class="number">1</span>]<span class="comment">#飞往</span></span><br><span class="line">        ft=(bg+dg)</span><br><span class="line">        <span class="built_in">print</span> ft</span><br><span class="line">        <span class="keyword">if</span> BeautifulSoup(hbpage, <span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;p[class=&quot;msg2&quot;]&#x27;</span>):</span><br><span class="line">            <span class="built_in">print</span> <span class="string">&#x27;此线路无航班&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            hblc = BeautifulSoup(hbpage, <span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;em&#x27;</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">            <span class="built_in">print</span> hblc</span><br><span class="line">            <span class="comment">#航班班次 第一列</span></span><br><span class="line">            hbtitle=BeautifulSoup(hbpage,<span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;span[class=&quot;title&quot;]&#x27;</span>)</span><br><span class="line">            hbbc1=[]</span><br><span class="line">            hkgs1=[]</span><br><span class="line">            jixing1=[]</span><br><span class="line">            <span class="keyword">for</span> ht <span class="keyword">in</span> hbtitle:</span><br><span class="line">                hbbc=re.findall(<span class="string">r&#x27;\w.?\d*&#x27;</span>,ht.get_text())[<span class="number">0</span>]<span class="comment">#航班班次</span></span><br><span class="line">                hkgs=ht.get_text().split(hbbc)[<span class="number">0</span>]<span class="comment">#航空公司</span></span><br><span class="line">                jixing=ht.get_text().split(hbbc)[<span class="number">1</span>]<span class="comment">#机型</span></span><br><span class="line">                hbbc1.append(hbbc)</span><br><span class="line">                hkgs1.append(hkgs)</span><br><span class="line">                jixing1.append(jixing)</span><br><span class="line">            <span class="comment">#起降时间 第二列</span></span><br><span class="line">            hbtime=BeautifulSoup(hbpage,<span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;span[class=&quot;c2&quot;]&#x27;</span>)[<span class="number">1</span>:]</span><br><span class="line">            qfsj1=[]</span><br><span class="line">            jlsj1=[]</span><br><span class="line">            <span class="keyword">for</span> qj <span class="keyword">in</span> hbtime:</span><br><span class="line">                qfsj=qj.get_text()[:<span class="number">5</span>]<span class="comment">#起飞时间</span></span><br><span class="line">                jlsj=qj.get_text()[<span class="number">5</span>:]<span class="comment">#降落时间</span></span><br><span class="line">                qfsj1.append(qfsj)</span><br><span class="line">                jlsj1.append(jlsj)</span><br><span class="line"></span><br><span class="line">            <span class="comment">#机场 第三列</span></span><br><span class="line">            hbjc=BeautifulSoup(hbpage,<span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;span[class=&quot;c3&quot;]&#x27;</span>)[<span class="number">1</span>:]</span><br><span class="line">            qfjc1=[]</span><br><span class="line">            jljc1=[]</span><br><span class="line">            <span class="keyword">for</span> jc <span class="keyword">in</span> hbjc:</span><br><span class="line">                qfjc=jc.get_text().split(<span class="string">&#x27;机场&#x27;</span>.decode(<span class="string">&#x27;utf-8&#x27;</span>))[<span class="number">0</span>]+<span class="string">&#x27;机场&#x27;</span>.decode(<span class="string">&#x27;utf-8&#x27;</span>)<span class="comment">#起飞机场</span></span><br><span class="line">                jljc=jc.get_text().split(<span class="string">&#x27;机场&#x27;</span>.decode(<span class="string">&#x27;utf-8&#x27;</span>))[<span class="number">1</span>]+<span class="string">&#x27;机场&#x27;</span>.decode(<span class="string">&#x27;utf-8&#x27;</span>)<span class="comment">#降落机场</span></span><br><span class="line">                qfjc1.append(qfjc)</span><br><span class="line">                jljc1.append(jljc)</span><br><span class="line"></span><br><span class="line">            <span class="comment">#准点率 第四列</span></span><br><span class="line">            zdl=BeautifulSoup(hbpage,<span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;span[class=&quot;c4&quot;]&#x27;</span>)[<span class="number">1</span>:]</span><br><span class="line">            zdl1=[]</span><br><span class="line">            wdsj1=[]</span><br><span class="line">            <span class="keyword">for</span> zd <span class="keyword">in</span> zdl:</span><br><span class="line">                zdlv=zd.get_text().split(<span class="string">&#x27;%&#x27;</span>)[<span class="number">0</span>]+<span class="string">&#x27;%&#x27;</span></span><br><span class="line">                wdsj=zd.get_text().split(<span class="string">&#x27;%&#x27;</span>)[<span class="number">1</span>]</span><br><span class="line">                zdl1.append(zdlv)</span><br><span class="line">                wdsj1.append(wdsj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">#班期 第五列</span></span><br><span class="line">            bq=BeautifulSoup(hbpage,<span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;span[class=&quot;c5&quot;]&#x27;</span>)[<span class="number">1</span>:]</span><br><span class="line">            <span class="comment"># xx=[]</span></span><br><span class="line">            duty1 = []</span><br><span class="line">            <span class="keyword">for</span> xq <span class="keyword">in</span> bq:</span><br><span class="line">                week=re.split(<span class="string">&#x27;\&quot;&gt;\d&lt;/span&gt;&#x27;</span>,<span class="built_in">str</span>(xq))[:-<span class="number">1</span>]</span><br><span class="line">                week1=[]</span><br><span class="line">                ii=<span class="number">1</span></span><br><span class="line">                <span class="keyword">for</span> day <span class="keyword">in</span> week:</span><br><span class="line">                    <span class="keyword">if</span> ii==<span class="number">1</span>:</span><br><span class="line">                        dd=<span class="string">&#x27;周一&#x27;</span></span><br><span class="line">                    <span class="keyword">elif</span> ii==<span class="number">2</span>:</span><br><span class="line">                        dd = <span class="string">&#x27;周二&#x27;</span></span><br><span class="line">                    <span class="keyword">elif</span> ii==<span class="number">3</span>:</span><br><span class="line">                        dd = <span class="string">&#x27;周三&#x27;</span></span><br><span class="line">                    <span class="keyword">elif</span> ii==<span class="number">4</span>:</span><br><span class="line">                        dd = <span class="string">&#x27;周四&#x27;</span></span><br><span class="line">                    <span class="keyword">elif</span> ii==<span class="number">5</span>:</span><br><span class="line">                        dd = <span class="string">&#x27;周五&#x27;</span></span><br><span class="line">                    <span class="keyword">elif</span> ii==<span class="number">6</span>:</span><br><span class="line">                        dd = <span class="string">&#x27;周六&#x27;</span></span><br><span class="line">                    <span class="keyword">elif</span> ii==<span class="number">7</span>:</span><br><span class="line">                        dd = <span class="string">&#x27;周日&#x27;</span></span><br><span class="line">                    <span class="keyword">if</span> day[-<span class="number">4</span>:]==<span class="string">&#x27;blue&#x27;</span>:</span><br><span class="line">                        duty=<span class="string">&#x27;%s有班期&#x27;</span>%dd</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        duty=<span class="string">&#x27;%s没有班期&#x27;</span>%dd</span><br><span class="line">                    ii+=<span class="number">1</span></span><br><span class="line">                    week1.append(duty)</span><br><span class="line">                duty1.append(week1)</span><br><span class="line"></span><br><span class="line">            <span class="comment">#班期有效期 第七列</span></span><br><span class="line">            bqyxq = BeautifulSoup(hbpage, <span class="string">&#x27;lxml&#x27;</span>).select(<span class="string">&#x27;span[class=&quot;c7&quot;]&#x27;</span>)[<span class="number">1</span>:]</span><br><span class="line">            qs1=[]</span><br><span class="line">            js1=[]</span><br><span class="line">            <span class="keyword">for</span> yxq <span class="keyword">in</span> bqyxq:</span><br><span class="line"></span><br><span class="line">                yxs=yxq.get_text()[:<span class="number">10</span>]<span class="comment">#起始</span></span><br><span class="line">                yxe=yxq.get_text()[:<span class="number">10</span>]<span class="comment">#结束</span></span><br><span class="line">                qs1.append(yxs)</span><br><span class="line">                js1.append(yxe)</span><br><span class="line"></span><br><span class="line">            <span class="built_in">print</span> hbbc1</span><br><span class="line">            <span class="keyword">for</span> li <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(hbbc1)):</span><br><span class="line">                <span class="built_in">print</span> <span class="string">&#x27;标记&#x27;</span></span><br><span class="line">                pageinfo.append(bg + <span class="string">&#x27;,&#x27;</span> + dg + <span class="string">&#x27;,&#x27;</span> + hblc + <span class="string">&#x27;,&#x27;</span> + hbbc1[li] + <span class="string">&#x27;,&#x27;</span> + hkgs1[li] + <span class="string">&#x27;,&#x27;</span> + jixing1[li] + <span class="string">&#x27;,&#x27;</span> + qfsj1[li] + <span class="string">&#x27;,&#x27;</span> + jlsj1[li] + <span class="string">&#x27;,&#x27;</span> + qfjc1[li] + <span class="string">&#x27;,&#x27;</span> + jljc1[li] + <span class="string">&#x27;,&#x27;</span> + zdl1[li] + <span class="string">&#x27;,&#x27;</span> + wdsj1[li] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">0</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">1</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">2</span>] + <span class="string">&#x27;,&#x27;</span> +duty1[li][<span class="number">3</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">4</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">5</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">6</span>] + <span class="string">&#x27;,&#x27;</span> + qs1[li] + <span class="string">&#x27;,&#x27;</span> + js1[li] + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="built_in">print</span> bg + <span class="string">&#x27;,&#x27;</span> + dg + <span class="string">&#x27;,&#x27;</span> + hblc + <span class="string">&#x27;,&#x27;</span> + hbbc1[li] + <span class="string">&#x27;,&#x27;</span> + hkgs1[li] + <span class="string">&#x27;,&#x27;</span> + jixing1[li] + <span class="string">&#x27;,&#x27;</span> + qfsj1[li] + <span class="string">&#x27;,&#x27;</span> + jlsj1[li] + <span class="string">&#x27;,&#x27;</span> + qfjc1[li] + <span class="string">&#x27;,&#x27;</span> + jljc1[li] + <span class="string">&#x27;,&#x27;</span> + zdl1[li] + <span class="string">&#x27;,&#x27;</span> + wdsj1[li] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">0</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">1</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">2</span>] + <span class="string">&#x27;,&#x27;</span> +duty1[li][<span class="number">3</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">4</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">5</span>] + <span class="string">&#x27;,&#x27;</span> + duty1[li][<span class="number">6</span>] + <span class="string">&#x27;,&#x27;</span> + qs1[li] + <span class="string">&#x27;,&#x27;</span> + js1[li] + <span class="string">&#x27;\n&#x27;</span></span><br><span class="line">    <span class="built_in">print</span> pageinfo</span><br><span class="line">    <span class="keyword">return</span> pageinfo</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">urlsplit</span>(<span class="params">urls,jiange</span>):</span><br><span class="line">    urli=[]</span><br><span class="line">    <span class="keyword">for</span> newj <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(urls),jiange):</span><br><span class="line">        urli.append(urls[newj:newj+jiange])</span><br><span class="line">    <span class="keyword">return</span> urli</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    finalre=[]</span><br><span class="line">    files = <span class="built_in">open</span>(<span class="string">r&#x27;C:\Users\username\Desktop\url.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">    urls=[]</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> files.read().split():</span><br><span class="line">        urls.append(url)</span><br><span class="line">    urlss=urls[:<span class="number">6</span>]</span><br><span class="line">    urlll=urlsplit(urlss,<span class="number">2</span>)</span><br><span class="line">    p = Pool(<span class="number">2</span>)</span><br><span class="line">    result=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(urlll)):</span><br><span class="line">        result.append(p.apply_async(flyin,args=(urlll[i],i)))</span><br><span class="line">    p.close()</span><br><span class="line">    p.join()</span><br><span class="line">    <span class="built_in">print</span> result</span><br><span class="line">    <span class="keyword">for</span> result_i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(result)):</span><br><span class="line">        <span class="built_in">print</span> result[result_i]</span><br><span class="line">        fin_info_result_list = result[result_i].get().decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">        finalre.extend(fin_info_result_list)</span><br><span class="line">    filers=<span class="built_in">open</span>(<span class="string">r&#x27;C:\Users\username\Desktop\url55.txt&#x27;</span>,<span class="string">&#x27;a+&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> fll <span class="keyword">in</span> finalre:</span><br><span class="line">        filers.write(<span class="built_in">str</span>(fll).encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>使用ModelBuilder批量处理和命名问题解决</title>
-    <url>/2017/01/12/50252.html</url>
-    <content><![CDATA[<h2 id="社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。"><a href="#社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。" class="headerlink" title="社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。"></a>社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。</h2><p>这不，因为分工，我们可能得到一个地区不同部分的数据，这时想将其合并在一块，两三个还行，使用merge（合并）工具轻松解决，如果是10个，100个甚至成千上万个，那就难办了，<br>这时使用ModelBuilder是最方便快捷的。</p>
-<span id="more"></span>
-<p>首先我们在catalog中右击新创建一个工具箱，命名为“批处理”<br><img src="/images/01121.jpg" alt="创建工具箱"><br>然后右击批处理工具箱，新建一个模型工具<br><img src="/images/01122.jpg" alt="创建模型工具"><br>然后我们看到出现的模型构建器界面如下：<br><img src="/images/01123.jpg" alt="模型构建器"><br>现在我们有一些shp文件（放在同一个文件夹），所以先插入要素选择迭代器，目的是选取所有的shp文件<br><img src="/images/01124.jpg" alt="要素选择迭代器"><br>然后双击下图中的六边形<br><img src="/images/01125.jpg" alt="双击六边形"><br>选择shp文件所在的文件夹,然后点击确定<br><img src="/images/01126.jpg" alt="文件夹选择"><br>接下来插入collect value (不会翻译:-D)，目的是将选取的所有shp文件放在一起<br><img src="/images/01127.jpg" alt="collect value"><br>最后是全场核心合并工具上场，在系统工具箱中找到合并工具，直接拖到ModelBuilder中，PS：我这里是直接通过搜索找到，更为方便快捷，平时我们想实现某种功能时，可以使用关键字在搜索框中尝试搜索<br><img src="/images/01128.jpg" alt="合并工具"><br>点击模型验证，确认整个模型是否OK，确认无误后，就可以执行批量合并处理了<br><img src="/images/01129.jpg" alt="批量合并处理"><br>实际上在ModelBuilder中批量处理本质就是先能找到数据，然后合理的组织、处理和输出。</p>
-<hr>
-<h2 id="这里还有个问题是：比如但我们使用Zonal-Statistics-as-Table工具，利用ModelBuilder批量统计栅格区域时，"><a href="#这里还有个问题是：比如但我们使用Zonal-Statistics-as-Table工具，利用ModelBuilder批量统计栅格区域时，" class="headerlink" title="这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，"></a>这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，</h2><p><img src="/images/011210.jpg" alt="Zonal Statistics as Table工具"><br>输出表格名字为%Name%，运行会出现报错，提示名字不合法<br><img src="/images/011211.jpg" alt="报错"><br>目前还没有直接的解决办法，我这里提供办法是：将tif文件都导入gdb中，能够完美解决，可能是因为Esri鼓励大家将数据存储到gdb中，然后进行处理操作。</p>
-<hr>
+    <title>发现一个大坑！！！</title>
+    <url>/2019/06/14/38442.html</url>
+    <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
+<p>**使用排除法</p>
+<p>1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；<br>2、排除代码错误：都在git上同一分支下；<br>3、排除接口数据：都是同一个后台接口环境；</p>
+<p>以上，那么真相只有一个：都是蛋疼惹的事—依赖版本</p>
+<p>**破案过程：<br>由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；<br>然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，<br><img src="/images/19061402.jpg" alt="element-ui 2.9.1"><br>于是回退版本，这个鸟问题终于解决了！<br>目前的解决方案是将将package.json中的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;^2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
+
 ]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ModelBuilder</tag>
-        <tag>批量</tag>
-      </tags>
   </entry>
   <entry>
     <title>关于多圆（大于2）重叠的面积计算</title>
@@ -617,23 +651,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>使用Python进行语音识别---将音频转为文字</title>
-    <url>/2017/03/31/13689.html</url>
-    <content><![CDATA[<p>自从入职以来，一直在做关于ArcGIS视频的中英字幕，前前后后已经做了不少。基本都上传到网上了，有兴趣的可以看看<a href="http://i.youku.com/arcgis">http://i.youku.com/arcgis</a><br>说实话，这是个挺废时间的工作，一般一个5-6分钟的视频，从听写字幕脚本到时间轴校对，校对完之后逐句翻译，本着自己的水平，不求信达雅，只求通畅就行，然后再加一些DuangDuang字幕特效，最后将字幕和视频进行，基本是3-4个小时，可能看起来不可思议，有兴趣的可以亲自去尝试一下。<br>虽然过程是枯燥乏味的，但是最终看到自己的成果，成就感也是油然而生的。<br><img src="/images/03311.jpg" alt="中英字幕 小样"></p>
-<span id="more"></span>
-<p>前段时间美国Esri举办了全球的开发者大会，我在YouTube上看到陆续有上传的现场视频，于是下了下来，想着翻译一些，然后在ArcGIS知乎上等渠道做一下传播推广。但是有个问题是，这些视频没有字幕脚本，更坑爹的是，里面大部分是印度人主讲，带着印度咖喱腔的英语，听起来着实费解，所以翻译进度远不如之前，慢得出其，让我很困惑。做了几个视频的字幕后，实在没动力了，于是就暂停了。。。。<br>今天看了一篇报道，说是语音识别的技术，成熟度已经很可观了。突然想到：能不能将视频转为音频，然后使用一些语音识别的技术，完成这个艰巨的活呢。于是说干就干，百度搜索了许多音频转文字的技术。最后发现IBM公司有这项技术，对音频的识别率很高，并且提供有1000分钟的免费API（可以在<a href="https://console.ng.bluemix.net/">https://console.ng.bluemix.net</a>注册一下，获取API用户名和密码，后续会有用，这个很关键！！！），<br><img src="/images/03315.jpg" alt="IBM注册 应用部署"><br><img src="/images/03316.jpg" alt="账户密码"><br>正好也支持Python调用，整个过程很简单，就是先安装IBM的模块，这里我使用的是speechrecognition模块，在pycharm直接可以搜索到并安装，<br><img src="/images/03312.jpg" alt="speechrecognition模块"><br>speechrecognition模块不仅包含了IBM的语音识别API，还有微软、谷歌的语音识别API等等，带上github项目地址<a href="https://github.com/Uberi/speech_recognition#readme">https://github.com/Uberi/speech_recognition#readme</a><br><img src="/images/03313.jpg" alt="speechrecognition模块"><br>感叹到：Python的功能真是应有尽有，没有你想不到的。<br>然后我写了不多的几行代码，这个艰难的事情就迎刃而解了<br>思路主要如下，就是将视频转为WAV格式的音频（转为MP3等其他格式，可能识别不了），然后调用识别模块，就静静的等着或者去忙其他的事，最后会返回识别出来的文本<br><img src="/images/03314.jpg" alt="返回的识别文本"><br>准确率还是很高的，估摸有80%-90%<br>如果你手上正好有一堆的音频想转为文字，赶紧来试试，解放生产力的时候到了！！哈哈~~~<br>附上我写的拙劣代码<br>见笑见笑！</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*-coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">&#x27;jiang&#x27;</span></span><br><span class="line"><span class="comment"># import eyed3</span></span><br><span class="line"><span class="comment"># import wave</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> speech_recognition <span class="keyword">as</span> sr</span><br><span class="line"><span class="comment"># from pydub import AudioSegment</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># ##获取音频时长</span></span><br><span class="line"><span class="comment"># f = wave.open(r&quot;C:\Users\Esri\Desktop\speech.wav&quot;,&quot;rb&quot;)</span></span><br><span class="line"><span class="comment"># timelength=int(f.getparams()[3]/f.getparams()[2])</span></span><br><span class="line"><span class="comment"># print(int(5.6))</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ##音频分割输出</span></span><br><span class="line"><span class="comment"># readaudio=AudioSegment.from_wav(r&#x27;C:\Users\Esri\Desktop\speech.wav&#x27;)</span></span><br><span class="line"><span class="comment"># kn=int(timelength/30)+1</span></span><br><span class="line"><span class="comment"># for i in range(kn):</span></span><br><span class="line"><span class="comment">#      readaudio[i*30*1000:((i+1)*30+2)*1000].export(r&#x27;C:\Users\Esri\Desktop\speech\speech%d.wav&#x27;%(i+1), format=&quot;wav&quot;)</span></span><br><span class="line"><span class="comment">##获取文件夹下的音频文件名</span></span><br><span class="line">starttime = datetime.datetime.now()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> os.listdir(<span class="string">r&#x27;C:\Users\Esri\Desktop\speech&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d %s 开始转换&quot;</span> % (i, name))</span><br><span class="line">    <span class="comment">##音频分块识别</span></span><br><span class="line">    r = sr.Recognizer()</span><br><span class="line">    <span class="comment"># for i in range(kn):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> sr.WavFile(<span class="string">r&#x27;C:\Users\Esri\Desktop\speech\%s&#x27;</span> % name) <span class="keyword">as</span> source:</span><br><span class="line">            audio = r.record(source)</span><br><span class="line">            IBM_USERNAME = <span class="string">&#x27;*******************&#x27;</span></span><br><span class="line">            IBM_PASSWORD = <span class="string">&#x27;*****&#x27;</span></span><br><span class="line">            text = r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD, language=<span class="string">&#x27;en-US&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(text)</span><br><span class="line">            <span class="built_in">open</span>(<span class="string">r&#x27;C:\Users\Esri\Desktop\text\%s.txt&#x27;</span> % name, <span class="string">&#x27;a+&#x27;</span>).write(text)</span><br><span class="line">            time.sleep(<span class="number">5</span>)</span><br><span class="line">            temptime = datetime.datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;%s %d %s 已完成&#x27;</span> % (temptime,i, name))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        temptime = datetime.datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;%s %d %s 未完成&#x27;</span> % (temptime, i, name))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">jietime = datetime.datetime.now()</span><br><span class="line">last=jietime-starttime</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;总共花费时间：%s&#x27;</span>%last)</span><br></pre></td></tr></table></figure>
-
-<p><font size=4><b><br>测试结果分析：<br>1、IBM的API能识别英语、中文等好几种语言，识别的正确率很不错；<br>2、经过我的初步测试，IBM的识别机制是按照这样来的：先是将你的音频传到IBM的服务器，然后是打开音频实时识别，听起来很拗口，意思就是将音频放一遍，服务器边放边识别，最后将所有的识别以文本的形式（貌似是JSON格式，但是在speechrecognition模块中，已经转为文本）返回给你；<br>3、看完上面的识别机制，你可能会产生疑问：如果音频时间比较长，中间出现网络中断，之前识别的内容不就没了么。因此最好采取分段的方法，将音频分割为较短的几段，等效于实时的返回，减少丢失的问题；<br>4、经过测试，又有新问题，如果分段的话，超过10段以上，远程服务器会中断服务，也就是说：不能频繁的调接口，跟网站的发爬虫一样。多进程就别想了。最后部门石经理提供的解决办法是：识别一段后。等个5秒左右再循环下一个，照此方法可行。由于我自己的视频不长，数量也不多，就没做等待处理；<br>5、IBM的语音识别着实厉害，其他的语音识别等有时间再做测试。<br></b></font></p>
+    <title>内牛满面装Portal for ArcGIS</title>
+    <url>/2016/08/28/28862.html</url>
+    <content><![CDATA[<p>之前尝试用过ArcGIS Server，感觉装起来很容易，发布服务也很方便。<br>之后又了解到Portal for ArcGIS（简单说，就是管理集群部署和分工协作的解决方案等等，我觉得现在的集群部署的存在，还是因为单机器硬件的问题短板），于是很想尝试安装一下。<span id="more"></span><br>因为已经装过Server，就直接解压Portal for ArcGIS，嗯，安装软件很顺利，信心爆棚，并不像ArcGIS知乎上反映的那么难。<br>首次是Portal for ArcGIS主页自动打开，我本以为是一个令人惊喜的画面，谁知提示需要再装一个Web Adaptor，纳尼，什么鬼，侬不理解。。怎么貌似有些小复杂，后来证明确实有些复杂，“小”字也可以去掉了。<br>随后查了一下，如下：<br><strong>webadaptor本身的功能就是做请求转发。使用了Webadaptor后，不再通过portal的默认端口7080和7443端口曝露portal 网络地址，而是通过80和443端口曝露portal服务。与现有web server集成，向portal转发从webs erver来的请求。使用webadaptor可以提高portal的安全性，走80或者443端口后，就不用在其地址中曝露7080或者7443端口。<br>参考：<a href="http://zhihu.esrichina.com.cn/question/13070">为什么webadaptor是portal的一个必须组件</a></strong><br>装完webadaptor，觉得应该大功告成了，但是图样图森破。<br>配置配置Portal与Web Adaptor时，需要输入portal的全限定域名称，这不得不说的是，到这一步才提示，真是一个雷区，之前装的Portal for ArcGIS看起来是废了，好吧，计算机改成全限定域名称，提示需要重启电脑，索性也将ArcGIS Server、Portal for ArcGIS和webAdaptor卸载掉。<br>最终还是成功了！<br><img src="/images/30.jpg" alt="Portal for ArcGIS"><br>装Portal for ArcGIS感觉Esri对网络安全做的很好，比如WebAdaptor的使用。但是对于新手或者网络小白来说，装的过程着实是内牛满面，希望以后会有更为简便的安装。</p>
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>GIS</category>
       </categories>
       <tags>
         <tag>GIS</tag>
-        <tag>python</tag>
-        <tag>多字段</tag>
-        <tag>符号渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -650,32 +676,6 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl start docker </span><br></pre></td></tr></table></figure>
 <p> 这样，we choose freedom!<br> <img src="/images/19070209.jpg" alt="freedom"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>在ArcGIS以弹窗形式挂接图片</title>
-    <url>/2016/11/22/869.html</url>
-    <content><![CDATA[<p>1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150<br><img src="/images/11221.jpg" alt="ArcGIS 挂接图片"></p>
-<span id="more"></span>
-<p>2、开启编辑，图加图片路径，然后关闭编辑保存<br> <img src="/images/11225.jpg" alt="ArcGIS 挂接图片"><br>3、右击图层，打开图层属性，点击弹窗选项课，如下所示，选择图片路径字段就OK了<br> <img src="/images/11224.jpg" alt="ArcGIS 挂接图片"><br>4、使用工具条上的弹窗工具，点击要素，<br> <img src="/images/11223.jpg" alt="ArcGIS 挂接图片"><br>5、就可以显示图片了<br> <img src="/images/11222.jpg" alt="ArcGIS 挂接图片"></p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>内牛满面装Portal for ArcGIS</title>
-    <url>/2016/08/28/28862.html</url>
-    <content><![CDATA[<p>之前尝试用过ArcGIS Server，感觉装起来很容易，发布服务也很方便。<br>之后又了解到Portal for ArcGIS（简单说，就是管理集群部署和分工协作的解决方案等等，我觉得现在的集群部署的存在，还是因为单机器硬件的问题短板），于是很想尝试安装一下。<span id="more"></span><br>因为已经装过Server，就直接解压Portal for ArcGIS，嗯，安装软件很顺利，信心爆棚，并不像ArcGIS知乎上反映的那么难。<br>首次是Portal for ArcGIS主页自动打开，我本以为是一个令人惊喜的画面，谁知提示需要再装一个Web Adaptor，纳尼，什么鬼，侬不理解。。怎么貌似有些小复杂，后来证明确实有些复杂，“小”字也可以去掉了。<br>随后查了一下，如下：<br><strong>webadaptor本身的功能就是做请求转发。使用了Webadaptor后，不再通过portal的默认端口7080和7443端口曝露portal 网络地址，而是通过80和443端口曝露portal服务。与现有web server集成，向portal转发从webs erver来的请求。使用webadaptor可以提高portal的安全性，走80或者443端口后，就不用在其地址中曝露7080或者7443端口。<br>参考：<a href="http://zhihu.esrichina.com.cn/question/13070">为什么webadaptor是portal的一个必须组件</a></strong><br>装完webadaptor，觉得应该大功告成了，但是图样图森破。<br>配置配置Portal与Web Adaptor时，需要输入portal的全限定域名称，这不得不说的是，到这一步才提示，真是一个雷区，之前装的Portal for ArcGIS看起来是废了，好吧，计算机改成全限定域名称，提示需要重启电脑，索性也将ArcGIS Server、Portal for ArcGIS和webAdaptor卸载掉。<br>最终还是成功了！<br><img src="/images/30.jpg" alt="Portal for ArcGIS"><br>装Portal for ArcGIS感觉Esri对网络安全做的很好，比如WebAdaptor的使用。但是对于新手或者网络小白来说，装的过程着实是内牛满面，希望以后会有更为简便的安装。</p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
   </entry>
   <entry>
     <title>如何在ArcGIS中绘制漂亮的萤火图</title>
@@ -696,34 +696,6 @@
       </tags>
   </entry>
   <entry>
-    <title>发现一个大坑！！！</title>
-    <url>/2019/06/14/38442.html</url>
-    <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
-<p>**使用排除法</p>
-<p>1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；<br>2、排除代码错误：都在git上同一分支下；<br>3、排除接口数据：都是同一个后台接口环境；</p>
-<p>以上，那么真相只有一个：都是蛋疼惹的事—依赖版本</p>
-<p>**破案过程：<br>由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；<br>然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，<br><img src="/images/19061402.jpg" alt="element-ui 2.9.1"><br>于是回退版本，这个鸟问题终于解决了！<br>目前的解决方案是将将package.json中的</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;^2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>如何让Arcmap支持加载Excel 2003以上的xlsx格式文件</title>
-    <url>/2017/07/25/61373.html</url>
-    <content><![CDATA[<p>相信大家在Arcmap中加载Excel的xlsx文件时，可能会出现该格式不支持的状况，而xls没问题。<br>esri官方解释是：需要装office 2007版本或者office 2007 驱动程序<br>因此操作系统装了office 2010甚至更高的版本是不行的<br>解决的方法是：安装一个office 2007 驱动程序就行了。<br>附上下载地址<a href="https://pan.baidu.com/s/1qYjXQ80">2007 驱动程序</a><br><img src="/images/07251.jpg" alt="Excel的xlsx文件"></p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>arcgis</tag>
-        <tag>arcmap</tag>
-        <tag>xlsx</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>字段值固定位数，位数不够补0位</title>
     <url>/2017/08/11/17385.html</url>
     <content><![CDATA[<p>1、首先新建一个字段<br><img src="/images/081101.jpg" alt="Excel的xlsx文件"><br>2、字段类型选择文本型<br><img src="/images/081102.jpg" alt="字段类型"><br>3、右击该字段，打开字段计算器<br>选择Python，输入表达式 str(!SHAPE_Length!+1).zfill(15)<br>其中!SHAPE_Length!是你要计算的字段，15是位数<br><img src="/images/081103.jpg" alt="表达式"></p>
@@ -732,6 +704,20 @@
         <tag>arcgis</tag>
         <tag>arcmap</tag>
         <tag>字段计算器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在ArcGIS以弹窗形式挂接图片</title>
+    <url>/2016/11/22/869.html</url>
+    <content><![CDATA[<p>1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150<br><img src="/images/11221.jpg" alt="ArcGIS 挂接图片"></p>
+<span id="more"></span>
+<p>2、开启编辑，图加图片路径，然后关闭编辑保存<br> <img src="/images/11225.jpg" alt="ArcGIS 挂接图片"><br>3、右击图层，打开图层属性，点击弹窗选项课，如下所示，选择图片路径字段就OK了<br> <img src="/images/11224.jpg" alt="ArcGIS 挂接图片"><br>4、使用工具条上的弹窗工具，点击要素，<br> <img src="/images/11223.jpg" alt="ArcGIS 挂接图片"><br>5、就可以显示图片了<br> <img src="/images/11222.jpg" alt="ArcGIS 挂接图片"></p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -778,21 +764,6 @@
       </tags>
   </entry>
   <entry>
-    <title>年底-昨天、今天、明天</title>
-    <url>/2018/12/17/24576.html</url>
-    <content><![CDATA[<h1 id="眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。"><a href="#眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。" class="headerlink" title="眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。"></a>眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。</h1><p>如果要用两个字形容这一年，那就是：【折腾】，不过人生不就是折腾来折腾去么，倒也符合常态。但总有些与众不同，有些注定在未来某一天成为突然想起的尘封记忆，或喜、或悲、或怒、亦或是波澜不惊，也许现在难以想象的到。</p>
-<p>那就开始蒙太奇的回忆吧。。。</p>
-<p>从去年2017的年底开始，当时对于下一年的所思所想做了一些SWOT的分析，之后充满了焦虑，还自诩为我的”焦虑元年“，然而确实就这样伴随了我的2018年，90后的”中年危机“就这么来了，有时感觉自己特没主见，作为一个男人真不应该，别人稍微将你聊开了，你就和盘托出，于是逢人就像祥林嫂一样诉说自己的忧虑和担心，但是回过头来，读了一些书，看了一些东西，这样做没有什么意义，将自己切身的感受说给别人听，不管你描述得多么生动，别人几乎是随心而过，感同身受是无法实现的，大家作为一个个个体，又无责为你承担些什么。有些时候，未来的路只能沉默的走下去，要面对这个现实。</p>
-<p>《月亮与六便士》里有这么一段描述：我们每个人生在这个世界上都是孤独的。每个人都被囚禁在一座铁塔里，只能靠一些符号同别人传达自己的思想；而这些符号并没有共同的价值，因此他们的意义是模糊的、不确定的。我们非常可怜地想把自己心中的财富传送给别人，但是他们却没有接受这些财富的能力。因此我们只能孤独地行走，尽管身体互相依傍却并不在一起，即不了解别人也不能为别人所了解。这句话简直妙不可及。</p>
-<p>有这么个映像：人们对于第一件事，不管其为自己带来了什么，或许都难以忘怀，比如第一份工作、第一次做饭、第一次青涩感情的投入（提到这个，翻涌出阵呕~~~）。</p>
-<p>从2016年乘着火车，穿过漫天黄沙的戈壁，从西北一所垂垂老矣、难以回春的大学（所以也没有跟着老师继续读博，容我目光所限）来到帝都，经过数不清的面试，终于进入了一家业内有名气的公司，接到录用通知时，和2013年考上研究生一样，兴奋了许久，倍感珍惜（这词在第一次做的事情上应该通用），想想当时也够单纯，各种正当的要求都没认真的去了解和争取，都草草的入了职，丝毫没有人生规划和职业发展的战略思考。接下来的两年里学习了一些东西，重点是认识了不少人，好像每天感觉很充实，当时自己精力充沛，极力摸索，早出晚归，不放过周末节假日，不去了解除工作意外的东西，像上学一样封闭自己，两耳不闻世事，但年初的总结里，隐隐约约里看到了虚假的充实，这种带有自欺欺人、难以有较大提升的感觉，充斥每天的情绪，周围的同事很好、领导也很好，不好的是自己。然后还有前面提到的原因（可能这个是最大的原因所在，下面细说），最后得到了答案：该换份工作了。</p>
-<p>马云曾说，换工作无非有两个原因：一是对老板不爽；二是对工资不满意。实话说我来这个公司两年，虽然时不时见到大BOSS，但真的从来没说过话，交集为零，直属的三个（没错，就是三个，两个女领导，一个男领导）领导都很不错，所以这一条不存在。然后应该就是第二个，没错，我承认自己很俗，也没办法，当时促使我慎重思考薪资的，是因为一件事。在一线租房真是很痛苦的事，想想每天早出晚归，累的不行，每个月将自己工资的很大部分，给了每天提着鸟笼子的北京土著房东（这里没有地域感情色彩），真的很心痛，但是没办法，谁让自己来大城市求食、求生存呢。然后就是这么操着某地域口音（这里有些地域色彩，但我非以偏概全，）的一群人，接管了房东（懒成啥样。。。，最后不还是自己自作自受）的房子，用一些下三滥的手段诈取钱财，让北漂们露宿街头。光天化日，朗朗乾坤，帝都就这么真真切切发生近似明抢的强盗行为。作为当时的受害者，真是气愤呀！！！某个夜晚有了单纯的世俗想法：再挣多点，心就不会这么疼了。</p>
-<p>都说开发工资高，凭着两年的自学和积累，然后从公司的开发者大会之前开始，那段时间每晚在一些招聘网站，像两年前一样海投了一番，陆陆续续接到一些求职反馈，基本是拒绝的，大概是看到没有实际的开发经验，然后就在开发者大会那天,终于接到来自深圳座机来电，聊了一些后，下午从会场直接过了去。</p>
-<p>。。。。。待续</p>
-<p>多读书、多思考、会折腾（突然想到这句话，暂时记上）</p>
-]]></content>
-  </entry>
-  <entry>
     <title>巧用Excel透视表计算每个公交站点的人数</title>
     <url>/2016/10/27/29903.html</url>
     <content><![CDATA[<p>今天早晨看到有人在ArcGIS上问了如何计算每个公交站点的人数，部分数据如下图：<span id="more"></span><br><img src="/images/10271.png" alt="Excel,透视表"><br>虽然不是GIS的问题，但是觉得很有趣，看到有个ID叫turtle的已经回答了，并且自己也学到不少，他的实现步骤如下：<br>遇到在excel中分类统计汇总的可优先考虑透视表（具体操作题主自己搜索，透视表用起来很爽）；<br>针对题主所提到的多条件查询汇总的可使用sumifs()函数（支持多条件汇总，应该是从office2007引入的）；<br>下面我简单选择了部分数据进行实现，公式详见附件</p>
@@ -818,14 +789,18 @@
       </tags>
   </entry>
   <entry>
-    <title>打开Portal后页面空白问题解决案例</title>
-    <url>/2018/01/25/6720.html</url>
-    <content><![CDATA[<p>昨晚吃完饭回来，操作系统莫名其妙在自动升级<br><img src="/images/1801251.jpg" alt="update"><br>等了大概有2个小时，看来是大版本更新呀</p>
-<span id="more"></span>
-<p>接下来问题就接踵而来了，开始菜单的程序名称都变成两个，只是后边加了个（1）<br><img src="/images/1801252.jpg" alt="WTF"><br>好，这个可以忍。<br>但是很多软件都打不开了。。。。<br>此处一万个草泥马奔腾而过<br><img src="/images/1801253.jpg" alt="ma"></p>
-<p>自然而然，ArcMap也不能用了，数据互操作也打不开了<br>最后重装解决。</p>
-<p>然而,Portal却可以打开，但是一片空白<br><img src="/images/1801254.png" alt="portal页面"><br>好吧，这跟打不开有什么区别呢。<br>查看跟踪请求，发现<a href="https://arc.arcgiser.com:7443/arcgis/sharing/rest/portals/self?culture=zh-cn&amp;f=json%E8%AF%B7%E6%B1%82%E4%B8%80%E7%9B%B4%E6%98%AF404">https://arc.arcgiser.com:7443/arcgis/sharing/rest/portals/self?culture=zh-cn&amp;f=json请求一直是404</a><br>其中有一个zh-cn，这不是中文界面么，但是我的Portl一直是英文界面。<br>于是连接上Portal内置的postgresql数据库，打开gw_accounts数据表<br><img src="/images/1801255.jpg" alt="gw_accounts数据表"><br>修改属性值为Zh-cn<br><img src="/images/1801256.jpg" alt="gw_accounts数据表"><br>然后重启Datastore、server、Portal服务，Portal就可以正常打开了</p>
+    <title>如何让Arcmap支持加载Excel 2003以上的xlsx格式文件</title>
+    <url>/2017/07/25/61373.html</url>
+    <content><![CDATA[<p>相信大家在Arcmap中加载Excel的xlsx文件时，可能会出现该格式不支持的状况，而xls没问题。<br>esri官方解释是：需要装office 2007版本或者office 2007 驱动程序<br>因此操作系统装了office 2010甚至更高的版本是不行的<br>解决的方法是：安装一个office 2007 驱动程序就行了。<br>附上下载地址<a href="https://pan.baidu.com/s/1qYjXQ80">2007 驱动程序</a><br><img src="/images/07251.jpg" alt="Excel的xlsx文件"></p>
 ]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>arcgis</tag>
+        <tag>arcmap</tag>
+        <tag>xlsx</tag>
+      </tags>
   </entry>
   <entry>
     <title>手把手教你抓取地图矢量数据【附代码和北京矢量地图区、街道办数据下载】【一】</title>
@@ -847,6 +822,16 @@
 <p>3、然后是调取以上函数方法，写入至txt文件<br><img src="/images/19090611.jpg" alt="调取、写入"></p>
 <p>4、最后分别得到行政区和街道办边界节点的txt文本<br><img src="/images/19090616.jpg" alt="txt文本"><br><img src="/images/19090612.jpg" alt="行政区边界节点的txt文本"><br><img src="/images/19090615.jpg" alt="街道办边界节点的txt文本"></p>
 <p>本节结束，这里附上完整的代码和txt文本下载链接<br>链接：<a href="https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow">https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow</a><br>提取码：gnkx<br>或者长按以下二维码获取下载<br><img src="/images/19090610.png" alt="二维码获取下载"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>打开Portal后页面空白问题解决案例</title>
+    <url>/2018/01/25/6720.html</url>
+    <content><![CDATA[<p>昨晚吃完饭回来，操作系统莫名其妙在自动升级<br><img src="/images/1801251.jpg" alt="update"><br>等了大概有2个小时，看来是大版本更新呀</p>
+<span id="more"></span>
+<p>接下来问题就接踵而来了，开始菜单的程序名称都变成两个，只是后边加了个（1）<br><img src="/images/1801252.jpg" alt="WTF"><br>好，这个可以忍。<br>但是很多软件都打不开了。。。。<br>此处一万个草泥马奔腾而过<br><img src="/images/1801253.jpg" alt="ma"></p>
+<p>自然而然，ArcMap也不能用了，数据互操作也打不开了<br>最后重装解决。</p>
+<p>然而,Portal却可以打开，但是一片空白<br><img src="/images/1801254.png" alt="portal页面"><br>好吧，这跟打不开有什么区别呢。<br>查看跟踪请求，发现<a href="https://arc.arcgiser.com:7443/arcgis/sharing/rest/portals/self?culture=zh-cn&amp;f=json%E8%AF%B7%E6%B1%82%E4%B8%80%E7%9B%B4%E6%98%AF404">https://arc.arcgiser.com:7443/arcgis/sharing/rest/portals/self?culture=zh-cn&amp;f=json请求一直是404</a><br>其中有一个zh-cn，这不是中文界面么，但是我的Portl一直是英文界面。<br>于是连接上Portal内置的postgresql数据库，打开gw_accounts数据表<br><img src="/images/1801255.jpg" alt="gw_accounts数据表"><br>修改属性值为Zh-cn<br><img src="/images/1801256.jpg" alt="gw_accounts数据表"><br>然后重启Datastore、server、Portal服务，Portal就可以正常打开了</p>
 ]]></content>
   </entry>
   <entry>
@@ -891,6 +876,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>欲戴其冠,必承其重---谈谈ArcGIS制图表达</title>
+    <url>/2016/11/01/7022.html</url>
+    <content><![CDATA[<p>很早的时候，ArcGIS中就增加了制图表达的功能，只是用的人不多，所以一直不为大多数人所知。本来ArcGIS的基本标注已经满足大部分的出图需求，制图表达如同没有开封的美酒，一直等待去开启，但是任何东西都要有个度，如果酒喝多了也不好，影像做事效率。<span id="more"></span><br>例如，以下是广州的行政区划图，很简单的一张图，根据不同区域分类着色，然后添加文字标注就行了，放大缩小加载都很快，但是看起来很单调，没有美观可言。<br><img src="/images/110102.jpg" alt="原图"><br>下图简单增加制图表达后，如颜色渐变和缓冲区立体效果，立刻显得很有艺术的气息 (<em>^__^</em>) 嘻嘻……)，但是美丽的背后带来不小的副作用，图层缩放加载非常慢，影响制图效率，所以预先要将一些简单地标注完成再转为制图表达。<br><img src="/images/110101.jpg" alt="添加制图表达"><br>有一句话说得好，”欲戴其冠,必承其重“，对于制图表达加载效率的这个问题，需要以后版本的改进，也有可能我没触及到，比如ArcGIS Pro中是否已经解决这个问题。<br>虽然官方在ArcGIS 10.1版本的时候就说过支持制图表达发布为服务，但是支持的范围是有限的，目前来说10.4.1依然没多大，报错的情况还挺多的，希望以后的server能做一下改进，但是结合Arcgis API for js，应该也可以实现我们所要求的一些效果。<br>总而言之，对于专题出图和打印，制图表达仍然是非常有用的功能，他让你的地图抽象地更接地气，更为合理，更为美观，也希望以后愈加完美生动地展示在不同的平台。</p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>更换注册ArcGIS Web Adaptor后，Portal for ArcGIS需要做的内容迁移</title>
     <url>/2017/01/16/43705.html</url>
     <content><![CDATA[<p>情境描述:<br>之前在我的电脑上装了Portal for ArcGIS和ArcGIS Server，并且共用一个ArcGIS Web Adaptor，<br>后来Server组的同事建议Portal for ArcGIS和ArcGIS Server分别用一个ArcGIS Web Adaptor，<br>于是我先将Portal for ArcGIS和ArcGIS Server解除联合，然后卸载掉ArcGIS Web Adaptor，<br>接着安装了两个ArcGIS Web Adaptor，注册server的命名为server，注册portal的命名为arcgis。<br>安装之后，分别注册Portal for ArcGIS和ArcGIS Server，接着联合，成功！</p>
@@ -912,15 +909,29 @@
 ]]></content>
   </entry>
   <entry>
-    <title>欲戴其冠,必承其重---谈谈ArcGIS制图表达</title>
-    <url>/2016/11/01/7022.html</url>
-    <content><![CDATA[<p>很早的时候，ArcGIS中就增加了制图表达的功能，只是用的人不多，所以一直不为大多数人所知。本来ArcGIS的基本标注已经满足大部分的出图需求，制图表达如同没有开封的美酒，一直等待去开启，但是任何东西都要有个度，如果酒喝多了也不好，影像做事效率。<span id="more"></span><br>例如，以下是广州的行政区划图，很简单的一张图，根据不同区域分类着色，然后添加文字标注就行了，放大缩小加载都很快，但是看起来很单调，没有美观可言。<br><img src="/images/110102.jpg" alt="原图"><br>下图简单增加制图表达后，如颜色渐变和缓冲区立体效果，立刻显得很有艺术的气息 (<em>^__^</em>) 嘻嘻……)，但是美丽的背后带来不小的副作用，图层缩放加载非常慢，影响制图效率，所以预先要将一些简单地标注完成再转为制图表达。<br><img src="/images/110101.jpg" alt="添加制图表达"><br>有一句话说得好，”欲戴其冠,必承其重“，对于制图表达加载效率的这个问题，需要以后版本的改进，也有可能我没触及到，比如ArcGIS Pro中是否已经解决这个问题。<br>虽然官方在ArcGIS 10.1版本的时候就说过支持制图表达发布为服务，但是支持的范围是有限的，目前来说10.4.1依然没多大，报错的情况还挺多的，希望以后的server能做一下改进，但是结合Arcgis API for js，应该也可以实现我们所要求的一些效果。<br>总而言之，对于专题出图和打印，制图表达仍然是非常有用的功能，他让你的地图抽象地更接地气，更为合理，更为美观，也希望以后愈加完美生动地展示在不同的平台。</p>
+    <title>年底-昨天、今天、明天</title>
+    <url>/2018/12/17/24576.html</url>
+    <content><![CDATA[<h1 id="眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。"><a href="#眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。" class="headerlink" title="眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。"></a>眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。</h1><p>如果要用两个字形容这一年，那就是：【折腾】，不过人生不就是折腾来折腾去么，倒也符合常态。但总有些与众不同，有些注定在未来某一天成为突然想起的尘封记忆，或喜、或悲、或怒、亦或是波澜不惊，也许现在难以想象的到。</p>
+<p>那就开始蒙太奇的回忆吧。。。</p>
+<p>从去年2017的年底开始，当时对于下一年的所思所想做了一些SWOT的分析，之后充满了焦虑，还自诩为我的”焦虑元年“，然而确实就这样伴随了我的2018年，90后的”中年危机“就这么来了，有时感觉自己特没主见，作为一个男人真不应该，别人稍微将你聊开了，你就和盘托出，于是逢人就像祥林嫂一样诉说自己的忧虑和担心，但是回过头来，读了一些书，看了一些东西，这样做没有什么意义，将自己切身的感受说给别人听，不管你描述得多么生动，别人几乎是随心而过，感同身受是无法实现的，大家作为一个个个体，又无责为你承担些什么。有些时候，未来的路只能沉默的走下去，要面对这个现实。</p>
+<p>《月亮与六便士》里有这么一段描述：我们每个人生在这个世界上都是孤独的。每个人都被囚禁在一座铁塔里，只能靠一些符号同别人传达自己的思想；而这些符号并没有共同的价值，因此他们的意义是模糊的、不确定的。我们非常可怜地想把自己心中的财富传送给别人，但是他们却没有接受这些财富的能力。因此我们只能孤独地行走，尽管身体互相依傍却并不在一起，即不了解别人也不能为别人所了解。这句话简直妙不可及。</p>
+<p>有这么个映像：人们对于第一件事，不管其为自己带来了什么，或许都难以忘怀，比如第一份工作、第一次做饭、第一次青涩感情的投入（提到这个，翻涌出阵呕~~~）。</p>
+<p>从2016年乘着火车，穿过漫天黄沙的戈壁，从西北一所垂垂老矣、难以回春的大学（所以也没有跟着老师继续读博，容我目光所限）来到帝都，经过数不清的面试，终于进入了一家业内有名气的公司，接到录用通知时，和2013年考上研究生一样，兴奋了许久，倍感珍惜（这词在第一次做的事情上应该通用），想想当时也够单纯，各种正当的要求都没认真的去了解和争取，都草草的入了职，丝毫没有人生规划和职业发展的战略思考。接下来的两年里学习了一些东西，重点是认识了不少人，好像每天感觉很充实，当时自己精力充沛，极力摸索，早出晚归，不放过周末节假日，不去了解除工作意外的东西，像上学一样封闭自己，两耳不闻世事，但年初的总结里，隐隐约约里看到了虚假的充实，这种带有自欺欺人、难以有较大提升的感觉，充斥每天的情绪，周围的同事很好、领导也很好，不好的是自己。然后还有前面提到的原因（可能这个是最大的原因所在，下面细说），最后得到了答案：该换份工作了。</p>
+<p>马云曾说，换工作无非有两个原因：一是对老板不爽；二是对工资不满意。实话说我来这个公司两年，虽然时不时见到大BOSS，但真的从来没说过话，交集为零，直属的三个（没错，就是三个，两个女领导，一个男领导）领导都很不错，所以这一条不存在。然后应该就是第二个，没错，我承认自己很俗，也没办法，当时促使我慎重思考薪资的，是因为一件事。在一线租房真是很痛苦的事，想想每天早出晚归，累的不行，每个月将自己工资的很大部分，给了每天提着鸟笼子的北京土著房东（这里没有地域感情色彩），真的很心痛，但是没办法，谁让自己来大城市求食、求生存呢。然后就是这么操着某地域口音（这里有些地域色彩，但我非以偏概全，）的一群人，接管了房东（懒成啥样。。。，最后不还是自己自作自受）的房子，用一些下三滥的手段诈取钱财，让北漂们露宿街头。光天化日，朗朗乾坤，帝都就这么真真切切发生近似明抢的强盗行为。作为当时的受害者，真是气愤呀！！！某个夜晚有了单纯的世俗想法：再挣多点，心就不会这么疼了。</p>
+<p>都说开发工资高，凭着两年的自学和积累，然后从公司的开发者大会之前开始，那段时间每晚在一些招聘网站，像两年前一样海投了一番，陆陆续续接到一些求职反馈，基本是拒绝的，大概是看到没有实际的开发经验，然后就在开发者大会那天,终于接到来自深圳座机来电，聊了一些后，下午从会场直接过了去。</p>
+<p>。。。。。待续</p>
+<p>多读书、多思考、会折腾（突然想到这句话，暂时记上）</p>
 ]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
+  </entry>
+  <entry>
+    <title>缓冲区对象工作流程</title>
+    <url>/2023/05/25/47570.html</url>
+    <content><![CDATA[<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、创建缓冲区对象（gl.createBuffer()）;</span><br><span class="line"><span class="number">2</span>、绑定缓冲区对象（gl.bindBuffer()）;</span><br><span class="line"><span class="number">3</span>、将数据写入缓冲区对象（gl.bufferData()）;</span><br><span class="line"><span class="number">4</span>、将缓冲区对象分配给一个<span class="keyword">attribute</span>变量（gl.vertexAttribPointer()）;</span><br><span class="line"><span class="number">5</span>、开启<span class="keyword">attribute</span>变量（gl.enableVertexAttribArray()）</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/buffer_object20230525.png" alt="缓冲区对象工作流程1"><br><img src="/images/202305261.jpg" alt="缓冲区对象工作流程2"></p>
+]]></content>
       <tags>
-        <tag>GIS</tag>
+        <tag>WebGL</tag>
       </tags>
   </entry>
   <entry>
@@ -966,23 +977,6 @@
       </tags>
   </entry>
   <entry>
-    <title>缓冲区对象工作流程</title>
-    <url>/2023/05/25/47570.html</url>
-    <content><![CDATA[<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、创建缓冲区对象（gl.createBuffer()）;</span><br><span class="line"><span class="number">2</span>、绑定缓冲区对象（gl.bindBuffer()）;</span><br><span class="line"><span class="number">3</span>、将数据写入缓冲区对象（gl.bufferData()）;</span><br><span class="line"><span class="number">4</span>、将缓冲区对象分配给一个<span class="keyword">attribute</span>变量（gl.vertexAttribPointer()）;</span><br><span class="line"><span class="number">5</span>、开启<span class="keyword">attribute</span>变量（gl.enableVertexAttribArray()）</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/buffer_object20230525.png" alt="缓冲区对象工作流程1"><br><img src="/images/202305261.jpg" alt="缓冲区对象工作流程2"></p>
-]]></content>
-      <tags>
-        <tag>WebGL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>装server集群时，使用虚拟机克隆，需要注意的点</title>
-    <url>/2017/10/19/8194.html</url>
-    <content><![CDATA[<p>创建站点之前，需要修改X:\arcgis\ArcGIS\Server\framework\etc\machine-config.xml文件中的机器名。修改为本机的机器名</p>
-]]></content>
-  </entry>
-  <entry>
     <title>获取周围邻接面的属性</title>
     <url>/2018/03/07/40221.html</url>
     <content><![CDATA[<p>先将数据复制一份添加至ArcMap中。<br>1、    打开空间连接工具，输入参数如下<br> <img src="/images/18030701.jpg" alt="空间连接工具"><br>2、    点击+号，创建一个字段，文本类型，合并选择连接，连接方式输入分号，点击OK<br> <img src="/images/18030702.jpg" alt="创建一个字段"><br>3、右击新添加的字段，选择添加字段<br> <img src="/images/18030703.jpg" alt="添加字段"><br>4、然后选择副本中字段，注意：是副本中的字段<br> <img src="/images/18030704.jpg" alt="选择副本中字段"><br>接下来是去重操作<br>1、新建一个文本字段<br> <img src="/images/18030705.jpg" alt="新建一个文本字段"><br>2、打开字段计算器，选择python,输入<br>‘;’.join( !joinattr! .split(‘;’ )[1:])<br>这里你可以将!joinattr!替换为你自己的字段<br> <img src="/images/18030706.jpg" alt="字段计算器"><br>3、结果如下<br> <img src="/images/18030707.jpg" alt="结果"></p>
@@ -1010,6 +1004,25 @@
       </tags>
   </entry>
   <entry>
+    <title>解决xampp服务器因80端口被占用,Apach无法启动的方法</title>
+    <url>/2016/08/20/27324.html</url>
+    <content><![CDATA[<p>之前自己的网站搭建在学校的服务器上的，所以使用起来很方便，但离开学校后，没了服务器，网站所有的内容只能静静地备份在移动硬盘中，周末没其他事来公司，于是在本地搭建起来，想把旧网站中内容转到新网站中，谁知xamppz中Apach却启动不起来，显示有错误，看了一下提示：<br><img src="/images/200.jpg" alt="xampp"><span id="more"></span><br>图中表示80端口被其他进程占用了，于是按照这篇文章<a href="http://zyouzz.tk/2016/08/20/%E8%A7%A3%E5%86%B3ArcGIS-Server%E5%9B%A0%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%EF%BC%8C%E8%80%8C%E6%97%A0%E6%B3%95%E5%8F%91%E5%B8%83%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%96%B9%E6%B3%95/">解决ArcGIS Server因端口被占用，而无法发布地图服务的方法</a>的思路，着手解决，但结果是行不通，后来一想，原来是之前装了ArcGIS Server，需要开启系统自带的IIS服务器，可能80被他占用了<br>1、于是搜“IIS”，打开IIS管理器<br><img src="/images/201.jpg" alt="xampp"><br>2、右击Default Web Site，点击绑定<br><img src="/images/202.jpg" alt="xampp"><br>3、80端口果然被其占用，这时，我们只需点击80的记录，修改为其他端口即可<br><img src="/images/203.jpg" alt="xampp"><br><img src="/images/204.jpg" alt="xampp"><br>4、再回到xampp,Apach成功开启！<br><img src="/images/205.jpg" alt="xampp"></p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>RS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>装server集群时，使用虚拟机克隆，需要注意的点</title>
+    <url>/2017/10/19/8194.html</url>
+    <content><![CDATA[<p>创建站点之前，需要修改X:\arcgis\ArcGIS\Server\framework\etc\machine-config.xml文件中的机器名。修改为本机的机器名</p>
+]]></content>
+  </entry>
+  <entry>
     <title>解决openlayers前端加载大数据量显示卡顿的性能建议</title>
     <url>/2021/08/13/35548.html</url>
     <content><![CDATA[<p>这段时间一直在做XX大数据项目，由于多维度和多条件查询的缘故，数据比较大，一个ol.layer.vector的图层要加载将近一两万的点，这时性能瓶颈就上来了，所以在前端显示时：页面及其卡顿甚至崩溃。另外因为添加了interaction交互事件，每个点都包含了较多的属性，信息量比较大。。。忍不了一下。。</p>
@@ -1020,13 +1033,10 @@
 ]]></content>
   </entry>
   <entry>
-    <title>类型化数组</title>
-    <url>/2023/05/26/33653.html</url>
-    <content><![CDATA[<p>为了绘制三维图形，WebGL通常需要同时处理大量相同类型的数据，例如顶点的坐标和颜色数据。为了优化性能，WebGL为每种基本数据类型引入了一种特殊的数组（类型化数组）。浏览器事先知道数组中的数据类型，所以处理起来也更加有效率。</p>
+    <title>记录贼坑一件事</title>
+    <url>/2019/04/25/24763.html</url>
+    <content><![CDATA[<p>昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。<br>最后发现是空间几何字段的空间参考不一致的问题，233333.</p>
 ]]></content>
-      <tags>
-        <tag>WebGL</tag>
-      </tags>
   </entry>
   <entry>
     <title>计算点距离线最近的投影点</title>
@@ -1043,9 +1053,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>记录贼坑一件事</title>
-    <url>/2019/04/25/24763.html</url>
-    <content><![CDATA[<p>昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。<br>最后发现是空间几何字段的空间参考不一致的问题，233333.</p>
+    <title>软件遇到未知错误，怎么办？</title>
+    <url>/2019/08/29/56203.html</url>
+    <content><![CDATA[<p>右键属性，以兼容模式解决<br><img src="/images/19082901.jpg" alt="兼容性"><br>然后以管理员身份运行</p>
 ]]></content>
   </entry>
   <entry>
@@ -1055,16 +1065,44 @@
 ]]></content>
   </entry>
   <entry>
-    <title>解决xampp服务器因80端口被占用,Apach无法启动的方法</title>
-    <url>/2016/08/20/27324.html</url>
-    <content><![CDATA[<p>之前自己的网站搭建在学校的服务器上的，所以使用起来很方便，但离开学校后，没了服务器，网站所有的内容只能静静地备份在移动硬盘中，周末没其他事来公司，于是在本地搭建起来，想把旧网站中内容转到新网站中，谁知xamppz中Apach却启动不起来，显示有错误，看了一下提示：<br><img src="/images/200.jpg" alt="xampp"><span id="more"></span><br>图中表示80端口被其他进程占用了，于是按照这篇文章<a href="http://zyouzz.tk/2016/08/20/%E8%A7%A3%E5%86%B3ArcGIS-Server%E5%9B%A0%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%EF%BC%8C%E8%80%8C%E6%97%A0%E6%B3%95%E5%8F%91%E5%B8%83%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%96%B9%E6%B3%95/">解决ArcGIS Server因端口被占用，而无法发布地图服务的方法</a>的思路，着手解决，但结果是行不通，后来一想，原来是之前装了ArcGIS Server，需要开启系统自带的IIS服务器，可能80被他占用了<br>1、于是搜“IIS”，打开IIS管理器<br><img src="/images/201.jpg" alt="xampp"><br>2、右击Default Web Site，点击绑定<br><img src="/images/202.jpg" alt="xampp"><br>3、80端口果然被其占用，这时，我们只需点击80的记录，修改为其他端口即可<br><img src="/images/203.jpg" alt="xampp"><br><img src="/images/204.jpg" alt="xampp"><br>4、再回到xampp,Apach成功开启！<br><img src="/images/205.jpg" alt="xampp"></p>
+    <title>近期遇到的问题小汇</title>
+    <url>/2018/04/16/50787.html</url>
+    <content><![CDATA[<p>突然发现四月份已过半，近段时间一直在摸索ArcGIS Enterprise的课程，然后上周有一个用户的ArcGIS Server培训，突然发现有了一些方向感。<br>在这段时间主要遇到两个问题，也是积攒了一段时间，算是都有了结果以及合理的解释。列表如下：<br>1、ArcMap的性能问题<br>2、操作系统用户名为esri产生的神奇问题<br>3、ArcGIS Enterprise死活发不了托管要素服务的问题</p>
+<span id="more"></span>
+<p>下面一一记录过程和解答</p>
+<p>问题1 ArcMap的性能问题<br>从10.5开始，就开始体会到ArcMap打开矢量数据的图层属性巨慢，一直不得解，严重影响使用，不少用户也反馈和吐槽，之前，我也专门就这个问题写了一篇博客<a href="http://giser.tk/2018/03/26/55332.html">ArcMap用起来卡的，请进</a>，里面提到的方法暂时能够解决性能的问题。<br>我的同事一直与美国沟通，好在近期美国重现出这个问题，并定了BUG，期待下一个版本解决。</p>
+<p>问题2 操作系统用户名为esri产生的神奇问题<br>之前我在博客中也提到该问题<a href="http://giser.tk/2017/12/02/11059.html">ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</a>，然后我发现许多同事都遇到了，原因是我们用的是公司统一配置的电脑，IT装机时都会用esri这个用户名，造成了神奇的路径错乱问题。最后我继续反馈了该问题至美国，等了一段时间，终于定了一个BUG</p>
+<p>问题3 ArcGIS Enterprise死活发不了托管要素服务的问题<br>我在自己电脑上安装了ArcGIS Enterprise10.6、ArcGIS Pro 2.1.2、ArcGIS Pro的数据互操作模块扩展<br>然后我有个带经纬度坐标的CSV文件,想发布为托管要素服务，但是一直报错，<br><img src="/images/18041601.png" alt="error"><br>server日志显示实例崩溃<br><img src="/images/18041602.png" alt="instance crash"><br>然后我安装崩溃补丁<a href="https://support.esri.com/en/download/7576">https://support.esri.com/en/download/7576</a>也没用<br>然后上面的日志中提到生成的有dmp文件，我用VS Studio看了一下<br>看到里面有ArcGIS Pro的数据互操作模块路径<br><img src="/images/18041603.jpg" alt="instance crash"><br>随后我就卸载掉数据互操作，接下来Portal就能通过CSV正常发布托管要素图层了。<br>最后将这个问题提交给美国，已经被定为BUG</p>
+<p>========================<br>最后的最后，从年初两会以来，单机版离线邮箱授权一直没有收到回执邮件，开始我们以为是两会特殊期间造成的，但是两会开完一个月后还是收不到，心想不是国内网络的原因了，可能是他们的许可服务器坏了，于是提交给美国一个CASE，他们回复说没有重现，正常收到回执邮件，但是国内用户的反馈却每天一个个接踵而来，只能联系合同部，给他们申请开通myesri在线激活授权。然后我一个同事的engine也出现这个问题，同样提交CASE给美国，他们成功地没收到回执，最后发现许可服务器果然坏了。修好后，桌面的也能收到了，问题就这么解决了。此时我只想说：MMP</p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类型化数组</title>
+    <url>/2023/05/26/33653.html</url>
+    <content><![CDATA[<p>为了绘制三维图形，WebGL通常需要同时处理大量相同类型的数据，例如顶点的坐标和颜色数据。为了优化性能，WebGL为每种基本数据类型引入了一种特殊的数组（类型化数组）。浏览器事先知道数组中的数据类型，所以处理起来也更加有效率。<br><img src="/images/arrays.jpg" alt="类型化数组"></p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>长城符号制作---图层叠加 vs 制图表达</title>
+    <url>/2016/12/15/4666.html</url>
+    <content><![CDATA[<p>主要有两种方法<br>1、图层叠加：在符号编辑器中通过三个图层符号叠加作出来，参数设置如下：<br><img src="/images/12151.jpg" alt="长城符号制作---图层叠加 vs 制图表达"></p>
+<span id="more"></span>
+<p><img src="/images/12152.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br><img src="/images/12153.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br><img src="/images/12154.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br>2、制图表达：将原先线图层符号转为制图表达，然后添加wave效果，参数设置如下：<br><img src="/images/12155.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br><img src="/images/12156.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br>对比以上两种方法，制图表达更为方便美观。</p>
 ]]></content>
       <categories>
         <category>GIS</category>
       </categories>
       <tags>
         <tag>GIS</tag>
-        <tag>RS</tag>
       </tags>
   </entry>
   <entry>
@@ -1088,42 +1126,16 @@
 ]]></content>
   </entry>
   <entry>
-    <title>软件遇到未知错误，怎么办？</title>
-    <url>/2019/08/29/56203.html</url>
-    <content><![CDATA[<p>右键属性，以兼容模式解决<br><img src="/images/19082901.jpg" alt="兼容性"><br>然后以管理员身份运行</p>
+    <title>about</title>
+    <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
+    <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
 ]]></content>
   </entry>
   <entry>
-    <title>近期遇到的问题小汇</title>
-    <url>/2018/04/16/50787.html</url>
-    <content><![CDATA[<p>突然发现四月份已过半，近段时间一直在摸索ArcGIS Enterprise的课程，然后上周有一个用户的ArcGIS Server培训，突然发现有了一些方向感。<br>在这段时间主要遇到两个问题，也是积攒了一段时间，算是都有了结果以及合理的解释。列表如下：<br>1、ArcMap的性能问题<br>2、操作系统用户名为esri产生的神奇问题<br>3、ArcGIS Enterprise死活发不了托管要素服务的问题</p>
-<span id="more"></span>
-<p>下面一一记录过程和解答</p>
-<p>问题1 ArcMap的性能问题<br>从10.5开始，就开始体会到ArcMap打开矢量数据的图层属性巨慢，一直不得解，严重影响使用，不少用户也反馈和吐槽，之前，我也专门就这个问题写了一篇博客<a href="http://giser.tk/2018/03/26/55332.html">ArcMap用起来卡的，请进</a>，里面提到的方法暂时能够解决性能的问题。<br>我的同事一直与美国沟通，好在近期美国重现出这个问题，并定了BUG，期待下一个版本解决。</p>
-<p>问题2 操作系统用户名为esri产生的神奇问题<br>之前我在博客中也提到该问题<a href="http://giser.tk/2017/12/02/11059.html">ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</a>，然后我发现许多同事都遇到了，原因是我们用的是公司统一配置的电脑，IT装机时都会用esri这个用户名，造成了神奇的路径错乱问题。最后我继续反馈了该问题至美国，等了一段时间，终于定了一个BUG</p>
-<p>问题3 ArcGIS Enterprise死活发不了托管要素服务的问题<br>我在自己电脑上安装了ArcGIS Enterprise10.6、ArcGIS Pro 2.1.2、ArcGIS Pro的数据互操作模块扩展<br>然后我有个带经纬度坐标的CSV文件,想发布为托管要素服务，但是一直报错，<br><img src="/images/18041601.png" alt="error"><br>server日志显示实例崩溃<br><img src="/images/18041602.png" alt="instance crash"><br>然后我安装崩溃补丁<a href="https://support.esri.com/en/download/7576">https://support.esri.com/en/download/7576</a>也没用<br>然后上面的日志中提到生成的有dmp文件，我用VS Studio看了一下<br>看到里面有ArcGIS Pro的数据互操作模块路径<br><img src="/images/18041603.jpg" alt="instance crash"><br>随后我就卸载掉数据互操作，接下来Portal就能通过CSV正常发布托管要素图层了。<br>最后将这个问题提交给美国，已经被定为BUG</p>
-<p>========================<br>最后的最后，从年初两会以来，单机版离线邮箱授权一直没有收到回执邮件，开始我们以为是两会特殊期间造成的，但是两会开完一个月后还是收不到，心想不是国内网络的原因了，可能是他们的许可服务器坏了，于是提交给美国一个CASE，他们回复说没有重现，正常收到回执邮件，但是国内用户的反馈却每天一个个接踵而来，只能联系合同部，给他们申请开通myesri在线激活授权。然后我一个同事的engine也出现这个问题，同样提交CASE给美国，他们成功地没收到回执，最后发现许可服务器果然坏了。修好后，桌面的也能收到了，问题就这么解决了。此时我只想说：MMP</p>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#97;&#109;&#x65;&#x73;&#x72;&#x6f;&#99;&#107;&#54;&#54;&#54;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#106;&#97;&#109;&#x65;&#x73;&#x72;&#x6f;&#99;&#107;&#54;&#54;&#54;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
 ]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcGIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>长城符号制作---图层叠加 vs 制图表达</title>
-    <url>/2016/12/15/4666.html</url>
-    <content><![CDATA[<p>主要有两种方法<br>1、图层叠加：在符号编辑器中通过三个图层符号叠加作出来，参数设置如下：<br><img src="/images/12151.jpg" alt="长城符号制作---图层叠加 vs 制图表达"></p>
-<span id="more"></span>
-<p><img src="/images/12152.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br><img src="/images/12153.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br><img src="/images/12154.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br>2、制图表达：将原先线图层符号转为制图表达，然后添加wave效果，参数设置如下：<br><img src="/images/12155.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br><img src="/images/12156.jpg" alt="长城符号制作---图层叠加 vs 制图表达"><br>对比以上两种方法，制图表达更为方便美观。</p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
   </entry>
   <entry>
     <title>ArcGIS知乎每天站内搜索统计</title>
@@ -1170,68 +1182,6 @@ var chart = c3.generate({
 </script>
 
 </html>]]></content>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#97;&#109;&#x65;&#115;&#114;&#111;&#99;&#x6b;&#x36;&#54;&#54;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#106;&#97;&#109;&#x65;&#115;&#114;&#111;&#99;&#x6b;&#x36;&#54;&#54;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
-    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BB%9F%E8%AE%A1Top50.html</url>
-    <content><![CDATA[<span id="more"></span>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
-    <!-- 加载c3.css文件-->
-    <link href="http://c3js.org/css/c3-b03125fa.css" rel="stylesheet" type="text/css">
-
-    <!-- 加载d3.js和c3.js -->
-    <script src="http://c3js.org/js/d3-3.5.6.min-77adef17.js" charset="utf-8"></script>
-    <script src="http://c3js.org/js/c3.min-4c5bef8f.js"></script>
-	<SCRIPT language=JavaScript> function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
-</head>
-<body>
-
-<!--准备绑定图表的元素-->
-<div id="chart" style='height:1100px'></div>
-</body>
-<script>
-var chart = c3.generate({
-    data: {
-        x: '关键词',
-//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-        columns: [
-['关键词', 'arcgis', 'for', 'server', 'api', 'portal', 'ios', 'to', 'javascript', 'runtime', 'pro', 'js', 'engine', 'the', 'android', 'failed', 'web', 'error', '安装', 'arcengine', 'linux', 'not', 'python', '10.5', 'data', 'sdk', 'gp', 'is', '天地图', 'create', 'arcmap', 'gis', 'desktop', 'service', 'arcpy', 'cityengine', 'java', 'envi', 'enterprise', '3d', 'sde', '三维', '10.2.5', 'in', '切片', 'arcsde', '矢量切片', 'cad', 'webgis', 'geoevent', 'a'],
-//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-['次数', '2476', '817', '530', '480', '375', '286', '274', '262', '251', '244', '241', '220', '203', '200', '159', '134', '132', '127', '124', '118', '117', '117', '113', '108', '93', '90', '87', '80', '80', '79', '76', '76', '75', '74', '71', '69', '68', '66', '65', '62', '61', '60', '59', '59', '56', '55', '55', '54', '53', '50'],
-        ],
-		type:'bar',
-		labels:{
-			format:{
-			次数: d3.format(''),
-			}
-		}
-    },
-    axis: {
-		rotated: true,
-        x: {
-            type: 'category',
-            
-        }
-    }
-});
-</script>
-
-</html>]]></content>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
-    <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
-]]></content>
   </entry>
   <entry>
     <title></title>
@@ -2107,5 +2057,55 @@ var chart = c3.generate({
 </body>
 </html>
 ]]></content>
+  </entry>
+  <entry>
+    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
+    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BB%9F%E8%AE%A1Top50.html</url>
+    <content><![CDATA[<span id="more"></span>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
+    <!-- 加载c3.css文件-->
+    <link href="http://c3js.org/css/c3-b03125fa.css" rel="stylesheet" type="text/css">
+
+    <!-- 加载d3.js和c3.js -->
+    <script src="http://c3js.org/js/d3-3.5.6.min-77adef17.js" charset="utf-8"></script>
+    <script src="http://c3js.org/js/c3.min-4c5bef8f.js"></script>
+	<SCRIPT language=JavaScript> function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
+</head>
+<body>
+
+<!--准备绑定图表的元素-->
+<div id="chart" style='height:1100px'></div>
+</body>
+<script>
+var chart = c3.generate({
+    data: {
+        x: '关键词',
+//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+        columns: [
+['关键词', 'arcgis', 'for', 'server', 'api', 'portal', 'ios', 'to', 'javascript', 'runtime', 'pro', 'js', 'engine', 'the', 'android', 'failed', 'web', 'error', '安装', 'arcengine', 'linux', 'not', 'python', '10.5', 'data', 'sdk', 'gp', 'is', '天地图', 'create', 'arcmap', 'gis', 'desktop', 'service', 'arcpy', 'cityengine', 'java', 'envi', 'enterprise', '3d', 'sde', '三维', '10.2.5', 'in', '切片', 'arcsde', '矢量切片', 'cad', 'webgis', 'geoevent', 'a'],
+//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+['次数', '2476', '817', '530', '480', '375', '286', '274', '262', '251', '244', '241', '220', '203', '200', '159', '134', '132', '127', '124', '118', '117', '117', '113', '108', '93', '90', '87', '80', '80', '79', '76', '76', '75', '74', '71', '69', '68', '66', '65', '62', '61', '60', '59', '59', '56', '55', '55', '54', '53', '50'],
+        ],
+		type:'bar',
+		labels:{
+			format:{
+			次数: d3.format(''),
+			}
+		}
+    },
+    axis: {
+		rotated: true,
+        x: {
+            type: 'category',
+            
+        }
+    }
+});
+</script>
+
+</html>]]></content>
   </entry>
 </search>
