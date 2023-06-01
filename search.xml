@@ -1131,6 +1131,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>关于bash中的2&gt;&amp;1 &amp;理解</title>
+    <url>/2023/06/01/62539.html</url>
+    <content><![CDATA[<p>经常运行一些python脚本或者jar包，如果直接运行python *.py，或者 java -jar *.jar,再进行其他操作，需要终止运行，所以应该是后台运行。<br>这也就经常看到这样的句式：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup python *.py &gt; nohup.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+<p>1、开始的nohup（no hang up, 不挂起），用于系统后台不挂断的运行命令；<br>2、中间的python *.py我们好理解，就是运行脚本；<br>3、&gt; nohup.log 意思将新建nohup.log文件，并将运行日志写到该文件中，我们可以使用&gt;&gt;，表示追加日志内容；<br>4、bash中0，1，2分别表示STDIN_FILENO（标准输入）,STDOUT_FILENO（ 标准输出）,STDERR_FILENO（标准错误），输入输出可以重定向，如cat &lt; text.c将test.c重定向为cat命令的输入源，输出重定向就是将指定具体的输出目标以替换默认的标准输出。默认输入只有一个（0，STDIN_FILENO），而默认输出有两个（标准输出1，STDOUT_FILENO，标准错误输出2，STDERR_FILENO），因此输出的错误信息会被输出到2，而普通信息会输出到1，但我们希望在一个终端下看到所有的信息，那么综上就应该是2&gt;1,而2&gt;&amp;1中&amp;是为了bash将1解释成标准输出而不是文件1，至于2&gt;&amp;1 &amp;中最后一个&amp;则是让bash在后台运行。</p>
+]]></content>
+      <tags>
+        <tag>bash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
