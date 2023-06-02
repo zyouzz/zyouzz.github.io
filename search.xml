@@ -400,7 +400,7 @@
     <title>gl.drawArrays的使用</title>
     <url>/2023/06/01/28338.html</url>
     <content><![CDATA[<p>缓冲区对象是WebGL系统中的一块存储区，可以在里面存储想要绘制的所有顶点数据，通过创建缓冲区，就能够一次性地向顶点着色器传入多个顶点的attribute变量的数据。</p>
-<p><strong>gl.drawArrays(mode, first, count)</strong><br>1、modes指的是绘制方式，gl.POINTS,gl.LINES,gl.LINE_STRIP,gl.LINE_LOOP,gl.TRIANGLES,gl.TRIANGLES_STRIP,gl.TRIANGLE_FAN；<br>具体使用如下表<br><img src="/images/2023/06/gldrawarrays_mode.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode1.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode2.png" alt="预览"><br>2、first指的是从哪一个顶点开始绘制；<br>3、count指的是绘制需要多少个顶点。</p>
+<p><strong>gl.drawArrays(mode, first, count)</strong><br>1、modes指的是绘制方式，gl.POINTS、gl.LINES、gl.LINE_STRIP、gl.LINE_LOOP、gl.TRIANGLES、gl.TRIANGLES_STRIP、gl.TRIANGLE_FAN；<br>具体使用如下表<br><img src="/images/2023/06/gldrawarrays_mode.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode1.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode2.png" alt="预览"><br>2、first指的是从哪一个顶点开始绘制；<br>3、count指的是绘制需要多少个顶点。</p>
 ]]></content>
       <tags>
         <tag>WebGL</tag>
@@ -1167,6 +1167,17 @@
 ]]></content>
       <tags>
         <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cesium中的矩阵变换</title>
+    <url>/2023/06/02/47866.html</url>
+    <content><![CDATA[<p>上一篇学习了WebGl中的矩阵变换<a href="https://zyouzz.github.io/2023/06/01/1829.html">变换矩阵（Transformation-matrix）详解</a>,我们推演出旋转、平移、缩放矩阵，并通过代码实现。而在Cesium中于此类似，并且提供了Cesium.Matrix2、Cesium.Matrix3、Cesium.Matrix4类及其属性方法。<br>这里，我们以Cesium.Matrix4为例<br><img src="/images/2023/06/17.png" alt="Cesium.Matrix4"><br>那么在Cesium中具体如何操作使用呢？<br>正常情况下，我们可以通过tileset.root.transform获取模型本身的模型矩阵，这个即存在3DTile中的tileset.json文件中<br><img src="/images/2023/06/16.png" alt="tileset.json">；</p>
+<p>一、Cesium中的平移</p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+        <tag>Cesium</tag>
       </tags>
   </entry>
   <entry>
