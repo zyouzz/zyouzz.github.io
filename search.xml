@@ -1172,8 +1172,8 @@
   <entry>
     <title>Cesium中的矩阵变换</title>
     <url>/2023/06/02/47866.html</url>
-    <content><![CDATA[<p>上一篇学习了WebGl中的矩阵变换<a href="https://zyouzz.github.io/2023/06/01/1829.html">变换矩阵（Transformation-matrix）详解</a>,我们推演出旋转、平移、缩放矩阵，并通过代码实现。而在Cesium中于此类似，并且提供了Cesium.Matrix2、Cesium.Matrix3、Cesium.Matrix4类及其属性方法。<br>这里，我们以Cesium.Matrix4为例<br><img src="/images/2023/06/17.png" alt="Cesium.Matrix4"></p>
-<p>正常情况下，我们可以通过tileset.root.transform获取模型本身的模型矩阵，这个即存在3DTile中的tileset.json文件中<br><img src="/images/2023/06/16.png" alt="tileset.json">；</p>
+    <content><![CDATA[<p>上一篇学习了WebGL中的矩阵变换<a href="https://zyouzz.github.io/2023/06/01/1829.html">变换矩阵（Transformation-matrix）详解</a>,我们推演出旋转、平移、缩放矩阵，并通过代码实现。而在Cesium中于此类似，并且提供了Cesium.Matrix2、Cesium.Matrix3、Cesium.Matrix4类及其属性方法。<br>这里，我们以Cesium.Matrix4为例<br><img src="/images/2023/06/17.png" alt="Cesium.Matrix4"></p>
+<p>正常情况下，我们可以通过tileset.root.transform获取模型本身的模型矩阵，这个即存在3DTile中的tileset.json文件中<br><img src="/images/2023/06/16.png" alt="tileset.json"></p>
 <p>那么在Cesium中具体如何操作使用变换矩阵呢？<br>以调整模型位置为例</p>
 <h1 id="一、Cesium中的平移"><a href="#一、Cesium中的平移" class="headerlink" title="一、Cesium中的平移"></a>一、Cesium中的平移</h1><p>有两种调整方式<br>（1）矩阵点乘法</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> modelMatrix = tileset.<span class="property">root</span>.<span class="property">transform</span>;</span><br><span class="line"><span class="keyword">let</span> modelPosition = <span class="title class_">Cesium</span>.<span class="property">Cartesian3</span>.<span class="title function_">fromDegrees</span>(lon, lat, height);</span><br><span class="line"><span class="keyword">const</span> translationMatrix = <span class="title class_">Cesium</span>.<span class="property">Matrix4</span>.<span class="title function_">fromTranslation</span>(<span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Cartesian3</span>(<span class="number">6</span>, <span class="number">1</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 模型矩阵乘以平移矩阵 MxT</span></span><br><span class="line"><span class="title class_">Cesium</span>.<span class="property">Matrix4</span>.<span class="title function_">multiply</span>(modelMatrix, translationMatrix, modelMatrix);</span><br><span class="line">tileset.<span class="property">root</span>.<span class="property">transform</span> = modelMatrix;</span><br></pre></td></tr></table></figure>
@@ -1192,6 +1192,20 @@
       <tags>
         <tag>WebGL</tag>
         <tag>Cesium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>顶点着色器与片元着色器通信</title>
+    <url>/2023/06/05/54833.html</url>
+    <content><![CDATA[<p>通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器，</p>
+<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">attribute</span> <span class="type">vec4</span> a_Color;</span><br><span class="line"><span class="keyword">varying</span> <span class="type">vec4</span> v_Color;</span><br></pre></td></tr></table></figure>
+<p>那么片元着色器如何接收到这个变量呢，很简单，同样声明一个</p>
+<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">varying</span> <span class="type">vec4</span> v_Color;</span><br></pre></td></tr></table></figure>
+
+<p>这是因为在WebGL中，如果顶点着色器和片元着色器同时有类型和命名相同的varying变量，那么顶点着色器会自动地将该变量的值传入片元着色器。<br><img src="/images/2023/06/05/0.png" alt="varying变量传递"></p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
       </tags>
   </entry>
   <entry>

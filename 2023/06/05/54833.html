@@ -4,17 +4,22 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt" />
   
-  <title>Tag: 笔记 | 自由自在</title>
+  <title>顶点着色器与片元着色器通信 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="the road that you never walk along">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自由自在">
-<meta property="og:url" content="http://zyouzz.github.io/tags/%E7%AC%94%E8%AE%B0/index.html">
+  <meta name="description" content="通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器， 12attribute vec4 a_Color;varying vec4 v_Color; 那么片元着色器如何接收到这个变量呢，很简单，同样声明一个 1var">
+<meta property="og:type" content="article">
+<meta property="og:title" content="顶点着色器与片元着色器通信">
+<meta property="og:url" content="http://zyouzz.github.io/2023/06/05/54833.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="the road that you never walk along">
+<meta property="og:description" content="通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器， 12attribute vec4 a_Color;varying vec4 v_Color; 那么片元着色器如何接收到这个变量呢，很简单，同样声明一个 1var">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zyouzz.github.io/images/2023/06/05/0.png">
+<meta property="article:published_time" content="2023-06-05T07:33:33.000Z">
+<meta property="article:modified_time" content="2023-06-05T07:45:06.374Z">
 <meta property="article:author" content="James Rock">
+<meta property="article:tag" content="WebGL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zyouzz.github.io/images/2023/06/05/0.png">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -91,41 +96,82 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/19/19484.html" class="archive-article-date">
-  <time datetime="2017-06-19T02:47:23.000Z" itemprop="datePublished">6月 19</time>
+        <section id="main"><article id="post-顶点着色器与片元着色器通信" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/06/05/54833.html" class="article-date">
+  <time datetime="2023-06-05T07:33:33.000Z" itemprop="datePublished">2023-06-05 15:33:33</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/19/19484.html">ArcGIS 全家桶（ArcGIS Enterprise）---Linux安装笔记</a>
+    <h1 class="article-title" itemprop="name">
+      顶点着色器与片元着色器通信
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器，</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">attribute</span> <span class="type">vec4</span> a_Color;</span><br><span class="line"><span class="keyword">varying</span> <span class="type">vec4</span> v_Color;</span><br></pre></td></tr></table></figure>
+<p>那么片元着色器如何接收到这个变量呢，很简单，同样声明一个</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">varying</span> <span class="type">vec4</span> v_Color;</span><br></pre></td></tr></table></figure>
 
-</section>
+<p>这是因为在WebGL中，如果顶点着色器和片元着色器同时有类型和命名相同的varying变量，那么顶点着色器会自动地将该变量的值传入片元着色器。<br><img src="/images/2023/06/05/0.png" alt="varying变量传递"></p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2023/06/05/54833.html" data-id="cliijq293000018fmffym9pzm" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/" rel="tag">WebGL</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/06/02/47866.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Cesium中的矩阵变换</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section>
+  </section>
         
           <aside id="sidebar">
   
