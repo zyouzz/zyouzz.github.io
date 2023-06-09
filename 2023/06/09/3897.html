@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt" />
   
-  <title>归档 | 自由自在</title>
+  <title>js的事件循环 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="the road that you never walk along">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自由自在">
-<meta property="og:url" content="http://zyouzz.github.io/archives/page/8/index.html">
+  <meta name="description" content="这个是个人理解的总结，不同人可能都有自己独到的理解方式。说到事件循环，我们一般闪现到一个滚滚向前的车轮微任务、宏任务、执行栈宏任务包括整个脚本scripts,ajax,rendering,setTimeout(),setInterval(),setImmediate(),微任务包括我们常常写到的promise.then,process.nextTick(),async下的await等首先进入执行栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js的事件循环">
+<meta property="og:url" content="http://zyouzz.github.io/2023/06/09/3897.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="the road that you never walk along">
+<meta property="og:description" content="这个是个人理解的总结，不同人可能都有自己独到的理解方式。说到事件循环，我们一般闪现到一个滚滚向前的车轮微任务、宏任务、执行栈宏任务包括整个脚本scripts,ajax,rendering,setTimeout(),setInterval(),setImmediate(),微任务包括我们常常写到的promise.then,process.nextTick(),async下的await等首先进入执行栈">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-09T08:39:33.000Z">
+<meta property="article:modified_time" content="2023-06-09T09:15:33.579Z">
 <meta property="article:author" content="James Rock">
+<meta property="article:tag" content="JavaScripts">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
@@ -91,216 +94,77 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/10/22289.html" class="archive-article-date">
-  <time datetime="2016-10-10T05:07:02.000Z" itemprop="datePublished">10月 10</time>
+        <section id="main"><article id="post-js的事件循环" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/06/09/3897.html" class="article-date">
+  <time datetime="2023-06-09T08:39:33.000Z" itemprop="datePublished">2023-06-09 16:39:33</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/10/22289.html">Portal和Server打不开或者启动较慢的解决之道？</a>
+    <h1 class="article-title" itemprop="name">
+      js的事件循环
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/24/18549.html" class="archive-article-date">
-  <time datetime="2016-09-24T03:31:58.000Z" itemprop="datePublished">9月 24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/24/18549.html">【批量代码分享】不同gdb批量投影 批量要素类复制</a>
-    </h1>
-  
+        <h4 id="这个是个人理解的总结，不同人可能都有自己独到的理解方式。"><a href="#这个是个人理解的总结，不同人可能都有自己独到的理解方式。" class="headerlink" title="这个是个人理解的总结，不同人可能都有自己独到的理解方式。"></a>这个是个人理解的总结，不同人可能都有自己独到的理解方式。</h4><p>说到事件循环，我们一般闪现到一个滚滚向前的车轮<br>微任务、宏任务、执行栈<br>宏任务包括整个脚本scripts,ajax,rendering,setTimeout(),setInterval(),setImmediate(),<br>微任务包括我们常常写到的promise.then,process.nextTick(),async下的await等<br>首先进入执行栈的如console.log(),立即执行，<br>然后开始微任务，遵循先进先出原则执行逻辑；<br>本轮微任务全部执行完毕后，开始执行宏任务，同样遵循先进先出原则执行逻辑</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/29/9863.html" class="archive-article-date">
-  <time datetime="2016-08-29T11:04:49.000Z" itemprop="datePublished">8月 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/29/9863.html">七牛视频外链测试</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/28/62898.html" class="archive-article-date">
-  <time datetime="2016-08-28T11:50:42.000Z" itemprop="datePublished">8月 28</time>
-</a>
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2023/06/09/3897.html" data-id="cliocr57n0000mkfmfe6t927o" class="article-share-link">分享</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/28/62898.html">【代码分享】海图数据批量导出</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/28/28862.html" class="archive-article-date">
-  <time datetime="2016-08-28T09:49:39.000Z" itemprop="datePublished">8月 28</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/28/28862.html">内牛满面装Portal for ArcGIS</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScripts/" rel="tag">JavaScripts</a></li></ul>
 
-    </header>
+	
+
+    </footer>
   </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/06/05/54833.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">顶点着色器与片元着色器通信</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/20/28027.html" class="archive-article-date">
-  <time datetime="2016-08-20T05:33:00.000Z" itemprop="datePublished">8月 20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/20/28027.html">解决ArcGIS Server因端口被占用，而无法发布地图服务的方法</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/20/27324.html" class="archive-article-date">
-  <time datetime="2016-08-20T05:33:00.000Z" itemprop="datePublished">8月 20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/20/27324.html">解决xampp服务器因80端口被占用,Apach无法启动的方法</a>
-    </h1>
-  
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/16/26086.html" class="archive-article-date">
-  <time datetime="2016-08-16T13:05:36.000Z" itemprop="datePublished">8月 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/16/26086.html">搜房网多进程代码-python</a>
-    </h1>
-  
+       if (typeof LivereTower === 'function') { return; }
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/12/33709.html" class="archive-article-date">
-  <time datetime="2016-08-12T13:05:36.000Z" itemprop="datePublished">8月 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/12/33709.html">【20160812】出差工作日志-武汉</a>
-    </h1>
-  
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/11/33261.html" class="archive-article-date">
-  <time datetime="2016-08-11T12:03:08.000Z" itemprop="datePublished">8月 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/11/33261.html">【20160811】出差工作日志-武汉</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/7/">《《 上一页</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/9/">下一页 》》</a>
-  </nav>
-</section>
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section>
+  </section>
         
           <aside id="sidebar">
   

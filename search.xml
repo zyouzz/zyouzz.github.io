@@ -1209,6 +1209,15 @@
       </tags>
   </entry>
   <entry>
+    <title>js的事件循环</title>
+    <url>/2023/06/09/3897.html</url>
+    <content><![CDATA[<h4 id="这个是个人理解的总结，不同人可能都有自己独到的理解方式。"><a href="#这个是个人理解的总结，不同人可能都有自己独到的理解方式。" class="headerlink" title="这个是个人理解的总结，不同人可能都有自己独到的理解方式。"></a>这个是个人理解的总结，不同人可能都有自己独到的理解方式。</h4><p>说到事件循环，我们一般闪现到一个滚滚向前的车轮<br>微任务、宏任务、执行栈<br>宏任务包括整个脚本scripts,ajax,rendering,setTimeout(),setInterval(),setImmediate(),<br>微任务包括我们常常写到的promise.then,process.nextTick(),async下的await等<br>首先进入执行栈的如console.log(),立即执行，<br>然后开始微任务，遵循先进先出原则执行逻辑；<br>本轮微任务全部执行完毕后，开始执行宏任务，同样遵循先进先出原则执行逻辑</p>
+]]></content>
+      <tags>
+        <tag>JavaScripts</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
