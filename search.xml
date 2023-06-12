@@ -1218,6 +1218,15 @@
       </tags>
   </entry>
   <entry>
+    <title>WebGL中的纹理</title>
+    <url>/2023/06/12/63651.html</url>
+    <content><![CDATA[<p>WebGL通过一种称作纹理单元（texture unit）的机制来同时使用多个纹理。每个纹理单元有一个单元编号来管理一张纹理图像。即使你的程序只需要一张纹理图像，也得为其指定一个纹理单元。系统支持的纹理单元个数取决于硬件和浏览器的WebGL实现，但是在默认情况下，web GL至少支持8个纹理单元，一些其他的系统支持的个数更多。内置的变量gl.TEXTURE0、gl.TEXTURE1、gl.TEXTURE2。。。。gl.TEXTURE7各表示一个纹理单元。</p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>

@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt" />
   
-  <title>Tag: 符号渲染 | 自由自在</title>
+  <title>WebGL中的纹理 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="the road that you never walk along">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自由自在">
-<meta property="og:url" content="http://zyouzz.github.io/tags/%E7%AC%A6%E5%8F%B7%E6%B8%B2%E6%9F%93/index.html">
+  <meta name="description" content="WebGL通过一种称作纹理单元（texture unit）的机制来同时使用多个纹理。每个纹理单元有一个单元编号来管理一张纹理图像。即使你的程序只需要一张纹理图像，也得为其指定一个纹理单元。系统支持的纹理单元个数取决于硬件和浏览器的WebGL实现，但是在默认情况下，web GL至少支持8个纹理单元，一些其他的系统支持的个数更多。内置的变量gl.TEXTURE0、gl.TEXTURE1、gl.TEXT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebGL中的纹理">
+<meta property="og:url" content="http://zyouzz.github.io/2023/06/12/63651.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="the road that you never walk along">
+<meta property="og:description" content="WebGL通过一种称作纹理单元（texture unit）的机制来同时使用多个纹理。每个纹理单元有一个单元编号来管理一张纹理图像。即使你的程序只需要一张纹理图像，也得为其指定一个纹理单元。系统支持的纹理单元个数取决于硬件和浏览器的WebGL实现，但是在默认情况下，web GL至少支持8个纹理单元，一些其他的系统支持的个数更多。内置的变量gl.TEXTURE0、gl.TEXTURE1、gl.TEXT">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-12T02:56:53.000Z">
+<meta property="article:modified_time" content="2023-06-12T03:02:03.404Z">
 <meta property="article:author" content="James Rock">
+<meta property="article:tag" content="WebGL">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
@@ -91,60 +94,77 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/03/31/13689.html" class="archive-article-date">
-  <time datetime="2017-03-31T11:32:51.000Z" itemprop="datePublished">3月 31</time>
+        <section id="main"><article id="post-WebGL中的纹理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/06/12/63651.html" class="article-date">
+  <time datetime="2023-06-12T02:56:53.000Z" itemprop="datePublished">2023-06-12 10:56:53</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/31/13689.html">使用Python进行语音识别---将音频转为文字</a>
+    <h1 class="article-title" itemprop="name">
+      WebGL中的纹理
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/03/22/15901.html" class="archive-article-date">
-  <time datetime="2017-03-22T10:31:44.000Z" itemprop="datePublished">3月 22</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/22/15901.html">ArcGIS中多个字段同时渲染</a>
-    </h1>
-  
+        <p>WebGL通过一种称作纹理单元（texture unit）的机制来同时使用多个纹理。每个纹理单元有一个单元编号来管理一张纹理图像。即使你的程序只需要一张纹理图像，也得为其指定一个纹理单元。系统支持的纹理单元个数取决于硬件和浏览器的WebGL实现，但是在默认情况下，web GL至少支持8个纹理单元，一些其他的系统支持的个数更多。内置的变量gl.TEXTURE0、gl.TEXTURE1、gl.TEXTURE2。。。。gl.TEXTURE7各表示一个纹理单元。</p>
 
-    </header>
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2023/06/12/63651.html" data-id="clis9ruod0000ysfm5b1236a7" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/" rel="tag">WebGL</a></li></ul>
+
+	
+
+    </footer>
   </div>
-</article>
-  
-  
-    </div></section>
-  
 
-</section>
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/06/09/3897.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js的事件循环</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ <section id="comments">
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjMyNy84ODg4">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+ </section>
+  </section>
         
           <aside id="sidebar">
   
