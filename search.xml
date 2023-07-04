@@ -1236,6 +1236,24 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo blog github ssh</title>
+    <url>/2023/07/04/34768.html</url>
+    <content><![CDATA[<p>1、生成新的pub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
+<p>2、打开ssh-agent</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">eval $(ssh-agent -s)</span><br></pre></td></tr></table></figure>
+<p>3、添加id_rsa_github</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
+<p>4、粘贴id_rsa_github.pub中的内容至github ssh<br>5、增加config文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch ~/.ssh/config</span><br></pre></td></tr></table></figure>
+<p>6、添加以下内容</p>
+<h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
