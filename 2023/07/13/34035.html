@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt" />
   
-  <title>MyBlog：I&#39;m back! | 自由自在</title>
+  <title>https天地图报错ERR_CERT_AUTHORITY_INVALID解决 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2018年的最后十几天，博客又回来了!沉寂了半年多，折腾了几次，尝试新的东西，但又做了一些浪费时间的事情。接下来，嗯，加油！  【附】博客恢复记录一、初始化并恢复文件1、创建一个hexo目录； 2、进入hexo目录，添加hexo； 1cnpm install hexo -g">
+  <meta name="description" content="使用https天地图服务时，需要把后缀.com改为.gov.cn，即https:&#x2F;&#x2F;t0.tianditu.gov.cn&#x2F;cva_w&#x2F;wmts?">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyBlog：I&#39;m back!">
-<meta property="og:url" content="http://zyouzz.github.io/2018/12/13/10958.html">
+<meta property="og:title" content="https天地图报错ERR_CERT_AUTHORITY_INVALID解决">
+<meta property="og:url" content="http://zyouzz.github.io/2023/07/13/34035.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="2018年的最后十几天，博客又回来了!沉寂了半年多，折腾了几次，尝试新的东西，但又做了一些浪费时间的事情。接下来，嗯，加油！  【附】博客恢复记录一、初始化并恢复文件1、创建一个hexo目录； 2、进入hexo目录，添加hexo； 1cnpm install hexo -g">
+<meta property="og:description" content="使用https天地图服务时，需要把后缀.com改为.gov.cn，即https:&#x2F;&#x2F;t0.tianditu.gov.cn&#x2F;cva_w&#x2F;wmts?">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-12-13T00:58:03.000Z">
-<meta property="article:modified_time" content="2019-06-16T05:43:44.013Z">
+<meta property="article:published_time" content="2023-07-13T05:41:39.000Z">
+<meta property="article:modified_time" content="2023-07-13T05:45:33.566Z">
 <meta property="article:author" content="James Rock">
+<meta property="article:tag" content="GIS">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
@@ -93,10 +94,10 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-MyBlog：I-m-back" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-https天地图报错ERR-CERT-AUTHORITY-INVALID解决" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/12/13/10958.html" class="article-date">
-  <time datetime="2018-12-13T00:58:03.000Z" itemprop="datePublished">2018-12-13 08:58:03</time>
+    <a href="/2023/07/13/34035.html" class="article-date">
+  <time datetime="2023-07-13T05:41:39.000Z" itemprop="datePublished">2023-07-13 13:41:39</time>
 </a>
     
   </div>
@@ -107,7 +108,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      MyBlog：I&#39;m back!
+      https天地图报错ERR_CERT_AUTHORITY_INVALID解决
     </h1>
   
 
@@ -115,53 +116,17 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2018年的最后十几天，博客又回来了!沉寂了半年多，折腾了几次，尝试新的东西，但又做了一些浪费时间的事情。接下来，嗯，加油！</p>
-<hr>
-<p>【附】博客恢复记录<br>一、初始化并恢复文件<br>1、创建一个hexo目录；</p>
-<p>2、进入hexo目录，添加hexo；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo -g</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>3、初始化Hexo；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>4、安装push工具；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>5、将原先的_config.yml文件、source文件夹、themes文件夹复制替换过来；</p>
-<p>二、设置SSH keys<br>1、在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
-<p>2、如果不存在就没有关系，如果存在的话，直接删除.ssh文件夹里面所有文件（路径为：C:\Users\用户名.ssh）；</p>
-<p>3、输入以下指令（邮箱就是你注册Github时候的邮箱）后，回车；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;XXXXXX@XXX.com&quot;</span><br></pre></td></tr></table></figure>
-<p>4、然后它会提示要你输入passphrase,直接回车;</p>
-<p>5、然后键入以下指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent -s</span><br></pre></td></tr></table></figure>
-<p>6、继续输入指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<p>7、输入之后，在我这里是出错了，不知道你的有没有出错;</p>
-<p>8、如果你的也是这样子出错了的话，就输入以下指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br><span class="line"></span><br><span class="line">ssh-add</span><br></pre></td></tr></table></figure>
-<p>9、知道rsa.pub文件，复制里面的内容；</p>
-<p>10、然后到Github里面，点击设置，然后添加SSH keys，添加标题，并将上一步拷贝的内容复制到里面；</p>
-<p>11、点击添加，提示输入github的密码；</p>
-<p>12、测试一下，键入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>13、如果出现以下内容，说是主机密钥验证失败，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">“The authenticity of host &#x27;github.com (192.30.252.128)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? </span><br><span class="line">**Host key verification failed.**</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rightsand the repository exists.”​</span><br></pre></td></tr></table></figure>
-<p>14、其实这是缺少了 known_hosts 文件, 而且必须生成 github.com 的ip执行内容，输入；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
-<p>15、使用hexo g, hexo d测试一下，应该就可以了。</p>
-<p>【附】<br>1、还要安装abbrlink博客文章链接生成插件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-
-<p>2、安装hexo-generator-json-content提供站点内容搜索功能</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-generator-json-content</span><br></pre></td></tr></table></figure>
+        <p>使用https天地图服务时，需要把后缀.com改为.gov.cn，即<a target="_blank" rel="noopener" href="https://t0.tianditu.gov.cn/cva_w/wmts">https://t0.tianditu.gov.cn/cva_w/wmts</a>?</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2018/12/13/10958.html" data-id="clk0q8c4t001ffku1hxnu5xa7" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2023/07/13/34035.html" data-id="clk0q8c51001xfku11ybt751t" class="article-share-link">分享</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li></ul>
+
 	
 
     </footer>
@@ -170,19 +135,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2018/12/17/24576.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          年底-昨天、今天、明天
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/07/60507.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/07/04/49561.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">使用python多进程爬取全国航班数据与可视化【附代码与excel数据（包含经纬度坐标）】</div>
+      <div class="article-nav-title">野河·野鱼·野猫·wanderMan</div>
     </a>
   
 </nav>
