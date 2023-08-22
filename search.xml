@@ -1263,6 +1263,23 @@
       </tags>
   </entry>
   <entry>
+    <title>记postgresql无法启动案例（could not flush dirty data: 结构需要清理）</title>
+    <url>/2023/08/22/37039.html</url>
+    <content><![CDATA[<h1 id="1、问题："><a href="#1、问题：" class="headerlink" title="1、问题："></a>1、问题：</h1><p><img src="/images/2023/08/20230822.jpg" alt="could not flush dirty data"></p>
+<h1 id="2、解释："><a href="#2、解释：" class="headerlink" title="2、解释："></a>2、解释：</h1><p>“结构需要清理”（structure needs cleaning）错误通常是由文件系统损坏引起的。</p>
+<p><em>以下是一些可能导致文件系统损坏的原因：<br>不正常关机：如果你在文件系统写入数据时强制关机或系统崩溃，可能会导致文件系统损坏。<br>磁盘故障：磁盘故障，如坏道或故障扇区，可能会导致文件系统损坏。<br>硬件故障：硬件故障，如电源问题、主板故障等，可能会导致文件系统损坏。<br>病毒感染：某些病毒可能会破坏文件系统，导致文件系统损坏。<br>文件系统错误：如果文件系统本身出现错误，例如写入错误的分区表或分配表，也可能会导致文件系统损坏。</em></p>
+<p>以上是导致文件系统损坏的一些可能原因。为了防止这种情况的发生，你可以遵循以下最佳实践：<br><em>正常关机：在关机之前，请确保保存并关闭所有打开的文件，并使用操作系统提供的关机选项正常关机。<br>定期备份：定期备份重要数据可以最大限度地减少数据丢失的风险。<br>使用稳定的硬件：使用质量可靠的硬件，并避免频繁更换或升级硬件，可以减少硬件故障的风险。<br>定期检查磁盘：定期检查磁盘的状态，并在检测到故障时立即更换磁盘，可以避免磁盘故障导致文件系统损坏。<br>使用防病毒软件：安装和使用防病毒软件可以防止病毒感染并保护文件系统的安全。</em></p>
+<h1 id="3、解决方式："><a href="#3、解决方式：" class="headerlink" title="3、解决方式："></a>3、解决方式：</h1><p>在/etc/postgresql/12/main/postgresql.conf 中最后追加：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fsync = off</span><br><span class="line">data_sync_retry = true</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>postgresql</tag>
+        <tag>启动</tag>
+        <tag>pg</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
