@@ -34,33 +34,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
-    <url>/2017/12/02/11059.html</url>
-    <content><![CDATA[<p>从1.3版本开始接触ArcGIS Pro，流畅的64位原生应用程序，靓丽的ribbon界面，二三维一体的极致体验，让我们看到变革的时候到来，传统的桌面使用相信现正在迁移过来，并且也在吸引大量新使用者。<br><img src="/images/120201.jpg" alt="ArcGIS Pro"></p>
-<span id="more"></span>
-<p>但是我的机器在使用ArcGIS Pro发布服务时，总是出现Failed to check sharing process status，中文为：“检查共享流程状态失败”错误，从1.3，1.4，1.4Alpha4,2.0,2.0.1依然是这样。<br><img src="/images/120202.jpg" alt="Failed to check sharing process status"><br>虽然状态检查失败，但并不影响服务发布，最后在Portal中都是可以看到发布成功的服务<br>开始我以为是软件没安装好，或者是Portal的配置有问题。于是尝试向ArcGIS Online上发布，还是同样的报错。<br>后来通过与同事以及美国Esri Support的沟通，他们提供了一个官方帮助文档链接<a href="http://pro.arcgis.com/zh-cn/pro-app/help/sharing/overview/sharing-job-status.htm">http://pro.arcgis.com/zh-cn/pro-app/help/sharing/overview/sharing-job-status.htm</a><br>里面说到”可在 C:\Users&lt;USERPROFILE&gt;\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses 中找到状态报告“<br>我按照自己用户名路径<br>C:\Users\Esri\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses<br>然而并没有该路径的文件夹，也就是说出现这个报错，是因为ArcGIS Pro没有找到状态日志文件，那么日志写到哪去了呢？<br>通过文件夹搜索，最后找到了存储日志状态的文件夹。<br>路径为<br>C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging\SharingProcesses<br><img src="/images/120203.jpg" alt="日志文件"></p>
-<p>到此，我们可以总结一下：当通过ArcGIS Pro发布服务时，状态日志并没有写到官方文档提到的C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses路径下，却莫名其妙地写到C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging\SharingProcesses里，对比一下两个路径，深度一致，可以看到ArcGISPro这个文件夹位置不同。从报错来看，ArcGIS Pro读取日志文件状态可能是按照官方文档说的路径。</p>
-<p>因此，报错的机理算是找到了，但是为什么会造成路径不同呢？</p>
-<p>美国Esri Support给出的建议是：新建一个操作系统账户，使用该账号登录系统，然后再发布服务看看是否还报错。<br>果然老美的尝试建议是没问题，不会再报错，日志写到正常的路径下。<br>然后老美解释是因为操作系统账户是corrupt user profile，这里我不知道如何翻译，但是问题在我的机器上并没有解决，不能为了这个问题，换一个操作系统账户。</p>
-<p>想了许久这个问题。有以下猜想：<br>我的操作系统用户名是esri，ArcGIS Pro在安装的时候，会初始化用户路径，本来esri这个词是ArcGIS软件中关键字，就好比编写程序的变量名不能与该语言内设的关键字冲突一样。<br>所以ArcGIS Pro初始化状态日志路径出现了混乱现象。</p>
-<p>上面说了那么多，问题始终可能会存在，那么有没有可行的解决方案呢？<br>经过多次尝试，答案是有的。</p>
-<p>首先我尝试修改操作用户名，但貌似没什么用。网上说还需要修改对应用户名的注册表，感觉这么做有些风险，所以就放弃了。</p>
-<p>好的，说到本质上来：就是找不到预设路径下的日志文件所致。那么为何不自己创建一个路径呢，然后将C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging路径下的文件都实时同步过来。</p>
-<p>这里就不得不提到曾经遇到的系统盘瘦身方案，利用windows自带的mklink命令，可以实现将默认C盘安装的应用程序文件（Adobe 全家桶）迁移到其他盘，程序仍然可以正常使用。</p>
-<p>方案就这么形成了，<br>首先将C:\Users\Esri\ArcGISPro\AppData\Local\Esri中的Staging文件夹剪切到C:\Users\esri\AppData\Local\ESRI\ArcGISPro下，然后以管理员的身份打开cmd窗口<br>输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mklink /J &quot;C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging&quot; &quot;C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging&quot;</span><br></pre></td></tr></table></figure>
-<p>然后会出现提示为”C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging &lt;&lt;===&gt;&gt;C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging”创建的联接<br>由于我已经链接过了，所以会有如下提示。实际这里就相当于在C:\Users\Esri\ArcGISPro\AppData\Local\Esri下放了C:\Users\esri\AppData\Local\ESRI\ArcGISPro中Staging文件夹的快捷方式，即文件夹的软连接，用过linux系统应该比较熟悉<br><img src="/images/120204.jpg" alt="cmd"><br>接着用Pro发布一个服务试试，果然久未谋面的成功状态出现了。<br><img src="/images/120205.jpg" alt="发布成功"></p>
-<p>这个问题从用户来说，解决方法是避免使用esri这个操作系统用户名<br>从ArcGIS Pro开发者来看，尽早修复这个程序逻辑问题应该是最终解决之道。</p>
-<p>突然想到一个搞笑案例，分享一下<br>“<br>调试一段有关用户名的程序，上午测试的时候还好好的，下午测试老是获取到null，怎么找都找不到原因，后来后台的哥们说他把用户名改成了“null”，嗯，现在坟头的草一丈多了。<br>”</p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcGIS Pro</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
     <url>/2019/04/25/56554.html</url>
     <content><![CDATA[<p>大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。<br>现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。</p>
@@ -94,6 +67,33 @@
       <tags>
         <tag>ArcGIS</tag>
         <tag>ECW影像</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
+    <url>/2017/12/02/11059.html</url>
+    <content><![CDATA[<p>从1.3版本开始接触ArcGIS Pro，流畅的64位原生应用程序，靓丽的ribbon界面，二三维一体的极致体验，让我们看到变革的时候到来，传统的桌面使用相信现正在迁移过来，并且也在吸引大量新使用者。<br><img src="/images/120201.jpg" alt="ArcGIS Pro"></p>
+<span id="more"></span>
+<p>但是我的机器在使用ArcGIS Pro发布服务时，总是出现Failed to check sharing process status，中文为：“检查共享流程状态失败”错误，从1.3，1.4，1.4Alpha4,2.0,2.0.1依然是这样。<br><img src="/images/120202.jpg" alt="Failed to check sharing process status"><br>虽然状态检查失败，但并不影响服务发布，最后在Portal中都是可以看到发布成功的服务<br>开始我以为是软件没安装好，或者是Portal的配置有问题。于是尝试向ArcGIS Online上发布，还是同样的报错。<br>后来通过与同事以及美国Esri Support的沟通，他们提供了一个官方帮助文档链接<a href="http://pro.arcgis.com/zh-cn/pro-app/help/sharing/overview/sharing-job-status.htm">http://pro.arcgis.com/zh-cn/pro-app/help/sharing/overview/sharing-job-status.htm</a><br>里面说到”可在 C:\Users&lt;USERPROFILE&gt;\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses 中找到状态报告“<br>我按照自己用户名路径<br>C:\Users\Esri\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses<br>然而并没有该路径的文件夹，也就是说出现这个报错，是因为ArcGIS Pro没有找到状态日志文件，那么日志写到哪去了呢？<br>通过文件夹搜索，最后找到了存储日志状态的文件夹。<br>路径为<br>C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging\SharingProcesses<br><img src="/images/120203.jpg" alt="日志文件"></p>
+<p>到此，我们可以总结一下：当通过ArcGIS Pro发布服务时，状态日志并没有写到官方文档提到的C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses路径下，却莫名其妙地写到C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging\SharingProcesses里，对比一下两个路径，深度一致，可以看到ArcGISPro这个文件夹位置不同。从报错来看，ArcGIS Pro读取日志文件状态可能是按照官方文档说的路径。</p>
+<p>因此，报错的机理算是找到了，但是为什么会造成路径不同呢？</p>
+<p>美国Esri Support给出的建议是：新建一个操作系统账户，使用该账号登录系统，然后再发布服务看看是否还报错。<br>果然老美的尝试建议是没问题，不会再报错，日志写到正常的路径下。<br>然后老美解释是因为操作系统账户是corrupt user profile，这里我不知道如何翻译，但是问题在我的机器上并没有解决，不能为了这个问题，换一个操作系统账户。</p>
+<p>想了许久这个问题。有以下猜想：<br>我的操作系统用户名是esri，ArcGIS Pro在安装的时候，会初始化用户路径，本来esri这个词是ArcGIS软件中关键字，就好比编写程序的变量名不能与该语言内设的关键字冲突一样。<br>所以ArcGIS Pro初始化状态日志路径出现了混乱现象。</p>
+<p>上面说了那么多，问题始终可能会存在，那么有没有可行的解决方案呢？<br>经过多次尝试，答案是有的。</p>
+<p>首先我尝试修改操作用户名，但貌似没什么用。网上说还需要修改对应用户名的注册表，感觉这么做有些风险，所以就放弃了。</p>
+<p>好的，说到本质上来：就是找不到预设路径下的日志文件所致。那么为何不自己创建一个路径呢，然后将C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging路径下的文件都实时同步过来。</p>
+<p>这里就不得不提到曾经遇到的系统盘瘦身方案，利用windows自带的mklink命令，可以实现将默认C盘安装的应用程序文件（Adobe 全家桶）迁移到其他盘，程序仍然可以正常使用。</p>
+<p>方案就这么形成了，<br>首先将C:\Users\Esri\ArcGISPro\AppData\Local\Esri中的Staging文件夹剪切到C:\Users\esri\AppData\Local\ESRI\ArcGISPro下，然后以管理员的身份打开cmd窗口<br>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mklink /J &quot;C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging&quot; &quot;C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging&quot;</span><br></pre></td></tr></table></figure>
+<p>然后会出现提示为”C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging &lt;&lt;===&gt;&gt;C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging”创建的联接<br>由于我已经链接过了，所以会有如下提示。实际这里就相当于在C:\Users\Esri\ArcGISPro\AppData\Local\Esri下放了C:\Users\esri\AppData\Local\ESRI\ArcGISPro中Staging文件夹的快捷方式，即文件夹的软连接，用过linux系统应该比较熟悉<br><img src="/images/120204.jpg" alt="cmd"><br>接着用Pro发布一个服务试试，果然久未谋面的成功状态出现了。<br><img src="/images/120205.jpg" alt="发布成功"></p>
+<p>这个问题从用户来说，解决方法是避免使用esri这个操作系统用户名<br>从ArcGIS Pro开发者来看，尽早修复这个程序逻辑问题应该是最终解决之道。</p>
+<p>突然想到一个搞笑案例，分享一下<br>“<br>调试一段有关用户名的程序，上午测试的时候还好好的，下午测试老是获取到null，怎么找都找不到原因，后来后台的哥们说他把用户名改成了“null”，嗯，现在坟头的草一丈多了。<br>”</p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS Pro</tag>
       </tags>
   </entry>
   <entry>
@@ -154,13 +154,11 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS中使用字段计算器创建日期序列字段</title>
-    <url>/2017/01/13/15006.html</url>
-    <content><![CDATA[<p>当我们有一些空间数据，想通过动画的形式展示，可以在ArcGIS中的时间滑块工具实现。如果图层要开启时间属性，得有日期类型字段，所以首先需要创建相应字段。<br>如果我们对要素的先后顺序没有要求，可以通过字段计算器快速生成自增型日期，实际之前我已经写过字段自增的博文<a href="http://zyouzz.me/2017/01/05/1288.html">ArcGIS中使用字段计算器生成随机数和自增数</a><br>这里我是在ArcGIS Pro中实现，（可以看到ArcGIS Pro中不在支持VB语法，只支持python了）</p>
-<span id="more"></span>
-<p><img src="/images/01131.jpg" alt="字段计算器"><br>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime<span class="comment">#导入时间模块</span></span><br><span class="line">dinterval=datetime.datetime.now()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timen</span>():</span><br><span class="line">    <span class="keyword">global</span> dinterval</span><br><span class="line">    dinterval=dinterval+datetime.timedelta(days=<span class="number">1</span>)<span class="comment">#自增1天</span></span><br><span class="line">    <span class="keyword">return</span> dinterval</span><br></pre></td></tr></table></figure>
-<p>生成结果如下：<br><img src="/images/01132.jpg" alt="生成结果"></p>
+    <title>ArcGIS专题图边框花纹制作</title>
+    <url>/2016/10/27/41204.html</url>
+    <content><![CDATA[<p>之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观<span id="more"></span><br><img src="/images/102719.jpg" alt="ArcGIS专题图边框花纹制作"><br>现在有时间尝试了一下实现过程，如下：<br>原始专题图如下<br><img src="/images/10277.jpg" alt="ArcGIS专题图边框花纹制作"><br>1、在布局视图下，右击数据框属性；<br><img src="/images/10278.jpg" alt="ArcGIS专题图边框花纹制作"><br>2、在Frame选项卡下，按如下红框操作，<br><img src="/images/10279.jpg" alt="ArcGIS专题图边框花纹制作"><br>3、打开符号选择器，点击符号编辑<br><img src="/images/102710.jpg" alt="ArcGIS专题图边框花纹制作"><br>4、点击左下角“+”，添加一个符号图层<br><img src="/images/102711.jpg" alt="ArcGIS专题图边框花纹制作"><br>5、选择Marker Line Symbol<br><img src="/images/102712.jpg" alt="ArcGIS专题图边框花纹制作"><br>6、点击”Marker Line”下的Symbol<br><img src="/images/102713.jpg" alt="ArcGIS专题图边框花纹制作"><br>7、再次点击符号编辑<br><img src="/images/102714.jpg" alt="ArcGIS专题图边框花纹制作"><br>8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）<br><img src="/images/102715.jpg" alt="ArcGIS专题图边框花纹制作"><br>9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距<br><img src="/images/102716.jpg" alt="ArcGIS专题图边框花纹制作"><br>10、然后为了让花纹有一个黑底，将下层的线加粗即可<br><img src="/images/102717.jpg" alt="ArcGIS专题图边框花纹制作"><br>11、然后多次点击确认，得到黑底的花纹效果<br><img src="/images/102718.jpg" alt="ArcGIS专题图边框花纹制作"></p>
+<p>实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果</p>
+<p>PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。</p>
 ]]></content>
       <categories>
         <category>GIS</category>
@@ -170,11 +168,13 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS专题图边框花纹制作</title>
-    <url>/2016/10/27/41204.html</url>
-    <content><![CDATA[<p>之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观<span id="more"></span><br><img src="/images/102719.jpg" alt="ArcGIS专题图边框花纹制作"><br>现在有时间尝试了一下实现过程，如下：<br>原始专题图如下<br><img src="/images/10277.jpg" alt="ArcGIS专题图边框花纹制作"><br>1、在布局视图下，右击数据框属性；<br><img src="/images/10278.jpg" alt="ArcGIS专题图边框花纹制作"><br>2、在Frame选项卡下，按如下红框操作，<br><img src="/images/10279.jpg" alt="ArcGIS专题图边框花纹制作"><br>3、打开符号选择器，点击符号编辑<br><img src="/images/102710.jpg" alt="ArcGIS专题图边框花纹制作"><br>4、点击左下角“+”，添加一个符号图层<br><img src="/images/102711.jpg" alt="ArcGIS专题图边框花纹制作"><br>5、选择Marker Line Symbol<br><img src="/images/102712.jpg" alt="ArcGIS专题图边框花纹制作"><br>6、点击”Marker Line”下的Symbol<br><img src="/images/102713.jpg" alt="ArcGIS专题图边框花纹制作"><br>7、再次点击符号编辑<br><img src="/images/102714.jpg" alt="ArcGIS专题图边框花纹制作"><br>8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）<br><img src="/images/102715.jpg" alt="ArcGIS专题图边框花纹制作"><br>9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距<br><img src="/images/102716.jpg" alt="ArcGIS专题图边框花纹制作"><br>10、然后为了让花纹有一个黑底，将下层的线加粗即可<br><img src="/images/102717.jpg" alt="ArcGIS专题图边框花纹制作"><br>11、然后多次点击确认，得到黑底的花纹效果<br><img src="/images/102718.jpg" alt="ArcGIS专题图边框花纹制作"></p>
-<p>实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果</p>
-<p>PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。</p>
+    <title>ArcGIS中使用字段计算器创建日期序列字段</title>
+    <url>/2017/01/13/15006.html</url>
+    <content><![CDATA[<p>当我们有一些空间数据，想通过动画的形式展示，可以在ArcGIS中的时间滑块工具实现。如果图层要开启时间属性，得有日期类型字段，所以首先需要创建相应字段。<br>如果我们对要素的先后顺序没有要求，可以通过字段计算器快速生成自增型日期，实际之前我已经写过字段自增的博文<a href="http://zyouzz.me/2017/01/05/1288.html">ArcGIS中使用字段计算器生成随机数和自增数</a><br>这里我是在ArcGIS Pro中实现，（可以看到ArcGIS Pro中不在支持VB语法，只支持python了）</p>
+<span id="more"></span>
+<p><img src="/images/01131.jpg" alt="字段计算器"><br>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime<span class="comment">#导入时间模块</span></span><br><span class="line">dinterval=datetime.datetime.now()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timen</span>():</span><br><span class="line">    <span class="keyword">global</span> dinterval</span><br><span class="line">    dinterval=dinterval+datetime.timedelta(days=<span class="number">1</span>)<span class="comment">#自增1天</span></span><br><span class="line">    <span class="keyword">return</span> dinterval</span><br></pre></td></tr></table></figure>
+<p>生成结果如下：<br><img src="/images/01132.jpg" alt="生成结果"></p>
 ]]></content>
       <categories>
         <category>GIS</category>
@@ -377,6 +377,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
+    <url>/2016/10/10/22289.html</url>
+    <content><![CDATA[<p>有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。<span id="more"></span><br>尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！<br><img src="/images/ps1.jpg" alt="Portal和Server"><br><img src="/images/ps2.jpg" alt="Portal和Server"></p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</title>
     <url>/2020/01/18/35298.html</url>
     <content><![CDATA[<p>如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。<br>这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。<br>我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。<br>因此，现在需要先安装webpack-parallel-uglify-plugin，</p>
@@ -395,21 +407,23 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
-    <url>/2016/10/10/22289.html</url>
-    <content><![CDATA[<p>有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。<span id="more"></span><br>尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！<br><img src="/images/ps1.jpg" alt="Portal和Server"><br><img src="/images/ps2.jpg" alt="Portal和Server"></p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WebGL中的纹理</title>
     <url>/2023/06/12/63651.html</url>
     <content><![CDATA[<p>WebGL通过一种称作纹理单元（texture unit）的机制来同时使用多个纹理。每个纹理单元有一个单元编号来管理一张纹理图像。即使你的程序只需要一张纹理图像，也得为其指定一个纹理单元。系统支持的纹理单元个数取决于硬件和浏览器的WebGL实现，但是在默认情况下，web GL至少支持8个纹理单元，一些其他的系统支持的个数更多。内置的变量gl.TEXTURE0、gl.TEXTURE1、gl.TEXTURE2。。。。gl.TEXTURE7各表示一个纹理单元。</p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WebGL若干原理摘抄</title>
+    <url>/2024/01/22/13505.html</url>
+    <content><![CDATA[<h1 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h1><p>shader，即着色器，分为<code>顶点着色器（Vertex Shader）</code>、<code>片元着色器（Fragment Shader）</code>、<code>几何着色器（Geometry shader）</code>、<code>计算着色器（Compute shader）</code>、<code>细分曲面着色器（Tessellation or hull shader）</code>，其中可编程的是顶点着色器和片元着色器。至于它们的定义网上可以找到很多，但对于小白来讲看完还是一脸懵逼，我们需要一种通俗易懂的解释，这才符合深入浅出的精髓。</p>
+<p>在知乎上找到一段解释，感觉还不错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当我们在屏幕上绘制或显示一些物体时，</span><br><span class="line">这些物体的显示形式是图元（Primitive）或者网格（Mesh），</span><br><span class="line">比如游戏中一个几何模型角色或一个贴在网格上的纹理角色，</span><br><span class="line">比如我们做阴影效果时先绘制网格再计算阴影，</span><br><span class="line">比如一个发射物体发射前需要先绘制该物体外形网格。</span><br><span class="line">这些物体都可归结为网格，它可被分解为图元，即图元是网格的基本单位。</span><br><span class="line">图元有三角形、直线或点。</span><br><span class="line">当我们在屏幕上画一个三角形时，首先要绘制顶点，</span><br><span class="line">因为网格由顶点组成，此时就要用到顶点着色器（Vertex shader），</span><br><span class="line">将需要到顶点信息给顶点着色器，以显示顶点信息；</span><br><span class="line">其次是在这些顶点组成的区域之间填充颜色，</span><br><span class="line">此时用到像素着色器（Pixel shader）或片元着色器（Fragment shader），</span><br><span class="line">片段（Fragment）有助于定义像素的最终颜色。</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2024/01/shader20240122.png" alt="shader"></p>
+<p>简单来说渲染流程如下：<br><strong>顶点数据(Vertices) &gt; 顶点着色器(Vertex Shader) &gt; 图元装配(Assembly) &gt; 几何着色器(Geometry Shader) &gt; 光栅化(Rasterization) &gt; 片元着色器(Fragment Shader) &gt; 逐片元处理(Per-Fragment Operations) &gt; 帧缓冲(FrameBuffer)</strong></p>
+<p>最后经过双缓冲的交换(SwapBuffer)，渲染内容就显示到了屏幕上。从流程中我们可以看到，顶点着色器之后是图元装配， 图元装配通俗讲就是把图形放置到坐标系中。在片元着色器之前是 光栅化，光栅化是将图形投影到屏幕上，把图形栅格化成一个个的像素点，一个像素点也就是一个片元。在片元着色器之后是逐片元处理， 逐片元处理即填充颜色。再说白一点，顶点着色器负责坐标位置，片元着色器负责填充颜色。好吧，这个说法不一定很严谨，但一定足够浅显，如果我说的不对也欢迎拍砖。</p>
 ]]></content>
       <tags>
         <tag>WebGL</tag>
@@ -481,11 +495,6 @@
       </tags>
   </entry>
   <entry>
-    <title>openlayers去除左上角放大缩小【+】【-】控件</title>
-    <url>/2020/01/15/16123.html</url>
-    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 去除地图左上角的放大缩小控件</span></span><br><span class="line">map.<span class="title function_">getControls</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">control</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (control <span class="keyword">instanceof</span> ol.<span class="property">control</span>.<span class="property">Zoom</span>) &#123;</span><br><span class="line">    map.<span class="title function_">removeControl</span>(control)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>js的事件循环</title>
     <url>/2023/06/09/3897.html</url>
     <content><![CDATA[<h4 id="这个是个人理解的总结，不同人可能都有自己独到的理解方式。"><a href="#这个是个人理解的总结，不同人可能都有自己独到的理解方式。" class="headerlink" title="这个是个人理解的总结，不同人可能都有自己独到的理解方式。"></a>这个是个人理解的总结，不同人可能都有自己独到的理解方式。</h4><p>说到事件循环，我们一般闪现到一个滚滚向前的车轮<br>微任务、宏任务、执行栈<br>宏任务包括整个脚本scripts,ajax,rendering,setTimeout(),setInterval(),setImmediate(),<br>微任务包括我们常常写到的promise.then,process.nextTick(),async下的await等<br>首先进入执行栈的如console.log(),立即执行，<br>然后开始微任务，遵循先进先出原则执行逻辑；<br>本轮微任务全部执行完毕后，开始执行宏任务，同样遵循先进先出原则执行逻辑</p>
@@ -493,6 +502,11 @@
       <tags>
         <tag>JavaScripts</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>openlayers去除左上角放大缩小【+】【-】控件</title>
+    <url>/2020/01/15/16123.html</url>
+    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 去除地图左上角的放大缩小控件</span></span><br><span class="line">map.<span class="title function_">getControls</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">control</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (control <span class="keyword">instanceof</span> ol.<span class="property">control</span>.<span class="property">Zoom</span>) &#123;</span><br><span class="line">    map.<span class="title function_">removeControl</span>(control)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>postman设置collection全局token</title>
@@ -595,6 +609,17 @@
       </tags>
   </entry>
   <entry>
+    <title>【代码分享】海图数据批量导出</title>
+    <url>/2016/08/28/62898.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#from arcpy import env</span></span><br><span class="line"><span class="comment">#from arcpy import interop</span></span><br><span class="line"><span class="comment">#arcpy.ImportToolbox(&quot;Model Functions&quot;)</span></span><br><span class="line">path=<span class="string">r&quot;C:\Users\Esri\Desktop\S57&quot;</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">   filepath=path+<span class="string">&quot;\\&quot;</span>+filename</span><br><span class="line">   output_gdb = <span class="string">&quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;</span>.gd<span class="string">b&quot;</span></span><br><span class="line"><span class="string">   arcpy.QuickImport_interop(filepath,output_gdb)</span></span><br><span class="line"><span class="string">   print filename+&quot;</span>have done<span class="string">&quot;</span></span><br><span class="line"><span class="string">   print &quot;</span>-------------------------------------------------------<span class="string">&quot;</span></span><br><span class="line"><span class="string">print &quot;</span>&lt;----------All are done !!!----------&gt;<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一道难倒不少前端面试者的问题</title>
     <url>/2019/08/15/17967.html</url>
     <content><![CDATA[<blockquote>
@@ -622,17 +647,6 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">a.<span class="title function_">map</span>(<span class="function">(<span class="params">value, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (index === <span class="number">0</span>) &#123;</span><br><span class="line">    a[a.<span class="property">length</span>] = &#123;&#125;;</span><br><span class="line">    a[a.<span class="property">length</span> - <span class="number">1</span>][value] = <span class="number">1</span>;</span><br><span class="line">    a[a.<span class="property">length</span>] = value</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (value <span class="keyword">in</span> a[a.<span class="property">length</span> - <span class="number">2</span>]) &#123;</span><br><span class="line">      a[a.<span class="property">length</span> - <span class="number">2</span>][value] += <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">if</span> (a[a.<span class="property">length</span> - <span class="number">2</span>][value] &gt; a[a.<span class="property">length</span> - <span class="number">1</span>]) &#123;</span><br><span class="line">        a[a.<span class="property">length</span> - <span class="number">1</span>] = value</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      a[a.<span class="property">length</span> - <span class="number">2</span>][value] = <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (index + <span class="number">3</span> === a.<span class="property">length</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(a[a.<span class="property">length</span> - <span class="number">1</span>])</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>看起来更复杂了，有兴趣的小伙伴可以试一试，欢迎留言交流</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>【代码分享】海图数据批量导出</title>
-    <url>/2016/08/28/62898.html</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#from arcpy import env</span></span><br><span class="line"><span class="comment">#from arcpy import interop</span></span><br><span class="line"><span class="comment">#arcpy.ImportToolbox(&quot;Model Functions&quot;)</span></span><br><span class="line">path=<span class="string">r&quot;C:\Users\Esri\Desktop\S57&quot;</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">   filepath=path+<span class="string">&quot;\\&quot;</span>+filename</span><br><span class="line">   output_gdb = <span class="string">&quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;</span>.gd<span class="string">b&quot;</span></span><br><span class="line"><span class="string">   arcpy.QuickImport_interop(filepath,output_gdb)</span></span><br><span class="line"><span class="string">   print filename+&quot;</span>have done<span class="string">&quot;</span></span><br><span class="line"><span class="string">   print &quot;</span>-------------------------------------------------------<span class="string">&quot;</span></span><br><span class="line"><span class="string">print &quot;</span>&lt;----------All are done !!!----------&gt;<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
   </entry>
   <entry>
     <title>七牛视频外链测试</title>
@@ -759,20 +773,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>发现一个大坑！！！</title>
-    <url>/2019/06/14/38442.html</url>
-    <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
-<p>**使用排除法</p>
-<p>1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；<br>2、排除代码错误：都在git上同一分支下；<br>3、排除接口数据：都是同一个后台接口环境；</p>
-<p>以上，那么真相只有一个：都是蛋疼惹的事—依赖版本</p>
-<p>**破案过程：<br>由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；<br>然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，<br><img src="/images/19061402.jpg" alt="element-ui 2.9.1"><br>于是回退版本，这个鸟问题终于解决了！<br>目前的解决方案是将将package.json中的</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;^2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>内牛满面装Portal for ArcGIS</title>
     <url>/2016/08/28/28862.html</url>
     <content><![CDATA[<p>之前尝试用过ArcGIS Server，感觉装起来很容易，发布服务也很方便。<br>之后又了解到Portal for ArcGIS（简单说，就是管理集群部署和分工协作的解决方案等等，我觉得现在的集群部署的存在，还是因为单机器硬件的问题短板），于是很想尝试安装一下。<span id="more"></span><br>因为已经装过Server，就直接解压Portal for ArcGIS，嗯，安装软件很顺利，信心爆棚，并不像ArcGIS知乎上反映的那么难。<br>首次是Portal for ArcGIS主页自动打开，我本以为是一个令人惊喜的画面，谁知提示需要再装一个Web Adaptor，纳尼，什么鬼，侬不理解。。怎么貌似有些小复杂，后来证明确实有些复杂，“小”字也可以去掉了。<br>随后查了一下，如下：<br><strong>webadaptor本身的功能就是做请求转发。使用了Webadaptor后，不再通过portal的默认端口7080和7443端口曝露portal 网络地址，而是通过80和443端口曝露portal服务。与现有web server集成，向portal转发从webs erver来的请求。使用webadaptor可以提高portal的安全性，走80或者443端口后，就不用在其地址中曝露7080或者7443端口。<br>参考：<a href="http://zhihu.esrichina.com.cn/question/13070">为什么webadaptor是portal的一个必须组件</a></strong><br>装完webadaptor，觉得应该大功告成了，但是图样图森破。<br>配置配置Portal与Web Adaptor时，需要输入portal的全限定域名称，这不得不说的是，到这一步才提示，真是一个雷区，之前装的Portal for ArcGIS看起来是废了，好吧，计算机改成全限定域名称，提示需要重启电脑，索性也将ArcGIS Server、Portal for ArcGIS和webAdaptor卸载掉。<br>最终还是成功了！<br><img src="/images/30.jpg" alt="Portal for ArcGIS"><br>装Portal for ArcGIS感觉Esri对网络安全做的很好，比如WebAdaptor的使用。但是对于新手或者网络小白来说，装的过程着实是内牛满面，希望以后会有更为简便的安装。</p>
@@ -802,6 +802,20 @@
       </tags>
   </entry>
   <entry>
+    <title>发现一个大坑！！！</title>
+    <url>/2019/06/14/38442.html</url>
+    <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
+<p>**使用排除法</p>
+<p>1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；<br>2、排除代码错误：都在git上同一分支下；<br>3、排除接口数据：都是同一个后台接口环境；</p>
+<p>以上，那么真相只有一个：都是蛋疼惹的事—依赖版本</p>
+<p>**破案过程：<br>由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；<br>然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，<br><img src="/images/19061402.jpg" alt="element-ui 2.9.1"><br>于是回退版本，这个鸟问题终于解决了！<br>目前的解决方案是将将package.json中的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;^2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>在ArcGIS以弹窗形式挂接图片</title>
     <url>/2016/11/22/869.html</url>
     <content><![CDATA[<p>1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150<br><img src="/images/11221.jpg" alt="ArcGIS 挂接图片"></p>
@@ -813,6 +827,30 @@
       </categories>
       <tags>
         <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>域名包括二级路径，配置VUE中vite</title>
+    <url>/2023/11/25/32593.html</url>
+    <content><![CDATA[<p>通常情况下我们将<code>vue</code>打包后，直接放置<code>nginx</code>或者<code>tomcat</code>等容器里，配置下相关路径文件就可以访问了。<br>但是当我们使用域名的二级路径访问时，如<code>https://abc.com/cesium/</code>，会报404错误，这是因为一些静态文件路径为域名+文件形式，导致找不到文件，例如<code>index.html</code>中的文件为/assets/index-9a873818.js,导致直接拼接了域名。<br>接下来需要在工程中做相关配置<br>1、增加开发环境文件<code>.env.development</code>,添加以下内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#开发环境</span></span></span><br><span class="line">VITE_BASE_PATH=&#x27;/&#x27;</span><br></pre></td></tr></table></figure>
+<p>2、增加生产环境文件<code>.env.production</code>,添加以下内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">生产环境</span></span><br><span class="line">VITE_BASE_PATH=/cesium/</span><br></pre></td></tr></table></figure>
+<p>3、修改<code>package.json</code>中的<code>dev</code>和<code>build</code>命令为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;vite serve --mode development&quot;,</span><br><span class="line">&quot;build&quot;: &quot;vite build --mode production&quot;,</span><br></pre></td></tr></table></figure>
+<p>4、安装<code>dotenv</code>模块，</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn add dotenv</span><br></pre></td></tr></table></figure>
+<p>5、在<code>vite.config.js</code>中增加</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> dotenv <span class="keyword">from</span> <span class="string">&#x27;dotenv&#x27;</span>;</span><br><span class="line">dotenv.<span class="title function_">config</span>(&#123; <span class="attr">path</span>: <span class="string">`.env.<span class="subst">$&#123;process.env.NODE_ENV&#125;</span>`</span> &#125;);</span><br><span class="line"><span class="comment">//添加base</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">base</span>: process.<span class="property">env</span>.<span class="property">VITE_BASE_PATH</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="另外附nginx一般配置"><a href="#另外附nginx一般配置" class="headerlink" title="另外附nginx一般配置,"></a>另外附nginx一般配置,</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location cesium/ &#123;</span><br><span class="line">    root html/cesium/;</span><br><span class="line">    try_files $uri $uri/ /index.html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意文件夹名要和域名二级路径一致，不然需要在index.html前指定文件夹名称，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location cesium/ &#123;</span><br><span class="line">    root html/test/;</span><br><span class="line">    try_files $uri $uri/ test/index.html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>二级路径域名</tag>
+        <tag>VUE</tag>
+        <tag>Vite</tag>
       </tags>
   </entry>
   <entry>
@@ -1310,30 +1348,6 @@
       </tags>
   </entry>
   <entry>
-    <title>域名包括二级路径，配置VUE中vite</title>
-    <url>/2023/11/25/32593.html</url>
-    <content><![CDATA[<p>通常情况下我们将<code>vue</code>打包后，直接放置<code>nginx</code>或者<code>tomcat</code>等容器里，配置下相关路径文件就可以访问了。<br>但是当我们使用域名的二级路径访问时，如<code>https://abc.com/cesium/</code>，会报404错误，这是因为一些静态文件路径为域名+文件形式，导致找不到文件，例如<code>index.html</code>中的文件为/assets/index-9a873818.js,导致直接拼接了域名。<br>接下来需要在工程中做相关配置<br>1、增加开发环境文件<code>.env.development</code>,添加以下内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#开发环境</span></span></span><br><span class="line">VITE_BASE_PATH=&#x27;/&#x27;</span><br></pre></td></tr></table></figure>
-<p>2、增加生产环境文件<code>.env.production</code>,添加以下内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">生产环境</span></span><br><span class="line">VITE_BASE_PATH=/cesium/</span><br></pre></td></tr></table></figure>
-<p>3、修改<code>package.json</code>中的<code>dev</code>和<code>build</code>命令为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;vite serve --mode development&quot;,</span><br><span class="line">&quot;build&quot;: &quot;vite build --mode production&quot;,</span><br></pre></td></tr></table></figure>
-<p>4、安装<code>dotenv</code>模块，</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn add dotenv</span><br></pre></td></tr></table></figure>
-<p>5、在<code>vite.config.js</code>中增加</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> dotenv <span class="keyword">from</span> <span class="string">&#x27;dotenv&#x27;</span>;</span><br><span class="line">dotenv.<span class="title function_">config</span>(&#123; <span class="attr">path</span>: <span class="string">`.env.<span class="subst">$&#123;process.env.NODE_ENV&#125;</span>`</span> &#125;);</span><br><span class="line"><span class="comment">//添加base</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">base</span>: process.<span class="property">env</span>.<span class="property">VITE_BASE_PATH</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="另外附nginx一般配置"><a href="#另外附nginx一般配置" class="headerlink" title="另外附nginx一般配置,"></a>另外附nginx一般配置,</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location cesium/ &#123;</span><br><span class="line">    root html/cesium/;</span><br><span class="line">    try_files $uri $uri/ /index.html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意文件夹名要和域名二级路径一致，不然需要在index.html前指定文件夹名称，如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location cesium/ &#123;</span><br><span class="line">    root html/test/;</span><br><span class="line">    try_files $uri $uri/ test/index.html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>二级路径域名</tag>
-        <tag>VUE</tag>
-        <tag>Vite</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[<p>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
@@ -1342,7 +1356,7 @@
   <entry>
     <title>about</title>
     <url>/about/index.html</url>
-    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#x6a;&#97;&#x6d;&#101;&#115;&#114;&#111;&#x63;&#107;&#54;&#54;&#x36;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x6a;&#97;&#x6d;&#101;&#115;&#114;&#111;&#x63;&#107;&#54;&#54;&#x36;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
+    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#x6a;&#x61;&#x6d;&#x65;&#x73;&#x72;&#111;&#x63;&#x6b;&#x36;&#x36;&#54;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x6a;&#x61;&#x6d;&#x65;&#x73;&#x72;&#111;&#x63;&#x6b;&#x36;&#x36;&#54;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
 ]]></content>
   </entry>
   <entry>
@@ -1384,56 +1398,6 @@ var chart = c3.generate({
 				format: '%Y-%m-%d',
 				//rotate: 75,
             }
-        }
-    }
-});
-</script>
-
-</html>]]></content>
-  </entry>
-  <entry>
-    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
-    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BB%9F%E8%AE%A1Top50.html</url>
-    <content><![CDATA[<span id="more"></span>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
-    <!-- 加载c3.css文件-->
-    <link href="http://c3js.org/css/c3-b03125fa.css" rel="stylesheet" type="text/css">
-
-    <!-- 加载d3.js和c3.js -->
-    <script src="http://c3js.org/js/d3-3.5.6.min-77adef17.js" charset="utf-8"></script>
-    <script src="http://c3js.org/js/c3.min-4c5bef8f.js"></script>
-	<SCRIPT language=JavaScript> function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
-</head>
-<body>
-
-<!--准备绑定图表的元素-->
-<div id="chart" style='height:1100px'></div>
-</body>
-<script>
-var chart = c3.generate({
-    data: {
-        x: '关键词',
-//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-        columns: [
-['关键词', 'arcgis', 'for', 'server', 'api', 'portal', 'ios', 'to', 'javascript', 'runtime', 'pro', 'js', 'engine', 'the', 'android', 'failed', 'web', 'error', '安装', 'arcengine', 'linux', 'not', 'python', '10.5', 'data', 'sdk', 'gp', 'is', '天地图', 'create', 'arcmap', 'gis', 'desktop', 'service', 'arcpy', 'cityengine', 'java', 'envi', 'enterprise', '3d', 'sde', '三维', '10.2.5', 'in', '切片', 'arcsde', '矢量切片', 'cad', 'webgis', 'geoevent', 'a'],
-//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-['次数', '2476', '817', '530', '480', '375', '286', '274', '262', '251', '244', '241', '220', '203', '200', '159', '134', '132', '127', '124', '118', '117', '117', '113', '108', '93', '90', '87', '80', '80', '79', '76', '76', '75', '74', '71', '69', '68', '66', '65', '62', '61', '60', '59', '59', '56', '55', '55', '54', '53', '50'],
-        ],
-		type:'bar',
-		labels:{
-			format:{
-			次数: d3.format(''),
-			}
-		}
-    },
-    axis: {
-		rotated: true,
-        x: {
-            type: 'category',
-            
         }
     }
 });
@@ -2315,5 +2279,55 @@ var chart = c3.generate({
 </body>
 </html>
 ]]></content>
+  </entry>
+  <entry>
+    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
+    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BB%9F%E8%AE%A1Top50.html</url>
+    <content><![CDATA[<span id="more"></span>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
+    <!-- 加载c3.css文件-->
+    <link href="http://c3js.org/css/c3-b03125fa.css" rel="stylesheet" type="text/css">
+
+    <!-- 加载d3.js和c3.js -->
+    <script src="http://c3js.org/js/d3-3.5.6.min-77adef17.js" charset="utf-8"></script>
+    <script src="http://c3js.org/js/c3.min-4c5bef8f.js"></script>
+	<SCRIPT language=JavaScript> function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); </SCRIPT>
+</head>
+<body>
+
+<!--准备绑定图表的元素-->
+<div id="chart" style='height:1100px'></div>
+</body>
+<script>
+var chart = c3.generate({
+    data: {
+        x: '关键词',
+//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+        columns: [
+['关键词', 'arcgis', 'for', 'server', 'api', 'portal', 'ios', 'to', 'javascript', 'runtime', 'pro', 'js', 'engine', 'the', 'android', 'failed', 'web', 'error', '安装', 'arcengine', 'linux', 'not', 'python', '10.5', 'data', 'sdk', 'gp', 'is', '天地图', 'create', 'arcmap', 'gis', 'desktop', 'service', 'arcpy', 'cityengine', 'java', 'envi', 'enterprise', '3d', 'sde', '三维', '10.2.5', 'in', '切片', 'arcsde', '矢量切片', 'cad', 'webgis', 'geoevent', 'a'],
+//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+['次数', '2476', '817', '530', '480', '375', '286', '274', '262', '251', '244', '241', '220', '203', '200', '159', '134', '132', '127', '124', '118', '117', '117', '113', '108', '93', '90', '87', '80', '80', '79', '76', '76', '75', '74', '71', '69', '68', '66', '65', '62', '61', '60', '59', '59', '56', '55', '55', '54', '53', '50'],
+        ],
+		type:'bar',
+		labels:{
+			format:{
+			次数: d3.format(''),
+			}
+		}
+    },
+    axis: {
+		rotated: true,
+        x: {
+            type: 'category',
+            
+        }
+    }
+});
+</script>
+
+</html>]]></content>
   </entry>
 </search>
