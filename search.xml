@@ -34,21 +34,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
-    <url>/2019/04/25/56554.html</url>
-    <content><![CDATA[<p>大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。<br>现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。</p>
-<span id="more"></span>
-<p>人生就是两字—“折腾”！<br>这不，ArcGIS 10.5.1版本才发布，就跃跃欲试升级。枪打出头鸟，果然有大坑，顺利安装完成后，在Portal中添加一个slpk场景包，却发现一直不成功，<br><img src="/images/090805.png" alt="无法添加服务"><br>或者是这样<br><img src="/images/090806.png" alt="场景服务缺少根节点"><br>在server日志中看到如下记录：<br><img src="/images/090801.png" alt="server日志"><br>在发布场景时，场景数据会存到托管server的datastore中，创建服务需要Couchdb数据库，问题就出在这，datastore中Couchdb无法创建数据库，场景就发布不了。<br>对于这个问题，我开始以为是datastore没有安装配置好，严格统一了一下证书，然后在server管理页面中解除注册，再重新配置，但是这样不行。仍然是同样的问题。没办法，将datastore卸载重装，不行。。。<br>最后，索性将整套ArcGIS Enterprise全家桶重装了一遍，还是不行，杯具呀。。。<br>后来发现同事也遇到这个问题，紧接着，用户也出现了，看来这不是我的系统环境或者安装部署问题，当天给用户远程了一下，还是没有解决，好在用户说现在只是测试，没在生产环境中正式部署。这真是绝望的时刻。<br>最后，终于在公司服务器里的技术文档，找到类似问题的解决方案。<br>详情见：<a href="http://note.youdao.com/share/?token=5CE037BAD8AA47C2A0FE718DB10A588A&gid=41919611#/">1887问题解决方案</a><br>该作者的解决方法惊为天人，一般人真是想不到。。。<br>问题最终算是解决了，具体的原因不得而知，但是知道问题出在Couchdb这块，很是诡异，希望在下个版本能够解决。<br>好消息是：从10.5.1开始，Esri发布了一个一键安装程序，大大简化安装流程。</p>
-<p>——————————————-++————————————————————</p>
-<p>还有个问题是：在10.5中上传之前Pro（1.4版本）打包或者是smart3D导出的spk，Portal会显示如下问题<br><img src="/images/090802.jpg" alt="spk包上传"><br>这里显示上传的不是有效的包。<br>解决的方法很简单，实际spk就是个压缩包，直接用解压文件解压，会看到里面包含的文件<br><img src="/images/090803.jpg" alt="解压spk包"><br>美国Esri官方给的解决方法是：使用7zip软件，将其重新打包，设置如下，然后再上传就可以了<br><img src="/images/090804.jpg" alt="spk包重新压缩"></p>
-]]></content>
-      <tags>
-        <tag>ArcGIS Enterprise</tag>
-        <tag>Portal</tag>
-        <tag>三维场景</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
     <url>/2017/12/02/11059.html</url>
     <content><![CDATA[<p>从1.3版本开始接触ArcGIS Pro，流畅的64位原生应用程序，靓丽的ribbon界面，二三维一体的极致体验，让我们看到变革的时候到来，传统的桌面使用相信现正在迁移过来，并且也在吸引大量新使用者。<br><img src="/images/120201.jpg" alt="ArcGIS Pro"></p>
@@ -97,18 +82,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS ModelBuilder的工作空间（workspace)设置问题</title>
-    <url>/2016/11/18/56001.html</url>
-    <content><![CDATA[<p>今天和同事调试了一个用户发来的ModelBuilder，咋一看,模型做得还好呀，每个工具的调用和参数设置都很有逻辑<br><img src="/images/111801.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是一点击运行后，<span id="more"></span>在第一步模型就运行失败了<br><img src="/images/111802.jpg" alt="ArcGIS ModelBuilder,workspace"><br>原来用户使用的是相对引用路径，但是路径中存在gdb，而工作空间中默认也是在gdb下，所以一个路径中同时出现两个gdb，数据存不了，当然无法运行了。<br>由于模型中用户都是这么写的，有很多处，所以只有修改模型的环境参数了，先打开模型属性<br><img src="/images/111803.jpg" alt="ArcGIS ModelBuilder,workspace"><br>点击环境选项卡，勾选Workspace选项，点击下面的Values..<br><img src="/images/111804.jpg" alt="ArcGIS ModelBuilder,workspace"><br>设置Scratch Workspace路径，<br><img src="/images/111805.jpg" alt="ArcGIS ModelBuilder,workspace"><br>确定后点击运行，成功！<br><img src="/images/111806.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是高兴太早，一般使用模型很少会点开编辑界面运行，会直接双击，像GP工具使用，里面都是黑箱了<br>双击工具，点击OK<br><img src="/images/111807.jpg" alt="ArcGIS ModelBuilder,workspace"><br>果然高兴太早，在最后一步出现问题，又同时一个路径中出现两个gdb<br><img src="/images/111808.jpg" alt="ArcGIS ModelBuilder,workspace"><br>这时心里想，不对呀，工作空间（workspace)的路径不是已经改了么，怎么不管用呢<br>和同事琢磨半天，最后发现双击模型工具后，点击界面下方的环境设置<br><img src="/images/111809.jpg" alt="ArcGIS ModelBuilder,workspace"><br>发现路径还是原先的默认带有gdb的路径，<br><img src="/images/111810.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是为什么前面的几步都运行成功了呢？遂再次陷入沉思<br>后才明白，我们把输出结果路径作为模型工具的界面参数，<br><img src="/images/111811.jpg" alt="ArcGIS ModelBuilder,workspace"><br>造成了前面会使用我们修改的模型环境路径，输出结果路径去依然使用该模型工具界面的环境参数路径。<br>于是将结果路径在模型编辑中去掉作为界面参数的设置<br><img src="/images/111812.jpg" alt="ArcGIS ModelBuilder,workspace"><br>再双击模型，完美运行！<br><img src="/images/111813.jpg" alt="ArcGIS ModelBuilder,workspace"><br><img src="/images/111814.jpg" alt="ArcGIS ModelBuilder,workspace"><br>这里不得不提一下ArcGIS ModelBuilder的工作空间（workspace)设置问题，模型属性的环境变量参数设置在模型使用界面中无效，造成后续的参数再次调整，有些不太方便，但不是大的问题。</p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS Server集群部署问题和注意事项</title>
     <url>/2017/05/16/48872.html</url>
     <content><![CDATA[<p><font size=4><b>1、关于集群部署</b></font><br>（1）确保集群所有计算机的主DNS后缀相同；<br>![主DNS后缀相同](/images/ArcGIS Server 1.jpg)</p>
@@ -121,8 +94,8 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>ArcGIS Server</tag>
+        <tag>GIS</tag>
         <tag>集群部署</tag>
         <tag>问题</tag>
         <tag>注意事项</tag>
@@ -145,8 +118,8 @@
 <p>最终在IE等浏览器中将证书安装到计算机的受信任的根证书颁发机构。</p>
 ]]></content>
       <tags>
-        <tag>ArcGIS Enterprise</tag>
         <tag>ArcGIS Server</tag>
+        <tag>ArcGIS Enterprise</tag>
         <tag>Linux</tag>
         <tag>ArcGIS Portal</tag>
         <tag>安装</tag>
@@ -184,19 +157,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
-    <url>/2017/01/05/1288.html</url>
-    <content><![CDATA[<p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数</p>
-<span id="more"></span>
-<p><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">randnum</span>():</span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res </span><br></pre></td></tr></table></figure>
-<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">increment</span>):</span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
-<p>PS；注意选择是python脚本，以及代码的缩进。</p>
-<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>ArcGIS中多个字段同时渲染</title>
     <url>/2017/03/22/15901.html</url>
     <content><![CDATA[<p>今天群里有个人问到：怎样对一个图层的多个属性字段同时渲染。当时确实有些懵，因为之前基本只对一个属性字段进行符号配置显示，所以无从着手，想到用多个图层同时表示，但是不行，顿时感觉没办法了，下班后，忙完其他的事后，还是不死心，于是又尝试了一下，果然，问题居然很简单的就解决了！</p>
@@ -222,6 +182,19 @@
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
+    <url>/2017/01/05/1288.html</url>
+    <content><![CDATA[<p>当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，<br>下面是实现得过程和代码：<br>首先新建个字段，字段类型是整型或者浮点或者双精度<br><img src="/images/01051.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"><br>（1）生成随机数</p>
+<span id="more"></span>
+<p><img src="/images/01052.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">randnum</span>():</span><br><span class="line">      res=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">      <span class="keyword">return</span> res </span><br></pre></td></tr></table></figure>
+<p>（2）自增序列数<br><img src="/images/01053.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">accumulate</span>(<span class="params">increment</span>):</span><br><span class="line"> <span class="keyword">global</span> total</span><br><span class="line"> <span class="keyword">if</span> total:</span><br><span class="line">  total += increment</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">  total = increment</span><br><span class="line"> <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<p>PS；注意选择是python脚本，以及代码的缩进。</p>
+<p>结果如下：<br><img src="/images/01054.jpg" alt="ArcGIS中使用字段计算器生成随机数和自增数"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>ArcGIS知乎网站用户信息爬取与分析【附代码】</title>
     <url>/2017/01/10/50334.html</url>
     <content><![CDATA[<p>上周陈老师让我收集一下部门人员在<a href="http://zhihu.esrichina.com.cn/">ArcGIS知乎</a>上的活动信息，包括威望、积分、赞同、感谢、提问、回复和文章等数量，当时觉得数量不多，就直接打开网页一个个找到，然后敲到Excel中。<br>现在觉得要是以后大量分析用户行为，这就不可行，正好对爬虫感兴趣，先写个练练手。<br>爬取的信息如下：<br>有效注册用户：4633个</p>
@@ -237,6 +210,33 @@
       <tags>
         <tag>python</tag>
         <tag>多进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
+    <url>/2019/04/25/56554.html</url>
+    <content><![CDATA[<p>大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。<br>现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。</p>
+<span id="more"></span>
+<p>人生就是两字—“折腾”！<br>这不，ArcGIS 10.5.1版本才发布，就跃跃欲试升级。枪打出头鸟，果然有大坑，顺利安装完成后，在Portal中添加一个slpk场景包，却发现一直不成功，<br><img src="/images/090805.png" alt="无法添加服务"><br>或者是这样<br><img src="/images/090806.png" alt="场景服务缺少根节点"><br>在server日志中看到如下记录：<br><img src="/images/090801.png" alt="server日志"><br>在发布场景时，场景数据会存到托管server的datastore中，创建服务需要Couchdb数据库，问题就出在这，datastore中Couchdb无法创建数据库，场景就发布不了。<br>对于这个问题，我开始以为是datastore没有安装配置好，严格统一了一下证书，然后在server管理页面中解除注册，再重新配置，但是这样不行。仍然是同样的问题。没办法，将datastore卸载重装，不行。。。<br>最后，索性将整套ArcGIS Enterprise全家桶重装了一遍，还是不行，杯具呀。。。<br>后来发现同事也遇到这个问题，紧接着，用户也出现了，看来这不是我的系统环境或者安装部署问题，当天给用户远程了一下，还是没有解决，好在用户说现在只是测试，没在生产环境中正式部署。这真是绝望的时刻。<br>最后，终于在公司服务器里的技术文档，找到类似问题的解决方案。<br>详情见：<a href="http://note.youdao.com/share/?token=5CE037BAD8AA47C2A0FE718DB10A588A&gid=41919611#/">1887问题解决方案</a><br>该作者的解决方法惊为天人，一般人真是想不到。。。<br>问题最终算是解决了，具体的原因不得而知，但是知道问题出在Couchdb这块，很是诡异，希望在下个版本能够解决。<br>好消息是：从10.5.1开始，Esri发布了一个一键安装程序，大大简化安装流程。</p>
+<p>——————————————-++————————————————————</p>
+<p>还有个问题是：在10.5中上传之前Pro（1.4版本）打包或者是smart3D导出的spk，Portal会显示如下问题<br><img src="/images/090802.jpg" alt="spk包上传"><br>这里显示上传的不是有效的包。<br>解决的方法很简单，实际spk就是个压缩包，直接用解压文件解压，会看到里面包含的文件<br><img src="/images/090803.jpg" alt="解压spk包"><br>美国Esri官方给的解决方法是：使用7zip软件，将其重新打包，设置如下，然后再上传就可以了<br><img src="/images/090804.jpg" alt="spk包重新压缩"></p>
+]]></content>
+      <tags>
+        <tag>ArcGIS Enterprise</tag>
+        <tag>Portal</tag>
+        <tag>三维场景</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS ModelBuilder的工作空间（workspace)设置问题</title>
+    <url>/2016/11/18/56001.html</url>
+    <content><![CDATA[<p>今天和同事调试了一个用户发来的ModelBuilder，咋一看,模型做得还好呀，每个工具的调用和参数设置都很有逻辑<br><img src="/images/111801.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是一点击运行后，<span id="more"></span>在第一步模型就运行失败了<br><img src="/images/111802.jpg" alt="ArcGIS ModelBuilder,workspace"><br>原来用户使用的是相对引用路径，但是路径中存在gdb，而工作空间中默认也是在gdb下，所以一个路径中同时出现两个gdb，数据存不了，当然无法运行了。<br>由于模型中用户都是这么写的，有很多处，所以只有修改模型的环境参数了，先打开模型属性<br><img src="/images/111803.jpg" alt="ArcGIS ModelBuilder,workspace"><br>点击环境选项卡，勾选Workspace选项，点击下面的Values..<br><img src="/images/111804.jpg" alt="ArcGIS ModelBuilder,workspace"><br>设置Scratch Workspace路径，<br><img src="/images/111805.jpg" alt="ArcGIS ModelBuilder,workspace"><br>确定后点击运行，成功！<br><img src="/images/111806.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是高兴太早，一般使用模型很少会点开编辑界面运行，会直接双击，像GP工具使用，里面都是黑箱了<br>双击工具，点击OK<br><img src="/images/111807.jpg" alt="ArcGIS ModelBuilder,workspace"><br>果然高兴太早，在最后一步出现问题，又同时一个路径中出现两个gdb<br><img src="/images/111808.jpg" alt="ArcGIS ModelBuilder,workspace"><br>这时心里想，不对呀，工作空间（workspace)的路径不是已经改了么，怎么不管用呢<br>和同事琢磨半天，最后发现双击模型工具后，点击界面下方的环境设置<br><img src="/images/111809.jpg" alt="ArcGIS ModelBuilder,workspace"><br>发现路径还是原先的默认带有gdb的路径，<br><img src="/images/111810.jpg" alt="ArcGIS ModelBuilder,workspace"><br>但是为什么前面的几步都运行成功了呢？遂再次陷入沉思<br>后才明白，我们把输出结果路径作为模型工具的界面参数，<br><img src="/images/111811.jpg" alt="ArcGIS ModelBuilder,workspace"><br>造成了前面会使用我们修改的模型环境路径，输出结果路径去依然使用该模型工具界面的环境参数路径。<br>于是将结果路径在模型编辑中去掉作为界面参数的设置<br><img src="/images/111812.jpg" alt="ArcGIS ModelBuilder,workspace"><br>再双击模型，完美运行！<br><img src="/images/111813.jpg" alt="ArcGIS ModelBuilder,workspace"><br><img src="/images/111814.jpg" alt="ArcGIS ModelBuilder,workspace"><br>这里不得不提一下ArcGIS ModelBuilder的工作空间（workspace)设置问题，模型属性的环境变量参数设置在模型使用界面中无效，造成后续的参数再次调整，有些不太方便，但不是大的问题。</p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -377,18 +377,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
-    <url>/2016/10/10/22289.html</url>
-    <content><![CDATA[<p>有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。<span id="more"></span><br>尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！<br><img src="/images/ps1.jpg" alt="Portal和Server"><br><img src="/images/ps2.jpg" alt="Portal和Server"></p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</title>
     <url>/2020/01/18/35298.html</url>
     <content><![CDATA[<p>如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。<br>这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。<br>我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。<br>因此，现在需要先安装webpack-parallel-uglify-plugin，</p>
@@ -440,6 +428,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
+    <url>/2016/10/10/22289.html</url>
+    <content><![CDATA[<p>有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。<span id="more"></span><br>尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！<br><img src="/images/ps1.jpg" alt="Portal和Server"><br><img src="/images/ps2.jpg" alt="Portal和Server"></p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>geoserver WFS服务 Filter过滤查询踩坑一个</title>
     <url>/2020/06/28/35327.html</url>
     <content><![CDATA[<p>有时会通过视图方式发布一个图层，然后变相实现接口调用数据。<br>当数据属性中有id字段，并作为过滤字段查询时，使用in会查不出结果，调取geoserver日志，发现id并没有作为字段名称传入，可以采用or查询结果，但是需要在前端重新拼接一下id数组，</p>
@@ -458,6 +458,16 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _*_coding:utf-8_*_</span></span><br><span class="line"><span class="keyword">from</span> geoserver.catalog <span class="keyword">import</span> Catalog</span><br><span class="line"><span class="keyword">from</span> geoserver.support <span class="keyword">import</span> JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 地图发布环境</span></span><br><span class="line">ENVIRONMENT_PUBLISH = <span class="string">&#x27;XXX_local&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 城市名称</span></span><br><span class="line">CITY = <span class="string">&#x27;xixian&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 年</span></span><br><span class="line">YEAR = <span class="number">2020</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 月</span></span><br><span class="line">MONTH = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONFIGURE = &#123;</span><br><span class="line">    <span class="string">&#x27;XXX_local&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;CITY&#x27;</span>: CITY,</span><br><span class="line">        <span class="string">&#x27;GEOSERVER_HOST&#x27;</span>: <span class="string">&#x27;1.1.1.1&#x27;</span>,  <span class="comment"># geoserver地址</span></span><br><span class="line">        <span class="string">&#x27;GEOSERVER_PORT&#x27;</span>: <span class="string">&#x27;8080&#x27;</span>,  <span class="comment"># geoserver端口</span></span><br><span class="line">        <span class="string">&#x27;USERNAME&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,  <span class="comment"># geoserver用户名</span></span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;******&#x27;</span>,  <span class="comment"># geoserver密码</span></span><br><span class="line">        <span class="string">&#x27;DATABASE_MYSQL&#x27;</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cat = Catalog(<span class="string">&#x27;http://%s:%s/geoserver/rest/&#x27;</span> % (</span><br><span class="line">CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_HOST&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_PORT&#x27;</span>]),</span><br><span class="line">              CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;USERNAME&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;PASSWORD&#x27;</span>])</span><br><span class="line">store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;DATABASE_MYSQL&#x27;</span>], CITY)</span><br><span class="line">geom = JDBCVirtualTableGeometry(<span class="string">&#x27;geom&#x27;</span>, <span class="string">&#x27;LineString&#x27;</span>, <span class="string">&#x27;4326&#x27;</span>)</span><br><span class="line">ft_name = <span class="string">&#x27;line_speed_day_%s_%s&#x27;</span> % (YEAR, MONTH)</span><br><span class="line">epsg_code = <span class="string">&#x27;EPSG:4326&#x27;</span></span><br><span class="line">sql = <span class="string">&#x27;&#x27;&#x27;SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM line</span></span><br><span class="line"><span class="string">WHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction&#x27;&#x27;&#x27;</span> % (</span><br><span class="line">    YEAR, MONTH, YEAR, MONTH)</span><br><span class="line"><span class="built_in">print</span> sql</span><br><span class="line">keyColumn = <span class="literal">None</span></span><br><span class="line">parameters = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">jdbc_vt = JDBCVirtualTable(ft_name, sql, <span class="string">&#x27;false&#x27;</span>, geom, keyColumn, parameters)</span><br><span class="line">ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)</span><br><span class="line">layer = cat.get_layer(ft_name)</span><br><span class="line">layer.default_style = cat.get_style(<span class="string">&#x27;stylefile&#x27;</span>)</span><br><span class="line">cat.save(layer)</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>gl.drawArrays的使用</title>
+    <url>/2023/06/01/28338.html</url>
+    <content><![CDATA[<p>缓冲区对象是WebGL系统中的一块存储区，可以在里面存储想要绘制的所有顶点数据，通过创建缓冲区，就能够一次性地向顶点着色器传入多个顶点的attribute变量的数据。</p>
+<p><strong>gl.drawArrays(mode, first, count)</strong><br>1、modes指的是绘制方式，gl.POINTS、gl.LINES、gl.LINE_STRIP、gl.LINE_LOOP、gl.TRIANGLES、gl.TRIANGLES_STRIP、gl.TRIANGLE_FAN；<br>具体使用如下表<br><img src="/images/2023/06/gldrawarrays_mode.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode1.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode2.png" alt="预览"><br>2、first指的是从哪一个顶点开始绘制；<br>3、count指的是绘制需要多少个顶点。</p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo blog github ssh</title>
     <url>/2023/07/04/34768.html</url>
     <content><![CDATA[<p>1、生成新的pub</p>
@@ -473,16 +483,6 @@
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>gl.drawArrays的使用</title>
-    <url>/2023/06/01/28338.html</url>
-    <content><![CDATA[<p>缓冲区对象是WebGL系统中的一块存储区，可以在里面存储想要绘制的所有顶点数据，通过创建缓冲区，就能够一次性地向顶点着色器传入多个顶点的attribute变量的数据。</p>
-<p><strong>gl.drawArrays(mode, first, count)</strong><br>1、modes指的是绘制方式，gl.POINTS、gl.LINES、gl.LINE_STRIP、gl.LINE_LOOP、gl.TRIANGLES、gl.TRIANGLES_STRIP、gl.TRIANGLE_FAN；<br>具体使用如下表<br><img src="/images/2023/06/gldrawarrays_mode.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode1.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode2.png" alt="预览"><br>2、first指的是从哪一个顶点开始绘制；<br>3、count指的是绘制需要多少个顶点。</p>
-]]></content>
-      <tags>
-        <tag>WebGL</tag>
       </tags>
   </entry>
   <entry>
@@ -620,12 +620,6 @@
       </tags>
   </entry>
   <entry>
-    <title>七牛视频外链测试</title>
-    <url>/2016/08/29/9863.html</url>
-    <content><![CDATA[<p>【简介】今年暑期上映的科幻大片《独立日2：卷入重来》，又一次带动了国内的票房市场，其绚丽的特效令人惊叹，各种科幻场面令人目不暇接、眼花缭乱，可能你想不到的是：<span id="more"></span>其中的一些3D模型和场景是由ArcGIS平台产品搭建和渲染的，amazing吧，是不是很酷，同样在一些游戏画面中可能也会有类似的应用。但是GIS在3D方面不单单能实现专业的视觉效果，它也构成了城市蓬勃发展的基础，建立智慧的社区和城市指日可待，GIS几乎是无处不在并将改变我们周围的一切。随着现场主持人深情并茂的诗意解读，一起沉浸于ArcGIS创建的未来世界吧。<br><video  height="710 " src="http://zyzz.qiniudn.com/%E7%89%87%E5%A4%B4.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://zyzz.qiniudn.com/0-ArcGIS%E9%AB%98%E7%BA%A7%E5%88%B6%E5%9B%BE%E9%AD%85%E5%8A%9B.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://v2.huangguofeng.com/pcs_download.php?id=18131&link=%2Fapps%2Fhgf_blog%2F%E3%80%90%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%E5%AD%97%E5%B9%95%E3%80%915157-smart-3d-cities_960.mp4" poster=" " controls="controls"><br></video></p>
-]]></content>
-  </entry>
-  <entry>
     <title>一道难倒不少前端面试者的问题</title>
     <url>/2019/08/15/17967.html</url>
     <content><![CDATA[<blockquote>
@@ -655,6 +649,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>七牛视频外链测试</title>
+    <url>/2016/08/29/9863.html</url>
+    <content><![CDATA[<p>【简介】今年暑期上映的科幻大片《独立日2：卷入重来》，又一次带动了国内的票房市场，其绚丽的特效令人惊叹，各种科幻场面令人目不暇接、眼花缭乱，可能你想不到的是：<span id="more"></span>其中的一些3D模型和场景是由ArcGIS平台产品搭建和渲染的，amazing吧，是不是很酷，同样在一些游戏画面中可能也会有类似的应用。但是GIS在3D方面不单单能实现专业的视觉效果，它也构成了城市蓬勃发展的基础，建立智慧的社区和城市指日可待，GIS几乎是无处不在并将改变我们周围的一切。随着现场主持人深情并茂的诗意解读，一起沉浸于ArcGIS创建的未来世界吧。<br><video  height="710 " src="http://zyzz.qiniudn.com/%E7%89%87%E5%A4%B4.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://zyzz.qiniudn.com/0-ArcGIS%E9%AB%98%E7%BA%A7%E5%88%B6%E5%9B%BE%E9%AD%85%E5%8A%9B.mp4" poster=" " controls="controls"><br></video><br><video  height="710 " src="http://v2.huangguofeng.com/pcs_download.php?id=18131&link=%2Fapps%2Fhgf_blog%2F%E3%80%90%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%E5%AD%97%E5%B9%95%E3%80%915157-smart-3d-cities_960.mp4" poster=" " controls="controls"><br></video></p>
+]]></content>
+  </entry>
+  <entry>
     <title>与ArcGIS有冲突的软件---黑名单（不定期更新）</title>
     <url>/2017/01/18/31842.html</url>
     <content><![CDATA[<h2 id="先亮个相：福昕阅读器、有道词典、搜狗输入法"><a href="#先亮个相：福昕阅读器、有道词典、搜狗输入法" class="headerlink" title="先亮个相：福昕阅读器、有道词典、搜狗输入法"></a>先亮个相：福昕阅读器、有道词典、搜狗输入法</h2><p>之前在用ArcGIS时，遇到了两个致命的问题，不管是重装软件，甚至是重装系统，都无法解决，但是其他人的软件都没有这种现象，无奈使用其他的功能去实现。<br>后来发现是软件之间的冲突导致。方法很简单，卸载冲突的软件或者关闭掉进程<br>下面列举黑名单，不，冲突的软件</p>
@@ -672,6 +672,12 @@
       <tags>
         <tag>GIS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>为什么加班到现在，运维是个大坑货！！！</title>
+    <url>/2019/11/19/14351.html</url>
+    <content><![CDATA[<p>一套系统，本地运行的没问题，同样的安装流程却无法成功运行。<br>捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：<br>编码一定保持一致呀喂！<br>编码一定保持一致呀喂！<br>编码一定保持一致呀喂！<br>操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。<br>运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。</p>
+]]></content>
   </entry>
   <entry>
     <title>使用ModelBuilder批量处理和命名问题解决</title>
@@ -739,12 +745,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么加班到现在，运维是个大坑货！！！</title>
-    <url>/2019/11/19/14351.html</url>
-    <content><![CDATA[<p>一套系统，本地运行的没问题，同样的安装流程却无法成功运行。<br>捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：<br>编码一定保持一致呀喂！<br>编码一定保持一致呀喂！<br>编码一定保持一致呀喂！<br>操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。<br>运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>关于bash中的2&gt;&amp;1 &amp;理解</title>
     <url>/2023/06/01/62539.html</url>
     <content><![CDATA[<p>经常运行一些python脚本或者jar包，如果直接运行python *.py，或者 java -jar *.jar,再进行其他操作，需要终止运行，所以应该是后台运行。<br>这也就经常看到这样的句式：</p>
@@ -799,20 +799,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>在ArcGIS以弹窗形式挂接图片</title>
-    <url>/2016/11/22/869.html</url>
-    <content><![CDATA[<p>1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150<br><img src="/images/11221.jpg" alt="ArcGIS 挂接图片"></p>
-<span id="more"></span>
-<p>2、开启编辑，图加图片路径，然后关闭编辑保存<br> <img src="/images/11225.jpg" alt="ArcGIS 挂接图片"><br>3、右击图层，打开图层属性，点击弹窗选项课，如下所示，选择图片路径字段就OK了<br> <img src="/images/11224.jpg" alt="ArcGIS 挂接图片"><br>4、使用工具条上的弹窗工具，点击要素，<br> <img src="/images/11223.jpg" alt="ArcGIS 挂接图片"><br>5、就可以显示图片了<br> <img src="/images/11222.jpg" alt="ArcGIS 挂接图片"></p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>变换矩阵（Transformation matrix）详解</title>
     <url>/2023/06/01/1829.html</url>
     <content><![CDATA[<p>当我们对一个图形进行平移再旋转，一般流程是需要重新求取一个新的等式，然后实现一个新的着色器，这样很不好。<br>好在我们可以使用另一个数学工具—变换矩阵（Transformation matrix）来完成这项工作。变换矩阵非常适合操作计算机图形。<br>一、旋转矩阵<br>当p按照右手法则逆时针旋转β<br><img src="/images/2023/06/1.png" alt="坐标系统"><br>p点的坐标计算为：<br><img src="/images/2023/06/2.png" alt="p点"><br>p`点坐标<br><img src="/images/2023/06/3.png" alt="旋转后"><br>分解后，即<br><img src="/images/2023/06/4.png" alt="分解"><br>基于第一个公式，消掉r和α，得：<br><img src="/images/2023/06/5.png" alt="消除"><br>通过以下矩阵相乘可以表示该过程<br><img src="/images/2023/06/6.png" alt="旋转矩阵"><br>综合以上两个公式：<br>我们可以令<br>a=cosβ，b=-sinβ,c=0,d=sinβ,e=cosβ,f=0,g=0,h=0,i=1,<br>可得：<br><img src="/images/2023/06/7.png" alt="旋转变换矩阵"></p>
@@ -827,6 +813,20 @@
 ]]></content>
       <tags>
         <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在ArcGIS以弹窗形式挂接图片</title>
+    <url>/2016/11/22/869.html</url>
+    <content><![CDATA[<p>1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150<br><img src="/images/11221.jpg" alt="ArcGIS 挂接图片"></p>
+<span id="more"></span>
+<p>2、开启编辑，图加图片路径，然后关闭编辑保存<br> <img src="/images/11225.jpg" alt="ArcGIS 挂接图片"><br>3、右击图层，打开图层属性，点击弹窗选项课，如下所示，选择图片路径字段就OK了<br> <img src="/images/11224.jpg" alt="ArcGIS 挂接图片"><br>4、使用工具条上的弹窗工具，点击要素，<br> <img src="/images/11223.jpg" alt="ArcGIS 挂接图片"><br>5、就可以显示图片了<br> <img src="/images/11222.jpg" alt="ArcGIS 挂接图片"></p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -923,35 +923,6 @@
       </categories>
       <tags>
         <tag>ArcGIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将点进行排序并编号---ArcGIS脚本工具的制作</title>
-    <url>/2017/06/16/8578.html</url>
-    <content><![CDATA[<p>好久没更新博客了，就好像好久没谈过恋爱，实际压根没谈过（手动滑稽），今天跟别人说，他们都很诧异，想想自己已近中年（联合国的标准），确实不可思议，所以很遗憾呀！<br>有人说到了什么年龄就该做什么事，这样才不负时光，而我感觉在这十年里，时光仿佛静止了一样，自己停滞不前，任风云万变，如今却一声长叹。<br>唉，又发了个牢骚，人到中年是不是这个状态呢？</p>
-<p>切到正题！<br>前段时间，和同事都接到一个问题，是关于点排序的，用户想将一些点，按照空间位置，从左到右，再从上之下排序编号，如下图所示：<br><img src="/images/06161.jpg" alt="样例"></p>
-<span id="more"></span>
-<p>本来是个很简单的事情，主要使用sort工具就可以。<br>但是用户觉得麻烦，<br>因为详细的步骤还是有些繁琐的，步骤如下：<br>1、先要在点要素属性表中添加X和Y两个字段，<br><img src="/images/06162.jpg" alt="添加XY字段"><br>2、然后将这两个作为排序字段，生成排序后的点数据<br><img src="/images/06163.jpg" alt="使用sort工具"><br>3、之后再添加一个排序结果字段，将OBJECTID字段值赋给这个字段<br><img src="/images/06164.jpg" alt="使用sort工具"><br>确实步骤有些多，最后通过脚本工具一键生成排序序号<br>创建脚本工具的过程如下<br>1、首先创建工具箱<br><img src="/images/06165.jpg" alt="工具箱创建"><br>2、添加脚本<br><img src="/images/06166.jpg" alt="添加脚本"><br>3、打开脚本工具创建向导，填写信息<br><img src="/images/06167.jpg" alt="工具向导"><br>4、添加Python脚本<br>这一步要加载已经写好的Python文件（*.py格式）<br>Python脚本的思路主要为：<br>4.1 首先规划好该工具需要多少个参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-<p>4.2 然后使用arcpy.CopyFeatures_management()将原数据复制一下<br>4.3 再使用arcpy.AddXY_management()将复制得到的数据添加XY两个字段<br>4.3 随后判断一下点排序的大体方向<br>这里要注意一下，由于编码问题，当代码有中文字符，需要使用.decode()方法解码中文，不然工具运行时会报错</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br></pre></td></tr></table></figure>
-<p>4.4 准备好输入参数后，使用arcpy.Sort_management()，生成排序后数据<br>4.5 接着用arcpy.AddField_management()添加排序编号字段<br>4.6 最终使用字段计算工具arcpy.CalculateField_management(),将OBJECTID字段值赋给这个字段</p>
-<p>python脚本完成！</p>
-<p>所有代码如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">tempfea = InputFeature+<span class="built_in">str</span>(time.time()).split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>][-<span class="number">5</span>:-<span class="number">1</span>]</span><br><span class="line">	</span><br><span class="line">arcpy.CopyFeatures_management(InputFeature, tempfea)</span><br><span class="line">arcpy.AddXY_management(tempfea)</span><br><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br><span class="line">arcpy.Sort_management(tempfea,OutputFeature,sortfield)</span><br><span class="line">arcpy.AddField_management(OutputFeature,<span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;DOUBLE&#x27;</span>)</span><br><span class="line">arcpy.CalculateField_management(OutputFeature, <span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;!OBJECTID!&#x27;</span>, <span class="string">&quot;PYTHON_9.3&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>添加完Python脚本文件后，继续往下<br>5、添加界面参数<br>这一步很重要，各个参数属性要逐个填入，分别如下<br>其中Order、Sort_X、Sort_Y属于list参数<br><img src="/images/06168.jpg" alt="InputFeature"><br><img src="/images/06169.jpg" alt="Order"><br><img src="/images/061610.jpg" alt="Sort_X"><br><img src="/images/061611.jpg" alt="Sort_Y"><br><img src="/images/061612.jpg" alt="OutputFeature"></p>
-<p>6、脚本工具创建向导完后，要对上述的三个参数设置list列表<br>6.1 点击脚本工具的属性<br><img src="/images/061613.jpg" alt="工具属性"><br>6.2 切换至验证选项卡(Validation),点击Edit,编辑验证代码，添加如下3行代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">self.params[<span class="number">1</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&#x27;横向&#x27;</span>,<span class="string">&#x27;纵向&#x27;</span>]</span><br><span class="line">self.params[<span class="number">2</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br><span class="line">self.params[<span class="number">3</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br></pre></td></tr></table></figure>
-<p><img src="/images/061614.jpg" alt="编辑验证代码"><br>至此，ArcGIS的点排序编号脚本工具基本完成，为了方便别人使用，可以添加描述等辅助信息<br><img src="/images/061615.jpg" alt="打开工具描述"><br><img src="/images/061616.jpg" alt="编辑工具信息"></p>
-<p>体验一下该工具<br><img src="/images/061617.jpg" alt="工具界面"><br><img src="/images/061618.jpg" alt="工具结果"><br>查看结果编号<br><img src="/images/061619.jpg" alt="结果"></p>
-]]></content>
-      <tags>
-        <tag>ArcGIS</tag>
-        <tag>GIS</tag>
-        <tag>Python脚本工具</tag>
-        <tag>点排序</tag>
-        <tag>编号</tag>
       </tags>
   </entry>
   <entry>
@@ -1101,6 +1072,35 @@
 ]]></content>
   </entry>
   <entry>
+    <title>将点进行排序并编号---ArcGIS脚本工具的制作</title>
+    <url>/2017/06/16/8578.html</url>
+    <content><![CDATA[<p>好久没更新博客了，就好像好久没谈过恋爱，实际压根没谈过（手动滑稽），今天跟别人说，他们都很诧异，想想自己已近中年（联合国的标准），确实不可思议，所以很遗憾呀！<br>有人说到了什么年龄就该做什么事，这样才不负时光，而我感觉在这十年里，时光仿佛静止了一样，自己停滞不前，任风云万变，如今却一声长叹。<br>唉，又发了个牢骚，人到中年是不是这个状态呢？</p>
+<p>切到正题！<br>前段时间，和同事都接到一个问题，是关于点排序的，用户想将一些点，按照空间位置，从左到右，再从上之下排序编号，如下图所示：<br><img src="/images/06161.jpg" alt="样例"></p>
+<span id="more"></span>
+<p>本来是个很简单的事情，主要使用sort工具就可以。<br>但是用户觉得麻烦，<br>因为详细的步骤还是有些繁琐的，步骤如下：<br>1、先要在点要素属性表中添加X和Y两个字段，<br><img src="/images/06162.jpg" alt="添加XY字段"><br>2、然后将这两个作为排序字段，生成排序后的点数据<br><img src="/images/06163.jpg" alt="使用sort工具"><br>3、之后再添加一个排序结果字段，将OBJECTID字段值赋给这个字段<br><img src="/images/06164.jpg" alt="使用sort工具"><br>确实步骤有些多，最后通过脚本工具一键生成排序序号<br>创建脚本工具的过程如下<br>1、首先创建工具箱<br><img src="/images/06165.jpg" alt="工具箱创建"><br>2、添加脚本<br><img src="/images/06166.jpg" alt="添加脚本"><br>3、打开脚本工具创建向导，填写信息<br><img src="/images/06167.jpg" alt="工具向导"><br>4、添加Python脚本<br>这一步要加载已经写好的Python文件（*.py格式）<br>Python脚本的思路主要为：<br>4.1 首先规划好该工具需要多少个参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>4.2 然后使用arcpy.CopyFeatures_management()将原数据复制一下<br>4.3 再使用arcpy.AddXY_management()将复制得到的数据添加XY两个字段<br>4.3 随后判断一下点排序的大体方向<br>这里要注意一下，由于编码问题，当代码有中文字符，需要使用.decode()方法解码中文，不然工具运行时会报错</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br></pre></td></tr></table></figure>
+<p>4.4 准备好输入参数后，使用arcpy.Sort_management()，生成排序后数据<br>4.5 接着用arcpy.AddField_management()添加排序编号字段<br>4.6 最终使用字段计算工具arcpy.CalculateField_management(),将OBJECTID字段值赋给这个字段</p>
+<p>python脚本完成！</p>
+<p>所有代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">Order = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">Sort_X = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line">Sort_Y = arcpy.GetParameterAsText(<span class="number">3</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">tempfea = InputFeature+<span class="built_in">str</span>(time.time()).split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>][-<span class="number">5</span>:-<span class="number">1</span>]</span><br><span class="line">	</span><br><span class="line">arcpy.CopyFeatures_management(InputFeature, tempfea)</span><br><span class="line">arcpy.AddXY_management(tempfea)</span><br><span class="line"><span class="keyword">if</span> Order == <span class="string">&#x27;横向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y],[<span class="string">&quot;POINT_X&quot;</span>, Sort_X] ]</span><br><span class="line"><span class="keyword">elif</span> Order == <span class="string">&#x27;纵向&#x27;</span>.decode(<span class="string">&#x27;UTF-8&#x27;</span>):</span><br><span class="line">    sortfield = [[<span class="string">&quot;POINT_X&quot;</span>, Sort_X],[<span class="string">&quot;POINT_Y&quot;</span>, Sort_Y]]</span><br><span class="line">arcpy.Sort_management(tempfea,OutputFeature,sortfield)</span><br><span class="line">arcpy.AddField_management(OutputFeature,<span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;DOUBLE&#x27;</span>)</span><br><span class="line">arcpy.CalculateField_management(OutputFeature, <span class="string">&#x27;order1&#x27;</span>,<span class="string">&#x27;!OBJECTID!&#x27;</span>, <span class="string">&quot;PYTHON_9.3&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>添加完Python脚本文件后，继续往下<br>5、添加界面参数<br>这一步很重要，各个参数属性要逐个填入，分别如下<br>其中Order、Sort_X、Sort_Y属于list参数<br><img src="/images/06168.jpg" alt="InputFeature"><br><img src="/images/06169.jpg" alt="Order"><br><img src="/images/061610.jpg" alt="Sort_X"><br><img src="/images/061611.jpg" alt="Sort_Y"><br><img src="/images/061612.jpg" alt="OutputFeature"></p>
+<p>6、脚本工具创建向导完后，要对上述的三个参数设置list列表<br>6.1 点击脚本工具的属性<br><img src="/images/061613.jpg" alt="工具属性"><br>6.2 切换至验证选项卡(Validation),点击Edit,编辑验证代码，添加如下3行代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">self.params[<span class="number">1</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&#x27;横向&#x27;</span>,<span class="string">&#x27;纵向&#x27;</span>]</span><br><span class="line">self.params[<span class="number">2</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br><span class="line">self.params[<span class="number">3</span>].<span class="built_in">filter</span>.<span class="built_in">list</span> = [<span class="string">&quot;ASCENDING&quot;</span>,<span class="string">&quot;DESCENDING&quot;</span>]</span><br></pre></td></tr></table></figure>
+<p><img src="/images/061614.jpg" alt="编辑验证代码"><br>至此，ArcGIS的点排序编号脚本工具基本完成，为了方便别人使用，可以添加描述等辅助信息<br><img src="/images/061615.jpg" alt="打开工具描述"><br><img src="/images/061616.jpg" alt="编辑工具信息"></p>
+<p>体验一下该工具<br><img src="/images/061617.jpg" alt="工具界面"><br><img src="/images/061618.jpg" alt="工具结果"><br>查看结果编号<br><img src="/images/061619.jpg" alt="结果"></p>
+]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>GIS</tag>
+        <tag>Python脚本工具</tag>
+        <tag>点排序</tag>
+        <tag>编号</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>类型化数组</title>
     <url>/2023/05/26/33653.html</url>
     <content><![CDATA[<p>为了绘制三维图形，WebGL通常需要同时处理大量相同类型的数据，例如顶点的坐标和颜色数据。为了优化性能，WebGL为每种基本数据类型引入了一种特殊的数组（类型化数组）。浏览器事先知道数组中的数据类型，所以处理起来也更加有效率。<br><img src="/images/arrays.jpg" alt="类型化数组"><br><img src="/images/array_methods_202305311.jpg" alt="类型化数组方法"><br>注意：</p>
@@ -1165,6 +1165,21 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>航班数据分享</title>
+    <url>/2024/01/26/31423.html</url>
+    <content><![CDATA[<p>近期抓取了一些航班数据，分享一下。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据范围：全国（境内，不包括港澳台）</span><br><span class="line">日期范围：20230320-20230327</span><br><span class="line">航班数量：58987条</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2024/01/airline202401261.jpg" alt="数据预览"><br>关注右侧公众号zyouzz回复”航班”获取下载，</p>
+<p>有偿提供近期或者其他日期航班数据（全国、世界均可）</p>
+<p>如有需要，请于公众号zyouzz留言</p>
+]]></content>
+      <tags>
+        <tag>航班</tag>
+        <tag>世界</tag>
+        <tag>全国</tag>
       </tags>
   </entry>
   <entry>
@@ -1261,15 +1276,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>软件遇到未知错误，怎么办？</title>
-    <url>/2019/08/29/56203.html</url>
-    <content><![CDATA[<p>右键属性，以兼容模式解决<br><img src="/images/19082901.jpg" alt="兼容性"><br>然后以管理员身份运行</p>
-]]></content>
-  </entry>
-  <entry>
     <title>记述二三事</title>
     <url>/2019/01/28/42280.html</url>
     <content><![CDATA[<p>1、<br>发现geoserver的一个BUG。使用mysql中的数据发布图层服务，能正常发布和显示加载，但是地图单击后，无法获得属性信息，报未知错误，百思不得其解，排查了好几天，使用排除法，原来是数据库表中的一个字段使用的是tinyint类型，内容是数字，貌似这样geoserver无法处理。。。<br>2、<br>早晨自己写了一个福，扫出来‘敬业福’。自己就是自己最大的福星。<br>3、<br>过去就过去了，回不到过去。就算旧友重拾，也不知道怎么去维护下去。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>软件遇到未知错误，怎么办？</title>
+    <url>/2019/08/29/56203.html</url>
+    <content><![CDATA[<p>右键属性，以兼容模式解决<br><img src="/images/19082901.jpg" alt="兼容性"><br>然后以管理员身份运行</p>
 ]]></content>
   </entry>
   <entry>
@@ -1356,7 +1371,7 @@
   <entry>
     <title>about</title>
     <url>/about/index.html</url>
-    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#97;&#x6d;&#x65;&#115;&#114;&#111;&#99;&#107;&#x36;&#54;&#54;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#106;&#97;&#x6d;&#x65;&#115;&#114;&#111;&#99;&#107;&#x36;&#54;&#54;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
+    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#97;&#x6d;&#x65;&#115;&#x72;&#111;&#x63;&#x6b;&#54;&#x36;&#54;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#106;&#97;&#x6d;&#x65;&#115;&#x72;&#111;&#x63;&#x6b;&#54;&#x36;&#54;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
 ]]></content>
   </entry>
   <entry>
