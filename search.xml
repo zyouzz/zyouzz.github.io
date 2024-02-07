@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2019全2020初</title>
-    <url>/2020/01/10/47817.html</url>
-    <content><![CDATA[<p>今年真是忙的不行呀，暂且开个头。。。<br>呆在贵阳一个多月，一个人住着100多平的房子，每天单调的生活，明天飞回北京，想念想见的人，想见却不能相见的人（时间依然不能让我忘却，所以给自己3年的时间），想念北京的暖气。。。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>20171102笔记-Datastore反注册工具</title>
     <url>/2017/11/02/65428.html</url>
     <content><![CDATA[<p>昨天没事又开始捣鼓ArcGIS Enterprise，谁知在启用地理大数据分析功能是，提示没有大数据存储，也就是说ArcGIS Datastore没有开启这个存储功能。</p>
@@ -20,6 +14,18 @@
         <tag>ArcGIS</tag>
         <tag>ArcGIS Datastore</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>2019全2020初</title>
+    <url>/2020/01/10/47817.html</url>
+    <content><![CDATA[<p>今年真是忙的不行呀，暂且开个头。。。<br>呆在贵阳一个多月，一个人住着100多平的房子，每天单调的生活，明天飞回北京，想念想见的人，想见却不能相见的人（时间依然不能让我忘却，所以给自己3年的时间），想念北京的暖气。。。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>2020年？？</title>
+    <url>/2020/05/09/14675.html</url>
+    <content><![CDATA[<p>2020年，什么时候该开始？什么时候又该翻篇呢？</p>
+]]></content>
   </entry>
   <entry>
     <title>A Star算法实现最短路径查找【python】</title>
@@ -41,12 +47,6 @@
         <tag>Portal</tag>
         <tag>三维场景</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2020年？？</title>
-    <url>/2020/05/09/14675.html</url>
-    <content><![CDATA[<p>2020年，什么时候该开始？什么时候又该翻篇呢？</p>
-]]></content>
   </entry>
   <entry>
     <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
@@ -277,6 +277,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Cesium写GLSL的texture和texture2D函数【踩坑】</title>
+    <url>/2024/02/07/38636.html</url>
+    <content><![CDATA[<p>这是关于Cesium版本的问题！</p>
+<p>Cesium1.102.0以上版本不再支持WebGL1渲染上下文，改为WebGL2</p>
+<p>所以要特别注意两个版本的语法问题</p>
+<p>texture写法在Cesium1.102.0以下版本报错，如下图：<br><img src="/images/2024/02/202402071.jpg" alt="texture"></p>
+<p>所以在写Cesium关于GLSL时，注意版本对应</p>
+<table>
+<thead>
+<tr>
+<th>Cesium版本</th>
+<th>函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;=1.102.0</td>
+<td>texture()</td>
+</tr>
+<tr>
+<td>&lt;1.102.0</td>
+<td>texture2D()</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>GLSL</tag>
+        <tag>texture</tag>
+        <tag>texture2D</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cesium拾取坐标三种方式（摘抄）</title>
     <url>/2023/11/25/21629.html</url>
     <content><![CDATA[<p>首先基于事件触发捕捉位置信息，一般是<code>Cesium.ScreenSpaceEventType.MOUSE_MOVE</code>，也可以是<code>Cesium.ScreenSpaceEventType.LEFT_CLICK</code>或者<code>Cesium.ScreenSpaceEventType.RIGHT_CLICK</code></p>
@@ -458,6 +490,16 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># _*_coding:utf-8_*_</span></span><br><span class="line"><span class="keyword">from</span> geoserver.catalog <span class="keyword">import</span> Catalog</span><br><span class="line"><span class="keyword">from</span> geoserver.support <span class="keyword">import</span> JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 地图发布环境</span></span><br><span class="line">ENVIRONMENT_PUBLISH = <span class="string">&#x27;XXX_local&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 城市名称</span></span><br><span class="line">CITY = <span class="string">&#x27;xixian&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 年</span></span><br><span class="line">YEAR = <span class="number">2020</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 月</span></span><br><span class="line">MONTH = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONFIGURE = &#123;</span><br><span class="line">    <span class="string">&#x27;XXX_local&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;CITY&#x27;</span>: CITY,</span><br><span class="line">        <span class="string">&#x27;GEOSERVER_HOST&#x27;</span>: <span class="string">&#x27;1.1.1.1&#x27;</span>,  <span class="comment"># geoserver地址</span></span><br><span class="line">        <span class="string">&#x27;GEOSERVER_PORT&#x27;</span>: <span class="string">&#x27;8080&#x27;</span>,  <span class="comment"># geoserver端口</span></span><br><span class="line">        <span class="string">&#x27;USERNAME&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,  <span class="comment"># geoserver用户名</span></span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;******&#x27;</span>,  <span class="comment"># geoserver密码</span></span><br><span class="line">        <span class="string">&#x27;DATABASE_MYSQL&#x27;</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cat = Catalog(<span class="string">&#x27;http://%s:%s/geoserver/rest/&#x27;</span> % (</span><br><span class="line">CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_HOST&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_PORT&#x27;</span>]),</span><br><span class="line">              CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;USERNAME&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;PASSWORD&#x27;</span>])</span><br><span class="line">store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;DATABASE_MYSQL&#x27;</span>], CITY)</span><br><span class="line">geom = JDBCVirtualTableGeometry(<span class="string">&#x27;geom&#x27;</span>, <span class="string">&#x27;LineString&#x27;</span>, <span class="string">&#x27;4326&#x27;</span>)</span><br><span class="line">ft_name = <span class="string">&#x27;line_speed_day_%s_%s&#x27;</span> % (YEAR, MONTH)</span><br><span class="line">epsg_code = <span class="string">&#x27;EPSG:4326&#x27;</span></span><br><span class="line">sql = <span class="string">&#x27;&#x27;&#x27;SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM line</span></span><br><span class="line"><span class="string">WHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction&#x27;&#x27;&#x27;</span> % (</span><br><span class="line">    YEAR, MONTH, YEAR, MONTH)</span><br><span class="line"><span class="built_in">print</span> sql</span><br><span class="line">keyColumn = <span class="literal">None</span></span><br><span class="line">parameters = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">jdbc_vt = JDBCVirtualTable(ft_name, sql, <span class="string">&#x27;false&#x27;</span>, geom, keyColumn, parameters)</span><br><span class="line">ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)</span><br><span class="line">layer = cat.get_layer(ft_name)</span><br><span class="line">layer.default_style = cat.get_style(<span class="string">&#x27;stylefile&#x27;</span>)</span><br><span class="line">cat.save(layer)</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>gl.drawArrays的使用</title>
+    <url>/2023/06/01/28338.html</url>
+    <content><![CDATA[<p>缓冲区对象是WebGL系统中的一块存储区，可以在里面存储想要绘制的所有顶点数据，通过创建缓冲区，就能够一次性地向顶点着色器传入多个顶点的attribute变量的数据。</p>
+<p><strong>gl.drawArrays(mode, first, count)</strong><br>1、modes指的是绘制方式，gl.POINTS、gl.LINES、gl.LINE_STRIP、gl.LINE_LOOP、gl.TRIANGLES、gl.TRIANGLES_STRIP、gl.TRIANGLE_FAN；<br>具体使用如下表<br><img src="/images/2023/06/gldrawarrays_mode.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode1.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode2.png" alt="预览"><br>2、first指的是从哪一个顶点开始绘制；<br>3、count指的是绘制需要多少个顶点。</p>
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo blog github ssh</title>
     <url>/2023/07/04/34768.html</url>
     <content><![CDATA[<p>1、生成新的pub</p>
@@ -473,16 +515,6 @@
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>gl.drawArrays的使用</title>
-    <url>/2023/06/01/28338.html</url>
-    <content><![CDATA[<p>缓冲区对象是WebGL系统中的一块存储区，可以在里面存储想要绘制的所有顶点数据，通过创建缓冲区，就能够一次性地向顶点着色器传入多个顶点的attribute变量的数据。</p>
-<p><strong>gl.drawArrays(mode, first, count)</strong><br>1、modes指的是绘制方式，gl.POINTS、gl.LINES、gl.LINE_STRIP、gl.LINE_LOOP、gl.TRIANGLES、gl.TRIANGLES_STRIP、gl.TRIANGLE_FAN；<br>具体使用如下表<br><img src="/images/2023/06/gldrawarrays_mode.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode1.png" alt="mode类型"><br><img src="/images/2023/06/gldrawarrays_mode2.png" alt="预览"><br>2、first指的是从哪一个顶点开始绘制；<br>3、count指的是绘制需要多少个顶点。</p>
-]]></content>
-      <tags>
-        <tag>WebGL</tag>
       </tags>
   </entry>
   <entry>
@@ -757,6 +789,18 @@
       </tags>
   </entry>
   <entry>
+    <title>内牛满面装Portal for ArcGIS</title>
+    <url>/2016/08/28/28862.html</url>
+    <content><![CDATA[<p>之前尝试用过ArcGIS Server，感觉装起来很容易，发布服务也很方便。<br>之后又了解到Portal for ArcGIS（简单说，就是管理集群部署和分工协作的解决方案等等，我觉得现在的集群部署的存在，还是因为单机器硬件的问题短板），于是很想尝试安装一下。<span id="more"></span><br>因为已经装过Server，就直接解压Portal for ArcGIS，嗯，安装软件很顺利，信心爆棚，并不像ArcGIS知乎上反映的那么难。<br>首次是Portal for ArcGIS主页自动打开，我本以为是一个令人惊喜的画面，谁知提示需要再装一个Web Adaptor，纳尼，什么鬼，侬不理解。。怎么貌似有些小复杂，后来证明确实有些复杂，“小”字也可以去掉了。<br>随后查了一下，如下：<br><strong>webadaptor本身的功能就是做请求转发。使用了Webadaptor后，不再通过portal的默认端口7080和7443端口曝露portal 网络地址，而是通过80和443端口曝露portal服务。与现有web server集成，向portal转发从webs erver来的请求。使用webadaptor可以提高portal的安全性，走80或者443端口后，就不用在其地址中曝露7080或者7443端口。<br>参考：<a href="http://zhihu.esrichina.com.cn/question/13070">为什么webadaptor是portal的一个必须组件</a></strong><br>装完webadaptor，觉得应该大功告成了，但是图样图森破。<br>配置配置Portal与Web Adaptor时，需要输入portal的全限定域名称，这不得不说的是，到这一步才提示，真是一个雷区，之前装的Portal for ArcGIS看起来是废了，好吧，计算机改成全限定域名称，提示需要重启电脑，索性也将ArcGIS Server、Portal for ArcGIS和webAdaptor卸载掉。<br>最终还是成功了！<br><img src="/images/30.jpg" alt="Portal for ArcGIS"><br>装Portal for ArcGIS感觉Esri对网络安全做的很好，比如WebAdaptor的使用。但是对于新手或者网络小白来说，装的过程着实是内牛满面，希望以后会有更为简便的安装。</p>
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于多圆（大于2）重叠的面积计算</title>
     <url>/2019/06/24/56673.html</url>
     <content><![CDATA[<p>这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。<br>有以下两种计算方式</p>
@@ -773,18 +817,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>内牛满面装Portal for ArcGIS</title>
-    <url>/2016/08/28/28862.html</url>
-    <content><![CDATA[<p>之前尝试用过ArcGIS Server，感觉装起来很容易，发布服务也很方便。<br>之后又了解到Portal for ArcGIS（简单说，就是管理集群部署和分工协作的解决方案等等，我觉得现在的集群部署的存在，还是因为单机器硬件的问题短板），于是很想尝试安装一下。<span id="more"></span><br>因为已经装过Server，就直接解压Portal for ArcGIS，嗯，安装软件很顺利，信心爆棚，并不像ArcGIS知乎上反映的那么难。<br>首次是Portal for ArcGIS主页自动打开，我本以为是一个令人惊喜的画面，谁知提示需要再装一个Web Adaptor，纳尼，什么鬼，侬不理解。。怎么貌似有些小复杂，后来证明确实有些复杂，“小”字也可以去掉了。<br>随后查了一下，如下：<br><strong>webadaptor本身的功能就是做请求转发。使用了Webadaptor后，不再通过portal的默认端口7080和7443端口曝露portal 网络地址，而是通过80和443端口曝露portal服务。与现有web server集成，向portal转发从webs erver来的请求。使用webadaptor可以提高portal的安全性，走80或者443端口后，就不用在其地址中曝露7080或者7443端口。<br>参考：<a href="http://zhihu.esrichina.com.cn/question/13070">为什么webadaptor是portal的一个必须组件</a></strong><br>装完webadaptor，觉得应该大功告成了，但是图样图森破。<br>配置配置Portal与Web Adaptor时，需要输入portal的全限定域名称，这不得不说的是，到这一步才提示，真是一个雷区，之前装的Portal for ArcGIS看起来是废了，好吧，计算机改成全限定域名称，提示需要重启电脑，索性也将ArcGIS Server、Portal for ArcGIS和webAdaptor卸载掉。<br>最终还是成功了！<br><img src="/images/30.jpg" alt="Portal for ArcGIS"><br>装Portal for ArcGIS感觉Esri对网络安全做的很好，比如WebAdaptor的使用。但是对于新手或者网络小白来说，装的过程着实是内牛满面，希望以后会有更为简便的安装。</p>
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>发现一个大坑！！！</title>
     <url>/2019/06/14/38442.html</url>
     <content><![CDATA[<h2 id="本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue"><a href="#本篇文章是为了重现element-ui的新版本（2-9-1）BUG所提交的issue" class="headerlink" title="本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue"></a>本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue</h2><p>前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。<br><img src="/images/19061401.jpg" alt="100px!!!"><br>然后捯饬了半天，一直到今天上午，what the f/*/*K!。<br>这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。<br>下午决定再次攻克一下：</p>
@@ -797,6 +829,23 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;2.8.2&quot;</span>,</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>变换矩阵（Transformation matrix）详解</title>
+    <url>/2023/06/01/1829.html</url>
+    <content><![CDATA[<p>当我们对一个图形进行平移再旋转，一般流程是需要重新求取一个新的等式，然后实现一个新的着色器，这样很不好。<br>好在我们可以使用另一个数学工具—变换矩阵（Transformation matrix）来完成这项工作。变换矩阵非常适合操作计算机图形。<br>一、旋转矩阵<br>当p按照右手法则逆时针旋转β<br><img src="/images/2023/06/1.png" alt="坐标系统"><br>p点的坐标计算为：<br><img src="/images/2023/06/2.png" alt="p点"><br>p`点坐标<br><img src="/images/2023/06/3.png" alt="旋转后"><br>分解后，即<br><img src="/images/2023/06/4.png" alt="分解"><br>基于第一个公式，消掉r和α，得：<br><img src="/images/2023/06/5.png" alt="消除"><br>通过以下矩阵相乘可以表示该过程<br><img src="/images/2023/06/6.png" alt="旋转矩阵"><br>综合以上两个公式：<br>我们可以令<br>a=cosβ，b=-sinβ,c=0,d=sinβ,e=cosβ,f=0,g=0,h=0,i=1,<br>可得：<br><img src="/images/2023/06/7.png" alt="旋转变换矩阵"></p>
+<p>二、平移矩阵<br>一般平移矩阵计算为：<br><img src="/images/2023/06/8.png" alt="平移矩阵"><br>相乘得到：<br><img src="/images/2023/06/9.png" alt="矩阵相乘"><br>比较以下等式<br><img src="/images/2023/06/10.png" alt="平移计算"><br>我们可以令：<br>a=1,b=0,c=0,d=Tx,<br>e=0,f=1,g=0,h=Ty,<br>i=0,j=0,k=1,l=Tz,<br>m=0,n=0,o=0,p=1,<br>可得：<br><img src="/images/2023/06/11.png" alt="旋转变换矩阵"><br>三、缩放<br>假设X轴、Y轴、Z轴缩放因子Sx,Sy,Sz,那么有：<br><img src="/images/2023/06/13.png" alt="缩放等式"><br>即有缩放变换矩阵：<br><img src="/images/2023/06/14.png" alt="缩放变换矩阵"></p>
+<p>四、旋转+平移+缩放<br>至此，我们已经推演出一个旋转矩阵和一个平移矩阵、一个缩放矩阵，但是我们发现旋转矩阵是3x3，平移缩放矩阵是4x4, 于是需要将旋转矩阵转变为4x4矩阵，我们知道最后一个分量w的加和结果应为1<br>所以：<br><img src="/images/2023/06/12.png" alt="旋转变换4x4矩阵"><br>所以在程序中定义一个旋转+平移+缩放矩阵，可以按照以下写：<br>注意WebGL中矩阵是列主序的，即为上面矩阵的转置</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;webgl&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> gl=<span class="title function_">getWebGLContext</span>(canvas);</span><br><span class="line"><span class="keyword">let</span> <span class="variable constant_">VSHADER_SOURCE</span>=</span><br><span class="line">    <span class="string">&#x27;attribute vec4 a_postion;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;uniform mat4 u_panMatrix;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;uniform mat4 u_rotateMatrix;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;uniform mat4 u_zoomMatrix;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;void main () &#123;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27; gl_Position = u_panMatrix * u_rotateMatrix * u_zoomMatrix * a_position;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;&#125;\n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> radian=<span class="title class_">Math</span>.<span class="property">PI</span>*<span class="variable constant_">ANGLE</span>/<span class="number">180.0</span> <span class="comment">// 角度值转弧度</span></span><br><span class="line"><span class="keyword">const</span> cosβ=<span class="title class_">Math</span>.<span class="title function_">cos</span>(radian);</span><br><span class="line"><span class="keyword">const</span> sinβ=<span class="title class_">Math</span>.<span class="title function_">sin</span>(radian);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Sx</span> = <span class="number">1.0</span>, <span class="title class_">Sy</span> = <span class="number">1.5</span>, <span class="title class_">Sz</span> = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 平移矩阵</span></span><br><span class="line"><span class="keyword">const</span> pan=<span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="title class_">Tx</span>, <span class="title class_">Ty</span>, <span class="title class_">Tz</span>,<span class="number">1.0</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旋转矩阵</span></span><br><span class="line"><span class="keyword">const</span> rotate=<span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    cosβ, sinβ, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    -sinβ, cosβ, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 缩放矩阵</span></span><br><span class="line"><span class="keyword">const</span> zoom=<span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    <span class="title class_">Sx</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="title class_">Sy</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="title class_">Sz</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> u_panformMatrix=gl.<span class="title function_">getUniformLocation</span>(gl.<span class="property">program</span>, <span class="string">&#x27;u_panMatrix&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> u_rotateMatrix=gl.<span class="title function_">getUniformLocation</span>(gl.<span class="property">program</span>, <span class="string">&#x27;u_rotateMatrix&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> u_zoomMatrix=gl.<span class="title function_">getUniformLocation</span>(gl.<span class="property">program</span>, <span class="string">&#x27;u_panMatrix&#x27;</span>);</span><br><span class="line">gl.<span class="title function_">uniformMatrix4fv</span>(u_panformMatrix, <span class="literal">false</span>, pan);</span><br><span class="line">gl.<span class="title function_">uniformMatrix4fv</span>(u_rotateMatrix, <span class="literal">false</span>, rotate);</span><br><span class="line">gl.<span class="title function_">uniformMatrix4fv</span>(u_zoomMatrix, <span class="literal">false</span>, zoom);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
   </entry>
   <entry>
     <title>在ArcGIS以弹窗形式挂接图片</title>
@@ -867,23 +916,6 @@
       <tags>
         <tag>ArcGIS</tag>
         <tag>萤火图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>变换矩阵（Transformation matrix）详解</title>
-    <url>/2023/06/01/1829.html</url>
-    <content><![CDATA[<p>当我们对一个图形进行平移再旋转，一般流程是需要重新求取一个新的等式，然后实现一个新的着色器，这样很不好。<br>好在我们可以使用另一个数学工具—变换矩阵（Transformation matrix）来完成这项工作。变换矩阵非常适合操作计算机图形。<br>一、旋转矩阵<br>当p按照右手法则逆时针旋转β<br><img src="/images/2023/06/1.png" alt="坐标系统"><br>p点的坐标计算为：<br><img src="/images/2023/06/2.png" alt="p点"><br>p`点坐标<br><img src="/images/2023/06/3.png" alt="旋转后"><br>分解后，即<br><img src="/images/2023/06/4.png" alt="分解"><br>基于第一个公式，消掉r和α，得：<br><img src="/images/2023/06/5.png" alt="消除"><br>通过以下矩阵相乘可以表示该过程<br><img src="/images/2023/06/6.png" alt="旋转矩阵"><br>综合以上两个公式：<br>我们可以令<br>a=cosβ，b=-sinβ,c=0,d=sinβ,e=cosβ,f=0,g=0,h=0,i=1,<br>可得：<br><img src="/images/2023/06/7.png" alt="旋转变换矩阵"></p>
-<p>二、平移矩阵<br>一般平移矩阵计算为：<br><img src="/images/2023/06/8.png" alt="平移矩阵"><br>相乘得到：<br><img src="/images/2023/06/9.png" alt="矩阵相乘"><br>比较以下等式<br><img src="/images/2023/06/10.png" alt="平移计算"><br>我们可以令：<br>a=1,b=0,c=0,d=Tx,<br>e=0,f=1,g=0,h=Ty,<br>i=0,j=0,k=1,l=Tz,<br>m=0,n=0,o=0,p=1,<br>可得：<br><img src="/images/2023/06/11.png" alt="旋转变换矩阵"><br>三、缩放<br>假设X轴、Y轴、Z轴缩放因子Sx,Sy,Sz,那么有：<br><img src="/images/2023/06/13.png" alt="缩放等式"><br>即有缩放变换矩阵：<br><img src="/images/2023/06/14.png" alt="缩放变换矩阵"></p>
-<p>四、旋转+平移+缩放<br>至此，我们已经推演出一个旋转矩阵和一个平移矩阵、一个缩放矩阵，但是我们发现旋转矩阵是3x3，平移缩放矩阵是4x4, 于是需要将旋转矩阵转变为4x4矩阵，我们知道最后一个分量w的加和结果应为1<br>所以：<br><img src="/images/2023/06/12.png" alt="旋转变换4x4矩阵"><br>所以在程序中定义一个旋转+平移+缩放矩阵，可以按照以下写：<br>注意WebGL中矩阵是列主序的，即为上面矩阵的转置</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;webgl&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> gl=<span class="title function_">getWebGLContext</span>(canvas);</span><br><span class="line"><span class="keyword">let</span> <span class="variable constant_">VSHADER_SOURCE</span>=</span><br><span class="line">    <span class="string">&#x27;attribute vec4 a_postion;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;uniform mat4 u_panMatrix;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;uniform mat4 u_rotateMatrix;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;uniform mat4 u_zoomMatrix;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;void main () &#123;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27; gl_Position = u_panMatrix * u_rotateMatrix * u_zoomMatrix * a_position;\n&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;&#125;\n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> radian=<span class="title class_">Math</span>.<span class="property">PI</span>*<span class="variable constant_">ANGLE</span>/<span class="number">180.0</span> <span class="comment">// 角度值转弧度</span></span><br><span class="line"><span class="keyword">const</span> cosβ=<span class="title class_">Math</span>.<span class="title function_">cos</span>(radian);</span><br><span class="line"><span class="keyword">const</span> sinβ=<span class="title class_">Math</span>.<span class="title function_">sin</span>(radian);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Sx</span> = <span class="number">1.0</span>, <span class="title class_">Sy</span> = <span class="number">1.5</span>, <span class="title class_">Sz</span> = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 平移矩阵</span></span><br><span class="line"><span class="keyword">const</span> pan=<span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="title class_">Tx</span>, <span class="title class_">Ty</span>, <span class="title class_">Tz</span>,<span class="number">1.0</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旋转矩阵</span></span><br><span class="line"><span class="keyword">const</span> rotate=<span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    cosβ, sinβ, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    -sinβ, cosβ, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 缩放矩阵</span></span><br><span class="line"><span class="keyword">const</span> zoom=<span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    <span class="title class_">Sx</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="title class_">Sy</span>, <span class="number">0.0</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="title class_">Sz</span>, <span class="number">0.0</span>,</span><br><span class="line">    <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> u_panformMatrix=gl.<span class="title function_">getUniformLocation</span>(gl.<span class="property">program</span>, <span class="string">&#x27;u_panMatrix&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> u_rotateMatrix=gl.<span class="title function_">getUniformLocation</span>(gl.<span class="property">program</span>, <span class="string">&#x27;u_rotateMatrix&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> u_zoomMatrix=gl.<span class="title function_">getUniformLocation</span>(gl.<span class="property">program</span>, <span class="string">&#x27;u_panMatrix&#x27;</span>);</span><br><span class="line">gl.<span class="title function_">uniformMatrix4fv</span>(u_panformMatrix, <span class="literal">false</span>, pan);</span><br><span class="line">gl.<span class="title function_">uniformMatrix4fv</span>(u_rotateMatrix, <span class="literal">false</span>, rotate);</span><br><span class="line">gl.<span class="title function_">uniformMatrix4fv</span>(u_zoomMatrix, <span class="literal">false</span>, zoom);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>WebGL</tag>
       </tags>
   </entry>
   <entry>
@@ -1048,6 +1080,16 @@
 ]]></content>
   </entry>
   <entry>
+    <title>手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）</title>
+    <url>/2019/09/09/877.html</url>
+    <content><![CDATA[<p>续<a href="http://giser.tk/2019/09/06/5908.html">上一节</a>。<br>现在我们已经抓取到北京行政区和街道办的节点串坐标数据<br><img src="/images/19090612.jpg" alt="行政区边界节点的txt文本"><br><img src="/images/19090615.jpg" alt="街道办边界节点的txt文本"></p>
+<span id="more"></span>
+<p>接下来就需要在ArcMap中使用若干工具将这些点转为线，然后转为行政区划面了。</p>
+<p>1、首先将txt文本导入至ArcMap<br><img src="/images/19090901.jpg" alt="加载txt文本"><br>2、然后加载点数据，注意要选择WGS1984作为空间参考<br><img src="/images/19090902.jpg" alt="加载点数据"><br><img src="/images/19090903.jpg" alt="加载点数据"><br>3、由于数据量较大，这里需要将数据转存至GDB中<br><img src="/images/19090905.jpg" alt="数据转存至GDB"><br>4、接下来使用<a href="http://giser.tk/2019/09/06/5908.html">上一篇</a>文章提到的【点集转线】工具将节点转为线<br>注意参数选择：<br>【线字段 (可选)】选择为i字段（i为行政区划的编号）；<br>【排序字段 (可选)】选择为j字段（j为每个行政区划下的节点编号）；<br>【闭合线 (可选)】勾选上<br><img src="/images/19090906.jpg" alt="点集转线"><br>结果如下：<br><img src="/images/19090907.jpg" alt="结果"><br>5、使用【要素转面】工具将闭合区线转为面<br><img src="/images/19090908.jpg" alt="要素转面"></p>
+<p><strong>重复上述步骤可将街道办转换为面</strong><br>最终结果如下<br><img src="/images/19090909.jpg" alt="北京行政区划"><br><img src="/images/19090911.jpg" alt="飞地"><br>可以看到在顺义区有一块属于朝阳区的飞地<br><img src="/images/19090910.jpg" alt="飞地"><br>叠加底图查看，该地是首都机场。<br>问题来了，已经有了“朝阳群众”的朝阳区，为什么还要在顺义区特别“抢了一块地”呢？<br>下一节，我们将从GIS选址的角度剖析一二，敬请期待。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>打开Portal后页面空白问题解决案例</title>
     <url>/2018/01/25/6720.html</url>
     <content><![CDATA[<p>昨晚吃完饭回来，操作系统莫名其妙在自动升级<br><img src="/images/1801251.jpg" alt="update"><br>等了大概有2个小时，看来是大版本更新呀</p>
@@ -1058,13 +1100,21 @@
 ]]></content>
   </entry>
   <entry>
-    <title>手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）</title>
-    <url>/2019/09/09/877.html</url>
-    <content><![CDATA[<p>续<a href="http://giser.tk/2019/09/06/5908.html">上一节</a>。<br>现在我们已经抓取到北京行政区和街道办的节点串坐标数据<br><img src="/images/19090612.jpg" alt="行政区边界节点的txt文本"><br><img src="/images/19090615.jpg" alt="街道办边界节点的txt文本"></p>
-<span id="more"></span>
-<p>接下来就需要在ArcMap中使用若干工具将这些点转为线，然后转为行政区划面了。</p>
-<p>1、首先将txt文本导入至ArcMap<br><img src="/images/19090901.jpg" alt="加载txt文本"><br>2、然后加载点数据，注意要选择WGS1984作为空间参考<br><img src="/images/19090902.jpg" alt="加载点数据"><br><img src="/images/19090903.jpg" alt="加载点数据"><br>3、由于数据量较大，这里需要将数据转存至GDB中<br><img src="/images/19090905.jpg" alt="数据转存至GDB"><br>4、接下来使用<a href="http://giser.tk/2019/09/06/5908.html">上一篇</a>文章提到的【点集转线】工具将节点转为线<br>注意参数选择：<br>【线字段 (可选)】选择为i字段（i为行政区划的编号）；<br>【排序字段 (可选)】选择为j字段（j为每个行政区划下的节点编号）；<br>【闭合线 (可选)】勾选上<br><img src="/images/19090906.jpg" alt="点集转线"><br>结果如下：<br><img src="/images/19090907.jpg" alt="结果"><br>5、使用【要素转面】工具将闭合区线转为面<br><img src="/images/19090908.jpg" alt="要素转面"></p>
-<p><strong>重复上述步骤可将街道办转换为面</strong><br>最终结果如下<br><img src="/images/19090909.jpg" alt="北京行政区划"><br><img src="/images/19090911.jpg" alt="飞地"><br>可以看到在顺义区有一块属于朝阳区的飞地<br><img src="/images/19090910.jpg" alt="飞地"><br>叠加底图查看，该地是首都机场。<br>问题来了，已经有了“朝阳群众”的朝阳区，为什么还要在顺义区特别“抢了一块地”呢？<br>下一节，我们将从GIS选址的角度剖析一二，敬请期待。</p>
+    <title>【批量代码分享】不同gdb批量投影 批量要素类复制</title>
+    <url>/2016/09/24/18549.html</url>
+    <content><![CDATA[<p>不同gdb批量投影 <span id="more"></span></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">arcpy.env.workspace = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\test__20160919\\qian&quot;</span></span><br><span class="line">arcpy.env.overwriteOutput = <span class="literal">True</span></span><br><span class="line">outWorkspace = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\test__20160919\\hou&quot;</span></span><br><span class="line">workspacess = arcpy.ListWorkspaces(<span class="string">&quot;*&quot;</span>, <span class="string">&quot;FileGDB&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> filenamegdb <span class="keyword">in</span> os.listdir(arcpy.env.workspace):</span><br><span class="line">   arcpy.CreateFileGDB_management(outWorkspace,filenamegdb)</span><br><span class="line"><span class="keyword">for</span> workspace <span class="keyword">in</span> workspacess:</span><br><span class="line">    walk = arcpy.da.Walk(workspace, datatype=<span class="string">&quot;FeatureClass&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> dirpath, dirnames, filenames <span class="keyword">in</span> walk:</span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">            facname=os.path.join(dirpath, filename)</span><br><span class="line">            asss=dirpath.split(<span class="string">&quot;\\&quot;</span>)[-<span class="number">1</span>]</span><br><span class="line">            outfea = os.path.join(outWorkspace,asss,filename)</span><br><span class="line">            arcpy.Project_management(facname,outfea,<span class="string">&quot;PROJCS[&#x27;CGCS2000_GK_CM_117E&#x27;,GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]],PROJECTION[&#x27;Gauss_Kruger&#x27;],PARAMETER[&#x27;False_Easting&#x27;,500000.0],PARAMETER[&#x27;False_Northing&#x27;,0.0],PARAMETER[&#x27;Central_Meridian&#x27;,117.0],PARAMETER[&#x27;Scale_Factor&#x27;,1.0],PARAMETER[&#x27;Latitude_Of_Origin&#x27;,0.0],UNIT[&#x27;Meter&#x27;,1.0]]&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]]&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>批量要素类复制</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Pretreatment.py</span></span><br><span class="line"><span class="comment"># Created on: 2016-09-22</span></span><br><span class="line"><span class="comment">#   (generated</span></span><br><span class="line"><span class="comment"># Description:。</span></span><br><span class="line"><span class="comment"># Import arcpy module</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">inputDir = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\testdata&quot;</span></span><br><span class="line">Output = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\new&quot;</span></span><br><span class="line">arcpy.env.workspace = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\testdata&quot;</span></span><br><span class="line">workspacess = arcpy.ListWorkspaces(<span class="string">&quot;*&quot;</span>,<span class="string">&quot;Access&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> workspace <span class="keyword">in</span> workspacess:</span><br><span class="line">    asss = workspace.split(<span class="string">&quot;\\&quot;</span>)[-<span class="number">1</span>]</span><br><span class="line">    arcpy.CreatePersonalGDB_management(Output, asss)</span><br><span class="line">    dimao=os.path.join(workspace,<span class="string">u&quot;地貌&quot;</span>)</span><br><span class="line">    walk = arcpy.da.Walk(dimao, datatype=<span class="string">&quot;FeatureClass&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> walk:</span><br><span class="line">        <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">            fc=os.path.join(dimao,f)</span><br><span class="line">            out_data =os.path.join(Output,asss,f)</span><br><span class="line">            arcpy.Copy_management(fc, out_data)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;处理完成&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>接下来假期的安排</title>
+    <url>/2019/01/28/29651.html</url>
+    <content><![CDATA[<p>调休了这么多天，终于迎来了14天的假期<br>1、<br>一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！<br>2、<br>学习Spring Boot<br>3、<br>学习Spring Cloud</p>
+<p>以上的目标，就是为了写接口不再求人。</p>
+<p>期间顺便将2018没读完的书看完。</p>
+<p>去国家图书馆呆一天，爬爬香山。</p>
+<p>================<br>2019，只关心粮食和蔬菜。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1108,24 +1158,6 @@
       </tags>
   </entry>
   <entry>
-    <title>接下来假期的安排</title>
-    <url>/2019/01/28/29651.html</url>
-    <content><![CDATA[<p>调休了这么多天，终于迎来了14天的假期<br>1、<br>一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！<br>2、<br>学习Spring Boot<br>3、<br>学习Spring Cloud</p>
-<p>以上的目标，就是为了写接口不再求人。</p>
-<p>期间顺便将2018没读完的书看完。</p>
-<p>去国家图书馆呆一天，爬爬香山。</p>
-<p>================<br>2019，只关心粮食和蔬菜。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>【批量代码分享】不同gdb批量投影 批量要素类复制</title>
-    <url>/2016/09/24/18549.html</url>
-    <content><![CDATA[<p>不同gdb批量投影 <span id="more"></span></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">arcpy.env.workspace = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\test__20160919\\qian&quot;</span></span><br><span class="line">arcpy.env.overwriteOutput = <span class="literal">True</span></span><br><span class="line">outWorkspace = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\test__20160919\\hou&quot;</span></span><br><span class="line">workspacess = arcpy.ListWorkspaces(<span class="string">&quot;*&quot;</span>, <span class="string">&quot;FileGDB&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> filenamegdb <span class="keyword">in</span> os.listdir(arcpy.env.workspace):</span><br><span class="line">   arcpy.CreateFileGDB_management(outWorkspace,filenamegdb)</span><br><span class="line"><span class="keyword">for</span> workspace <span class="keyword">in</span> workspacess:</span><br><span class="line">    walk = arcpy.da.Walk(workspace, datatype=<span class="string">&quot;FeatureClass&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> dirpath, dirnames, filenames <span class="keyword">in</span> walk:</span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">            facname=os.path.join(dirpath, filename)</span><br><span class="line">            asss=dirpath.split(<span class="string">&quot;\\&quot;</span>)[-<span class="number">1</span>]</span><br><span class="line">            outfea = os.path.join(outWorkspace,asss,filename)</span><br><span class="line">            arcpy.Project_management(facname,outfea,<span class="string">&quot;PROJCS[&#x27;CGCS2000_GK_CM_117E&#x27;,GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]],PROJECTION[&#x27;Gauss_Kruger&#x27;],PARAMETER[&#x27;False_Easting&#x27;,500000.0],PARAMETER[&#x27;False_Northing&#x27;,0.0],PARAMETER[&#x27;Central_Meridian&#x27;,117.0],PARAMETER[&#x27;Scale_Factor&#x27;,1.0],PARAMETER[&#x27;Latitude_Of_Origin&#x27;,0.0],UNIT[&#x27;Meter&#x27;,1.0]]&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]]&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>批量要素类复制</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Pretreatment.py</span></span><br><span class="line"><span class="comment"># Created on: 2016-09-22</span></span><br><span class="line"><span class="comment">#   (generated</span></span><br><span class="line"><span class="comment"># Description:。</span></span><br><span class="line"><span class="comment"># Import arcpy module</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">inputDir = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\testdata&quot;</span></span><br><span class="line">Output = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\new&quot;</span></span><br><span class="line">arcpy.env.workspace = <span class="string">&quot;C:\\Users\\Esri\\Desktop\\testdata&quot;</span></span><br><span class="line">workspacess = arcpy.ListWorkspaces(<span class="string">&quot;*&quot;</span>,<span class="string">&quot;Access&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> workspace <span class="keyword">in</span> workspacess:</span><br><span class="line">    asss = workspace.split(<span class="string">&quot;\\&quot;</span>)[-<span class="number">1</span>]</span><br><span class="line">    arcpy.CreatePersonalGDB_management(Output, asss)</span><br><span class="line">    dimao=os.path.join(workspace,<span class="string">u&quot;地貌&quot;</span>)</span><br><span class="line">    walk = arcpy.da.Walk(dimao, datatype=<span class="string">&quot;FeatureClass&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> walk:</span><br><span class="line">        <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">            fc=os.path.join(dimao,f)</span><br><span class="line">            out_data =os.path.join(Output,asss,f)</span><br><span class="line">            arcpy.Copy_management(fc, out_data)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;处理完成&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>深夜纵有千言胆，天明必悔</title>
     <url>/2020/05/19/59224.html</url>
     <content><![CDATA[<p>1、总是钟情于一，难以自拔，这可能是我最大的可悲之处。<br>2、可能受制于眼界，困囿于自己，无法走出自己的圈子。<br>3、从未如此长时间的想念一个人这么久、这么频繁，每天每个小时，除了至亲。<br>4、时不时看到罗曼罗兰的英雄主义，我认为这种阐释很有道理，但是自己却没有深刻体会到。<br>5、这次身体的异样算是给自己敲响了警钟，体会到极致的孤独就是自己一个在医院，各种检查用尽，不知是否虚惊一场，未来是不是也这样。<br>6、从前排斥的东西，是否需要重新审视，因为我也知道那是在压抑自己，实际自己内心也无比渴望。<br>7、从前纵情挥霍的东西，现在也需要收敛抑或是改正了，真的不好。<br>8、昨天跟人说自己年纪大了，任何事还是悠着点，旁人听完笑说你才多大，不知安慰还是事实，但是三十而立的坎儿算是来了。<br>9、周末去和家人好好说说吧，毕竟这次疫情半年多没见面了，我决定摊牌了。<br>10、深夜纵有千言胆，天明必悔，所以我还是光天化日琢磨一下，除了白日做梦，其他的就很理性了。</p>
@@ -1154,21 +1186,6 @@
 ]]></content>
       <tags>
         <tag>WebGL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>航班数据分享</title>
-    <url>/2024/01/26/31423.html</url>
-    <content><![CDATA[<p>近期抓取了一些航班数据，分享一下。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据范围：全国（境内，不包括港澳台）</span><br><span class="line">日期范围：20230320-20230327</span><br><span class="line">航班数量：58987条</span><br></pre></td></tr></table></figure>
-<p><img src="/images/2024/01/airline202401261.jpg" alt="数据预览"><br>关注右侧公众号zyouzz回复”航班”获取下载，</p>
-<p>有偿提供近期或者其他日期航班数据（全国、世界均可）</p>
-<p>如有需要，请于公众号zyouzz留言</p>
-]]></content>
-      <tags>
-        <tag>航班</tag>
-        <tag>世界</tag>
-        <tag>全国</tag>
       </tags>
   </entry>
   <entry>
@@ -1211,6 +1228,21 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>航班数据分享</title>
+    <url>/2024/01/26/31423.html</url>
+    <content><![CDATA[<p>近期抓取了一些航班数据，分享一下。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据范围：全国（境内，不包括港澳台）</span><br><span class="line">日期范围：20230320-20230327</span><br><span class="line">航班数量：58987条</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2024/01/airline202401261.jpg" alt="数据预览"><br>关注右侧公众号zyouzz回复”航班”获取下载，</p>
+<p>有偿提供近期或者其他日期航班数据（全国、世界均可）</p>
+<p>如有需要，请于公众号zyouzz留言</p>
+]]></content>
+      <tags>
+        <tag>航班</tag>
+        <tag>世界</tag>
+        <tag>全国</tag>
       </tags>
   </entry>
   <entry>
@@ -1402,7 +1434,7 @@
   <entry>
     <title>about</title>
     <url>/about/index.html</url>
-    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#x6a;&#97;&#x6d;&#x65;&#x73;&#x72;&#111;&#x63;&#107;&#54;&#54;&#x36;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x6a;&#97;&#x6d;&#x65;&#x73;&#x72;&#111;&#x63;&#107;&#54;&#54;&#x36;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
+    <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#x61;&#109;&#x65;&#x73;&#114;&#x6f;&#x63;&#107;&#54;&#x36;&#54;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#106;&#x61;&#109;&#x65;&#x73;&#114;&#x6f;&#x63;&#107;&#54;&#x36;&#54;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
 ]]></content>
   </entry>
   <entry>
