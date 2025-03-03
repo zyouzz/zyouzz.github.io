@@ -14,7 +14,7 @@
 <meta property="og:description" content="高斯泼溅（Gaussian Splatting） 是一种基于显式3D高斯粒子表示的实时渲染与场景建模技术。其核心思想是将三维场景分解为大量可学习的各向异性高斯分布，通过投影和混合计算生成逼真图像。以下从技术原理、优势、挑战与应用场景展开说明：  1. 技术原理 显式3D高斯建模：每个高斯粒子包含位置（μ）、协方差矩阵（Σ）、颜色（RGB）和不透明度（α），通过数学公式 ( G(x) &#x3D; e^{-\">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-21T07:49:08.000Z">
-<meta property="article:modified_time" content="2025-02-21T07:51:47.844Z">
+<meta property="article:modified_time" content="2025-03-03T08:19:33.583Z">
 <meta property="article:author" content="James Rock">
 <meta property="article:tag" content="Cesium">
 <meta property="article:tag" content="高斯泼溅">
@@ -122,7 +122,7 @@ var _hmt = _hmt || [];
 <h3 id="1-技术原理"><a href="#1-技术原理" class="headerlink" title="1. 技术原理"></a><strong>1. 技术原理</strong></h3><ul>
 <li><strong>显式3D高斯建模</strong>：每个高斯粒子包含位置（μ）、协方差矩阵（Σ）、颜色（RGB）和不透明度（α），通过数学公式 ( G(x) = e^{-\frac{1}{2}(x-\mu)^TΣ^{-1}(x-\mu)} ) 描述空间分布。</li>
 <li><strong>投影与渲染</strong>：将3D高斯投影到2D屏幕空间，基于瓦片（Tile）的光栅化策略实时混合像素值，避免传统光线追踪的复杂计算。</li>
-<li><strong>动态优化</strong>：通过梯度下降调整高斯参数（如位置、缩放、旋转），结合多视角图像监督实现场景重建。</li>
+<li><strong>动态优化</strong>：通过梯度下降调整高斯参数（如位置、缩放、旋转），结合多视角图像监督实现场景重建。<span id="more"></span></li>
 </ul>
 <hr>
 <h3 id="2-技术优势"><a href="#2-技术优势" class="headerlink" title="2. 技术优势"></a><strong>2. 技术优势</strong></h3><table>
