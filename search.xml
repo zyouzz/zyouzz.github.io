@@ -1846,6 +1846,28 @@
       </tags>
   </entry>
   <entry>
+    <title>postgresql无法创建数据库解决</title>
+    <url>/2025/03/17/16730.html</url>
+    <content><![CDATA[<p>用navicat 16.3.7连接数据库postgresql 17.2，创建数据库报错</p>
+<p><img src="/images/2025/03/202503171.jpg" alt="template database &#39;template1&#39; has a collation version mismatch"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR: template database &#x27;template1&#x27; has a collation version mismatch</span><br><span class="line">DETAIL: The template database was created using collation version 2.36, but the operating system provides version 2.31.</span><br><span class="line">HINT: Rebuild all objects in the template database that use the default collation and run ALTER DATABASE template1 REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.</span><br></pre></td></tr></table></figure>
+
+<p>这个错误表明，模板数据库 ‘template1’ 的排序规则版本（collation version 2.36）与操作系统提供的版本（2.31）不匹配，导致无法成功创建新数据库。</p>
+<p>下面我将解释问题原因并提供解决方案。</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a><strong>问题原因</strong></h3><p>在 PostgreSQL 中：</p>
+<p>排序规则（Collation） 是定义字符串比较和排序规则的机制，用于文本数据的排序和搜索操作。</p>
+<p>模板数据库：创建新数据库时，PostgreSQL 默认使用 ‘template1’ 作为模板，将其设置（包括排序规则）复制到新数据库。</p>
+<p>版本不匹配：错误显示 ‘template1’ 使用的是排序规则版本 2.36，而当前操作系统只支持 2.31。这种不匹配可能是因为 PostgreSQL 安装时所在的系统排序规则版本较新，后来被迁移到了排序规则版本较旧的系统上。<br>由于新数据库依赖模板数据库的排序规则，而操作系统无法支持 ‘template1’ 的较新版本（2.36），创建数据库时就会失败。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>以下是解决此问题的几种方法。由于您使用的是 Navicat（一个图形化工具），我将尽量提供简单易行的步骤，并优先考虑通过 SQL 命令或 Navicat 操作完成的方法：<br>方法 1：尝试刷新 ‘template1’ 的排序规则版本<br>步骤：<br>在 Navicat 中连接到您的 PostgreSQL 服务器。<br>打开 SQL 控制台（或查询窗口），运行以下命令：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> DATABASE template1 REFRESH <span class="keyword">COLLATION</span> VERSION;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>postgresql</tag>
+        <tag>数据库</tag>
+        <tag>解决方案</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>Money, Money, just do it!<br>微博：XXXXXXXX<br>微信：XXXXXXXX<br>知乎：安乎挚<br>邮箱：<a href="mailto:&#106;&#x61;&#x6d;&#x65;&#115;&#114;&#x6f;&#99;&#107;&#54;&#x36;&#54;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#106;&#x61;&#x6d;&#x65;&#115;&#114;&#x6f;&#99;&#107;&#54;&#x36;&#54;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a><br>64mm 255 275 SANGUANG50  MARK<br><img src="/images/glasses.jpg" alt="glasses"></p>
