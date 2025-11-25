@@ -2194,6 +2194,26 @@
       </tags>
   </entry>
   <entry>
+    <title>什么是离屏渲染</title>
+    <url>/2025/11/25/27323.html</url>
+    <content><![CDATA[<p>离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。</p>
+<p>要点</p>
+<ul>
+<li>常见实现：Web：OffscreenCanvas、WebGL FBO（framebuffer）/render-to-texture；桌面：OpenGL FBO、DirectX 渲染目标、Vulkan 图像。</li>
+<li>优点：消除闪烁、支持异步/Worker 渲染、方便后处理（模糊、色调映射）、可重用纹理减少重复计算。</li>
+<li>缺点：额外内存和拷贝、需要同步（可能阻塞）、管理生命周期复杂。</li>
+<li>最佳实践：重用缓冲区/纹理、尽量在 Worker 中使用 OffscreenCanvas 做计算密集型 2D 渲染、选择合适像素格式、避免频繁大小变更。</li>
+</ul>
+<p>简短示例（使用 OffscreenCanvas 在 Worker 中离屏绘制并传回主线程显示）：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> off = canvas.<span class="title function_">transferControlToOffscreen</span>();</span><br><span class="line"><span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="title class_">Worker</span>(<span class="string">&#x27;worker.js&#x27;</span>);</span><br><span class="line">worker.<span class="title function_">postMessage</span>(&#123; <span class="attr">canvas</span>: off, <span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span> &#125;, [off]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// worker.js</span></span><br><span class="line">self.<span class="property">onmessage</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; canvas, width, height &#125; = e.<span class="property">data</span>;</span><br><span class="line">  canvas.<span class="property">width</span> = width; canvas.<span class="property">height</span> = height;</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  <span class="comment">// 离屏绘制</span></span><br><span class="line">  ctx.<span class="property">fillStyle</span> = <span class="string">&#x27;#012&#x27;</span>;</span><br><span class="line">  ctx.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">  ctx.<span class="property">fillStyle</span> = <span class="string">&#x27;#fff&#x27;</span>;</span><br><span class="line">  ctx.<span class="property">font</span> = <span class="string">&#x27;24px sans-serif&#x27;</span>;</span><br><span class="line">  ctx.<span class="title function_">fillText</span>(<span class="string">&#x27;离屏渲染示例&#x27;</span>, <span class="number">20</span>, <span class="number">40</span>);</span><br><span class="line">  <span class="comment">// 如果需要把结果传回主线程为 ImageBitmap:</span></span><br><span class="line">  canvas.<span class="title function_">convertToBlob</span>().<span class="title function_">then</span>(<span class="function"><span class="params">blob</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">createImageBitmap</span>(blob);</span><br><span class="line">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">bitmap</span> =&gt;</span> &#123;</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; bitmap &#125;, [bitmap]);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 main.js 中接收并绘制 bitmap（可选）</span></span><br><span class="line">worker.<span class="property">onmessage</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> bitmap = e.<span class="property">data</span>.<span class="property">bitmap</span>;</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>,<span class="number">0</span>,canvas.<span class="property">width</span>,canvas.<span class="property">height</span>);</span><br><span class="line">  ctx.<span class="title function_">drawImage</span>(bitmap, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>简要说明：主线程把 canvas 转为 OffscreenCanvas 传给 Worker，Worker 在离屏 canvas 上绘制并可把结果以 ImageBitmap/Blob 等形式回传或直接让浏览器合成显示。</p>
+]]></content>
+      <tags>
+        <tag>离屏渲染</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS知乎每天站内搜索统计</title>
     <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E6%AF%8F%E5%A4%A9%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E7%BB%9F%E8%AE%A1.html</url>
     <content><![CDATA[<span id="more"></span>

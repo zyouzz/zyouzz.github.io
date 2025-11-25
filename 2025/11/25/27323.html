@@ -4,34 +4,20 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="MVOLyQRxUt" />
   
-  <title>手把手教你抓取地图矢量数据【附代码和北京矢量地图区、街道办数据下载】【一】 | 自由自在</title>
+  <title>什么是离屏渲染 | 自由自在</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello,大家好，我是James. 偶然看道天地图北京的官网有行政区深圳街道办的边界数据">
+  <meta name="description" content="离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。 要点  常见实现：Web：OffscreenCanvas、WebGL FBO（framebuffer）&#x2F;render-to-texture；桌面：OpenGL F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手把手教你抓取地图矢量数据【附代码和北京矢量地图区、街道办数据下载】【一】">
-<meta property="og:url" content="http://zyouzz.github.io/2019/09/06/5908.html">
+<meta property="og:title" content="什么是离屏渲染">
+<meta property="og:url" content="http://zyouzz.github.io/2025/11/25/27323.html">
 <meta property="og:site_name" content="自由自在">
-<meta property="og:description" content="Hello,大家好，我是James. 偶然看道天地图北京的官网有行政区深圳街道办的边界数据">
+<meta property="og:description" content="离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。 要点  常见实现：Web：OffscreenCanvas、WebGL FBO（framebuffer）&#x2F;render-to-texture；桌面：OpenGL F">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090601.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090602.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090603.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090605.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090606.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090607.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090608.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090609.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090610.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090611.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090616.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090612.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090615.jpg">
-<meta property="og:image" content="http://zyouzz.github.io/images/19090610.png">
-<meta property="article:published_time" content="2019-09-06T08:11:02.000Z">
-<meta property="article:modified_time" content="2025-02-21T06:30:21.747Z">
+<meta property="article:published_time" content="2025-11-25T03:07:04.000Z">
+<meta property="article:modified_time" content="2025-11-25T03:08:14.951Z">
 <meta property="article:author" content="James Rock">
+<meta property="article:tag" content="离屏渲染">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zyouzz.github.io/images/19090601.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
   
@@ -108,10 +94,10 @@ var _hmt = _hmt || [];
 <script src="/js/search.js"></script>
 
       <div class="outer">
-        <section id="main"><article id="post-手把手教你抓取地图矢量数据【附代码和矢量地图数据】" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-什么是离屏渲染" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/06/5908.html" class="article-date">
-  <time datetime="2019-09-06T08:11:02.000Z" itemprop="datePublished">2019-09-06 16:11:02</time>
+    <a href="/2025/11/25/27323.html" class="article-date">
+  <time datetime="2025-11-25T03:07:04.000Z" itemprop="datePublished">2025-11-25 11:07:04</time>
 </a>
     
   </div>
@@ -122,7 +108,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      手把手教你抓取地图矢量数据【附代码和北京矢量地图区、街道办数据下载】【一】
+      什么是离屏渲染
     </h1>
   
 
@@ -130,31 +116,28 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hello,大家好，我是James.</p>
-<p>偶然看道天地图北京的官网有行政区深圳街道办的边界数据<br><img src="/images/19090601.jpg" alt="天地图"></p>
-<span id="more"></span>
-<p>惯性使然打开F12，惊奇地看道一串串熟悉的坐标<br><img src="/images/19090602.jpg" alt="线索"></p>
-<p>曾经搜遍论坛网站各个角落，今天在官方却能轻而易举的找到，真是太激动</p>
-<p>于是先研究了url请求结构，最终得到了北京16个区和下属街道办的边界信息</p>
-<p>接下来跟大家分享抓取过程，</p>
-<p>1、首先进入首页（<a target="_blank" rel="noopener" href="http://beijing.tianditu.gov.cn/bjtdt-mapcenter/%EF%BC%89%EF%BC%8C">http://beijing.tianditu.gov.cn/bjtdt-mapcenter/），</a><br><img src="/images/19090603.jpg" alt="首页"></p>
-<p>2、点击【行政区划】，F12我们可以看到在<a target="_blank" rel="noopener" href="http://beijing.tianditu.gov.cn/tdt-web-sysmanager/services/catalog/special/getLoginOutCatalogSpecials/38ed87a3fe8e4bb1a01949c47baf5244%E8%AF%B7%E6%B1%82%E7%BB%93%E6%9E%9C%E4%B8%AD%E5%8C%85%E5%90%AB%E4%BA%86%E5%8C%97%E4%BA%AC%E4%B8%8B%E5%B1%9E%E7%9A%8416%E4%B8%AA%E5%8C%BA%EF%BC%81">http://beijing.tianditu.gov.cn/tdt-web-sysmanager/services/catalog/special/getLoginOutCatalogSpecials/38ed87a3fe8e4bb1a01949c47baf5244请求结果中包含了北京下属的16个区！</a><br><img src="/images/19090605.jpg" alt="北京16个区"></p>
-<p>3、展开其中一个后，看道更为详细的信息<br><img src="/images/19090606.jpg" alt="北京16个区详细信息"></p>
-<p>4、点击东城区，我发现在<a target="_blank" rel="noopener" href="http://beijing.tianditu.gov.cn/tdt-web-sdks/biz/httpproxy/httpproxy.jsp?url=http://www.bjmap.gov.cn:8080/dfc/services/sgssfs/2220?request=getfeature&amp;filter=+GBCODE=%27110101%27%E8%AF%B7%E6%B1%82%E7%BB%93%E6%9E%9C%E4%B8%AD%E6%9C%89%E4%B8%8D%E5%BE%97%E4%BA%86%E7%9A%84%E5%9D%90%E6%A0%87%E4%B8%B2%EF%BC%8C%E6%98%8E%E6%98%BE%E6%98%AF%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%88%92%E7%9A%84%E8%BE%B9%E7%95%8C%E8%8A%82%E7%82%B9%E5%9D%90%E6%A0%87%E4%B8%B2%E5%98%9B">http://beijing.tianditu.gov.cn/tdt-web-sdks/biz/httpproxy/httpproxy.jsp?url=http://www.bjmap.gov.cn:8080/dfc/services/sgssfs/2220?request=getfeature&amp;filter=+GBCODE%3D%27110101%27请求结果中有不得了的坐标串，明显是行政区划的边界节点坐标串嘛</a><br><img src="/images/19090607.jpg" alt="区坐标串"></p>
-<p>5、继续点击建国门街道，同样在<a target="_blank" rel="noopener" href="http://beijing.tianditu.gov.cn/tdt-web-sdks/biz/httpproxy/httpproxy.jsp?url=http://www.bjmap.gov.cn:8080/dfc/services/sgssfs/2220?request=getfeature&amp;filter=+GBCODE=%27110101001%27%E7%9C%8B%E9%81%93%E8%A1%97%E9%81%93%E5%8A%9E%E7%9A%84%E5%9D%90%E6%A0%87%E7%A9%BF%EF%BC%8C%E5%AE%8C%E7%BE%8E%EF%BC%81">http://beijing.tianditu.gov.cn/tdt-web-sdks/biz/httpproxy/httpproxy.jsp?url=http://www.bjmap.gov.cn:8080/dfc/services/sgssfs/2220?request=getfeature&amp;filter=+GBCODE%3D%27110101001%27看道街道办的坐标穿，完美！</a><br><img src="/images/19090608.jpg" alt="街道办坐标串"></p>
-<p>接下来上python代码<br>1、首先惯例，我使用的是python2,首先声明编码，导入request、json解析模块<br><img src="/images/19090609.jpg" alt="导入模块"></p>
-<p>2、接下来需要写4个函数方法，<br>主要是：<br>（1）解析、构造url地址<br>（2）组织爬取的信息<br><img src="/images/19090610.jpg" alt="函数方法"></p>
-<p>3、然后是调取以上函数方法，写入至txt文件<br><img src="/images/19090611.jpg" alt="调取、写入"></p>
-<p>4、最后分别得到行政区和街道办边界节点的txt文本<br><img src="/images/19090616.jpg" alt="txt文本"><br><img src="/images/19090612.jpg" alt="行政区边界节点的txt文本"><br><img src="/images/19090615.jpg" alt="街道办边界节点的txt文本"></p>
-<p>本节结束，这里附上完整的代码和txt文本下载链接<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow">https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow</a><br>提取码：gnkx<br>或者长按以下二维码获取下载<br><img src="/images/19090610.png" alt="二维码获取下载"></p>
+        <p>离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。</p>
+<p>要点</p>
+<ul>
+<li>常见实现：Web：OffscreenCanvas、WebGL FBO（framebuffer）/render-to-texture；桌面：OpenGL FBO、DirectX 渲染目标、Vulkan 图像。</li>
+<li>优点：消除闪烁、支持异步/Worker 渲染、方便后处理（模糊、色调映射）、可重用纹理减少重复计算。</li>
+<li>缺点：额外内存和拷贝、需要同步（可能阻塞）、管理生命周期复杂。</li>
+<li>最佳实践：重用缓冲区/纹理、尽量在 Worker 中使用 OffscreenCanvas 做计算密集型 2D 渲染、选择合适像素格式、避免频繁大小变更。</li>
+</ul>
+<p>简短示例（使用 OffscreenCanvas 在 Worker 中离屏绘制并传回主线程显示）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> off = canvas.<span class="title function_">transferControlToOffscreen</span>();</span><br><span class="line"><span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="title class_">Worker</span>(<span class="string">&#x27;worker.js&#x27;</span>);</span><br><span class="line">worker.<span class="title function_">postMessage</span>(&#123; <span class="attr">canvas</span>: off, <span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span> &#125;, [off]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// worker.js</span></span><br><span class="line">self.<span class="property">onmessage</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; canvas, width, height &#125; = e.<span class="property">data</span>;</span><br><span class="line">  canvas.<span class="property">width</span> = width; canvas.<span class="property">height</span> = height;</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  <span class="comment">// 离屏绘制</span></span><br><span class="line">  ctx.<span class="property">fillStyle</span> = <span class="string">&#x27;#012&#x27;</span>;</span><br><span class="line">  ctx.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">  ctx.<span class="property">fillStyle</span> = <span class="string">&#x27;#fff&#x27;</span>;</span><br><span class="line">  ctx.<span class="property">font</span> = <span class="string">&#x27;24px sans-serif&#x27;</span>;</span><br><span class="line">  ctx.<span class="title function_">fillText</span>(<span class="string">&#x27;离屏渲染示例&#x27;</span>, <span class="number">20</span>, <span class="number">40</span>);</span><br><span class="line">  <span class="comment">// 如果需要把结果传回主线程为 ImageBitmap:</span></span><br><span class="line">  canvas.<span class="title function_">convertToBlob</span>().<span class="title function_">then</span>(<span class="function"><span class="params">blob</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">createImageBitmap</span>(blob);</span><br><span class="line">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">bitmap</span> =&gt;</span> &#123;</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; bitmap &#125;, [bitmap]);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 main.js 中接收并绘制 bitmap（可选）</span></span><br><span class="line">worker.<span class="property">onmessage</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> bitmap = e.<span class="property">data</span>.<span class="property">bitmap</span>;</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>,<span class="number">0</span>,canvas.<span class="property">width</span>,canvas.<span class="property">height</span>);</span><br><span class="line">  ctx.<span class="title function_">drawImage</span>(bitmap, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>简要说明：主线程把 canvas 转为 OffscreenCanvas 传给 Worker，Worker 在离屏 canvas 上绘制并可把结果以 ImageBitmap/Blob 等形式回传或直接让浏览器合成显示。</p>
 
       
     </div>
 	
     <footer class="article-footer">
-      <a data-url="http://zyouzz.github.io/2019/09/06/5908.html" data-id="cmidyzx4i005cdgwu71718uh4" class="article-share-link">分享</a>
+      <a data-url="http://zyouzz.github.io/2025/11/25/27323.html" data-id="cmidzxfcu0000ucwu88fyhvb2" class="article-share-link">分享</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" rel="tag">离屏渲染</a></li></ul>
+
 	
 
     </footer>
@@ -163,19 +146,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2019/09/09/877.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/29/56203.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025/11/25/4244.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">软件遇到未知错误，怎么办？</div>
+      <div class="article-nav-title">高斯泼溅中粒子的协方差矩阵是做什么的</div>
     </a>
   
 </nav>
