@@ -1,0 +1,3250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>20171102笔记-Datastore反注册工具</title>
+    <url>/2017/11/02/65428.html</url>
+    <content><![CDATA[昨天没事又开始捣鼓ArcGIS Enterprise，谁知在启用地理大数据分析功能是，提示没有大数据存储，也就是说ArcGIS Datastore没有开启这个存储功能。
+
+然后去server里看了一下，果然没有，想着注册一下应该就可以，但是在操作过程中却显示已经注册过，好生奇怪，我隐约也记得之前安装的时候关系型、切片和大数据都勾选过，不知为何突然消失了。最后的解决方法是使用ArcGIS Datastore安装目录下的X:\arcgis\ArcGIS\DataStore\tools的unregisterdatastore.bat工具，进行反注册操作，取消之前的大数据注册接下来再次进行大数据注册就可以正常进行了。
+]]></content>
+      <categories>
+        <category>ArcGIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>ArcGIS Datastore</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019全2020初</title>
+    <url>/2020/01/10/47817.html</url>
+    <content><![CDATA[今年真是忙的不行呀，暂且开个头。。。呆在贵阳一个多月，一个人住着100多平的房子，每天单调的生活，明天飞回北京，想念想见的人，想见却不能相见的人（时间依然不能让我忘却，所以给自己3年的时间），想念北京的暖气。。。
+]]></content>
+  </entry>
+  <entry>
+    <title>2020年？？</title>
+    <url>/2020/05/09/14675.html</url>
+    <content><![CDATA[2020年，什么时候该开始？什么时候又该翻篇呢？
+]]></content>
+  </entry>
+  <entry>
+    <title>2025人工智能革命：技术突破如何重塑未来生活</title>
+    <url>/2025/03/07/43120.html</url>
+    <content><![CDATA[引言：一场静默的科技革命正在发生2025年，人工智能不再是实验室里的概念，而是渗透进每个普通人的日常。从清晨唤醒你的智能家居，到深夜为你生成工作总结的AI助手；从医院里精准诊断疾病的算法，到工厂中自主优化生产流程的机器人——这场革命正以惊人的速度重构我们的世界。而推动这一切的核心力量，是开源大模型的崛起、应用场景的爆发式落地，以及全球资本与技术资源的疯狂涌入。
+
+一、技术突破：开源大模型的“平民化”浪潮
+DeepSeek的颠覆性创新2024年，中国团队开发的DeepSeek大模型以开源模式和算法优化打破技术壁垒。其通过“参数效率革命”，将训练成本降低至传统模型的1/10，同时性能超越GPT-4.0，彻底颠覆了“算力堆砌=技术领先”的旧逻辑。这一突破不仅让中小企业和开发者能以低成本调用顶级AI能力，更催生了全球超过2000个衍生应用项目。
+
+多模态融合的技术奇点阿里云推出的“通义万相”大模型已实现文本、图像、音频、视频的全模态生成与交互。例如，在春晚《笔走龙蛇》节目中，AI实时生成武术动作的“子弹时间”特效，背后是通义大模型对物理规律与艺术审美的深度理解。这种技术正在被应用于影视制作、工业设计等领域，将创意实现周期从数月缩短至数小时。
+
+硬件瓶颈的突围之路面对美国芯片封锁，中国企业通过“算法补偿硬件”策略开辟新赛道。例如，深鉴科技开发的“异构计算架构”，让国产14nm芯片运行AI模型的效率达到7nm芯片的90%。这种“软硬协同”模式正推动中国AI产业链形成闭环。
+
+
+
+二、应用场景：从实验室到街头巷尾
+医疗革命：AI医生的精准出击
+
+诊断辅助：上海瑞金医院部署的AI系统已能识别2000种罕见病，准确率超95%。通过分析患者基因数据与全球病例库，诊断时间从平均14天压缩至2小时。
+手术机器人：微创医疗的“神农”机器人完成全球首例AI自主冠状动脉支架植入，术中误差小于0.1毫米，标志着外科手术进入“无人化”时代。
+
+
+教育重构：个性化学习的终极方案
+
+自适应学习系统：猿辅导推出的“AI导师”可根据学生脑电波数据实时调整授课节奏，将知识点吸收效率提升40%。
+虚拟实验室：清华大学搭建的元宇宙化学实验室，学生可通过VR设备进行高危实验，AI自动评估操作风险并生成实验报告。
+
+
+产业升级：制造业的智能跃迁
+
+柔性生产线：比亚迪的“黑灯工厂”中，AI调度系统实时优化1.2万台设备的任务分配，使产能波动率从15%降至3%以下。
+供应链预测：京东物流的AI预测模型将库存周转天数缩短20%，618大促期间缺货率下降至0.3%。
+
+
+
+
+三、经济重塑：资本狂潮与新职业图谱
+资本市场的“AI狂热”2024年全球AI领域融资达245亿美元，其中应用层企业占比60%。OpenAI估值突破1570亿美元，而中国的DeepSeek在B轮融资中获66亿美元，创下亚洲AI初创企业纪录。
+
+就业市场的冰与火
+
+职业消亡：麦肯锡预测，2025年全球将有8000万个基础岗位被AI替代，如客服、初级翻译等。
+新工种爆发：AI伦理师、模型驯化师、数字孪生工程师等职业需求激增，北京某猎头公司数据显示，这类岗位年薪中位数达80万元。
+
+
+消费革命：从物质到体验
+
+情绪消费：年轻人愿为AI生成的“虚拟恋人”服务支付每月499元，某平台用户超300万。
+场景化购物：淘宝的“元宇宙试衣间”利用AI生成个性化穿搭建议，转化率提升27%。
+
+
+
+
+四、挑战与反思：技术狂飙下的暗流
+伦理困境：谁为AI的错误买单？2024年杭州法院审理首例“AI医疗误诊案”，患者因算法漏诊癌症晚期起诉医院，最终判决AI开发商承担30%责任。此案引发对AI法律主体资格的激烈争论。
+
+数字鸿沟：技术普惠的未竟之路尽管DeepSeek降低技术门槛，但全球仍有43亿人无法稳定接入互联网。联合国报告指出，AI可能加剧发达国家与发展中国家的差距，形成“智能殖民”新形态。
+
+能源悖论：绿色与耗能的拉锯战单个大模型的训练需消耗相当于3000辆汽车年排放的碳足迹。尽管阿里云等企业推广“绿色AI”计划，但行业整体能耗仍在以每年35%的速度增长。
+
+
+
+结语：人与机器共生的未来已来当AI能够创作诗歌、设计建筑、治愈疾病，人类的价值将重新被定义。这场革命不仅是技术的跃进，更是一场关于文明走向的哲学思辨。正如DeepSeek首席科学家所言：“我们不是在建造工具，而是在培育一种新的生命形式。”或许，2025年将被历史铭记为人类与AI真正开始对话的元年。
+]]></content>
+      <tags>
+        <tag>人工智能</tag>
+        <tag>技术突破</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>A Star算法实现最短路径查找【python】</title>
+    <url>/2020/12/07/55752.html</url>
+    <content><![CDATA[这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。先放个最终实现效果图==========
+]]></content>
+  </entry>
+  <entry>
+    <title>AI会淘汰搜索引擎，好事？</title>
+    <url>/2025/02/28/31476.html</url>
+    <content><![CDATA[近期写代码时，发现搜索引擎的使用频率越来越低，AI的智能推荐功能越来越强大，搜索引擎的作用逐渐被AI取代。
+这是好事还是坏事呢？
+如果大家都不用搜索引擎，那些博客论文技术网站还会积极更新吗？
+
+这是一个值得深思的问题。如果内容创作者失去了通过搜索引擎获取流量的渠道，他们更新的动力可能会受到影响。
+高质量的内容创作往往需要投入大量的时间和精力，如果无法获得足够的回报，创作者可能会选择放弃或减少更新频率。
+另一方面，如果AI能够提供更好的内容分发和变现机制，或许可以激励创作者持续产出优质内容。 那么整个内容生态系统可能会更加繁荣。
+然而，这也带来了一些挑战。AI算法可能会存在偏见，导致某些类型的内容更容易被推荐，而另一些内容则被边缘化。
+此外，过度依赖AI推荐可能导致信息茧房效应，用户只能接触到与自己兴趣相符的内容，从而限制了视野和思考的深度。
+因此，在拥抱AI带来的便利的同时，我们也需要警惕潜在的风险，并寻求合理的解决方案，以确保信息传播的公平性和多样性。
+那么，面对开发人员越来越依赖AI，以及程序员可能被AI淘汰的担忧，我们应该如何看待和应对呢？
+首先，我们需要认识到AI在软件开发中的潜力。
+AI可以辅助程序员完成重复性、低价值的工作，例如代码生成、bug修复、测试等，从而提高开发效率和质量。
+更重要的是，AI还可以帮助程序员学习新的知识和技能，例如通过智能代码提示、自动代码审查等功能，让程序员更快地掌握新的编程语言、框架和工具。
+然而，AI并不能完全取代程序员。
+软件开发不仅仅是编写代码，更重要的是理解用户需求、设计系统架构、解决复杂问题等。
+这些都需要程序员具备创造性、批判性思维和沟通能力，而这些能力是AI目前无法取代的。
+那么，程序员如何避免被AI淘汰呢？我认为，关键在于不断提升自己的核心竞争力。具体来说，可以从以下几个方面入手：
+
+深入理解计算机科学 fundamentals：掌握数据结构、算法、操作系统、计算机网络等基础知识，这些是解决复杂问题的基石。
+
+持续学习新的技术和工具：关注AI领域的发展动态，学习如何利用AI来提高自己的工作效率和质量。
+
+培养解决问题的能力：不要仅仅满足于使用现成的代码和工具，要学会分析问题、找到解决方案，并能够将解决方案转化为代码。
+
+提升沟通和协作能力：软件开发是一个团队合作的过程，要学会与他人沟通、协作，共同完成项目。
+
+培养创造性思维：不要局限于现有的技术和方法，要敢于创新、尝试新的思路，为软件开发带来新的突破。
+
+
+总之，AI是软件开发的重要工具，但程序员的核心竞争力仍然是不可替代的。
+只有不断提升自己的能力，才能在AI时代立于不败之地。
+]]></content>
+      <tags>
+        <tag>AI</tag>
+        <tag>搜索引擎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
+    <url>/2018/03/07/56554.html</url>
+    <content><![CDATA[大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。
+
+人生就是两字—“折腾”！这不，ArcGIS 10.5.1版本才发布，就跃跃欲试升级。枪打出头鸟，果然有大坑，顺利安装完成后，在Portal中添加一个slpk场景包，却发现一直不成功，或者是这样在server日志中看到如下记录：在发布场景时，场景数据会存到托管server的datastore中，创建服务需要Couchdb数据库，问题就出在这，datastore中Couchdb无法创建数据库，场景就发布不了。对于这个问题，我开始以为是datastore没有安装配置好，严格统一了一下证书，然后在server管理页面中解除注册，再重新配置，但是这样不行。仍然是同样的问题。没办法，将datastore卸载重装，不行。。。最后，索性将整套ArcGIS Enterprise全家桶重装了一遍，还是不行，杯具呀。。。后来发现同事也遇到这个问题，紧接着，用户也出现了，看来这不是我的系统环境或者安装部署问题，当天给用户远程了一下，还是没有解决，好在用户说现在只是测试，没在生产环境中正式部署。这真是绝望的时刻。最后，终于在公司服务器里的技术文档，找到类似问题的解决方案。详情见：1887问题解决方案该作者的解决方法惊为天人，一般人真是想不到。。。问题最终算是解决了，具体的原因不得而知，但是知道问题出在Couchdb这块，很是诡异，希望在下个版本能够解决。好消息是：从10.5.1开始，Esri发布了一个一键安装程序，大大简化安装流程。
+——————————————-++————————————————————
+还有个问题是：在10.5中上传之前Pro（1.4版本）打包或者是smart3D导出的spk，Portal会显示如下问题这里显示上传的不是有效的包。解决的方法很简单，实际spk就是个压缩包，直接用解压文件解压，会看到里面包含的文件美国Esri官方给的解决方法是：使用7zip软件，将其重新打包，设置如下，然后再上传就可以了
+]]></content>
+      <categories>
+        <category>ArcGIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS Enterprise</tag>
+        <tag>Portal</tag>
+        <tag>三维场景</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI已开始革命</title>
+    <url>/2025/02/21/18620.html</url>
+    <content><![CDATA[
+既惊讶兴奋又诚惶诚恐。
+科幻影视中的设想超前实现，但有些人被替代。
+核聚变什么时候能够实现，
+不再是人与人的内卷，人与AI的内卷，人与资源的内卷，AI与资源的内卷，
+那时候天下大同。
+人类终于可以追求至高至善、星辰大海！
+]]></content>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
+    <url>/2017/12/02/11059.html</url>
+    <content><![CDATA[从1.3版本开始接触ArcGIS Pro，流畅的64位原生应用程序，靓丽的ribbon界面，二三维一体的极致体验，让我们看到变革的时候到来，传统的桌面使用相信现正在迁移过来，并且也在吸引大量新使用者。
+
+但是我的机器在使用ArcGIS Pro发布服务时，总是出现Failed to check sharing process status，中文为：“检查共享流程状态失败”错误，从1.3，1.4，1.4Alpha4,2.0,2.0.1依然是这样。虽然状态检查失败，但并不影响服务发布，最后在Portal中都是可以看到发布成功的服务开始我以为是软件没安装好，或者是Portal的配置有问题。于是尝试向ArcGIS Online上发布，还是同样的报错。后来通过与同事以及美国Esri Support的沟通，他们提供了一个官方帮助文档链接http://pro.arcgis.com/zh-cn/pro-app/help/sharing/overview/sharing-job-status.htm里面说到”可在 C:\Users&lt;USERPROFILE&gt;\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses 中找到状态报告“我按照自己用户名路径C:\Users\Esri\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses然而并没有该路径的文件夹，也就是说出现这个报错，是因为ArcGIS Pro没有找到状态日志文件，那么日志写到哪去了呢？通过文件夹搜索，最后找到了存储日志状态的文件夹。路径为C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging\SharingProcesses
+到此，我们可以总结一下：当通过ArcGIS Pro发布服务时，状态日志并没有写到官方文档提到的C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging\SharingProcesses路径下，却莫名其妙地写到C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging\SharingProcesses里，对比一下两个路径，深度一致，可以看到ArcGISPro这个文件夹位置不同。从报错来看，ArcGIS Pro读取日志文件状态可能是按照官方文档说的路径。
+因此，报错的机理算是找到了，但是为什么会造成路径不同呢？
+美国Esri Support给出的建议是：新建一个操作系统账户，使用该账号登录系统，然后再发布服务看看是否还报错。果然老美的尝试建议是没问题，不会再报错，日志写到正常的路径下。然后老美解释是因为操作系统账户是corrupt user profile，这里我不知道如何翻译，但是问题在我的机器上并没有解决，不能为了这个问题，换一个操作系统账户。
+想了许久这个问题。有以下猜想：我的操作系统用户名是esri，ArcGIS Pro在安装的时候，会初始化用户路径，本来esri这个词是ArcGIS软件中关键字，就好比编写程序的变量名不能与该语言内设的关键字冲突一样。所以ArcGIS Pro初始化状态日志路径出现了混乱现象。
+上面说了那么多，问题始终可能会存在，那么有没有可行的解决方案呢？经过多次尝试，答案是有的。
+首先我尝试修改操作用户名，但貌似没什么用。网上说还需要修改对应用户名的注册表，感觉这么做有些风险，所以就放弃了。
+好的，说到本质上来：就是找不到预设路径下的日志文件所致。那么为何不自己创建一个路径呢，然后将C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging路径下的文件都实时同步过来。
+这里就不得不提到曾经遇到的系统盘瘦身方案，利用windows自带的mklink命令，可以实现将默认C盘安装的应用程序文件（Adobe 全家桶）迁移到其他盘，程序仍然可以正常使用。
+方案就这么形成了，首先将C:\Users\Esri\ArcGISPro\AppData\Local\Esri中的Staging文件夹剪切到C:\Users\esri\AppData\Local\ESRI\ArcGISPro下，然后以管理员的身份打开cmd窗口输入
+mklink /J &quot;C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging&quot; &quot;C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging&quot;
+然后会出现提示为”C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging &lt;&lt;===&gt;&gt;C:\Users\Esri\ArcGISPro\AppData\Local\Esri\Staging”创建的联接由于我已经链接过了，所以会有如下提示。实际这里就相当于在C:\Users\Esri\ArcGISPro\AppData\Local\Esri下放了C:\Users\esri\AppData\Local\ESRI\ArcGISPro中Staging文件夹的快捷方式，即文件夹的软连接，用过linux系统应该比较熟悉接着用Pro发布一个服务试试，果然久未谋面的成功状态出现了。
+这个问题从用户来说，解决方法是避免使用esri这个操作系统用户名从ArcGIS Pro开发者来看，尽早修复这个程序逻辑问题应该是最终解决之道。
+突然想到一个搞笑案例，分享一下“调试一段有关用户名的程序，上午测试的时候还好好的，下午测试老是获取到null，怎么找都找不到原因，后来后台的哥们说他把用户名改成了“null”，嗯，现在坟头的草一丈多了。”
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS Pro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Desktop（ArcMap）10.6、ArcGIS Engine 10.6和ArcGIS Pro2.1无法 打开ECW文件</title>
+    <url>/2018/02/11/46502.html</url>
+    <content><![CDATA[新年伊始，万象更新，Esri也推出了全新产品版本。美国时间2018年1月17日，ArcGIS 10.6正式面向用户发布！
+新特性吸引了不少用户，都开始纷纷尝鲜新版本。
+近期相继收到QQ群、用户电话反馈:ECW影像文件在10.6中打不开，之前版本正常打开。于是搜官方BUG，果然找到近期更新的问题ArcGIS (Desktop, Engine) 10.6 ECW Patch。
+原因是：ArcGIS中打开ECW文件，需要第三方库，这个库需要Hexagon（海克斯康）的授权更新，导致在10.6发布的预定时间仍没有获得授权许可，因此在10.6中该库就没有被集成到里面，当然就打不开了。
+好在近期Esri已经接到该授权更新，并及时发布了ArcGIS Desktop 10.6和ArcGIS Engine 10.6 的ECW补丁。
+装完相应的补丁后，就可以正常打开ECW文件了。
+补丁下载地址：https://support.esri.com/en/download/7583
+ArcGIS Pro的补丁还需要等一段时间，估计就在近期了，可以关注以上下载地址。
+Esri官方会在2018第二季度新发布的版本中解决这个BUG。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>ECW影像</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS ModelBuilder的工作空间（workspace)设置问题</title>
+    <url>/2016/11/18/56001.html</url>
+    <content><![CDATA[今天和同事调试了一个用户发来的ModelBuilder，咋一看,模型做得还好呀，每个工具的调用和参数设置都很有逻辑但是一点击运行后，在第一步模型就运行失败了原来用户使用的是相对引用路径，但是路径中存在gdb，而工作空间中默认也是在gdb下，所以一个路径中同时出现两个gdb，数据存不了，当然无法运行了。由于模型中用户都是这么写的，有很多处，所以只有修改模型的环境参数了，先打开模型属性点击环境选项卡，勾选Workspace选项，点击下面的Values..设置Scratch Workspace路径，确定后点击运行，成功！但是高兴太早，一般使用模型很少会点开编辑界面运行，会直接双击，像GP工具使用，里面都是黑箱了双击工具，点击OK果然高兴太早，在最后一步出现问题，又同时一个路径中出现两个gdb这时心里想，不对呀，工作空间（workspace)的路径不是已经改了么，怎么不管用呢和同事琢磨半天，最后发现双击模型工具后，点击界面下方的环境设置发现路径还是原先的默认带有gdb的路径，但是为什么前面的几步都运行成功了呢？遂再次陷入沉思后才明白，我们把输出结果路径作为模型工具的界面参数，造成了前面会使用我们修改的模型环境路径，输出结果路径去依然使用该模型工具界面的环境参数路径。于是将结果路径在模型编辑中去掉作为界面参数的设置再双击模型，完美运行！这里不得不提一下ArcGIS ModelBuilder的工作空间（workspace)设置问题，模型属性的环境变量参数设置在模型使用界面中无效，造成后续的参数再次调整，有些不太方便，但不是大的问题。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS 全家桶（ArcGIS Enterprise）---Linux安装笔记</title>
+    <url>/2017/06/19/19484.html</url>
+    <content><![CDATA[安装环境软件：操作系统—Redhat 7.2 64位安装版本—ArcGIS 10.5硬件：VMware Pro 12.0虚拟环境双核CPU4G内存PS：强烈建议高于这个配置
+安装过程笔记
+安装前基础知识su为超级用户su – user为某一用户的超级权限vi /etc/hosts 为编辑文件命令，进入文本编辑页面后，输入i插入开始编辑，输入O表示在当前行插入。编辑完之后，按ESC停止编辑，依次输入:wq表示退出cat /etc/hosts表示在命令行界面查看文件ll表示查看当前目录下的文件ls –l与ll相同cp /home/test.ecp /arcgis 表示test.ecp文件复制到arcgis目录下mkdir /mnt/cdrom ////确认是否有该目录，没有的话，新建目录mount /dev/cdrom /mnt/cdrom ////将光驱挂载到/mnt/cdrom下
+
+安装前准备
+1、关闭防火墙并关闭开机启动root用户下systemctl stop firewalld.service  ///关闭防火墙systemctl disable firewalld.service ////关闭防火墙开机启动systemctl status firewalld.service  ////查看防火墙状态2、创建server用户组和用户groupadd esrichina   ////添加用户组useradd –g esrrichina –m arcgis   ////在esrichina下添加arcgis用户passwd arcgis  ////为arcgis用户创建密码3、获取机器IPIfconfig  //inet后面就是IP地址4、修改机器名hostname和hosts文件Vi /etc/hostname  //打开hostname文件修改编辑,也可用hostnamectl set-hostname agsenterprise直接修改AgsenterpriseVi /etc/hosts   ////添加如下行192.168.122.1 agsenterprise.esrichina.com agsenterprisehostname 获取机器名hostname  –f 获取全限定域名5、复制安装文件到arcgis目录下，解压并获取权限tar –zxvf ArcGISServer.tar.gz ///解压server安装包到当前目录chown –R arcgis:esrichina arcgisserver/    ///获取server安装目录的权限到esrichina组下的arcgischmod –R 755 arcgisserver/   ///开启755权限
+正式安装6、安装server首先编辑limits.conf文件vi  /etc/security/limits.conf添加如下四行arcgis soft nofile 65535arcgis hard nofile 65535arcgis soft nproc 25059arcgis hard nproc 25059切换至arcgis用户下su – arcgis测试安装环境./ArcGISServer/serverdiag/serverdiag如果没报错就可以开始正式安装server了cd ArcGISServer/    /////切换至ArcGISServer目录下./Setup –m console然后按着安装时的提示进行安装装完之后会提示授权，这是要注意授权时注意授权文件的权限，必须是server用户下有足够的权限，如果不够，可以使用如下命令chown –R arcgis:esrichina arcgisserver105all.ecp //权限转到server用户组下的arcgis用户chmod –R 755 arcgisserver105all.ecp  //权限设为7557、安装Datastore安装前先在etc/sysctl.conf文件单行参数echo ‘vm.max_map_count=262144’ &gt;&gt; /etc/sysctl.confecho ‘vm.swappiness=1’ &gt;&gt; /etc/sysctl.conf是上述修改内核的参数生效/sbin/sysctl –p  ///从指定的文件加载系统参数，如不指定即从/etc/sysctl.conf中加载同样是诊断安装环境./ArcGISDataStore_Linux/datastorediag/datastorediag开启静默安装./Setup –m silent -1 Yes安装成功后即可配置8、 安装Portal首先需要安装dos2unix，Dos2unix软件包包括工具dos2unix 和 unix2dos，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换在线环境下，使用如下命令行即可安装Yum install dos2unix离线环境下使用离线安装包（dos2unix-7.3.4.tar.gz）安装tar –zxvf dos2unix-7.3.4.tar.gz./configuremakemake install诊断环境./PortalForArcGIS/portaldiag/portaldiag诊断无误后，使用交互安装./Setup –m console安装完后进行配置新portal站点9、配置Web adaptor安装Java的SDK环境解压SDK包jdk-8u131-linux-x64.tar.gzTar –zxvf jdk-8u131-linux-x64.tar.gzMv mv jdk1.8.0_111/ jdk8  ////将jdk1.8.0_111/文件夹下的文件复制到jdk文件夹下编辑/etc/profile文件JAVA_HOME=/home/jdk8CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/tools.jarPATH=$JAVA_HOME/bin:$PATHexport JAVA_HOME CLASSPATH PATH然后使用以下命令，使得上述配置生效source /etc/profile测试安装配置java –version出现版本信息即为正确安装安装tomcat-解压和复制文件tar –zxvf apache-tomcat-8.0.32.tar.gzmv apache-tomcat-8.0.32 tomcat8创建私钥和秘钥请求openssl req -newkey rsa:2048 -nodes -keyout /home/tomcat8/ssl/agsenterprise.key -x509 -days 365 -out /home/tomcat8/ssl/agsenterprise.crt然后按照提示输入参数创建自签名证书openssl pkcs12 -inkey /home/tomcat8/ssl/agsenterprise.key -in /home/tomcat8/ssl/agsenterprise.crt -export -out /home/tomcat8/ssl/agsenterprise.pfx修改Tomcat的server.xml文件vi tomcat8/conf/server.xml修改8080端口为80
+&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;           connectionTimeout=&quot;20000&quot;           redirectPort=&quot;443&quot; /&gt;
+取消端口号8443对应的connector的注释，将8443端口修改为443，并启用ssl。
+&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;           maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot;           clientAuth="false" sslProtocol="TLS" keystoreFile="/home/tomcat8/ssl/agsenterprise.pfx" keystoreType="pkcs12" keystorePass="Super123" />
+启动tomcatcd tomcat8/bin/./startup.sh使用https:// agsenterprise.esrichina.com验证Tomcat是否正常开启10、安装webadaptor./Setup –m silent -1 Yes分别部署名为server和arcgis的webadaptor到Tomcat下cp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/arcgis.warcp /home/arcgis/webadaptor10.5/java/arcgis.war /home/tomcat8/webapps/server.war对portal配置webadaptorcd webadaptor10.5/java/tools/./configurewebadaptor.sh -m portal -w https://agsenterprise.esrichina.com/arcgis/webadaptor -g https://agsenterprise.esrichina.com:7443 -u portaladmin -p Super123./configurewebadaptor.sh -m portal -w https://agsenterprise.esrichina.com/server/webadaptor -g https://agsenterprise.esrichina.com:6443 –u server -p Super12311、server与portal联合和托管12、统一更新server和portal的证书Server导航至 machines -&gt; Machines下机器名，如AGSENTERPRISE.ESRICHINA.COM -&gt; sslcertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 Submit。返回至Machines - 机器名即Machine - AGSENTERPRISE.ESRICHINA.COM页面，点击edit。在Edit Machine页面上，，设置 Web server SSL Certificate的值为步骤2中的证书别名如 agsenterprise以引用上述证书，点击 Save Edits。Portal导航至 security -&gt; sslCertificates，点击importExistingServerCertificate。输入agsenterprise.pfx的路径和密码，设置证书别名，点击 import。在 sslCertificate 页面上点击 Update。在 Update Web Server Certificate 页面上，输入步骤2中的证书别名引用上述证书，点击 Update。
+最终在IE等浏览器中将证书安装到计算机的受信任的根证书颁发机构。
+]]></content>
+      <tags>
+        <tag>ArcGIS Enterprise</tag>
+        <tag>Linux</tag>
+        <tag>ArcGIS Server</tag>
+        <tag>ArcGIS Portal</tag>
+        <tag>安装</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Server集群部署问题和注意事项</title>
+    <url>/2017/05/16/48872.html</url>
+    <content><![CDATA[1、关于集群部署（1）确保集群所有计算机的主DNS后缀相同；![主DNS后缀相同](/images/ArcGIS Server 1.jpg)
+
+（2）尽量保持相同硬件配置、操作系统版本；（3）每台机器拥有相同的盘符；（4）相同的Server操作系统账户名和密码；（5）确保机器之间能够互相ping通；（6）局域网没有DNS解析的话，每台都需要做机器间的【IP - 带DNS后缀的计算机全名】映射， 使得机器间通过域名可以互相访问。
+2、关于集群管理（1）如果集群中某台机器的server坏掉或者宕机，要及时将其从集群中去除，不然影响集群的稳定性和访问速度；（2）通过server的日志阅读，可以了解集群的运行状况。
+3、关于server集群共享文件夹（1）当我们部署server集群时，需要建立一个共享文件夹，然后所有的server机器都能有权限访问；（2）对于共享文件夹的安全问题，可以对共享的文件夹作如下设置。就是说，该文件夹只会共享给server安装时创建的系统账户ArcGIS Server Account，其他操作系统账户或者其他机器均没有权限进行访问，保证了该文件夹的安全性。![共享文件夹](/images/ArcGIS Server 2.jpg)
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>ArcGIS Server</tag>
+        <tag>集群部署</tag>
+        <tag>问题</tag>
+        <tag>注意事项</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS专题图边框花纹制作</title>
+    <url>/2016/10/27/41204.html</url>
+    <content><![CDATA[之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观现在有时间尝试了一下实现过程，如下：原始专题图如下1、在布局视图下，右击数据框属性；2、在Frame选项卡下，按如下红框操作，3、打开符号选择器，点击符号编辑4、点击左下角“+”，添加一个符号图层5、选择Marker Line Symbol6、点击”Marker Line”下的Symbol7、再次点击符号编辑8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距10、然后为了让花纹有一个黑底，将下层的线加粗即可11、然后多次点击确认，得到黑底的花纹效果
+实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果
+PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS中使用字段计算器创建日期序列字段</title>
+    <url>/2017/01/13/15006.html</url>
+    <content><![CDATA[当我们有一些空间数据，想通过动画的形式展示，可以在ArcGIS中的时间滑块工具实现。如果图层要开启时间属性，得有日期类型字段，所以首先需要创建相应字段。如果我们对要素的先后顺序没有要求，可以通过字段计算器快速生成自增型日期，实际之前我已经写过字段自增的博文ArcGIS中使用字段计算器生成随机数和自增数这里我是在ArcGIS Pro中实现，（可以看到ArcGIS Pro中不在支持VB语法，只支持python了）
+
+代码如下：
+import datetime#导入时间模块dinterval=datetime.datetime.now()def timen():    global dinterval    dinterval=dinterval+datetime.timedelta(days=1)#自增1天    return dinterval
+生成结果如下：
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS中使用字段计算器生成随机数和自增数</title>
+    <url>/2017/01/05/1288.html</url>
+    <content><![CDATA[当我们使用ArcGIS，在编辑字段或者有某种数据处理需求时，想要新建个字段生成一列随机数或者自增序列数，下面是实现得过程和代码：首先新建个字段，字段类型是整型或者浮点或者双精度（1）生成随机数
+
+
+import randomdef randnum():      res=random.randint(1,10)      return res 
+（2）自增序列数
+total = 0def accumulate(increment): global total if total:  total += increment else:  total = increment return total
+PS；注意选择是python脚本，以及代码的缩进。
+结果如下：
+]]></content>
+  </entry>
+  <entry>
+    <title>ArcGIS中多个字段同时渲染</title>
+    <url>/2017/03/22/15901.html</url>
+    <content><![CDATA[今天群里有个人问到：怎样对一个图层的多个属性字段同时渲染。当时确实有些懵，因为之前基本只对一个属性字段进行符号配置显示，所以无从着手，想到用多个图层同时表示，但是不行，顿时感觉没办法了，下班后，忙完其他的事后，还是不死心，于是又尝试了一下，果然，问题居然很简单的就解决了！
+一、造数据
+首先我造了一些数据。现在我手上有一个全国各主要城市的空气质量数据，里面有AQI、二氧化硫、臭氧、二氧化氮、pm10、pm2.5等。
+
+但是没有合适的表达显著性字段，于是我新建了一个名为【显著性】的字段对于这个显著性如何定义，我是这样做的：使用字段计算器中python脚本，如果经度大于105度，则空气质量变化显著，否则不显著，感觉有点绝对，不过挺符合我国的空气质量地域状况，嘻嘻~~~具体设置如下：python代码如下：
+def sig(x):	if  x&gt;105:		return &quot;显著&quot;	else:		return &quot;不显著&quot;
+
+二、多个字段属性的符号渲染
+有了数据后，就可以尝试怎么操作实现了。
+废话不多说，进入正题实际很简单1、首先右击图层属性，点击符号选项卡，选择多属性渲染方式，2、选择显著性字段，然后对显著性设置不同的符号，如你所说的：空心不显著，实心表示显著3、然后点击右侧符号大小，弹出窗口中，选择趋势数值字段，4、具体参数可以根据自己的数据调整，初步效果如下
+后记：很多时候，空想是很不靠谱的，思维的惰性让人比较容易放弃，慢慢区亲自尝试，或许柳暗花明。实干兴邦，空想误事
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>python</tag>
+        <tag>多字段</tag>
+        <tag>符号渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS知乎网站用户信息爬取与分析【附代码】</title>
+    <url>/2017/01/10/50334.html</url>
+    <content><![CDATA[上周陈老师让我收集一下部门人员在ArcGIS知乎上的活动信息，包括威望、积分、赞同、感谢、提问、回复和文章等数量，当时觉得数量不多，就直接打开网页一个个找到，然后敲到Excel中。现在觉得要是以后大量分析用户行为，这就不可行，正好对爬虫感兴趣，先写个练练手。爬取的信息如下：有效注册用户：4633个
+
+问题总数：5247个回复总数：6146个文章总数：2539篇日期：2017年01月10日12:00
+对数据结果进行简要汇总和分析
+
+威望前20积分前20赞同前20感谢前20发问前20回复前20文章前20
+1、爬取了5185个用户，有效用户为4633个，注册有效率为89.4%2、从各项排名来看，认证用户比较活跃3、几个普通用户比较热心，比如turtle，可以加个认证，以资鼓励，(^_^))毕竟是公司的网站，再者是白天访问，没有使用多进程。ArcGIS知乎可以加一些反爬虫的代码。PS：实际通过数据库中提取用户信息，更为全面可靠。附上代码#!/usr/bin/env python#-*-coding:utf-8 -*-__author__ = &#x27;jiang&#x27;# 导入模块 urllib2import urllib2import BeautifulSoupimport reimport datetimestarttime = datetime.datetime.now()file = open(&#x27;C://Users//Esri//Desktop//arcgiazhihu.txt&#x27;, &#x27;a&#x27;)line =&quot;编号&quot;+ &#x27;,&#x27; + &quot;用户名&quot;+ &#x27;,&#x27; + &quot;威望&quot; + &#x27;,&#x27; + &quot;积分&quot; + &#x27;,&#x27; + &quot;赞同&quot; + &#x27;,&#x27; + &quot;感谢&quot; + &#x27;,&#x27; + &quot;发问&quot; + &#x27;,&#x27; + &quot;回复&quot; + &#x27;,&#x27; + &quot;文章&quot; + &#x27;,&#x27; + &quot;关注&quot; + &#x27;,&#x27; + &quot;被关注&quot; + &#x27;,&#x27; + &quot;关注话题&quot; + &#x27;,&#x27; +&quot;个人主页&quot; + &#x27;,&#x27; +&quot;个性主页&quot; + &#x27;\n&#x27;# 对象file的write方法将字符串line写入file中.file = file.write(line)num=0shuliang=input(&quot;请输入需要爬取的用户数量：&quot;)for namecode in range(1,shuliang+1):    url = &#x27;http://zhihu.esrichina.com.cn/people/&#x27; + str(namecode)    #print(url)    # 设置头文件。抓取有些的网页不需要专门设置头文件，但是这里如果不设置的话，    # 这里暂时不提。关于怎么知道头文件该怎么写，一些插件可以看到你用的浏览器和网站交互的    # 头文件（这种工具很多浏览器是自带的），我用的是firefox的firebug插件。    header = &#123;&#x27;Host&#x27;: &#x27;zhihu.esrichina.com.cn&#x27;,&#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 6.1; rv:26.0) Gecko/20100101 Firefox/26.0&#x27;,&#x27;Accept&#x27;: &#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;,&#x27;Connection&#x27;: &#x27;keep-alive&#x27;&#125;    try:        req = urllib2.Request(url, headers = header)        con = urllib2.urlopen( req )        # 对con这个对象调用read()方法，返回的是html页面，也就是有html标签的纯文本        doc = con.read()        #print doc        # 生成一个soup对象，doc就是步骤二中提到的        soup = BeautifulSoup.BeautifulSoup(doc)        user_name = soup.html.body.find(&#x27;div&#x27;, &#123;&#x27;class&#x27;: &#x27;mod-head&#x27;&#125;).h1        #print user_name        str123=str(user_name)        user_name1 = re.sub(r&#x27;\s|&lt;h1&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str123)        weiwang1 = soup.findAll(&#x27;em&#x27;, &#123;&#x27;class&#x27;: &#x27;aw-text-color-green&#x27;&#125;)        chengjiu1=soup.findAll(&#x27;em&#x27;, &#123;&#x27;class&#x27;: &#x27;aw-text-color-orange&#x27;&#125;)        q_a = soup.findAll(&#x27;span&#x27;, &#123;&#x27;class&#x27;: &#x27;badge&#x27;&#125;)        fensi = soup.findAll(&#x27;em&#x27;, &#123;&#x27;class&#x27;: &#x27;aw-text-color-blue&#x27;&#125;)        weiwang2=weiwang1[0:len(weiwang1) / 2]        chengjiu=chengjiu1[0:len(chengjiu1) / 2]        weiwang = re.sub(r&#x27;&lt;em class=&quot;aw-text-color-green&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(weiwang2[0]))        jifen=re.sub(r&#x27;&lt;em class=&quot;aw-text-color-orange&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(chengjiu[0]))        zantong = re.sub(r&#x27;&lt;em class=&quot;aw-text-color-orange&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(chengjiu[1]))        ganxie = re.sub(r&#x27;&lt;em class=&quot;aw-text-color-orange&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(chengjiu[2]))        fawen=re.sub(r&#x27;&lt;span class=&quot;badge&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(q_a[0]))        huifu=re.sub(r&#x27;&lt;span class=&quot;badge&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(q_a[1]))        wenzhang=re.sub(r&#x27;&lt;span class=&quot;badge&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(q_a[2]))        guanzhu=re.sub(r&#x27;&lt;em class=&quot;aw-text-color-blue&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(fensi[0]))        beiguanzhu = re.sub(r&#x27;&lt;em class=&quot;aw-text-color-blue&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(fensi[1]))        guanzhuhuati = re.sub(r&#x27;\n|&lt;em class=&quot;aw-text-color-blue&quot;&gt;|&lt;.*&gt;&#x27;, &#x27;&#x27;, str(fensi[2]))        gerenzhuye=&#x27;http://zhihu.esrichina.com.cn/people/&#x27;+str(namecode)        gexingzhuye=&#x27;http://zhihu.esrichina.com.cn/people/&#x27;+user_name1        print &quot;正在爬取用户【&quot;+user_name1+&quot;】的信息&quot;        # print &quot;威望：&quot; + weiwang        # print &quot;积分：&quot; + jifen        # print &quot;赞同：&quot; + zantong        # print &quot;感谢：&quot; + ganxie        # print &quot;提问：&quot; + fawen        # print &quot;回复：&quot; + huifu        # print &quot;文章：&quot; + wenzhang        # print &quot;个人主页：&quot;+gerenzhuye        # print &quot;个性主页：&quot;+gexingzhuye        # print &quot;--------------------------------------------------------------------------------------------------------------------------------------&quot;        file = open(&#x27;C://Users//Esri//Desktop//arcgiazhihu.txt&#x27;, &#x27;a&#x27;)        line = str(namecode)+ &#x27;,&#x27; +str(user_name1)+ &#x27;,&#x27; + weiwang + &#x27;,&#x27; + jifen + &#x27;,&#x27; + zantong+ &#x27;,&#x27; + ganxie+ &#x27;,&#x27; + fawen+ &#x27;,&#x27; + huifu+ &#x27;,&#x27; + wenzhang+ &#x27;,&#x27; + guanzhu+ &#x27;,&#x27; + beiguanzhu+ &#x27;,&#x27; + guanzhuhuati +&#x27;,&#x27; +gerenzhuye+&#x27;,&#x27; +gexingzhuye+ &#x27;\n&#x27;        # 对象file的write方法将字符串line写入file中        file = file.write(line)        num=num+1    except Exception, e:        print &quot;用户&quot;+str(namecode)+&quot;不存在&quot;        continueendtime = datetime.datetime.now()time = (endtime - starttime).secondsprint &quot;最终共爬取到&quot;+str(num)+&quot;个有效用户信息&quot;print &quot;用时&quot;+str(time)+&quot;秒&quot;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>多进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcMap用起来卡的，请进</title>
+    <url>/2018/03/26/55332.html</url>
+    <content><![CDATA[近期，一些ArcGIS桌面用户反馈说将低版本升级至10.5或者10.6后，在打开mxd工程文档和数据或者处理数据过程中, 感觉速度比以前慢了，有些卡。
+
+是不是新版本的产品的BUG呢？但通过其他大部分用户反馈，使用时并没有类似的感受，所以排除这个。那是不是系统环境的问题呢？之后我做了一个测试，首先在虚拟机上装一个符合ArcGIS桌面要求的操作系统（https://desktop.arcgis.com/zh-cn/arcmap/latest/get-started/setup/arcgis-desktop-system-requirements.htm），先后安装10.5，10.5.1和10.6，测试速度正常，并没有重现慢的现象。
+所以回归常规排除思路来，实际性能这个问题，无论是windows操作系统，还是智能手机系统，在使用一段时间后，速度会不如以前，为了不影响日常操作，我们会进行阶段的系统扫描、硬件资源占用优化和垃圾缓存清理等工作，这些操作能有效解决这些问题。
+那就从这个入手，针对ArcMap慢的问题，我们可以尝试接下来的操作：1、重置ArcMap（1）重命名C:\Users\【当前登录用户名】\AppData\Roaming\ESRI\Desktop10.X\ArcMap\Templates\Normal.mxt为Normal_old.mxt，注意APPData是系统默认隐藏的文件夹；（2）重命名‪C:\Users\【当前登录用户名】\AppData\Roaming\ESRI\Desktop10.X\ArcMap\Templates \Normal.gxt为Normal_old.gxt（3）重命名‪C:\Users\【当前登录用户名】\AppData\Roaming\ESRI\Desktop10.X\ArcMap\Templates \ArcToolbox.dat为ArcToolbox _old.dat（4）点击运行，在窗口中输入regedit，选择HKEY_CURRENT_USER\Software\ESRI，重命名ESRI为ESRI_1（5）点击运行，在窗口中输入%APPDATA%\ESRI， 重命名该文件夹为Esri_old
+2、重新安装注意：一定先解除桌面许可，才能卸载软件，不然许可会丢失，很麻烦的。接下来就可以放心删除以下文件夹（1）删除C:\Users\【当前登录用户名】\AppData\Roaming\ESRI下桌面版本文件夹Desktop10.X（2）删除C:\Users\【当前登录用户名】\AppData\Local下的Esri文件夹（3）删除C:\Users\【当前登录用户名】\Documents下的ArcGIS和ESRI下的文件夹（4）删除C:\Program Files (x86)下的ArcGIS和ESRI下的文件夹（5）删除C:\Program Files (x86)\Common Files下的ArcGIS文件夹最后再重装软件
+3、删除字体如果系统中安装字体过多（超过200个），在C:\Windows\Fonts下删除一些无用或者冗余的字体。注意：删除之前，最好备份一下Font文件夹，不要删除名称以esri开头的字体。
+]]></content>
+  </entry>
+  <entry>
+    <title>Cesium中实现的高斯泼溅</title>
+    <url>/2025/02/21/38411.html</url>
+    <content><![CDATA[高斯泼溅（Gaussian Splatting） 是一种基于显式3D高斯粒子表示的实时渲染与场景建模技术。其核心思想是将三维场景分解为大量可学习的各向异性高斯分布，通过投影和混合计算生成逼真图像。以下从技术原理、优势、挑战与应用场景展开说明：
+
+1. 技术原理
+显式3D高斯建模：每个高斯粒子包含位置（μ）、协方差矩阵（Σ）、颜色（RGB）和不透明度（α），通过数学公式 ( G(x) = e^{-\frac{1}{2}(x-\mu)^TΣ^{-1}(x-\mu)} ) 描述空间分布。
+投影与渲染：将3D高斯投影到2D屏幕空间，基于瓦片（Tile）的光栅化策略实时混合像素值，避免传统光线追踪的复杂计算。
+动态优化：通过梯度下降调整高斯参数（如位置、缩放、旋转），结合多视角图像监督实现场景重建。
+
+
+2. 技术优势
+
+
+维度
+传统方法（如NeRF）
+高斯泼溅（3D-GS）
+
+
+
+渲染速度
+分钟级（依赖光线追踪）
+实时（144+ FPS）
+
+
+训练效率
+数小时至数天
+数分钟至数小时（如Mip-NeRF360仅需30分钟）
+
+
+可编辑性
+隐式表示，难以局部修改
+显式高斯粒子支持动态增减与属性调整
+
+
+硬件适配
+依赖高算力GPU
+支持Web端实时渲染（如Cesium集成）
+
+
+
+3. 关键挑战与优化
+几何控制：早期方法因高斯无序增长导致几何失真（如GaussianDreamerPro通过绑定网格实现稳定结构）。
+内存瓶颈：单卡训练受显存限制（谢赛宁团队Grendel方案通过多GPU并行与动态负载均衡支持4000万级高斯）。
+多模态融合：斯坦福Touch-GS结合触觉传感器数据优化透明/反射物体重建，浙大PGSR引入平面约束提升表面精度。
+语义扩展：清华LangSplat在高斯中嵌入CLIP特征，实现开放文本查询提速199倍。
+
+
+4. 典型应用场景
+沉浸式交互：UCLA的VR-GS系统支持实时物理交互（如变形、碰撞检测）。
+大规模重建：MatrixCity等城市级场景的4K分辨率渲染（2400万高斯粒子）。
+生成式3D：DreamScene360从文本生成全景3D场景，GaussianDreamerPro实现可控文生3D。
+机器人感知：结合SLAM技术用于实时定位与高精度环境建模。
+
+
+5. 发展趋势
+硬件协同：多卡训练与分布式计算（如Grendel在32卡集群上加速20倍以上）。
+跨模态融合：触觉、语义、物理仿真等多维度数据联合优化。
+轻量化部署：WebGL与移动端适配（如Cesium集成方案支持千万级粒子流畅交互）。
+
+高斯泼溅通过颠覆传统的显式表示与高效渲染管线，正在重塑3D重建、生成与交互的技术边界，成为计算机图形学与AI交叉领域的前沿方向。
+Cesium与高斯泼溅1. 数据组织与动态调度
+
+采用3D Tiles金字塔结构分层存储高斯粒子数据，根据视点动态加载LOD层级
+每片Tile包含空间哈希索引，快速定位视锥体内的高斯粒子
+实现类似Grendel的稀疏数据传输，仅加载可见区域粒子（如视锥体+安全缓冲区域）
+
+2. GPU渲染管线优化
+
+顶点着色器：执行高斯投影计算（μ,Σ → 2D协方差矩阵）
+几何着色器：根据协方差生成动态四边形（替代传统点精灵）
+片段着色器：实现混合排序的α-blending，支持WebGL 2.0的OIT技术
+使用Compute Shader进行视口空间划分，实现类似Grendel的像素级并行
+
+3. 内存管理策略
+
+创建环形缓冲区管理活跃高斯粒子
+采用ASTC纹理压缩存储粒子属性（位置/颜色/透明度/协方差）
+实现粒子池复用机制，避免频繁内存分配
+
+4. 多线程协作
+
+Web Worker预加载邻接区块数据
+主线程与渲染线程分离，通过SharedArrayBuffer交换粒子数据
+利用OffscreenCanvas实现离屏渲染
+
+性能优化示例对比表
+
+
+
+优化维度
+传统实现
+Grendel启发式优化
+
+
+
+粒子数量
+百万级卡顿
+千万级流畅（分帧加载）
+
+
+渲染分辨率
+1080p 30fps
+4K 60fps（动态降采样+时间抗锯齿）
+
+
+LOD切换
+明显跳变
+亚像素级平滑过渡
+
+
+内存占用
+线性增长
+空间哈希+LRU缓存控制
+
+
+动态负载均衡实现
+
+基于相机运动速度预测未来帧所需粒子
+渲染线程优先级排序：中心区域→边缘区域→预加载区域
+自动降级机制：帧率&lt;30fps时，逐步减少次级粒子细节
+
+注意事项
+
+需处理WebGL的显存限制（Chrome上限为4GB）
+跨域粒子数据需配置CORS
+移动端适配需启用EXT_float_blend扩展
+与Cesium地形/影像图层的深度测试兼容性问题
+
+该方案已在开源项目CesiumGS/cesium-gaussian-splatting中部分实现，实测在RTX 4090桌面端可流畅渲染3000万级粒子，Web版通过渐进式加载也能达到千万级粒子交互。
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>高斯泼溅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cesium中的矩阵变换</title>
+    <url>/2023/06/02/47866.html</url>
+    <content><![CDATA[上一篇学习了WebGL中的矩阵变换变换矩阵（Transformation-matrix）详解,我们推演出旋转、平移、缩放矩阵，并通过代码实现。而在Cesium中于此类似，并且提供了Cesium.Matrix2、Cesium.Matrix3、Cesium.Matrix4类及其属性方法。这里，我们以Cesium.Matrix4为例
+正常情况下，我们可以通过tileset.root.transform获取模型本身的模型矩阵，这个即存在3DTile中的tileset.json文件中
+那么在Cesium中具体如何操作使用变换矩阵呢？以调整模型位置为例
+一、Cesium中的平移有两种调整方式（1）矩阵点乘法
+let modelMatrix = tileset.root.transform;let modelPosition = Cesium.Cartesian3.fromDegrees(lon, lat, height);const translationMatrix = Cesium.Matrix4.fromTranslation(new Cesium.Cartesian3(6, 1, 8));// 模型矩阵乘以平移矩阵 MxTCesium.Matrix4.multiply(modelMatrix, translationMatrix, modelMatrix);tileset.root.transform = modelMatrix;
+(2)直接设置
+let modelMatrix = tileset.root.transform;let modelPosition = Cesium.Cartesian3.fromDegrees(lon, lat, height);Cesium.Matrix4.setTranslation(modelMatrix, modelPostion, modelMatrix);tileset.root.transform = modelMatrix;
+
+二、Cesium中的旋转let modelMatrix = tileset.root.transform;const preHRP=&#123;heading:0, roll:0, pitch:0&#125;;const currentHRP = &#123;heading:30, roll:10, pitch:-30&#125;;let gapHRP = Ccesium.HeadingPitchRoll.fromDegrees(    currentHRP.heading - preHRP.heading,    currentHRP.pitch - preHRP.pitch,    currentHRP.roll - preHRP.roll)let rotateMatrix = Cesium.Matrix3.fromHeadingPitchRoll(gapHRP);// 模型矩阵乘以旋转矩阵 MxRCesium.Matrix4.multiplyByMatrix3(modelMatrix, rotateMatrix, modelMatrix);tileset.root.transform = modelMatrix;preHRP = Cesium.clone(currentHRP, true);
+
+三、Cesium中的缩放const scale = 1.1;let modelMatrix = tileset.root.transform;Cesium.Matrix4.multiplyByUniformScale(modelMatrix, scale, modelMatrix);tileset.root.transform = modelMatrix;
+
+四、综述Cesium中的平移缩放旋转MxTxSxR涉及到的矩阵变换如下；
+// 平移Cesium.Matrix4.multiply();// 缩放Cesium.Matrix4.multiplyByUniformScale();// 旋转Cesium.Matrix4.multiplyByMatrix3();
+
+
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cesium写GLSL的texture和texture2D函数【踩坑】</title>
+    <url>/2024/02/07/38636.html</url>
+    <content><![CDATA[这是关于Cesium版本的问题！
+Cesium1.102.0以上版本不再支持WebGL1渲染上下文，改为WebGL2
+所以要特别注意两个版本的语法问题
+texture写法在Cesium1.102.0以下版本报错，如下图：
+所以在写Cesium关于GLSL时，注意版本对应
+
+
+
+Cesium版本
+函数
+
+
+
+&gt;=1.102.0
+texture()
+
+
+&lt;1.102.0
+texture2D()
+
+
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>GLSL</tag>
+        <tag>texture</tag>
+        <tag>texture2D</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cesium拾取坐标三种方式（摘抄）</title>
+    <url>/2023/11/25/21629.html</url>
+    <content><![CDATA[首先基于事件触发捕捉位置信息，一般是Cesium.ScreenSpaceEventType.MOUSE_MOVE，也可以是Cesium.ScreenSpaceEventType.LEFT_CLICK或者Cesium.ScreenSpaceEventType.RIGHT_CLICK
+this.mouseHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);this.mouseHandler.setInputAction((movement) =&gt; &#123;  // 添加方法&#125;,Cesium.ScreenSpaceEventType.MOUSE_MOVE)
+根据场景加载数据和需求，大部分情况下，我们拾取的是模型表面位置，所以使用方法一。
+// 方式一: 从场景的深度缓冲区中拾取相应的位置，可以采集entity，primitive，3dtile// 当拾取区域无entity，primitive，3dtile时，将返回一个无法预料的坐标（标准椭球面以下，无法使用，无法预料）let cartesianPosition = viewer.scene.pickPosition(movement.position);if (cartesian3) &#123;    // 下面两个都行    // let cartographic3 = Cesium.Cartographic.fromCartesian(cartesianPosition);    let cartographic3 = ellipsoid.cartesianToCartographic(cartesianPosition);    this.pickInfoOption3.lng = Cesium.Math.toDegrees(cartographic3.longitude);    this.pickInfoOption3.lat = Cesium.Math.toDegrees(cartographic3.latitude);    this.pickInfoOption3.height = cartographic3.height;&#125;// 方式二：获取当前点击视线与地球表面相交的坐标（有地形时候均可用，无地形时高程几乎为0）（无视entity、3dtile，不能拾取其表面坐标）let ray = viewer.scene.camera.getPickRay(movement.position);let cartesian1 = viewer.scene.globe.pick(ray, viewer.scene);if (cartesian1) &#123;    let cartographic1 = Cesium.Ellipsoid.WGS84.cartesianToCartographic(cartesian1);    this.pickInfoOption1.lng = Cesium.Math.toDegrees(cartographic1.longitude);    this.pickInfoOption1.lat = Cesium.Math.toDegrees(cartographic1.latitude);    this.pickInfoOption1.height = cartographic1.height;&#125;// 方式三：获取当前点击视线与标准椭球面相交处的坐标，无高程（恒为0）let cartesian2 = viewer.camera.pickEllipsoid(movement.position, ellipsoid);if (cartesian2) &#123;    let cartographic2 = ellipsoid.cartesianToCartographic(cartesian2);    this.pickInfoOption2.lng = Cesium.Math.toDegrees(cartographic2.longitude);    this.pickInfoOption2.lat = Cesium.Math.toDegrees(cartographic2.latitude);    this.pickInfoOption2.height = cartographic2.height;&#125;
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>坐标</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EASY-3D-SDK：强大的二三维一体WebGIS开发框架</title>
+    <url>/2025/09/16/24077.html</url>
+    <content><![CDATA[概述EASY-3D-SDK是一个基于开源项目Cesium进行二次开发的二三维一体WebGIS应用框架。该框架由北京易越多维科技有限公司开发，封装了各大厂商的底图（谷歌、百度、高德、ArcGIS等）、各类数据动画和三维特效、场景数据、基础计算、路径漫游和定点巡航、空间分析能力、工具部件和第三方地图工具库等（turf、heatmap、mapv、echarts、three）。
+该框架旨在为开发者提供一个功能强大、易于使用的地理信息系统开发平台，帮助开发者快速构建高质量的WebGIS应用。目前包含近百个功能示例的代码，示例还在持续更新和新增中。
+核心特性🗺️ 多厂商地图支持
+全面兼容：支持高德、百度、腾讯、天地图、Google、ArcGIS等主流地图厂商
+坐标处理：针对国内地图提供专业的偏移处理解决方案
+标准服务：完整支持ArcGIS Server、Geoserver WMS/WMTS、TMS等标准地图服务
+多坐标系：支持CGCS2000等多种坐标系统
+
+✨ 丰富的三维效果
+动态效果：流动线、发光流动线、闪烁线、扩散圆等动态视觉效果
+天气特效：云、雨、雪、雾等真实天气模拟
+视频融合：支持视频与三维场景的无缝融合
+材质动画：提供线、面、圆、模型等的材质效果和细节动画
+后期特效：泛光、夜视、VR等专业后期处理效果
+
+🛣️ 智能漫游系统
+路径漫游：根据预设路线进行自动漫游
+飞行追踪：多种飞行模式，包括第一人称视野
+贴模型漫游：紧贴三维模型表面的精确漫游
+定点巡航：重点区域的自动定位和查看功能
+
+📊 专业空间分析
+量算功能：测距、面积、高度等精确测量工具
+场景分析：缓冲区分析、剖面分析、可视域分析、通视分析
+几何绘制：支持各种点、线、面等几何形状的绘制
+标注系统：广告牌标注、双面电子标牌等多样化标注方式
+
+🔧 实用工具组件
+导航工具：罗盘、地理信息显示
+搜索功能：地址搜索、POI搜索
+测量工具：集成化的测量工具套件
+数据管理：完整的数据处理、存储、发布、可视化流程
+
+🔗 第三方库集成
+可视化库：turf、heatmap、mapv、echarts等
+3D库：three.js等三维图形库
+开源工具：避免重复开发，降低学习成本
+
+技术架构运行环境
+浏览器要求：支持WebGL的现代浏览器（推荐Chrome）
+服务器支持：Apache、Tomcat、Nginx等静态服务器
+开发框架：基于Vue.js构建的现代化开发体验
+
+引用方式&lt;!-- 引入样式文件 --&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;./easy-3d-sdk/index.css&quot;&gt;&lt;!-- 引入核心库 --&gt;&lt;script src=&quot;./easy-3d-sdk/easy-3d-sdk.js&quot;&gt;&lt;/script&gt;
+
+项目生态1. EASY-3D-SDK Portal（门户网站）
+功能：SDK的官方展示和下载门户
+特色：
+精美的产品展示界面
+数据管理平台介绍
+SDK下载和文档导航
+在线示例和项目模板2. EASY-3D-SDK Test（测试示例）
+
+
+功能：SDK功能的完整测试和演示平台
+特色：包含近百个功能示例的代码，目前示例还在持续更新和新增中
+包含模块：
+快速开始教程
+影像地形展示（影像地图）
+标准地图服务
+三维效果演示
+场景数据处理
+基础计算功能
+空间分析工具
+工具部件
+第三方库集成3. EASY-3D-SDK Doc（文档系统）
+
+
+功能：基于Docsify构建的完整开发教程文档系统
+关键词：easy-3d-sdk、demo、示例、cesium、三维、WebGIS
+内容：
+API文档
+快速开始指南
+开发教程
+最佳实践
+配置指南应用场景
+
+
+
+智慧城市
+城市规划可视化
+基础设施管理
+应急指挥系统
+环境监测平台
+
+国土资源
+土地利用规划
+地质勘探可视化
+矿产资源管理
+生态环境保护
+
+交通运输
+智能交通系统
+物流路径优化
+车辆轨迹回放
+交通流量分析
+
+军事国防
+态势感知系统
+作战指挥平台
+装备管理系统
+训练模拟平台
+
+开发优势🚀 快速开发
+开箱即用的组件库
+丰富的示例代码
+完善的文档支持
+活跃的社区生态
+
+💡 易于学习
+基于流行的Cesium框架
+简化的API设计
+详细的开发教程
+渐进式学习路径
+
+🔒 稳定可靠
+经过大量项目验证
+持续的版本更新
+专业的技术支持
+完善的错误处理
+
+🎨 高度定制
+灵活的主题系统
+可扩展的插件架构
+丰富的配置选项
+自定义组件支持
+
+获取与支持下载地址
+官方门户：EASY-3D-SDK Portal
+在线演示：EASY-3D-SDK Demo
+API文档：EASY-3D-SDK Documentation
+
+技术支持
+技术负责人：James Jiang
+微信：easygissdk
+联系邮箱：&#x31;&#x36;&#57;&#x30;&#x36;&#x30;&#57;&#57;&#x37;&#57;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;
+
+版本信息
+当前版本：持续更新中
+兼容性：支持现代浏览器
+许可证：商业许可
+更新频率：定期发布新版本和功能更新
+
+结语EASY-3D-SDK作为一个成熟的WebGIS开发框架，不仅提供了强大的三维地理信息处理能力，更通过其完整的生态系统为开发者提供了从学习到部署的全流程支持。无论您是GIS领域的新手还是经验丰富的开发者，EASY-3D-SDK都能帮助您快速构建出色的地理信息应用。
+立即访问官方网站，开始您的WebGIS开发之旅！
+]]></content>
+      <tags>
+        <tag>GIS</tag>
+        <tag>Cesium</tag>
+        <tag>WebGIS</tag>
+        <tag>三维</tag>
+        <tag>二维</tag>
+        <tag>Leaflet</tag>
+        <tag>Vue3</tag>
+        <tag>TypeScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Esri技术认证--桌面高级版 考查比重</title>
+    <url>/2017/11/08/62317.html</url>
+    <content><![CDATA[The following list will familiarize candidates with the exam sections to help guide exam preparation. The relative weight of each section is provided to illustrate the approximate size of each section. Candidates should review this list and assess their knowledge of each skill. Specific preparation resources are available to assist with refreshing in areas where any knowledge gaps are found.
+Data Storage — 21% 数据存储—21%•    Given requirements for a specific project, determine how to design a geodatabase给定一个项目要求，如何设计地理数据库
+
+•    Select appropriate data formats for an intended use对于特定的需求，选择合适的数据格式•    Given a task, determine the data, settings, and parameters for creating a complex data set给定一个任务，创建数据时确定数据、设置和参数•    Given a task, determine the data, settings, and parameters for creating an address locator给定一个任务，创建地址定位器时确定数据、设置和参数•    Given a scenario, determine how to synchronize replicated data给定一个场景，如何决定同步复制数据Managing Data — 26% 数据管理—26%•    Given a scenario, convert and aggregate data to an appropriate format给定一个场景，将数据转换和聚合为合适的格式•    Given a task, determine the necessary schema changes so that the data can support a particular operation给定一个任务，确定必要的改变计划，这样数据能够支持特定操作•    Given datasets that do not align, determine the best workflow to resolve the issue给定的数据集是不统一的，确定解决问题的最佳工作流•    Given a project, determine how to manage coordinate systems给定一个项目，确定如何管理坐标系统•    Given a scenario, determine the method to create a surface dataset给定一个场景，确定创建表面数据集的方法•    Given a scenario, determine how to automate data management给定一个场景，确定如何实现数据自动化管理Visualizing and Sharing Data — 21%数据可视化与共享—21%•    Given a scenario, use advanced cartographic techniques to visualize content across the ArcGIS platform给定一个场景，使用ArcGIS平台先进的制图技术去可视化内容•    Given a scenario, determine how to optimize rendering of maps across the platform给定一个场景，确定在平台上如何优化地图的渲染•    Given a scenario, determine how to create and render scenes给定一个场景，确定如何创建和渲染场景•    Identify procedures to create and publish layers, maps, and apps for a given task给定一个任务，确定创建和发布图层、地图和应用的步骤•    Given a scenario, determine the most effective process for sharing content给定一个场景，确定分享内容最有效的处理•    Given a scenario, determine how to automate visualization and sharing using ArcPy in ArcGIS Desktop给定一个场景，使用ArcGIS桌面中的ArcPy确定如何自动可视化与共享Analysis and Geoprocessing — 31%分析与处理—31%•    Determine how to create and edit a Python script to automate a simple repetitive process in an ArcGIS workflow确定如何创建和编辑Python脚本，在ArcGIS工作流中实现简单的自动化批量处理•    Determine how to create and edit a model in ModelBuilder to automate a complex workflow in ArcGIS for a given task给定一个任务，确定在ModelBuilder中如何创建和编辑模型，以实现复杂的ArcGIS工作流•    Given a failed workflow, determine the cause of the failure给定一个失败的工作流，判定失败的原因•    Given user requirements, determine an appropriate method for sharing a geoprocessing model, script, package, toolbox, etc.给定用户的需求，确定分享地理处理模型、脚本、包等合适的方法•    Determine how to customize the user interface to perform a task对于一个任务，如何自定义用户界面•    Determine how to author tasks in ArcGIS Pro确定如何在ArcGIS Pro中发起任务•    Given a scenario that requires an analysis, determine the workflow, data, tools, settings, and parameters to perform the analysis给定一个需要分析的场景，确定分析操作中的工作流、数据、工具、设置以及参数
+]]></content>
+  </entry>
+  <entry>
+    <title>Modis GTOPO30 土地利用数据说明与下载</title>
+    <url>/2016/08/02/42453.html</url>
+    <content><![CDATA[Modis数据1、产品数据介绍官方地址：https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/2、下载地址：http://modis.gsfc.nasa.gov/data/3、Modis中国区域行列号4、数据产品介绍中分辨率成像光谱仪(MODerate-resolution Imaging Spectroradiometer) -MODIS是Terra和Aqua卫星上搭载的主要传感器之一，两颗星相互配合每1-2天可重复观测整个地球表面，得到36个波段的观测数据，这些数据 将有助于我们深入理解全球陆地、海洋和低层大气内的动态变化过程，因此，MODIS在发展有效的、全球性的用于预测全球变化的地球系统相互作用模型中起着 重要的作用，其精确的预测将有助于决策者制定与环境保护相关的重大决策。MODIS自2000年4月开始正式发布数据，NASA对MODIS数据以广播X波段向全球免费发送，我国目前已建立了数个接收站并分别于2001年3月 前后开始接收数据。由于NASA对MODIS数据实行这种全球免费接收的政策，使得MODIS数据的获取十分廉价和方便。 
+
+Modis数据产品介绍     MODIS标准数据产品根据内容的不同分为0级、1级数据产品，在1B级数据产品之后，划分2－4级数据产品，包括：陆地标准数据产品、大气标准数据产品和海洋标准数据产品等三种主要标准数据产品类型，总计分解为44种标准数据产品类型。它们分别是：1、MODIS L0数据是对卫星下传的数据报解除CADU外壳后，所生成的CCSDS格式的未经任何处理的原始数据集合，其中包含按照顺序存放的扫描数据帧、时间码、方位信息和遥测数据等。2、LlA数据是对L0数据中的CCSDS包进行解包所还原出来的扫描数据及其他相关数据的集合3、LlB数据是对LlA数据进行定位和定标处理之后所生成，其中包含以sI(Scaled Integer)形式存放的反射率和辐射率的数据集。LlB代码读取LlA代码解包产生的DN数据集(EV SD SRCA BB SV)以及定标查找表LUT(LookUp Table)作为输入，分别对太阳反射波段RSB和热辐射波段TEB进行定标处理。定标计算所使用的参数可以从MODIS支持组MCST所定期发布的LUT文件中得到。传感器DN数值按照BDSM(Band，Detector，Sub-frame，Mirror．side)索引。4、L2～L4是对LlB数据进行各种应用处理之后所生成的特定应用数据产品。MOD01：即 MODIS1A数据产品。1A级处理程序，把2个小时的0级文件重新组织成一系列基本处理单元，及数据块（Granules），每个数据块包含大约5分钟的MODIS数据。因为MODIS镜面的一次扫描需要1.4771秒，所以在5分钟内1B级产品文件典型的有203次完全扫描，有时候完全扫描204次。每天5分钟集合的扫描文件有288个。地理位置代码计算地面单个象元的坐标，以及有关MODIS的太阳和月亮的位置信息。在GDAAC的操作中，1A级和地理位置代码使用产品生成程序（PGE01）。同时，它们将输入的MODIS数据放到1B级软件中MOD02：即 MODIS1B数据产品。MOD03：即 MODIS数据地理定位文件。MODIS Geolocation(MOD03) 数据产品包含有：MODIS每个1km EV（Earth View）中心的经纬度，每个1km EV太阳/卫星的方位，每个1km EV EOS陆地/海洋的阈值，每条扫描太阳和月亮相对于MODIS的位置，充分的仪器参数信息以支持特定波段和亚像元级定位。格式描述分为4个部分：全局元数据、处理和几何参数、扫描数据、组（Vgroups）MOD04-08，35为大气产品，9－17，33，40，43，44为陆地产品，18-32，36-39，42为海洋产品MOD04：大气2、3级标准数据产品，内容为气溶胶产品，Lambert投影空间分辨率1公里，地理坐标30秒空间分辨率，每日数据为2级数据产品，每旬、每月数据合成为3级数据产品。MOD05：可降水量。2级大气产品。MOD06：大气2、3级标准数据产品，内容为云产品，Lambert投影空间分辨率1公里，地理坐标30秒空间分辨率，每日数据为2级数据产品，每旬、每月数据合成为3级数据产品。MOD07：大气2、3级标准数据产品，内容为大气剖面数据，Lambert投影空间分辨率1公里，地理坐标30秒空间分辨率，每日数据为2级数据产品，每旬、每月数据合成为3级数据产品。MOD08：大气3级标准数据产品，内容为栅格大气产品，1公里空间分辨率。每日、每旬、每月合成数据。MOD09：陆地2级标准数据产品，内容为表面反射；空间分辨率250m；白天每日数据。MOD10：陆地2、3级标准数据产品，内容为雪覆盖，每日数据为2级数据，空间分辨率500米，旬、月数据合成为3级数据，空间分辨率500米。归一化雪被指数：归一化雪被指数是观测冰雪定量指标，NDSI=（Ref0.555um- Ref1.640um)/( Ref0.555um Ref1.640um)
+
+Ref0.555um、Ref1.640um为入瞳反射率位于陆地且同时满足以下条件的像元，可以定义为“陆地冰雪”，简称“冰雪”：NDSI＝(RefMODIS4- RefMODIS6) / (RefMODIS4 RefMODIS6)&gt;0.4；RefMODIS2 &gt; 0.11；MOD11：陆地2、3级标准数据产品，内容为地表温度和辐射率，Lambert投影，空间分辨率1公里，地理坐标为30秒，每日数据为2级数据，每旬、每月数据合成为3级数据。MOD12：陆地3级标准数据产品，内容为土地覆盖/土地覆盖变化，1km，1/4º，季节的，生物地球化学循环，土地覆盖变化，3级数据产品。MOD13：陆地2级标准数据产品，内容为栅格的归一化植被指数和增强型植被指数（NDVI/EVI），空间分辨率250m。MOD14：陆地2级标准数据产品，内容为热异常-火灾和生物量燃烧，空间分辨率1km，确定火灾发生的位置、火灾等级以及暗火与燃烧比。MOD15：陆地3级标准数据产品，内容为叶面积指数和光合有效辐射，空间分辨率1km，每天的及旬、月合成产品。MOD16：陆地4级标准数据产品，内容为蒸腾作用，空间分辨率1km，旬、月合成产品。MOD17：陆地4级标准数据产品，内容为植被产品，NPP，空间分辨率为250米，1公里，旬、月度频率。MOD18：海洋2、3级标准数据产品，内容为标准的水面辐射，全球洋面，空间分辨率1km，日、旬、月，海洋叶绿素。MOD19：海洋2、3级标准数据产品，内容为色素浓度，全球洋面，空间分辨率1km，日、旬、月度数据。MOD20：海洋2、3级标准数据产品，内容为叶绿素荧光性，全球洋面，空间分辨率1km，叶绿素水平大于2.0mg/m3，日、旬、月度数据。MOD21：海洋2级标准数据产品，内容为叶绿素-色素浓度，空间分辨率1km，日、旬、月度数据。MOD22：海洋2、3级标准数据产品，内容为光合可利用辐射（PAR），全球洋面，1km，日、旬、月度数据。MOD23：海洋3级标准数据产品，内容为悬浮物浓度。MOD24：海洋3级标准数据产品，内容为有机质浓度。MOD25：海洋2、3级标准数据产品，内容为球石浓度，全球洋面，空间分辨率1km、20km，日、旬、月度数据。MOD26：海洋3级标准数据产品，内容为海洋水衰减系数。MOD27：海洋2、3级标准数据产品，内容为海洋初级生产力，全球洋面，空间分辨率1km，日、旬、月度数据。MOD28：海洋2、3级标准数据产品，内容为海面温度，全球洋面，空间分辨率1km，每天的，每周的/昼夜的，能量和水平衡，气候变化模型。MOD29：海洋2级标准数据产品，内容为海冰覆盖，海洋，1公里分辨率，日、旬数据。MOD30：（未定）MOD31：海洋2、3级标准数据产品，内容为藻红蛋白浓度， 1公里分辨率，日、旬、月度数据。MOD32：海洋2级标准数据产品，内容为处理框架和匹配的数据库，1公里分辨率，日、旬、月度数据，用于海洋叶绿素、海洋生产力计算。MOD33：陆地3级标准数据产品，内容为雪覆盖，空间分辨率500米，日、旬、月度数据。MOD34：（未定）MOD35：大气2级标准数据产品，内容为云掩膜，空间分辨率为250m和1公里，日数据。MOD36：海洋3级标准数据产品，内容为总吸收系数，空间分辨率为1公里，日、旬、月度数据MOD37：海洋2、3级标准数据产品，内容为海洋气溶胶特性，空间分辨率1km，日、旬、月度数据。MOD38：（未定）MOD39：海洋2、3级标准数据产品，内容为纯水势，空间分辨率1km，日、旬、月度数据。MOD40：陆地3级标准数据产品，内容为栅格的热异常，空间分辨率1公里，日、旬、月度数据。MOD41：（未定）MOD42：海洋3级标准数据产品，内容为海冰覆盖，空间分辨率1公里，日、旬、月度数据。MOD43：陆地3级标准数据产品，内容为表面反射，BRDF/Albedo参数，空间分辨率1公里，日、旬、月度数据。MOD44：陆地3级标准数据产品，内容为植被覆盖转换，250m，季度、年度，判定植被覆盖转换的发生和类型。
+  MODIS 数据格式采用的是HDF 分层数据格式， 可以由遥感软件（如ENVI ArcGIS等）直接识别。
+
+
+全球数字高程模型 GTOPO301、产品数据介绍官方地址：http://webgis.wr.usgs.gov/globalgis/gtopo30/gtopo30.htm2、下载地址（需要登录注册，但很简单）：http://westdc.westgis.ac.cn/data/view/uuid/92bb3089-cc0c-46d2-908d-aae810ef064e3、GTOPO30中国区域行列号4、数据产品介绍GTOPO30 是一个全球的数字高程模型，它覆盖西经180度至东经180度，南纬90至北纬90度的所有区域。它的分辨率为30秒（即0.00833333度），生成 一个21,600（行）×43,200（列）的DEM。其高程值范围在-407至8752米。在数字高程模型中，海洋地区被指定为-9999 。 低地沿海一带，海拔至少有1米。由于图象为栅格数据，在影像上小于一个像素的点被忽略（即面积小于1平方千米的小岛）。为了便于数据的分 发，GTOPO30 被划分为33个小的区域（tiles）。从南纬60度至北纬90度，西经180度至东经180度的地区被划分为大小为50（纬度）×40（经度）的27块 区域，南极洲（南纬90至南纬60度，西经180至东经180度的区域）被划分为6个区域（30×60）。所有区域的命名由其左上角的坐标所决 定。Latitude          Longitude                  ElevationTile    Minimum  Maximum   Minimum  Maximum   Minimum  Maximum  Mean  Std.Dev.W180N90     40       90       -180    -140         1      6098    448     482W140N90     40       90       -140    -100         1      4635    730     596W100N90     40       90       -100      -60         1      2416    333     280W060N90     40       90         -60      -20         1      3940  1624     933也就 是由纬度的最大值和经度的最小值组成，EW,NS由符号决定。命名的图示如上所示。注：国内的网站地理空间数据云，上面数据很全，土地利用分类数据和DEM（海拔）数据都有，且精度很高，注册一个号就可以下载了
+]]></content>
+      <categories>
+        <category>GIS</category>
+        <category>RS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>RS</tag>
+        <tag>modis</tag>
+        <tag>gtopo30</tag>
+        <tag>地理空间云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyBlog：I&#39;m back!</title>
+    <url>/2018/12/13/10958.html</url>
+    <content><![CDATA[2018年的最后十几天，博客又回来了!沉寂了半年多，折腾了几次，尝试新的东西，但又做了一些浪费时间的事情。接下来，嗯，加油！
+
+【附】博客恢复记录一、初始化并恢复文件1、创建一个hexo目录；
+2、进入hexo目录，添加hexo；
+cnpm install hexo -g
+
+3、初始化Hexo；
+hexo init
+4、安装push工具；
+npm install hexo-deployer-git --save
+5、将原先的_config.yml文件、source文件夹、themes文件夹复制替换过来；
+二、设置SSH keys1、在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys；
+ls -al ~/.ssh
+2、如果不存在就没有关系，如果存在的话，直接删除.ssh文件夹里面所有文件（路径为：C:\Users\用户名.ssh）；
+3、输入以下指令（邮箱就是你注册Github时候的邮箱）后，回车；
+ssh-keygen -t rsa -C &quot;XXXXXX@XXX.com&quot;
+4、然后它会提示要你输入passphrase,直接回车;
+5、然后键入以下指令：
+ssh-agent -s
+6、继续输入指令：
+ssh-add ~/.ssh/id_rsa
+7、输入之后，在我这里是出错了，不知道你的有没有出错;
+8、如果你的也是这样子出错了的话，就输入以下指令：
+eval `ssh-agent -s`ssh-add
+9、知道rsa.pub文件，复制里面的内容；
+10、然后到Github里面，点击设置，然后添加SSH keys，添加标题，并将上一步拷贝的内容复制到里面；
+11、点击添加，提示输入github的密码；
+12、测试一下，键入以下命令：
+ssh -T git@github.com
+13、如果出现以下内容，说是主机密钥验证失败，
+“The authenticity of host &#x27;github.com (192.30.252.128)&#x27; can&#x27;t be established.RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.Are you sure you want to continue connecting (yes/no)? **Host key verification failed.**fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.”​
+14、其实这是缺少了 known_hosts 文件, 而且必须生成 github.com 的ip执行内容，输入；
+ssh git@github.com
+15、使用hexo g, hexo d测试一下，应该就可以了。
+【附】1、还要安装abbrlink博客文章链接生成插件
+npm install hexo-abbrlink --save
+
+2、安装hexo-generator-json-content提供站点内容搜索功能
+cnpm install hexo-generator-json-content
+]]></content>
+  </entry>
+  <entry>
+    <title>GPU图形绘制管线</title>
+    <url>/2025/07/07/51151.html</url>
+    <content><![CDATA[GPU图形绘制管线（Graphics Pipeline）是将3D场景数据转换为最终屏幕像素的标准化处理流程。它由一系列按顺序执行的阶段组成，每个阶段处理特定任务。现代GPU使用高度并行化的架构来高效执行这些阶段。
+图形绘制管线的核心阶段（以OpenGL/Vulkan/DirectX等API描述的经典流程为基础）：应用阶段 -&gt; 几何阶段 -&gt; 光栅化阶段
+主要阶段详解
+应用阶段 (Application Stage - CPU主导)
+
+  职责：运行在CPU上，由应用程序（如游戏引擎、3D建模软件）控制。
+主要任务：
+  场景管理：决定哪些物体需要渲染（视锥体裁剪剔除）。
+  模型加载与更新：加载网格数据（顶点、索引）、纹理、材质。
+  动画与变换：计算物体随时间变化的模型变换矩阵（Model Matrix）。
+  设置渲染状态：配置管线状态（如使用哪个着色器程序、开启哪些测试、绑定纹理等）。
+  提交绘制命令：调用图形API（如glDrawElements, vkCmdDraw）将顶点数据、索引数据等提交给GPU驱动。
+
+
+
+
+几何阶段 (Geometry Stage - GPU主导)
+
+  在GPU上执行，处理顶点及其相关属性（位置、颜色、法线、纹理坐标等）。
+核心子阶段：
+**顶点着色器 (Vertex Shader - 可编程)**：
+  对输入的每个顶点独立执行一次。
+  核心任务：顶点变换。使用模型(Model)、视图(View)、投影(Projection)矩阵将顶点位置从模型局部空间转换到裁剪空间（Clip Space）。
+  其他任务：计算或传递顶点属性（如颜色、纹理坐标、法线用于光照计算）。
+
+
+**曲面细分阶段 (Tessellation Stage - 可选，可编程)**：
+  细分原始图元（如三角形、四边形）以增加几何细节（LOD）。
+  包含三个可配置/可编程部分：曲面细分控制着色器（设置细分级别）、固定功能细分器（生成新顶点和连接关系）、曲面细分评估着色器（计算新顶点的最终位置和属性）。
+
+
+**几何着色器 (Geometry Shader - 可选，可编程)**：
+  以整个图元（如单个点、线、三角形）或其邻接关系作为输入。
+  可以创建、销毁或修改图元（如点生成精灵、线生成带厚度的线带、法线可视化）。
+  性能开销较大，需谨慎使用。
+
+
+**图元装配 (Primitive Assembly - 固定功能)**：
+  将顶点按照绘制命令指定的图元类型（点、线、三角形等）组装成图元。
+
+
+**裁剪 (Clipping - 固定功能)**：
+  裁剪掉完全位于视锥体（View Frustum）之外的图元。
+  部分在视锥体内的图元会被裁剪到视锥体边界（生成新的顶点和边）。
+  目的是避免处理不可见的几何体。
+
+
+**透视除法 (Perspective Division - 固定功能)**：
+  将裁剪空间坐标（(x,y,z,w)）转换为**标准化设备坐标 (Normalized Device Coordinates - NDC)**：(x/w, y/w, z/w)。
+  此时坐标范围：x, y, z ∈ [-1, 1]。
+
+
+**视口变换 (Viewport Transform - 固定功能)**：
+  将NDC坐标映射到屏幕空间坐标（像素坐标）。
+  设置由应用定义（glViewport, vkCmdSetViewport），指定输出图像的哪个矩形区域用于渲染。
+  z坐标通常被映射到深度缓冲区范围（如[0, 1]）。
+
+
+
+
+
+
+光栅化阶段 (Rasterization Stage - GPU主导)
+
+  将屏幕空间的几何图元（主要是三角形）离散化成屏幕上的片元。
+核心子阶段：
+**三角形设置 (Triangle Setup - 固定功能)**：
+  计算三角形边界的数学表示，为扫描转换做准备。
+
+
+**光栅化 / 扫描转换 (Rasterization / Scan Conversion - 固定功能)**：
+  确定哪些像素中心（或采样点）位于三角形内部（或覆盖了三角形的边界）。
+  为每个被覆盖的像素/采样点生成一个片元。片元是潜在的像素贡献者，包含了插值后的顶点属性（颜色、纹理坐标、深度等）和屏幕位置信息。
+
+
+**片元着色器 (Fragment Shader / Pixel Shader - 可编程)**：
+  对每个片元独立执行一次。
+  核心任务：计算片元的最终颜色。
+  主要工作：纹理采样（Texture Sampling）、光照计算（Lighting Calculations - Phong, PBR等）、材质计算（Material Properties）。
+  输出：颜色值（一个或多个）、可选的深度值（如果修改了gl_FragDepth）。
+
+
+**逐片元操作 (Per-Fragment Operations - 固定功能为主)**：
+  对片元着色器的输出进行一系列测试和操作，决定是否以及如何更新帧缓冲区的像素。
+  像素所有权测试：检查片元对应的屏幕位置是否属于当前OpenGL/Vulkan上下文（如是否被其他窗口遮挡）。
+  裁剪测试：检查片元是否在应用定义的裁剪矩形内（glScissor, vkCmdSetScissor）。
+  **模板测试 (Stencil Test)**：利用模板缓冲区进行像素级掩码操作（如轮廓渲染、阴影体）。
+  **深度测试 (Depth Test / Z-Test)**：利用深度缓冲区（Z-Buffer）进行深度比较，保留离相机最近的片元（解决遮挡关系）。
+  **混合 (Blending)**：将当前片元颜色与帧缓冲区中已有像素颜色按照混合函数（glBlendFunc, VkBlendOp）进行混合（实现透明度、叠加效果）。
+  **抖动 (Dithering)**：在颜色精度较低时（如8位/通道），通过微小的随机扰动模拟更高精度的颜色（可选）。
+  通过所有测试的片元颜色最终写入帧缓冲区。
+
+
+
+
+
+
+输出合并阶段 (Output Merger - GPU固定功能)
+
+  严格来说，这是“逐片元操作”的一部分，但强调其最终结果。
+  将经过所有测试和混合后的片元颜色写入帧缓冲区对应的像素位置。
+  帧缓冲区最终会被显示到屏幕上（通常通过双缓冲/三缓冲机制避免撕裂）。
+
+
+
+关键特征
+ 可编程性：现代管线的核心在于可编程着色器（Vertex, Tessellation Control/Evaluation, Geometry, Fragment）。开发者编写这些着色器（通常用HLSL/GLSL）来定义顶点变换、几何操作和光照/材质计算。
+并行性：GPU是高度并行的处理器（拥有数千个核心）。
+  数据并行：顶点着色器并行处理所有顶点；片元着色器并行处理所有片元。
+  任务并行：管线不同阶段可以流水线化并行执行（前一阶段的输出作为后一阶段的输入）。
+
+
+ 流式处理：数据（顶点、图元、片元）流经管线，每个阶段处理特定任务后传递给下一阶段。
+ 固定功能单元：虽然着色器是可编程的，但仍有大量固定功能硬件单元（图元装配、裁剪、光栅化、深度/模板测试、混合）高效处理标准化操作。
+
+现代演进
+  **延迟渲染 (Deferred Rendering)**：将几何信息（位置、法线、材质等）先渲染到中间缓冲区（G-Buffer），然后在屏幕空间进行光照计算，解决复杂光照场景的性能问题。
+  **计算着色器 (Compute Shader)**：提供通用计算能力，不经过传统图形管线，用于物理模拟、粒子系统、后处理等。
+  **光线追踪 (Ray Tracing)**：硬件加速光线求交，逐步融入管线（如用于阴影、反射、全局光照），通常作为传统光栅化的补充（混合渲染）。
+  **图块渲染 (Tile-Based Rendering)**：移动GPU常用架构，将屏幕分成小块（Tile），在片上内存（On-Chip Memory）中完成该Tile的所有光栅化和着色操作，显著减少外部内存带宽需求。
+  **可变速率着色 (Variable Rate Shading)**：允许不同屏幕区域使用不同的着色频率（采样率），优化性能。
+  **网格着色器 (Mesh Shader)**：替代传统的顶点/几何着色器，提供更灵活和高效的几何处理能力（NVIDIA Turing+, AMD RDNA2+）。
+
+总结GPU图形绘制管线是一个精妙设计的、高度并行化的处理流水线，将3D模型数据一步步转化为最终的2D屏幕图像。理解其各个阶段（应用 -&gt; 几何 -&gt; 光栅化 -&gt; 输出）的功能、可编程部分（着色器）与固定功能部分的协作，以及数据（顶点 -&gt; 图元 -&gt; 片元 -&gt; 像素）的流动方式，是进行3D图形编程、性能优化和效果开发的基础。随着硬件发展，管线也在不断演进，融合更多先进技术（如光线追踪、计算着色器）以满足日益增长的视觉真实感和性能需求。
+]]></content>
+      <tags>
+        <tag>GPU</tag>
+        <tag>图形绘制</tag>
+        <tag>渲染管线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS的一些骚操作</title>
+    <url>/2021/10/29/8679.html</url>
+    <content><![CDATA[// 避免不检查object.family、object.family.brother造成的TypeErrorconst ageOfBrother = object?.family?.brother?.age;]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PerInstanceColorAppearance笔记</title>
+    <url>/2025/12/10/53235.html</url>
+    <content><![CDATA[new PerInstanceColorAppearance(&#123;      flat: true,      translucent: true,    &#125;)
+
+PerInstanceColorAppearance 是 CesiumJS 中用于渲染具有每实例颜色的几何体的外观类。它允许为每个实例指定不同的颜色，从而实现丰富的视觉效果。以下是对 PerInstanceColorAppearance 的一些关键点和使用方法的笔记：
+
+基本概念：
+
+PerInstanceColorAppearance 继承自 Appearance 类，专门用于处理每实例颜色的渲染。
+它通常与 InstancedGeometry（实例化几何体）一起使用，以提高渲染性能。
+每个实例可以通过 Instance 属性中的 color 属性来指定颜色。
+
+属性：
+
+
+flat：布尔值，指示是否使用平面着色。如果为 true，则几何体将以平面方式渲染，没有光照效果。
+translucent：布尔值，指示几何体是否是半透明的。如果为 true，则几何体将支持透明度。
+如下所示：
+
+flat: true 禁用基于法线的光照计算（即不做漫反射/镜面高光等照明），表面颜色直接使用材质/顶点颜色。适合平面、UI 样式或希望颜色恒定且性能更好的情况。
+
+
+
+ translucent: false 表示材质为不透明，Cesium 会把它放到不透明渲染通道：写入深度缓冲、无需排序，也不会进行混合。若需要半透明效果，应设为 true 并提供 alpha 值及合适的渲染状态（如关闭深度写入或启用混合）
+
+
+
+
+使用场景：
+
+适用于需要渲染大量具有不同颜色的实例化几何体的场景，例如点云、粒子系统等。
+可以用于可视化数据，其中每个数据点需要不同的颜色表示。
+
+
+示例代码：
+const instance = new GeometryInstance(&#123;  geometry: new BoxGeometry(&#123;    vertexFormat: PerInstanceColorAppearance.VERTEX_FORMAT,    maximum: new Cartesian3(1.0, 1.0, 1.0),    minimum: new Cartesian3(-1.0, -1.0, -1.0),  &#125;),  modelMatrix: Matrix4.fromTranslation(new Cartesian3(0.0, 0.0, 0.0)),  attributes: &#123;    color: ColorGeometryInstanceAttribute.fromColor(Color.RED),  &#125;,&#125;);const appearance = new PerInstanceColorAppearance(&#123;  flat: true,  translucent: false,&#125;);const primitive = new Primitive(&#123;  geometryInstances: [instance],  appearance: appearance,&#125;);viewer.scene.primitives.add(primitive);
+性能优化：
+
+使用 PerInstanceColorAppearance 可以显著提高渲染大量实例的性能，因为它利用了 GPU 的实例化渲染技术。
+通过合理设置 flat 和 translucent 属性，可以根据需求优化渲染效果和性能。
+
+
+限制：
+
+PerInstanceColorAppearance 主要用于简单的颜色渲染，不支持复杂的材质效果，如纹理映射或光照计算。
+适用于需要高性能渲染的场景，但在需要复杂视觉效果时，可能需要考虑其他外观类。   
+
+
+总结：
+
+PerInstanceColorAppearance 是 CesiumJS 中一个强大的工具，适用于需要渲染大量具有不同颜色的实例化几何体的场景。通过合理使用其属性和方法，可以实现高效且丰富的视觉效果。
+
+
+
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>PerInstanceColorAppearance</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
+    <url>/2016/10/10/22289.html</url>
+    <content><![CDATA[有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</title>
+    <url>/2020/01/18/35298.html</url>
+    <content><![CDATA[如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。因此，现在需要先安装webpack-parallel-uglify-plugin，
+npm i -D webpack-parallel-uglify-plugin
+然后修改X\build\路径下的webpack.prod.conf.js文件修改uglifyjs-webpack-plugin模块引入
+const UglifyJsPlugin = require(&#x27;uglifyjs-webpack-plugin&#x27;);
+为
+const ParallelUglifyPlugin = require(&#x27;webpack-parallel-uglify-plugin&#x27;);
+然后注释掉
+new UglifyJsPlugin(&#123;      uglifyOptions: &#123;        compress: &#123;          warnings: false        &#125;      &#125;,      sourceMap: config.build.productionSourceMap,      parallel: true    &#125;),
+添加以下语句就可以了
+new ParallelUglifyPlugin(&#123;  cacheDir: &#x27;.cache/&#x27;,  uglifyJS: &#123;    output: &#123;      comments: false    &#125;,    warnings: false  &#125;&#125;)
+就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻..如果碰到VUE打包失败，出现下面的错误
+UnhandledPromiseRejectionWarning: CssSyntaxError:
+这个意思是说打包的CSS文件有非法字符，大部分是注释不规范造成的我这里是因为CSS文件中误用 // 作为注释造成的，而 // 在SCSS文件中用是没问题的。
+]]></content>
+  </entry>
+  <entry>
+    <title>WebGL中的纹理</title>
+    <url>/2023/06/12/63651.html</url>
+    <content><![CDATA[WebGL通过一种称作纹理单元（texture unit）的机制来同时使用多个纹理。每个纹理单元有一个单元编号来管理一张纹理图像。即使你的程序只需要一张纹理图像，也得为其指定一个纹理单元。系统支持的纹理单元个数取决于硬件和浏览器的WebGL实现，但是在默认情况下，web GL至少支持8个纹理单元，一些其他的系统支持的个数更多。内置的变量gl.TEXTURE0、gl.TEXTURE1、gl.TEXTURE2。。。。gl.TEXTURE7各表示一个纹理单元。
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WebGL若干原理摘抄</title>
+    <url>/2024/01/22/13505.html</url>
+    <content><![CDATA[Shadershader，即着色器，分为顶点着色器（Vertex Shader）、片元着色器（Fragment Shader）、几何着色器（Geometry shader）、计算着色器（Compute shader）、细分曲面着色器（Tessellation or hull shader），其中可编程的是顶点着色器和片元着色器。至于它们的定义网上可以找到很多，但对于小白来讲看完还是一脸懵逼，我们需要一种通俗易懂的解释，这才符合深入浅出的精髓。
+在知乎上找到一段解释，感觉还不错：
+当我们在屏幕上绘制或显示一些物体时，这些物体的显示形式是图元（Primitive）或者网格（Mesh），比如游戏中一个几何模型角色或一个贴在网格上的纹理角色，比如我们做阴影效果时先绘制网格再计算阴影，比如一个发射物体发射前需要先绘制该物体外形网格。这些物体都可归结为网格，它可被分解为图元，即图元是网格的基本单位。图元有三角形、直线或点。当我们在屏幕上画一个三角形时，首先要绘制顶点，因为网格由顶点组成，此时就要用到顶点着色器（Vertex shader），将需要到顶点信息给顶点着色器，以显示顶点信息；其次是在这些顶点组成的区域之间填充颜色，此时用到像素着色器（Pixel shader）或片元着色器（Fragment shader），片段（Fragment）有助于定义像素的最终颜色。
+
+简单来说渲染流程如下：顶点数据(Vertices) &gt; 顶点着色器(Vertex Shader) &gt; 图元装配(Assembly) &gt; 几何着色器(Geometry Shader) &gt; 光栅化(Rasterization) &gt; 片元着色器(Fragment Shader) &gt; 逐片元处理(Per-Fragment Operations) &gt; 帧缓冲(FrameBuffer)
+最后经过双缓冲的交换(SwapBuffer)，渲染内容就显示到了屏幕上。从流程中我们可以看到，顶点着色器之后是图元装配， 图元装配通俗讲就是把图形放置到坐标系中。在片元着色器之前是 光栅化，光栅化是将图形投影到屏幕上，把图形栅格化成一个个的像素点，一个像素点也就是一个片元。在片元着色器之后是逐片元处理， 逐片元处理即填充颜色。再说白一点，顶点着色器负责坐标位置，片元着色器负责填充颜色。好吧，这个说法不一定很严谨，但一定足够浅显，如果我说的不对也欢迎拍砖。
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>button造成的异常跳转问题解决一例</title>
+    <url>/2020/09/18/48870.html</url>
+    <content><![CDATA[今天下午遇到一个比较坑的问题，严格来说是没意识到。情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面解决：click事件添加prevent属性，阻止button默认的提交事件
+&lt;button @click.prevent=&quot;clickTest&quot;&gt;&lt;/button&gt;
+
+
+备注：养成按钮点击事件添加stop或者prevent属性，避免因冒泡或者自身属性的异常问题
+]]></content>
+  </entry>
+  <entry>
+    <title>geoserver WFS服务 Filter过滤查询踩坑一个</title>
+    <url>/2020/06/28/35327.html</url>
+    <content><![CDATA[有时会通过视图方式发布一个图层，然后变相实现接口调用数据。当数据属性中有id字段，并作为过滤字段查询时，使用in会查不出结果，调取geoserver日志，发现id并没有作为字段名称传入，可以采用or查询结果，但是需要在前端重新拼接一下id数组，
+&#x27;id=&#x27;+idList.join(&#x27;,or id=&#x27;)]]></content>
+  </entry>
+  <entry>
+    <title>geoserver多个图层要素相同的问题</title>
+    <url>/2020/06/22/28106.html</url>
+    <content><![CDATA[今天在解决一个BUG的过程中发现：当多个图层layer共用一个Feature时，虽然每个图层的要素使用不同的style，但最后所有图层渲染的效果一样。原因：因为geoserver的layer的source中(有些拗口)包括的Feature都一样，属于引用，所以会以最后一个Feature样式为准。解决方法：使用feature的clone()方法
+]]></content>
+  </entry>
+  <entry>
+    <title>geoserver自动发布服务</title>
+    <url>/2020/05/21/12769.html</url>
+    <content><![CDATA[python安装gsconfig库附上python代码
+# _*_coding:utf-8_*_from geoserver.catalog import Catalogfrom geoserver.support import JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam# 地图发布环境ENVIRONMENT_PUBLISH = &#x27;XXX_local&#x27;# 城市名称CITY = &#x27;xixian&#x27;# 年YEAR = 2020# 月MONTH = 5CONFIGURE = &#123;    &#x27;XXX_local&#x27;: &#123;        &#x27;CITY&#x27;: CITY,        &#x27;GEOSERVER_HOST&#x27;: &#x27;1.1.1.1&#x27;,  # geoserver地址        &#x27;GEOSERVER_PORT&#x27;: &#x27;8080&#x27;,  # geoserver端口        &#x27;USERNAME&#x27;: &#x27;admin&#x27;,  # geoserver用户名        &#x27;PASSWORD&#x27;: &#x27;******&#x27;,  # geoserver密码        &#x27;DATABASE_MYSQL&#x27;: &#x27;mysql&#x27;    &#125;&#125;cat = Catalog(&#x27;http://%s:%s/geoserver/rest/&#x27; % (CONFIGURE[ENVIRONMENT_PUBLISH][&#x27;GEOSERVER_HOST&#x27;], CONFIGURE[ENVIRONMENT_PUBLISH][&#x27;GEOSERVER_PORT&#x27;]),              CONFIGURE[ENVIRONMENT_PUBLISH][&#x27;USERNAME&#x27;], CONFIGURE[ENVIRONMENT_PUBLISH][&#x27;PASSWORD&#x27;])store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][&#x27;DATABASE_MYSQL&#x27;], CITY)geom = JDBCVirtualTableGeometry(&#x27;geom&#x27;, &#x27;LineString&#x27;, &#x27;4326&#x27;)ft_name = &#x27;line_speed_day_%s_%s&#x27; % (YEAR, MONTH)epsg_code = &#x27;EPSG:4326&#x27;sql = &#x27;&#x27;&#x27;SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM lineWHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction&#x27;&#x27;&#x27; % (    YEAR, MONTH, YEAR, MONTH)print sqlkeyColumn = Noneparameters = Nonejdbc_vt = JDBCVirtualTable(ft_name, sql, &#x27;false&#x27;, geom, keyColumn, parameters)ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)layer = cat.get_layer(ft_name)layer.default_style = cat.get_style(&#x27;stylefile&#x27;)cat.save(layer)]]></content>
+  </entry>
+  <entry>
+    <title>gl.drawArrays的使用</title>
+    <url>/2023/06/01/28338.html</url>
+    <content><![CDATA[缓冲区对象是WebGL系统中的一块存储区，可以在里面存储想要绘制的所有顶点数据，通过创建缓冲区，就能够一次性地向顶点着色器传入多个顶点的attribute变量的数据。
+gl.drawArrays(mode, first, count)1、modes指的是绘制方式，gl.POINTS、gl.LINES、gl.LINE_STRIP、gl.LINE_LOOP、gl.TRIANGLES、gl.TRIANGLES_STRIP、gl.TRIANGLE_FAN；具体使用如下表2、first指的是从哪一个顶点开始绘制；3、count指的是绘制需要多少个顶点。
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo blog github ssh</title>
+    <url>/2023/07/04/34768.html</url>
+    <content><![CDATA[1、生成新的pub
+ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_github
+2、打开ssh-agent
+eval $(ssh-agent -s)
+3、添加id_rsa_github
+ssh-add ~/.ssh/id_rsa_github
+4、粘贴id_rsa_github.pub中的内容至github ssh5、增加config文件
+touch ~/.ssh/config
+6、添加以下内容
+GitHubHost github.comHostName github.comUser gitIdentityFile ~/.ssh/id_rsa_github]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>https天地图报错ERR_CERT_AUTHORITY_INVALID解决</title>
+    <url>/2023/07/13/34035.html</url>
+    <content><![CDATA[使用https天地图服务时，需要把后缀.com改为.gov.cn，即https://t0.tianditu.gov.cn/cva_w/wmts?
+]]></content>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js的事件循环</title>
+    <url>/2023/06/09/3897.html</url>
+    <content><![CDATA[这个是个人理解的总结，不同人可能都有自己独到的理解方式。说到事件循环，我们一般闪现到一个滚滚向前的车轮微任务、宏任务、执行栈宏任务包括整个脚本scripts,ajax,rendering,setTimeout(),setInterval(),setImmediate(),微任务包括我们常常写到的promise.then,process.nextTick(),async下的await等首先进入执行栈的如console.log(),立即执行，然后开始微任务，遵循先进先出原则执行逻辑；本轮微任务全部执行完毕后，开始执行宏任务，同样遵循先进先出原则执行逻辑
+]]></content>
+      <tags>
+        <tag>JavaScripts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>openlayers去除左上角放大缩小【+】【-】控件</title>
+    <url>/2020/01/15/16123.html</url>
+    <content><![CDATA[// 去除地图左上角的放大缩小控件map.getControls().forEach(control =&gt; &#123;  if (control instanceof ol.control.Zoom) &#123;    map.removeControl(control)  &#125;&#125;);]]></content>
+  </entry>
+  <entry>
+    <title>postgresql无法创建数据库解决</title>
+    <url>/2025/03/17/16730.html</url>
+    <content><![CDATA[用navicat 16.3.7连接数据库postgresql 17.2，创建数据库报错
+
+ERROR: template database &#x27;template1&#x27; has a collation version mismatchDETAIL: The template database was created using collation version 2.36, but the operating system provides version 2.31.HINT: Rebuild all objects in the template database that use the default collation and run ALTER DATABASE template1 REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+
+这个错误表明，模板数据库 ‘template1’ 的排序规则版本（collation version 2.36）与操作系统提供的版本（2.31）不匹配，导致无法成功创建新数据库。
+下面我将解释问题原因并提供解决方案。
+问题原因在 PostgreSQL 中：
+排序规则（Collation） 是定义字符串比较和排序规则的机制，用于文本数据的排序和搜索操作。
+模板数据库：创建新数据库时，PostgreSQL 默认使用 ‘template1’ 作为模板，将其设置（包括排序规则）复制到新数据库。
+版本不匹配：错误显示 ‘template1’ 使用的是排序规则版本 2.36，而当前操作系统只支持 2.31。这种不匹配可能是因为 PostgreSQL 安装时所在的系统排序规则版本较新，后来被迁移到了排序规则版本较旧的系统上。由于新数据库依赖模板数据库的排序规则，而操作系统无法支持 ‘template1’ 的较新版本（2.36），创建数据库时就会失败。
+解决方案以下是解决此问题的几种方法。由于您使用的是 Navicat（一个图形化工具），我将尽量提供简单易行的步骤，并优先考虑通过 SQL 命令或 Navicat 操作完成的方法：方法 1：尝试刷新 ‘template1’ 的排序规则版本步骤：在 Navicat 中连接到您的 PostgreSQL 服务器。打开 SQL 控制台（或查询窗口），运行以下命令：
+ALTER DATABASE template1 REFRESH COLLATION VERSION;
+]]></content>
+      <tags>
+        <tag>postgresql</tag>
+        <tag>数据库</tag>
+        <tag>解决方案</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>postman设置collection全局token</title>
+    <url>/2023/09/28/61501.html</url>
+    <content><![CDATA[平时在postman调试接口多，如果过了一段时间后，token会失效，每个请求需要更换token,挺麻烦的，我们可以根据在postman配置collection下的全局token;具体如下1、打开Postman并创建一个新的Collection。2、在Collection的”Authorization”选项卡中选择适当的授权方式（例如Bearer Token或OAuth 2.0）。3、在”Token”字段中，使用双大括号（{{}}）将Token包裹起来，形成一个环境变量。例如：{{token}}。4、点击右上角的“眼睛”按钮，以便在请求中查看环境变量的值。5、现在，您需要在Postman的环境中设置Token的值。在Postman左上角的”Manage Environments”（管理环境）按钮旁边，点击下拉菜单按钮，并选择”Add”（添加）。6、输入环境名称，例如”Token Environment”，然后点击”Add”（添加）。7、在环境变量列表中，添加一个新的变量，键为”token”，值为您的Token值。8、点击”Save”（保存）以保存环境变量。9、注意检查请求中Authorization是否为inherit auth from parent
+]]></content>
+      <tags>
+        <tag>postman</tag>
+        <tag>token</tag>
+        <tag>接口</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WebGL缓冲区（buffer object）对象</title>
+    <url>/2023/05/23/54690.html</url>
+    <content><![CDATA[WebGL 提供了一种很方便的机制，即缓冲区对象(buffer obiect)，它可以一次性地向着色器传人多个顶点的数据。缓冲区对象是 WebGL 系统中的一块内存区域，我们可以一次性地向缓冲区对象中填充大量的顶点数据，然后将这些数据保存在其中，供顶点着色器使用。
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python学习小记</title>
+    <url>/2017/02/17/4127.html</url>
+    <content><![CDATA[1、关于if __name__ == ‘__main__‘ 如何正确理解?name 是当前模块名，当模块被直接运行时模块名为 main 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，比如当前文件是test.py,双击运行，或者在IDE中运行，那么if __name__ == ‘__main__‘： 下面的代码就会运行，这些代码可用于测试test.py中函数、类写得是否正确
+当模块是被导入时，代码块不被运行，比如当前文件test.py被其他文件test123.py导入，即在test123.py中以import test语句导入，则test.py中if __name__ == ‘__main__‘下的语句将不会执行
+2、由于for循环与while循环可配合使用
+3、正则表达式部分字符解释
+4、Markdown转义字符
+\\ 反斜杠\` 反引号\* 星号\_ 下划线\&#123;\&#125; 大括号\[\] 中括号\(\) 小括号\# 井号\+ 加号\- 减号\. 英文句号\! 感叹号
+
+
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>time is start, time is end, time is nothing</title>
+    <url>/2023/08/30/36231.html</url>
+    <content><![CDATA[time can be done,we come from mote,burn, burn, burn,come to the end,ash,air,element,from order to chaos,hard to return origin,sadness,tears,flow freely,I am you,you are me,one day,we will be together,smile,warm,time is so long,swear it,Believe it,accept it.–ZhongYuan(MidYear) James.
+]]></content>
+  </entry>
+  <entry>
+    <title>【20160808】出差工作日志-武汉</title>
+    <url>/2016/08/08/56876.html</url>
+    <content><![CDATA[2016年08月08日星期一   网络分析现场辅导早晨起床，窗外已经下起了雨，细雨蒙蒙，袅袅生烟，果然是江城–武汉，湖光山色美哉美哉。俗话说武汉人的一天是从一碗热干面开始的，好久不吃，一下来两份，居然都吃完了。住的地方距离培训的机房非常近，缺少了京城的快节奏，不紧不慢到了培训教室。武汉分公司的同事已经来了，我跟门口两位同事介绍了一下自己和来意，高妮给我引荐了余经理，然后都很热情。不一会，随着络绎不绝的老师签到入座，整个偌大的机房已经爆满，来的老师可真不少，之后得知，由于机位有限，有些老师知道晚了，很是遗憾的没能报上名。培训班正式开始后，武汉分公司彭总、余经理和武汉大学遥感信息工程学院各自作了简短的发言。之后是一起到室外拍了个集体照，一个GIS产品能让许多行业方向、这么多人聚集在一起，感觉很有意义。今天认识了太原大学、河南科技大学、河南理工大学、长江大学等几位高校的老师，此外还有山西、江西、武汉本地高校“组团”过来的一批老师，适时地作了一些简单地沟通与交流，了解他们来自各行各业，有气象、水文、城市规划、灾害、交通等领域，使用ArcGIS软件也都有不同的需求，对ArcGIS的强大很是赞赏，都希望能有专业的系统培训，以便快速上手使用。我也觉得有必要让更多的人了解这个软件产品，让更多的行业得以应用，使得GIS IS Everywhere能够充分体现。同事们讲的很给力、很生动。奈何自己能力有限，水平一般，其实我也是抱着学习的态度来的，略微只能提供现场的小辅导。感觉今天在与别人学习和交流的过程中，学得很快和丰富。今天主要遇到以下几个问题：1、拍集体照的过程中，有个老师问我ArcGIS的使用权问题，如何才能授权使用正版，我较为详细的介绍了一下，然后说明如有购买意向，可以到公司官网联系售后，以作相应的报价和售后服务介绍；2、有些老师反映自己所在的专业一直在用ArcGIS，但是缺乏ArcGIS软件专业系统的培训，用起来感觉没有效率；3、由于公司每年的ArcGIS培训的专题内容不一样，有的单位每年都会派人来学习，但是每批人员不一样，还有一些老师之前只是接触过ArcGIS，比如查看数据，打开地图等基本简单操作，但是今年的主题是高级分析，他们操作起来着实吃力。所以又回到2的问题，他们希望每年都有ArcGIS整体的系统培训；4、大部分高校教师反映由于接触的实际应用案例较少，加之数据和理论缺乏，希望培训的数据和相关内容能够共享，以便高校教学和软件推广使用；5、大部分老师和单位人员使用的是Crack软件，有的问我使用Crack版本和正版有什么区别，根据之前我所了解的生产一线惨痛教训案例，我强烈建议他们单位购买和使用正版。我觉得在每次培训时都可以简短的说一下使用正版ArcGIS软件的好处，并做一些实际发生案例展示；6、许多人对公司的ArcGIS知乎社区、官方微博微信还不太熟悉了解。
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【20160809】出差工作日志-武汉</title>
+    <url>/2016/08/09/57324.html</url>
+    <content><![CDATA[2016年8月9日星期二   地统计分析现场辅导早晨起床后，准备在酒店旁边找个地方吃早餐，然后去机房。身后忽然有人喊江老师，扭头一看，原来是培训的老师，年龄大概将近五十，这次的培训到这个岁数的貌似就几个，对其不断学习的劲头风格很是敬佩，然后第一次被人叫老师，而且还是年长者，略显心虚。遂一块儿去吃早餐，这之间了解到其来自江苏南京的南京工程建筑学院，建筑测绘测量方向，属于个人自费专程来学习的，开始聊得很好，最后在路上的一个问题把我给难住了，他说昨天已经听了一天的课，感觉这个软件确实很强大，那到底应用在那些行业，案例有哪些，与我这个方向到底怎么结合起来呢？一时语塞，之前也看了Esri总裁Jack在2016 UC上的演讲，也了解到ArcGIS肯定可以与建筑工程结合起来，但具体是如何运用的，我一时没有这个概念，感觉自己认识面窄了，回去要好好充电了。上午余经理过来，喊我出去一块抬了一捆宣传册资料，感觉其很风趣幽默，中间还带着我去参观了一下武汉大学遥感测绘国家重点实验室，得知武汉大学自己研制的“珞珈一号”卫星马上要发射了，而且该卫星还是国内第一颗可拍摄夜景灯光数据的卫星，非常激动，很是期待。之前还了解该实验室还参与到我国的北斗卫星导航系统关键设计和技术改进，功不可没。作为GIS届的老牌公司，Esri与武汉大学的强强合作，无论是现在还是将来都是具有战略意义的。中午和一位看到很眼熟的老师聊天，加了联系方式后，得知其是甘肃科学院的，现在是我研究生学校的在职博士生，跟我还是一个学院的，算是师兄了，只怪世界太小，想想都很激动，居然这么远也赶过来了。上午讲的是理论，实际操作比较少，现场辅导大部分问题是功能使用，没有昨天的数据导入和基本操作问题，自己在听的过程中，感觉对地统计分析的认识又上升一个台阶，明白如何科学合理的运用自己的数据进行合理的插值和预测。下午都是上机操作，主讲李才一步步耐心的教各位老师操作操作，下面大部分老师熟悉软件后都跟得上，加之自己以前专门钻过地统计分析，本科毕业和硕士毕业论文也用到过，出现的一些问题都是比较容易解决。其中两个来自江西气象单位的人员，聊到之前不知道ArcGIS还可以做地统计插值，他们一直用的是GRID，使用起来繁琐，参数和界面不太友好，涉及到编程，成图很不容易，反之ArcGIS只需几步点击操作，就可以生成理想的差值图，很是方便快捷。还有两个研究生是经济学专业，他们学了地统计之后，觉得成图很美观实用，问我怎么使用他们自己的数据坐地统计分析，我问清了他们的研究目的后，详细跟他们讲了一下我的想法，随后聊了不少关于基础数据和涉及到的GIS技术，感觉他们缺乏基础的GIS理论和ArcGIS操作，本来很简单易行的技术操作，由于隔行隔山，对于他们可能是技术壁垒，一时难以实现。现在我也认识到，现在的创新首先需要多学科的交叉，比如将其他行业与GIS技术结合，在新的空间维度上，认识更为明晰，可能有更多的发现。这两天培训，才知道原来ArcGIS软件居然可以应用在这么多专业方向上，出乎意料的是老师们对其兴趣很高，静静想想，这款软件产品经过四十多年的不断更新和完善，大概已经契合到社会应用的方方面面，只是我们还没有挖掘到。所以，像早晨那位喊我老师的欧阳长辈一样，要不断地学习进步！
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【20160810】出差工作日志-武汉</title>
+    <url>/2016/08/10/32813.html</url>
+    <content><![CDATA[2016年8月10日星期三   3D分析由于之前对ArcGIS的3D分析没有过多了解，昨晚把今天高源要讲的PPT看了一下，不知不觉到了十二点多，睡得有些晚，导致今天早晨成了起床困难户，但一想到武汉的热干面，顿时精神焕发，洗漱完直奔早餐店。来到武汉大学遥感信息工程学院的机房，已经是八点半了，居然是第一个到的，大概是大家熟悉了环境，都想踩着时间点来吧。一直想对ArcGIS的3D分析了解更深入一些，对今天的PPT很是期待，昨天下午有两个老师才来，说主要是为了听3D分析的。。。。由于培训人员爆满，我只有把自己的电脑也带过来了，电脑中已提前备好了操作数据，在现场辅导之余也能亲手操作一遍。早晨陆续有老师问我今年还有没有相关的培训，我建议他们关注公司的微博微信和官网动态，这么来看，这几天的培训反响很是不错，我自己也觉得这次出差也学到不少东西。上午高源讲得很生动，主要是3D分析的基础理论以及数据导入、查看和相互转换，PPT、DEMO实例和操作结合，演讲的节奏把握得也很好，培训的老师都跟得上理解和操作进度，卡在操作步骤上很少，我也跟着学习了一下。但是上午操作的过程中，有个问题我之前确实是没注意到，就是geodatabase数据库文件不能加入TIN数据。还有一个是shp的3D文件不能保存纹理，保存在gdb是可以的。中午和李才去吃饭，余经理和几个老师已经过去了，后来知道有个老师还是我本科学院的，加上昨天碰到研究生学校的师兄，一方面太巧了，另一方面感觉自己一直在这个圈子没走太远，这种缘由很奇怪。。。。上午有个老师反映自己操作实现不了，说是软件有问题，中午吃完饭回去后，经过测试，发现是电脑硬件的问题，于是将其旁边的一台标示为坏了的电脑换了键盘鼠标，居然还可以使用。之前很有意思，这个老师试探性地问我会不会是CRACK版本的原因，这个猜想大概是曾经受到CRACK版本的伤害吧。。。下午依然先是一些理论性的内容，随后是上机实际操作，问题出现了不少，基本上操作有误，或者是数据找错的几处错误，后来与一个老师讨论一些关于TIN数据的问题，加深了对该数据的认识。这几天一直有两个来自江西的研究生问我怎么实现一个区域的经济热点分析，我之前没关注过经济这方面的内容，但是关于热点分析，我却一直很感兴趣，在ArcGIS中实现起来非常简单，我给他们的建议如下1、首先整理好相应的基础数据，比如地图、经济统计数据等；2、然后将这些数据在同一坐标系统下空间化；3、用ArcGIS地统计工具进行表面插值，具体参考http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//0031000000nz0000004、然后可以参考http://blog.csdn.net/kikitaMoon/article/details/46424167进行美化然后是他们按照我提供的方法在这过程也出现不少问题，但都解决了。热力图是近年来百度等几家公司通过推广宣传展示，才在互联网火起来的，实际上ArcGIS早就有这个实现方案，看来现在的ArcGIS应用一部分是跟着互联网的潮流，也说明该软件具有的前瞻性。下午有老师说之前使用过Cityengine制作3D场景，前天学了ArcGIS的网络分析，问能不能进行建筑或地下的三维网络分析，目的是做一些建筑和地下通道设计评估，由于之前翻译过Esri2016年的UC部分视频，Jack曾经说过以下几句话，答案是显而易见的。从这三天的现场辅导来看，基本所有现场发生的问题都能解决，没有不明原因的错误，应该是正版的原因吧，之前我使用CRACK的时候，经常碰到莫名其妙的错误，最终都是无解，让人抓狂。所以说支持正版，让社会生产环境更加健康有效率的运行。
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【20160811】出差工作日志-武汉</title>
+    <url>/2016/08/11/33261.html</url>
+    <content><![CDATA[2016年8月11日星期四   影像分析研究生期间跟数据打交道中最多的是遥感影像，对一些遥感理论和常用影像都熟悉。但是管理这些复杂数据的时候，显得很混乱，查找、处理和分析数据的效率不高，耗费不少精力，后来才知道ArcGIS中居然有镶嵌数据集这个极佳的影像数据存储方法，影像数据的预处理、镶嵌、融合等都可以实现。所以今天自己也要好好听听关于影像的系统培训。开始来的时候，大概是武汉刚下过几场雨，感觉天气很凉爽，本来想每天下午回到宾馆，休息一会再出去转转大武汉，而之后这两天，气温陡升，终于领略到武汉的火炉烘烤，热浪扑面，全身360度无死角都能感受到，遂打消了，还是不出去折腾了，在宾馆看看奥运会比赛，学点东西，逛逛知乎也是不错的。今天上午讲的是一些影像数据理论，听起来倒也轻松，之后剩下的一小时，是关于数据集的简单创建，老师们都很给力，基本没什么问题，大家都在进步，很欣慰。中午依然是去星湖园餐厅和余经理以及几位高校的教师吃了饭，其中有一位来自地大的刘老师，土地管理方向，目前在做一些土地确权方面的项目，由于知道消息晚了，今天才专程赶过来，我之前也做过土地确权的实习，当时用的是南方CASS软件成图，而现在我们国家统一采使用ArcGIS平台建立数据库，这次过来也是为了项目顺利开展，想过来学习一下。下午依然是上机操作，过程中，貌似也出现不少问题，不少老师的操作都不能顺利进行下去，有些问题我也是第一次碰到，但最后也算解决。之后分析总结了一下，首先大部分可以排除软件的原因，因为有不少老师都成功创建和添加镶嵌数据集，软件安装环境都是一样，所以有几点原因：1、    本来影像是栅格数据，数据量大，可能是拷贝不全，或者文件损害；2、    操作错误，比如误选文件，保存文件名字前有数字等；3、    栅格数据计算量大，也有计算机硬件的问题4、    其他诡异未知的原因。然后下午在这忙前忙后的过程中，就很快地过去了。今天也预示着为期四天的软件操作培训就结束了，余经理后来给老师们都发了调查问卷，期间是广告时间，宣传了一下公司一系列产品。这几天认识了不少来自全国各地的老师，明天是最后一天，期待与他们的交流，倾听他们的所说所感。
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【20160812】出差工作日志-武汉</title>
+    <url>/2016/08/12/33709.html</url>
+    <content><![CDATA[2016年8月12日星期五   ArcGIS新产品介绍与教师经验交流会早晨想着提前把房给退了，走的时候轻松一些。没想到其他人也都是这么想的。。。，到了前台，都排起了队，到我弄完时，已经快九点了，培训会当然已经开始了，所以我就迟到了，前几天都是第一个到机房，到了今天的关键时刻却掉了链子，有点不应该，跟武汉的同事说了抱歉，终于落座。开始是武汉分公司罗雄主讲，是关于ArcGIS平台发布的新产品版本以及Esri其他产品介绍，虽然之前看过相关的PPT，但不同的人介绍之后，感觉对ArcGIS新产品特性又有新的认识。随后是进行高校教师GIS教学经验交流会，有三个老师分别作了演讲，他们来自武汉大学和中国地质大学，以及还邀请了我的本科母校学院老师，让我激动好一会儿。各位老师讲的很生动细致，并将GIS教学中的切实可行经验与其他老师分享，想想我现在学到GIS知识都得益于母校老师创新的教学方法。他山石，可攻玉，最后老师们在一块儿作了深入的讨论，互相坦诚交流经验，反映自己的问题，寻求解决的方案，核心的宗旨是让GIS更加深入人心，广泛传播。不知不觉到了中午的十二点，交流会结束了，也预示着2016年的培训会告一段落。送走最后一批老师后，整理了一下会场，已经快到一点，余经理请大家一起去吃饭，但是距高铁开车时间所剩无几，就在会场与武汉同事道了别，感谢他们这一周的热情招待。这次行程，确实收获不少，虽然是现场辅导，但初入职场，还属于技术行列，更多的是学习和锻炼，也认识不少的人，交流的机会大大增多，通过亲自体验，放宽了眼界，了解了GIS的强大甚至是无所不能。
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【代码分享】海图数据批量导出</title>
+    <url>/2016/08/28/62898.html</url>
+    <content><![CDATA[import arcpyimport os#from arcpy import env#from arcpy import interop#arcpy.ImportToolbox(&quot;Model Functions&quot;)path=r&quot;C:\Users\Esri\Desktop\S57&quot;for filename in os.listdir(path):   filepath=path+&quot;\\&quot;+filename   output_gdb = &quot;C:\Users\Esri\Desktop\s57togdb\&quot;+filename+&quot;.gdb&quot;   arcpy.QuickImport_interop(filepath,output_gdb)   print filename+&quot;have done&quot;   print &quot;-------------------------------------------------------&quot;print &quot;&lt;----------All are done !!!----------&gt;&quot;]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道难倒不少前端面试者的问题</title>
+    <url>/2019/08/15/17967.html</url>
+    <content><![CDATA[
+
+有一数组，里面有若干（数目和薪资一样多）数字，数字有重复，如何找出重复次数最多的数字
+
+
+
+这个问题每次和组员面试时必问，其中能够理出逻辑过程的不到一半，大部分都是先声明一个空数组，然后经过数次循环对比处理，而首先声明空对象的不多（数据结构很重要呀！！！这是我们非科班的硬伤）。常规答案如下：
+
+let a = [1, 2, 6, 8, 9, 5, 2, 5, 6, 5, 5, 2, 5, 5];   let numCount = &#123;&#125;, maxCountNum = 0, maxNum;for (let i = 0, j = a.length; i &lt; j; i++) &#123;  if (a[i] in numCount) &#123;	numCount[a[i]] += 1  &#125; else &#123;	numCount[a[i]] = 1  &#125;  if (numCount[a[i]] &gt; maxCountNum) &#123;	maxNum = a[i];	maxCountNum=numCount[a[i]]  &#125;&#125;console.log(maxNum)
+曾经看到有人说通过一句js代码就可以实现，只是这个地方太小，他写不下了。这句话怎么似曾相似呢。。。。
+
+17世纪初，欧洲流传着公元三世纪古希腊数学家丢番图所写的《算术》一书。1621年，费马在巴黎买到此书并利用业余时间书中的不定方程进行了深入研究，从而创立了数论这门数学分支。在数论领域中，费马的巨大成果主要是费马大定理和费马小定理。其中以费马大定理最为著名。
+
+
+1637年左右，费马在阅读丢番图《算术》的拉丁文译本时，曾在第11卷第8命题旁写道：“将一个立方数分成两个立方数之和，或一个四次幂分成两个四次幂之和，或者一般地将一个高于二次的幂分成两个同次幂之和，这是不可能的。关于此，我确信已发现了一种美妙的证法，可惜这里空白的地方太小，写不下。”
+
+
+这就是著名的费马大定理：当整数n&gt;2时，关于x，y，z的方程没有正整数解。费马大定理也叫“费马最后的定理”，“最后”的意思是：其它猜想都证实了，这是最后一个。费马究竟有没有证明费马大定理，至今是人们津津乐道的话题。费马大定理被提出后，经历多人猜想辩证，历经三百多年的历史，才于1995年由英国数学家怀尔斯证明，且其证明的过程相当艰深。
+
+话说回来，对于一行代码实现文章开头的问题，我开始是深信不疑的，然后今天尝试了一下，最后想法遭到了动摇。在不声明其他变量的情况，我是这样写的：
+let a = [1, 2, 6, 8, 9, 5, 2, 5, 6, 5, 5, 2, 5, 5];a.map((value, index) =&gt; &#123;if (index === 0) &#123;a[a.length] = &#123;&#125;;a[a.length - 1][value] = 1;a[a.length] = value&#125; else &#123;if (value in a[a.length - 2]) &#123;a[a.length - 2][value] += 1;if (a[a.length - 2][value] &gt; a[a.length - 1]) &#123;a[a.length - 1] =value&#125;&#125;else &#123;a[a.length - 2][value] = 1&#125;&#125;if(index+3===a.length)console.log(a[a.length-1])&#125;)
+实际上面一行是伪代码,ctrl+Alt+L格式化一下，重新排版成酱
+a.map((value, index) =&gt; &#123;  if (index === 0) &#123;    a[a.length] = &#123;&#125;;    a[a.length - 1][value] = 1;    a[a.length] = value  &#125; else &#123;    if (value in a[a.length - 2]) &#123;      a[a.length - 2][value] += 1;      if (a[a.length - 2][value] &gt; a[a.length - 1]) &#123;        a[a.length - 1] = value      &#125;    &#125; else &#123;      a[a.length - 2][value] = 1    &#125;  &#125;  if (index + 3 === a.length) console.log(a[a.length - 1])&#125;)
+看起来更复杂了，有兴趣的小伙伴可以试一试，欢迎留言交流
+]]></content>
+  </entry>
+  <entry>
+    <title>七牛视频外链测试</title>
+    <url>/2016/08/29/9863.html</url>
+    <content><![CDATA[【简介】今年暑期上映的科幻大片《独立日2：卷入重来》，又一次带动了国内的票房市场，其绚丽的特效令人惊叹，各种科幻场面令人目不暇接、眼花缭乱，可能你想不到的是：其中的一些3D模型和场景是由ArcGIS平台产品搭建和渲染的，amazing吧，是不是很酷，同样在一些游戏画面中可能也会有类似的应用。但是GIS在3D方面不单单能实现专业的视觉效果，它也构成了城市蓬勃发展的基础，建立智慧的社区和城市指日可待，GIS几乎是无处不在并将改变我们周围的一切。随着现场主持人深情并茂的诗意解读，一起沉浸于ArcGIS创建的未来世界吧。
+]]></content>
+  </entry>
+  <entry>
+    <title>与ArcGIS有冲突的软件---黑名单（不定期更新）</title>
+    <url>/2017/01/18/31842.html</url>
+    <content><![CDATA[先亮个相：福昕阅读器、有道词典、搜狗输入法之前在用ArcGIS时，遇到了两个致命的问题，不管是重装软件，甚至是重装系统，都无法解决，但是其他人的软件都没有这种现象，无奈使用其他的功能去实现。后来发现是软件之间的冲突导致。方法很简单，卸载冲突的软件或者关闭掉进程下面列举黑名单，不，冲突的软件
+
+1、福昕阅读器情景：这是在ArcGIS server 10.2（之后的版本貌似没有了）版本中碰到的，地图服务无法开启，提示4000端口被占用解决方案：http://zyouzz.me/2016/08/20/28027.html
+2、有道词典情景：这是一位同事不幸碰到的，在Arcmap中执行工具时，会弹出警告，虽然工具可以执行，但是很扰民的解决方案：关掉有道词典的取词功能
+3、搜狗输入法情景：Arcmap中编辑状态，复制某个要素后，无法粘贴。可以使用merge工具或高级编辑中的复制工具代替解决方案：关闭sogoucloud.exe进程，或者修改搜狗输入法设置\高级\云计算候选功能，
+总结具体原理我不太清楚，现在我说一下自己的猜测：先从软件设计说起，一个软件中可能会有多个进程，每个进程占用不同接口，这里是没问题的但是各个软件间没有达成协议或者标准，导致并没有考虑进程接口重复和相互占用的现象，
+好比在中国是一夫一妻，而在非洲某些国家是一夫多妻，都是合法的，但是如果一个非洲小伙娶了一个中国菇凉，而这个非洲小伙却没有告诉中国菇凉：他在自己国家已经有六个老婆了，到时一见面，那么文化冲突就来了。好像比喻得有些~~~~
+不扯了，通过以上几个软件，可能你发现了：他们默认是随电脑开机启动的，而ArcGIS（特别是桌面）基本不会有随机启动的进程。当一个软件和另一个软件中某个进程使用相同的接口，先开机启动的软件进程会独占该接口，之后使用相同接口的其他软件进程会起不来，对应的功能就用不了了，可想而知，软件卸载和系统重装都是徒劳的。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国光伏企业如何修炼</title>
+    <url>/2025/03/02/52634.html</url>
+    <content><![CDATA[中国光伏企业要更好地进军海外市场，需要从多个维度制定系统性策略，涵盖市场调研、产品创新、供应链优化、品牌建设、合作伙伴关系、合规运营、人才培养和风险管理等方面。以下是具体的建议和实施方向，帮助企业在全球市场中取得更大成功
+1. 深入市场调研与定位   为了成功进入海外市场，中国光伏企业首先需要了解目标市场的实际情况：   研究市场需求与政策：对目标国家的能源政策、可再生能源补贴、电力需求以及消费者偏好进行全面分析。例如，欧洲市场可能更注重环保和高效产品，而中东地区可能更需要耐高温的光伏组件。
+明确市场定位：根据市场成熟度和客户类型（如户用、工商业或大型电站），制定差异化的进入策略，确保资源精准投入。
+
+2. 产品与服务创新   产品和服务是企业竞争力的核心：   开发适应当地需求的产品：研发符合海外市场标准的光伏组件，确保通过当地认证（如欧洲CE认证、美国UL认证）。同时，针对不同气候条件（如高寒、高温或高湿度）优化产品性能。
+提供一站式解决方案：结合储能系统、智能监控和售后运维服务，满足客户对高效、智能化的需求，提升附加值。
+持续技术升级：加大研发投入，提高光伏组件的转换效率和耐用性，保持技术领先优势。
+3. 优化供应链与物流   高效的供应链和物流是海外市场成功的关键：   建立全球供应链：在目标市场附近设立生产基地或仓储中心，缩短交货时间，降低运输成本。例如，在东南亚或欧洲建立工厂以服务周边市场。
+优化物流网络：与国际物流公司合作，选择高效运输路线，确保产品及时、安全交付。
+加强库存管理：合理规划库存，避免供应链中断或交付延误。
+4. 加强品牌建设与营销   品牌是企业在海外市场的“名片”：   提升国际知名度：通过参加国际光伏展会（如德国Intersolar）、行业论坛和线上广告，扩大品牌影响力。
+本地化营销：根据目标市场的文化和习惯，采用当地语言和推广方式。例如，在美国可以通过社交媒体推广，在日本则可注重线下口碑传播。
+建立客户信任：提供高质量产品和优质售后服务，树立良好的品牌口碑。
+5. 建立合作伙伴与渠道   合作与渠道是快速进入市场的捷径：   与当地企业合作：与当地的经销商、安装商或EPC公司建立伙伴关系，借助其现有资源和客户网络快速打开市场。
+拓展业务网络：加入国际光伏行业协会，参与行业活动，获取市场信息和潜在客户。
+多元化销售渠道：结合线上平台（如B2B电商）、直销和代理商模式，提高市场覆盖率。
+6. 遵守政策与法规   合规运营是海外市场的基本要求：   了解当地法律法规：确保产品和服务符合目标市场的技术标准、环保要求和劳工法规，避免因违规导致的法律纠纷。
+应对贸易壁垒：密切关注国际贸易政策，灵活应对反倾销或关税措施，必要时通过法律手段维护权益。
+获取认证：主动申请并通过当地产品认证，提升市场竞争力。
+7. 人才培养与团队建设   人才是企业国际化的支撑：   培养国际化人才：招聘或培训具备跨文化沟通能力和海外市场经验的员工，提升团队的全球视野。
+设立本地团队：在目标市场建立分支机构，配备专业的销售、技术支持和客服团队，提供本地化服务。
+持续培训：为员工提供海外市场知识、法律法规和文化适应性培训，提升服务能力。
+8. 有效风险管理   海外市场充满不确定性，风险管理至关重要：   评估市场风险：分析目标市场的政治稳定性和经济状况，关注汇率波动、政策变化等潜在风险。
+多元化布局：避免过度依赖单一市场，通过进入多个地区分散风险。
+利用金融工具：通过出口信用保险或外汇对冲，降低贸易和汇率风险。
+总结中国光伏企业要更好地进军海外市场，需要通过深入调研明确目标、创新产品提升竞争力、优化供应链降低成本、加强品牌赢得信任、建立合作拓展渠道、遵守法规确保合规、培养人才提升能力以及管理风险保障稳定等综合措施。这些策略相互协同，能够帮助企业在全球市场中站稳脚跟，实现可持续发展。通过高质量的产品和专业的服务，中国光伏企业不仅能抓住海外市场的机遇，还能在国际竞争中占据领先地位。
+]]></content>
+      <tags>
+        <tag>中国</tag>
+        <tag>优势</tag>
+        <tag>光伏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国进军欧洲光伏户用和工商业市场面临的机遇与挑战</title>
+    <url>/2025/03/02/42651.html</url>
+    <content><![CDATA[
+机遇1.市场需求旺盛欧洲是全球最大的光伏市场之一，许多国家致力于实现碳中和目标，推动可再生能源发展。例如，欧盟的“绿色新政”计划到2050年实现碳中和，这为光伏装机需求提供了持续增长的动力。各国政府对清洁能源的支持政策也为中国企业创造了良好的市场环境。
+2.技术与成本优势中国光伏企业在全球供应链中占据主导地位，拥有先进的生产技术和规模化生产能力，成本优势明显。这种价格和效率上的竞争力使中国企业能够在欧洲市场中脱颖而出，满足户用和工商业客户的需求。
+
+3.政策支持与合作潜力中欧在气候变化和清洁能源领域的合作日益加强，双方在光伏领域的合作潜力巨大。中国企业可以通过与欧洲本土企业建立合作伙伴关系，共同开发市场，从而降低进入市场的难度。
+4.储能与智能电网需求增长随着光伏装机量的增加，欧洲对储能系统和智能电网的需求也在上升。中国企业在储能技术方面有所突破，这为进军欧洲市场提供了新的增长点，尤其是在户用和工商业场景中。
+挑战1.激烈市场竞争欧洲光伏市场竞争异常激烈，本土企业实力雄厚，且欧洲消费者对产品质量和品牌信任度要求较高。中国企业需要克服市场准入壁垒，并与本地企业竞争以赢得市场份额。
+2.贸易壁垒与政策风险近年来，欧盟对中国光伏产品实施了贸易保护措施，如反倾销调查和关税等。这些政策的不确定性增加了中国企业的出口和投资风险，可能限制其在欧洲市场的发展。
+3.供应链与物流难题欧洲市场对产品交付的及时性和售后服务有较高要求。中国企业需建立高效的供应链和物流体系，以确保产品能够按时交付并提供优质服务，否则可能影响客户满意度。
+4.技术标准与认证要求欧洲对光伏产品的技术标准和认证要求极为严格，中国企业需要投入更多资源来满足这些标准，确保产品合规。这可能增加企业的运营成本和时间成本。
+5.本土化运营的困难进入欧洲市场需要深入了解当地的文化、法规和消费者偏好，进行本土化运营。中国企业在管理、营销和客户服务方面需做出调整，以适应欧洲市场的多样化需求。
+总结中国进军欧洲光伏户用和工商业市场既有巨大机遇，也有显著挑战。机遇主要体现在欧洲市场的旺盛需求、中国企业的技术与成本优势以及政策合作潜力；而挑战则包括激烈的竞争、贸易壁垒、供应链管理和技术标准的适应难度。要在这一市场取得成功，中国光伏企业需充分发挥自身优势，积极应对市场准入障碍，同时提升产品质量和服务水平，以赢得欧洲消费者的信任和市场份额。
+]]></content>
+      <tags>
+        <tag>中国</tag>
+        <tag>光伏</tag>
+        <tag>欧洲</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么加班到现在，运维是个大坑货！！！</title>
+    <url>/2019/11/19/14351.html</url>
+    <content><![CDATA[一套系统，本地运行的没问题，同样的安装流程却无法成功运行。捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：编码一定保持一致呀喂！编码一定保持一致呀喂！编码一定保持一致呀喂！操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。
+]]></content>
+  </entry>
+  <entry>
+    <title>为钓鱼佬们做了一个微信小程序，钓友必备神器！5万+爆护钓点一键直达，智能算法预判鱼情</title>
+    <url>/2025/04/01/56376.html</url>
+    <content><![CDATA[本人是一个混迹互联网多年的Coder（码农）+钓鱼佬，开发京钓宝小程序纯属个人爱好和记录分享，之前一直是自己用的，推荐给身边钓友后反馈很不错，于是分享了出来。
+【京钓宝】
+注释：京，俺在北京；钓宝，钓鱼佬的宝贝，也音通用了京钓宝，那个地道道道，钓鱼爆护了
+京钓宝微信小程序，不需安装无广告，无注册要求。
+打开即用，方便可靠。
+如果你觉得有用，不妨分享给您的好朋友。
+长按该图片也可达
+这是一款属于钓鱼佬爆护的秘密武器，全国5万多个爆护钓点，钓点详情，有文有图有真相你也可以将自己的钓点分享出来，让大家顶礼膜拜
+通过阅读文献，本人建立一套基于天气参数的智能钓鱼天气预报系统算法模型，可以得到最近半个月的钓鱼适宜度，让你足不出户就能全息掌握鱼情。钓友上鱼时刻分享你也可以分享上鱼的快乐时刻对矛鱼等非法捕捞进行上墙展示（这个都是匿名展示，不怕矛鱼佬的骚扰）对于非法矛鱼下网捕鱼，我们说NO如果你觉得有用，不妨分享给您的好朋友。长按该图片或者微信搜索[京钓宝]小程序也可达
+最后，欢迎大家留言反馈或者提出宝贵意见.
+祝各位钓鱼佬
+天天爆护!!!
+]]></content>
+      <tags>
+        <tag>微信小程序</tag>
+        <tag>钓鱼佬</tag>
+        <tag>京钓宝</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是texture函数</title>
+    <url>/2024/02/21/11026.html</url>
+    <content><![CDATA[在着色器语言中，如GLSL（OpenGL Shading Language），texture2D 是用于在纹理上进行采样的函数。它的参数通常包括两个：
+vec4 texture2D(sampler2D sampler, vec2 textureCoordinates);
+
+其中：
+
+sampler2D sampler：表示纹理采样器，它是一个指向纹理对象的引用。这个参数告诉着色器在哪个纹理上进行采样。
+
+vec2 textureCoordinates：表示纹理坐标，用于指定在纹理上的位置。纹理坐标通常是二维的，范围在 [0.0, 1.0] 之间。通常 (0, 0) 表示纹理的左下角，(1, 1) 表示右上角。
+
+
+texture2D 函数返回一个 vec4 类型的颜色值，其中包含了在指定纹理坐标位置处采样得到的颜色信息。这个颜色值通常包括红色（R）、绿色（G）、蓝色（B）和 alpha 通道（A）的分量。
+例如，在一个简单的片元着色器中，你可能会使用 texture2D 函数来获取纹理上某个位置的颜色：
+uniform sampler2D myTexture;  // 纹理采样器varying vec2 vTextureCoord;   // 从顶点着色器传递过来的纹理坐标void main() &#123;    vec4 color = texture2D(myTexture, vTextureCoord);    // 使用 color 进行进一步的处理    // ...    gl_FragColor = color;&#125;
+
+在这个例子中，myTexture 是一个纹理采样器，vTextureCoord 是从顶点着色器传递过来的纹理坐标。texture2D(myTexture, vTextureCoord) 用于在这个纹理坐标处采样纹理，返回颜色值，然后可以在着色器中进行后续处理。
+]]></content>
+      <tags>
+        <tag>texture</tag>
+        <tag>cesium</tag>
+        <tag>glsl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是离屏渲染</title>
+    <url>/2025/11/25/27323.html</url>
+    <content><![CDATA[离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。
+要点
+
+常见实现：Web：OffscreenCanvas、WebGL FBO（framebuffer）/render-to-texture；桌面：OpenGL FBO、DirectX 渲染目标、Vulkan 图像。
+优点：消除闪烁、支持异步/Worker 渲染、方便后处理（模糊、色调映射）、可重用纹理减少重复计算。
+缺点：额外内存和拷贝、需要同步（可能阻塞）、管理生命周期复杂。
+最佳实践：重用缓冲区/纹理、尽量在 Worker 中使用 OffscreenCanvas 做计算密集型 2D 渲染、选择合适像素格式、避免频繁大小变更。
+
+简短示例（使用 OffscreenCanvas 在 Worker 中离屏绘制并传回主线程显示）：
+// main.jsconst canvas = document.querySelector(&#x27;#canvas&#x27;);const off = canvas.transferControlToOffscreen();const worker = new Worker(&#x27;worker.js&#x27;);worker.postMessage(&#123; canvas: off, width: 800, height: 600 &#125;, [off]);// worker.jsself.onmessage = (e) =&gt; &#123;  const &#123; canvas, width, height &#125; = e.data;  canvas.width = width; canvas.height = height;  const ctx = canvas.getContext(&#x27;2d&#x27;);  // 离屏绘制  ctx.fillStyle = &#x27;#012&#x27;;  ctx.fillRect(0, 0, width, height);  ctx.fillStyle = &#x27;#fff&#x27;;  ctx.font = &#x27;24px sans-serif&#x27;;  ctx.fillText(&#x27;离屏渲染示例&#x27;, 20, 40);  // 如果需要把结果传回主线程为 ImageBitmap:  canvas.convertToBlob().then(blob =&gt; &#123;    return createImageBitmap(blob);  &#125;).then(bitmap =&gt; &#123;    self.postMessage(&#123; bitmap &#125;, [bitmap]);  &#125;);&#125;;// 在 main.js 中接收并绘制 bitmap（可选）worker.onmessage = (e) =&gt; &#123;  const bitmap = e.data.bitmap;  const ctx = canvas.getContext(&#x27;2d&#x27;);  ctx.clearRect(0,0,canvas.width,canvas.height);  ctx.drawImage(bitmap, 0, 0);&#125;;
+
+简要说明：主线程把 canvas 转为 OffscreenCanvas 传给 Worker，Worker 在离屏 canvas 上绘制并可把结果以 ImageBitmap/Blob 等形式回传或直接让浏览器合成显示。
+]]></content>
+      <tags>
+        <tag>离屏渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用ModelBuilder批量处理和命名问题解决</title>
+    <url>/2017/01/12/50252.html</url>
+    <content><![CDATA[社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。这不，因为分工，我们可能得到一个地区不同部分的数据，这时想将其合并在一块，两三个还行，使用merge（合并）工具轻松解决，如果是10个，100个甚至成千上万个，那就难办了，这时使用ModelBuilder是最方便快捷的。
+
+首先我们在catalog中右击新创建一个工具箱，命名为“批处理”然后右击批处理工具箱，新建一个模型工具然后我们看到出现的模型构建器界面如下：现在我们有一些shp文件（放在同一个文件夹），所以先插入要素选择迭代器，目的是选取所有的shp文件然后双击下图中的六边形选择shp文件所在的文件夹,然后点击确定接下来插入collect value (不会翻译:-D)，目的是将选取的所有shp文件放在一起最后是全场核心合并工具上场，在系统工具箱中找到合并工具，直接拖到ModelBuilder中，PS：我这里是直接通过搜索找到，更为方便快捷，平时我们想实现某种功能时，可以使用关键字在搜索框中尝试搜索点击模型验证，确认整个模型是否OK，确认无误后，就可以执行批量合并处理了实际上在ModelBuilder中批量处理本质就是先能找到数据，然后合理的组织、处理和输出。
+
+这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，输出表格名字为%Name%，运行会出现报错，提示名字不合法目前还没有直接的解决办法，我这里提供办法是：将tif文件都导入gdb中，能够完美解决，可能是因为Esri鼓励大家将数据存储到gdb中，然后进行处理操作。
+
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ModelBuilder</tag>
+        <tag>批量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用python多进程爬取全国航班数据与可视化【附代码与excel数据（包含经纬度坐标）】</title>
+    <url>/2018/05/07/60507.html</url>
+    <content><![CDATA[周末去天津浪了一圈，首先当然是去海边，海风吹着，可带劲了，和面筋歌的心情是一样的。
+
+然后基本是在天津的海滨新区逛逛，参观了大沽口炮台遗址，内心是沉重的。
+此行本来看航母的，后来由于原因，没能登上航母，甚是遗憾呀，好在看到国产航母舾装完毕，即将进入海试，很激动呀。
+废话中的废话不多说，进入正题。
+–=============================================–
+提示：没用到爬虫架构，请放心食用。此次爬取的数据源是“哪儿哪儿都不想去网站”(https://link.zhihu.com/?target=http%3A//flight.qunar.com/schedule/alphlet_order.jsp)，开始时尝试了一下，该网站居然没有采取反爬虫措施，那就so easy了，多进程搞起！
+在写爬虫前，我们要熟悉抓取的页面以及url结构规律，然后才能更有效率
+例如北京到大同的航班查询url为http://flight.qunar.com/schedule/fsearch_list.jsp?departure=北京&amp;arrival=大同
+那么我们就可以通过这个页面的城市来拼凑出所有的url地址https://link.zhihu.com/?target=http%3A//flight.qunar.com/schedule/alphlet_order.jsp由于要使用多进程，我这里预先将查询到的所有有航班url写入到txt中，
+python环境是python2版本，按照惯例导入需要使用的模块，
+from bs4 import BeautifulSoupimport refrom multiprocessing import Poolimport sys
+然后利用multiprocessing模块进行多进程分任务抓取页面信息，并使用美丽的鲜汤（BeautifulSoup）解析需要的内容存进txt中，信息如下“出发城市    出发城市y    出发城市x    到达城市    到达城市y    到达城市x    里程（公里）    航班班次    航空公司    机型    起飞时间    降落时间    起飞机场    起飞机场y    起飞机场x    降落机场    降落机场y    降落机场x    准点率    平均误点世间    周一班期    周二班期    周三班期    周四班期    周五班期    周六班期    周日班期    航班有效期开始    航班有效期结束”该过程我主要写了三个函数来实现业务逻辑：任务分配、包装请求和网页内容获取、页面有效信息提取。然后基于百度的地理编码API获取出发城市、达到城市、出发机场、到达机场的经纬度坐标。
+然后我就获得了全国15074条航班数据。
+该过程所有代码附后，代码拙劣，见笑见笑。
+通过分析获取的数据，我们看到：
+目前全国有185个城市或地区有航班一共有214个机场用于民用航线的起降我们都知道，一般飞机场都建在城市郊区或者更远的地方，各城市与当地机场的距离最远的排名Top30如下，PS：生活在这些城市的小伙伴们有木有切身的体会呢？另外，在一万五千次航班中，机型最多的是波音737(中)，其次是空客A320(中)，国产的新舟60(小)接近150架次其他的信息，大家可以自行探索了，就不一一赘述了。
+然后我们可以使用ArcMap中的xy to line工具生成全国的航班换线图由于爬取的数据比较完整，完全可以动态展示。后期有时间会再写一篇教程。
+最后附上源码和数据
+PS：以上展示或者数据计算可能有误，欢迎指出并交流。
+excel数据（包含经纬度坐标）链接:https://pan.baidu.com/s/149x089ZdxMQXZbymentYwQ 密码:p1rn
+源码
+import requestsfrom bs4 import BeautifulSoupimport refrom multiprocessing import Poolimport sysreload(sys)sys.setdefaultencoding(&#x27;utf-8&#x27;)def geturl(url):    headers=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36&#x27;&#125;    hbpage = requests.get(url, headers=headers).text    print hbpage    return hbpagedef flyin(city_citys,numm):    print &#x27;&gt;&gt;&gt;&gt;&gt;进程%d开始&gt;&gt;&gt;&gt;&gt;&#x27;%(numm+1)    # time.sleep(5)    pageinfo = []    for city_city in city_citys:        hbpage=geturl(city_city)        # print hbpage        bg=str(city_city.split(&#x27;=&#x27;)[-2]).replace(&#x27;&amp;arrival&#x27;,&#x27;&#x27;)#始发        dg=city_city.split(&#x27;=&#x27;)[-1]#飞往        ft=(bg+dg)        print ft        if BeautifulSoup(hbpage, &#x27;lxml&#x27;).select(&#x27;p[class=&quot;msg2&quot;]&#x27;):            print &#x27;此线路无航班&#x27;        else:            hblc = BeautifulSoup(hbpage, &#x27;lxml&#x27;).select(&#x27;em&#x27;)[0].get_text()            print hblc            #航班班次 第一列            hbtitle=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;title&quot;]&#x27;)            hbbc1=[]            hkgs1=[]            jixing1=[]            for ht in hbtitle:                hbbc=re.findall(r&#x27;\w.?\d*&#x27;,ht.get_text())[0]#航班班次                hkgs=ht.get_text().split(hbbc)[0]#航空公司                jixing=ht.get_text().split(hbbc)[1]#机型                hbbc1.append(hbbc)                hkgs1.append(hkgs)                jixing1.append(jixing)            #起降时间 第二列            hbtime=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c2&quot;]&#x27;)[1:]            qfsj1=[]            jlsj1=[]            for qj in hbtime:                qfsj=qj.get_text()[:5]#起飞时间                jlsj=qj.get_text()[5:]#降落时间                qfsj1.append(qfsj)                jlsj1.append(jlsj)            #机场 第三列            hbjc=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c3&quot;]&#x27;)[1:]            qfjc1=[]            jljc1=[]            for jc in hbjc:                qfjc=jc.get_text().split(&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;))[0]+&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;)#起飞机场                jljc=jc.get_text().split(&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;))[1]+&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;)#降落机场                qfjc1.append(qfjc)                jljc1.append(jljc)            #准点率 第四列            zdl=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c4&quot;]&#x27;)[1:]            zdl1=[]            wdsj1=[]            for zd in zdl:                zdlv=zd.get_text().split(&#x27;%&#x27;)[0]+&#x27;%&#x27;                wdsj=zd.get_text().split(&#x27;%&#x27;)[1]                zdl1.append(zdlv)                wdsj1.append(wdsj)            #班期 第五列            bq=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c5&quot;]&#x27;)[1:]            # xx=[]            duty1 = []            for xq in bq:                week=re.split(&#x27;\&quot;&gt;\d&lt;/span&gt;&#x27;,str(xq))[:-1]                week1=[]                ii=1                for day in week:                    if ii==1:                        dd=&#x27;周一&#x27;                    elif ii==2:                        dd = &#x27;周二&#x27;                    elif ii==3:                        dd = &#x27;周三&#x27;                    elif ii==4:                        dd = &#x27;周四&#x27;                    elif ii==5:                        dd = &#x27;周五&#x27;                    elif ii==6:                        dd = &#x27;周六&#x27;                    elif ii==7:                        dd = &#x27;周日&#x27;                    if day[-4:]==&#x27;blue&#x27;:                        duty=&#x27;%s有班期&#x27;%dd                    else:                        duty=&#x27;%s没有班期&#x27;%dd                    ii+=1                    week1.append(duty)                duty1.append(week1)            #班期有效期 第七列            bqyxq = BeautifulSoup(hbpage, &#x27;lxml&#x27;).select(&#x27;span[class=&quot;c7&quot;]&#x27;)[1:]            qs1=[]            js1=[]            for yxq in bqyxq:                yxs=yxq.get_text()[:10]#起始                yxe=yxq.get_text()[:10]#结束                qs1.append(yxs)                js1.append(yxe)            print hbbc1            for li in range(len(hbbc1)):                print &#x27;标记&#x27;                pageinfo.append(bg + &#x27;,&#x27; + dg + &#x27;,&#x27; + hblc + &#x27;,&#x27; + hbbc1[li] + &#x27;,&#x27; + hkgs1[li] + &#x27;,&#x27; + jixing1[li] + &#x27;,&#x27; + qfsj1[li] + &#x27;,&#x27; + jlsj1[li] + &#x27;,&#x27; + qfjc1[li] + &#x27;,&#x27; + jljc1[li] + &#x27;,&#x27; + zdl1[li] + &#x27;,&#x27; + wdsj1[li] + &#x27;,&#x27; + duty1[li][0] + &#x27;,&#x27; + duty1[li][1] + &#x27;,&#x27; + duty1[li][2] + &#x27;,&#x27; +duty1[li][3] + &#x27;,&#x27; + duty1[li][4] + &#x27;,&#x27; + duty1[li][5] + &#x27;,&#x27; + duty1[li][6] + &#x27;,&#x27; + qs1[li] + &#x27;,&#x27; + js1[li] + &#x27;\n&#x27;)                print bg + &#x27;,&#x27; + dg + &#x27;,&#x27; + hblc + &#x27;,&#x27; + hbbc1[li] + &#x27;,&#x27; + hkgs1[li] + &#x27;,&#x27; + jixing1[li] + &#x27;,&#x27; + qfsj1[li] + &#x27;,&#x27; + jlsj1[li] + &#x27;,&#x27; + qfjc1[li] + &#x27;,&#x27; + jljc1[li] + &#x27;,&#x27; + zdl1[li] + &#x27;,&#x27; + wdsj1[li] + &#x27;,&#x27; + duty1[li][0] + &#x27;,&#x27; + duty1[li][1] + &#x27;,&#x27; + duty1[li][2] + &#x27;,&#x27; +duty1[li][3] + &#x27;,&#x27; + duty1[li][4] + &#x27;,&#x27; + duty1[li][5] + &#x27;,&#x27; + duty1[li][6] + &#x27;,&#x27; + qs1[li] + &#x27;,&#x27; + js1[li] + &#x27;\n&#x27;    print pageinfo    return pageinfodef urlsplit(urls,jiange):    urli=[]    for newj in range(0,len(urls),jiange):        urli.append(urls[newj:newj+jiange])    return urliif __name__==&#x27;__main__&#x27;:    finalre=[]    files = open(r&#x27;C:\Users\username\Desktop\url.txt&#x27;, &#x27;r&#x27;)    urls=[]    for url in files.read().split():        urls.append(url)    urlss=urls[:6]    urlll=urlsplit(urlss,2)    p = Pool(2)    result=[]    for i in range(len(urlll)):        result.append(p.apply_async(flyin,args=(urlll[i],i)))    p.close()    p.join()    print result    for result_i in range(len(result)):        print result[result_i]        fin_info_result_list = result[result_i].get().decode(&#x27;utf-8&#x27;)        finalre.extend(fin_info_result_list)    filers=open(r&#x27;C:\Users\username\Desktop\url55.txt&#x27;,&#x27;a+&#x27;)    for fll in finalre:        filers.write(str(fll).encode(&#x27;utf-8&#x27;))]]></content>
+  </entry>
+  <entry>
+    <title>使用Python进行语音识别---将音频转为文字</title>
+    <url>/2017/03/31/13689.html</url>
+    <content><![CDATA[自从入职以来，一直在做关于ArcGIS视频的中英字幕，前前后后已经做了不少。基本都上传到网上了，有兴趣的可以看看http://i.youku.com/arcgis说实话，这是个挺废时间的工作，一般一个5-6分钟的视频，从听写字幕脚本到时间轴校对，校对完之后逐句翻译，本着自己的水平，不求信达雅，只求通畅就行，然后再加一些DuangDuang字幕特效，最后将字幕和视频进行，基本是3-4个小时，可能看起来不可思议，有兴趣的可以亲自去尝试一下。虽然过程是枯燥乏味的，但是最终看到自己的成果，成就感也是油然而生的。
+
+前段时间美国Esri举办了全球的开发者大会，我在YouTube上看到陆续有上传的现场视频，于是下了下来，想着翻译一些，然后在ArcGIS知乎上等渠道做一下传播推广。但是有个问题是，这些视频没有字幕脚本，更坑爹的是，里面大部分是印度人主讲，带着印度咖喱腔的英语，听起来着实费解，所以翻译进度远不如之前，慢得出其，让我很困惑。做了几个视频的字幕后，实在没动力了，于是就暂停了。。。。今天看了一篇报道，说是语音识别的技术，成熟度已经很可观了。突然想到：能不能将视频转为音频，然后使用一些语音识别的技术，完成这个艰巨的活呢。于是说干就干，百度搜索了许多音频转文字的技术。最后发现IBM公司有这项技术，对音频的识别率很高，并且提供有1000分钟的免费API（可以在https://console.ng.bluemix.net注册一下，获取API用户名和密码，后续会有用，这个很关键！！！），正好也支持Python调用，整个过程很简单，就是先安装IBM的模块，这里我使用的是speechrecognition模块，在pycharm直接可以搜索到并安装，speechrecognition模块不仅包含了IBM的语音识别API，还有微软、谷歌的语音识别API等等，带上github项目地址https://github.com/Uberi/speech_recognition#readme感叹到：Python的功能真是应有尽有，没有你想不到的。然后我写了不多的几行代码，这个艰难的事情就迎刃而解了思路主要如下，就是将视频转为WAV格式的音频（转为MP3等其他格式，可能识别不了），然后调用识别模块，就静静的等着或者去忙其他的事，最后会返回识别出来的文本准确率还是很高的，估摸有80%-90%如果你手上正好有一堆的音频想转为文字，赶紧来试试，解放生产力的时候到了！！哈哈~~~附上我写的拙劣代码见笑见笑！
+#!/usr/bin/env python# -*-coding:utf-8 -*-__author__ = &#x27;jiang&#x27;# import eyed3# import waveimport osimport speech_recognition as sr# from pydub import AudioSegmentimport timeimport datetime# ##获取音频时长# f = wave.open(r&quot;C:\Users\Esri\Desktop\speech.wav&quot;,&quot;rb&quot;)# timelength=int(f.getparams()[3]/f.getparams()[2])# print(int(5.6))## ##音频分割输出# readaudio=AudioSegment.from_wav(r&#x27;C:\Users\Esri\Desktop\speech.wav&#x27;)# kn=int(timelength/30)+1# for i in range(kn):#      readaudio[i*30*1000:((i+1)*30+2)*1000].export(r&#x27;C:\Users\Esri\Desktop\speech\speech%d.wav&#x27;%(i+1), format=&quot;wav&quot;)##获取文件夹下的音频文件名starttime = datetime.datetime.now()i = 1for name in os.listdir(r&#x27;C:\Users\Esri\Desktop\speech&#x27;):    print(&quot;%d %s 开始转换&quot; % (i, name))    ##音频分块识别    r = sr.Recognizer()    # for i in range(kn):    try:        with sr.WavFile(r&#x27;C:\Users\Esri\Desktop\speech\%s&#x27; % name) as source:            audio = r.record(source)            IBM_USERNAME = &#x27;*******************&#x27;            IBM_PASSWORD = &#x27;*****&#x27;            text = r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD, language=&#x27;en-US&#x27;)            print(text)            open(r&#x27;C:\Users\Esri\Desktop\text\%s.txt&#x27; % name, &#x27;a+&#x27;).write(text)            time.sleep(5)            temptime = datetime.datetime.now().strftime(&#x27;%Y-%m-%d %H:%M:%S&#x27;)            print(&#x27;%s %d %s 已完成&#x27; % (temptime,i, name))    except Exception as e:        print(e)        temptime = datetime.datetime.now().strftime(&#x27;%Y-%m-%d %H:%M:%S&#x27;)        print(&#x27;%s %d %s 未完成&#x27; % (temptime, i, name))        continuejietime = datetime.datetime.now()last=jietime-starttimeprint(&#x27;总共花费时间：%s&#x27;%last)
+
+测试结果分析：1、IBM的API能识别英语、中文等好几种语言，识别的正确率很不错；2、经过我的初步测试，IBM的识别机制是按照这样来的：先是将你的音频传到IBM的服务器，然后是打开音频实时识别，听起来很拗口，意思就是将音频放一遍，服务器边放边识别，最后将所有的识别以文本的形式（貌似是JSON格式，但是在speechrecognition模块中，已经转为文本）返回给你；3、看完上面的识别机制，你可能会产生疑问：如果音频时间比较长，中间出现网络中断，之前识别的内容不就没了么。因此最好采取分段的方法，将音频分割为较短的几段，等效于实时的返回，减少丢失的问题；4、经过测试，又有新问题，如果分段的话，超过10段以上，远程服务器会中断服务，也就是说：不能频繁的调接口，跟网站的发爬虫一样。多进程就别想了。最后部门石经理提供的解决办法是：识别一段后。等个5秒左右再循环下一个，照此方法可行。由于我自己的视频不长，数量也不多，就没做等待处理；5、IBM的语音识别着实厉害，其他的语音识别等有时间再做测试。
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>python</tag>
+        <tag>多字段</tag>
+        <tag>符号渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于bash中的2&gt;&amp;1 &amp;理解</title>
+    <url>/2023/06/01/62539.html</url>
+    <content><![CDATA[经常运行一些python脚本或者jar包，如果直接运行python *.py，或者 java -jar *.jar,再进行其他操作，需要终止运行，所以应该是后台运行。这也就经常看到这样的句式：
+nohup python *.py &gt; nohup.log 2&gt;&amp;1 &amp;
+
+1、开始的nohup（no hang up, 不挂起），用于系统后台不挂断的运行命令；2、中间的python *.py我们好理解，就是运行脚本；3、&gt; nohup.log 意思将新建nohup.log文件，并将运行日志写到该文件中，我们可以使用&gt;&gt;，表示追加日志内容；4、bash中0，1，2分别表示STDIN_FILENO（标准输入）,STDOUT_FILENO（ 标准输出）,STDERR_FILENO（标准错误），输入输出可以重定向，如cat &lt; text.c将test.c重定向为cat命令的输入源，输出重定向就是将指定具体的输出目标以替换默认的标准输出。默认输入只有一个（0，STDIN_FILENO），而默认输出有两个（标准输出1，STDOUT_FILENO，标准错误输出2，STDERR_FILENO），因此输出的错误信息会被输出到2，而普通信息会输出到1，但我们希望在一个终端下看到所有的信息，那么综上就应该是2&gt;1,而2&gt;&amp;1中&amp;是为了bash将1解释成标准输出而不是文件1，至于2&gt;&amp;1 &amp;中最后一个&amp;则是让bash在后台运行。
+]]></content>
+      <tags>
+        <tag>bash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于多圆（大于2）重叠的面积计算</title>
+    <url>/2019/06/24/56673.html</url>
+    <content><![CDATA[这个问题是我在计算公交站点覆盖率（公交300米范围面积/服务区面积）中遇到的。有以下两种计算方式
+1、ArcGIS使用buffer（缓冲区）工具，将所有的公交站点生成300米的缓冲圆注意：融合类型选择为全部
+
+2、自己实现之前以为这个计算应该不难，用纯数学计算就可以求得结果，但是接下来的问题让我陷入了对人生的思考，经过查找文献，得到以下结论。1）两圆重叠—简单！！！2）两个圆以上的重叠精确计算—数学界的世纪难题！！！所以，只能通过模拟计算，这也是计算机最初诞生的原因。经典的蒙特卡洛模拟计算真是屡试不爽。
+这里我以前端的JavaScript为例情景：在地图上随机框画了一个圆形区域，框选区域内部有若干个公交站点通过模拟计算的流程是这样：
+代码脚本如下
+/** * 使用蒙特卡洛方法模拟计算站点覆盖率 * @param sample 样本数 * @param drawCircleToPolygon 所画区域外接多边形 * @param stopsLngLatList 所画区域内站点坐标 * @param distance 站点覆盖半径 * @returns &#123;string&#125; 返回站点覆盖率 */function calculateStopCoverRate(sample, drawCircleToPolygon, stopsLngLatList, distance) &#123;  let insidePointsNumber = 0;  let randomPoints = turf.random(&#x27;points&#x27;, sample, &#123;bbox: drawCircleToPolygon.getExtent()&#125;).features.map(value =&gt; value.geometry.coordinates);  for (let m = 0, n = randomPoints.length; m &lt; n; m++) &#123;    for (let i = 0, j = stopsLngLatList.length; i &lt; j; i++) &#123;      let centerRandomPoint = ol.proj.fromLonLat([randomPoints[m][0], randomPoints[m][1]]);      if (Math.pow(centerRandomPoint[0] - stopsLngLatList[i][0], 2) + Math.pow(centerRandomPoint[1] - stopsLngLatList[i][1], 2) &lt;= distance * distance) &#123;        insidePointsNumber = insidePointsNumber + 1;        break      &#125;    &#125;  &#125;  return (insidePointsNumber / sample * 100).toFixed(2) + &#x27; %&#x27;;&#125;
+1）首先引入turf插件，使用turf.random在所画的圆内生成随机点，获取每个随机点的坐标；2）使用openlayers的ol.proj.fromLonLat转换方法，将经纬度转为平面坐标；3）计算随机点是否在圈出的站点300米（distance）范围内，如果在，标记一下，break该点退出，计算下一个随机点，4）用标记到在站点范围的统计数值insidePointsNumber除以样本值就是站点覆盖率，5）同样,覆盖面积就等于所画圆的面积乘以覆盖率
+**sample 样本数数值越大，所需时间越长，计算结果越准确
+关于蒙特卡洛，有很多有趣的事，比如计算Π值，古代的蒲丰投针
+相比精确的数学计算，模拟计算有点玄学的意味，但不失为简单粗暴的途径。
+]]></content>
+  </entry>
+  <entry>
+    <title>内牛满面装Portal for ArcGIS</title>
+    <url>/2016/08/28/28862.html</url>
+    <content><![CDATA[之前尝试用过ArcGIS Server，感觉装起来很容易，发布服务也很方便。之后又了解到Portal for ArcGIS（简单说，就是管理集群部署和分工协作的解决方案等等，我觉得现在的集群部署的存在，还是因为单机器硬件的问题短板），于是很想尝试安装一下。因为已经装过Server，就直接解压Portal for ArcGIS，嗯，安装软件很顺利，信心爆棚，并不像ArcGIS知乎上反映的那么难。首次是Portal for ArcGIS主页自动打开，我本以为是一个令人惊喜的画面，谁知提示需要再装一个Web Adaptor，纳尼，什么鬼，侬不理解。。怎么貌似有些小复杂，后来证明确实有些复杂，“小”字也可以去掉了。随后查了一下，如下：webadaptor本身的功能就是做请求转发。使用了Webadaptor后，不再通过portal的默认端口7080和7443端口曝露portal 网络地址，而是通过80和443端口曝露portal服务。与现有web server集成，向portal转发从webs erver来的请求。使用webadaptor可以提高portal的安全性，走80或者443端口后，就不用在其地址中曝露7080或者7443端口。参考：为什么webadaptor是portal的一个必须组件装完webadaptor，觉得应该大功告成了，但是图样图森破。配置配置Portal与Web Adaptor时，需要输入portal的全限定域名称，这不得不说的是，到这一步才提示，真是一个雷区，之前装的Portal for ArcGIS看起来是废了，好吧，计算机改成全限定域名称，提示需要重启电脑，索性也将ArcGIS Server、Portal for ArcGIS和webAdaptor卸载掉。最终还是成功了！装Portal for ArcGIS感觉Esri对网络安全做的很好，比如WebAdaptor的使用。但是对于新手或者网络小白来说，装的过程着实是内牛满面，希望以后会有更为简便的安装。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>发现一个大坑！！！</title>
+    <url>/2019/06/14/38442.html</url>
+    <content><![CDATA[本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。然后捯饬了半天，一直到今天上午，what the f/*/*K!。这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。下午决定再次攻克一下：
+**使用排除法
+1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；2、排除代码错误：都在git上同一分支下；3、排除接口数据：都是同一个后台接口环境；
+以上，那么真相只有一个：都是蛋疼惹的事—依赖版本
+**破案过程：由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，于是回退版本，这个鸟问题终于解决了！目前的解决方案是将将package.json中的
+&quot;element-ui&quot;: &quot;^2.8.2&quot;,
+改为
+&quot;element-ui&quot;: &quot;2.8.2&quot;,
+
+]]></content>
+  </entry>
+  <entry>
+    <title>变换矩阵（Transformation matrix）详解</title>
+    <url>/2023/06/01/1829.html</url>
+    <content><![CDATA[当我们对一个图形进行平移再旋转，一般流程是需要重新求取一个新的等式，然后实现一个新的着色器，这样很不好。好在我们可以使用另一个数学工具—变换矩阵（Transformation matrix）来完成这项工作。变换矩阵非常适合操作计算机图形。一、旋转矩阵当p按照右手法则逆时针旋转βp点的坐标计算为：p`点坐标分解后，即基于第一个公式，消掉r和α，得：通过以下矩阵相乘可以表示该过程综合以上两个公式：我们可以令a=cosβ，b=-sinβ,c=0,d=sinβ,e=cosβ,f=0,g=0,h=0,i=1,可得：
+二、平移矩阵一般平移矩阵计算为：相乘得到：比较以下等式我们可以令：a=1,b=0,c=0,d=Tx,e=0,f=1,g=0,h=Ty,i=0,j=0,k=1,l=Tz,m=0,n=0,o=0,p=1,可得：三、缩放假设X轴、Y轴、Z轴缩放因子Sx,Sy,Sz,那么有：即有缩放变换矩阵：
+四、旋转+平移+缩放至此，我们已经推演出一个旋转矩阵和一个平移矩阵、一个缩放矩阵，但是我们发现旋转矩阵是3x3，平移缩放矩阵是4x4, 于是需要将旋转矩阵转变为4x4矩阵，我们知道最后一个分量w的加和结果应为1所以：所以在程序中定义一个旋转+平移+缩放矩阵，可以按照以下写：注意WebGL中矩阵是列主序的，即为上面矩阵的转置
+const canvas=document.getElementById(&#x27;webgl&#x27;);const gl=getWebGLContext(canvas);let VSHADER_SOURCE=    &#x27;attribute vec4 a_postion;\n&#x27; +    &#x27;uniform mat4 u_panMatrix;\n&#x27; +    &#x27;uniform mat4 u_rotateMatrix;\n&#x27; +    &#x27;uniform mat4 u_zoomMatrix;\n&#x27; +    &#x27;void main () &#123;\n&#x27; +    &#x27; gl_Position = u_panMatrix * u_rotateMatrix * u_zoomMatrix * a_position;\n&#x27; +    &#x27;&#125;\n&#x27;;const radian=Math.PI*ANGLE/180.0 // 角度值转弧度const cosβ=Math.cos(radian);const sinβ=Math.sin(radian);const Sx = 1.0, Sy = 1.5, Sz = 1.0;// 平移矩阵const pan=new Float32Array([    1.0, 0.0, 0.0, 0.0,    0.0, 1.0, 0.0, 0.0,    0.0, 0.0, 1.0, 0.0,    Tx, Ty, Tz,1.0]);// 旋转矩阵const rotate=new Float32Array([    cosβ, sinβ, 0.0, 0.0,    -sinβ, cosβ, 0.0, 0.0,    0.0, 0.0, 1.0, 0.0,    0.0, 0.0, 0.0, 1.0]);// 缩放矩阵const zoom=new Float32Array([    Sx, 0.0, 0.0, 0.0,    0.0, Sy, 0.0, 0.0,    0.0, 0.0, Sz, 0.0,    0.0, 0.0, 0.0, 1.0])const u_panformMatrix=gl.getUniformLocation(gl.program, &#x27;u_panMatrix&#x27;);const u_rotateMatrix=gl.getUniformLocation(gl.program, &#x27;u_rotateMatrix&#x27;);const u_zoomMatrix=gl.getUniformLocation(gl.program, &#x27;u_panMatrix&#x27;);gl.uniformMatrix4fv(u_panformMatrix, false, pan);gl.uniformMatrix4fv(u_rotateMatrix, false, rotate);gl.uniformMatrix4fv(u_zoomMatrix, false, zoom);
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在ArcGIS以弹窗形式挂接图片</title>
+    <url>/2016/11/22/869.html</url>
+    <content><![CDATA[1、首先右击图层打开属性表，添加一个文本型的字段，长度改为150
+
+2、开启编辑，图加图片路径，然后关闭编辑保存 3、右击图层，打开图层属性，点击弹窗选项课，如下所示，选择图片路径字段就OK了 4、使用工具条上的弹窗工具，点击要素， 5、就可以显示图片了 
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>域名包括二级路径，配置VUE中vite</title>
+    <url>/2023/11/25/32593.html</url>
+    <content><![CDATA[通常情况下我们将vue打包后，直接放置nginx或者tomcat等容器里，配置下相关路径文件就可以访问了。但是当我们使用域名的二级路径访问时，如https://abc.com/cesium/，会报404错误，这是因为一些静态文件路径为域名+文件形式，导致找不到文件，例如index.html中的文件为/assets/index-9a873818.js,导致直接拼接了域名。接下来需要在工程中做相关配置1、增加开发环境文件.env.development,添加以下内容
+##开发环境VITE_BASE_PATH=&#x27;/&#x27;
+2、增加生产环境文件.env.production,添加以下内容
+#生产环境VITE_BASE_PATH=/cesium/
+3、修改package.json中的dev和build命令为：
+&quot;dev&quot;: &quot;vite serve --mode development&quot;,&quot;build&quot;: &quot;vite build --mode production&quot;,
+4、安装dotenv模块，
+yarn add dotenv
+5、在vite.config.js中增加
+import dotenv from &#x27;dotenv&#x27;;dotenv.config(&#123; path: `.env.$&#123;process.env.NODE_ENV&#125;` &#125;);//添加baseexport default defineConfig(&#123;    base: process.env.VITE_BASE_PATH,&#125;)
+
+
+另外附nginx一般配置,location cesium/ &#123;    root html/cesium/;    try_files $uri $uri/ /index.html;    index  index.html index.htm;&#125;
+注意文件夹名要和域名二级路径一致，不然需要在index.html前指定文件夹名称，如下
+location cesium/ &#123;    root html/test/;    try_files $uri $uri/ test/index.html;    index  index.html index.htm;&#125;]]></content>
+      <tags>
+        <tag>二级路径域名</tag>
+        <tag>VUE</tag>
+        <tag>Vite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Docker搭建自己的定制化地图服务器</title>
+    <url>/2019/07/02/956.html</url>
+    <content><![CDATA[–==========================–产品经理是帮你成长的最强动力。–==========================–这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色
+
+于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；打开其官网OpenMapTiles Map Server，越看越激动，终于有了转机。我们可以基于OpenMapTiles Map Server构建自己的自定义离线底图服务，支持OGC标准的WMS，WMTS，矢量和栅格切片都是ok的。由于基于Docker搭建，过程及其简单，跟将大象装进冰箱一样样的，小伙伴们不用慌。搭建过程如下：一、安装虚拟机和centos系统，版本如下1)vmware：15.0.4 build-12990004，【下载地址：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe】2)centos: 7.3.1611，【下载地址：http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/】二、安装Docker执行以下语句就ok了
+curl -sSL https://get.docker.com/ | sh
+三、安装应用
+docker run --rm -it -v $(pwd):/data -p 8080:80 klokantech/openmaptiles-server
+这里会提示你在浏览器中通过8080端口访问配置页面https://localhost:8080最主要的是第三步样式配置这里单击Advanced options,会看到上传样式配置文件json的地方，  关于生成json文件的地方，我们可以去自定义样式https://editor.openmaptiles.org/  
+【笔记】：每次开机手动启动docker命令为
+systemctl start docker 
+ 这样，we choose freedom! 
+]]></content>
+  </entry>
+  <entry>
+    <title>如何在ArcGIS中绘制漂亮的萤火图</title>
+    <url>/2018/04/24/14122.html</url>
+    <content><![CDATA[这几天看到有人在一些群里问下面的图是怎么做的该图叫做萤火图，看起来非常漂亮、酷炫。那么在ArcGIS平台中如何制作这样的地图呢？
+
+实际在ArcMap、ArcGIS Pro和ArcGIS Enterprise中都是可以实现的核心是要有一张带透明通道的png图片首先以ArcMap为例，我们知道萤火虫是在夏天的夜晚出现的，所以我们选择黑色主题的午夜蓝底图PS：如果添加地图的选项为灰色，要看一下状态栏的ArcMap网络是否连通如果还是不通，该底图的链接为：https://map.geoq.cn/arcgis/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/WMTS/1.0.0/WMTSCapabilities.xml通过以下方式添加底图
+开始~~（1）加载我们的数据点，看起来很普通。。。（2）添加前面说到的核心：一张带透明通道的png图片有些效果了（3）我们可以调整该图层的符号大小，依据的是“水质”字段（4）符号大小设置为从18到28完成！效果如下
+实际ArcGIS Pro和ArcGIS Enterprise中也都一样，这里就不一一讲述了。最终效果如下：
+最后附上示例数据下载链接: https://pan.baidu.com/s/1tiZqaERqrGj-YUskYlTVIQ 密码: eckw
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>萤火图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何让Arcmap支持加载Excel 2003以上的xlsx格式文件</title>
+    <url>/2017/07/25/61373.html</url>
+    <content><![CDATA[相信大家在Arcmap中加载Excel的xlsx文件时，可能会出现该格式不支持的状况，而xls没问题。esri官方解释是：需要装office 2007版本或者office 2007 驱动程序因此操作系统装了office 2010甚至更高的版本是不行的解决的方法是：安装一个office 2007 驱动程序就行了。附上下载地址2007 驱动程序
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>arcgis</tag>
+        <tag>arcmap</tag>
+        <tag>xlsx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字段值固定位数，位数不够补0位</title>
+    <url>/2017/08/11/17385.html</url>
+    <content><![CDATA[1、首先新建一个字段2、字段类型选择文本型3、右击该字段，打开字段计算器选择Python，输入表达式 str(!SHAPE_Length!+1).zfill(15)其中!SHAPE_Length!是你要计算的字段，15是位数
+]]></content>
+      <tags>
+        <tag>arcgis</tag>
+        <tag>arcmap</tag>
+        <tag>字段计算器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>完美geoserver跨域解决方式（2024版）</title>
+    <url>/2024/01/30/52927.html</url>
+    <content><![CDATA[因为tomcat容器本身或者geoserver的安全策略，在tomcat中部署geoserver，导致在其他应用使用geoserver地图服务会出现跨域现象。通常会通过nginx的反向代理解决这个问题。
+但是安装nginx反过来又会让流程变得繁琐，将大象装到冰箱里就不止三部了。
+我们知道，GeoServer的项目是一个完整的Java（J2EE）系统。
+所以，基于geoserver本身配置可以来解决这个问题。
+但是百度搜索的结果不是过时，就是毫无责任的、误导人的遍地复制粘贴，也说明现在搜索引擎的尴尬局面：blog、论坛、贴吧的时代一去不复返，robot协议更加苛刻，搜索爬虫处于严重饥饿状态。 所以我们拿到的结果显得匮乏，难以命中问题。
+好在chatgpt解决了一些问题，但是使用成本和难以预料的胡说八道，又让我们不得不审视其专业性。
+废话不再多说
+简要说下就是在tomcat中部署完geoserver，能正常访问后，通过修改geoserver的web.xml文件，将两个jar包添加到geoserver的lib目录，就能完美解决跨域问题，重点是找到不同geoserver所对应的jar版本
+
+
+下面细说步骤：1、修改geoserver下的web.xml（路径一般为：/tomcat/webapps/geoserver/WEB-INF/web.xml），将文件中有关cross-origin的注释放开，但是可能会找错地方，最终造成geoserver打不开，保险的方式是：在文件空行中（如大约150行左右）直接添加以下配置；
+&lt;filter&gt;  &lt;filter-name&gt;cross-origin&lt;/filter-name&gt;  &lt;filter-class&gt;org.eclipse.jetty.servlets.CrossOriginFilter&lt;/filter-class&gt;  &lt;init-param&gt;    &lt;param-name&gt;chainPreflight&lt;/param-name&gt;    &lt;param-value&gt;false&lt;/param-value&gt;  &lt;/init-param&gt;  &lt;init-param&gt;    &lt;param-name&gt;allowedOrigins&lt;/param-name&gt;    &lt;param-value&gt;*&lt;/param-value&gt;  &lt;/init-param&gt;  &lt;init-param&gt;    &lt;param-name&gt;allowedMethods&lt;/param-name&gt;    &lt;param-value&gt;GET,POST,PUT,DELETE,HEAD,OPTIONS&lt;/param-value&gt;  &lt;/init-param&gt;  &lt;init-param&gt;    &lt;param-name&gt;allowedHeaders&lt;/param-name&gt;    &lt;param-value&gt;*&lt;/param-value&gt;  &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt;    &lt;filter-name&gt;cross-origin&lt;/filter-name&gt;    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt;
+
+2、接下来我们需要找到geoserver对应版本的jetty-servlets和jetty-util的jar文件；
+3、首先我们确认下载的geoserver版本，如下
+3、然后复制版本号，拼接到如下url并访问，https://github.com/geoserver/geoserver/blob/版本号/src/pom.xml (如：https://github.com/geoserver/geoserver/blob/2.23.2/src/pom.xml)；
+4、Ctrl+F搜索网页内容：jetty.version，复制版本号；
+5、将版本号复制以下两个url中：
+（1）https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlets/版本号 （如：https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlets/9.4.51.v20230217）
+（2）https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-util/版本号 （如：https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-util/9.4.51.v20230217）
+6、单击jar下载文件；
+7、将jetty-servlets和jetty-util的jar包拷贝到geoserver下的lib目录，路径为：tomcat/webapps/geoserver/WEB-INF/lib/
+8、重启geoserver，暨重启tomcat，解决跨域。
+]]></content>
+      <tags>
+        <tag>geoserver</tag>
+        <tag>跨域</tag>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将每个面内所有点的属性赋给面的一个字段中</title>
+    <url>/2017/09/19/1100.html</url>
+    <content><![CDATA[描述：有一个面数据和一个点数据，每个面要素内包含多个点问题：如何将每个面要素内多个点名称赋到面的一个字段中实现方法：1、使用spatial join 工具，具体设置如图所示；面作为目标要素图层输入，点作为连接要素输入
+
+2、然后添加一个字段，具体设置如图所示；注意合并类型选择join3、右击刚才添加的字段，选择输入字段，将点的name字段添加进去；4、点击OK即可。看一下输出结果可以看到面图层joinname字段中现在已经包含点的名称
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将点进行排序并编号---ArcGIS脚本工具的制作</title>
+    <url>/2017/06/16/8578.html</url>
+    <content><![CDATA[好久没更新博客了，就好像好久没谈过恋爱，实际压根没谈过（手动滑稽），今天跟别人说，他们都很诧异，想想自己已近中年（联合国的标准），确实不可思议，所以很遗憾呀！有人说到了什么年龄就该做什么事，这样才不负时光，而我感觉在这十年里，时光仿佛静止了一样，自己停滞不前，任风云万变，如今却一声长叹。唉，又发了个牢骚，人到中年是不是这个状态呢？
+切到正题！前段时间，和同事都接到一个问题，是关于点排序的，用户想将一些点，按照空间位置，从左到右，再从上之下排序编号，如下图所示：
+
+本来是个很简单的事情，主要使用sort工具就可以。但是用户觉得麻烦，因为详细的步骤还是有些繁琐的，步骤如下：1、先要在点要素属性表中添加X和Y两个字段，2、然后将这两个作为排序字段，生成排序后的点数据3、之后再添加一个排序结果字段，将OBJECTID字段值赋给这个字段确实步骤有些多，最后通过脚本工具一键生成排序序号创建脚本工具的过程如下1、首先创建工具箱2、添加脚本3、打开脚本工具创建向导，填写信息4、添加Python脚本这一步要加载已经写好的Python文件（*.py格式）Python脚本的思路主要为：4.1 首先规划好该工具需要多少个参数
+# Script Tool ParametersInputFeature = arcpy.GetParameterAsText(0)Order = arcpy.GetParameterAsText(1)Sort_X = arcpy.GetParameterAsText(2)Sort_Y = arcpy.GetParameterAsText(3)OutputFeature = arcpy.GetParameterAsText(4)
+4.2 然后使用arcpy.CopyFeatures_management()将原数据复制一下4.3 再使用arcpy.AddXY_management()将复制得到的数据添加XY两个字段4.3 随后判断一下点排序的大体方向这里要注意一下，由于编码问题，当代码有中文字符，需要使用.decode()方法解码中文，不然工具运行时会报错
+if Order == &#x27;横向&#x27;.decode(&#x27;UTF-8&#x27;):    sortfield = [[&quot;POINT_Y&quot;, Sort_Y],[&quot;POINT_X&quot;, Sort_X] ]elif Order == &#x27;纵向&#x27;.decode(&#x27;UTF-8&#x27;):    sortfield = [[&quot;POINT_X&quot;, Sort_X],[&quot;POINT_Y&quot;, Sort_Y]]
+4.4 准备好输入参数后，使用arcpy.Sort_management()，生成排序后数据4.5 接着用arcpy.AddField_management()添加排序编号字段4.6 最终使用字段计算工具arcpy.CalculateField_management(),将OBJECTID字段值赋给这个字段
+python脚本完成！
+所有代码如下：
+import arcpyimport time# Script Tool ParametersInputFeature = arcpy.GetParameterAsText(0)Order = arcpy.GetParameterAsText(1)Sort_X = arcpy.GetParameterAsText(2)Sort_Y = arcpy.GetParameterAsText(3)OutputFeature = arcpy.GetParameterAsText(4)tempfea = InputFeature+str(time.time()).split(&#x27;.&#x27;)[0][-5:-1]	arcpy.CopyFeatures_management(InputFeature, tempfea)arcpy.AddXY_management(tempfea)if Order == &#x27;横向&#x27;.decode(&#x27;UTF-8&#x27;):    sortfield = [[&quot;POINT_Y&quot;, Sort_Y],[&quot;POINT_X&quot;, Sort_X] ]elif Order == &#x27;纵向&#x27;.decode(&#x27;UTF-8&#x27;):    sortfield = [[&quot;POINT_X&quot;, Sort_X],[&quot;POINT_Y&quot;, Sort_Y]]arcpy.Sort_management(tempfea,OutputFeature,sortfield)arcpy.AddField_management(OutputFeature,&#x27;order1&#x27;,&#x27;DOUBLE&#x27;)arcpy.CalculateField_management(OutputFeature, &#x27;order1&#x27;,&#x27;!OBJECTID!&#x27;, &quot;PYTHON_9.3&quot;)
+
+添加完Python脚本文件后，继续往下5、添加界面参数这一步很重要，各个参数属性要逐个填入，分别如下其中Order、Sort_X、Sort_Y属于list参数
+6、脚本工具创建向导完后，要对上述的三个参数设置list列表6.1 点击脚本工具的属性6.2 切换至验证选项卡(Validation),点击Edit,编辑验证代码，添加如下3行代码
+self.params[1].filter.list = [&#x27;横向&#x27;,&#x27;纵向&#x27;]self.params[2].filter.list = [&quot;ASCENDING&quot;,&quot;DESCENDING&quot;]self.params[3].filter.list = [&quot;ASCENDING&quot;,&quot;DESCENDING&quot;]
+至此，ArcGIS的点排序编号脚本工具基本完成，为了方便别人使用，可以添加描述等辅助信息
+体验一下该工具查看结果编号
+]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>GIS</tag>
+        <tag>Python脚本工具</tag>
+        <tag>点排序</tag>
+        <tag>编号</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>巧用Excel透视表计算每个公交站点的人数</title>
+    <url>/2016/10/27/29903.html</url>
+    <content><![CDATA[今天早晨看到有人在ArcGIS上问了如何计算每个公交站点的人数，部分数据如下图：虽然不是GIS的问题，但是觉得很有趣，看到有个ID叫turtle的已经回答了，并且自己也学到不少，他的实现步骤如下：遇到在excel中分类统计汇总的可优先考虑透视表（具体操作题主自己搜索，透视表用起来很爽）；针对题主所提到的多条件查询汇总的可使用sumifs()函数（支持多条件汇总，应该是从office2007引入的）；下面我简单选择了部分数据进行实现，公式详见附件
+公式解释如下：=SUMIFS(Sheet1!$H$2:$H$26,Sheet1!$C$2:$C$26,”&gt;=7:00”,Sheet1!$C$2:$C$26,”&lt;8:00”,Sheet1!$B$2:$B$26,Sheet2!B$2)
+
+Sheet1!$H$2:$H$26表示要进行汇总统计的列，这里我认为是车上人数，当然也可以修改为其他上客人数或下车人数，美元符号代表该数据范围是固定不变的；
+Sheet1!$C$2:$C$26,”&gt;=7:00”表示第一个统计条件为时间要在7点之后；
+Sheet1!$C$2:$C$26,”&lt;8:00” 表示第二个统计条件为时间要在8点之前；连同条件一共同创建一个7-8点的时间范围；
+Sheet1!$B$2:$B$26,Sheet2!B$2表示第三个统计条件为站名，这里需要注意美元符号,B2只在2前面添加美元符号，当将公式移动至其他单元格时，横坐标不发生变化，仅纵坐标发生变化，以便将公式复制到后续单元格中
+
+备注：
+
+由于题主数据sheet1中有些不完整，建议修订为一个无空数据的完整数据表格，若无记录可填充0；
+我只选择部分数据，对于其他站的统计，只要将该行的公式往后拖就可以了；
+如果需要增加其他条件，只要按照以上方式添加查询条件即可
+
+
+先把时间转为数字取整，然后使用数据透视表也比较方便，我顺着思路实现如下：
+]]></content>
+      <tags>
+        <tag>Excel</tag>
+        <tag>透视表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>年底-昨天、今天、明天</title>
+    <url>/2018/12/17/24576.html</url>
+    <content><![CDATA[眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。如果要用两个字形容这一年，那就是：【折腾】，不过人生不就是折腾来折腾去么，倒也符合常态。但总有些与众不同，有些注定在未来某一天成为突然想起的尘封记忆，或喜、或悲、或怒、亦或是波澜不惊，也许现在难以想象的到。
+那就开始蒙太奇的回忆吧。。。
+从去年2017的年底开始，当时对于下一年的所思所想做了一些SWOT的分析，之后充满了焦虑，还自诩为我的”焦虑元年“，然而确实就这样伴随了我的2018年，90后的”中年危机“就这么来了，有时感觉自己特没主见，作为一个男人真不应该，别人稍微将你聊开了，你就和盘托出，于是逢人就像祥林嫂一样诉说自己的忧虑和担心，但是回过头来，读了一些书，看了一些东西，这样做没有什么意义，将自己切身的感受说给别人听，不管你描述得多么生动，别人几乎是随心而过，感同身受是无法实现的，大家作为一个个个体，又无责为你承担些什么。有些时候，未来的路只能沉默的走下去，要面对这个现实。
+《月亮与六便士》里有这么一段描述：我们每个人生在这个世界上都是孤独的。每个人都被囚禁在一座铁塔里，只能靠一些符号同别人传达自己的思想；而这些符号并没有共同的价值，因此他们的意义是模糊的、不确定的。我们非常可怜地想把自己心中的财富传送给别人，但是他们却没有接受这些财富的能力。因此我们只能孤独地行走，尽管身体互相依傍却并不在一起，即不了解别人也不能为别人所了解。这句话简直妙不可及。
+有这么个映像：人们对于第一件事，不管其为自己带来了什么，或许都难以忘怀，比如第一份工作、第一次做饭、第一次青涩感情的投入（提到这个，翻涌出阵呕~~~）。
+从2016年乘着火车，穿过漫天黄沙的戈壁，从西北一所垂垂老矣、难以回春的大学（所以也没有跟着老师继续读博，容我目光所限）来到帝都，经过数不清的面试，终于进入了一家业内有名气的公司，接到录用通知时，和2013年考上研究生一样，兴奋了许久，倍感珍惜（这词在第一次做的事情上应该通用），想想当时也够单纯，各种正当的要求都没认真的去了解和争取，都草草的入了职，丝毫没有人生规划和职业发展的战略思考。接下来的两年里学习了一些东西，重点是认识了不少人，好像每天感觉很充实，当时自己精力充沛，极力摸索，早出晚归，不放过周末节假日，不去了解除工作意外的东西，像上学一样封闭自己，两耳不闻世事，但年初的总结里，隐隐约约里看到了虚假的充实，这种带有自欺欺人、难以有较大提升的感觉，充斥每天的情绪，周围的同事很好、领导也很好，不好的是自己。然后还有前面提到的原因（可能这个是最大的原因所在，下面细说），最后得到了答案：该换份工作了。
+马云曾说，换工作无非有两个原因：一是对老板不爽；二是对工资不满意。实话说我来这个公司两年，虽然时不时见到大BOSS，但真的从来没说过话，交集为零，直属的三个（没错，就是三个，两个女领导，一个男领导）领导都很不错，所以这一条不存在。然后应该就是第二个，没错，我承认自己很俗，也没办法，当时促使我慎重思考薪资的，是因为一件事。在一线租房真是很痛苦的事，想想每天早出晚归，累的不行，每个月将自己工资的很大部分，给了每天提着鸟笼子的北京土著房东（这里没有地域感情色彩），真的很心痛，但是没办法，谁让自己来大城市求食、求生存呢。然后就是这么操着某地域口音（这里有些地域色彩，但我非以偏概全，）的一群人，接管了房东（懒成啥样。。。，最后不还是自己自作自受）的房子，用一些下三滥的手段诈取钱财，让北漂们露宿街头。光天化日，朗朗乾坤，帝都就这么真真切切发生近似明抢的强盗行为。作为当时的受害者，真是气愤呀！！！某个夜晚有了单纯的世俗想法：再挣多点，心就不会这么疼了。
+都说开发工资高，凭着两年的自学和积累，然后从公司的开发者大会之前开始，那段时间每晚在一些招聘网站，像两年前一样海投了一番，陆陆续续接到一些求职反馈，基本是拒绝的，大概是看到没有实际的开发经验，然后就在开发者大会那天,终于接到来自深圳座机来电，聊了一些后，下午从会场直接过了去。
+。。。。。待续
+多读书、多思考、会折腾（突然想到这句话，暂时记上）
+]]></content>
+  </entry>
+  <entry>
+    <title>我国光伏产品报告2024，未来展望</title>
+    <url>/2025/03/03/65153.html</url>
+    <content><![CDATA[
+
+
+]]></content>
+      <tags>
+        <tag>中国</tag>
+        <tag>光伏</tag>
+        <tag>报告</tag>
+        <tag>2024</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手把手教你抓取地图矢量数据【附代码和北京矢量地图区、街道办数据下载】【一】</title>
+    <url>/2019/09/06/5908.html</url>
+    <content><![CDATA[Hello,大家好，我是James.
+偶然看道天地图北京的官网有行政区深圳街道办的边界数据
+
+惯性使然打开F12，惊奇地看道一串串熟悉的坐标
+曾经搜遍论坛网站各个角落，今天在官方却能轻而易举的找到，真是太激动
+于是先研究了url请求结构，最终得到了北京16个区和下属街道办的边界信息
+接下来跟大家分享抓取过程，
+1、首先进入首页（http://beijing.tianditu.gov.cn/bjtdt-mapcenter/），
+2、点击【行政区划】，F12我们可以看到在http://beijing.tianditu.gov.cn/tdt-web-sysmanager/services/catalog/special/getLoginOutCatalogSpecials/38ed87a3fe8e4bb1a01949c47baf5244请求结果中包含了北京下属的16个区！
+3、展开其中一个后，看道更为详细的信息
+4、点击东城区，我发现在http://beijing.tianditu.gov.cn/tdt-web-sdks/biz/httpproxy/httpproxy.jsp?url=http://www.bjmap.gov.cn:8080/dfc/services/sgssfs/2220?request=getfeature&amp;filter=+GBCODE%3D%27110101%27请求结果中有不得了的坐标串，明显是行政区划的边界节点坐标串嘛
+5、继续点击建国门街道，同样在http://beijing.tianditu.gov.cn/tdt-web-sdks/biz/httpproxy/httpproxy.jsp?url=http://www.bjmap.gov.cn:8080/dfc/services/sgssfs/2220?request=getfeature&amp;filter=+GBCODE%3D%27110101001%27看道街道办的坐标穿，完美！
+接下来上python代码1、首先惯例，我使用的是python2,首先声明编码，导入request、json解析模块
+2、接下来需要写4个函数方法，主要是：（1）解析、构造url地址（2）组织爬取的信息
+3、然后是调取以上函数方法，写入至txt文件
+4、最后分别得到行政区和街道办边界节点的txt文本
+本节结束，这里附上完整的代码和txt文本下载链接链接：https://pan.baidu.com/s/1eaDApBPATqf3D9sWwfAMow提取码：gnkx或者长按以下二维码获取下载
+]]></content>
+  </entry>
+  <entry>
+    <title>手把手教你抓取地图矢量数据【附代码和矢量地图数据】（续）</title>
+    <url>/2019/09/09/877.html</url>
+    <content><![CDATA[续上一节。现在我们已经抓取到北京行政区和街道办的节点串坐标数据
+
+接下来就需要在ArcMap中使用若干工具将这些点转为线，然后转为行政区划面了。
+1、首先将txt文本导入至ArcMap2、然后加载点数据，注意要选择WGS1984作为空间参考3、由于数据量较大，这里需要将数据转存至GDB中4、接下来使用上一篇文章提到的【点集转线】工具将节点转为线注意参数选择：【线字段 (可选)】选择为i字段（i为行政区划的编号）；【排序字段 (可选)】选择为j字段（j为每个行政区划下的节点编号）；【闭合线 (可选)】勾选上结果如下：5、使用【要素转面】工具将闭合区线转为面
+重复上述步骤可将街道办转换为面最终结果如下可以看到在顺义区有一块属于朝阳区的飞地叠加底图查看，该地是首都机场。问题来了，已经有了“朝阳群众”的朝阳区，为什么还要在顺义区特别“抢了一块地”呢？下一节，我们将从GIS选址的角度剖析一二，敬请期待。
+]]></content>
+  </entry>
+  <entry>
+    <title>打开Portal后页面空白问题解决案例</title>
+    <url>/2018/01/25/6720.html</url>
+    <content><![CDATA[昨晚吃完饭回来，操作系统莫名其妙在自动升级等了大概有2个小时，看来是大版本更新呀
+
+接下来问题就接踵而来了，开始菜单的程序名称都变成两个，只是后边加了个（1）好，这个可以忍。但是很多软件都打不开了。。。。此处一万个草泥马奔腾而过
+自然而然，ArcMap也不能用了，数据互操作也打不开了最后重装解决。
+然而,Portal却可以打开，但是一片空白好吧，这跟打不开有什么区别呢。查看跟踪请求，发现https://arc.arcgiser.com:7443/arcgis/sharing/rest/portals/self?culture=zh-cn&amp;f=json请求一直是404其中有一个zh-cn，这不是中文界面么，但是我的Portl一直是英文界面。于是连接上Portal内置的postgresql数据库，打开gw_accounts数据表修改属性值为Zh-cn然后重启Datastore、server、Portal服务，Portal就可以正常打开了
+]]></content>
+  </entry>
+  <entry>
+    <title>【批量代码分享】不同gdb批量投影 批量要素类复制</title>
+    <url>/2016/09/24/18549.html</url>
+    <content><![CDATA[不同gdb批量投影 
+#coding:utf-8import arcpyimport osarcpy.env.workspace = &quot;C:\\Users\\Esri\\Desktop\\test__20160919\\qian&quot;arcpy.env.overwriteOutput = TrueoutWorkspace = &quot;C:\\Users\\Esri\\Desktop\\test__20160919\\hou&quot;workspacess = arcpy.ListWorkspaces(&quot;*&quot;, &quot;FileGDB&quot;)for filenamegdb in os.listdir(arcpy.env.workspace):   arcpy.CreateFileGDB_management(outWorkspace,filenamegdb)for workspace in workspacess:    walk = arcpy.da.Walk(workspace, datatype=&quot;FeatureClass&quot;)    for dirpath, dirnames, filenames in walk:        for filename in filenames:            facname=os.path.join(dirpath, filename)            asss=dirpath.split(&quot;\\&quot;)[-1]            outfea = os.path.join(outWorkspace,asss,filename)            arcpy.Project_management(facname,outfea,&quot;PROJCS[&#x27;CGCS2000_GK_CM_117E&#x27;,GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]],PROJECTION[&#x27;Gauss_Kruger&#x27;],PARAMETER[&#x27;False_Easting&#x27;,500000.0],PARAMETER[&#x27;False_Northing&#x27;,0.0],PARAMETER[&#x27;Central_Meridian&#x27;,117.0],PARAMETER[&#x27;Scale_Factor&#x27;,1.0],PARAMETER[&#x27;Latitude_Of_Origin&#x27;,0.0],UNIT[&#x27;Meter&#x27;,1.0]]&quot;, &quot;&quot;, &quot;GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]]&quot;)
+批量要素类复制
+# -*- coding: utf-8 -*-# ---------------------------------------------------------------------------# Pretreatment.py# Created on: 2016-09-22#   (generated# Description:。# Import arcpy moduleimport osimport arcpyinputDir = &quot;C:\\Users\\Esri\\Desktop\\testdata&quot;Output = &quot;C:\\Users\\Esri\\Desktop\\new&quot;arcpy.env.workspace = &quot;C:\\Users\\Esri\\Desktop\\testdata&quot;workspacess = arcpy.ListWorkspaces(&quot;*&quot;,&quot;Access&quot;)for workspace in workspacess:    asss = workspace.split(&quot;\\&quot;)[-1]    arcpy.CreatePersonalGDB_management(Output, asss)    dimao=os.path.join(workspace,u&quot;地貌&quot;)    walk = arcpy.da.Walk(dimao, datatype=&quot;FeatureClass&quot;)    for root, dirs, files in walk:        for f in files:            fc=os.path.join(dimao,f)            out_data =os.path.join(Output,asss,f)            arcpy.Copy_management(fc, out_data)print(&quot;处理完成&quot;)]]></content>
+  </entry>
+  <entry>
+    <title>接下来假期的安排</title>
+    <url>/2019/01/28/29651.html</url>
+    <content><![CDATA[调休了这么多天，终于迎来了14天的假期1、一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！2、学习Spring Boot3、学习Spring Cloud
+以上的目标，就是为了写接口不再求人。
+期间顺便将2018没读完的书看完。
+去国家图书馆呆一天，爬爬香山。
+================2019，只关心粮食和蔬菜。
+]]></content>
+  </entry>
+  <entry>
+    <title>搜房网多进程代码-python</title>
+    <url>/2016/08/16/26086.html</url>
+    <content><![CDATA[
+#! -*-coding:utf-8-*-# Function: 房价调查# Author：蘭兹from urllib import parse, requestfrom bs4 import BeautifulSoup as BSfrom multiprocessing import Poolimport reimport lxmlimport datetimeimport cProfileimport socketimport copyimport xlsxwriterstarttime = datetime.datetime.now()base_url = r&#x27;http://bj.fangjia.com/ershoufang/&#x27;test_search_dict = &#123;&#x27;昌平&#x27;: &#123;&#x27;霍营&#x27;: &#123;&#x27;13号线&#x27;: &#x27;http://bj.fangjia.com/ershoufang/--r-%E6%98%8C%E5%B9%B3|w-13%E5%8F%B7%E7%BA%BF|b-%E9%9C%8D%E8%90%A5&#x27;&#125;&#125;&#125;search_list = []  # 房源信息url列表tmp_list = []  # 房源信息url缓存列表layer = -1# 获取列表页面def get_page(url):    headers = &#123;        &#x27;User-Agent&#x27;: r&#x27;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#x27;                      r&#x27;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#x27;,        &#x27;Referer&#x27;: r&#x27;http://bj.fangjia.com/ershoufang/&#x27;,        &#x27;Host&#x27;: r&#x27;bj.fangjia.com&#x27;,        &#x27;Connection&#x27;: &#x27;keep-alive&#x27;    &#125;    timeout = 60    socket.setdefaulttimeout(timeout)  # 设置超时    req = request.Request(url, headers=headers)    response = request.urlopen(req).read()    page = response.decode(&#x27;utf-8&#x27;)    return page# 获取查询关键词dictdef get_search(page, key):    soup = BS(page, &#x27;lxml&#x27;)    search_list = soup.find_all(href=re.compile(key), target=&#x27;&#x27;)    search_dict = &#123;&#125;    for i in range(len(search_list)):        soup = BS(str(search_list[i]), &#x27;lxml&#x27;)        key = soup.select(&#x27;a&#x27;)[0].get_text()        value = soup.a.attrs[&#x27;href&#x27;]        search_dict[key] = value    return search_dict# 获取房源信息列表(嵌套字典遍历)def get_info_list(search_dict, layer, tmp_list, search_list):    layer += 1  # 设置字典层级    for i in range(len(search_dict)):        tmp_key = list(search_dict.keys())[i]  # 提取当前字典层级key        tmp_list.append(tmp_key)   # 将当前key值作为索引添加至tmp_list        tmp_value = search_dict[tmp_key]        if isinstance(tmp_value, str):   # 当键值为url时            tmp_list.append(tmp_value)   # 将url添加至tmp_list            search_list.append(copy.deepcopy(tmp_list))   # 将tmp_list索引url添加至search_list            tmp_list = tmp_list[:layer]  # 根据层级保留索引        elif tmp_value == &#x27;&#x27;:   # 键值为空时跳过            layer -= 2           # 跳出键值层级            tmp_list = tmp_list[:layer]   # 根据层级保留索引        else:            get_info_list(tmp_value, layer, tmp_list, search_list)  # 当键值为列表时，迭代遍历            tmp_list = tmp_list[:layer]    return search_list# 获取房源信息详情def get_info_pn_list(search_list):    fin_search_list = []    for i in range(len(search_list)):        print(&#x27;&gt;&gt;&gt;正在抓取%s&#x27; % search_list[i][:3])        search_url = search_list[i][3]        try:            page = get_page(search_url)        except:            print(&#x27;获取页面超时&#x27;)            continue        soup = BS(page, &#x27;lxml&#x27;)        # 获取最大页数        pn_num = 40        #soup.select(&#x27;span[class=&quot;mr5&quot;]&#x27;)[0].get_text()        rule = re.compile(r&#x27;\d+&#x27;)        max_pn =pn_num        # 组装url        for pn in range(1, max_pn+1):            print(&#x27;************************正在抓取%s页************************&#x27; % pn)            pn_rule = re.compile(&#x27;[|]&#x27;)            fin_url = pn_rule.sub(r&#x27;|e-%s|&#x27; % pn, search_url, 1)            tmp_url_list = copy.deepcopy(search_list[i][:3])            tmp_url_list.append(fin_url)            fin_search_list.append(tmp_url_list)    return fin_search_list# 获取tag信息def get_info(fin_search_list, process_i):    print(&#x27;进程%s开始&#x27; % process_i)    fin_info_list = []    for i in range(len(fin_search_list)):        url = fin_search_list[i][3]        try:            page = get_page(url)        except:            print(&#x27;获取tag超时&#x27;)            continue        soup = BS(page, &#x27;lxml&#x27;)        title_list = soup.select(&#x27;a[class=&quot;h_name&quot;]&#x27;)        address_list = soup.select(&#x27;span[class=&quot;address&quot;]&#x27;)        attr_list = soup.select(&#x27;span[class=&quot;attribute&quot;]&#x27;)        price_list = soup.find_all(attrs=&#123;&quot;class&quot;: &quot;xq_aprice xq_esf_width&quot;&#125;)  # select对于某些属性值（属性值中间包含空格）无法识别，可以用find_all(attrs=&#123;&#125;)代替        for num in range(20):            tag_tmp_list = []            try:                title = title_list[num].attrs[&quot;title&quot;]                print(r&#x27;************************正在获取%s************************&#x27; % title)                address = re.sub(&#x27;\n&#x27;, &#x27;&#x27;, address_list[num].get_text())                area = re.search(&#x27;\d+[\u4E00-\u9FA5]&#123;2&#125;&#x27;, attr_list[num].get_text()).group(0)                layout = re.search(&#x27;\d[^0-9]\d.&#x27;, attr_list[num].get_text()).group(0)                floor = re.search(&#x27;\d/\d&#x27;, attr_list[num].get_text()).group(0)                price = re.search(&#x27;\d+[\u4E00-\u9FA5]&#x27;, price_list[num].get_text()).group(0)                unit_price = re.search(&#x27;\d+[\u4E00-\u9FA5]/.&#x27;, price_list[num].get_text()).group(0)                tag_tmp_list = copy.deepcopy(fin_search_list[i][:3])                for tag in [title, address, area, layout, floor, price, unit_price]:                    tag_tmp_list.append(tag)                fin_info_list.append(tag_tmp_list)            except:                print(&#x27;【抓取失败】&#x27;)                continue    print(&#x27;进程%s结束&#x27; % process_i)    return fin_info_list# 分配任务def assignment_search_list(fin_search_list, project_num):  # project_num每个进程包含的任务数，数值越小，进程数越多    assignment_list = []    fin_search_list_len = len(fin_search_list)    for i in range(0, fin_search_list_len, project_num):        start = i        end = i+project_num        assignment_list.append(fin_search_list[start: end])  # 获取列表碎片    return assignment_list# 存储抓取结果def save_excel(fin_info_list, file_name):    tag_name = [&#x27;区域&#x27;, &#x27;板块&#x27;, &#x27;地铁&#x27;, &#x27;标题&#x27;, &#x27;位置&#x27;, &#x27;平米&#x27;, &#x27;户型&#x27;, &#x27;楼层&#x27;, &#x27;总价&#x27;, &#x27;单位平米价格&#x27;]    book = xlsxwriter.Workbook(r&#x27;C:\Users\Esri\Desktop\%s.xlsx&#x27; % file_name)  # 默认存储在桌面上    tmp = book.add_worksheet()    row_num = len(fin_info_list)    for i in range(1, row_num):        if i == 1:            tag_pos = &#x27;A%s&#x27; % i            tmp.write_row(tag_pos, tag_name)        else:            con_pos = &#x27;A%s&#x27; % i            content = fin_info_list[i-1]  # -1是因为被表格的表头所占            tmp.write_row(con_pos, content)    book.close()if __name__ == &#x27;__main__&#x27;:    file_name = input(r&#x27;抓取完成，输入文件名保存：&#x27;)    fin_save_list = []  # 抓取信息存储列表    # 一级筛选    page = get_page(base_url)    search_dict = get_search(page, &#x27;r-&#x27;)    # 二级筛选    for k in search_dict:        print(r&#x27;************************一级抓取：正在抓取【%s】************************&#x27; % k)        url = search_dict[k]        second_page = get_page(url)        second_search_dict = get_search(second_page, &#x27;b-&#x27;)        search_dict[k] = second_search_dict    # 三级筛选    for k in search_dict:        second_dict = search_dict[k]        for s_k in second_dict:            print(r&#x27;************************二级抓取：正在抓取【%s】************************&#x27; % s_k)            url = second_dict[s_k]            third_page = get_page(url)            third_search_dict = get_search(third_page, &#x27;w-&#x27;)            print(&#x27;%s&gt;%s&#x27; % (k, s_k))            second_dict[s_k] = third_search_dict    fin_info_list = get_info_list(search_dict, layer, tmp_list, search_list)    fin_info_pn_list = get_info_pn_list(fin_info_list)    p = Pool(8)  # 设置进程池    assignment_list = assignment_search_list(fin_info_pn_list, 6)  # 分配任务，用于多进程    result = []  # 多进程结果列表    for i in range(len(assignment_list)):        result.append(p.apply_async(get_info, args=(assignment_list[i], i)))    p.close()    p.join()    for result_i in range(len(result)):        fin_info_result_list = result[result_i].get()        fin_save_list.extend(fin_info_result_list)  # 将各个进程获得的列表合并    save_excel(fin_save_list, file_name)    endtime = datetime.datetime.now()    time = (endtime - starttime).seconds    print(&#x27;总共用时：%s s&#x27; % time)]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>多进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无人机（UAV）影像处理最佳实践</title>
+    <url>/2024/04/17/41269.html</url>
+    <content><![CDATA[1、前言数字孪生（Data Twins）概念已经在报端见诸多年，但是在制造业、能源化工、流域治理等还是最底层的搭建和展示。
+回头看看，当初热火朝天炒的那波人和政策理论已经烟消云散，如今激不起半点涟漪，传统还是传统，并没有被数字信息革了命。
+不说经济的下行原因，每个参与过其中的在思考：是什么让我们龃龉不前！！！
+是技术跟不上理论？亦或是从来没有共识？
+
+2、现状在XX已有的安管应急项目中，几乎所有的厂区都涉及到三维数字模型建设，由于目前XX不具备实景三维和BIM建模能力，主要是通过第三方赋能。
+同样在重要的人员定位模块，硬件完全依赖第三方，软件受限于第三方平台供给，结果参差不齐，疲于交付。
+3、无人机（UAV）建模流程一般建模流程是：前期规划》外业》内业》成果》交付
+具体包括外业的无人机（UAV）航拍、外业量测采集、素材收集，然后是内业的处理：空片处理、空三测量、几何校正，最后输出成果：如DOM正射影像、DSM、DEM、实景三维倾斜摄影模型、BIM模型等
+4、最佳实践指的是如何将无人机（UAV）影像处理（ArcGIS Pro中操作），进而准确发布到Geoserver上，提供正常稳定OGC服务：如WMS、WMTS等，
+具体如下：
+注意：这里不提供特殊的多光谱无人机影像处理，譬如融合、镶嵌、匀色匀光等
+（1）掩膜裁剪（extract by mask）
+基于企业信息中范围（接口返回的WKT【Well-Known Text】获取，或者是从PosrgreSQL数据库中的poi_polygon表，使用st_astext导出，poi_type为11），
+使用extract by mask工具，注意环境选择snap to this raster.
+（2）坐标转换、影像压缩
+使用copy raster在其中配置输出坐标为WGS1984、格式为TIFF、压缩算法为LZW、位深为16Bit(geoserver能准确识别无数据区)
+（3）波段提取（extract bands）
+使用raster function中的extract bands，选择composite形式为RGB
+（4）geoserver发布
+影像放置geoserver的data目录下，其他路径可能有权限等异常报错
+（5）GeoWebCache生成
+使用批处理数量不能超过机器核数，推荐5以下，坐标为ESPG:4326，格式为png，级别15-21
+]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>无人机</tag>
+        <tag>影像</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更换注册ArcGIS Web Adaptor后，Portal for ArcGIS需要做的内容迁移</title>
+    <url>/2017/01/16/43705.html</url>
+    <content><![CDATA[情境描述:之前在我的电脑上装了Portal for ArcGIS和ArcGIS Server，并且共用一个ArcGIS Web Adaptor，后来Server组的同事建议Portal for ArcGIS和ArcGIS Server分别用一个ArcGIS Web Adaptor，于是我先将Portal for ArcGIS和ArcGIS Server解除联合，然后卸载掉ArcGIS Web Adaptor，接着安装了两个ArcGIS Web Adaptor，注册server的命名为server，注册portal的命名为arcgis。安装之后，分别注册Portal for ArcGIS和ArcGIS Server，接着联合，成功！
+
+问题描述：但是接下来确出现一个大的问题，打开portal中之前做好的地图，都加载不了，检查要素，显示连接404错误，地址还是之前的，没有更换过来，解决方法:1、于是到系统内容目录下（形如：X:\arcgisportal\content\items），按照该地图的ID号（在portal我的内容可以看到），2、找到对应的文件夹3、用notepad打开一个文件4、打开后，果然连接是之前的5、可想而知，所有的item应该都是这样，于是用notepad的批量替换功能，将所有的地址改为现在正确的6、然后重启portal服务7、加载一个地图查看，问题得到解决
+PS：ArcGIS Web Adaptor看来是不能随意更换，特别是ArcGIS Web Adaptor的名字
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欧洲是中国光伏企业进军海外的唯一发力点？</title>
+    <url>/2025/03/02/11399.html</url>
+    <content><![CDATA[答案明显不是！
+1. 东南亚地区国家：越南、泰国、菲律宾、印度尼西亚
+潜力因素：这些国家正经历快速的工业化和城市化，能源需求持续增长。各国政府通过上网电价补贴、税收优惠等政策支持可再生能源发展，为光伏市场创造了机会。中国企业凭借成本优势和成熟技术，能够满足这些市场的需求。
+印度：作为人口第二大国，印度通过“国家太阳能使命”计划推动光伏发展，目标到2030年实现450吉瓦可再生能源装机容量。印度市场对价格敏感，中国企业低成本、高性价比的产品具有明显竞争力。
+
+2. 中东和非洲地区   中东（沙特阿拉伯、阿联酋、阿曼等）：   潜力因素：这些国家拥有极佳的太阳能资源，政府通过大规模项目（如沙特“愿景2030”）推动能源转型，减少对化石燃料的依赖。中国企业可参与大型光伏项目的竞标和建设，提供组件和解决方案。
+非洲（南非、肯尼亚、埃及等）：潜力因素：非洲普遍面临电力短缺，光伏作为分散式能源解决方案，能有效缓解这一问题。市场潜力巨大，中国企业可通过提供经济实惠的光伏系统和储能方案，满足当地户用和工商业需求。
+3. 拉丁美洲地区   国家：巴西、墨西哥、智利
+潜力因素：这些国家太阳能资源丰富，政府支持力度大。例如，巴西通过“能源拍卖”机制为光伏项目提供市场机会，智利在Atacama沙漠开发大型光伏电站。中国企业在组件制造和EPC（工程、采购、施工）方面的优势，使其在这些市场具有竞争力。
+4. 美国和加拿大   美国：   潜力因素：尽管存在贸易壁垒，美国仍是全球最大光伏市场之一，尤其在加州、内华达州等地区，户用和工商业光伏需求旺盛。中国企业可通过技术创新或与本地企业合作进入市场。
+加拿大：潜力因素：加拿大致力于碳中和目标，光伏市场潜力逐渐释放，尤其在安大略省等地。中国企业可提供高性价比产品，满足户用和工商业需求。
+5. 大洋洲地区   澳大利亚：   潜力因素：澳大利亚是全球户用光伏装机增长最快的国家之一，政府通过小规模技术证书（STC）等政策支持光伏安装。工商业市场也在扩张，中国企业的性价比优势使其在该市场具有吸引力。
+新西兰：潜力因素：政府支持可再生能源，尤其在农业和工业领域，光伏应用前景良好。
+6. 俄罗斯和东欧地区   俄罗斯：   潜力因素：近年来政府开始重视可再生能源，特别是在远东等偏远地区，光伏作为补充能源具有潜力。中国企业可通过与本地企业合作开发市场。
+东欧（波兰、匈牙利、捷克等）：潜力因素：作为欧盟成员国，这些国家需遵守可再生能源指令，光伏市场逐步开放。对价格敏感的特点使中国企业的低成本产品具有吸引力。
+7. 日本和韩国   日本：   潜力因素：福岛核事故后，日本加大对可再生能源支持，户用和工商业光伏市场持续增长。中国企业可通过与日本企业合作，满足其高品质市场需求。
+韩国：潜力因素：政府计划到2030年将可再生能源占比提升至20%，光伏是重要方向。中国企业可凭借技术优势参与竞争。
+总结除了欧洲，中国户用和工商业光伏公司可重点关注 东南亚、中东、非洲、拉丁美洲、美国、澳大利亚、日本、韩国 等地区。这些市场拥有丰富的太阳能资源、政策支持和增长的能源需求。通过灵活的市场策略、合作伙伴关系和本土化运营，中国企业能够在这些地区取得成功，开拓更广阔的发展空间。
+]]></content>
+      <tags>
+        <tag>中国</tag>
+        <tag>光伏</tag>
+        <tag>亚洲</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深夜纵有千言胆，天明必悔</title>
+    <url>/2020/05/19/59224.html</url>
+    <content><![CDATA[1、总是钟情于一，难以自拔，这可能是我最大的可悲之处。2、可能受制于眼界，困囿于自己，无法走出自己的圈子。3、从未如此长时间的想念一个人这么久、这么频繁，每天每个小时，除了至亲。4、时不时看到罗曼罗兰的英雄主义，我认为这种阐释很有道理，但是自己却没有深刻体会到。5、这次身体的异样算是给自己敲响了警钟，体会到极致的孤独就是自己一个在医院，各种检查用尽，不知是否虚惊一场，未来是不是也这样。6、从前排斥的东西，是否需要重新审视，因为我也知道那是在压抑自己，实际自己内心也无比渴望。7、从前纵情挥霍的东西，现在也需要收敛抑或是改正了，真的不好。8、昨天跟人说自己年纪大了，任何事还是悠着点，旁人听完笑说你才多大，不知安慰还是事实，但是三十而立的坎儿算是来了。9、周末去和家人好好说说吧，毕竟这次疫情半年多没见面了，我决定摊牌了。10、深夜纵有千言胆，天明必悔，所以我还是光天化日琢磨一下，除了白日做梦，其他的就很理性了。
+]]></content>
+  </entry>
+  <entry>
+    <title>欲戴其冠,必承其重---谈谈ArcGIS制图表达</title>
+    <url>/2016/11/01/7022.html</url>
+    <content><![CDATA[很早的时候，ArcGIS中就增加了制图表达的功能，只是用的人不多，所以一直不为大多数人所知。本来ArcGIS的基本标注已经满足大部分的出图需求，制图表达如同没有开封的美酒，一直等待去开启，但是任何东西都要有个度，如果酒喝多了也不好，影像做事效率。例如，以下是广州的行政区划图，很简单的一张图，根据不同区域分类着色，然后添加文字标注就行了，放大缩小加载都很快，但是看起来很单调，没有美观可言。下图简单增加制图表达后，如颜色渐变和缓冲区立体效果，立刻显得很有艺术的气息 (^__^) 嘻嘻……)，但是美丽的背后带来不小的副作用，图层缩放加载非常慢，影响制图效率，所以预先要将一些简单地标注完成再转为制图表达。有一句话说得好，”欲戴其冠,必承其重“，对于制图表达加载效率的这个问题，需要以后版本的改进，也有可能我没触及到，比如ArcGIS Pro中是否已经解决这个问题。虽然官方在ArcGIS 10.1版本的时候就说过支持制图表达发布为服务，但是支持的范围是有限的，目前来说10.4.1依然没多大，报错的情况还挺多的，希望以后的server能做一下改进，但是结合Arcgis API for js，应该也可以实现我们所要求的一些效果。总而言之，对于专题出图和打印，制图表达仍然是非常有用的功能，他让你的地图抽象地更接地气，更为合理，更为美观，也希望以后愈加完美生动地展示在不同的平台。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类型化数组</title>
+    <url>/2023/05/26/33653.html</url>
+    <content><![CDATA[为了绘制三维图形，WebGL通常需要同时处理大量相同类型的数据，例如顶点的坐标和颜色数据。为了优化性能，WebGL为每种基本数据类型引入了一种特殊的数组（类型化数组）。浏览器事先知道数组中的数据类型，所以处理起来也更加有效率。注意：
+
+类型化数组不支持push,pop方法；
+类型化数组初始化唯一方法是new,如 new Float32Array([0.0, 0.5, -0.5, -0.5, 0.5, -0.5])；
+另外，可以通过定义长度初始化一个数组 new Float32Array(4)
+
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>缓冲区对象工作流程</title>
+    <url>/2023/05/25/47570.html</url>
+    <content><![CDATA[1、创建缓冲区对象（gl.createBuffer()）;2、绑定缓冲区对象（gl.bindBuffer()）;3、将数据写入缓冲区对象（gl.bufferData()）;4、将缓冲区对象分配给一个attribute变量（gl.vertexAttribPointer()）;5、开启attribute变量（gl.enableVertexAttribArray()）
+
+
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>航班数据分享</title>
+    <url>/2024/01/26/31423.html</url>
+    <content><![CDATA[近期抓取了一些航班数据，分享一下。
+数据范围：全国（境内，不包括港澳台）日期范围：20230320-20230327航班数量：58987条
+关注右侧公众号zyouzz回复”航班”获取下载，
+有偿提供近期或者其他日期航班数据（全国、世界均可）
+如有需要，请于公众号zyouzz留言
+]]></content>
+      <tags>
+        <tag>航班</tag>
+        <tag>世界</tag>
+        <tag>全国</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网站服务器(Apach)日志读取分析成图及代码</title>
+    <url>/2017/02/09/65202.html</url>
+    <content><![CDATA[先说一句招黑的话：python是最好的编程语言！没有之一
+
+近来一直在学python，最先知道python可以做爬虫，简单几行代码，轻松爬取网站的内容上手也比较快，即学即上岗python真是无所不能呀，越来越被人重视，现在是引用这张经典照片的时候了比如现在使用Arcpy写一写批处理的脚本，解决很多繁琐的问题还有爬虫，将爬到的数据分析一下，很有成就感++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++过年放假前，接到一项挑战：将公司论坛网站（ArcGIS知乎）服务器上的Apach日志分析一下，看看网站论坛的搜索情况日志是每天生成一个，一共是二百多天的，总共大概1.3个G，数量不大。
+读取数据 每天搜索次数统计1、首先肯定是看一下这些文件名字，嗯，很正规，方便后续的读取和存储2、然后随便打开一个文件，分析一下存储结构，然后找到自己需要的内容，初步思考怎么提取出来3、接着尝试写代码读取一个文件看看，无压力4、现在要的是将里面有形如“GET //search/ajax/search_result/search_type-questions__q-%E5%85%A5%E9%97%A8”搜索的请求行取出来，找到其中q-%E5%85%A5%E9%97%A8字符串，然后使用“urllib.parse.unquote”转码，转为可以读懂的关键词，这就是要的结果了5、读取到每个日志文件中的关键词后，将其存储到文本中,代码如下，
+###读取源数据，通过挑选、反编码并写入内存rootdir = &quot;C://Users//Esri//Desktop//log&quot;loglist = []tongjilist = []for parent, dirnames, filenames in os.walk(rootdir):    day = 1    i = 1    for filename in filenames:        filedate = filename[7:-4]        filepath = os.path.join(parent, filename)        # print(filedate)        # print(filepath)        input = open(filepath, &#x27;r&#x27;)        num = 1        for line in input:            if (                    &#x27;GET //search/ajax/search_result/search_type-questions__q-&#x27; and &#x27;template-__page-1&#x27; and &#x27;search_type-questions&#x27;) in line:                kw1 = line.split()[6][53:-19]                kw = urllib.parse.unquote(kw1).replace(&#x27;_&#x27;, &#x27;&#x27;)                if &#x27;?&#x27; in kw:                    pass                else:                    # file1 = open(&#x27;C://Users//Esri//Desktop//statistics//原始数据.txt&#x27;, &#x27;a&#x27;,encoding=&#x27;utf-8&#x27;)                    logline = str(line.split()[0]) + &#x27;,&#x27; + str(line.split()[3][1:]) + &#x27;,&#x27; + kw + &#x27;\n&#x27;                    loglist.append(logline)                    # file1 = file1.write(line1)                    # print(i)                    i += 1                    num += 1        day += 1        print(filedate + &quot;:共有&quot; + str(num) + &quot;次搜索&quot;)        # file2 = open(&#x27;C://Users//Esri//Desktop//statistics//每天搜索次数统计.txt&#x27;, &#x27;a&#x27;)        tongjiline = filedate + &#x27;,&#x27; + str(num) + &#x27;\n&#x27;        tongjilist.append(tongjiline)###创建文本并写入数据表头log = open(&#x27;C://Users//Esri//Desktop//statistics//原始数据.txt&#x27;, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;)loghead = &quot;IP&quot; + &#x27;,&#x27; + &quot;日期&quot; + &#x27;,&#x27; + &quot;搜索关键词&quot; + &#x27;\n&#x27;log.write(loghead)  # 写文件头log.close()tongji = open(&#x27;C://Users//Esri//Desktop//statistics//每天搜索次数统计.txt&#x27;, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;)tongjihead = &quot;日期&quot; + &#x27;,&#x27; + &quot;次数&quot; + &#x27;\n&#x27;tongji.write(tongjihead)  # 写文件头tongji.close()###将内存的list保存到文本中openlog = open(&#x27;C://Users//Esri//Desktop//statistics//原始数据.txt&#x27;, &#x27;a&#x27;, encoding=&#x27;utf-8&#x27;)openlog.writelines(loglist)openlog.close()opentongji = open(&#x27;C://Users//Esri//Desktop//statistics//每天搜索次数统计.txt&#x27;, &#x27;a&#x27;, encoding=&#x27;utf-8&#x27;)opentongji.writelines(tongjilist)opentongji.close()del loglistdel tongjilistday -= 1sumday = i - 1print(str(day) + &quot;天一共有：&quot; + str(sumday) + &quot;次搜索&quot;)# print(filedate)startday = (datetime.datetime.strptime(filedate, &quot;%Y-%m-%d&quot;) - datetime.timedelta(days=day - 1)).strftime(&quot;%Y-%m-%d&quot;)# print(startday)
+
+PS：读取完文件花了10S
+同一IP、日期、搜索关键词结果去重好了，得到初步结果。通过代码，可以看到：每天搜索次数统计.txt中包含了三方面的内容：IP，时间，搜索关键词，对于同一IP，同一时间，同一搜索关键词进行去重，得到清洗后的数据源，才能进行后续的有效分析代码如下
+&#x27;&#x27;&#x27;同一IP、日期、搜索关键词结果去重&#x27;&#x27;&#x27;lines_seen = set()outfile = open(&#x27;C://Users//Esri//Desktop//statistics//nodate.txt&#x27;, &quot;w&quot;, encoding=&#x27;utf-8&#x27;)for line in open(&#x27;C://Users//Esri//Desktop//statistics//原始数据.txt&#x27;, &quot;r&quot;, encoding=&#x27;utf-8&#x27;):    outfile = open(&#x27;C://Users//Esri//Desktop//statistics//nodate.txt&#x27;, &quot;a&quot;, encoding=&#x27;utf-8&#x27;)    rline1 = line.split(&#x27;,&#x27;)[0]    # print(rline1)    rline2 = line.split(&#x27;,&#x27;)[2]    # print(rline2)    rline3 = line.split(&#x27;,&#x27;)[1][:-9]    # print(rline3)    reline = rline1 + &#x27;,&#x27; + rline3 + &#x27;,&#x27; + rline2    if reline not in lines_seen:        # print(&#x27;reline:&#x27;+reline)        outfile.write(reline)        lines_seen.add(reline)opendupbeta = open(&#x27;C://Users//Esri//Desktop//statistics//nodate.txt&#x27;, &quot;r&quot;, encoding=&#x27;utf-8&#x27;)opendup = open(&#x27;C://Users//Esri//Desktop//statistics//爬取的数据源.txt&#x27;, &quot;w&quot;, encoding=&#x27;utf-8&#x27;)opendup.write(re.sub(r&#x27;IP,,搜索关键词&#x27;, &#x27;IP,日期,搜索关键词&#x27;, opendupbeta.read()))opendupbeta.close()opendup.close
+
+搜索关键词Top100统计有了数据能做些什么呢？既然是网站论坛的搜索关键词统计，那么统计一下搜索次数最高的关键词 TOP100！python很容易上手，那么问题来了：你将对Python的了解不够深入。所以在你开始实现自己的想法时，一种“朴素的编程思想”贯穿脑中，费尽心力写了几十行，还不怎么完美最后发现该功能已经写成函数了，你只需用一行去调用即可。这里不禁感叹python的强大：没有做不到的，只有你想不到的。好吧，这是我的心得体会！附上统计Top100的代码
+&#x27;&#x27;&#x27;搜索关键词Top100统计&#x27;&#x27;&#x27;outfile1 = open(&#x27;C://Users//Esri//Desktop//statistics//frequencybeta.txt&#x27;, &quot;w&quot;, encoding=&#x27;utf-8&#x27;)outfile2 = open(&#x27;C://Users//Esri//Desktop//statistics//爬取的数据源.txt&#x27;, &quot;r&quot;, encoding=&#x27;utf-8&#x27;)for line in outfile2:    reline1 = line.split(&#x27;,&#x27;)[2]    outfile1.write(reline1)outfile1.close()outfile2.close()f1 = open(&#x27;C://Users//Esri//Desktop//statistics//frequencybeta.txt&#x27;, &quot;r&quot;, encoding=&#x27;utf-8&#x27;)f2 = open(&#x27;C://Users//Esri//Desktop//statistics//frequency.txt&#x27;, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;)f2.write(re.sub(r&#x27;搜索关键词&#x27;, &#x27;&#x27;, f1.read()))f1.close()f2.close()openfre = open(&#x27;C://Users//Esri//Desktop//statistics//frequency.txt&#x27;, encoding=&#x27;utf-8&#x27;)str1 = openfre.read().lower().split()# print(str1)# print(&quot;原文本:\n %s&quot;% str1)# print(&quot;\n各词出现的次数：\n %s&quot; % collections.Counter(str1))# print(type(collections.Counter(str1)))# cishu= collections.Counter(str1)# for  ci in str1:# print(ci, cishu[ci])# print(collections.Counter(str1)[&#x27;arcgis&#x27;])#以字典的形式存储，每个关键词对应的键值就是在文本中出现的次数mc100 = re.sub(&#x27;\ |\[|\]|\(|\)|\&#x27;&#x27;, &#x27;&#x27;, str(collections.Counter(str1).most_common(100)))# print(mc100)msarr = mc100.split(&#x27;,&#x27;)# print(type(msarr))openfre.close()file3 = open(&#x27;C://Users//Esri//Desktop//statistics//关键词top100.txt&#x27;, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;)line3 = &quot;关键词&quot; + &#x27;,&#x27; + &quot;次数&quot; + &#x27;\n&#x27;file3_ = file3.write(line3)i = 1x = []y = []file3.close()for xunhuan in msarr:    file4 = open(&#x27;C://Users//Esri//Desktop//statistics//关键词top100.txt&#x27;, &#x27;a&#x27;, encoding=&#x27;utf-8&#x27;)    if i % 2 != 0:        xunhuandot = xunhuan + &quot;,&quot;        file4.write(xunhuandot)        x.append(xunhuan)    else:        xunhuanbr = xunhuan + &#x27;\n&#x27;        file4.write(xunhuanbr)        y.append(int(xunhuan))    i += 1# print(x)# print(y)file3.close()file4.close()
+
+按月份统计搜索次数有了每天的搜索次数，就可以得到每月的搜索次数
+&#x27;&#x27;&#x27;按月份统计汇总&#x27;&#x27;&#x27;openutj = open(&#x27;C://Users//Esri//Desktop//statistics//uheadtongji.txt&#x27;,&quot;r&quot;,encoding=&#x27;utf-8&#x27;)umonth=[]for line5 in openutj.read().split(&#x27;\n&#x27;):    umonth.append(line5[:7])#print(year)#print(month)openutj.close()outfile7 = open(&#x27;C://Users//Esri//Desktop//statistics//每月搜索次数统计.txt&#x27;, &quot;w&quot;, encoding=&#x27;utf-8&#x27;)headms=&#x27;月份&#x27;+&#x27;,&#x27;+&#x27;次数&#x27;+&#x27;\n&#x27;outfile7.write(headms)outfile7.close()uyemon=[]for mon in umonth:    #print(mon)    openutj1 = open(&#x27;C://Users//Esri//Desktop//statistics//uheadtongji.txt&#x27;, &quot;r&quot;, encoding=&#x27;utf-8&#x27;)    summ=0    for line6 in openutj1.read().split(&#x27;\n&#x27;):        monn=line6[:7]        if monn==mon:            summ+=int(line6[11:])    uyemon.append(summ)#print(uyemon)month=[]for dmonth in umonth:    if dmonth not in month:        month.append(dmonth)#print(month)yemon=[]for dyemon in uyemon:    if dyemon not in yemon:        yemon.append(dyemon)#print(yemon)openutj1.close()i22=0sousuo=[]for c22 in month:    i22+=1    if i22!=len(month):        sousuo.append(str(c22)+&#x27;,&#x27;+str(yemon[i22-1])+&#x27;\n&#x27;)    else:        sousuo.append(str(c22) + &#x27;,&#x27; + str(yemon[i22 - 1]))#print(sousuo)openmeiyue=open(&#x27;C://Users//Esri//Desktop//statistics//每月搜索次数统计.txt&#x27;, &quot;a&quot;, encoding=&#x27;utf-8&#x27;)openmeiyue.writelines(sousuo)#print(sousuo)openmeiyue.close()
+
+统计结果成图得到统计结果后，可以通过python的matplotlib等库可视化数据
+&#x27;&#x27;&#x27;每天统计成图&#x27;&#x27;&#x27;opentj1 = open(&#x27;C://Users//Esri//Desktop//statistics//每天搜索次数统计.txt&#x27;, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;)openu1 = open(&#x27;C://Users//Esri//Desktop//statistics//uheadtongji.txt&#x27;, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;)jishu = 0for line1 in opentj1.read().split(&#x27;\n&#x27;):    # print(line1)    jishu += 1# print(jishu)num = 0opentj2 = open(&#x27;C://Users//Esri//Desktop//statistics//每天搜索次数统计.txt&#x27;, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;)for line in opentj2.read().split(&#x27;\n&#x27;):    # print(line)    openu2 = open(&#x27;C://Users//Esri//Desktop//statistics//uheadtongji.txt&#x27;, &#x27;a&#x27;, encoding=&#x27;utf-8&#x27;)    # print(line3)    if line == &#x27;日期,次数&#x27; or line == &#x27;&#x27;:        pass    else:        if num != jishu - 2:            openu2.write(line + &#x27;\n&#x27;)        else:            openu2.write(line)    num += 1opentj1.close()opentj2.close()f5 = open(&#x27;C://Users//Esri//Desktop//statistics//uheadtongji.txt&#x27;, &#x27;r&#x27;).read().replace(&#x27;\n&#x27;, &#x27;,&#x27;).split(&#x27;,&#x27;)# print(f5)jishu2 = 1x = []y = []for uh in f5:    # print(uh)    if jishu2 % 2 != 0:        x.append(uh)    else:        y.append(int(uh))    jishu2 += 1jishu1 = 1x1 = []for jishu1 in range(1, len(x) + 1):    x1.append(int(jishu1))# print(x1)DataX = tuple(x1)# print(type(DataX))DataY = tuple(y)fig3 = pl.figure()fig3.set_size_inches(30, 10.5)plt.title(    &#x27;ArcGIS知乎站内搜索每天统计（&#x27; + startday + &#x27;至&#x27; + filedate + &#x27;）&#x27; + &#x27;\n&#x27; + &#x27;(&#x27; + str(day) + &quot;天一共有：&quot; + str(sumday) + &quot;次搜索)&quot;,    fontsize=26)plt.xticks(fontsize=20)plt.yticks(fontsize=20)plt.xlabel(&#x27;日期(&#x27; + startday + &#x27;+)&#x27;, fontsize=23)plt.ylabel(&#x27;次数&#x27;, fontsize=23)plt.plot(x1, y, &#x27;b*&#x27;)  # use pylab to plot x and yplt.plot(x1, y, &#x27;r&#x27;)for i, (_x, _y,_z) in enumerate(zip(x1, y,y)):    plt.text(_x, _y, _z, color=&#x27;red&#x27;, fontsize=25)savets = &quot;C:/Users/Esri/Desktop/&quot; + re.sub(&#x27;:&#x27;, &#x27;&#x27;, str(datetime.datetime.now())) + &quot;ts.png&quot;fig3.savefig(savets, dpi=100)# pl.show()  # show the plot on the screen
+&#x27;&#x27;&#x27;每月统计折点图&#x27;&#x27;&#x27;openmonth=open(&#x27;C://Users//Esri//Desktop//statistics//每月搜索次数统计.txt&#x27;, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;)realmonth=[]monsta=[]for monybeta in openmonth:    mony=monybeta.replace(&#x27;\n&#x27;,&#x27;&#x27;).split(&#x27;,&#x27;)[1]    if mony!=&#x27;次数&#x27;:        monsta.append(mony)        realmonth.append(monybeta[5:7])mons=[]#print(len(monsta))for monx in range(0,len(monsta)):    mons.append(monx+1)#print(monsta)#print(mons)fig4 = plt.figure()fig4.set_size_inches(30, 10.5)plt.title(    &#x27;ArcGIS知乎站内搜索每月统计（&#x27; + startday + &#x27;至&#x27; + filedate + &#x27;）&#x27; + &#x27;\n&#x27; + &#x27;(&#x27; + str(day) + &quot;天一共有：&quot; + str(sumday) + &quot;次搜索)&quot;,    fontsize=26)plt.xticks(fontsize=20)plt.yticks(fontsize=20)plt.xlabel(&#x27;月份(&#x27; + str(startday)[5:7] + &#x27;月份开始--)&#x27;, fontsize=23)plt.ylabel(&#x27;次数&#x27;, fontsize=23)plt.plot(mons, monsta, &#x27;bo&#x27;,mons, monsta, &#x27;r&#x27;)  # use pylab to plot x and y#plt.plot(mons, monsta, &#x27;r&#x27;)plt.xticks(mons, realmonth, fontsize=20)for i, (_x, _y,_z) in enumerate(zip(mons, monsta,monsta)):    plt.text(_x, _y, _z, color=&#x27;red&#x27;, fontsize=25)savemonth = &quot;C:/Users/Esri/Desktop/&quot; + re.sub(&#x27;:&#x27;, &#x27;&#x27;, str(datetime.datetime.now())) + &quot;month.png&quot;fig4.savefig(savemonth, dpi=100)
+&#x27;&#x27;&#x27;top20成图&#x27;&#x27;&#x27;x = x[:20]y = y[:20]i = 1x1 = []for i in range(1, len(x) + 1):    x1.append(int(i)+5)DataX = tuple(x1)# print(type(DataX))DataY = tuple(y)# print(type(DataY))fig1 = plt.figure()fig1.set_size_inches(30, 15)# plt.xlim()rects = plt.bar(left=DataX, height=DataY, width=0.5, align=&quot;center&quot;, yerr=0.000001, facecolor=&#x27;lightskyblue&#x27;,                edgecolor=&#x27;white&#x27;)plt.plot(DataX,DataY)def autolabel(rects):    for rect in rects:        height = rect.get_height()        plt.text(rect.get_x() + rect.get_width() / 3., 1.01 * height, &#x27;%s&#x27; % int(height), color=&#x27;red&#x27;, fontsize=25)autolabel(rects)plt.xlabel(&#x27;关键词&#x27;, fontsize=23)plt.ylabel(&#x27;次数&#x27;, fontsize=23)plt.title(&#x27;ArcGIS知乎站内搜索关键词统计（&#x27; + startday + &#x27;至&#x27; + filedate + &#x27;）top20统计&#x27; + &#x27;\n&#x27; + &#x27;(&#x27; + str(day) + &quot;天一共有：&quot; + str(    sumday) + &quot;次搜索)&quot;, fontsize=26)plt.yticks(fontsize=20)plt.xticks(DataX, tuple(x), fontsize=20)savename = &quot;C:/Users/Esri/Desktop/&quot; + re.sub(&#x27;:&#x27;, &#x27;&#x27;, str(datetime.datetime.now())) + &quot;.png&quot;# print(savename)fig1.savefig(savename, dpi=100)# plt.show()
+&#x27;&#x27;&#x27;top20成图&#x27;&#x27;&#x27;x = x[:20]y = y[:20]i = 1x1 = []for i in range(1, len(x) + 1):    x1.append(int(i)+5)DataX = tuple(x1)# print(type(DataX))DataY = tuple(y)# print(type(DataY))fig1 = plt.figure()fig1.set_size_inches(30, 15)# plt.xlim()rects = plt.bar(left=DataX, height=DataY, width=0.5, align=&quot;center&quot;, yerr=0.000001, facecolor=&#x27;lightskyblue&#x27;,                edgecolor=&#x27;white&#x27;)plt.plot(DataX,DataY)def autolabel(rects):    for rect in rects:        height = rect.get_height()        plt.text(rect.get_x() + rect.get_width() / 3., 1.01 * height, &#x27;%s&#x27; % int(height), color=&#x27;red&#x27;, fontsize=25)autolabel(rects)plt.xlabel(&#x27;关键词&#x27;, fontsize=23)plt.ylabel(&#x27;次数&#x27;, fontsize=23)plt.title(&#x27;ArcGIS知乎站内搜索关键词统计（&#x27; + startday + &#x27;至&#x27; + filedate + &#x27;）top20统计&#x27; + &#x27;\n&#x27; + &#x27;(&#x27; + str(day) + &quot;天一共有：&quot; + str(    sumday) + &quot;次搜索)&quot;, fontsize=26)plt.yticks(fontsize=20)plt.xticks(DataX, tuple(x), fontsize=20)savename = &quot;C:/Users/Esri/Desktop/&quot; + re.sub(&#x27;:&#x27;, &#x27;&#x27;, str(datetime.datetime.now())) + &quot;.png&quot;# print(savename)fig1.savefig(savename, dpi=100)# plt.show()
+
+由于上述都是以txt文档的形式保存数据，为方便出图，可以转成Excel格式，实现代码如下def txt_to_xlsx(txtpath):    exc = xlsxwriter.Workbook(        &#x27;C://Users//Esri//Desktop//statistics//&#x27; + txtpath.split(&#x27;//&#x27;)[-1].split(&#x27;.&#x27;)[0] + &#x27;.xlsx&#x27;)    worksheet = exc.add_worksheet()    openf = open(txtpath, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;)    opentxt = openf.read().split(&#x27;\n&#x27;)    txtline = 0    spaceline = 0    storesp = set()    newtxt = []    &#x27;&#x27;&#x27;首先去掉空行&#x27;&#x27;&#x27;    for line in opentxt:        # print(line)        txtline += 1        if line != &#x27;&#x27;:            newtxt.append(line)        else:            spaceline += 1            storesp.add(txtline)    &#x27;&#x27;&#x27;将内存中list写入xlsx&#x27;&#x27;&#x27;    colnums = len(newtxt[0].split(&#x27;,&#x27;))    maxwidth = 0    linenum = len(newtxt)    for colnum in range(0, colnums):        for linenums in range(0, linenum):            wid = len(newtxt[linenums].split(&#x27;,&#x27;)[colnum])            if wid &gt;= maxwidth:                maxwidth = wid        worksheet.set_column(colnum, colnum, width=maxwidth)        for linenumss in range(0, linenum):            worksheet.write(linenumss, colnum, newtxt[linenumss].split(&#x27;,&#x27;)[colnum])    exc.close()    openf.close()    # &#x27;&#x27;&#x27;文本信息&#x27;&#x27;&#x27;    # print(&#x27;=====================================&#x27;+&#x27;\n&#x27;+&#x27;导入文本信息&#x27;+&#x27;\n&#x27;+&#x27;=====================================&#x27;)    # print(&#x27;该文本共有%d行&#x27; % txtline + &#x27;\n&#x27; + &#x27;有%d行为空&#x27; % spaceline + &#x27;\n&#x27; + &#x27;空行行数分别为:&#x27; + re.sub(&#x27;&#123;|&#125;&#x27;, &#x27;&#x27;, str(storesp)))
+
+到这，代码运行无误的话，数据分析结果已经得到如果我进一步想将分析的结果以邮件的形式发送给别人，可以用下面的代码实现
+_user = &quot;发送人邮箱地址&quot;smtpserver=&#x27;邮箱SMTP地址&#x27;_from = &#x27;发送人姓名&lt;发送人邮箱地址&gt;&#x27;_pwd = &quot;邮箱密码&quot;#----如果发送多个人用英文半角逗号隔开---_to = &#x27;收件人名字&lt;收件人邮箱地址&gt;&#x27;&#x27;&#x27;&#x27;我们编写了一个函数_format_addr()来格式化一个邮件地址。注意不能简单地传入name &lt;addr@example.com&gt;，因为如果包含中文，需要通过Header对象进行编码。---廖雪峰&#x27;&#x27;&#x27;def _format_addr(s):    name, addr = parseaddr(s)    return formataddr((Header(name, &#x27;utf-8&#x27;).encode(), addr))# 如名字所示Multipart就是分多个部分msg = MIMEMultipart()msg[&quot;Subject&quot;] = &quot;邮件名字&quot;msg[&quot;From&quot;] =_format_addr( _from)msg[&quot;To&quot;] = _to# ---这是文字图片部分---def addimg(src, imgid):# 添加图片函数，参数1：图片路径，参数2：图片id    fp = open(src, &#x27;rb&#x27;)# 打开文件    msgImage = MIMEImage(fp.read())# 创建MIMEImage对象，读取图片内容并作为参数    fp.close()# 关闭文件    msgImage.add_header(&#x27;Content-ID&#x27;, imgid)# 指定图片文件的Content-ID，imgid，&lt;img&gt;标签中的src用到    return msgImage# 返回msgImage对象#msg = MIMEMultipart(&#x27;related&#x27;)# 创建MIMEMultipart对象，采用related定义内嵌资源的邮件体#msg[&quot;Subject&quot;] = &quot;ArcGISzhihu&quot;part = MIMEText(&#x27;&lt;font size=&quot;18px&quot; color=red&gt;&lt;b&gt;&lt;center&gt;ArcGIS知乎站内搜索关键词统计（详情见附件）&lt;/center&gt;&lt;/b&gt;&lt;/font&gt;&#x27;+&#x27;&lt;br/&gt;&lt;b&gt;&lt;center&gt;数据图表获取生成时间：&#x27;+str(datetime.datetime.now())+&#x27;&lt;/center&gt;&lt;/b&gt;&lt;img width=&quot;1300px&quot; src=&quot;cid:pic&quot;&gt;&#x27;,&quot;html&quot;,&quot;utf-8&quot; )msg.attach(part)# image = MIMEImage(open(&#x27;C://Users//Esri//Desktop//0b7b02087bf40ad14cc91cbd5f2c11dfa9eccebb.jpg&#x27;,&#x27;rb&#x27;).read()).add_header(&#x27;Content-ID&#x27;,&#x27;men&#x27;)msg.attach(addimg(savename,&quot;pic&quot;))# ---这是附件部分---part = MIMEApplication(open(&#x27;C://Users//Esri//Desktop//statistics//爬取的数据源.xlsx&#x27;, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;爬取的数据源.xlsx&quot;))msg.attach(part)part = MIMEApplication(open(&#x27;C://Users//Esri//Desktop//statistics//每天搜索次数统计.txt&#x27;, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;每天搜索次数统计.xlsx&quot;))msg.attach(part)part = MIMEApplication(open(&#x27;C://Users//Esri//Desktop//statistics//每月搜索次数统计.xlsx&#x27;, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;每月搜索次数统计.xlsx&quot;))msg.attach(part)part = MIMEApplication(open(&#x27;C://Users//Esri//Desktop//statistics//关键词top100.xlsx&#x27;, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;关键词top100.xlsx&quot;))msg.attach(part)part = MIMEApplication(open(savename, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;Top20统计结果直方图.png&quot;))msg.attach(part)part = MIMEApplication(open(savets, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;每天统计结果折点图.png&quot;))msg.attach(part)part = MIMEApplication(open(savemonth, &#x27;rb&#x27;).read())part.add_header(&#x27;Content-Disposition&#x27;, &#x27;attachment&#x27;, filename=(&#x27;gbk&#x27;, &#x27;&#x27;,&quot;每月统计结果折点图.png&quot;))msg.attach(part)s = smtplib.SMTP(smtpserver,25)  # 连接smtp邮件服务器,端口默认是25s.login(_user, _pwd)  # 登陆服务器s.sendmail(_user, _to.split(&#x27;,&#x27;), msg.as_string())  # 发送邮件s.close()
+
+如果想知道运行这些过程消耗的时间，可以在最后加上以下代码
+&#x27;&#x27;&#x27;执行操作时间&#x27;&#x27;&#x27;endtime = datetime.datetime.now()time = (endtime - starttime).secondsprint(&#x27;------------------------------------------------------&#x27; + &#x27;\n&#x27; + &quot;一共用时&quot; + str(time) + &quot;秒&quot;)print(&#x27;邮件发送给:%s&#x27;%_to.split(&#x27;,&#x27;))
+
+最后的最后，如果你觉得每天的统计次数成图效果不好，可以制作一个HTML网页去展示，调用js的C3库，易于交互查看    
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>获取周围邻接面的属性</title>
+    <url>/2018/03/07/40221.html</url>
+    <content><![CDATA[先将数据复制一份添加至ArcMap中。1、    打开空间连接工具，输入参数如下 2、    点击+号，创建一个字段，文本类型，合并选择连接，连接方式输入分号，点击OK 3、右击新添加的字段，选择添加字段 4、然后选择副本中字段，注意：是副本中的字段 接下来是去重操作1、新建一个文本字段 2、打开字段计算器，选择python,输入‘;’.join( !joinattr! .split(‘;’ )[1:])这里你可以将!joinattr!替换为你自己的字段 3、结果如下 
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>装server集群时，使用虚拟机克隆，需要注意的点</title>
+    <url>/2017/10/19/8194.html</url>
+    <content><![CDATA[创建站点之前，需要修改X:\arcgis\ArcGIS\Server\framework\etc\machine-config.xml文件中的机器名。修改为本机的机器名
+]]></content>
+  </entry>
+  <entry>
+    <title>解决ArcGIS Server因端口被占用，而无法发布地图服务的方法</title>
+    <url>/2016/08/20/28027.html</url>
+    <content><![CDATA[今天重启了一下电脑，发现ARCGIS Server的地图服务无法开启，提示4000端口被占用，经过网上搜索和摸索，最后终于得以解决，下面给出解决的办法：
+1、首先win+R使用cmd，注意cmd必须管理员的方式打开，cmd.exe一般在C:\WINDOWS\system32路径下，找到后，右击以管理员形势运行。
+2、然后再输入 netstat -ano 命令 enter运行，随后出现所有端口使用的情况，现以我自身的例子说明，如下图：3、我们可以看到4000端口被PID为2244的进程所占用，接下来打开任务管理器，找到PID为2244的进程，然后结束任务，4、接着也将ARCGISServer.exe的进程结束掉，随后在服务中重新开启ARCGISServer这项服务，问题解决！
+或者直接运行指定端口netstat -ano|findstr “4000”，然后记一下最后边的PID号，我这里为4132，继续输入tasklist|findstr “4132”,可以看到FoxitProtect.exe占用
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决openlayers前端加载大数据量显示卡顿的性能建议</title>
+    <url>/2021/08/13/35548.html</url>
+    <content><![CDATA[这段时间一直在做XX大数据项目，由于多维度和多条件查询的缘故，数据比较大，一个ol.layer.vector的图层要加载将近一两万的点，这时性能瓶颈就上来了，所以在前端显示时：页面及其卡顿甚至崩溃。另外因为添加了interaction交互事件，每个点都包含了较多的属性，信息量比较大。。。忍不了一下。。
+照例查了查openlayers的API文档，发现新版的openlayers6支持WebGLPointsLayer,直接渲染百万级的点都没啥问题。
+奈何现在项目用的是openlayers5，测试了一下，一些方法有更改，影响其他功能页面，短期不能贸然升级，于是放弃了这个升级的方式。
+最后结合了切片加载形式和GIS的抽稀思想：同时创建了两个图层，一个图层在初始化页面就只加载部分包含重要信息的点，另一个图层在放大到一定层级后显示剩余的点。
+动手实施后，果然纵享丝滑。
+]]></content>
+  </entry>
+  <entry>
+    <title>解决xampp服务器因80端口被占用,Apach无法启动的方法</title>
+    <url>/2016/08/20/27324.html</url>
+    <content><![CDATA[之前自己的网站搭建在学校的服务器上的，所以使用起来很方便，但离开学校后，没了服务器，网站所有的内容只能静静地备份在移动硬盘中，周末没其他事来公司，于是在本地搭建起来，想把旧网站中内容转到新网站中，谁知xamppz中Apach却启动不起来，显示有错误，看了一下提示：图中表示80端口被其他进程占用了，于是按照这篇文章解决ArcGIS Server因端口被占用，而无法发布地图服务的方法的思路，着手解决，但结果是行不通，后来一想，原来是之前装了ArcGIS Server，需要开启系统自带的IIS服务器，可能80被他占用了1、于是搜“IIS”，打开IIS管理器2、右击Default Web Site，点击绑定3、80端口果然被其占用，这时，我们只需点击80的记录，修改为其他端口即可4、再回到xampp,Apach成功开启！
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>RS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算点距离线最近的投影点</title>
+    <url>/2019/07/23/4998.html</url>
+    <content><![CDATA[之前用惯了ArcGIS，再者是其忠实的拥趸，因此每次遇到稍微拐点弯的问题，都会不厌其烦地去秋名山，。。。。
+
+哦，拐错了，是不厌其烦地将数据从数据库导出到ArcGIS中计算然后再将结果导回来。然而再怎么熟练使用ArcGIS，总觉得导入导出有些影响效率，考虑postgresql本身的空间计算也不弱（丰富的空间函数），于是这几天尝试将一些流程直接迁移至数据库中处理。这里举一个场景：已知一公交站点空间位置，以及其所在的道路，计算公交站点在该道路上的投影，以及距离道路起点的距离看到这个问题，可能有些同学说这还不简单，直接用ArcGIS的near(邻近分析)和SplitLineAtPoint（在点处分割线）工具不解ok了么。对，我之前经常就是这么解决的。实际我觉得再pg中用空间查询计算更简单，主要用到ST_LineLocatePoint(geometry a_linestring, geometry a_point)和ST_LineInterpolatePoint(geometry a_linestring, float8 a_fraction)这两个函数;
+学过GIS基础理论的同学都知道，线上一点距离起点的长度叫做M值，也叫空间线性参考，比如我们看新闻有提到某个道路发生追尾事故，位于302国道666公里处，这个666就是M值。所以我们可以先通过ST_LineLocatePoint计算站点到道路起始位置的长度百分比及其长度，然后通过长度百分比计算投影点。如下所示：计算长度
+update stop_space_attr set milepost=case is_same_dirwhen 1then ST_Line_Locate_Point (	st_transform ( st_geomfromtext ( REPLACE ( REPLACE ( st_astext ( road_geom ), &#x27;MULTILINESTRING((&#x27;, &#x27;LINESTRING(&#x27; ), &#x27;))&#x27;, &#x27;)&#x27; ), 4326 ), 3857 ),	ST_transform ( geom, 3857 )) * st_length(st_transform(geom,3857)) else	(1-ST_Line_Locate_Point (	st_transform ( st_geomfromtext ( REPLACE ( REPLACE ( st_astext ( road_geom ), &#x27;MULTILINESTRING((&#x27;, &#x27;LINESTRING(&#x27; ), &#x27;))&#x27;, &#x27;)&#x27; ), 4326 ), 3857 ),	ST_transform ( geom, 3857 ))) * st_length(st_transform(geom,3857))end
+计算投影点（这里贴出官网的例子）
+SELECT ST_AsText(ST_LineInterpolatePoint(foo.the_line, ST_LineLocatePoint(foo.the_line, ST_GeomFromText(&#x27;POINT(4 3)&#x27;))))FROM (SELECT ST_GeomFromText(&#x27;LINESTRING(1 2, 4 5, 6 7)&#x27;) As the_line) As foo;
+注意：
+（1）这两个参数中,线的空间几何必须是简单的linestring，不能是多部件线段multilinestring；（2）线和点的空间参考最好是投影坐标（如3857）；（3）如果数据量大，使用ST_transform，会影响计算效率，建议提前新建字段，统一空间参考。
+]]></content>
+  </entry>
+  <entry>
+    <title>记postgresql无法启动案例（could not flush dirty data: 结构需要清理）</title>
+    <url>/2023/08/22/37039.html</url>
+    <content><![CDATA[1、问题：
+2、解释：“结构需要清理”（structure needs cleaning）错误通常是由文件系统损坏引起的。
+以下是一些可能导致文件系统损坏的原因：不正常关机：如果你在文件系统写入数据时强制关机或系统崩溃，可能会导致文件系统损坏。磁盘故障：磁盘故障，如坏道或故障扇区，可能会导致文件系统损坏。硬件故障：硬件故障，如电源问题、主板故障等，可能会导致文件系统损坏。病毒感染：某些病毒可能会破坏文件系统，导致文件系统损坏。文件系统错误：如果文件系统本身出现错误，例如写入错误的分区表或分配表，也可能会导致文件系统损坏。
+以上是导致文件系统损坏的一些可能原因。为了防止这种情况的发生，你可以遵循以下最佳实践：正常关机：在关机之前，请确保保存并关闭所有打开的文件，并使用操作系统提供的关机选项正常关机。定期备份：定期备份重要数据可以最大限度地减少数据丢失的风险。使用稳定的硬件：使用质量可靠的硬件，并避免频繁更换或升级硬件，可以减少硬件故障的风险。定期检查磁盘：定期检查磁盘的状态，并在检测到故障时立即更换磁盘，可以避免磁盘故障导致文件系统损坏。使用防病毒软件：安装和使用防病毒软件可以防止病毒感染并保护文件系统的安全。
+3、解决方式：在/etc/postgresql/12/main/postgresql.conf 中最后追加：
+fsync = offdata_sync_retry = true
+]]></content>
+      <tags>
+        <tag>postgresql</tag>
+        <tag>数据库</tag>
+        <tag>启动</tag>
+        <tag>pg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录贼坑一件事</title>
+    <url>/2019/04/25/24763.html</url>
+    <content><![CDATA[昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。最后发现是空间几何字段的空间参考不一致的问题，233333.
+]]></content>
+  </entry>
+  <entry>
+    <title>记述二三事</title>
+    <url>/2019/01/28/42280.html</url>
+    <content><![CDATA[1、发现geoserver的一个BUG。使用mysql中的数据发布图层服务，能正常发布和显示加载，但是地图单击后，无法获得属性信息，报未知错误，百思不得其解，排查了好几天，使用排除法，原来是数据库表中的一个字段使用的是tinyint类型，内容是数字，貌似这样geoserver无法处理。。。2、早晨自己写了一个福，扫出来‘敬业福’。自己就是自己最大的福星。3、过去就过去了，回不到过去。就算旧友重拾，也不知道怎么去维护下去。
+]]></content>
+  </entry>
+  <entry>
+    <title>软件遇到未知错误，怎么办？</title>
+    <url>/2019/08/29/56203.html</url>
+    <content><![CDATA[右键属性，以兼容模式解决然后以管理员身份运行
+]]></content>
+  </entry>
+  <entry>
+    <title>轻松实现Geoserver服务迁移</title>
+    <url>/2019/11/07/8942.html</url>
+    <content><![CDATA[以西安地图服务为例
+1、在新的geoserver上新建工作区，
+
+
+2、创建与mysql数据库的连接存储
+3、工作区选择上一步创建的，然后输入数据源名称和说明，mysql所在的主机名、端口、数据库名称、用户名和密码
+4、然后将源geoserver安装路径下索要迁移的城市相关服务配置文件复制，具体是将/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data的styles文件夹和/usr/java/apache-tomcat-8.5.31/webapps/geoserver/data/workspaces下的xian文件夹复制新geoserver的同路径下。
+5、将第3步生成的连接文件datastore.xml（路径为/root/work/apache-tomcat-8.5.38/webapps/geoserver/data/workspaces/xian/mysql116）中的红框内的配置替换到第4步的xian文件夹下的mysql155文件夹下的datastore.xml，
+6、最后将mysql116文件夹删除，将mysql155文件夹改为mysql116，
+7、由于用到热力图渲染，需要下载wps插件，下载地址为http://geoserver.org/release/2.12.x/，点击WPS解，压至/root/work/apache-tomcat-8.5.38/webapps/geoserver/WEB-INF/lib
+8、重启Tomcat,服务迁移完成！
+===2020年07月27日更新可能以上修改并不能成功，可以从上述4步骤开始5、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\namespace.xml中NamespaceInfoImpl修改为图中的
+6、将\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\default.xml，\usr\java\apache-tomcat-8.5.31\webapps\geoserverjc\data\workspaces\shenzhen\workspace.xml中的WorkspaceInfoImpl改为datastore.xml中的
+7、一定要重新Tomcat才能生效
+===2020年10月19日补充迁移之前最好将其他工作空间文件夹删掉，不然连不上数据库很容易出问题；迁移之后首先修改数据存储的数据库连接
+]]></content>
+  </entry>
+  <entry>
+    <title>近期遇到的问题小汇</title>
+    <url>/2018/04/16/50787.html</url>
+    <content><![CDATA[突然发现四月份已过半，近段时间一直在摸索ArcGIS Enterprise的课程，然后上周有一个用户的ArcGIS Server培训，突然发现有了一些方向感。在这段时间主要遇到两个问题，也是积攒了一段时间，算是都有了结果以及合理的解释。列表如下：1、ArcMap的性能问题2、操作系统用户名为esri产生的神奇问题3、ArcGIS Enterprise死活发不了托管要素服务的问题
+
+下面一一记录过程和解答
+问题1 ArcMap的性能问题从10.5开始，就开始体会到ArcMap打开矢量数据的图层属性巨慢，一直不得解，严重影响使用，不少用户也反馈和吐槽，之前，我也专门就这个问题写了一篇博客ArcMap用起来卡的，请进，里面提到的方法暂时能够解决性能的问题。我的同事一直与美国沟通，好在近期美国重现出这个问题，并定了BUG，期待下一个版本解决。
+问题2 操作系统用户名为esri产生的神奇问题之前我在博客中也提到该问题ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)，然后我发现许多同事都遇到了，原因是我们用的是公司统一配置的电脑，IT装机时都会用esri这个用户名，造成了神奇的路径错乱问题。最后我继续反馈了该问题至美国，等了一段时间，终于定了一个BUG
+问题3 ArcGIS Enterprise死活发不了托管要素服务的问题我在自己电脑上安装了ArcGIS Enterprise10.6、ArcGIS Pro 2.1.2、ArcGIS Pro的数据互操作模块扩展然后我有个带经纬度坐标的CSV文件,想发布为托管要素服务，但是一直报错，server日志显示实例崩溃然后我安装崩溃补丁https://support.esri.com/en/download/7576也没用然后上面的日志中提到生成的有dmp文件，我用VS Studio看了一下看到里面有ArcGIS Pro的数据互操作模块路径随后我就卸载掉数据互操作，接下来Portal就能通过CSV正常发布托管要素图层了。最后将这个问题提交给美国，已经被定为BUG
+========================最后的最后，从年初两会以来，单机版离线邮箱授权一直没有收到回执邮件，开始我们以为是两会特殊期间造成的，但是两会开完一个月后还是收不到，心想不是国内网络的原因了，可能是他们的许可服务器坏了，于是提交给美国一个CASE，他们回复说没有重现，正常收到回执邮件，但是国内用户的反馈却每天一个个接踵而来，只能联系合同部，给他们申请开通myesri在线激活授权。然后我一个同事的engine也出现这个问题，同样提交CASE给美国，他们成功地没收到回执，最后发现许可服务器果然坏了。修好后，桌面的也能收到了，问题就这么解决了。此时我只想说：MMP
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>野河·野鱼·野猫·wanderMan</title>
+    <url>/2023/07/04/49561.html</url>
+    <content><![CDATA[盛夏无蝉鸣芦苇摇他的叶子野鸭匆忙于水草上躁动的白条一条条钩起过往芦苇荡穿行而来花猫悄无声息依偎桶边蓝天烈日伞下依然焦灼猫归野后或许学了流浪狗的习性疯狂吞吐着红红的舌头散热鼓鼓的肚子恰如河里的鱼带籽这世间繁衍的节律不断让时间继续推演白条上来后花猫嘤嘤几声对着叫融化了这个夏天遂递给她囫囵两口就风卷残云半晌午廿条进其肚心满意足悄然离去人猫都在回味下一次她还会来吗是我焦急在等等她带着一窝小猫蹒跚而来
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>长城符号制作---图层叠加 vs 制图表达</title>
+    <url>/2016/12/15/4666.html</url>
+    <content><![CDATA[主要有两种方法1、图层叠加：在符号编辑器中通过三个图层符号叠加作出来，参数设置如下：
+
+2、制图表达：将原先线图层符号转为制图表达，然后添加wave效果，参数设置如下：对比以上两种方法，制图表达更为方便美观。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>顶点着色器与片元着色器通信</title>
+    <url>/2023/06/05/54833.html</url>
+    <content><![CDATA[通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器，
+attribute vec4 a_Color;varying vec4 v_Color;
+那么片元着色器如何接收到这个变量呢，很简单，同样声明一个
+varying vec4 v_Color;
+
+这是因为在WebGL中，如果顶点着色器和片元着色器同时有类型和命名相同的varying变量，那么顶点着色器会自动地将该变量的值传入片元着色器。
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高斯泼溅中粒子的协方差矩阵是做什么的</title>
+    <url>/2025/11/25/4244.html</url>
+    <content><![CDATA[协方差矩阵在高斯泼溅（Gaussian splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。要点说明：  
+表示含义：协方差矩阵 Σ 描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆/椭球的尺度与朝向。在渲染中的作用：像素权重按马氏距离计算，典型权重形式为 w(x) ∝ exp(-0.5 * (x-μ)^T Σ^{-1} (x-μ)) / sqrt((2π)^k * det Σ) 其中 Σ^{-1} 控制衰减速率和方向，det Σ 用于归一化。视觉效果：较大协方差 → 更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。估计方式：常用局部邻域 PCA（特征分解）从点云或法线推断 Σ，或由场景尺度/先验设定；实现上需保证 Σ 正定（通常在对角加小常数以稳定求逆）。实践注意：可在世界空间使用 3x3 矩阵，或投影到屏幕使用 2x2 矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>高斯泼溅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
+    <content><![CDATA[64mm 255 275 SANGUANG50  MARK
+]]></content>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[Money, Money, just do it!微博：XXXXXXXX微信：XXXXXXXX知乎：安乎挚邮箱：&#106;&#x61;&#x6d;&#101;&#x73;&#114;&#111;&#x63;&#x6b;&#x36;&#x36;&#54;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;64mm 255 275 SANGUANG50  MARK
+]]></content>
+  </entry>
+  <entry>
+    <title>ArcGIS知乎每天站内搜索统计</title>
+    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E6%AF%8F%E5%A4%A9%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E7%BB%9F%E8%AE%A1.html</url>
+    <content><![CDATA[
+
+
+    
+    ArcGIS知乎每天站内搜索统计
+    
+    
+
+    
+    
+    
+	 function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); 
+
+
+
+
+
+
+
+var chart = c3.generate({
+    data: {
+        x: '日期',
+//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+        columns: [
+['日期', '2017-03-08', '2017-03-09', '2017-03-10', '2017-03-11', '2017-03-12', '2017-03-13', '2017-03-14', '2017-03-15', '2017-03-16', '2017-03-17', '2017-03-18', '2017-03-19', '2017-03-20', '2017-03-21', '2017-03-22', '2017-03-23', '2017-03-24', '2017-03-25', '2017-03-26', '2017-03-27', '2017-03-28', '2017-03-29', '2017-03-30', '2017-03-31', '2017-04-01', '2017-04-02', '2017-04-03', '2017-04-04', '2017-04-05', '2017-04-06', '2017-04-07', '2017-04-08', '2017-04-09', '2017-04-10', '2017-04-11', '2017-04-12', '2017-04-13', '2017-04-14', '2017-04-15', '2017-04-16', '2017-04-17', '2017-04-18', '2017-04-19', '2017-04-20', '2017-04-21', '2017-04-22', '2017-04-23', '2017-04-24', '2017-04-25', '2017-04-26', '2017-04-27', '2017-04-28', '2017-04-29', '2017-04-30', '2017-05-01', '2017-05-02', '2017-05-03', '2017-05-04', '2017-05-05', '2017-05-06', '2017-05-07', '2017-05-08', '2017-05-09', '2017-05-10', '2017-05-11', '2017-05-12', '2017-05-13', '2017-05-14', '2017-05-15', '2017-05-16', '2017-05-17', '2017-05-18', '2017-05-19', '2017-05-20', '2017-05-21', '2017-05-22', '2017-05-23', '2017-05-24', '2017-05-25', '2017-05-26', '2017-05-27', '2017-05-28', '2017-05-29', '2017-05-30', '2017-05-31', '2017-06-01', '2017-06-02', '2017-06-03', '2017-06-04', '2017-06-05', '2017-06-06', '2017-06-07', '2017-06-08', '2017-06-09', '2017-06-10', '2017-06-11', '2017-06-12', '2017-06-13', '2017-06-14', '2017-06-15', '2017-06-16', '2017-06-17', '2017-06-18', '2017-06-19', '2017-06-20', '2017-06-21', '2017-06-22', '2017-06-23', '2017-06-24', '2017-06-25', '2017-06-26', '2017-06-27', '2017-06-28', '2017-06-29', '2017-06-30', '2017-07-01', '2017-07-02', '2017-07-03', '2017-07-04', '2017-07-05', '2017-07-06', '2017-07-07', '2017-07-08', '2017-07-09', '2017-07-10', '2017-07-11', '2017-07-12', '2017-07-13', '2017-07-14', '2017-07-15', '2017-07-16', '2017-07-17', '2017-07-18', '2017-07-19', '2017-07-20', '2017-07-21', '2017-07-22', '2017-07-23', '2017-07-24', '2017-07-25', '2017-07-26', '2017-07-27', '2017-07-28', '2017-07-29', '2017-07-30', '2017-07-31', '2017-08-01', '2017-08-02', '2017-08-03', '2017-08-04', '2017-08-05', '2017-08-06', '2017-08-07', '2017-08-08', '2017-08-09', '2017-08-10', '2017-08-11', '2017-08-12', '2017-08-13', '2017-08-14', '2017-08-15', '2017-08-16', '2017-08-17', '2017-08-18', '2017-08-19', '2017-08-20', '2017-08-21', '2017-08-22', '2017-08-23', '2017-08-24', '2017-08-25', '2017-08-26', '2017-08-27', '2017-08-28', '2017-08-29', '2017-08-30', '2017-08-31', '2017-09-01', '2017-09-02', '2017-09-03', '2017-09-04', '2017-09-05', '2017-09-06', '2017-09-07', '2017-09-08', '2017-09-09', '2017-09-10', '2017-09-11', '2017-09-12', '2017-09-13', '2017-09-14', '2017-09-15', '2017-09-16', '2017-09-17', '2017-09-18', '2017-09-19', '2017-09-20', '2017-09-21', '2017-09-22', '2017-09-23', '2017-09-24', '2017-09-25', '2017-09-26'],
+//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+['次数', '16', '14', '15', '12', '3', '21', '85', '40', '58', '67', '10', '27', '104', '216', '276', '235', '170', '116', '70', '415', '246', '255', '207', '203', '196', '52', '32', '110', '190', '190', '221', '50', '59', '191', '109', '207', '185', '215', '116', '95', '157', '1', '257', '271', '252', '96', '127', '265', '265', '252', '139', '171', '103', '59', '35', '192', '226', '259', '197', '91', '60', '144', '178', '194', '192', '105', '40', '92', '129', '179', '153', '133', '174', '57', '166', '308', '235', '167', '113', '178', '207', '35', '42', '51', '196', '155', '242', '139', '63', '152', '228', '251', '208', '195', '146', '59', '242', '251', '313', '218', '144', '93', '49', '243', '226', '230', '123', '160', '55', '98', '238', '226', '103', '181', '165', '98', '59', '205', '226', '235', '199', '185', '79', '86', '268', '302', '235', '218', '291', '126', '70', '419', '396', '375', '311', '266', '140', '63', '205', '302', '454', '261', '273', '117', '73', '230', '231', '290', '351', '226', '110', '56', '240', '340', '432', '488', '290', '125', '130', '379', '326', '264', '308', '325', '79', '99', '325', '306', '314', '233', '188', '82', '78', '179', '312', '244', '341', '225', '121', '120', '203', '386', '275', '325', '271', '83', '93', '218', '236', '324', '191', '226', '103', '62', '367', '476', '199', '239', '223', '67', '68', '214', '240'],
+        ]
+    },
+    axis: {
+        x: {
+            type: 'timeseries',
+            tick: {
+				format: '%Y-%m-%d',
+				//rotate: 75,
+            }
+        }
+    }
+});
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>ArcGIS知乎站内搜索关键词统计Top50</title>
+    <url>/html/ArcGIS%E7%9F%A5%E4%B9%8E%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BB%9F%E8%AE%A1Top50.html</url>
+    <content><![CDATA[
+
+
+    
+    ArcGIS知乎站内搜索关键词统计Top50
+    
+    
+
+    
+    
+    
+	 function password() { var testV = 1; var pass1 = prompt('请输入密码:',''); while (testV < 3) { if (!pass1) history.go(-1); if (pass1 == "123") { alert('密码正确!'); break; } testV+=-1; var pass1 = prompt('密码错误!请重新输入:'); } if (pass1!="password" & testV ==3) history.go(-1); return " "; } document.write(password()); 
+
+
+
+
+
+
+
+var chart = c3.generate({
+    data: {
+        x: '关键词',
+//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+        columns: [
+['关键词', 'arcgis', 'for', 'server', 'api', 'portal', 'ios', 'to', 'javascript', 'runtime', 'pro', 'js', 'engine', 'the', 'android', 'failed', 'web', 'error', '安装', 'arcengine', 'linux', 'not', 'python', '10.5', 'data', 'sdk', 'gp', 'is', '天地图', 'create', 'arcmap', 'gis', 'desktop', 'service', 'arcpy', 'cityengine', 'java', 'envi', 'enterprise', '3d', 'sde', '三维', '10.2.5', 'in', '切片', 'arcsde', '矢量切片', 'cad', 'webgis', 'geoevent', 'a'],
+//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+['次数', '2476', '817', '530', '480', '375', '286', '274', '262', '251', '244', '241', '220', '203', '200', '159', '134', '132', '127', '124', '118', '117', '117', '113', '108', '93', '90', '87', '80', '80', '79', '76', '76', '75', '74', '71', '69', '68', '66', '65', '62', '61', '60', '59', '59', '56', '55', '55', '54', '53', '50'],
+        ],
+		type:'bar',
+		labels:{
+			format:{
+			次数: d3.format(''),
+			}
+		}
+    },
+    axis: {
+		rotated: true,
+        x: {
+            type: 'category',
+            
+        }
+    }
+});
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/html/covid19_real_time_map.html</url>
+    <content><![CDATA[
+
+
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?a8dc3713fb6ff94583ba13c5d4daadc0";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+
+
+	
+	
+	 
+	
+	
+	
+	
+	 
+
+	
+	
+	
+	
+	
+	新型冠状病毒肺炎疫情
+
+
+	
+		
+			新型冠状病毒肺炎疫情(V6.0Beta)
+			2020年01月12日运行至今
+			By ·James Jiang(Developer)
+			
+			次加油
+		
+		  
+		    
+		  
+		
+			
+				实时统计(国内，每五分钟更新一次)
+			
+			
+				现存确诊		
+				加载中
+			
+			
+				累计确诊		
+				加载中
+			
+			
+				疑似		
+				加载中
+			
+			
+				治愈		
+				加载中
+			
+			
+				重症		
+				加载中
+			
+			
+				死亡		
+				加载中
+			
+		
+		
+			
+				今日变化(国内，0例可能表示今日数据还未公布，每五分钟更新一次)
+			
+			
+				现存确诊		
+				加载中
+			
+			
+				累计确诊		
+				加载中
+			
+			
+				疑似		
+				加载中
+			
+			
+				治愈		
+				加载中
+			
+			
+				重症		
+				加载中
+			
+			
+				死亡		
+				加载中
+			
+		
+		
+			
+				最近24小时变化曲线(国内)
+			
+			
+		
+		
+			
+				每天累计变化曲线(国内)
+			
+			
+		
+		
+			
+				每天增加变化曲线(国内)
+			
+			
+		
+		
+			
+				
+				
+			
+			
+				
+				    
+				    
+				    
+				    
+				
+				
+					    
+					    
+					    
+					    
+				
+			
+		
+		
+			
+				
+			
+			
+			  
+			    
+			    	
+						序号
+				        大陆
+				        国家
+				        现存确诊
+				        累计确诊
+				        治愈
+				        死亡
+			    	
+			    
+			    
+			    
+			  
+			
+		
+		
+			
+				疫情地图(社区/街道办级别【注：只包括部分地区公示数据】)
+			
+			
+				
+				    回到全图
+				
+						
+		
+		
+			
+				疫情地图(省级)
+			
+			
+				
+				    现存确诊
+				    确诊
+				    治愈
+				    死亡
+				    回到全图
+				
+				
+				    0-9
+				    10-99
+				    100-499
+				    >500
+				
+			
+			
+		
+		
+			
+				全国各省(自治区)疫情
+			
+			
+			  
+			    
+			    	
+				        序号
+				        省地
+				        现存确诊
+				        累计确诊
+				        治愈
+				        死亡
+			    	
+			    
+			    
+			    
+			  
+			
+		
+		
+			
+				疫情地图(市级)
+			
+			
+				
+				    0-9
+				    10-99
+				    100-499
+				    >500
+				
+				
+					    现存确诊
+					    确诊
+					    治愈
+					    死亡
+					    回到全图
+				
+			
+		
+		
+			
+				全国城市确诊前50
+			
+			
+			  
+			    
+			    	
+				        序号
+				        城市地区
+				        现存确诊
+				        累计确诊
+				        治愈
+				        死亡
+			    	
+			    
+			    
+			    
+			  
+			
+		
+		
+		
+		
+		
+		
+	
+
+	getViewCount();
+	updateViewCount();
+	getComeOnCount();
+	writeCurrentDate();
+	news();
+	provienceTop();
+	cityTop();	
+	foreign();
+	var chartsHour = echarts.init(document.getElementById('charts-hour'));
+	clickcharts('hour',chartsHour);
+	var chartsDay = echarts.init(document.getElementById('charts-day'));
+	clickcharts('day',chartsDay);
+	var chartsDayChange = echarts.init(document.getElementById('charts-day-change'));
+	clickcharts('zengjia',chartsDayChange);
+	var basemap=new ol.layer.Tile({
+    source: new ol.source.XYZ({
+      url: 'http://wprd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}'
+    }),
+    name: 'gaodeMap'
+  });
+  var lb=ol.proj.fromLonLat([97.84623, 21.215]);
+  var rt=ol.proj.fromLonLat([126.581863, 43.898201]);
+	var mapStreet = new ol.Map({
+		controls: ol.control.defaults({
+			attribution: false
+		}),
+		target: 'map-street',
+		layers: [basemap,layerdata('shequ')],
+		view: new ol.View({
+			center: ol.proj.fromLonLat([112,32]),
+			//extent: [lb[0], lb[1],
+			//rt[0], rt[1]],
+			zoom:5,
+			projection: new ol.proj.Projection({
+			      code: 'EPSG:3857',
+			      units: 'm',
+			      global: false
+		    })
+		})
+	});
+	mapStreet.getInteractions().forEach(value => {
+      if (value instanceof ol.interaction.PinchRotate) {
+        mapStreet.removeInteraction(value);
+      }
+    });
+
+	var mapAll = new ol.Map({
+		controls: ol.control.defaults({
+			attribution: false
+		}),
+		target: 'map-all',
+		layers: [layerdata('currentsheng')],
+		view: new ol.View({
+			center: [-389443.5, 2130511.5],
+			extent: [-3244631.284441611, -78183.9820087277,
+			2316197.561991931, 4417390.312363132],
+			zoom:3,
+			projection: new ol.proj.Projection({
+			      code: 'EPSG:3415',
+			      units: 'm',
+			      global: false
+		    })
+		})
+	});
+	mapAll.getInteractions().forEach(value => {
+      if (value instanceof ol.interaction.PinchRotate) {
+        mapAll.removeInteraction(value);
+      }
+    });
+	var mapAdd = new ol.Map({
+		controls: ol.control.defaults({
+			attribution: false
+		}),
+		target: 'map-add',
+		layers: [layerdata('city_current')],
+		view: new ol.View({
+			center: [-389443.5, 2130511.5],
+			extent: [-3244631.284441611, -78183.9820087277,
+			2316197.561991931, 4417390.312363132],
+			zoom:3,
+			projection: new ol.proj.Projection({
+			      code: 'EPSG:3415',
+			      units: 'm',
+			      global: false
+		    })
+		})
+	});
+	mapAdd.getInteractions().forEach(value => {
+      if (value instanceof ol.interaction.PinchRotate) {
+        mapAdd.removeInteraction(value);
+      }
+    });
+    
+		
+			
+		
+		
+		
+		
+			
+			
+			
+			
+			
+			      
+			      
+			      
+		    
+		
+	
+	
+      
+        
+      
+    
+	$("#orderBtnGroup .btn:first").click().addClass("active");
+	$("#orderBtnGroup").children().removeClass("active");
+	//provienceTop();
+	//cityTop();
+	//news();
+	//foreign();
+	function layerdata(name) {
+      return new ol.layer.Image({
+        source: new ol.source.ImageWMS({
+          ratio: 1,
+          url: 'http://zhongxinzhiyuan.cn:8089/geoserver/wms',
+          params: {
+            'FORMAT': 'image/png',
+            'VERSION': '1.1.1',
+            "LAYERS": name,
+            "exceptions": 'application/vnd.ogc.se_inimage',
+          }
+        }),
+        name: name
+      });
+    };
+    function clickbutton(name,label) {
+    	var idBtn='orderBtnGroup'+label;
+    	if(name.indexOf('yiqing')>-1 || name.indexOf('currentsheng')>-1 || name.indexOf('city_yiqing')>-1 || name.indexOf('city_current')>-1){
+    		document.getElementById(idBtn).style.display = 'block'
+    	}else{
+    		document.getElementById(idBtn).style.display='none'
+    	}
+      var map=null;
+      label===1?map=mapAll:(label===2?map=mapWorld:map=mapAdd);
+      map.getLayers().forEach(value => map.removeLayer(value));
+      themelayer = layerdata(name);
+      map.addLayer(themelayer); 
+      writeCurrentDate();
+    };
+    function writeCurrentDate() {
+      var now = new Date();
+      var year = now.getFullYear(); //得到年份
+      var month = now.getMonth();//得到月份
+      var date = now.getDate();//得到日期
+      var day = now.getDay();//得到周几
+      var hour = now.getHours();//得到小时
+      var minu = now.getMinutes();//得到分钟
+      var sec = now.getSeconds();//得到秒
+      var MS = now.getMilliseconds();//获取毫秒
+      var week;
+      month = month + 1;
+      if (month < 10) month = "0" + month;
+      if (date < 10) date = "0" + date;
+      if (hour < 10) hour = "0" + hour;
+      if (minu < 10) minu = "0" + minu;
+      var arr_week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+      week = arr_week[day];
+
+      var time = time = year + "年" + month + "月" + date + "日" + " " + hour + ":" + minu;
+      document.getElementById('timeline').innerHTML='截止至'+time;
+      statisticsInfo();
+  	}
+  	function clickcharts(charttype,chartName) {
+	    var xdate = [];
+	    var diagnosenum = [];
+	    var suspectnum = [];
+	    var curenum = [];
+	    var deathnum = [];
+
+		$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/'+(charttype === 'hour' ? 'charts' : (charttype === 'day' ? 'day_trend' : 'zengjia')),
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: res => {
+	        if (charttype === 'day' || charttype === 'zengjia') res.sort(function (a, b) {
+	          return b.time - a.time
+	        });
+	        res.map(value => {
+	          xdate.push(charttype === 'hour' ? value.date : value.day);
+	          diagnosenum.push((value.diagnose));
+	          if (value.suspect === 0) {
+	            suspectnum.push(null);
+	          } else {
+	            suspectnum.push(value.suspect);
+	          }
+
+	          curenum.push(value.cure);
+	          deathnum.push(value.death)
+	        });
+	        xdate.reverse();
+	        diagnosenum.reverse();
+	        suspectnum.reverse();
+	        curenum.reverse();
+	        deathnum.reverse();
+	        var optioncharts = {
+	          title: {
+	          	show:false,
+	            text: charttype === 'hour' ? '过去24小时疫情变化' : (charttype === 'day' ? '每天疫情变化' : '每天增加人数'),
+	            subtext: charttype === 'hour' ? '数据来自丁香医生' : '数据来自腾讯新闻',
+	            left: 'center',
+	            textStyle: {
+	              fontSize: 38,
+	            }
+	          },
+	          tooltip: {
+	            trigger: 'axis',
+	            axisPointer: {
+	              type: 'shadow'
+	            },
+	            textStyle: {
+	              fontSize: '10',
+	              align: 'left',
+	            },
+	            position: function (pos, params, el, elRect, size) {
+	              var obj = {top: 10};
+	              obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
+	              return obj;
+	            },
+	            extraCssText: 'width: 115px'
+	          },
+	          legend: {
+	            //orient:'vertical',
+	            data: ['确诊', '疑似', '治愈', '死亡'],
+	            right: 110,
+	            top: 5,
+	            textStyle: {
+	              fontSize: 12
+	            }
+	          },
+	          grid: {
+	          //   show: true,
+	             left: 50,
+	          //   right: 30,
+	           },
+	          xAxis: {
+	            name: '时间',
+	            data: xdate,
+	            nameTextStyle: {
+	              fontSize: 12,
+	            },
+	            axisLabel: {
+	              fontSize: 12,
+	            },
+	          },
+	          yAxis: [{
+	            name: '人数(确诊、疑似)',
+	            type: 'value',
+	            nameTextStyle: {
+	              fontSize: 12,
+	              padding:[0,0,0,20]
+	            },
+
+	            axisLabel: {
+	              fontSize: 12,
+	            },
+	          },
+	            {
+	              name: '人数(治愈、死亡)',
+	              type: 'value',
+
+
+	              nameTextStyle: {
+	                fontSize: 12,
+	              },
+
+	              axisLabel: {
+	                fontSize: 12,
+	              },
+	            }],
+	          axisLabel: {
+	            fontSize: 12,
+	          },
+	          series: [
+	            {
+	              name: '确诊',
+	              type: 'line',
+	              smooth: true,
+	              data: diagnosenum,
+	              yAxisIndex: 0,
+	              symbolSize: 6,
+	              itemStyle: {
+	                normal: {
+	                  color: '#ff0000',//拐点颜色
+	                  borderColor: '#ff0000',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#ff0000'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#ff0000',
+	                  borderWidth: 1.5,
+	                },
+	              }
+	            },
+	            {
+	              name: '疑似',
+	              type: 'line',
+	              smooth: true,
+	              data: suspectnum,
+	              yAxisIndex: 0,
+	              symbolSize: 6,
+	              connectNulls: true,
+	              itemStyle: {
+	                normal: {
+	                  color: '#e8800a',//拐点颜色
+	                  borderColor: '#e8800a',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#e8800a'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#e8800a',
+	                  borderWidth: 1.5,
+	                },
+	              },
+
+	            },
+	            {
+	              name: '治愈',
+	              type: 'line',
+	              smooth: true,
+	              data: curenum,
+	              yAxisIndex: 1,
+	              symbolSize: 6,
+	              itemStyle: {
+	                normal: {
+	                  color: '#008ce6',//拐点颜色
+	                  borderColor: '#008ce6',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#008ce6'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#008ce6',
+	                  borderWidth: 1.5,
+	                },
+	              },
+
+	            },
+	            {
+	              name: '死亡',
+	              type: 'line',
+	              smooth: true,
+	              data: deathnum,
+	              yAxisIndex: 1,
+	              symbolSize: 6,
+	              itemStyle: {
+	                normal: {
+	                  color: '#000000',//拐点颜色
+	                  borderColor: '#000000',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#000000'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#000000',
+	                  borderWidth: 1.5,
+	                },
+	              },
+
+	            }
+
+	          ]
+	        };
+	        chartName.setOption(optioncharts)
+	      },
+	      error: data => {
+
+	      }
+	    })
+    }
+    function backmap(map) {
+      if(map===mapWorld){
+      	map.getView().setCenter([0, 0]);
+      	map.getView().setZoom(1);
+      }else if(map===mapStreet){
+		map.getView().setCenter(ol.proj.fromLonLat([112,32]));
+      	map.getView().setZoom(5);
+	  }else{
+      	map.getView().setCenter([-389443.5, 2130511.5]);
+      	map.getView().setZoom(3);
+      }
+      map.getView().setRotation(0);
+    }
+    function statisticsInfo(){
+	$.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/data',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+          $.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/xinzeng',
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: ress => {
+            	var results = res[0];
+            	if (results.suspect === 0) results.suspect = '待确认';
+            	document.getElementById('diagnose').innerHTML=results.diagnose+'例';
+            	document.getElementById('current-diagnose').innerHTML=results.currentdiagnose+'例';
+             	document.getElementById('suspect').innerHTML=results.suspect+'例';
+             	document.getElementById('cure').innerHTML=results.cure+'例';
+            	document.getElementById('death').innerHTML=results.death+'例';
+            	document.getElementById('serious').innerHTML=results.seriousCount+'例';
+            	if(ress.length>0){
+            		var adds = ress[0];
+	            	document.getElementById('current-diagnose-add').innerHTML=(adds.currentdiagnose>0?'+':(adds.currentdiagnose===0?'':''))+adds.currentdiagnose+'例';
+	            	document.getElementById('diagnose-add').innerHTML=(adds.diagnose>0?'+':(adds.diagnose===0?'':''))+adds.diagnose+'例';
+	            	document.getElementById('suspect-add').innerHTML=(adds.suspect>0?'+':(adds.suspect===0?'':''))+adds.suspect+'例';
+	            	document.getElementById('cure-add').innerHTML=(adds.cure>0?'+':(adds.cure===0?'':''))+adds.cure+'例';
+	            	document.getElementById('death-add').innerHTML=(adds.death>0?'+':(adds.death===0?'':''))+adds.death+'例';
+	            	document.getElementById('serious-add').innerHTML=(adds.seriousCount>0?'+':(adds.seriousCount===0?'':''))+adds.seriousCount+'例';
+            	}else{
+            		document.getElementById('current-diagnose-add').innerHTML='0例';
+            		document.getElementById('diagnose-add').innerHTML='0例';
+	            	document.getElementById('suspect-add').innerHTML='0例';
+	            	document.getElementById('cure-add').innerHTML='0例';
+	            	document.getElementById('death-add').innerHTML='0例'
+	            	document.getElementById('serious-add').innerHTML='0例'
+            	}
+            	
+            }
+          })
+        },
+        error: data => {
+
+        }
+      })
+    }
+    function news(){
+    	$.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/news',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+	
+	      	newss = '【2021-01-14 10:21  国内社区、县市、省级地图开启，世界地图未开启】&nbsp;&nbsp;&nbsp;&nbsp;【最新报道】'
+	        news = '新闻报道';
+	        res.map(value => {
+	          news += ""+value.provinceName+""+value.title+"【"+value.infoSource+" "+value.date+"】"+value.summary+"";
+	          newss += value.date + '&nbsp&nbsp' + value.title + "(来源：" + value.infoSource + ")&nbsp&nbsp&nbsp&nbsp    "
+	        })
+	        document.getElementById('news').innerHTML = news;
+	        document.getElementById('newsss').innerHTML = newss
+	      }
+    	})
+    }
+    function foreign(){
+
+	 $.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/guowai',
+	  data: {},
+	  type: 'get',
+	  dataType: 'json',
+	  success: res => {
+      	var area = ''
+      	res.sort(function (a, b) { return b.currentdiagnose - a.currentdiagnose});
+        res.map((value,index) => {
+	          var foreignStatistics='';
+	          if (value.label === 1) {
+	           		document.getElementById('sum-forgeign').innerHTML='各国统计('+res.length+'个国家，现存确诊'+value.currentdiagnose+'例，累计确诊'+value.diagnose+'例，治愈'+value.cure+'例，死亡'+value.death+'例）'
+	          } else {
+		            area+=''+(index)+''+value.continents+''+value.name+''+value.currentdiagnose +''+value.diagnose+''+value.cure+''+value.death+''
+		          }
+        })
+        document.getElementById('table-tr').innerHTML =area
+      }
+    	})
+    }
+    function provienceTop(){
+
+	$.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/provience_top10',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+      	var area = ''
+      	res.sort(function (a, b) { return b.currentdiagnose - a.currentdiagnose});
+        res.map((value,index) => {
+	        area+=''+(index+1)+''+value.name+''+value.currentdiagnose +''+value.diagnose+''+value.cure+''+value.death+''   
+        })
+        document.getElementById('table-provience').innerHTML =area
+      }
+    	})
+    }
+    function cityTop(){
+
+	 $.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/city_top50',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+      	var area = ''
+      	res.sort(function (a, b) { return b.currentdiagnose - a.currentdiagnose});
+        res.map((value,index) => {
+	        area+=''+(index+1)+''+value.name+''+value.currentdiagnose +''+value.diagnose+''+value.cure+''+value.death+''   
+        })
+        document.getElementById('table-city').innerHTML =area
+      }
+    	})
+    }
+	function getViewCount(){
+    	$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/getviewcount',
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: res => {
+			document.getElementById('view-count').innerHTML ='&nbsp;&nbsp;'+res[0].count+'次浏览'
+
+		  }
+    	})
+    }
+    function updateViewCount(){
+    	$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/updateviewcount',
+		  data: {},
+		  type: 'put',
+		  
+		  dataType: 'json',
+		  success: res => {
+		  
+
+		  }
+    	})
+    }
+	function getComeOnCount(){
+    	$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/getcomeoncount',
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: res => {
+			document.getElementById('come-on').innerHTML =res[0].count
+
+		  }
+    	})		
+	}
+	function clickComeOn(){
+		document.getElementById('come-on').innerHTML =parseInt(document.getElementById('come-on').innerText)+1;
+		$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/updatecomeoncount',
+		  data: {},
+		  type: 'put',
+		  
+		  dataType: 'json',
+		  success: res => {
+		  
+
+		  }
+    	})
+	}
+	
+
+
+
+]]></content>
+  </entry>
+</search>

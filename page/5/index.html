@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="MVOLyQRxUt" />
+  
+  <title>自由自在</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="the road that you never walk along">
+<meta property="og:type" content="website">
+<meta property="og:title" content="自由自在">
+<meta property="og:url" content="http://zyouzz.github.io/page/5/index.html">
+<meta property="og:site_name" content="自由自在">
+<meta property="og:description" content="the road that you never walk along">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="James Rock">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.loli.net/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?abe562be75947306c7e1bc11ba952568";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+	  
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自由自在</a>
+      </h1>
+      
+	  <form id="search-form">
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="搜一搜" class="search form-control" autocomplete="off" autocorrect="off" searchonload=""  style="height:25px"/>
+				<i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+	      </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/">首页</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/archives">归档</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/Cesium">Cesium</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/WebGL">WebGL</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/GIS">GIS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/RS">RS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	  
+           
+      </nav>
+      
+    </div>
+  </div>
+</header>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-解决openlayers前端加载大数据量显示卡顿的性能建议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/13/35548.html" class="article-date">
+  <time datetime="2021-08-13T09:45:31.000Z" itemprop="datePublished">2021-08-13 17:45:31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/13/35548.html">解决openlayers前端加载大数据量显示卡顿的性能建议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这段时间一直在做XX大数据项目，由于多维度和多条件查询的缘故，数据比较大，一个ol.layer.vector的图层要加载将近一两万的点，这时性能瓶颈就上来了，所以在前端显示时：页面及其卡顿甚至崩溃。另外因为添加了interaction交互事件，每个点都包含了较多的属性，信息量比较大。。。忍不了一下。。</p>
+<p>照例查了查openlayers的API文档，发现新版的openlayers6支持WebGLPointsLayer,直接渲染百万级的点都没啥问题。</p>
+<p>奈何现在项目用的是openlayers5，测试了一下，一些方法有更改，影响其他功能页面，短期不能贸然升级，于是放弃了这个升级的方式。</p>
+<p>最后结合了切片加载形式和GIS的抽稀思想：<strong>同时创建了两个图层，一个图层在初始化页面就只加载部分包含重要信息的点，另一个图层在放大到一定层级后显示剩余的点。</strong></p>
+<p>动手实施后，果然纵享丝滑。<br><img src="/images/20210813.jpg" alt="效果图"></p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2021/08/13/35548.html" data-id="cmlc4w8y9006rjktid8mwgiae" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-A-Star算法实现最短路径查找【python】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/07/55752.html" class="article-date">
+  <time datetime="2020-12-07T10:03:44.000Z" itemprop="datePublished">2020-12-07 18:03:44</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/55752.html">A Star算法实现最短路径查找【python】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。<br>这里先起个头。。。<br>先放个最终实现效果图<br><img src="/images/2020120701.jpg" alt="效果图"><br>==========</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/12/07/55752.html" data-id="cmlc4w8vt000bjkti6cld2nei" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-button造成的异常跳转问题解决一例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/18/48870.html" class="article-date">
+  <time datetime="2020-09-18T09:13:08.000Z" itemprop="datePublished">2020-09-18 17:13:08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/18/48870.html">button造成的异常跳转问题解决一例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天下午遇到一个比较坑的问题，严格来说是没意识到。<br>情形：vue页面通过两个button按钮,控制不同组件页面显示，页面有缓存属性<br>问题：首次进入页面点击某个按钮，切换到另一个页面，页面闪白后出现刷新，又跳回至默认页面，再次点击按钮，正常切换至另一个页面<br>原因：button按钮自身带有提交表单属性，正好页面有form表单，导致页面再次执行查询操作，造成页面刷新，回到默认页面<br>解决：click事件添加prevent属性，阻止button默认的提交事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">&quot;clickTest&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>备注：养成按钮点击事件添加stop或者prevent属性，避免因冒泡或者自身属性的异常问题</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/09/18/48870.html" data-id="cmlc4w8ws002gjktieywyemnh" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-geoserver-WFS服务-Filter过滤查询踩坑一个" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/28/35327.html" class="article-date">
+  <time datetime="2020-06-28T09:27:31.000Z" itemprop="datePublished">2020-06-28 17:27:31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/28/35327.html">geoserver WFS服务 Filter过滤查询踩坑一个</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时会通过视图方式发布一个图层，然后变相实现接口调用数据。<br>当数据属性中有id字段，并作为过滤字段查询时，使用in会查不出结果，调取geoserver日志，发现id并没有作为字段名称传入，可以采用or查询结果，但是需要在前端重新拼接一下id数组，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;id=&#x27;</span>+idList.<span class="title function_">join</span>(<span class="string">&#x27;,or id=&#x27;</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/06/28/35327.html" data-id="cmlc4w8wt002hjktidzmxa1ju" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-geoserver多个图层要素相同的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/22/28106.html" class="article-date">
+  <time datetime="2020-06-22T08:24:33.000Z" itemprop="datePublished">2020-06-22 16:24:33</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/22/28106.html">geoserver多个图层要素相同的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在解决一个BUG的过程中发现：当多个图层layer共用一个Feature时，虽然每个图层的要素使用不同的style，但最后所有图层渲染的效果一样。<br>原因：因为geoserver的layer的source中(有些拗口)包括的Feature都一样，属于引用，所以会以最后一个Feature样式为准。<br>解决方法：使用feature的clone()方法</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/06/22/28106.html" data-id="cmlc4w8wu002jjktihvpw5kxe" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-geoserver自动发布服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/21/12769.html" class="article-date">
+  <time datetime="2020-05-21T08:50:53.000Z" itemprop="datePublished">2020-05-21 16:50:53</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/21/12769.html">geoserver自动发布服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>python安装gsconfig库<br>附上python代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _*_coding:utf-8_*_</span></span><br><span class="line"><span class="keyword">from</span> geoserver.catalog <span class="keyword">import</span> Catalog</span><br><span class="line"><span class="keyword">from</span> geoserver.support <span class="keyword">import</span> JDBCVirtualTable, JDBCVirtualTableGeometry, JDBCVirtualTableParam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 地图发布环境</span></span><br><span class="line">ENVIRONMENT_PUBLISH = <span class="string">&#x27;XXX_local&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 城市名称</span></span><br><span class="line">CITY = <span class="string">&#x27;xixian&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 年</span></span><br><span class="line">YEAR = <span class="number">2020</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 月</span></span><br><span class="line">MONTH = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONFIGURE = &#123;</span><br><span class="line">    <span class="string">&#x27;XXX_local&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;CITY&#x27;</span>: CITY,</span><br><span class="line">        <span class="string">&#x27;GEOSERVER_HOST&#x27;</span>: <span class="string">&#x27;1.1.1.1&#x27;</span>,  <span class="comment"># geoserver地址</span></span><br><span class="line">        <span class="string">&#x27;GEOSERVER_PORT&#x27;</span>: <span class="string">&#x27;8080&#x27;</span>,  <span class="comment"># geoserver端口</span></span><br><span class="line">        <span class="string">&#x27;USERNAME&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,  <span class="comment"># geoserver用户名</span></span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;******&#x27;</span>,  <span class="comment"># geoserver密码</span></span><br><span class="line">        <span class="string">&#x27;DATABASE_MYSQL&#x27;</span>: <span class="string">&#x27;mysql&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cat = Catalog(<span class="string">&#x27;http://%s:%s/geoserver/rest/&#x27;</span> % (</span><br><span class="line">CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_HOST&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;GEOSERVER_PORT&#x27;</span>]),</span><br><span class="line">              CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;USERNAME&#x27;</span>], CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;PASSWORD&#x27;</span>])</span><br><span class="line">store = cat.get_store(CONFIGURE[ENVIRONMENT_PUBLISH][<span class="string">&#x27;DATABASE_MYSQL&#x27;</span>], CITY)</span><br><span class="line">geom = JDBCVirtualTableGeometry(<span class="string">&#x27;geom&#x27;</span>, <span class="string">&#x27;LineString&#x27;</span>, <span class="string">&#x27;4326&#x27;</span>)</span><br><span class="line">ft_name = <span class="string">&#x27;line_speed_day_%s_%s&#x27;</span> % (YEAR, MONTH)</span><br><span class="line">epsg_code = <span class="string">&#x27;EPSG:4326&#x27;</span></span><br><span class="line">sql = <span class="string">&#x27;&#x27;&#x27;SELECT a.line_id line_id,a.line_direction line_direction,AVG(line_speed) line_speed,b.shape geom  FROM (SELECT * FROM data_line_speed_day  WHERE line_year =%s AND line_month=%s) a LEFT JOIN (SELECT DISTINCT line_id,is_up,shape FROM line</span></span><br><span class="line"><span class="string">WHERE YEAR =%s AND MONTH=%s) b ON a.line_id= b.line_id AND a.line_direction=b.is_up and b.shape is not null GROUP BY line_id,line_direction&#x27;&#x27;&#x27;</span> % (</span><br><span class="line">    YEAR, MONTH, YEAR, MONTH)</span><br><span class="line"><span class="built_in">print</span> sql</span><br><span class="line">keyColumn = <span class="literal">None</span></span><br><span class="line">parameters = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">jdbc_vt = JDBCVirtualTable(ft_name, sql, <span class="string">&#x27;false&#x27;</span>, geom, keyColumn, parameters)</span><br><span class="line">ft = cat.publish_featuretype(ft_name, store, epsg_code, jdbc_virtual_table=jdbc_vt)</span><br><span class="line">layer = cat.get_layer(ft_name)</span><br><span class="line">layer.default_style = cat.get_style(<span class="string">&#x27;stylefile&#x27;</span>)</span><br><span class="line">cat.save(layer)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/05/21/12769.html" data-id="cmlc4w8wv002kjktiag8hfeor" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-深夜纵有千言胆，天明必悔" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/19/59224.html" class="article-date">
+  <time datetime="2020-05-19T08:35:35.000Z" itemprop="datePublished">2020-05-19 16:35:35</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/19/59224.html">深夜纵有千言胆，天明必悔</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、总是钟情于一，难以自拔，这可能是我最大的可悲之处。<br>2、可能受制于眼界，困囿于自己，无法走出自己的圈子。<br>3、从未如此长时间的想念一个人这么久、这么频繁，每天每个小时，除了至亲。<br>4、时不时看到罗曼罗兰的英雄主义，我认为这种阐释很有道理，但是自己却没有深刻体会到。<br>5、这次身体的异样算是给自己敲响了警钟，体会到极致的孤独就是自己一个在医院，各种检查用尽，不知是否虚惊一场，未来是不是也这样。<br>6、从前排斥的东西，是否需要重新审视，因为我也知道那是在压抑自己，实际自己内心也无比渴望。<br>7、从前纵情挥霍的东西，现在也需要收敛抑或是改正了，真的不好。<br>8、昨天跟人说自己年纪大了，任何事还是悠着点，旁人听完笑说你才多大，不知安慰还是事实，但是三十而立的坎儿算是来了。<br>9、周末去和家人好好说说吧，毕竟这次疫情半年多没见面了，我决定摊牌了。<br>10、深夜纵有千言胆，天明必悔，所以我还是光天化日琢磨一下，除了白日做梦，其他的就很理性了。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/05/19/59224.html" data-id="cmlc4w8y30062jkti3hbf7row" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-2020年？？" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/09/14675.html" class="article-date">
+  <time datetime="2020-05-09T06:23:10.000Z" itemprop="datePublished">2020-05-09 14:23:10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/09/14675.html">2020年？？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2020年，什么时候该开始？什么时候又该翻篇呢？</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/05/09/14675.html" data-id="cmlc4w8vp0007jktidy4sf6pt" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-VUE项目打包失败案例解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/18/35298.html" class="article-date">
+  <time datetime="2020-01-18T10:14:34.000Z" itemprop="datePublished">2020-01-18 18:14:34</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/18/35298.html">前端VUE项目使用多线程10秒快速打包【附加打包失败解决案例】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果前端VUE项目页面增多、引入文件剧增，或造成打包速度巨慢，作为前端是无法忍受的。<br>这是因为VUE项目默认打包插件是uglifyjs-webpack-plugin，属于单线程操作。<br>我们可以使用webpack-parallel-uglify-plugin插件模块，实现多线程并行式处理。<br>因此，现在需要先安装webpack-parallel-uglify-plugin，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D webpack-parallel-uglify-plugin</span><br></pre></td></tr></table></figure>
+<p>然后修改X\build\路径下的webpack.prod.conf.js文件<br>修改uglifyjs-webpack-plugin模块引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">UglifyJsPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;uglifyjs-webpack-plugin&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>为</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">ParallelUglifyPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;webpack-parallel-uglify-plugin&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>然后注释掉</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">UglifyJsPlugin</span>(&#123;</span><br><span class="line">      <span class="attr">uglifyOptions</span>: &#123;</span><br><span class="line">        <span class="attr">compress</span>: &#123;</span><br><span class="line">          <span class="attr">warnings</span>: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">sourceMap</span>: config.<span class="property">build</span>.<span class="property">productionSourceMap</span>,</span><br><span class="line">      <span class="attr">parallel</span>: <span class="literal">true</span></span><br><span class="line">    &#125;),</span><br></pre></td></tr></table></figure>
+<p>添加以下语句就可以了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">ParallelUglifyPlugin</span>(&#123;</span><br><span class="line">  <span class="attr">cacheDir</span>: <span class="string">&#x27;.cache/&#x27;</span>,</span><br><span class="line">  <span class="attr">uglifyJS</span>: &#123;</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">      <span class="attr">comments</span>: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">warnings</span>: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="就此完毕！是不是很简单-打个包看看，打包速度是不是比以前提升好几倍，嘻嘻"><a href="#就此完毕！是不是很简单-打个包看看，打包速度是不是比以前提升好几倍，嘻嘻" class="headerlink" title="就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻.."></a>就此完毕！是不是很简单?打个包看看，打包速度是不是比以前提升好几倍，嘻嘻..</h1><p>如果碰到VUE打包失败，出现下面的错误</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnhandledPromiseRejectionWarning: CssSyntaxError:</span><br></pre></td></tr></table></figure>
+<p>这个意思是说打包的CSS文件有非法字符，大部分是注释不规范造成的<br>我这里是因为CSS文件中误用 // 作为注释造成的，而 // 在SCSS文件中用是没问题的。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/01/18/35298.html" data-id="cmlc4w8wo0027jkti4bbaf6ai" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-openlayers去除左上角放大缩小【-】【-】控件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/15/16123.html" class="article-date">
+  <time datetime="2020-01-15T01:37:24.000Z" itemprop="datePublished">2020-01-15 09:37:24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/15/16123.html">openlayers去除左上角放大缩小【+】【-】控件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 去除地图左上角的放大缩小控件</span></span><br><span class="line">map.<span class="title function_">getControls</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">control</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (control <span class="keyword">instanceof</span> ol.<span class="property">control</span>.<span class="property">Zoom</span>) &#123;</span><br><span class="line">    map.<span class="title function_">removeControl</span>(control)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2020/01/15/16123.html" data-id="cmlc4w8wz002tjkti4j7yccfp" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/4/">《《 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">下一页 》》</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="widget-wrap">
+    <h3  class="widget-title">网站统计(自2023-05-31)</h3>
+    <div class="widget">
+        <span id="busuanzi_container_site_pv">
+            <span style="color:#258fb8">总访问量 <span style="color:#e32d40" id="busuanzi_value_site_pv"></span> 次</span>
+        </span>
+        <br>
+        <span id="busuanzi_container_site_uv">
+            <span style="color:#258fb8">访客人数 <span style="color:#e32d40" id="busuanzi_value_site_uv"></span> 人</span>
+        </span>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">微信公众号：zyouzz</h3>
+	<div class="widget">
+		<img src="/css/images/weixin.jpg">
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/10/53235.html">PerInstanceColorAppearance笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/27323.html">什么是离屏渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/4244.html">高斯泼溅中粒子的协方差矩阵是做什么的</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/16/24077.html">EASY-3D-SDK：强大的二三维一体WebGIS开发框架</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/07/51151.html">GPU图形绘制管线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">七月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ArcGIS/">ArcGIS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/RS/">RS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2024/" rel="tag">2024</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/" rel="tag">ArcGIS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Datastore/" rel="tag">ArcGIS Datastore</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Enterprise/" rel="tag">ArcGIS Enterprise</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Portal/" rel="tag">ArcGIS Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Pro/" rel="tag">ArcGIS Pro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Server/" rel="tag">ArcGIS Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECW%E5%BD%B1%E5%83%8F/" rel="tag">ECW影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Esri/" rel="tag">Esri</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLSL/" rel="tag">GLSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU/" rel="tag">GPU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScripts/" rel="tag">JavaScripts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leaflet/" rel="tag">Leaflet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelBuilder/" rel="tag">ModelBuilder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PerInstanceColorAppearance/" rel="tag">PerInstanceColorAppearance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portal/" rel="tag">Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/" rel="tag">Python脚本工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RS/" rel="tag">RS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vite/" rel="tag">Vite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGIS/" rel="tag">WebGIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/" rel="tag">WebGL</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcgis/" rel="tag">arcgis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcmap/" rel="tag">arcmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cesium/" rel="tag">cesium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/geoserver/" rel="tag">geoserver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glsl/" rel="tag">glsl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtopo30/" rel="tag">gtopo30</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modis/" rel="tag">modis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pg/" rel="tag">pg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgresql/" rel="tag">postgresql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/" rel="tag">postman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture/" rel="tag">texture</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture2D/" rel="tag">texture2D</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xlsx/" rel="tag">xlsx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4/" rel="tag">三维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF/" rel="tag">三维场景</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%96%E7%95%8C/" rel="tag">世界</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD/" rel="tag">中国</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E5%BE%84%E5%9F%9F%E5%90%8D/" rel="tag">二级路径域名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4/" rel="tag">二维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%9A%E6%B4%B2/" rel="tag">亚洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%AC%E9%92%93%E5%AE%9D/" rel="tag">京钓宝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8A%BF/" rel="tag">优势</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E4%BC%8F/" rel="tag">光伏</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%9B%BD/" rel="tag">全国</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BA%E5%B7%AE/" rel="tag">出差</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8/" rel="tag">启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E7%BB%98%E5%88%B6/" rel="tag">图形绘制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E4%BA%91/" rel="tag">地理空间云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%90%E6%A0%87/" rel="tag">坐标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E5%AD%97%E6%AE%B5/" rel="tag">多字段</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="tag">多进程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E6%AE%B5%E8%AE%A1%E7%AE%97%E5%99%A8/" rel="tag">字段计算器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BD%B1%E5%83%8F/" rel="tag">影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E9%87%8F/" rel="tag">批量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%AA%81%E7%A0%B4/" rel="tag">技术突破</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A5%E5%91%8A/" rel="tag">报告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" rel="tag">搜索引擎</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/" rel="tag">无人机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%B4%B2/" rel="tag">欧洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A6%E6%B1%89/" rel="tag">武汉</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" rel="tag">渲染管线</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%82%B9%E6%8E%92%E5%BA%8F/" rel="tag">点排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" rel="tag">离屏渲染</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%A6%E5%8F%B7%E6%B8%B2%E6%9F%93/" rel="tag">符号渲染</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E5%8F%B7/" rel="tag">编号</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E7%8F%AD/" rel="tag">航班</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%90%A4%E7%81%AB%E5%9B%BE/" rel="tag">萤火图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%8F%E8%A7%86%E8%A1%A8/" rel="tag">透视表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%92%93%E9%B1%BC%E4%BD%AC/" rel="tag">钓鱼佬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98/" rel="tag">问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" rel="tag">集群部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85/" rel="tag">高斯泼溅</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">友情链接</h3>
+	<div class="widget">
+		<ul class="entry">
+			<li><a target="_blank" rel="noopener" href="http://www.esrichina.com.cn/" title="Esri中国">Esri中国</a></li>
+			<li><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/enviidl" title="ENVI-IDL技术殿堂的博客">ENVI-IDL技术殿堂的博客</a></li>
+			<li><a target="_blank" rel="noopener" href="http://zhihu.esrichina.com.cn/" title="ArcGIS知乎">ArcGIS知乎</a></li>
+			<li><a target="_blank" rel="noopener" href="http://kikitamap.com/" title="kikita&maps">kikita&maps</a></li>
+		</ul>
+	</div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 James Rock<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  </div>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3HYCEbjiW2zuEoLJ",ck:"3HYCEbjiW2zuEoLJ"})</script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags/Cesium" class="mobile-nav-link">Cesium</a>
+  
+    <a href="/tags/WebGL" class="mobile-nav-link">WebGL</a>
+  
+    <a href="/tags/GIS" class="mobile-nav-link">GIS</a>
+  
+    <a href="/tags/RS" class="mobile-nav-link">RS</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<div id="totop" style="z-index: 9999;position:fixed;bottom:150px;right:20px;cursor: pointer;">
+		<a title="返回顶部"><img src="/css/images/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">      
+     var search_path = "search.xml";
+     if (search_path.length == 0) {
+     	search_path = "search.xml";
+     }
+     var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  </div>
+</body>
+</html>

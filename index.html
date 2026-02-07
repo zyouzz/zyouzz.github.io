@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="MVOLyQRxUt" />
+  
+  <title>自由自在</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="the road that you never walk along">
+<meta property="og:type" content="website">
+<meta property="og:title" content="自由自在">
+<meta property="og:url" content="http://zyouzz.github.io/index.html">
+<meta property="og:site_name" content="自由自在">
+<meta property="og:description" content="the road that you never walk along">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="James Rock">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.loli.net/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?abe562be75947306c7e1bc11ba952568";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+	  
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自由自在</a>
+      </h1>
+      
+	  <form id="search-form">
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="搜一搜" class="search form-control" autocomplete="off" autocorrect="off" searchonload=""  style="height:25px"/>
+				<i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+	      </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/">首页</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/archives">归档</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/Cesium">Cesium</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/WebGL">WebGL</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/GIS">GIS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/RS">RS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	  
+           
+      </nav>
+      
+    </div>
+  </div>
+</header>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-PerInstanceColorAppearance笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/12/10/53235.html" class="article-date">
+  <time datetime="2025-12-10T02:55:30.000Z" itemprop="datePublished">2025-12-10 10:55:30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/12/10/53235.html">PerInstanceColorAppearance笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">PerInstanceColorAppearance</span>(&#123;</span><br><span class="line">      <span class="attr">flat</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">translucent</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>PerInstanceColorAppearance 是 CesiumJS 中用于渲染具有每实例颜色的几何体的外观类。它允许为每个实例指定不同的颜色，从而实现丰富的视觉效果。以下是对 PerInstanceColorAppearance 的一些关键点和使用方法的笔记：</p>
+<ol>
+<li><p><strong>基本概念</strong>：</p>
+<ul>
+<li>PerInstanceColorAppearance 继承自 Appearance 类，专门用于处理每实例颜色的渲染。</li>
+<li>它通常与 InstancedGeometry（实例化几何体）一起使用，以提高渲染性能。</li>
+<li>每个实例可以通过 Instance 属性中的 color 属性来指定颜色。</li>
+<li><ol start="2">
+<li><strong>属性</strong>：</li>
+</ol>
+</li>
+<li><code>flat</code>：布尔值，指示是否使用平面着色。如果为 true，则几何体将以平面方式渲染，没有光照效果。</li>
+<li><code>translucent</code>：布尔值，指示几何体是否是半透明的。如果为 true，则几何体将支持透明度。</li>
+<li><em><strong>如下所示</strong></em>：</li>
+<li><ul>
+<li>flat: true 禁用基于法线的光照计算（即不做漫反射/镜面高光等照明），表面颜色直接使用材质/顶点颜色。适合平面、UI 样式或希望颜色恒定且性能更好的情况。</li>
+</ul>
+</li>
+<li><ul>
+<li> translucent: false 表示材质为不透明，Cesium 会把它放到不透明渲染通道：写入深度缓冲、无需排序，也不会进行混合。若需要半透明效果，应设为 true 并提供 alpha 值及合适的渲染状态（如关闭深度写入或启用混合）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：</p>
+<ul>
+<li>适用于需要渲染大量具有不同颜色的实例化几何体的场景，例如点云、粒子系统等。</li>
+<li>可以用于可视化数据，其中每个数据点需要不同的颜色表示。</li>
+</ul>
+</li>
+<li><p><strong>示例代码</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> <span class="title class_">GeometryInstance</span>(&#123;</span><br><span class="line">  <span class="attr">geometry</span>: <span class="keyword">new</span> <span class="title class_">BoxGeometry</span>(&#123;</span><br><span class="line">    <span class="attr">vertexFormat</span>: <span class="title class_">PerInstanceColorAppearance</span>.<span class="property">VERTEX_FORMAT</span>,</span><br><span class="line">    <span class="attr">maximum</span>: <span class="keyword">new</span> <span class="title class_">Cartesian3</span>(<span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>),</span><br><span class="line">    <span class="attr">minimum</span>: <span class="keyword">new</span> <span class="title class_">Cartesian3</span>(-<span class="number">1.0</span>, -<span class="number">1.0</span>, -<span class="number">1.0</span>),</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="attr">modelMatrix</span>: <span class="title class_">Matrix4</span>.<span class="title function_">fromTranslation</span>(<span class="keyword">new</span> <span class="title class_">Cartesian3</span>(<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>)),</span><br><span class="line">  <span class="attr">attributes</span>: &#123;</span><br><span class="line">    <span class="attr">color</span>: <span class="title class_">ColorGeometryInstanceAttribute</span>.<span class="title function_">fromColor</span>(<span class="title class_">Color</span>.<span class="property">RED</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> appearance = <span class="keyword">new</span> <span class="title class_">PerInstanceColorAppearance</span>(&#123;</span><br><span class="line">  <span class="attr">flat</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">translucent</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> primitive = <span class="keyword">new</span> <span class="title class_">Primitive</span>(&#123;</span><br><span class="line">  <span class="attr">geometryInstances</span>: [instance],</span><br><span class="line">  <span class="attr">appearance</span>: appearance,</span><br><span class="line">&#125;);</span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(primitive);</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>性能优化</strong>：</p>
+<ul>
+<li>使用 PerInstanceColorAppearance 可以显著提高渲染大量实例的性能，因为它利用了 GPU 的实例化渲染技术。</li>
+<li>通过合理设置 <code>flat</code> 和 <code>translucent</code> 属性，可以根据需求优化渲染效果和性能。</li>
+</ul>
+</li>
+<li><p><strong>限制</strong>：</p>
+<ul>
+<li>PerInstanceColorAppearance 主要用于简单的颜色渲染，不支持复杂的材质效果，如纹理映射或光照计算。</li>
+<li>适用于需要高性能渲染的场景，但在需要复杂视觉效果时，可能需要考虑其他外观类。   </li>
+</ul>
+</li>
+<li><p><strong>总结</strong>：</p>
+<ul>
+<li>PerInstanceColorAppearance 是 CesiumJS 中一个强大的工具，适用于需要渲染大量具有不同颜色的实例化几何体的场景。通过合理使用其属性和方法，可以实现高效且丰富的视觉效果。</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/12/10/53235.html" data-id="cmlc4w8wm0022jkti8wby95yq" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PerInstanceColorAppearance/" rel="tag">PerInstanceColorAppearance</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-什么是离屏渲染" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/11/25/27323.html" class="article-date">
+  <time datetime="2025-11-25T03:07:04.000Z" itemprop="datePublished">2025-11-25 11:07:04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/11/25/27323.html">什么是离屏渲染</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。</p>
+<p>要点</p>
+<ul>
+<li>常见实现：Web：OffscreenCanvas、WebGL FBO（framebuffer）/render-to-texture；桌面：OpenGL FBO、DirectX 渲染目标、Vulkan 图像。</li>
+<li>优点：消除闪烁、支持异步/Worker 渲染、方便后处理（模糊、色调映射）、可重用纹理减少重复计算。</li>
+<li>缺点：额外内存和拷贝、需要同步（可能阻塞）、管理生命周期复杂。</li>
+<li>最佳实践：重用缓冲区/纹理、尽量在 Worker 中使用 OffscreenCanvas 做计算密集型 2D 渲染、选择合适像素格式、避免频繁大小变更。</li>
+</ul>
+<p>简短示例（使用 OffscreenCanvas 在 Worker 中离屏绘制并传回主线程显示）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> off = canvas.<span class="title function_">transferControlToOffscreen</span>();</span><br><span class="line"><span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="title class_">Worker</span>(<span class="string">&#x27;worker.js&#x27;</span>);</span><br><span class="line">worker.<span class="title function_">postMessage</span>(&#123; <span class="attr">canvas</span>: off, <span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span> &#125;, [off]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// worker.js</span></span><br><span class="line">self.<span class="property">onmessage</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; canvas, width, height &#125; = e.<span class="property">data</span>;</span><br><span class="line">  canvas.<span class="property">width</span> = width; canvas.<span class="property">height</span> = height;</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  <span class="comment">// 离屏绘制</span></span><br><span class="line">  ctx.<span class="property">fillStyle</span> = <span class="string">&#x27;#012&#x27;</span>;</span><br><span class="line">  ctx.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">  ctx.<span class="property">fillStyle</span> = <span class="string">&#x27;#fff&#x27;</span>;</span><br><span class="line">  ctx.<span class="property">font</span> = <span class="string">&#x27;24px sans-serif&#x27;</span>;</span><br><span class="line">  ctx.<span class="title function_">fillText</span>(<span class="string">&#x27;离屏渲染示例&#x27;</span>, <span class="number">20</span>, <span class="number">40</span>);</span><br><span class="line">  <span class="comment">// 如果需要把结果传回主线程为 ImageBitmap:</span></span><br><span class="line">  canvas.<span class="title function_">convertToBlob</span>().<span class="title function_">then</span>(<span class="function"><span class="params">blob</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">createImageBitmap</span>(blob);</span><br><span class="line">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">bitmap</span> =&gt;</span> &#123;</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; bitmap &#125;, [bitmap]);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 main.js 中接收并绘制 bitmap（可选）</span></span><br><span class="line">worker.<span class="property">onmessage</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> bitmap = e.<span class="property">data</span>.<span class="property">bitmap</span>;</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>,<span class="number">0</span>,canvas.<span class="property">width</span>,canvas.<span class="property">height</span>);</span><br><span class="line">  ctx.<span class="title function_">drawImage</span>(bitmap, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>简要说明：主线程把 canvas 转为 OffscreenCanvas 传给 Worker，Worker 在离屏 canvas 上绘制并可把结果以 ImageBitmap/Blob 等形式回传或直接让浏览器合成显示。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/11/25/27323.html" data-id="cmlc4w8xe0044jkti3vby2ivq" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" rel="tag">离屏渲染</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-高斯泼溅中粒子的协方差矩阵是做什么的" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/11/25/4244.html" class="article-date">
+  <time datetime="2025-11-25T02:34:45.000Z" itemprop="datePublished">2025-11-25 10:34:45</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/11/25/4244.html">高斯泼溅中粒子的协方差矩阵是做什么的</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="协方差矩阵在高斯泼溅（Gaussian-splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。"><a href="#协方差矩阵在高斯泼溅（Gaussian-splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。" class="headerlink" title="协方差矩阵在高斯泼溅（Gaussian splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。"></a>协方差矩阵在高斯泼溅（Gaussian splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。</h3><p>要点说明：  </p>
+<h4 id="表示含义：协方差矩阵-Σ-描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆-椭球的尺度与朝向。"><a href="#表示含义：协方差矩阵-Σ-描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆-椭球的尺度与朝向。" class="headerlink" title="表示含义：协方差矩阵 Σ 描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆/椭球的尺度与朝向。"></a>表示含义：协方差矩阵 Σ 描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆/椭球的尺度与朝向。</h4><h4 id="在渲染中的作用：像素权重按马氏距离计算，典型权重形式为-w-x-∝-exp-0-5-x-μ-T-Σ-1-x-μ-sqrt-2π-k-det-Σ-其中-Σ-1-控制衰减速率和方向，det-Σ-用于归一化。"><a href="#在渲染中的作用：像素权重按马氏距离计算，典型权重形式为-w-x-∝-exp-0-5-x-μ-T-Σ-1-x-μ-sqrt-2π-k-det-Σ-其中-Σ-1-控制衰减速率和方向，det-Σ-用于归一化。" class="headerlink" title="在渲染中的作用：像素权重按马氏距离计算，典型权重形式为 w(x) ∝ exp(-0.5 * (x-μ)^T Σ^{-1} (x-μ)) / sqrt((2π)^k * det Σ) 其中 Σ^{-1} 控制衰减速率和方向，det Σ 用于归一化。"></a>在渲染中的作用：像素权重按马氏距离计算，典型权重形式为 w(x) ∝ exp(-0.5 * (x-μ)^T Σ^{-1} (x-μ)) / sqrt((2π)^k * det Σ) 其中 Σ^{-1} 控制衰减速率和方向，det Σ 用于归一化。</h4><h4 id="视觉效果：较大协方差-→-更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。"><a href="#视觉效果：较大协方差-→-更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。" class="headerlink" title="视觉效果：较大协方差 → 更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。"></a>视觉效果：较大协方差 → 更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。</h4><h4 id="估计方式：常用局部邻域-PCA（特征分解）从点云或法线推断-Σ，或由场景尺度-先验设定；实现上需保证-Σ-正定（通常在对角加小常数以稳定求逆）。"><a href="#估计方式：常用局部邻域-PCA（特征分解）从点云或法线推断-Σ，或由场景尺度-先验设定；实现上需保证-Σ-正定（通常在对角加小常数以稳定求逆）。" class="headerlink" title="估计方式：常用局部邻域 PCA（特征分解）从点云或法线推断 Σ，或由场景尺度/先验设定；实现上需保证 Σ 正定（通常在对角加小常数以稳定求逆）。"></a>估计方式：常用局部邻域 PCA（特征分解）从点云或法线推断 Σ，或由场景尺度/先验设定；实现上需保证 Σ 正定（通常在对角加小常数以稳定求逆）。</h4><h4 id="实践注意：可在世界空间使用-3x3-矩阵，或投影到屏幕使用-2x2-矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。"><a href="#实践注意：可在世界空间使用-3x3-矩阵，或投影到屏幕使用-2x2-矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。" class="headerlink" title="实践注意：可在世界空间使用 3x3 矩阵，或投影到屏幕使用 2x2 矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。"></a>实践注意：可在世界空间使用 3x3 矩阵，或投影到屏幕使用 2x2 矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。</h4><h3 id="简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。"><a href="#简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。" class="headerlink" title="简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。"></a>简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。</h3>
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/11/25/4244.html" data-id="cmlc4w8za00d8jkti8hmr5sng" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85/" rel="tag">高斯泼溅</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-EASY-3D-SDK：强大的二三维一体WebGIS开发框架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/09/16/24077.html" class="article-date">
+  <time datetime="2025-09-16T02:09:35.000Z" itemprop="datePublished">2025-09-16 10:09:35</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/09/16/24077.html">EASY-3D-SDK：强大的二三维一体WebGIS开发框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>EASY-3D-SDK是一个基于开源项目Cesium进行二次开发的二三维一体WebGIS应用框架。该框架由北京易越多维科技有限公司开发，封装了各大厂商的底图（谷歌、百度、高德、ArcGIS等）、各类数据动画和三维特效、场景数据、基础计算、路径漫游和定点巡航、空间分析能力、工具部件和第三方地图工具库等（turf、heatmap、mapv、echarts、three）。</p>
+<p>该框架旨在为开发者提供一个功能强大、易于使用的地理信息系统开发平台，帮助开发者快速构建高质量的WebGIS应用。目前包含近百个功能示例的代码，示例还在持续更新和新增中。</p>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="🗺️-多厂商地图支持"><a href="#🗺️-多厂商地图支持" class="headerlink" title="🗺️ 多厂商地图支持"></a>🗺️ 多厂商地图支持</h3><ul>
+<li><strong>全面兼容</strong>：支持高德、百度、腾讯、天地图、Google、ArcGIS等主流地图厂商</li>
+<li><strong>坐标处理</strong>：针对国内地图提供专业的偏移处理解决方案</li>
+<li><strong>标准服务</strong>：完整支持ArcGIS Server、Geoserver WMS/WMTS、TMS等标准地图服务</li>
+<li><strong>多坐标系</strong>：支持CGCS2000等多种坐标系统</li>
+</ul>
+<h3 id="✨-丰富的三维效果"><a href="#✨-丰富的三维效果" class="headerlink" title="✨ 丰富的三维效果"></a>✨ 丰富的三维效果</h3><ul>
+<li><strong>动态效果</strong>：流动线、发光流动线、闪烁线、扩散圆等动态视觉效果</li>
+<li><strong>天气特效</strong>：云、雨、雪、雾等真实天气模拟</li>
+<li><strong>视频融合</strong>：支持视频与三维场景的无缝融合</li>
+<li><strong>材质动画</strong>：提供线、面、圆、模型等的材质效果和细节动画</li>
+<li><strong>后期特效</strong>：泛光、夜视、VR等专业后期处理效果</li>
+</ul>
+<h3 id="🛣️-智能漫游系统"><a href="#🛣️-智能漫游系统" class="headerlink" title="🛣️ 智能漫游系统"></a>🛣️ 智能漫游系统</h3><ul>
+<li><strong>路径漫游</strong>：根据预设路线进行自动漫游</li>
+<li><strong>飞行追踪</strong>：多种飞行模式，包括第一人称视野</li>
+<li><strong>贴模型漫游</strong>：紧贴三维模型表面的精确漫游</li>
+<li><strong>定点巡航</strong>：重点区域的自动定位和查看功能</li>
+</ul>
+<h3 id="📊-专业空间分析"><a href="#📊-专业空间分析" class="headerlink" title="📊 专业空间分析"></a>📊 专业空间分析</h3><ul>
+<li><strong>量算功能</strong>：测距、面积、高度等精确测量工具</li>
+<li><strong>场景分析</strong>：缓冲区分析、剖面分析、可视域分析、通视分析</li>
+<li><strong>几何绘制</strong>：支持各种点、线、面等几何形状的绘制</li>
+<li><strong>标注系统</strong>：广告牌标注、双面电子标牌等多样化标注方式</li>
+</ul>
+<h3 id="🔧-实用工具组件"><a href="#🔧-实用工具组件" class="headerlink" title="🔧 实用工具组件"></a>🔧 实用工具组件</h3><ul>
+<li><strong>导航工具</strong>：罗盘、地理信息显示</li>
+<li><strong>搜索功能</strong>：地址搜索、POI搜索</li>
+<li><strong>测量工具</strong>：集成化的测量工具套件</li>
+<li><strong>数据管理</strong>：完整的数据处理、存储、发布、可视化流程</li>
+</ul>
+<h3 id="🔗-第三方库集成"><a href="#🔗-第三方库集成" class="headerlink" title="🔗 第三方库集成"></a>🔗 第三方库集成</h3><ul>
+<li><strong>可视化库</strong>：turf、heatmap、mapv、echarts等</li>
+<li><strong>3D库</strong>：three.js等三维图形库</li>
+<li><strong>开源工具</strong>：避免重复开发，降低学习成本</li>
+</ul>
+<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><ul>
+<li><strong>浏览器要求</strong>：支持WebGL的现代浏览器（推荐Chrome）</li>
+<li><strong>服务器支持</strong>：Apache、Tomcat、Nginx等静态服务器</li>
+<li><strong>开发框架</strong>：基于Vue.js构建的现代化开发体验</li>
+</ul>
+<h3 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入样式文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./easy-3d-sdk/index.css&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入核心库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./easy-3d-sdk/easy-3d-sdk.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="项目生态"><a href="#项目生态" class="headerlink" title="项目生态"></a>项目生态</h2><h3 id="1-EASY-3D-SDK-Portal（门户网站）"><a href="#1-EASY-3D-SDK-Portal（门户网站）" class="headerlink" title="1. EASY-3D-SDK Portal（门户网站）"></a>1. EASY-3D-SDK Portal（门户网站）</h3><ul>
+<li><strong>功能</strong>：SDK的官方展示和下载门户</li>
+<li><strong>特色</strong>：<ul>
+<li>精美的产品展示界面</li>
+<li>数据管理平台介绍</li>
+<li>SDK下载和文档导航</li>
+<li>在线示例和项目模板<br><img src="/images/2025/09/portal.jpg" alt="EASY-3D-SDK Portal"><h3 id="2-EASY-3D-SDK-Test（测试示例）"><a href="#2-EASY-3D-SDK-Test（测试示例）" class="headerlink" title="2. EASY-3D-SDK Test（测试示例）"></a>2. EASY-3D-SDK Test（测试示例）</h3></li>
+</ul>
+</li>
+<li><strong>功能</strong>：SDK功能的完整测试和演示平台</li>
+<li><strong>特色</strong>：包含近百个功能示例的代码，目前示例还在持续更新和新增中</li>
+<li><strong>包含模块</strong>：<ul>
+<li>快速开始教程</li>
+<li>影像地形展示（影像地图）</li>
+<li>标准地图服务</li>
+<li>三维效果演示</li>
+<li>场景数据处理</li>
+<li>基础计算功能</li>
+<li>空间分析工具</li>
+<li>工具部件</li>
+<li>第三方库集成<br><img src="/images/2025/09/demo.jpg" alt="EASY-3D-SDK DEMO"><h3 id="3-EASY-3D-SDK-Doc（文档系统）"><a href="#3-EASY-3D-SDK-Doc（文档系统）" class="headerlink" title="3. EASY-3D-SDK Doc（文档系统）"></a>3. EASY-3D-SDK Doc（文档系统）</h3></li>
+</ul>
+</li>
+<li><strong>功能</strong>：基于Docsify构建的完整开发教程文档系统</li>
+<li><strong>关键词</strong>：easy-3d-sdk、demo、示例、cesium、三维、WebGIS</li>
+<li><strong>内容</strong>：<ul>
+<li>API文档</li>
+<li>快速开始指南</li>
+<li>开发教程</li>
+<li>最佳实践</li>
+<li>配置指南<br><img src="/images/2025/09/doc.jpg" alt="EASY-3D-SDK Doc"><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2></li>
+</ul>
+</li>
+</ul>
+<h3 id="智慧城市"><a href="#智慧城市" class="headerlink" title="智慧城市"></a>智慧城市</h3><ul>
+<li>城市规划可视化</li>
+<li>基础设施管理</li>
+<li>应急指挥系统</li>
+<li>环境监测平台</li>
+</ul>
+<h3 id="国土资源"><a href="#国土资源" class="headerlink" title="国土资源"></a>国土资源</h3><ul>
+<li>土地利用规划</li>
+<li>地质勘探可视化</li>
+<li>矿产资源管理</li>
+<li>生态环境保护</li>
+</ul>
+<h3 id="交通运输"><a href="#交通运输" class="headerlink" title="交通运输"></a>交通运输</h3><ul>
+<li>智能交通系统</li>
+<li>物流路径优化</li>
+<li>车辆轨迹回放</li>
+<li>交通流量分析</li>
+</ul>
+<h3 id="军事国防"><a href="#军事国防" class="headerlink" title="军事国防"></a>军事国防</h3><ul>
+<li>态势感知系统</li>
+<li>作战指挥平台</li>
+<li>装备管理系统</li>
+<li>训练模拟平台</li>
+</ul>
+<h2 id="开发优势"><a href="#开发优势" class="headerlink" title="开发优势"></a>开发优势</h2><h3 id="🚀-快速开发"><a href="#🚀-快速开发" class="headerlink" title="🚀 快速开发"></a>🚀 快速开发</h3><ul>
+<li>开箱即用的组件库</li>
+<li>丰富的示例代码</li>
+<li>完善的文档支持</li>
+<li>活跃的社区生态</li>
+</ul>
+<h3 id="💡-易于学习"><a href="#💡-易于学习" class="headerlink" title="💡 易于学习"></a>💡 易于学习</h3><ul>
+<li>基于流行的Cesium框架</li>
+<li>简化的API设计</li>
+<li>详细的开发教程</li>
+<li>渐进式学习路径</li>
+</ul>
+<h3 id="🔒-稳定可靠"><a href="#🔒-稳定可靠" class="headerlink" title="🔒 稳定可靠"></a>🔒 稳定可靠</h3><ul>
+<li>经过大量项目验证</li>
+<li>持续的版本更新</li>
+<li>专业的技术支持</li>
+<li>完善的错误处理</li>
+</ul>
+<h3 id="🎨-高度定制"><a href="#🎨-高度定制" class="headerlink" title="🎨 高度定制"></a>🎨 高度定制</h3><ul>
+<li>灵活的主题系统</li>
+<li>可扩展的插件架构</li>
+<li>丰富的配置选项</li>
+<li>自定义组件支持</li>
+</ul>
+<h2 id="获取与支持"><a href="#获取与支持" class="headerlink" title="获取与支持"></a>获取与支持</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><ul>
+<li><strong>官方门户</strong>：<a target="_blank" rel="noopener" href="http://47.120.26.80:9527/easy-3d-sdk-portal/">EASY-3D-SDK Portal</a></li>
+<li><strong>在线演示</strong>：<a target="_blank" rel="noopener" href="http://47.120.26.80:9527/easy-3d-sdk/demo">EASY-3D-SDK Demo</a></li>
+<li><strong>API文档</strong>：<a target="_blank" rel="noopener" href="http://47.120.26.80:9527/easy-3d-sdk/easy-3d-sdk/Documentation/">EASY-3D-SDK Documentation</a></li>
+</ul>
+<h3 id="技术支持"><a href="#技术支持" class="headerlink" title="技术支持"></a>技术支持</h3><ul>
+<li><strong>技术负责人</strong>：James Jiang</li>
+<li><strong>微信</strong>：easygissdk</li>
+<li><strong>联系邮箱</strong>：<a href="mailto:&#x31;&#x36;&#57;&#x30;&#x36;&#x30;&#57;&#57;&#x37;&#57;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;">&#x31;&#x36;&#57;&#x30;&#x36;&#x30;&#57;&#57;&#x37;&#57;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;</a></li>
+</ul>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><ul>
+<li><strong>当前版本</strong>：持续更新中</li>
+<li><strong>兼容性</strong>：支持现代浏览器</li>
+<li><strong>许可证</strong>：商业许可</li>
+<li><strong>更新频率</strong>：定期发布新版本和功能更新</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>EASY-3D-SDK作为一个成熟的WebGIS开发框架，不仅提供了强大的三维地理信息处理能力，更通过其完整的生态系统为开发者提供了从学习到部署的全流程支持。无论您是GIS领域的新手还是经验丰富的开发者，EASY-3D-SDK都能帮助您快速构建出色的地理信息应用。</p>
+<p>立即访问官方网站，开始您的WebGIS开发之旅！</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/09/16/24077.html" data-id="cmlc4w8wf001njkti890qgj61" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leaflet/" rel="tag">Leaflet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGIS/" rel="tag">WebGIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4/" rel="tag">三维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4/" rel="tag">二维</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-GPU图形绘制管线" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/07/07/51151.html" class="article-date">
+  <time datetime="2025-07-07T08:16:35.000Z" itemprop="datePublished">2025-07-07 16:16:35</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/07/51151.html">GPU图形绘制管线</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>GPU图形绘制管线（Graphics Pipeline）是将3D场景数据转换为最终屏幕像素的<strong>标准化处理流程</strong>。它由一系列按顺序执行的阶段组成，每个阶段处理特定任务。现代GPU使用高度并行化的架构来高效执行这些阶段。</p>
+<p>图形绘制管线的核心阶段（以OpenGL/Vulkan/DirectX等API描述的经典流程为基础）：<br>应用阶段 -&gt; 几何阶段 -&gt; 光栅化阶段</p>
+<h3 id="主要阶段详解"><a href="#主要阶段详解" class="headerlink" title="主要阶段详解"></a>主要阶段详解</h3><ol>
+<li><p><strong>应用阶段 (Application Stage - CPU主导)</strong></p>
+<ul>
+<li>  <strong>职责</strong>：运行在CPU上，由应用程序（如游戏引擎、3D建模软件）控制。</li>
+<li><strong>主要任务</strong>：<ul>
+<li>  <strong>场景管理</strong>：决定哪些物体需要渲染（视锥体裁剪剔除）。</li>
+<li>  <strong>模型加载与更新</strong>：加载网格数据（顶点、索引）、纹理、材质。</li>
+<li>  <strong>动画与变换</strong>：计算物体随时间变化的模型变换矩阵（Model Matrix）。</li>
+<li>  <strong>设置渲染状态</strong>：配置管线状态（如使用哪个着色器程序、开启哪些测试、绑定纹理等）。</li>
+<li>  <strong>提交绘制命令</strong>：调用图形API（如<code>glDrawElements</code>, <code>vkCmdDraw</code>）将顶点数据、索引数据等提交给GPU驱动。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>几何阶段 (Geometry Stage - GPU主导)</strong></p>
+<ul>
+<li>  在GPU上执行，处理顶点及其相关属性（位置、颜色、法线、纹理坐标等）。</li>
+<li><strong>核心子阶段</strong>：<ul>
+<li>**顶点着色器 (Vertex Shader - 可编程)**：<ul>
+<li>  对输入的<strong>每个顶点</strong>独立执行一次。</li>
+<li>  核心任务：<strong>顶点变换</strong>。使用模型(Model)、视图(View)、投影(Projection)矩阵将顶点位置从模型局部空间转换到裁剪空间（Clip Space）。</li>
+<li>  其他任务：计算或传递顶点属性（如颜色、纹理坐标、法线用于光照计算）。</li>
+</ul>
+</li>
+<li>**曲面细分阶段 (Tessellation Stage - 可选，可编程)**：<ul>
+<li>  细分原始图元（如三角形、四边形）以增加几何细节（LOD）。</li>
+<li>  包含三个可配置/可编程部分：曲面细分控制着色器（设置细分级别）、固定功能细分器（生成新顶点和连接关系）、曲面细分评估着色器（计算新顶点的最终位置和属性）。</li>
+</ul>
+</li>
+<li>**几何着色器 (Geometry Shader - 可选，可编程)**：<ul>
+<li>  以<strong>整个图元</strong>（如单个点、线、三角形）或其邻接关系作为输入。</li>
+<li>  可以创建、销毁或修改图元（如点生成精灵、线生成带厚度的线带、法线可视化）。</li>
+<li>  性能开销较大，需谨慎使用。</li>
+</ul>
+</li>
+<li>**图元装配 (Primitive Assembly - 固定功能)**：<ul>
+<li>  将顶点按照绘制命令指定的图元类型（点、线、三角形等）组装成图元。</li>
+</ul>
+</li>
+<li>**裁剪 (Clipping - 固定功能)**：<ul>
+<li>  裁剪掉完全位于视锥体（View Frustum）之外的图元。</li>
+<li>  部分在视锥体内的图元会被裁剪到视锥体边界（生成新的顶点和边）。</li>
+<li>  目的是避免处理不可见的几何体。</li>
+</ul>
+</li>
+<li>**透视除法 (Perspective Division - 固定功能)**：<ul>
+<li>  将裁剪空间坐标（<code>(x,y,z,w)</code>）转换为**标准化设备坐标 (Normalized Device Coordinates - NDC)**：<code>(x/w, y/w, z/w)</code>。</li>
+<li>  此时坐标范围：<code>x, y, z ∈ [-1, 1]</code>。</li>
+</ul>
+</li>
+<li>**视口变换 (Viewport Transform - 固定功能)**：<ul>
+<li>  将NDC坐标映射到屏幕空间坐标（像素坐标）。</li>
+<li>  设置由应用定义（<code>glViewport</code>, <code>vkCmdSetViewport</code>），指定输出图像的哪个矩形区域用于渲染。</li>
+<li>  <code>z</code>坐标通常被映射到深度缓冲区范围（如<code>[0, 1]</code>）。
+        
+          <p class="article-more-link" style="text-align:center">
+            <a href="/2025/07/07/51151.html#more">点击继续阅读</a>
+          </p>
+        
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/07/07/51151.html" data-id="cmlc4w8wk001xjktidedp9u7o" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPU/" rel="tag">GPU</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E7%BB%98%E5%88%B6/" rel="tag">图形绘制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" rel="tag">渲染管线</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-为钓鱼佬们做了一个微信小程序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/04/01/56376.html" class="article-date">
+  <time datetime="2025-04-01T06:31:58.000Z" itemprop="datePublished">2025-04-01 14:31:58</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/04/01/56376.html">为钓鱼佬们做了一个微信小程序，钓友必备神器！5万+爆护钓点一键直达，智能算法预判鱼情</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2025/04/965d2233-f608-4f3d-96cb-ac9efd4f8dde.png" alt="京钓宝"><br>本人是一个混迹互联网多年的Coder（码农）+钓鱼佬，开发京钓宝小程序纯属个人爱好和记录分享，之前一直是自己用的，推荐给身边钓友后反馈很不错，于是分享了出来。</p>
+<p>【京钓宝】</p>
+<p>注释：京，俺在北京；钓宝，钓鱼佬的宝贝，也音通用了京钓宝，那个地道道道，钓鱼爆护了</p>
+<p>京钓宝微信小程序，不需安装无广告，无注册要求。</p>
+<p>打开即用，方便可靠。</p>
+<p>如果你觉得有用，不妨分享给您的好朋友。</p>
+<p><img src="/images/2025/04/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250401144458.jpg" alt="京钓宝"><br>长按该图片也可达</p>
+<p>这是一款属于钓鱼佬爆护的秘密武器，全国5万多个爆护钓点，<br><img src="/images/2025/04/2025-03-28_181122.png" alt="省"><br><img src="/images/2025/04/2025-03-28_180649.png" alt="市"><br><img src="/images/2025/04/2025-03-28_180442.png" alt="县"><br>钓点详情，有文有图有真相<br><img src="/images/2025/04/2025-03-28_181050.png" alt="钓点详情"><br>你也可以将自己的钓点分享出来，让大家顶礼膜拜<br><img src="/images/2025/04/2025-03-28_180705.png" alt="钓点详情"></p>
+<p>通过阅读文献，本人建立一套基于天气参数的智能钓鱼天气预报系统算法模型，可以得到最近半个月的钓鱼适宜度，让你足不出户就能全息掌握鱼情。<br><img src="/images/2025/04/2025-03-28_180417.png" alt="钓鱼适宜度"><br><img src="/images/2025/04/2025-03-28_180549.png" alt="钓鱼适宜度预报"><br>钓友上鱼时刻分享<br><img src="/images/2025/04/2025-03-28_180720.png" alt="钓鱼适宜度预报"><br>你也可以分享上鱼的快乐时刻<br><img src="/images/2025/04/2025-03-28_180732.png" alt="分享上鱼"><br>对矛鱼等非法捕捞进行上墙展示<br><img src="/images/2025/04/2025-03-28_180746.png" alt="上墙展示"><br>（这个都是匿名展示，不怕矛鱼佬的骚扰）<br>对于非法矛鱼下网捕鱼，我们说NO<br><img src="/images/2025/04/2025-03-28_180755.png" alt="非法捕捞"><br>如果你觉得有用，不妨分享给您的好朋友。<br><img src="/images/2025/04/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250401144458.jpg" alt="京钓宝"><br>长按该图片或者微信搜索[京钓宝]小程序也可达</p>
+<p>最后，欢迎大家留言反馈或者提出宝贵意见.</p>
+<p>祝各位钓鱼佬</p>
+<p>天天爆护!!!</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/04/01/56376.html" data-id="cmlc4w8xd003zjktidp7heakq" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%AC%E9%92%93%E5%AE%9D/" rel="tag">京钓宝</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%92%93%E9%B1%BC%E4%BD%AC/" rel="tag">钓鱼佬</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-postgresql无法创建数据库解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/03/17/16730.html" class="article-date">
+  <time datetime="2025-03-17T07:21:30.000Z" itemprop="datePublished">2025-03-17 15:21:30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/17/16730.html">postgresql无法创建数据库解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用navicat 16.3.7连接数据库postgresql 17.2，创建数据库报错</p>
+<p><img src="/images/2025/03/202503171.jpg" alt="template database &#39;template1&#39; has a collation version mismatch"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ERROR: template database &#x27;template1&#x27; has a collation version mismatch</span><br><span class="line">DETAIL: The template database was created using collation version 2.36, but the operating system provides version 2.31.</span><br><span class="line">HINT: Rebuild all objects in the template database that use the default collation and run ALTER DATABASE template1 REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.</span><br></pre></td></tr></table></figure>
+
+<p>这个错误表明，模板数据库 ‘template1’ 的排序规则版本（collation version 2.36）与操作系统提供的版本（2.31）不匹配，导致无法成功创建新数据库。</p>
+<p>下面我将解释问题原因并提供解决方案。</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a><strong>问题原因</strong></h3><p>在 PostgreSQL 中：</p>
+<p>排序规则（Collation） 是定义字符串比较和排序规则的机制，用于文本数据的排序和搜索操作。</p>
+<p>模板数据库：创建新数据库时，PostgreSQL 默认使用 ‘template1’ 作为模板，将其设置（包括排序规则）复制到新数据库。</p>
+<p>版本不匹配：错误显示 ‘template1’ 使用的是排序规则版本 2.36，而当前操作系统只支持 2.31。这种不匹配可能是因为 PostgreSQL 安装时所在的系统排序规则版本较新，后来被迁移到了排序规则版本较旧的系统上。<br>由于新数据库依赖模板数据库的排序规则，而操作系统无法支持 ‘template1’ 的较新版本（2.36），创建数据库时就会失败。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>以下是解决此问题的几种方法。由于您使用的是 Navicat（一个图形化工具），我将尽量提供简单易行的步骤，并优先考虑通过 SQL 命令或 Navicat 操作完成的方法：<br>方法 1：尝试刷新 ‘template1’ 的排序规则版本<br>步骤：<br>在 Navicat 中连接到您的 PostgreSQL 服务器。<br>打开 SQL 控制台（或查询窗口），运行以下命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> DATABASE template1 REFRESH <span class="keyword">COLLATION</span> VERSION;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/03/17/16730.html" data-id="cmlc4w8wz002ujkti035zcjl2" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postgresql/" rel="tag">postgresql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-2025人工智能革命：技术突破如何重塑未来生活" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/03/07/43120.html" class="article-date">
+  <time datetime="2025-03-07T12:21:39.000Z" itemprop="datePublished">2025-03-07 20:21:39</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/07/43120.html">2025人工智能革命：技术突破如何重塑未来生活</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="引言：一场静默的科技革命正在发生"><a href="#引言：一场静默的科技革命正在发生" class="headerlink" title="引言：一场静默的科技革命正在发生"></a>引言：一场静默的科技革命正在发生</h3><p>2025年，人工智能不再是实验室里的概念，而是渗透进每个普通人的日常。从清晨唤醒你的智能家居，到深夜为你生成工作总结的AI助手；从医院里精准诊断疾病的算法，到工厂中自主优化生产流程的机器人——这场革命正以惊人的速度重构我们的世界。而推动这一切的核心力量，是开源大模型的崛起、应用场景的爆发式落地，以及全球资本与技术资源的疯狂涌入。</p>
+<hr>
+<h3 id="一、技术突破：开源大模型的“平民化”浪潮"><a href="#一、技术突破：开源大模型的“平民化”浪潮" class="headerlink" title="一、技术突破：开源大模型的“平民化”浪潮"></a>一、技术突破：开源大模型的“平民化”浪潮</h3><ol>
+<li><p><strong>DeepSeek的颠覆性创新</strong><br>2024年，中国团队开发的DeepSeek大模型以开源模式和算法优化打破技术壁垒。其通过“参数效率革命”，将训练成本降低至传统模型的1/10，同时性能超越GPT-4.0，彻底颠覆了“算力堆砌=技术领先”的旧逻辑。这一突破不仅让中小企业和开发者能以低成本调用顶级AI能力，更催生了全球超过2000个衍生应用项目。</p>
+</li>
+<li><p><strong>多模态融合的技术奇点</strong><br>阿里云推出的“通义万相”大模型已实现文本、图像、音频、视频的全模态生成与交互。例如，在春晚《笔走龙蛇》节目中，AI实时生成武术动作的“子弹时间”特效，背后是通义大模型对物理规律与艺术审美的深度理解。这种技术正在被应用于影视制作、工业设计等领域，将创意实现周期从数月缩短至数小时。</p>
+</li>
+<li><p><strong>硬件瓶颈的突围之路</strong><br>面对美国芯片封锁，中国企业通过“算法补偿硬件”策略开辟新赛道。例如，深鉴科技开发的“异构计算架构”，让国产14nm芯片运行AI模型的效率达到7nm芯片的90%。这种“软硬协同”模式正推动中国AI产业链形成闭环。</p>
+</li>
+</ol>
+<hr>
+<h3 id="二、应用场景：从实验室到街头巷尾"><a href="#二、应用场景：从实验室到街头巷尾" class="headerlink" title="二、应用场景：从实验室到街头巷尾"></a>二、应用场景：从实验室到街头巷尾</h3><ol>
+<li><p><strong>医疗革命：AI医生的精准出击</strong></p>
+<ul>
+<li><strong>诊断辅助</strong>：上海瑞金医院部署的AI系统已能识别2000种罕见病，准确率超95%。通过分析患者基因数据与全球病例库，诊断时间从平均14天压缩至2小时。</li>
+<li><strong>手术机器人</strong>：微创医疗的“神农”机器人完成全球首例AI自主冠状动脉支架植入，术中误差小于0.1毫米，标志着外科手术进入“无人化”时代。</li>
+</ul>
+</li>
+<li><p><strong>教育重构：个性化学习的终极方案</strong></p>
+<ul>
+<li><strong>自适应学习系统</strong>：猿辅导推出的“AI导师”可根据学生脑电波数据实时调整授课节奏，将知识点吸收效率提升40%。</li>
+<li><strong>虚拟实验室</strong>：清华大学搭建的元宇宙化学实验室，学生可通过VR设备进行高危实验，AI自动评估操作风险并生成实验报告。</li>
+</ul>
+</li>
+<li><p><strong>产业升级：制造业的智能跃迁</strong></p>
+<ul>
+<li><strong>柔性生产线</strong>：比亚迪的“黑灯工厂”中，AI调度系统实时优化1.2万台设备的任务分配，使产能波动率从15%降至3%以下。</li>
+<li><strong>供应链预测</strong>：京东物流的AI预测模型将库存周转天数缩短20%，618大促期间缺货率下降至0.3%。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、经济重塑：资本狂潮与新职业图谱"><a href="#三、经济重塑：资本狂潮与新职业图谱" class="headerlink" title="三、经济重塑：资本狂潮与新职业图谱"></a>三、经济重塑：资本狂潮与新职业图谱</h3><ol>
+<li><p><strong>资本市场的“AI狂热”</strong><br>2024年全球AI领域融资达245亿美元，其中应用层企业占比60%。OpenAI估值突破1570亿美元，而中国的DeepSeek在B轮融资中获66亿美元，创下亚洲AI初创企业纪录。</p>
+</li>
+<li><p><strong>就业市场的冰与火</strong></p>
+<ul>
+<li><strong>职业消亡</strong>：麦肯锡预测，2025年全球将有8000万个基础岗位被AI替代，如客服、初级翻译等。</li>
+<li><strong>新工种爆发</strong>：AI伦理师、模型驯化师、数字孪生工程师等职业需求激增，北京某猎头公司数据显示，这类岗位年薪中位数达80万元。</li>
+</ul>
+</li>
+<li><p><strong>消费革命：从物质到体验</strong></p>
+<ul>
+<li><strong>情绪消费</strong>：年轻人愿为AI生成的“虚拟恋人”服务支付每月499元，某平台用户超300万。</li>
+<li><strong>场景化购物</strong>：淘宝的“元宇宙试衣间”利用AI生成个性化穿搭建议，转化率提升27%。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、挑战与反思：技术狂飙下的暗流"><a href="#四、挑战与反思：技术狂飙下的暗流" class="headerlink" title="四、挑战与反思：技术狂飙下的暗流"></a>四、挑战与反思：技术狂飙下的暗流</h3><ol>
+<li><p><strong>伦理困境：谁为AI的错误买单？</strong><br>2024年杭州法院审理首例“AI医疗误诊案”，患者因算法漏诊癌症晚期起诉医院，最终判决AI开发商承担30%责任。此案引发对AI法律主体资格的激烈争论。</p>
+</li>
+<li><p><strong>数字鸿沟：技术普惠的未竟之路</strong><br>尽管DeepSeek降低技术门槛，但全球仍有43亿人无法稳定接入互联网。联合国报告指出，AI可能加剧发达国家与发展中国家的差距，形成“智能殖民”新形态。</p>
+</li>
+<li><p><strong>能源悖论：绿色与耗能的拉锯战</strong><br>单个大模型的训练需消耗相当于3000辆汽车年排放的碳足迹。尽管阿里云等企业推广“绿色AI”计划，但行业整体能耗仍在以每年35%的速度增长。</p>
+</li>
+</ol>
+<hr>
+<h3 id="结语：人与机器共生的未来已来"><a href="#结语：人与机器共生的未来已来" class="headerlink" title="结语：人与机器共生的未来已来"></a>结语：人与机器共生的未来已来</h3><p>当AI能够创作诗歌、设计建筑、治愈疾病，人类的价值将重新被定义。这场革命不仅是技术的跃进，更是一场关于文明走向的哲学思辨。正如DeepSeek首席科学家所言：“我们不是在建造工具，而是在培育一种新的生命形式。”或许，2025年将被历史铭记为人类与AI真正开始对话的元年。</p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/03/07/43120.html" data-id="cmlc4w8vr0009jkti8zflaymh" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%AA%81%E7%A0%B4/" rel="tag">技术突破</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-我国光伏产品报告2024，未来展望" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/03/03/65153.html" class="article-date">
+  <time datetime="2025-03-03T08:10:19.000Z" itemprop="datePublished">2025-03-03 16:10:19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/03/65153.html">我国光伏产品报告2024，未来展望</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2025/03/20250303_160858_000.jpg" alt="2024光伏报告"><br><img src="/images/2025/03/20250303_160858_001.jpg" alt="2024光伏报告"><br><img src="/images/2025/03/20250303_160858_002.jpg" alt="2024光伏报告"><br><img src="/images/2025/03/20250303_160858_003.jpg" alt="2024光伏报告"><br><img src="/images/2025/03/20250303_160858_004.jpg" alt="2024光伏报告"><br><img src="/images/2025/03/20250303_160858_005.jpg" alt="2024光伏报告"></p>
+        
+          <p class="article-more-link" style="text-align:center">
+            <a href="/2025/03/03/65153.html#more">点击继续阅读</a>
+          </p>
+        
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/03/03/65153.html" data-id="cmlc4w8xw005ijkti6ag36uzb" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2024/" rel="tag">2024</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD/" rel="tag">中国</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%89%E4%BC%8F/" rel="tag">光伏</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%A5%E5%91%8A/" rel="tag">报告</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+    <article id="post-中国光伏企业如何修炼" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2025/03/02/52634.html" class="article-date">
+  <time datetime="2025-03-02T05:57:01.000Z" itemprop="datePublished">2025-03-02 13:57:01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/02/52634.html">中国光伏企业如何修炼</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="../images/2025/03/03.jpg" alt="欧洲光伏"><br>中国光伏企业要更好地进军海外市场，需要从多个维度制定系统性策略，涵盖<strong>市场调研、产品创新、供应链优化、品牌建设、合作伙伴关系、合规运营、人才培养和风险管理</strong>等方面。以下是具体的建议和实施方向，帮助企业在全球市场中取得更大成功</p>
+<h1 id="1-深入市场调研与定位"><a href="#1-深入市场调研与定位" class="headerlink" title="1. 深入市场调研与定位"></a>1. 深入市场调研与定位</h1><p>   为了成功进入海外市场，中国光伏企业首先需要了解目标市场的实际情况：<br>   研究市场需求与政策：对目标国家的能源政策、可再生能源补贴、电力需求以及消费者偏好进行全面分析。例如，欧洲市场可能更注重环保和高效产品，而中东地区可能更需要耐高温的光伏组件。</p>
+<p>明确市场定位：根据市场成熟度和客户类型（如户用、工商业或大型电站），制定差异化的进入策略，确保资源精准投入。</p>
+        
+          <p class="article-more-link" style="text-align:center">
+            <a href="/2025/03/02/52634.html#more">点击继续阅读</a>
+          </p>
+        
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2025/03/02/52634.html" data-id="cmlc4w8xa003rjktibc9e3zuo" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD/" rel="tag">中国</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%98%E5%8A%BF/" rel="tag">优势</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%89%E4%BC%8F/" rel="tag">光伏</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+</article>
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">下一页 》》</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="widget-wrap">
+    <h3  class="widget-title">网站统计(自2023-05-31)</h3>
+    <div class="widget">
+        <span id="busuanzi_container_site_pv">
+            <span style="color:#258fb8">总访问量 <span style="color:#e32d40" id="busuanzi_value_site_pv"></span> 次</span>
+        </span>
+        <br>
+        <span id="busuanzi_container_site_uv">
+            <span style="color:#258fb8">访客人数 <span style="color:#e32d40" id="busuanzi_value_site_uv"></span> 人</span>
+        </span>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">微信公众号：zyouzz</h3>
+	<div class="widget">
+		<img src="/css/images/weixin.jpg">
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/10/53235.html">PerInstanceColorAppearance笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/27323.html">什么是离屏渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/4244.html">高斯泼溅中粒子的协方差矩阵是做什么的</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/16/24077.html">EASY-3D-SDK：强大的二三维一体WebGIS开发框架</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/07/51151.html">GPU图形绘制管线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">七月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ArcGIS/">ArcGIS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/RS/">RS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2024/" rel="tag">2024</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/" rel="tag">ArcGIS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Datastore/" rel="tag">ArcGIS Datastore</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Enterprise/" rel="tag">ArcGIS Enterprise</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Portal/" rel="tag">ArcGIS Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Pro/" rel="tag">ArcGIS Pro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Server/" rel="tag">ArcGIS Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECW%E5%BD%B1%E5%83%8F/" rel="tag">ECW影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Esri/" rel="tag">Esri</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLSL/" rel="tag">GLSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU/" rel="tag">GPU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScripts/" rel="tag">JavaScripts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leaflet/" rel="tag">Leaflet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelBuilder/" rel="tag">ModelBuilder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PerInstanceColorAppearance/" rel="tag">PerInstanceColorAppearance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portal/" rel="tag">Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/" rel="tag">Python脚本工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RS/" rel="tag">RS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vite/" rel="tag">Vite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGIS/" rel="tag">WebGIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/" rel="tag">WebGL</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcgis/" rel="tag">arcgis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcmap/" rel="tag">arcmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cesium/" rel="tag">cesium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/geoserver/" rel="tag">geoserver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glsl/" rel="tag">glsl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtopo30/" rel="tag">gtopo30</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modis/" rel="tag">modis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pg/" rel="tag">pg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgresql/" rel="tag">postgresql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/" rel="tag">postman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture/" rel="tag">texture</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture2D/" rel="tag">texture2D</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xlsx/" rel="tag">xlsx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4/" rel="tag">三维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF/" rel="tag">三维场景</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%96%E7%95%8C/" rel="tag">世界</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD/" rel="tag">中国</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E5%BE%84%E5%9F%9F%E5%90%8D/" rel="tag">二级路径域名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4/" rel="tag">二维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%9A%E6%B4%B2/" rel="tag">亚洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%AC%E9%92%93%E5%AE%9D/" rel="tag">京钓宝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8A%BF/" rel="tag">优势</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E4%BC%8F/" rel="tag">光伏</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%9B%BD/" rel="tag">全国</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BA%E5%B7%AE/" rel="tag">出差</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8/" rel="tag">启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E7%BB%98%E5%88%B6/" rel="tag">图形绘制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E4%BA%91/" rel="tag">地理空间云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%90%E6%A0%87/" rel="tag">坐标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E5%AD%97%E6%AE%B5/" rel="tag">多字段</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="tag">多进程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E6%AE%B5%E8%AE%A1%E7%AE%97%E5%99%A8/" rel="tag">字段计算器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BD%B1%E5%83%8F/" rel="tag">影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E9%87%8F/" rel="tag">批量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%AA%81%E7%A0%B4/" rel="tag">技术突破</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A5%E5%91%8A/" rel="tag">报告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" rel="tag">搜索引擎</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/" rel="tag">无人机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%B4%B2/" rel="tag">欧洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A6%E6%B1%89/" rel="tag">武汉</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" rel="tag">渲染管线</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%82%B9%E6%8E%92%E5%BA%8F/" rel="tag">点排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" rel="tag">离屏渲染</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%A6%E5%8F%B7%E6%B8%B2%E6%9F%93/" rel="tag">符号渲染</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E5%8F%B7/" rel="tag">编号</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E7%8F%AD/" rel="tag">航班</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%90%A4%E7%81%AB%E5%9B%BE/" rel="tag">萤火图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%8F%E8%A7%86%E8%A1%A8/" rel="tag">透视表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%92%93%E9%B1%BC%E4%BD%AC/" rel="tag">钓鱼佬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98/" rel="tag">问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" rel="tag">集群部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85/" rel="tag">高斯泼溅</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">友情链接</h3>
+	<div class="widget">
+		<ul class="entry">
+			<li><a target="_blank" rel="noopener" href="http://www.esrichina.com.cn/" title="Esri中国">Esri中国</a></li>
+			<li><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/enviidl" title="ENVI-IDL技术殿堂的博客">ENVI-IDL技术殿堂的博客</a></li>
+			<li><a target="_blank" rel="noopener" href="http://zhihu.esrichina.com.cn/" title="ArcGIS知乎">ArcGIS知乎</a></li>
+			<li><a target="_blank" rel="noopener" href="http://kikitamap.com/" title="kikita&maps">kikita&maps</a></li>
+		</ul>
+	</div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 James Rock<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  </div>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3HYCEbjiW2zuEoLJ",ck:"3HYCEbjiW2zuEoLJ"})</script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags/Cesium" class="mobile-nav-link">Cesium</a>
+  
+    <a href="/tags/WebGL" class="mobile-nav-link">WebGL</a>
+  
+    <a href="/tags/GIS" class="mobile-nav-link">GIS</a>
+  
+    <a href="/tags/RS" class="mobile-nav-link">RS</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<div id="totop" style="z-index: 9999;position:fixed;bottom:150px;right:20px;cursor: pointer;">
+		<a title="返回顶部"><img src="/css/images/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">      
+     var search_path = "search.xml";
+     if (search_path.length == 0) {
+     	search_path = "search.xml";
+     }
+     var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  </div>
+</body>
+</html>

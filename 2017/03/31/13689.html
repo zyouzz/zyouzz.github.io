@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="MVOLyQRxUt" />
+  
+  <title>使用Python进行语音识别---将音频转为文字 | 自由自在</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自从入职以来，一直在做关于ArcGIS视频的中英字幕，前前后后已经做了不少。基本都上传到网上了，有兴趣的可以看看http:&#x2F;&#x2F;i.youku.com&#x2F;arcgis说实话，这是个挺废时间的工作，一般一个5-6分钟的视频，从听写字幕脚本到时间轴校对，校对完之后逐句翻译，本着自己的水平，不求信达雅，只求通畅就行，然后再加一些DuangDuang字幕特效，最后将字幕和视频进行，基本是3-4个小时，可能看起">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Python进行语音识别---将音频转为文字">
+<meta property="og:url" content="http://zyouzz.github.io/2017/03/31/13689.html">
+<meta property="og:site_name" content="自由自在">
+<meta property="og:description" content="自从入职以来，一直在做关于ArcGIS视频的中英字幕，前前后后已经做了不少。基本都上传到网上了，有兴趣的可以看看http:&#x2F;&#x2F;i.youku.com&#x2F;arcgis说实话，这是个挺废时间的工作，一般一个5-6分钟的视频，从听写字幕脚本到时间轴校对，校对完之后逐句翻译，本着自己的水平，不求信达雅，只求通畅就行，然后再加一些DuangDuang字幕特效，最后将字幕和视频进行，基本是3-4个小时，可能看起">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zyouzz.github.io/images/03311.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/03315.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/03316.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/03312.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/03313.jpg">
+<meta property="og:image" content="http://zyouzz.github.io/images/03314.jpg">
+<meta property="article:published_time" content="2017-03-31T11:32:51.000Z">
+<meta property="article:modified_time" content="2026-02-07T09:29:22.719Z">
+<meta property="article:author" content="James Rock">
+<meta property="article:tag" content="GIS">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="多字段">
+<meta property="article:tag" content="符号渲染">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zyouzz.github.io/images/03311.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.loli.net/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?abe562be75947306c7e1bc11ba952568";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+	  
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自由自在</a>
+      </h1>
+      
+	  <form id="search-form">
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="搜一搜" class="search form-control" autocomplete="off" autocorrect="off" searchonload=""  style="height:25px"/>
+				<i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+	      </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/">首页</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/archives">归档</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/Cesium">Cesium</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/WebGL">WebGL</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/GIS">GIS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/RS">RS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	  
+           
+      </nav>
+      
+    </div>
+  </div>
+</header>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+
+      <div class="outer">
+        <section id="main"><article id="post-使用python进行语音识别-将音频转为文字" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/31/13689.html" class="article-date">
+  <time datetime="2017-03-31T11:32:51.000Z" itemprop="datePublished">2017-03-31 19:32:51</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Python进行语音识别---将音频转为文字
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自从入职以来，一直在做关于ArcGIS视频的中英字幕，前前后后已经做了不少。基本都上传到网上了，有兴趣的可以看看<a target="_blank" rel="noopener" href="http://i.youku.com/arcgis">http://i.youku.com/arcgis</a><br>说实话，这是个挺废时间的工作，一般一个5-6分钟的视频，从听写字幕脚本到时间轴校对，校对完之后逐句翻译，本着自己的水平，不求信达雅，只求通畅就行，然后再加一些DuangDuang字幕特效，最后将字幕和视频进行，基本是3-4个小时，可能看起来不可思议，有兴趣的可以亲自去尝试一下。<br>虽然过程是枯燥乏味的，但是最终看到自己的成果，成就感也是油然而生的。<br><img src="/images/03311.jpg" alt="中英字幕 小样"></p>
+<span id="more"></span>
+<p>前段时间美国Esri举办了全球的开发者大会，我在YouTube上看到陆续有上传的现场视频，于是下了下来，想着翻译一些，然后在ArcGIS知乎上等渠道做一下传播推广。但是有个问题是，这些视频没有字幕脚本，更坑爹的是，里面大部分是印度人主讲，带着印度咖喱腔的英语，听起来着实费解，所以翻译进度远不如之前，慢得出其，让我很困惑。做了几个视频的字幕后，实在没动力了，于是就暂停了。。。。<br>今天看了一篇报道，说是语音识别的技术，成熟度已经很可观了。突然想到：能不能将视频转为音频，然后使用一些语音识别的技术，完成这个艰巨的活呢。于是说干就干，百度搜索了许多音频转文字的技术。最后发现IBM公司有这项技术，对音频的识别率很高，并且提供有1000分钟的免费API（可以在<a target="_blank" rel="noopener" href="https://console.ng.bluemix.net/">https://console.ng.bluemix.net</a>注册一下，获取API用户名和密码，后续会有用，这个很关键！！！），<br><img src="/images/03315.jpg" alt="IBM注册 应用部署"><br><img src="/images/03316.jpg" alt="账户密码"><br>正好也支持Python调用，整个过程很简单，就是先安装IBM的模块，这里我使用的是speechrecognition模块，在pycharm直接可以搜索到并安装，<br><img src="/images/03312.jpg" alt="speechrecognition模块"><br>speechrecognition模块不仅包含了IBM的语音识别API，还有微软、谷歌的语音识别API等等，带上github项目地址<a target="_blank" rel="noopener" href="https://github.com/Uberi/speech_recognition#readme">https://github.com/Uberi/speech_recognition#readme</a><br><img src="/images/03313.jpg" alt="speechrecognition模块"><br>感叹到：Python的功能真是应有尽有，没有你想不到的。<br>然后我写了不多的几行代码，这个艰难的事情就迎刃而解了<br>思路主要如下，就是将视频转为WAV格式的音频（转为MP3等其他格式，可能识别不了），然后调用识别模块，就静静的等着或者去忙其他的事，最后会返回识别出来的文本<br><img src="/images/03314.jpg" alt="返回的识别文本"><br>准确率还是很高的，估摸有80%-90%<br>如果你手上正好有一堆的音频想转为文字，赶紧来试试，解放生产力的时候到了！！哈哈~~~<br>附上我写的拙劣代码<br>见笑见笑！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*-coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">&#x27;jiang&#x27;</span></span><br><span class="line"><span class="comment"># import eyed3</span></span><br><span class="line"><span class="comment"># import wave</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> speech_recognition <span class="keyword">as</span> sr</span><br><span class="line"><span class="comment"># from pydub import AudioSegment</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># ##获取音频时长</span></span><br><span class="line"><span class="comment"># f = wave.open(r&quot;C:\Users\Esri\Desktop\speech.wav&quot;,&quot;rb&quot;)</span></span><br><span class="line"><span class="comment"># timelength=int(f.getparams()[3]/f.getparams()[2])</span></span><br><span class="line"><span class="comment"># print(int(5.6))</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ##音频分割输出</span></span><br><span class="line"><span class="comment"># readaudio=AudioSegment.from_wav(r&#x27;C:\Users\Esri\Desktop\speech.wav&#x27;)</span></span><br><span class="line"><span class="comment"># kn=int(timelength/30)+1</span></span><br><span class="line"><span class="comment"># for i in range(kn):</span></span><br><span class="line"><span class="comment">#      readaudio[i*30*1000:((i+1)*30+2)*1000].export(r&#x27;C:\Users\Esri\Desktop\speech\speech%d.wav&#x27;%(i+1), format=&quot;wav&quot;)</span></span><br><span class="line"><span class="comment">##获取文件夹下的音频文件名</span></span><br><span class="line">starttime = datetime.datetime.now()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> os.listdir(<span class="string">r&#x27;C:\Users\Esri\Desktop\speech&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d %s 开始转换&quot;</span> % (i, name))</span><br><span class="line">    <span class="comment">##音频分块识别</span></span><br><span class="line">    r = sr.Recognizer()</span><br><span class="line">    <span class="comment"># for i in range(kn):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> sr.WavFile(<span class="string">r&#x27;C:\Users\Esri\Desktop\speech\%s&#x27;</span> % name) <span class="keyword">as</span> source:</span><br><span class="line">            audio = r.record(source)</span><br><span class="line">            IBM_USERNAME = <span class="string">&#x27;*******************&#x27;</span></span><br><span class="line">            IBM_PASSWORD = <span class="string">&#x27;*****&#x27;</span></span><br><span class="line">            text = r.recognize_ibm(audio, username=IBM_USERNAME, password=IBM_PASSWORD, language=<span class="string">&#x27;en-US&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(text)</span><br><span class="line">            <span class="built_in">open</span>(<span class="string">r&#x27;C:\Users\Esri\Desktop\text\%s.txt&#x27;</span> % name, <span class="string">&#x27;a+&#x27;</span>).write(text)</span><br><span class="line">            time.sleep(<span class="number">5</span>)</span><br><span class="line">            temptime = datetime.datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;%s %d %s 已完成&#x27;</span> % (temptime,i, name))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        temptime = datetime.datetime.now().strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;%s %d %s 未完成&#x27;</span> % (temptime, i, name))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">jietime = datetime.datetime.now()</span><br><span class="line">last=jietime-starttime</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;总共花费时间：%s&#x27;</span>%last)</span><br></pre></td></tr></table></figure>
+
+<p><font size=4><b><br>测试结果分析：<br>1、IBM的API能识别英语、中文等好几种语言，识别的正确率很不错；<br>2、经过我的初步测试，IBM的识别机制是按照这样来的：先是将你的音频传到IBM的服务器，然后是打开音频实时识别，听起来很拗口，意思就是将音频放一遍，服务器边放边识别，最后将所有的识别以文本的形式（貌似是JSON格式，但是在speechrecognition模块中，已经转为文本）返回给你；<br>3、看完上面的识别机制，你可能会产生疑问：如果音频时间比较长，中间出现网络中断，之前识别的内容不就没了么。因此最好采取分段的方法，将音频分割为较短的几段，等效于实时的返回，减少丢失的问题；<br>4、经过测试，又有新问题，如果分段的话，超过10段以上，远程服务器会中断服务，也就是说：不能频繁的调接口，跟网站的发爬虫一样。多进程就别想了。最后部门石经理提供的解决办法是：识别一段后。等个5秒左右再循环下一个，照此方法可行。由于我自己的视频不长，数量也不多，就没做等待处理；<br>5、IBM的语音识别着实厉害，其他的语音识别等有时间再做测试。<br></b></font></p>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/2017/03/31/13689.html" data-id="cmlc4w8xg0049jkti28mbefcg" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E5%AD%97%E6%AE%B5/" rel="tag">多字段</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%A6%E5%8F%B7%E6%B8%B2%E6%9F%93/" rel="tag">符号渲染</a></li></ul>
+
+	
+
+    </footer>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/16/48872.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ArcGIS Server集群部署问题和注意事项
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/22/15901.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ArcGIS中多个字段同时渲染</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="widget-wrap">
+    <h3  class="widget-title">网站统计(自2023-05-31)</h3>
+    <div class="widget">
+        <span id="busuanzi_container_site_pv">
+            <span style="color:#258fb8">总访问量 <span style="color:#e32d40" id="busuanzi_value_site_pv"></span> 次</span>
+        </span>
+        <br>
+        <span id="busuanzi_container_site_uv">
+            <span style="color:#258fb8">访客人数 <span style="color:#e32d40" id="busuanzi_value_site_uv"></span> 人</span>
+        </span>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">微信公众号：zyouzz</h3>
+	<div class="widget">
+		<img src="/css/images/weixin.jpg">
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/10/53235.html">PerInstanceColorAppearance笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/27323.html">什么是离屏渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/4244.html">高斯泼溅中粒子的协方差矩阵是做什么的</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/16/24077.html">EASY-3D-SDK：强大的二三维一体WebGIS开发框架</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/07/51151.html">GPU图形绘制管线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">七月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ArcGIS/">ArcGIS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/RS/">RS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2024/" rel="tag">2024</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/" rel="tag">ArcGIS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Datastore/" rel="tag">ArcGIS Datastore</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Enterprise/" rel="tag">ArcGIS Enterprise</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Portal/" rel="tag">ArcGIS Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Pro/" rel="tag">ArcGIS Pro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Server/" rel="tag">ArcGIS Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECW%E5%BD%B1%E5%83%8F/" rel="tag">ECW影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Esri/" rel="tag">Esri</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLSL/" rel="tag">GLSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU/" rel="tag">GPU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScripts/" rel="tag">JavaScripts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leaflet/" rel="tag">Leaflet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelBuilder/" rel="tag">ModelBuilder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PerInstanceColorAppearance/" rel="tag">PerInstanceColorAppearance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portal/" rel="tag">Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/" rel="tag">Python脚本工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RS/" rel="tag">RS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vite/" rel="tag">Vite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGIS/" rel="tag">WebGIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/" rel="tag">WebGL</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcgis/" rel="tag">arcgis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcmap/" rel="tag">arcmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cesium/" rel="tag">cesium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/geoserver/" rel="tag">geoserver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glsl/" rel="tag">glsl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtopo30/" rel="tag">gtopo30</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modis/" rel="tag">modis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pg/" rel="tag">pg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgresql/" rel="tag">postgresql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/" rel="tag">postman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture/" rel="tag">texture</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture2D/" rel="tag">texture2D</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xlsx/" rel="tag">xlsx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4/" rel="tag">三维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF/" rel="tag">三维场景</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%96%E7%95%8C/" rel="tag">世界</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD/" rel="tag">中国</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E5%BE%84%E5%9F%9F%E5%90%8D/" rel="tag">二级路径域名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4/" rel="tag">二维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%9A%E6%B4%B2/" rel="tag">亚洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%AC%E9%92%93%E5%AE%9D/" rel="tag">京钓宝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8A%BF/" rel="tag">优势</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E4%BC%8F/" rel="tag">光伏</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%9B%BD/" rel="tag">全国</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BA%E5%B7%AE/" rel="tag">出差</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8/" rel="tag">启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E7%BB%98%E5%88%B6/" rel="tag">图形绘制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E4%BA%91/" rel="tag">地理空间云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%90%E6%A0%87/" rel="tag">坐标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E5%AD%97%E6%AE%B5/" rel="tag">多字段</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="tag">多进程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E6%AE%B5%E8%AE%A1%E7%AE%97%E5%99%A8/" rel="tag">字段计算器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BD%B1%E5%83%8F/" rel="tag">影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E9%87%8F/" rel="tag">批量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%AA%81%E7%A0%B4/" rel="tag">技术突破</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A5%E5%91%8A/" rel="tag">报告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" rel="tag">搜索引擎</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/" rel="tag">无人机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%B4%B2/" rel="tag">欧洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A6%E6%B1%89/" rel="tag">武汉</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" rel="tag">渲染管线</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%82%B9%E6%8E%92%E5%BA%8F/" rel="tag">点排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" rel="tag">离屏渲染</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%A6%E5%8F%B7%E6%B8%B2%E6%9F%93/" rel="tag">符号渲染</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E5%8F%B7/" rel="tag">编号</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E7%8F%AD/" rel="tag">航班</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%90%A4%E7%81%AB%E5%9B%BE/" rel="tag">萤火图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%8F%E8%A7%86%E8%A1%A8/" rel="tag">透视表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%92%93%E9%B1%BC%E4%BD%AC/" rel="tag">钓鱼佬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98/" rel="tag">问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" rel="tag">集群部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85/" rel="tag">高斯泼溅</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">友情链接</h3>
+	<div class="widget">
+		<ul class="entry">
+			<li><a target="_blank" rel="noopener" href="http://www.esrichina.com.cn/" title="Esri中国">Esri中国</a></li>
+			<li><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/enviidl" title="ENVI-IDL技术殿堂的博客">ENVI-IDL技术殿堂的博客</a></li>
+			<li><a target="_blank" rel="noopener" href="http://zhihu.esrichina.com.cn/" title="ArcGIS知乎">ArcGIS知乎</a></li>
+			<li><a target="_blank" rel="noopener" href="http://kikitamap.com/" title="kikita&maps">kikita&maps</a></li>
+		</ul>
+	</div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 James Rock<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  </div>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3HYCEbjiW2zuEoLJ",ck:"3HYCEbjiW2zuEoLJ"})</script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags/Cesium" class="mobile-nav-link">Cesium</a>
+  
+    <a href="/tags/WebGL" class="mobile-nav-link">WebGL</a>
+  
+    <a href="/tags/GIS" class="mobile-nav-link">GIS</a>
+  
+    <a href="/tags/RS" class="mobile-nav-link">RS</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<div id="totop" style="z-index: 9999;position:fixed;bottom:150px;right:20px;cursor: pointer;">
+		<a title="返回顶部"><img src="/css/images/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">      
+     var search_path = "search.xml";
+     if (search_path.length == 0) {
+     	search_path = "search.xml";
+     }
+     var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  </div>
+</body>
+</html>

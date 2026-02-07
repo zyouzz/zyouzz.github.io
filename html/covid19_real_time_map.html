@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="MVOLyQRxUt" />
+  
+  <title>自由自在</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="var _hmt &#x3D; _hmt || []; 	(function () { 		var hm &#x3D; document.createElement(&quot;script&quot;); 		hm.src &#x3D; &quot;https:&#x2F;&#x2F;hm.baidu.com&#x2F;hm.js?a8dc3713fb6ff94583ba13c5d4daadc0&quot;; 		var s &#x3D; document.getElementsByTagNam">
+<meta property="og:type" content="website">
+<meta property="og:title" content="自由自在">
+<meta property="og:url" content="http://zyouzz.github.io/html/covid19_real_time_map.html">
+<meta property="og:site_name" content="自由自在">
+<meta property="og:description" content="var _hmt &#x3D; _hmt || []; 	(function () { 		var hm &#x3D; document.createElement(&quot;script&quot;); 		hm.src &#x3D; &quot;https:&#x2F;&#x2F;hm.baidu.com&#x2F;hm.js?a8dc3713fb6ff94583ba13c5d4daadc0&quot;; 		var s &#x3D; document.getElementsByTagNam">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhongxinzhiyuan.cn/zxzy/wp-content/uploads/2020/01/qrcode.jpg">
+<meta property="article:published_time" content="2026-02-07T09:29:22.755Z">
+<meta property="article:modified_time" content="2026-02-07T09:29:22.755Z">
+<meta property="article:author" content="James Rock">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhongxinzhiyuan.cn/zxzy/wp-content/uploads/2020/01/qrcode.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="自由自在" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.loli.net/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?abe562be75947306c7e1bc11ba952568";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+	  
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自由自在</a>
+      </h1>
+      
+	  <form id="search-form">
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="搜一搜" class="search form-control" autocomplete="off" autocorrect="off" searchonload=""  style="height:25px"/>
+				<i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+	      </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/">首页</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/archives">归档</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/Cesium">Cesium</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/WebGL">WebGL</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/GIS">GIS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/tags/RS">RS</a>
+        
+          <a class="main-nav-link"  style="font-weight:bold;font-size:20px"href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	  
+           
+      </nav>
+      
+    </div>
+  </div>
+</header>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/html/covid19_real_time_map.html" class="article-date">
+  <time datetime="2026-02-07T09:29:22.755Z" itemprop="datePublished">2026-02-07 17:29:22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!doctype html>
+<html lang="en">
+<script>
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?a8dc3713fb6ff94583ba13c5d4daadc0";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://zhongxinzhiyuan.cn:8089/geoserver/openlayers3/ol.css" type="text/css">
+	<meta charset="utf-8"> 
+	<!-- 包含头部信息用于适应不同设备 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 包含 bootstrap 样式表 -->
+	<link rel="stylesheet" href="https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style> 
+
+	</style>
+	<script src="http://zhongxinzhiyuan.cn:8089/geoserver/openlayers3/ol.js" type="text/javascript"></script>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.staticfile.org/echarts/4.7.0/echarts.min.js" type="text/javascript"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>新型冠状病毒肺炎疫情</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron text-center" style="margin-bottom: 5px;">
+			<h3>新型冠状病毒肺炎疫情(V6.0Beta)</h3>
+			<h4>2020年01月12日运行至今</h4>
+			<h4>By <span class="glyphicon glyphicon-globe" style="color: blue"></span>·<span class="glyphicon glyphicon-user" style="color: green"></span>James Jiang(Developer)</h4>
+			<small id='timeline'></small><span id='view-count'></span>
+			<button type="button" class="btn btn-default btn-danger" onclick="clickComeOn()"><span class="glyphicon glyphicon-heart"></span><span id="come-on"></span>次加油</button>
+		</div>
+		  <div id='scroll-news'>
+		    <marquee scrollamount="12" onmouseout="this.start();" onmouseover="this.stop();" id='newsss'></marquee>
+		  </div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>实时统计<small>(国内，每五分钟更新一次)</small></h3>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: red"></span>现存确诊</h4>		
+				<p style="color: red;font-size: 1.5em" id='current-diagnose'>加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: red"></span>累计确诊</h4>		
+				<p style="color: red;font-size: 1.5em" id='diagnose'>加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: #ff8100"></span>疑似</h4>		
+				<p style="color: #ff8100;font-size:  1.5em" id='suspect'>加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: blue"></span>治愈</h4>		
+				<p style="color: blue;font-size:  1.5em" id="cure">加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: grey"></span>重症</h4>		
+				<p style="color: grey;font-size:  1.5em" id='serious'>加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: black"></span>死亡</h4>		
+				<p style="color: black;font-size:  1.5em" id='death'>加载中</p>
+			</div>
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>今日变化<small>(国内，0例可能表示今日数据还未公布，每五分钟更新一次)</small></h3>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: red"></span>现存确诊</h4>		
+				<p style="color: red;font-size:  1.5em" id="current-diagnose-add">加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: red"></span>累计确诊</h4>		
+				<p style="color: red;font-size:  1.5em" id="diagnose-add">加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: #ff8100"></span>疑似</h4>		
+				<p style="color: #ff8100;font-size:  1.5em" id="suspect-add">加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: blue"></span>治愈</h4>		
+				<p style="color: blue;font-size:  1.5em" id="cure-add">加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: grey"></span>重症</h4>		
+				<p style="color: grey;font-size:  1.5em" id="serious-add">加载中</p>
+			</div>
+			<div class="col-xs-4 text-center">
+				<h4><span class="glyphicon glyphicon-user" style="color: black"></span>死亡</h4>		
+				<p style="color: black;font-size:  1.5em" id="death-add">加载中</p>
+			</div>
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>最近24小时变化曲线(国内)</h3>
+			</div>
+			<div id="charts-hour" style="height: 50vh;border-radius: 15px;margin:7px;"></div>
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>每天累计变化曲线(国内)</h3>
+			</div>
+			<div id="charts-day" style="height: 50vh;border-radius: 15px;margin:7px;"></div>
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>每天增加变化曲线(国内)</h3>
+			</div>
+			<div id="charts-day-change" style="height: 50vh;border-radius: 15px;margin:7px;"></div>
+		</div>
+		<!-- <div class="row"> -->
+			<!-- <div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;"> -->
+				<!-- <h3><span class="glyphicon glyphicon-map-marker" style="color: #e42323;font-weight:bold">疫情地图(世界)</span></h3> -->
+				<!-- <h3><span class="glyphicon glyphicon-map-marker" style="color: #e42323;font-weight:bold">世界</span></h3> -->
+			<!-- </div>		 -->
+			<!-- <div id="map-world" style="height: 50vh;border-radius: 15px;margin:7px;"> -->
+				<!-- <div class="btn-group btn-group-sm btn-group-vertical" id="orderBtnGroup2" style="padding-top:28vh;position: absolute;z-index: 999;right:10px;"> -->
+				    <!-- <button type="button" class="btn btn-default" style="background-color: #FCE9DE">0-9</button> -->
+				    <!-- <button type="button" class="btn btn-default" style="background-color: #FC8D59">10-99</button> -->
+				    <!-- <button type="button" class="btn btn-default" style="background-color: #E34A33">100-499</button> -->
+				    <!-- <button type="button" class="btn btn-default" style="background-color: #B30000">>500</button> -->
+				<!-- </div> -->
+				<!-- <div class="btn-group btn-group-sm" style="position: absolute;z-index: 999;right:10px"> -->
+					    <!-- <button type="button" class="btn btn-default btn-danger" onclick="clickbutton('world_yiqing',2)">确诊</button> -->
+					    <!-- <button type="button" class="btn btn-default btn-success" onclick="clickbutton('world_cure_1',2)">治愈</button> -->
+					    <!-- <button type="button" class="btn btn-default" onclick="clickbutton('world_anxi',2)">死亡</button> -->
+					    <!-- <button type="button" class="btn btn-default btn-warning" onclick="backmap(mapWorld)">回到全图</button> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		<!-- </div> -->
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3 id="sum-forgeign"></h3>
+			</div>
+			<div class="table-responsive">
+			  <table class="table">
+			    <thead>
+			    	<tr>
+						<th>序号</th>
+				        <th>大陆</th>
+				        <th>国家</th>
+				        <th>现存确诊</th>
+				        <th>累计确诊</th>
+				        <th>治愈</th>
+				        <th>死亡</th>
+			    	</tr>
+			    </thead>
+			    <tbody id="table-tr">
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3><span class="glyphicon glyphicon-map-marker" style="color: #e42323;font-weight:bold">疫情地图(社区/街道办级别<small>【注：只包括部分地区公示数据】</small>)</span></h3>
+			</div>
+			<div id="map-street" style="height: 65vh;border-radius: 15px;margin:7px;">
+				<div class="btn-group btn-group-sm" style="position: absolute;z-index: 999;right:10px;">
+				    <button type="button" class="btn btn-default btn-warning" onclick="backmap(mapStreet)">回到全图</button>
+				</div>
+			</div>			
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3><span class="glyphicon glyphicon-map-marker" style="color: #e42323;font-weight:bold">疫情地图(省级)</span></h3>
+			</div>
+			<div id="map-all" style="height: 50vh;border-radius: 15px;margin:7px;">
+				<div class="btn-group btn-group-sm" style="position: absolute;z-index: 9999;right:10px;">
+				    <button type="button" class="btn btn-default btn-danger" onclick="clickbutton('currentsheng',1)">现存确诊</button>
+				    <button type="button" class="btn btn-default btn-warning" onclick="clickbutton('yiqing',1)">确诊</button>
+				    <button type="button" class="btn btn-default btn-success" onclick="clickbutton('zhiyu',1)">治愈</button>
+				    <button type="button" class="btn btn-default" onclick="clickbutton('anxi',1)">死亡</button>
+				    <button type="button" class="btn btn-default btn-warning" onclick="backmap(mapAll)">回到全图</button>
+				</div>
+				<div class="btn-group btn-group-sm btn-group-vertical" id="orderBtnGroup1" style="padding-top:28vh;position: absolute;z-index: 999;right:10px;">
+				    <button type="button" class="btn btn-default" style="background-color: #FCE9DE">0-9</button>
+				    <button type="button" class="btn btn-default" style="background-color: #FC8D59">10-99</button>
+				    <button type="button" class="btn btn-default" style="background-color: #E34A33">100-499</button>
+				    <button type="button" class="btn btn-default" style="background-color: #B30000">>500</button>
+				</div>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>全国各省(自治区)疫情</h3>
+			</div>
+			<div class="table-responsive">
+			  <table class="table">
+			    <thead>
+			    	<tr>
+				        <th>序号</th>
+				        <th>省地</th>
+				        <th>现存确诊</th>
+				        <th>累计确诊</th>
+				        <th>治愈</th>
+				        <th>死亡</th>
+			    	</tr>
+			    </thead>
+			    <tbody id="table-provience">
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+		<div class="row">
+			<div style="margin-top: 40px;margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3><span class="glyphicon glyphicon-map-marker" style="color: #2394e4;font-weight:bold">疫情地图(市级)</span></h3>
+			</div>
+			<div id="map-add" style="height: 50vh;border-radius: 15px;margin:7px;">
+				<div class="btn-group btn-group-sm btn-group-vertical" id="orderBtnGroup0" style="padding-top:28vh;position: absolute;z-index: 999;right:10px;">
+				    <button type="button" class="btn btn-default" style="background-color: #FCE9DE">0-9</button>
+				    <button type="button" class="btn btn-default" style="background-color: #FC8D59">10-99</button>
+				    <button type="button" class="btn btn-default" style="background-color: #E34A33">100-499</button>
+				    <button type="button" class="btn btn-default" style="background-color: #B30000">>500</button>
+				</div>
+				<div class="btn-group btn-group-sm" style="position: absolute;z-index: 999;right:10px;">
+					    <button type="button" class="btn btn-default btn-danger" onclick="clickbutton('city_current',0)">现存确诊</button>
+					    <button type="button" class="btn btn-default btn-warning" onclick="clickbutton('city_yiqing',0)">确诊</button>
+					    <button type="button" class="btn btn-default btn-success" onclick="clickbutton('city_cure',0)">治愈</button>
+					    <button type="button" class="btn btn-default" onclick="clickbutton('city_anxi',0)">死亡</button>
+					    <button type="button" class="btn btn-default btn-warning" onclick="backmap(mapAdd)">回到全图</button>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 30px;">
+			<div style="margin-left: 10px;border-left: 10px solid red;padding-left: 20px;">
+				<h3>全国城市确诊前50</h3>
+			</div>
+			<div class="table-responsive">
+			  <table class="table">
+			    <thead>
+			    	<tr>
+				        <th>序号</th>
+				        <th>城市地区</th>
+				        <th>现存确诊</th>
+				        <th>累计确诊</th>
+				        <th>治愈</th>
+				        <th>死亡</th>
+			    	</tr>
+			    </thead>
+			    <tbody id="table-city">
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+		
+		
+		<div class="row" id="news">
+		</div>
+		<!-- <hr>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<img src="http://zhongxinzhiyuan.cn/zxzy/wp-content/uploads/2020/01/qrcode.jpg" class="img-rounded" >
+			</div>
+			<div class="col-xs-12 text-left">
+					<p ><span class="glyphicon glyphicon-briefcase" ></span>公&nbsp&nbsp&nbsp&nbsp司：北京众欣知源科技有限公司</p>
+					<p ><span class="glyphicon glyphicon-star" ></span>网&nbsp&nbsp&nbsp&nbsp址：<a target="_blank" rel="noopener" href='http://zhongxinzhiyuan.cn'>http://zhongxinzhiyuan.cn</a></p>
+					<p ><span class="glyphicon glyphicon-envelope" ></span>邮&nbsp&nbsp&nbsp&nbsp箱：gisdiandiedu@163.com</p>
+					<p ><span class="glyphicon glyphicon-heart"></span>公众号：GIS点滴</p>
+					<p ><span class="glyphicon glyphicon-user"></span>作&nbsp&nbsp&nbsp&nbsp者：James</p>
+					<p >备案号：京ICP备19016714-1号</p>
+			</div>
+		</div> -->
+	</div>
+<script type="text/javascript">
+	getViewCount();
+	updateViewCount();
+	getComeOnCount();
+	writeCurrentDate();
+	news();
+	provienceTop();
+	cityTop();	
+	foreign();
+	var chartsHour = echarts.init(document.getElementById('charts-hour'));
+	clickcharts('hour',chartsHour);
+	var chartsDay = echarts.init(document.getElementById('charts-day'));
+	clickcharts('day',chartsDay);
+	var chartsDayChange = echarts.init(document.getElementById('charts-day-change'));
+	clickcharts('zengjia',chartsDayChange);
+	var basemap=new ol.layer.Tile({
+    source: new ol.source.XYZ({
+      url: 'http://wprd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}'
+    }),
+    name: 'gaodeMap'
+  });
+  var lb=ol.proj.fromLonLat([97.84623, 21.215]);
+  var rt=ol.proj.fromLonLat([126.581863, 43.898201]);
+	var mapStreet = new ol.Map({
+		controls: ol.control.defaults({
+			attribution: false
+		}),
+		target: 'map-street',
+		layers: [basemap,layerdata('shequ')],
+		view: new ol.View({
+			center: ol.proj.fromLonLat([112,32]),
+			//extent: [lb[0], lb[1],
+			//rt[0], rt[1]],
+			zoom:5,
+			projection: new ol.proj.Projection({
+			      code: 'EPSG:3857',
+			      units: 'm',
+			      global: false
+		    })
+		})
+	});
+	mapStreet.getInteractions().forEach(value => {
+      if (value instanceof ol.interaction.PinchRotate) {
+        mapStreet.removeInteraction(value);
+      }
+    });
+
+	var mapAll = new ol.Map({
+		controls: ol.control.defaults({
+			attribution: false
+		}),
+		target: 'map-all',
+		layers: [layerdata('currentsheng')],
+		view: new ol.View({
+			center: [-389443.5, 2130511.5],
+			extent: [-3244631.284441611, -78183.9820087277,
+			2316197.561991931, 4417390.312363132],
+			zoom:3,
+			projection: new ol.proj.Projection({
+			      code: 'EPSG:3415',
+			      units: 'm',
+			      global: false
+		    })
+		})
+	});
+	mapAll.getInteractions().forEach(value => {
+      if (value instanceof ol.interaction.PinchRotate) {
+        mapAll.removeInteraction(value);
+      }
+    });
+	var mapAdd = new ol.Map({
+		controls: ol.control.defaults({
+			attribution: false
+		}),
+		target: 'map-add',
+		layers: [layerdata('city_current')],
+		view: new ol.View({
+			center: [-389443.5, 2130511.5],
+			extent: [-3244631.284441611, -78183.9820087277,
+			2316197.561991931, 4417390.312363132],
+			zoom:3,
+			projection: new ol.proj.Projection({
+			      code: 'EPSG:3415',
+			      units: 'm',
+			      global: false
+		    })
+		})
+	});
+	mapAdd.getInteractions().forEach(value => {
+      if (value instanceof ol.interaction.PinchRotate) {
+        mapAdd.removeInteraction(value);
+      }
+    });
+    <!-- var mapWorld = new ol.Map({ -->
+		<!-- controls: ol.control.defaults({ -->
+			<!-- attribution: false -->
+		<!-- }), -->
+		<!-- target: 'map-world', -->
+		<!-- layers: [layerdata('world_yiqing')], -->
+		<!-- view: new ol.View({ -->
+			<!-- center: [0, 0], -->
+			<!-- extent: [-20037507.0671618, -30198184.6698779, -->
+			<!-- 20037507.0671619, 18375858.881327], -->
+			<!-- zoom:1, -->
+			<!-- projection: new ol.proj.Projection({ -->
+			      <!-- code: 'EPSG:3857', -->
+			      <!-- units: 'm', -->
+			      <!-- global: false -->
+		    <!-- }) -->
+		<!-- }) -->
+	<!-- }); -->
+	<!-- mapWorld.getInteractions().forEach(value => { -->
+      <!-- if (value instanceof ol.interaction.PinchRotate) { -->
+        <!-- mapWorld.removeInteraction(value); -->
+      <!-- } -->
+    <!-- }); -->
+	$("#orderBtnGroup .btn:first").click().addClass("active");
+	$("#orderBtnGroup").children().removeClass("active");
+	//provienceTop();
+	//cityTop();
+	//news();
+	//foreign();
+	function layerdata(name) {
+      return new ol.layer.Image({
+        source: new ol.source.ImageWMS({
+          ratio: 1,
+          url: 'http://zhongxinzhiyuan.cn:8089/geoserver/wms',
+          params: {
+            'FORMAT': 'image/png',
+            'VERSION': '1.1.1',
+            "LAYERS": name,
+            "exceptions": 'application/vnd.ogc.se_inimage',
+          }
+        }),
+        name: name
+      });
+    };
+    function clickbutton(name,label) {
+    	var idBtn='orderBtnGroup'+label;
+    	if(name.indexOf('yiqing')>-1 || name.indexOf('currentsheng')>-1 || name.indexOf('city_yiqing')>-1 || name.indexOf('city_current')>-1){
+    		document.getElementById(idBtn).style.display = 'block'
+    	}else{
+    		document.getElementById(idBtn).style.display='none'
+    	}
+      var map=null;
+      label===1?map=mapAll:(label===2?map=mapWorld:map=mapAdd);
+      map.getLayers().forEach(value => map.removeLayer(value));
+      themelayer = layerdata(name);
+      map.addLayer(themelayer); 
+      writeCurrentDate();
+    };
+    function writeCurrentDate() {
+      var now = new Date();
+      var year = now.getFullYear(); //得到年份
+      var month = now.getMonth();//得到月份
+      var date = now.getDate();//得到日期
+      var day = now.getDay();//得到周几
+      var hour = now.getHours();//得到小时
+      var minu = now.getMinutes();//得到分钟
+      var sec = now.getSeconds();//得到秒
+      var MS = now.getMilliseconds();//获取毫秒
+      var week;
+      month = month + 1;
+      if (month < 10) month = "0" + month;
+      if (date < 10) date = "0" + date;
+      if (hour < 10) hour = "0" + hour;
+      if (minu < 10) minu = "0" + minu;
+      var arr_week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+      week = arr_week[day];
+
+      var time = time = year + "年" + month + "月" + date + "日" + " " + hour + ":" + minu;
+      document.getElementById('timeline').innerHTML='截止至'+time;
+      statisticsInfo();
+  	}
+  	function clickcharts(charttype,chartName) {
+	    var xdate = [];
+	    var diagnosenum = [];
+	    var suspectnum = [];
+	    var curenum = [];
+	    var deathnum = [];
+
+		$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/'+(charttype === 'hour' ? 'charts' : (charttype === 'day' ? 'day_trend' : 'zengjia')),
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: res => {
+	        if (charttype === 'day' || charttype === 'zengjia') res.sort(function (a, b) {
+	          return b.time - a.time
+	        });
+	        res.map(value => {
+	          xdate.push(charttype === 'hour' ? value.date : value.day);
+	          diagnosenum.push((value.diagnose));
+	          if (value.suspect === 0) {
+	            suspectnum.push(null);
+	          } else {
+	            suspectnum.push(value.suspect);
+	          }
+
+	          curenum.push(value.cure);
+	          deathnum.push(value.death)
+	        });
+	        xdate.reverse();
+	        diagnosenum.reverse();
+	        suspectnum.reverse();
+	        curenum.reverse();
+	        deathnum.reverse();
+	        var optioncharts = {
+	          title: {
+	          	show:false,
+	            text: charttype === 'hour' ? '过去24小时疫情变化' : (charttype === 'day' ? '每天疫情变化' : '每天增加人数'),
+	            subtext: charttype === 'hour' ? '数据来自丁香医生' : '数据来自腾讯新闻',
+	            left: 'center',
+	            textStyle: {
+	              fontSize: 38,
+	            }
+	          },
+	          tooltip: {
+	            trigger: 'axis',
+	            axisPointer: {
+	              type: 'shadow'
+	            },
+	            textStyle: {
+	              fontSize: '10',
+	              align: 'left',
+	            },
+	            position: function (pos, params, el, elRect, size) {
+	              var obj = {top: 10};
+	              obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
+	              return obj;
+	            },
+	            extraCssText: 'width: 115px'
+	          },
+	          legend: {
+	            //orient:'vertical',
+	            data: ['确诊', '疑似', '治愈', '死亡'],
+	            right: 110,
+	            top: 5,
+	            textStyle: {
+	              fontSize: 12
+	            }
+	          },
+	          grid: {
+	          //   show: true,
+	             left: 50,
+	          //   right: 30,
+	           },
+	          xAxis: {
+	            name: '时间',
+	            data: xdate,
+	            nameTextStyle: {
+	              fontSize: 12,
+	            },
+	            axisLabel: {
+	              fontSize: 12,
+	            },
+	          },
+	          yAxis: [{
+	            name: '人数(确诊、疑似)',
+	            type: 'value',
+	            nameTextStyle: {
+	              fontSize: 12,
+	              padding:[0,0,0,20]
+	            },
+
+	            axisLabel: {
+	              fontSize: 12,
+	            },
+	          },
+	            {
+	              name: '人数(治愈、死亡)',
+	              type: 'value',
+
+
+	              nameTextStyle: {
+	                fontSize: 12,
+	              },
+
+	              axisLabel: {
+	                fontSize: 12,
+	              },
+	            }],
+	          axisLabel: {
+	            fontSize: 12,
+	          },
+	          series: [
+	            {
+	              name: '确诊',
+	              type: 'line',
+	              smooth: true,
+	              data: diagnosenum,
+	              yAxisIndex: 0,
+	              symbolSize: 6,
+	              itemStyle: {
+	                normal: {
+	                  color: '#ff0000',//拐点颜色
+	                  borderColor: '#ff0000',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#ff0000'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#ff0000',
+	                  borderWidth: 1.5,
+	                },
+	              }
+	            },
+	            {
+	              name: '疑似',
+	              type: 'line',
+	              smooth: true,
+	              data: suspectnum,
+	              yAxisIndex: 0,
+	              symbolSize: 6,
+	              connectNulls: true,
+	              itemStyle: {
+	                normal: {
+	                  color: '#e8800a',//拐点颜色
+	                  borderColor: '#e8800a',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#e8800a'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#e8800a',
+	                  borderWidth: 1.5,
+	                },
+	              },
+
+	            },
+	            {
+	              name: '治愈',
+	              type: 'line',
+	              smooth: true,
+	              data: curenum,
+	              yAxisIndex: 1,
+	              symbolSize: 6,
+	              itemStyle: {
+	                normal: {
+	                  color: '#008ce6',//拐点颜色
+	                  borderColor: '#008ce6',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#008ce6'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#008ce6',
+	                  borderWidth: 1.5,
+	                },
+	              },
+
+	            },
+	            {
+	              name: '死亡',
+	              type: 'line',
+	              smooth: true,
+	              data: deathnum,
+	              yAxisIndex: 1,
+	              symbolSize: 6,
+	              itemStyle: {
+	                normal: {
+	                  color: '#000000',//拐点颜色
+	                  borderColor: '#000000',//拐点边框颜色
+	                  borderWidth: 2,
+	                  lineStyle: {
+	                    width: 4,
+	                    color: '#000000'
+	                  },
+	                },
+	                emphasis: {
+	                  color: '#000000',
+	                  borderWidth: 1.5,
+	                },
+	              },
+
+	            }
+
+	          ]
+	        };
+	        chartName.setOption(optioncharts)
+	      },
+	      error: data => {
+
+	      }
+	    })
+    }
+    function backmap(map) {
+      if(map===mapWorld){
+      	map.getView().setCenter([0, 0]);
+      	map.getView().setZoom(1);
+      }else if(map===mapStreet){
+		map.getView().setCenter(ol.proj.fromLonLat([112,32]));
+      	map.getView().setZoom(5);
+	  }else{
+      	map.getView().setCenter([-389443.5, 2130511.5]);
+      	map.getView().setZoom(3);
+      }
+      map.getView().setRotation(0);
+    }
+    function statisticsInfo(){
+	$.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/data',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+          $.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/xinzeng',
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: ress => {
+            	var results = res[0];
+            	if (results.suspect === 0) results.suspect = '待确认';
+            	document.getElementById('diagnose').innerHTML=results.diagnose+'例';
+            	document.getElementById('current-diagnose').innerHTML=results.currentdiagnose+'例';
+             	document.getElementById('suspect').innerHTML=results.suspect+'例';
+             	document.getElementById('cure').innerHTML=results.cure+'例';
+            	document.getElementById('death').innerHTML=results.death+'例';
+            	document.getElementById('serious').innerHTML=results.seriousCount+'例';
+            	if(ress.length>0){
+            		var adds = ress[0];
+	            	document.getElementById('current-diagnose-add').innerHTML=(adds.currentdiagnose>0?'+':(adds.currentdiagnose===0?'':''))+adds.currentdiagnose+'例';
+	            	document.getElementById('diagnose-add').innerHTML=(adds.diagnose>0?'+':(adds.diagnose===0?'':''))+adds.diagnose+'例';
+	            	document.getElementById('suspect-add').innerHTML=(adds.suspect>0?'+':(adds.suspect===0?'':''))+adds.suspect+'例';
+	            	document.getElementById('cure-add').innerHTML=(adds.cure>0?'+':(adds.cure===0?'':''))+adds.cure+'例';
+	            	document.getElementById('death-add').innerHTML=(adds.death>0?'+':(adds.death===0?'':''))+adds.death+'例';
+	            	document.getElementById('serious-add').innerHTML=(adds.seriousCount>0?'+':(adds.seriousCount===0?'':''))+adds.seriousCount+'例';
+            	}else{
+            		document.getElementById('current-diagnose-add').innerHTML='0例';
+            		document.getElementById('diagnose-add').innerHTML='0例';
+	            	document.getElementById('suspect-add').innerHTML='0例';
+	            	document.getElementById('cure-add').innerHTML='0例';
+	            	document.getElementById('death-add').innerHTML='0例'
+	            	document.getElementById('serious-add').innerHTML='0例'
+            	}
+            	
+            }
+          })
+        },
+        error: data => {
+
+        }
+      })
+    }
+    function news(){
+    	$.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/news',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+	
+	      	newss = '<span style="color:red;font-weight:bold">【2021-01-14 10:21  国内社区、县市、省级地图开启，世界地图未开启】&nbsp;&nbsp;&nbsp;&nbsp;【最新报道】</span>'
+	        news = '<div style="margin-top: 40px;margin-left: 10px;border-left: 10px solid blue;padding-left: 20px;"><h3>新闻报道</h2></div>';
+	        res.map(value => {
+	          news += "<div class='col-sm-4 alert alert-success' style='height:20vh;overflow:hidden;'><h5><span class='label label-warning'>"+value.provinceName+"</span>"+value.title+"</h5><small><a href='"+value.sourceUrl+"' target='view_frame' class='text-left'><p>【"+value.infoSource+" "+value.date+"】"+value.summary+"</p></a></small></div>";
+	          newss += value.date + '&nbsp&nbsp<a href=' + value.sourceUrl + ' target="view_frame">' + value.title + "</a>(来源：" + value.infoSource + ")&nbsp&nbsp&nbsp&nbsp    "
+	        })
+	        document.getElementById('news').innerHTML = news;
+	        document.getElementById('newsss').innerHTML = newss
+	      }
+    	})
+    }
+    function foreign(){
+
+	 $.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/guowai',
+	  data: {},
+	  type: 'get',
+	  dataType: 'json',
+	  success: res => {
+      	var area = ''
+      	res.sort(function (a, b) { return b.currentdiagnose - a.currentdiagnose});
+        res.map((value,index) => {
+	          var foreignStatistics='';
+	          if (value.label === 1) {
+	           		document.getElementById('sum-forgeign').innerHTML='各国统计('+res.length+'个国家，现存确诊'+value.currentdiagnose+'例，累计确诊'+value.diagnose+'例，治愈'+value.cure+'例，死亡'+value.death+'例）'
+	          } else {
+		            area+='<tr><td>'+(index)+'</td><td>'+value.continents+'</td><td>'+value.name+'</td><td>'+value.currentdiagnose +'</td><td>'+value.diagnose+'</td><td>'+value.cure+'</td><td>'+value.death+'</td></tr>'
+		          }
+        })
+        document.getElementById('table-tr').innerHTML =area
+      }
+    	})
+    }
+    function provienceTop(){
+
+	$.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/provience_top10',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+      	var area = ''
+      	res.sort(function (a, b) { return b.currentdiagnose - a.currentdiagnose});
+        res.map((value,index) => {
+	        area+='<tr><td>'+(index+1)+'</td><td>'+value.name+'</td><td>'+value.currentdiagnose +'</td><td>'+value.diagnose+'</td><td>'+value.cure+'</td><td>'+value.death+'</td></tr>'   
+        })
+        document.getElementById('table-provience').innerHTML =area
+      }
+    	})
+    }
+    function cityTop(){
+
+	 $.ajax({
+	  async: true,
+	  url: 'http://zhongxinzhiyuan.cn:9090/city_top50',
+	  data: {},
+	  type: 'get',
+	  
+	  dataType: 'json',
+	  success: res => {
+      	var area = ''
+      	res.sort(function (a, b) { return b.currentdiagnose - a.currentdiagnose});
+        res.map((value,index) => {
+	        area+='<tr><td>'+(index+1)+'</td><td>'+value.name+'</td><td>'+value.currentdiagnose +'</td><td>'+value.diagnose+'</td><td>'+value.cure+'</td><td>'+value.death+'</td></tr>'   
+        })
+        document.getElementById('table-city').innerHTML =area
+      }
+    	})
+    }
+	function getViewCount(){
+    	$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/getviewcount',
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: res => {
+			document.getElementById('view-count').innerHTML ='&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><small>'+res[0].count+'次浏览</small>'
+
+		  }
+    	})
+    }
+    function updateViewCount(){
+    	$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/updateviewcount',
+		  data: {},
+		  type: 'put',
+		  
+		  dataType: 'json',
+		  success: res => {
+		  
+
+		  }
+    	})
+    }
+	function getComeOnCount(){
+    	$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/getcomeoncount',
+		  data: {},
+		  type: 'get',
+		  
+		  dataType: 'json',
+		  success: res => {
+			document.getElementById('come-on').innerHTML =res[0].count
+
+		  }
+    	})		
+	}
+	function clickComeOn(){
+		document.getElementById('come-on').innerHTML =parseInt(document.getElementById('come-on').innerText)+1;
+		$.ajax({
+		  async: true,
+		  url: 'http://zhongxinzhiyuan.cn:9090/updatecomeoncount',
+		  data: {},
+		  type: 'put',
+		  
+		  dataType: 'json',
+		  success: res => {
+		  
+
+		  }
+    	})
+	}
+	
+</script>
+</body>
+</html>
+
+      
+    </div>
+	
+    <footer class="article-footer">
+      <a data-url="http://zyouzz.github.io/html/covid19_real_time_map.html" data-id="cmlc4w8vs000ajkti3u9g999a" class="article-share-link">分享</a>
+      
+      
+	
+
+    </footer>
+  </div>
+
+    
+  
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="widget-wrap">
+    <h3  class="widget-title">网站统计(自2023-05-31)</h3>
+    <div class="widget">
+        <span id="busuanzi_container_site_pv">
+            <span style="color:#258fb8">总访问量 <span style="color:#e32d40" id="busuanzi_value_site_pv"></span> 次</span>
+        </span>
+        <br>
+        <span id="busuanzi_container_site_uv">
+            <span style="color:#258fb8">访客人数 <span style="color:#e32d40" id="busuanzi_value_site_uv"></span> 人</span>
+        </span>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">微信公众号：zyouzz</h3>
+	<div class="widget">
+		<img src="/css/images/weixin.jpg">
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/10/53235.html">PerInstanceColorAppearance笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/27323.html">什么是离屏渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/25/4244.html">高斯泼溅中粒子的协方差矩阵是做什么的</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/16/24077.html">EASY-3D-SDK：强大的二三维一体WebGIS开发框架</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/07/51151.html">GPU图形绘制管线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">七月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ArcGIS/">ArcGIS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/RS/">RS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2024/" rel="tag">2024</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/" rel="tag">ArcGIS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Datastore/" rel="tag">ArcGIS Datastore</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Enterprise/" rel="tag">ArcGIS Enterprise</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Portal/" rel="tag">ArcGIS Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Pro/" rel="tag">ArcGIS Pro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS-Server/" rel="tag">ArcGIS Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cesium/" rel="tag">Cesium</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECW%E5%BD%B1%E5%83%8F/" rel="tag">ECW影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Esri/" rel="tag">Esri</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLSL/" rel="tag">GLSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU/" rel="tag">GPU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScripts/" rel="tag">JavaScripts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leaflet/" rel="tag">Leaflet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelBuilder/" rel="tag">ModelBuilder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PerInstanceColorAppearance/" rel="tag">PerInstanceColorAppearance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portal/" rel="tag">Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/" rel="tag">Python脚本工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RS/" rel="tag">RS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vite/" rel="tag">Vite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGIS/" rel="tag">WebGIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/" rel="tag">WebGL</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcgis/" rel="tag">arcgis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arcmap/" rel="tag">arcmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cesium/" rel="tag">cesium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/geoserver/" rel="tag">geoserver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glsl/" rel="tag">glsl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtopo30/" rel="tag">gtopo30</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modis/" rel="tag">modis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pg/" rel="tag">pg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgresql/" rel="tag">postgresql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/" rel="tag">postman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture/" rel="tag">texture</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/texture2D/" rel="tag">texture2D</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xlsx/" rel="tag">xlsx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4/" rel="tag">三维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF/" rel="tag">三维场景</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%96%E7%95%8C/" rel="tag">世界</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD/" rel="tag">中国</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E5%BE%84%E5%9F%9F%E5%90%8D/" rel="tag">二级路径域名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4/" rel="tag">二维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%9A%E6%B4%B2/" rel="tag">亚洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%AC%E9%92%93%E5%AE%9D/" rel="tag">京钓宝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8A%BF/" rel="tag">优势</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E4%BC%8F/" rel="tag">光伏</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%9B%BD/" rel="tag">全国</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BA%E5%B7%AE/" rel="tag">出差</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8/" rel="tag">启动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E7%BB%98%E5%88%B6/" rel="tag">图形绘制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E4%BA%91/" rel="tag">地理空间云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%90%E6%A0%87/" rel="tag">坐标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E5%AD%97%E6%AE%B5/" rel="tag">多字段</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="tag">多进程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E6%AE%B5%E8%AE%A1%E7%AE%97%E5%99%A8/" rel="tag">字段计算器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BD%B1%E5%83%8F/" rel="tag">影像</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E9%87%8F/" rel="tag">批量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%AA%81%E7%A0%B4/" rel="tag">技术突破</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A5%E5%91%8A/" rel="tag">报告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" rel="tag">搜索引擎</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/" rel="tag">无人机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%B4%B2/" rel="tag">欧洲</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A6%E6%B1%89/" rel="tag">武汉</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" rel="tag">渲染管线</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%82%B9%E6%8E%92%E5%BA%8F/" rel="tag">点排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" rel="tag">离屏渲染</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%A6%E5%8F%B7%E6%B8%B2%E6%9F%93/" rel="tag">符号渲染</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E5%8F%B7/" rel="tag">编号</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E7%8F%AD/" rel="tag">航班</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%90%A4%E7%81%AB%E5%9B%BE/" rel="tag">萤火图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%8F%E8%A7%86%E8%A1%A8/" rel="tag">透视表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%92%93%E9%B1%BC%E4%BD%AC/" rel="tag">钓鱼佬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98/" rel="tag">问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" rel="tag">集群部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85/" rel="tag">高斯泼溅</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    <div class="widget-wrap">
+	<h3  class="widget-title">友情链接</h3>
+	<div class="widget">
+		<ul class="entry">
+			<li><a target="_blank" rel="noopener" href="http://www.esrichina.com.cn/" title="Esri中国">Esri中国</a></li>
+			<li><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/enviidl" title="ENVI-IDL技术殿堂的博客">ENVI-IDL技术殿堂的博客</a></li>
+			<li><a target="_blank" rel="noopener" href="http://zhihu.esrichina.com.cn/" title="ArcGIS知乎">ArcGIS知乎</a></li>
+			<li><a target="_blank" rel="noopener" href="http://kikitamap.com/" title="kikita&maps">kikita&maps</a></li>
+		</ul>
+	</div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 James Rock<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  </div>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3HYCEbjiW2zuEoLJ",ck:"3HYCEbjiW2zuEoLJ"})</script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags/Cesium" class="mobile-nav-link">Cesium</a>
+  
+    <a href="/tags/WebGL" class="mobile-nav-link">WebGL</a>
+  
+    <a href="/tags/GIS" class="mobile-nav-link">GIS</a>
+  
+    <a href="/tags/RS" class="mobile-nav-link">RS</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<div id="totop" style="z-index: 9999;position:fixed;bottom:150px;right:20px;cursor: pointer;">
+		<a title="返回顶部"><img src="/css/images/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">      
+     var search_path = "search.xml";
+     if (search_path.length == 0) {
+     	search_path = "search.xml";
+     }
+     var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
+  </div>
+</body>
+</html>
