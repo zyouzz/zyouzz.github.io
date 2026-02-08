@@ -22,6 +22,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>2020年？？</title>
+    <url>/2020/05/09/14675.html</url>
+    <content><![CDATA[2020年，什么时候该开始？什么时候又该翻篇呢？
+]]></content>
+  </entry>
+  <entry>
     <title>2025人工智能革命：技术突破如何重塑未来生活</title>
     <url>/2025/03/07/43120.html</url>
     <content><![CDATA[引言：一场静默的科技革命正在发生2025年，人工智能不再是实验室里的概念，而是渗透进每个普通人的日常。从清晨唤醒你的智能家居，到深夜为你生成工作总结的AI助手；从医院里精准诊断疾病的算法，到工厂中自主优化生产流程的机器人——这场革命正以惊人的速度重构我们的世界。而推动这一切的核心力量，是开源大模型的崛起、应用场景的爆发式落地，以及全球资本与技术资源的疯狂涌入。
@@ -90,12 +96,6 @@ DeepSeek的颠覆性创新2024年，中国团队开发的DeepSeek大模型以开
       </tags>
   </entry>
   <entry>
-    <title>2020年？？</title>
-    <url>/2020/05/09/14675.html</url>
-    <content><![CDATA[2020年，什么时候该开始？什么时候又该翻篇呢？
-]]></content>
-  </entry>
-  <entry>
     <title>A Star算法实现最短路径查找【python】</title>
     <url>/2020/12/07/55752.html</url>
     <content><![CDATA[这段时间用python实现A Star（也叫A*,A星算法），翻了不少博客论坛，发现A星算法大都用在游戏开发的路径移动中，并且都是基于马赛克方格寻找，与我想要实现的实际路段有所不同，不过思想都是大差不差的，数据结构有些许差异。这里先起个头。。。先放个最终实现效果图==========
@@ -158,24 +158,6 @@ AI可以辅助程序员完成重复性、低价值的工作，例如代码生成
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
-    <url>/2018/03/07/56554.html</url>
-    <content><![CDATA[大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。
-
-人生就是两字—“折腾”！这不，ArcGIS 10.5.1版本才发布，就跃跃欲试升级。枪打出头鸟，果然有大坑，顺利安装完成后，在Portal中添加一个slpk场景包，却发现一直不成功，或者是这样在server日志中看到如下记录：在发布场景时，场景数据会存到托管server的datastore中，创建服务需要Couchdb数据库，问题就出在这，datastore中Couchdb无法创建数据库，场景就发布不了。对于这个问题，我开始以为是datastore没有安装配置好，严格统一了一下证书，然后在server管理页面中解除注册，再重新配置，但是这样不行。仍然是同样的问题。没办法，将datastore卸载重装，不行。。。最后，索性将整套ArcGIS Enterprise全家桶重装了一遍，还是不行，杯具呀。。。后来发现同事也遇到这个问题，紧接着，用户也出现了，看来这不是我的系统环境或者安装部署问题，当天给用户远程了一下，还是没有解决，好在用户说现在只是测试，没在生产环境中正式部署。这真是绝望的时刻。最后，终于在公司服务器里的技术文档，找到类似问题的解决方案。详情见：1887问题解决方案该作者的解决方法惊为天人，一般人真是想不到。。。问题最终算是解决了，具体的原因不得而知，但是知道问题出在Couchdb这块，很是诡异，希望在下个版本能够解决。好消息是：从10.5.1开始，Esri发布了一个一键安装程序，大大简化安装流程。
-——————————————-++————————————————————
-还有个问题是：在10.5中上传之前Pro（1.4版本）打包或者是smart3D导出的spk，Portal会显示如下问题这里显示上传的不是有效的包。解决的方法很简单，实际spk就是个压缩包，直接用解压文件解压，会看到里面包含的文件美国Esri官方给的解决方法是：使用7zip软件，将其重新打包，设置如下，然后再上传就可以了
-]]></content>
-      <categories>
-        <category>ArcGIS</category>
-      </categories>
-      <tags>
-        <tag>ArcGIS Enterprise</tag>
-        <tag>Portal</tag>
-        <tag>三维场景</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS Pro发布服务时出现“检查共享流程状态失败”错误( Failed to check sharing process status)</title>
     <url>/2017/12/02/11059.html</url>
     <content><![CDATA[从1.3版本开始接触ArcGIS Pro，流畅的64位原生应用程序，靓丽的ribbon界面，二三维一体的极致体验，让我们看到变革的时候到来，传统的桌面使用相信现正在迁移过来，并且也在吸引大量新使用者。
@@ -203,6 +185,36 @@ mklink /J &quot;C:\Users\esri\AppData\Local\ESRI\ArcGISPro\Staging&quot; &quot;C
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS Enterprise中Portal发布场景服务后无法查看</title>
+    <url>/2018/03/07/56554.html</url>
+    <content><![CDATA[大家都知道ArcGIS现在整个产品体系特别庞大，以我来看，个人是不能将所有的产品学到精通的，毕竟整个产品已经年近五旬，积累沉淀的东西非一人所能穷尽的。现在就说一下ArcGIS Enterprise，俗称”ArcGIS 全家桶“套餐，为什么这么叫呢，因为之前这个系统有多个组件。ArcGIS Enterprise 在是在10.5版本以后才叫这个名字的，算是一个统称，包括了Portal Server Datastore Webadaptor，所以需要一个个组件安装，并且有一定的部署顺序，如果不太熟悉这个流程，好不容易在漫长的安装过程之后，出现令人崩溃的不能用，排查问题的时候又很困难，所以，目前这套系统再生产环境中需要Esri官方技术人员现场部署，以保证系统的安全。
+
+人生就是两字—“折腾”！这不，ArcGIS 10.5.1版本才发布，就跃跃欲试升级。枪打出头鸟，果然有大坑，顺利安装完成后，在Portal中添加一个slpk场景包，却发现一直不成功，或者是这样在server日志中看到如下记录：在发布场景时，场景数据会存到托管server的datastore中，创建服务需要Couchdb数据库，问题就出在这，datastore中Couchdb无法创建数据库，场景就发布不了。对于这个问题，我开始以为是datastore没有安装配置好，严格统一了一下证书，然后在server管理页面中解除注册，再重新配置，但是这样不行。仍然是同样的问题。没办法，将datastore卸载重装，不行。。。最后，索性将整套ArcGIS Enterprise全家桶重装了一遍，还是不行，杯具呀。。。后来发现同事也遇到这个问题，紧接着，用户也出现了，看来这不是我的系统环境或者安装部署问题，当天给用户远程了一下，还是没有解决，好在用户说现在只是测试，没在生产环境中正式部署。这真是绝望的时刻。最后，终于在公司服务器里的技术文档，找到类似问题的解决方案。详情见：1887问题解决方案该作者的解决方法惊为天人，一般人真是想不到。。。问题最终算是解决了，具体的原因不得而知，但是知道问题出在Couchdb这块，很是诡异，希望在下个版本能够解决。好消息是：从10.5.1开始，Esri发布了一个一键安装程序，大大简化安装流程。
+——————————————-++————————————————————
+还有个问题是：在10.5中上传之前Pro（1.4版本）打包或者是smart3D导出的spk，Portal会显示如下问题这里显示上传的不是有效的包。解决的方法很简单，实际spk就是个压缩包，直接用解压文件解压，会看到里面包含的文件美国Esri官方给的解决方法是：使用7zip软件，将其重新打包，设置如下，然后再上传就可以了
+]]></content>
+      <categories>
+        <category>ArcGIS</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS Enterprise</tag>
+        <tag>Portal</tag>
+        <tag>三维场景</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS ModelBuilder的工作空间（workspace)设置问题</title>
+    <url>/2016/11/18/56001.html</url>
+    <content><![CDATA[今天和同事调试了一个用户发来的ModelBuilder，咋一看,模型做得还好呀，每个工具的调用和参数设置都很有逻辑但是一点击运行后，在第一步模型就运行失败了原来用户使用的是相对引用路径，但是路径中存在gdb，而工作空间中默认也是在gdb下，所以一个路径中同时出现两个gdb，数据存不了，当然无法运行了。由于模型中用户都是这么写的，有很多处，所以只有修改模型的环境参数了，先打开模型属性点击环境选项卡，勾选Workspace选项，点击下面的Values..设置Scratch Workspace路径，确定后点击运行，成功！但是高兴太早，一般使用模型很少会点开编辑界面运行，会直接双击，像GP工具使用，里面都是黑箱了双击工具，点击OK果然高兴太早，在最后一步出现问题，又同时一个路径中出现两个gdb这时心里想，不对呀，工作空间（workspace)的路径不是已经改了么，怎么不管用呢和同事琢磨半天，最后发现双击模型工具后，点击界面下方的环境设置发现路径还是原先的默认带有gdb的路径，但是为什么前面的几步都运行成功了呢？遂再次陷入沉思后才明白，我们把输出结果路径作为模型工具的界面参数，造成了前面会使用我们修改的模型环境路径，输出结果路径去依然使用该模型工具界面的环境参数路径。于是将结果路径在模型编辑中去掉作为界面参数的设置再双击模型，完美运行！这里不得不提一下ArcGIS ModelBuilder的工作空间（workspace)设置问题，模型属性的环境变量参数设置在模型使用界面中无效，造成后续的参数再次调整，有些不太方便，但不是大的问题。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS Desktop（ArcMap）10.6、ArcGIS Engine 10.6和ArcGIS Pro2.1无法 打开ECW文件</title>
     <url>/2018/02/11/46502.html</url>
     <content><![CDATA[新年伊始，万象更新，Esri也推出了全新产品版本。美国时间2018年1月17日，ArcGIS 10.6正式面向用户发布！
@@ -221,18 +233,6 @@ Esri官方会在2018第二季度新发布的版本中解决这个BUG。
       <tags>
         <tag>ArcGIS</tag>
         <tag>ECW影像</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS ModelBuilder的工作空间（workspace)设置问题</title>
-    <url>/2016/11/18/56001.html</url>
-    <content><![CDATA[今天和同事调试了一个用户发来的ModelBuilder，咋一看,模型做得还好呀，每个工具的调用和参数设置都很有逻辑但是一点击运行后，在第一步模型就运行失败了原来用户使用的是相对引用路径，但是路径中存在gdb，而工作空间中默认也是在gdb下，所以一个路径中同时出现两个gdb，数据存不了，当然无法运行了。由于模型中用户都是这么写的，有很多处，所以只有修改模型的环境参数了，先打开模型属性点击环境选项卡，勾选Workspace选项，点击下面的Values..设置Scratch Workspace路径，确定后点击运行，成功！但是高兴太早，一般使用模型很少会点开编辑界面运行，会直接双击，像GP工具使用，里面都是黑箱了双击工具，点击OK果然高兴太早，在最后一步出现问题，又同时一个路径中出现两个gdb这时心里想，不对呀，工作空间（workspace)的路径不是已经改了么，怎么不管用呢和同事琢磨半天，最后发现双击模型工具后，点击界面下方的环境设置发现路径还是原先的默认带有gdb的路径，但是为什么前面的几步都运行成功了呢？遂再次陷入沉思后才明白，我们把输出结果路径作为模型工具的界面参数，造成了前面会使用我们修改的模型环境路径，输出结果路径去依然使用该模型工具界面的环境参数路径。于是将结果路径在模型编辑中去掉作为界面参数的设置再双击模型，完美运行！这里不得不提一下ArcGIS ModelBuilder的工作空间（workspace)设置问题，模型属性的环境变量参数设置在模型使用界面中无效，造成后续的参数再次调整，有些不太方便，但不是大的问题。
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -281,6 +281,20 @@ Esri官方会在2018第二季度新发布的版本中解决这个BUG。
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS专题图边框花纹制作</title>
+    <url>/2016/10/27/41204.html</url>
+    <content><![CDATA[之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观现在有时间尝试了一下实现过程，如下：原始专题图如下1、在布局视图下，右击数据框属性；2、在Frame选项卡下，按如下红框操作，3、打开符号选择器，点击符号编辑4、点击左下角“+”，添加一个符号图层5、选择Marker Line Symbol6、点击”Marker Line”下的Symbol7、再次点击符号编辑8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距10、然后为了让花纹有一个黑底，将下层的线加粗即可11、然后多次点击确认，得到黑底的花纹效果
+实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果
+PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS中使用字段计算器创建日期序列字段</title>
     <url>/2017/01/13/15006.html</url>
     <content><![CDATA[当我们有一些空间数据，想通过动画的形式展示，可以在ArcGIS中的时间滑块工具实现。如果图层要开启时间属性，得有日期类型字段，所以首先需要创建相应字段。如果我们对要素的先后顺序没有要求，可以通过字段计算器快速生成自增型日期，实际之前我已经写过字段自增的博文ArcGIS中使用字段计算器生成随机数和自增数这里我是在ArcGIS Pro中实现，（可以看到ArcGIS Pro中不在支持VB语法，只支持python了）
@@ -297,17 +311,28 @@ import datetime#导入时间模块dinterval=datetime.datetime.now()def timen(): 
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS专题图边框花纹制作</title>
-    <url>/2016/10/27/41204.html</url>
-    <content><![CDATA[之前在呼市培训碰到有个学员问到怎么设置ArcGIS专题图的边框花纹，一直觉得这个花哨，没必要去设计，上周末去地坛公园玩，看到墙上的画都有花纹边框，感觉很美观现在有时间尝试了一下实现过程，如下：原始专题图如下1、在布局视图下，右击数据框属性；2、在Frame选项卡下，按如下红框操作，3、打开符号选择器，点击符号编辑4、点击左下角“+”，添加一个符号图层5、选择Marker Line Symbol6、点击”Marker Line”下的Symbol7、再次点击符号编辑8、选择Picture Marker Symbol,选择最开始的地坛公园照片的花纹（用Photoshop抠图，也可以自己在网上找一些花纹素材）9、点击三次确定后，回到最初的符号制作界面，调整Template下的参数，设置花纹的排列间距10、然后为了让花纹有一个黑底，将下层的线加粗即可11、然后多次点击确认，得到黑底的花纹效果
-实际ArcGIS专题图边框花纹制作也就是符号制作，通过不同符号的堆叠和参数细节设置，都可以实现所要求的结果
-PS：原谅我的审美，素材不是太好，只是做了尝试，大家可以找一些比较美观的花纹素材。
+    <title>ArcGIS中多个字段同时渲染</title>
+    <url>/2017/03/22/15901.html</url>
+    <content><![CDATA[今天群里有个人问到：怎样对一个图层的多个属性字段同时渲染。当时确实有些懵，因为之前基本只对一个属性字段进行符号配置显示，所以无从着手，想到用多个图层同时表示，但是不行，顿时感觉没办法了，下班后，忙完其他的事后，还是不死心，于是又尝试了一下，果然，问题居然很简单的就解决了！
+一、造数据
+首先我造了一些数据。现在我手上有一个全国各主要城市的空气质量数据，里面有AQI、二氧化硫、臭氧、二氧化氮、pm10、pm2.5等。
+
+但是没有合适的表达显著性字段，于是我新建了一个名为【显著性】的字段对于这个显著性如何定义，我是这样做的：使用字段计算器中python脚本，如果经度大于105度，则空气质量变化显著，否则不显著，感觉有点绝对，不过挺符合我国的空气质量地域状况，嘻嘻~~~具体设置如下：python代码如下：
+def sig(x):	if  x&gt;105:		return &quot;显著&quot;	else:		return &quot;不显著&quot;
+
+二、多个字段属性的符号渲染
+有了数据后，就可以尝试怎么操作实现了。
+废话不多说，进入正题实际很简单1、首先右击图层属性，点击符号选项卡，选择多属性渲染方式，2、选择显著性字段，然后对显著性设置不同的符号，如你所说的：空心不显著，实心表示显著3、然后点击右侧符号大小，弹出窗口中，选择趋势数值字段，4、具体参数可以根据自己的数据调整，初步效果如下
+后记：很多时候，空想是很不靠谱的，思维的惰性让人比较容易放弃，慢慢区亲自尝试，或许柳暗花明。实干兴邦，空想误事
 ]]></content>
       <categories>
         <category>GIS</category>
       </categories>
       <tags>
         <tag>GIS</tag>
+        <tag>python</tag>
+        <tag>多字段</tag>
+        <tag>符号渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -339,31 +364,6 @@ PS；注意选择是python脚本，以及代码的缩进。
       <tags>
         <tag>python</tag>
         <tag>多进程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS中多个字段同时渲染</title>
-    <url>/2017/03/22/15901.html</url>
-    <content><![CDATA[今天群里有个人问到：怎样对一个图层的多个属性字段同时渲染。当时确实有些懵，因为之前基本只对一个属性字段进行符号配置显示，所以无从着手，想到用多个图层同时表示，但是不行，顿时感觉没办法了，下班后，忙完其他的事后，还是不死心，于是又尝试了一下，果然，问题居然很简单的就解决了！
-一、造数据
-首先我造了一些数据。现在我手上有一个全国各主要城市的空气质量数据，里面有AQI、二氧化硫、臭氧、二氧化氮、pm10、pm2.5等。
-
-但是没有合适的表达显著性字段，于是我新建了一个名为【显著性】的字段对于这个显著性如何定义，我是这样做的：使用字段计算器中python脚本，如果经度大于105度，则空气质量变化显著，否则不显著，感觉有点绝对，不过挺符合我国的空气质量地域状况，嘻嘻~~~具体设置如下：python代码如下：
-def sig(x):	if  x&gt;105:		return &quot;显著&quot;	else:		return &quot;不显著&quot;
-
-二、多个字段属性的符号渲染
-有了数据后，就可以尝试怎么操作实现了。
-废话不多说，进入正题实际很简单1、首先右击图层属性，点击符号选项卡，选择多属性渲染方式，2、选择显著性字段，然后对显著性设置不同的符号，如你所说的：空心不显著，实心表示显著3、然后点击右侧符号大小，弹出窗口中，选择趋势数值字段，4、具体参数可以根据自己的数据调整，初步效果如下
-后记：很多时候，空想是很不靠谱的，思维的惰性让人比较容易放弃，慢慢区亲自尝试，或许柳暗花明。实干兴邦，空想误事
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-        <tag>python</tag>
-        <tag>多字段</tag>
-        <tag>符号渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -515,28 +515,47 @@ LOD切换
       </tags>
   </entry>
   <entry>
-    <title>Cesium中的矩阵变换</title>
-    <url>/2023/06/02/47866.html</url>
-    <content><![CDATA[上一篇学习了WebGL中的矩阵变换变换矩阵（Transformation-matrix）详解,我们推演出旋转、平移、缩放矩阵，并通过代码实现。而在Cesium中于此类似，并且提供了Cesium.Matrix2、Cesium.Matrix3、Cesium.Matrix4类及其属性方法。这里，我们以Cesium.Matrix4为例
-正常情况下，我们可以通过tileset.root.transform获取模型本身的模型矩阵，这个即存在3DTile中的tileset.json文件中
-那么在Cesium中具体如何操作使用变换矩阵呢？以调整模型位置为例
-一、Cesium中的平移有两种调整方式（1）矩阵点乘法
-let modelMatrix = tileset.root.transform;let modelPosition = Cesium.Cartesian3.fromDegrees(lon, lat, height);const translationMatrix = Cesium.Matrix4.fromTranslation(new Cesium.Cartesian3(6, 1, 8));// 模型矩阵乘以平移矩阵 MxTCesium.Matrix4.multiply(modelMatrix, translationMatrix, modelMatrix);tileset.root.transform = modelMatrix;
-(2)直接设置
-let modelMatrix = tileset.root.transform;let modelPosition = Cesium.Cartesian3.fromDegrees(lon, lat, height);Cesium.Matrix4.setTranslation(modelMatrix, modelPostion, modelMatrix);tileset.root.transform = modelMatrix;
+    <title>Cesium 实现军事作战规划的现代化与同步</title>
+    <url>/2026/02/08/53467.html</url>
+    <content><![CDATA[【译文】翻译自Cesium官方网站博客文章https://cesium.com/blog/2026/01/20/sandtable-military-planning/
+过去20年里，技术与冲突的性质变化速度超过了美国国防政策和军事程序的更新速度。为了实现作战层面规划的现代化与同步，Sandtable 利用 CesiumJS、Cesium for Unity 和 Cesium ion，将传统的军事规划文件与沉浸式地理空间环境相结合。
 
-二、Cesium中的旋转let modelMatrix = tileset.root.transform;const preHRP=&#123;heading:0, roll:0, pitch:0&#125;;const currentHRP = &#123;heading:30, roll:10, pitch:-30&#125;;let gapHRP = Ccesium.HeadingPitchRoll.fromDegrees(    currentHRP.heading - preHRP.heading,    currentHRP.pitch - preHRP.pitch,    currentHRP.roll - preHRP.roll)let rotateMatrix = Cesium.Matrix3.fromHeadingPitchRoll(gapHRP);// 模型矩阵乘以旋转矩阵 MxRCesium.Matrix4.multiplyByMatrix3(modelMatrix, rotateMatrix, modelMatrix);tileset.root.transform = modelMatrix;preHRP = Cesium.clone(currentHRP, true);
+由美国陆军退伍军人和研究人员于2024年创立的Sandtable公司，在其Mentat和Navigator原型中将人工智能与人类判断相结合，利用更多数据、更详尽的细节和更快的速度，助力任务分析、行动方案制定及作战推演。
+规划、协作和演练工具往往依赖二维图像、电子表格、纸质文件、实体沙盘，以及将关键人员聚集在同一地点所带来的风险。该公司致力于将动态三维技术引入军事规划，打造出融合各类数据类型与来源的交互式环境，无论人类团队还是自主系统身处何地，都能支持其规划与评估工作。
+“我们正在模拟和规划的内容——比如无人机、反无人机技术和电子战——在现实中都是存在于三维空间的，我们需要能够真实地呈现这些场景。这就需要Cesium，”Sandtable首席运营官Brady Moore说道。而现实是复杂的：数据来自各种各样的来源，且情况会随时间不断变化。借助人工智能，该平台能够帮助揭示规律、比较方案并检验假设，从而让指挥官能够将精力集中在最重要的判断上。
+Cesium 贯穿于 Sandtable 的解决方案中，通过权威的地理空间背景和高效的数据交付，加速军事决策流程（MDMP）的关键阶段，特别是任务分析、方案制定和演练：Mentat 基于 CesiumJS 构建，可在浏览器中将书面命令、概念草图以及土壤密度和成分等开放数据集叠加在真实地形之上，从而借助人工智能快速调整方案。Navigator 利用 Cesium for Unity 在共享虚拟环境中进行方案分析和任务演练，无论参与者身处何地，均可通过多种设备参与。与单纯演练 Mentat 中生成的计划不同，Navigator 将洞察反馈回规划环境，从而实现持续优化而非一次性执行。
+借助来自 Cesium ion 以及各类公共和政府来源（例如 NOAA 和 USDA 数据集）的详细地理空间数据，作战人员和自主车辆不仅能了解山丘和树木的位置，还能掌握与机动性和视距相关的微地形特征。这一点至关重要，因为植被高度等因素决定了无人机能看到什么（或看不到什么），这取决于数据的分辨率和来源质量。这些数据主要为 3D Tiles、量化网格和 KML/KMZ 格式，经过优化后通过 Cesium ion 进行托管和流式传输，以确保效率和互操作性。Cesium ion 还使 Sandtable 能够实现数据无关性，因为 3D Tiles 是 OGC 社区标准，且在条件允许时可使用陆军自身的 Well Formed Format 数据。Sandtable 在联网时使用 Cesium ion SaaS 服务，并计划在未来断网或受限环境中，以及安全隔离区中利用 Cesium ion 自托管版本。
+对Sandtable而言，至关重要的是与将要使用该平台的人员紧密协作。在2025年10月举行的陆军xTechOverwatch竞赛期间，团队在白天与士兵们一起在野外使用平板电脑测试Mentat，并在每晚调整其功能和界面，次日带着改进后的产品返回。Sandtable的开发人员能够在数小时内而非数天内，将反馈意见转化为具备功能性的可视化和分析结果。这种开发速度得益于可适应、支持流媒体的3D Tiles以及开源运行时。
+【译者注】核心结论可提炼如下：
 
-三、Cesium中的缩放const scale = 1.1;let modelMatrix = tileset.root.transform;Cesium.Matrix4.multiplyByUniformScale(modelMatrix, scale, modelMatrix);tileset.root.transform = modelMatrix;
+技术赋能军事规划现代化 ：Sandtable公司利用Cesium系列技术（CesiumJS、Cesium for Unity、Cesium ion），成功将传统的、依赖二维文件和物理沙盘的军事规划流程，升级为沉浸式的4D地理空间环境，以应对技术变革速度超过现有军事程序的挑战。
 
-四、综述Cesium中的平移缩放旋转MxTxSxR涉及到的矩阵变换如下；
-// 平移Cesium.Matrix4.multiply();// 缩放Cesium.Matrix4.multiplyByUniformScale();// 旋转Cesium.Matrix4.multiplyByMatrix3();
+核心解决方案与价值 ：其两大核心产品——
 
 
+
+Mentat ：基于CesiumJS构建，在浏览器中整合多源数据（如地形、土壤、植被）与AI分析，用于快速的任务分析、行动方案（COA）制定与可视化。
+Navigator ：基于Cesium for Unity构建，提供共享虚拟环境，支持分布式、多设备的作战方案推演和任务演练，并将演练洞察反馈至规划阶段，实现持续优化。
+
+
+关键技术创新点 ：
+
+
+三维真实性 ：强调在三维空间中真实模拟无人机、电子战等现代作战要素，提升了规划的现实贴合度。
+
+数据融合与互操作性 ：通过Cesium ion整合并流式传输各类公共及政府地理空间数据（如3D Tiles格式），确保数据高效、互操作，并支持联网与未来离线部署。
+
+人机结合与决策加速 ：结合人工智能（AI）与人类判断，帮助揭示规律、检验假设，使指挥官能聚焦关键决策，显著加速军事决策流程（MDMP）的关键阶段。
+
+
+以用户为中心的敏捷开发 ：通过与士兵实地测试并快速迭代（数小时内将反馈转化为功能），证明了该平台具备高度的适应性和快速的开发响应能力，确保了产品的实用性和易用性。
+
+总结 ：Sandtable通过深度集成Cesium地理空间技术，构建了一个集三维可视化、多源数据融合、AI辅助分析、分布式协同演练于一体的现代军事规划平台，旨在解决传统规划手段的局限，大幅提升作战方案制定、分析与演练的效率和逼真度。
 ]]></content>
       <tags>
+        <tag>GIS</tag>
         <tag>Cesium</tag>
-        <tag>WebGL</tag>
+        <tag>军事作战规划</tag>
       </tags>
   </entry>
   <entry>
@@ -569,6 +588,31 @@ texture2D()
         <tag>GLSL</tag>
         <tag>texture</tag>
         <tag>texture2D</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cesium中的矩阵变换</title>
+    <url>/2023/06/02/47866.html</url>
+    <content><![CDATA[上一篇学习了WebGL中的矩阵变换变换矩阵（Transformation-matrix）详解,我们推演出旋转、平移、缩放矩阵，并通过代码实现。而在Cesium中于此类似，并且提供了Cesium.Matrix2、Cesium.Matrix3、Cesium.Matrix4类及其属性方法。这里，我们以Cesium.Matrix4为例
+正常情况下，我们可以通过tileset.root.transform获取模型本身的模型矩阵，这个即存在3DTile中的tileset.json文件中
+那么在Cesium中具体如何操作使用变换矩阵呢？以调整模型位置为例
+一、Cesium中的平移有两种调整方式（1）矩阵点乘法
+let modelMatrix = tileset.root.transform;let modelPosition = Cesium.Cartesian3.fromDegrees(lon, lat, height);const translationMatrix = Cesium.Matrix4.fromTranslation(new Cesium.Cartesian3(6, 1, 8));// 模型矩阵乘以平移矩阵 MxTCesium.Matrix4.multiply(modelMatrix, translationMatrix, modelMatrix);tileset.root.transform = modelMatrix;
+(2)直接设置
+let modelMatrix = tileset.root.transform;let modelPosition = Cesium.Cartesian3.fromDegrees(lon, lat, height);Cesium.Matrix4.setTranslation(modelMatrix, modelPostion, modelMatrix);tileset.root.transform = modelMatrix;
+
+二、Cesium中的旋转let modelMatrix = tileset.root.transform;const preHRP=&#123;heading:0, roll:0, pitch:0&#125;;const currentHRP = &#123;heading:30, roll:10, pitch:-30&#125;;let gapHRP = Ccesium.HeadingPitchRoll.fromDegrees(    currentHRP.heading - preHRP.heading,    currentHRP.pitch - preHRP.pitch,    currentHRP.roll - preHRP.roll)let rotateMatrix = Cesium.Matrix3.fromHeadingPitchRoll(gapHRP);// 模型矩阵乘以旋转矩阵 MxRCesium.Matrix4.multiplyByMatrix3(modelMatrix, rotateMatrix, modelMatrix);tileset.root.transform = modelMatrix;preHRP = Cesium.clone(currentHRP, true);
+
+三、Cesium中的缩放const scale = 1.1;let modelMatrix = tileset.root.transform;Cesium.Matrix4.multiplyByUniformScale(modelMatrix, scale, modelMatrix);tileset.root.transform = modelMatrix;
+
+四、综述Cesium中的平移缩放旋转MxTxSxR涉及到的矩阵变换如下；
+// 平移Cesium.Matrix4.multiply();// 缩放Cesium.Matrix4.multiplyByUniformScale();// 旋转Cesium.Matrix4.multiplyByMatrix3();
+
+
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>WebGL</tag>
       </tags>
   </entry>
   <entry>
@@ -722,7 +766,7 @@ API文档：EASY-3D-SDK Documentation
 技术支持
 技术负责人：James Jiang
 微信：easygissdk
-联系邮箱：&#49;&#54;&#x39;&#x30;&#x36;&#48;&#57;&#57;&#x37;&#x39;&#64;&#x71;&#x71;&#46;&#99;&#111;&#109;
+联系邮箱：&#x31;&#x36;&#x39;&#48;&#54;&#48;&#x39;&#57;&#55;&#x39;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;
 
 版本信息
 当前版本：持续更新中
@@ -897,6 +941,67 @@ Data Storage — 21% 数据存储—21%•    Given requirements for a specific 
       </tags>
   </entry>
   <entry>
+    <title>PerInstanceColorAppearance笔记</title>
+    <url>/2025/12/10/53235.html</url>
+    <content><![CDATA[new PerInstanceColorAppearance(&#123;      flat: true,      translucent: true,    &#125;)
+
+PerInstanceColorAppearance 是 CesiumJS 中用于渲染具有每实例颜色的几何体的外观类。它允许为每个实例指定不同的颜色，从而实现丰富的视觉效果。以下是对 PerInstanceColorAppearance 的一些关键点和使用方法的笔记：
+
+基本概念：
+
+PerInstanceColorAppearance 继承自 Appearance 类，专门用于处理每实例颜色的渲染。
+它通常与 InstancedGeometry（实例化几何体）一起使用，以提高渲染性能。
+每个实例可以通过 Instance 属性中的 color 属性来指定颜色。
+
+属性：
+
+
+flat：布尔值，指示是否使用平面着色。如果为 true，则几何体将以平面方式渲染，没有光照效果。
+translucent：布尔值，指示几何体是否是半透明的。如果为 true，则几何体将支持透明度。
+如下所示：
+
+flat: true 禁用基于法线的光照计算（即不做漫反射/镜面高光等照明），表面颜色直接使用材质/顶点颜色。适合平面、UI 样式或希望颜色恒定且性能更好的情况。
+
+
+
+ translucent: false 表示材质为不透明，Cesium 会把它放到不透明渲染通道：写入深度缓冲、无需排序，也不会进行混合。若需要半透明效果，应设为 true 并提供 alpha 值及合适的渲染状态（如关闭深度写入或启用混合）
+
+
+
+
+使用场景：
+
+适用于需要渲染大量具有不同颜色的实例化几何体的场景，例如点云、粒子系统等。
+可以用于可视化数据，其中每个数据点需要不同的颜色表示。
+
+
+示例代码：
+const instance = new GeometryInstance(&#123;  geometry: new BoxGeometry(&#123;    vertexFormat: PerInstanceColorAppearance.VERTEX_FORMAT,    maximum: new Cartesian3(1.0, 1.0, 1.0),    minimum: new Cartesian3(-1.0, -1.0, -1.0),  &#125;),  modelMatrix: Matrix4.fromTranslation(new Cartesian3(0.0, 0.0, 0.0)),  attributes: &#123;    color: ColorGeometryInstanceAttribute.fromColor(Color.RED),  &#125;,&#125;);const appearance = new PerInstanceColorAppearance(&#123;  flat: true,  translucent: false,&#125;);const primitive = new Primitive(&#123;  geometryInstances: [instance],  appearance: appearance,&#125;);viewer.scene.primitives.add(primitive);
+性能优化：
+
+使用 PerInstanceColorAppearance 可以显著提高渲染大量实例的性能，因为它利用了 GPU 的实例化渲染技术。
+通过合理设置 flat 和 translucent 属性，可以根据需求优化渲染效果和性能。
+
+
+限制：
+
+PerInstanceColorAppearance 主要用于简单的颜色渲染，不支持复杂的材质效果，如纹理映射或光照计算。
+适用于需要高性能渲染的场景，但在需要复杂视觉效果时，可能需要考虑其他外观类。   
+
+
+总结：
+
+PerInstanceColorAppearance 是 CesiumJS 中一个强大的工具，适用于需要渲染大量具有不同颜色的实例化几何体的场景。通过合理使用其属性和方法，可以实现高效且丰富的视觉效果。
+
+
+
+]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>PerInstanceColorAppearance</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Modis GTOPO30 土地利用数据说明与下载</title>
     <url>/2016/08/02/42453.html</url>
     <content><![CDATA[Modis数据1、产品数据介绍官方地址：https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/2、下载地址：http://modis.gsfc.nasa.gov/data/3、Modis中国区域行列号4、数据产品介绍中分辨率成像光谱仪(MODerate-resolution Imaging Spectroradiometer) -MODIS是Terra和Aqua卫星上搭载的主要传感器之一，两颗星相互配合每1-2天可重复观测整个地球表面，得到36个波段的观测数据，这些数据 将有助于我们深入理解全球陆地、海洋和低层大气内的动态变化过程，因此，MODIS在发展有效的、全球性的用于预测全球变化的地球系统相互作用模型中起着 重要的作用，其精确的预测将有助于决策者制定与环境保护相关的重大决策。MODIS自2000年4月开始正式发布数据，NASA对MODIS数据以广播X波段向全球免费发送，我国目前已建立了数个接收站并分别于2001年3月 前后开始接收数据。由于NASA对MODIS数据实行这种全球免费接收的政策，使得MODIS数据的获取十分廉价和方便。 
@@ -966,64 +1071,15 @@ cnpm install hexo-generator-json-content
 ]]></content>
   </entry>
   <entry>
-    <title>PerInstanceColorAppearance笔记</title>
-    <url>/2025/12/10/53235.html</url>
-    <content><![CDATA[new PerInstanceColorAppearance(&#123;      flat: true,      translucent: true,    &#125;)
-
-PerInstanceColorAppearance 是 CesiumJS 中用于渲染具有每实例颜色的几何体的外观类。它允许为每个实例指定不同的颜色，从而实现丰富的视觉效果。以下是对 PerInstanceColorAppearance 的一些关键点和使用方法的笔记：
-
-基本概念：
-
-PerInstanceColorAppearance 继承自 Appearance 类，专门用于处理每实例颜色的渲染。
-它通常与 InstancedGeometry（实例化几何体）一起使用，以提高渲染性能。
-每个实例可以通过 Instance 属性中的 color 属性来指定颜色。
-
-属性：
-
-
-flat：布尔值，指示是否使用平面着色。如果为 true，则几何体将以平面方式渲染，没有光照效果。
-translucent：布尔值，指示几何体是否是半透明的。如果为 true，则几何体将支持透明度。
-如下所示：
-
-flat: true 禁用基于法线的光照计算（即不做漫反射/镜面高光等照明），表面颜色直接使用材质/顶点颜色。适合平面、UI 样式或希望颜色恒定且性能更好的情况。
-
-
-
- translucent: false 表示材质为不透明，Cesium 会把它放到不透明渲染通道：写入深度缓冲、无需排序，也不会进行混合。若需要半透明效果，应设为 true 并提供 alpha 值及合适的渲染状态（如关闭深度写入或启用混合）
-
-
-
-
-使用场景：
-
-适用于需要渲染大量具有不同颜色的实例化几何体的场景，例如点云、粒子系统等。
-可以用于可视化数据，其中每个数据点需要不同的颜色表示。
-
-
-示例代码：
-const instance = new GeometryInstance(&#123;  geometry: new BoxGeometry(&#123;    vertexFormat: PerInstanceColorAppearance.VERTEX_FORMAT,    maximum: new Cartesian3(1.0, 1.0, 1.0),    minimum: new Cartesian3(-1.0, -1.0, -1.0),  &#125;),  modelMatrix: Matrix4.fromTranslation(new Cartesian3(0.0, 0.0, 0.0)),  attributes: &#123;    color: ColorGeometryInstanceAttribute.fromColor(Color.RED),  &#125;,&#125;);const appearance = new PerInstanceColorAppearance(&#123;  flat: true,  translucent: false,&#125;);const primitive = new Primitive(&#123;  geometryInstances: [instance],  appearance: appearance,&#125;);viewer.scene.primitives.add(primitive);
-性能优化：
-
-使用 PerInstanceColorAppearance 可以显著提高渲染大量实例的性能，因为它利用了 GPU 的实例化渲染技术。
-通过合理设置 flat 和 translucent 属性，可以根据需求优化渲染效果和性能。
-
-
-限制：
-
-PerInstanceColorAppearance 主要用于简单的颜色渲染，不支持复杂的材质效果，如纹理映射或光照计算。
-适用于需要高性能渲染的场景，但在需要复杂视觉效果时，可能需要考虑其他外观类。   
-
-
-总结：
-
-PerInstanceColorAppearance 是 CesiumJS 中一个强大的工具，适用于需要渲染大量具有不同颜色的实例化几何体的场景。通过合理使用其属性和方法，可以实现高效且丰富的视觉效果。
-
-
-
+    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
+    <url>/2016/10/10/22289.html</url>
+    <content><![CDATA[有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！
 ]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
       <tags>
-        <tag>Cesium</tag>
-        <tag>PerInstanceColorAppearance</tag>
+        <tag>GIS</tag>
       </tags>
   </entry>
   <entry>
@@ -1043,18 +1099,6 @@ new ParallelUglifyPlugin(&#123;  cacheDir: &#x27;.cache/&#x27;,  uglifyJS: &#123
 UnhandledPromiseRejectionWarning: CssSyntaxError:
 这个意思是说打包的CSS文件有非法字符，大部分是注释不规范造成的我这里是因为CSS文件中误用 // 作为注释造成的，而 // 在SCSS文件中用是没问题的。
 ]]></content>
-  </entry>
-  <entry>
-    <title>Portal和Server打不开或者启动较慢的解决之道？</title>
-    <url>/2016/10/10/22289.html</url>
-    <content><![CDATA[有一段时间没用Portal和Server，今天打开Portal时，网页加载巨慢，portal打不开了，Server的进度条直接卡主，一时不明原因，捣鼓半天没有解决。尝试重启了一下Portal和Server的服务，居然可以了，原因未知，但是就这么解决了，果然是重启大法好！
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
   </entry>
   <entry>
     <title>WebGL中的纹理</title>
@@ -1159,6 +1203,17 @@ GitHubHost github.comHostName github.comUser gitIdentityFile ~/.ssh/id_rsa_githu
     <content><![CDATA[// 去除地图左上角的放大缩小控件map.getControls().forEach(control =&gt; &#123;  if (control instanceof ol.control.Zoom) &#123;    map.removeControl(control)  &#125;&#125;);]]></content>
   </entry>
   <entry>
+    <title>postman设置collection全局token</title>
+    <url>/2023/09/28/61501.html</url>
+    <content><![CDATA[平时在postman调试接口多，如果过了一段时间后，token会失效，每个请求需要更换token,挺麻烦的，我们可以根据在postman配置collection下的全局token;具体如下1、打开Postman并创建一个新的Collection。2、在Collection的”Authorization”选项卡中选择适当的授权方式（例如Bearer Token或OAuth 2.0）。3、在”Token”字段中，使用双大括号（{{}}）将Token包裹起来，形成一个环境变量。例如：{{token}}。4、点击右上角的“眼睛”按钮，以便在请求中查看环境变量的值。5、现在，您需要在Postman的环境中设置Token的值。在Postman左上角的”Manage Environments”（管理环境）按钮旁边，点击下拉菜单按钮，并选择”Add”（添加）。6、输入环境名称，例如”Token Environment”，然后点击”Add”（添加）。7、在环境变量列表中，添加一个新的变量，键为”token”，值为您的Token值。8、点击”Save”（保存）以保存环境变量。9、注意检查请求中Authorization是否为inherit auth from parent
+]]></content>
+      <tags>
+        <tag>postman</tag>
+        <tag>token</tag>
+        <tag>接口</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>postgresql无法创建数据库解决</title>
     <url>/2025/03/17/16730.html</url>
     <content><![CDATA[用navicat 16.3.7连接数据库postgresql 17.2，创建数据库报错
@@ -1200,17 +1255,6 @@ ALTER DATABASE template1 REFRESH COLLATION VERSION;
       </tags>
   </entry>
   <entry>
-    <title>postman设置collection全局token</title>
-    <url>/2023/09/28/61501.html</url>
-    <content><![CDATA[平时在postman调试接口多，如果过了一段时间后，token会失效，每个请求需要更换token,挺麻烦的，我们可以根据在postman配置collection下的全局token;具体如下1、打开Postman并创建一个新的Collection。2、在Collection的”Authorization”选项卡中选择适当的授权方式（例如Bearer Token或OAuth 2.0）。3、在”Token”字段中，使用双大括号（{{}}）将Token包裹起来，形成一个环境变量。例如：{{token}}。4、点击右上角的“眼睛”按钮，以便在请求中查看环境变量的值。5、现在，您需要在Postman的环境中设置Token的值。在Postman左上角的”Manage Environments”（管理环境）按钮旁边，点击下拉菜单按钮，并选择”Add”（添加）。6、输入环境名称，例如”Token Environment”，然后点击”Add”（添加）。7、在环境变量列表中，添加一个新的变量，键为”token”，值为您的Token值。8、点击”Save”（保存）以保存环境变量。9、注意检查请求中Authorization是否为inherit auth from parent
-]]></content>
-      <tags>
-        <tag>postman</tag>
-        <tag>token</tag>
-        <tag>接口</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WebGL缓冲区（buffer object）对象</title>
     <url>/2023/05/23/54690.html</url>
     <content><![CDATA[WebGL 提供了一种很方便的机制，即缓冲区对象(buffer obiect)，它可以一次性地向着色器传人多个顶点的数据。缓冲区对象是 WebGL 系统中的一块内存区域，我们可以一次性地向缓冲区对象中填充大量的顶点数据，然后将这些数据保存在其中，供顶点着色器使用。
@@ -1218,6 +1262,12 @@ ALTER DATABASE template1 REFRESH COLLATION VERSION;
       <tags>
         <tag>WebGL</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>time is start, time is end, time is nothing</title>
+    <url>/2023/08/30/36231.html</url>
+    <content><![CDATA[time can be done,we come from mote,burn, burn, burn,come to the end,ash,air,element,from order to chaos,hard to return origin,sadness,tears,flow freely,I am you,you are me,one day,we will be together,smile,warm,time is so long,swear it,Believe it,accept it.–ZhongYuan(MidYear) James.
+]]></content>
   </entry>
   <entry>
     <title>【20160808】出差工作日志-武汉</title>
@@ -1231,15 +1281,20 @@ ALTER DATABASE template1 REFRESH COLLATION VERSION;
       </tags>
   </entry>
   <entry>
-    <title>time is start, time is end, time is nothing</title>
-    <url>/2023/08/30/36231.html</url>
-    <content><![CDATA[time can be done,we come from mote,burn, burn, burn,come to the end,ash,air,element,from order to chaos,hard to return origin,sadness,tears,flow freely,I am you,you are me,one day,we will be together,smile,warm,time is so long,swear it,Believe it,accept it.–ZhongYuan(MidYear) James.
-]]></content>
-  </entry>
-  <entry>
     <title>【20160809】出差工作日志-武汉</title>
     <url>/2016/08/09/57324.html</url>
     <content><![CDATA[2016年8月9日星期二   地统计分析现场辅导早晨起床后，准备在酒店旁边找个地方吃早餐，然后去机房。身后忽然有人喊江老师，扭头一看，原来是培训的老师，年龄大概将近五十，这次的培训到这个岁数的貌似就几个，对其不断学习的劲头风格很是敬佩，然后第一次被人叫老师，而且还是年长者，略显心虚。遂一块儿去吃早餐，这之间了解到其来自江苏南京的南京工程建筑学院，建筑测绘测量方向，属于个人自费专程来学习的，开始聊得很好，最后在路上的一个问题把我给难住了，他说昨天已经听了一天的课，感觉这个软件确实很强大，那到底应用在那些行业，案例有哪些，与我这个方向到底怎么结合起来呢？一时语塞，之前也看了Esri总裁Jack在2016 UC上的演讲，也了解到ArcGIS肯定可以与建筑工程结合起来，但具体是如何运用的，我一时没有这个概念，感觉自己认识面窄了，回去要好好充电了。上午余经理过来，喊我出去一块抬了一捆宣传册资料，感觉其很风趣幽默，中间还带着我去参观了一下武汉大学遥感测绘国家重点实验室，得知武汉大学自己研制的“珞珈一号”卫星马上要发射了，而且该卫星还是国内第一颗可拍摄夜景灯光数据的卫星，非常激动，很是期待。之前还了解该实验室还参与到我国的北斗卫星导航系统关键设计和技术改进，功不可没。作为GIS届的老牌公司，Esri与武汉大学的强强合作，无论是现在还是将来都是具有战略意义的。中午和一位看到很眼熟的老师聊天，加了联系方式后，得知其是甘肃科学院的，现在是我研究生学校的在职博士生，跟我还是一个学院的，算是师兄了，只怪世界太小，想想都很激动，居然这么远也赶过来了。上午讲的是理论，实际操作比较少，现场辅导大部分问题是功能使用，没有昨天的数据导入和基本操作问题，自己在听的过程中，感觉对地统计分析的认识又上升一个台阶，明白如何科学合理的运用自己的数据进行合理的插值和预测。下午都是上机操作，主讲李才一步步耐心的教各位老师操作操作，下面大部分老师熟悉软件后都跟得上，加之自己以前专门钻过地统计分析，本科毕业和硕士毕业论文也用到过，出现的一些问题都是比较容易解决。其中两个来自江西气象单位的人员，聊到之前不知道ArcGIS还可以做地统计插值，他们一直用的是GRID，使用起来繁琐，参数和界面不太友好，涉及到编程，成图很不容易，反之ArcGIS只需几步点击操作，就可以生成理想的差值图，很是方便快捷。还有两个研究生是经济学专业，他们学了地统计之后，觉得成图很美观实用，问我怎么使用他们自己的数据坐地统计分析，我问清了他们的研究目的后，详细跟他们讲了一下我的想法，随后聊了不少关于基础数据和涉及到的GIS技术，感觉他们缺乏基础的GIS理论和ArcGIS操作，本来很简单易行的技术操作，由于隔行隔山，对于他们可能是技术壁垒，一时难以实现。现在我也认识到，现在的创新首先需要多学科的交叉，比如将其他行业与GIS技术结合，在新的空间维度上，认识更为明晰，可能有更多的发现。这两天培训，才知道原来ArcGIS软件居然可以应用在这么多专业方向上，出乎意料的是老师们对其兴趣很高，静静想想，这款软件产品经过四十多年的不断更新和完善，大概已经契合到社会应用的方方面面，只是我们还没有挖掘到。所以，像早晨那位喊我老师的欧阳长辈一样，要不断地学习进步！
+]]></content>
+      <tags>
+        <tag>Esri</tag>
+        <tag>武汉</tag>
+        <tag>出差</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【20160810】出差工作日志-武汉</title>
+    <url>/2016/08/10/32813.html</url>
+    <content><![CDATA[2016年8月10日星期三   3D分析由于之前对ArcGIS的3D分析没有过多了解，昨晚把今天高源要讲的PPT看了一下，不知不觉到了十二点多，睡得有些晚，导致今天早晨成了起床困难户，但一想到武汉的热干面，顿时精神焕发，洗漱完直奔早餐店。来到武汉大学遥感信息工程学院的机房，已经是八点半了，居然是第一个到的，大概是大家熟悉了环境，都想踩着时间点来吧。一直想对ArcGIS的3D分析了解更深入一些，对今天的PPT很是期待，昨天下午有两个老师才来，说主要是为了听3D分析的。。。。由于培训人员爆满，我只有把自己的电脑也带过来了，电脑中已提前备好了操作数据，在现场辅导之余也能亲手操作一遍。早晨陆续有老师问我今年还有没有相关的培训，我建议他们关注公司的微博微信和官网动态，这么来看，这几天的培训反响很是不错，我自己也觉得这次出差也学到不少东西。上午高源讲得很生动，主要是3D分析的基础理论以及数据导入、查看和相互转换，PPT、DEMO实例和操作结合，演讲的节奏把握得也很好，培训的老师都跟得上理解和操作进度，卡在操作步骤上很少，我也跟着学习了一下。但是上午操作的过程中，有个问题我之前确实是没注意到，就是geodatabase数据库文件不能加入TIN数据。还有一个是shp的3D文件不能保存纹理，保存在gdb是可以的。中午和李才去吃饭，余经理和几个老师已经过去了，后来知道有个老师还是我本科学院的，加上昨天碰到研究生学校的师兄，一方面太巧了，另一方面感觉自己一直在这个圈子没走太远，这种缘由很奇怪。。。。上午有个老师反映自己操作实现不了，说是软件有问题，中午吃完饭回去后，经过测试，发现是电脑硬件的问题，于是将其旁边的一台标示为坏了的电脑换了键盘鼠标，居然还可以使用。之前很有意思，这个老师试探性地问我会不会是CRACK版本的原因，这个猜想大概是曾经受到CRACK版本的伤害吧。。。下午依然先是一些理论性的内容，随后是上机实际操作，问题出现了不少，基本上操作有误，或者是数据找错的几处错误，后来与一个老师讨论一些关于TIN数据的问题，加深了对该数据的认识。这几天一直有两个来自江西的研究生问我怎么实现一个区域的经济热点分析，我之前没关注过经济这方面的内容，但是关于热点分析，我却一直很感兴趣，在ArcGIS中实现起来非常简单，我给他们的建议如下1、首先整理好相应的基础数据，比如地图、经济统计数据等；2、然后将这些数据在同一坐标系统下空间化；3、用ArcGIS地统计工具进行表面插值，具体参考http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//0031000000nz0000004、然后可以参考http://blog.csdn.net/kikitaMoon/article/details/46424167进行美化然后是他们按照我提供的方法在这过程也出现不少问题，但都解决了。热力图是近年来百度等几家公司通过推广宣传展示，才在互联网火起来的，实际上ArcGIS早就有这个实现方案，看来现在的ArcGIS应用一部分是跟着互联网的潮流，也说明该软件具有的前瞻性。下午有老师说之前使用过Cityengine制作3D场景，前天学了ArcGIS的网络分析，问能不能进行建筑或地下的三维网络分析，目的是做一些建筑和地下通道设计评估，由于之前翻译过Esri2016年的UC部分视频，Jack曾经说过以下几句话，答案是显而易见的。从这三天的现场辅导来看，基本所有现场发生的问题都能解决，没有不明原因的错误，应该是正版的原因吧，之前我使用CRACK的时候，经常碰到莫名其妙的错误，最终都是无解，让人抓狂。所以说支持正版，让社会生产环境更加健康有效率的运行。
 ]]></content>
       <tags>
         <tag>Esri</tag>
@@ -1308,17 +1363,6 @@ let a = [1, 2, 6, 8, 9, 5, 2, 5, 6, 5, 5, 2, 5, 5];a.map((value, index) =&gt; &#
 a.map((value, index) =&gt; &#123;  if (index === 0) &#123;    a[a.length] = &#123;&#125;;    a[a.length - 1][value] = 1;    a[a.length] = value  &#125; else &#123;    if (value in a[a.length - 2]) &#123;      a[a.length - 2][value] += 1;      if (a[a.length - 2][value] &gt; a[a.length - 1]) &#123;        a[a.length - 1] = value      &#125;    &#125; else &#123;      a[a.length - 2][value] = 1    &#125;  &#125;  if (index + 3 === a.length) console.log(a[a.length - 1])&#125;)
 看起来更复杂了，有兴趣的小伙伴可以试一试，欢迎留言交流
 ]]></content>
-  </entry>
-  <entry>
-    <title>【20160810】出差工作日志-武汉</title>
-    <url>/2016/08/10/32813.html</url>
-    <content><![CDATA[2016年8月10日星期三   3D分析由于之前对ArcGIS的3D分析没有过多了解，昨晚把今天高源要讲的PPT看了一下，不知不觉到了十二点多，睡得有些晚，导致今天早晨成了起床困难户，但一想到武汉的热干面，顿时精神焕发，洗漱完直奔早餐店。来到武汉大学遥感信息工程学院的机房，已经是八点半了，居然是第一个到的，大概是大家熟悉了环境，都想踩着时间点来吧。一直想对ArcGIS的3D分析了解更深入一些，对今天的PPT很是期待，昨天下午有两个老师才来，说主要是为了听3D分析的。。。。由于培训人员爆满，我只有把自己的电脑也带过来了，电脑中已提前备好了操作数据，在现场辅导之余也能亲手操作一遍。早晨陆续有老师问我今年还有没有相关的培训，我建议他们关注公司的微博微信和官网动态，这么来看，这几天的培训反响很是不错，我自己也觉得这次出差也学到不少东西。上午高源讲得很生动，主要是3D分析的基础理论以及数据导入、查看和相互转换，PPT、DEMO实例和操作结合，演讲的节奏把握得也很好，培训的老师都跟得上理解和操作进度，卡在操作步骤上很少，我也跟着学习了一下。但是上午操作的过程中，有个问题我之前确实是没注意到，就是geodatabase数据库文件不能加入TIN数据。还有一个是shp的3D文件不能保存纹理，保存在gdb是可以的。中午和李才去吃饭，余经理和几个老师已经过去了，后来知道有个老师还是我本科学院的，加上昨天碰到研究生学校的师兄，一方面太巧了，另一方面感觉自己一直在这个圈子没走太远，这种缘由很奇怪。。。。上午有个老师反映自己操作实现不了，说是软件有问题，中午吃完饭回去后，经过测试，发现是电脑硬件的问题，于是将其旁边的一台标示为坏了的电脑换了键盘鼠标，居然还可以使用。之前很有意思，这个老师试探性地问我会不会是CRACK版本的原因，这个猜想大概是曾经受到CRACK版本的伤害吧。。。下午依然先是一些理论性的内容，随后是上机实际操作，问题出现了不少，基本上操作有误，或者是数据找错的几处错误，后来与一个老师讨论一些关于TIN数据的问题，加深了对该数据的认识。这几天一直有两个来自江西的研究生问我怎么实现一个区域的经济热点分析，我之前没关注过经济这方面的内容，但是关于热点分析，我却一直很感兴趣，在ArcGIS中实现起来非常简单，我给他们的建议如下1、首先整理好相应的基础数据，比如地图、经济统计数据等；2、然后将这些数据在同一坐标系统下空间化；3、用ArcGIS地统计工具进行表面插值，具体参考http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//0031000000nz0000004、然后可以参考http://blog.csdn.net/kikitaMoon/article/details/46424167进行美化然后是他们按照我提供的方法在这过程也出现不少问题，但都解决了。热力图是近年来百度等几家公司通过推广宣传展示，才在互联网火起来的，实际上ArcGIS早就有这个实现方案，看来现在的ArcGIS应用一部分是跟着互联网的潮流，也说明该软件具有的前瞻性。下午有老师说之前使用过Cityengine制作3D场景，前天学了ArcGIS的网络分析，问能不能进行建筑或地下的三维网络分析，目的是做一些建筑和地下通道设计评估，由于之前翻译过Esri2016年的UC部分视频，Jack曾经说过以下几句话，答案是显而易见的。从这三天的现场辅导来看，基本所有现场发生的问题都能解决，没有不明原因的错误，应该是正版的原因吧，之前我使用CRACK的时候，经常碰到莫名其妙的错误，最终都是无解，让人抓狂。所以说支持正版，让社会生产环境更加健康有效率的运行。
-]]></content>
-      <tags>
-        <tag>Esri</tag>
-        <tag>武汉</tag>
-        <tag>出差</tag>
-      </tags>
   </entry>
   <entry>
     <title>七牛视频外链测试</title>
@@ -1404,6 +1448,12 @@ a.map((value, index) =&gt; &#123;  if (index === 0) &#123;    a[a.length] = &#12
       </tags>
   </entry>
   <entry>
+    <title>为什么加班到现在，运维是个大坑货！！！</title>
+    <url>/2019/11/19/14351.html</url>
+    <content><![CDATA[一套系统，本地运行的没问题，同样的安装流程却无法成功运行。捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：编码一定保持一致呀喂！编码一定保持一致呀喂！编码一定保持一致呀喂！操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。
+]]></content>
+  </entry>
+  <entry>
     <title>为钓鱼佬们做了一个微信小程序，钓友必备神器！5万+爆护钓点一键直达，智能算法预判鱼情</title>
     <url>/2025/04/01/56376.html</url>
     <content><![CDATA[本人是一个混迹互联网多年的Coder（码农）+钓鱼佬，开发京钓宝小程序纯属个人爱好和记录分享，之前一直是自己用的，推荐给身边钓友后反馈很不错，于是分享了出来。
@@ -1451,12 +1501,6 @@ uniform sampler2D myTexture;  // 纹理采样器varying vec2 vTextureCoord;   //
       </tags>
   </entry>
   <entry>
-    <title>为什么加班到现在，运维是个大坑货！！！</title>
-    <url>/2019/11/19/14351.html</url>
-    <content><![CDATA[一套系统，本地运行的没问题，同样的安装流程却无法成功运行。捣鼓了两周，终于在今天晚上搞清了所有问题的原因所在：编码一定保持一致呀喂！编码一定保持一致呀喂！编码一定保持一致呀喂！操作系统的编码应该是UTF-8，非得改成GBK，数据库编码应该时UTF-8，为什么都变成latin….,tomcat为什么不配置跨域呢。。。。运维是个大坑货呀！！！MD，晚上运维的晚饭还是我请的，现在就想弄死他。。。。
-]]></content>
-  </entry>
-  <entry>
     <title>什么是离屏渲染</title>
     <url>/2025/11/25/27323.html</url>
     <content><![CDATA[离屏渲染（off-screen rendering）是指把渲染结果输出到屏幕外的缓冲区（纹理、帧缓冲、离屏 canvas 等），然后再把该结果用于合成、后处理或最终显示。常用于避免闪烁、并行渲染、后处理特效、生成缩略图或在后台线程绘制。
@@ -1474,6 +1518,24 @@ uniform sampler2D myTexture;  // 纹理采样器varying vec2 vTextureCoord;   //
 ]]></content>
       <tags>
         <tag>离屏渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用ModelBuilder批量处理和命名问题解决</title>
+    <url>/2017/01/12/50252.html</url>
+    <content><![CDATA[社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。这不，因为分工，我们可能得到一个地区不同部分的数据，这时想将其合并在一块，两三个还行，使用merge（合并）工具轻松解决，如果是10个，100个甚至成千上万个，那就难办了，这时使用ModelBuilder是最方便快捷的。
+
+首先我们在catalog中右击新创建一个工具箱，命名为“批处理”然后右击批处理工具箱，新建一个模型工具然后我们看到出现的模型构建器界面如下：现在我们有一些shp文件（放在同一个文件夹），所以先插入要素选择迭代器，目的是选取所有的shp文件然后双击下图中的六边形选择shp文件所在的文件夹,然后点击确定接下来插入collect value (不会翻译:-D)，目的是将选取的所有shp文件放在一起最后是全场核心合并工具上场，在系统工具箱中找到合并工具，直接拖到ModelBuilder中，PS：我这里是直接通过搜索找到，更为方便快捷，平时我们想实现某种功能时，可以使用关键字在搜索框中尝试搜索点击模型验证，确认整个模型是否OK，确认无误后，就可以执行批量合并处理了实际上在ModelBuilder中批量处理本质就是先能找到数据，然后合理的组织、处理和输出。
+
+这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，输出表格名字为%Name%，运行会出现报错，提示名字不合法目前还没有直接的解决办法，我这里提供办法是：将tif文件都导入gdb中，能够完美解决，可能是因为Esri鼓励大家将数据存储到gdb中，然后进行处理操作。
+
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ModelBuilder</tag>
+        <tag>批量</tag>
       </tags>
   </entry>
   <entry>
@@ -1502,36 +1564,6 @@ PS：以上展示或者数据计算可能有误，欢迎指出并交流。
 excel数据（包含经纬度坐标）链接:https://pan.baidu.com/s/149x089ZdxMQXZbymentYwQ 密码:p1rn
 源码
 import requestsfrom bs4 import BeautifulSoupimport refrom multiprocessing import Poolimport sysreload(sys)sys.setdefaultencoding(&#x27;utf-8&#x27;)def geturl(url):    headers=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36&#x27;&#125;    hbpage = requests.get(url, headers=headers).text    print hbpage    return hbpagedef flyin(city_citys,numm):    print &#x27;&gt;&gt;&gt;&gt;&gt;进程%d开始&gt;&gt;&gt;&gt;&gt;&#x27;%(numm+1)    # time.sleep(5)    pageinfo = []    for city_city in city_citys:        hbpage=geturl(city_city)        # print hbpage        bg=str(city_city.split(&#x27;=&#x27;)[-2]).replace(&#x27;&amp;arrival&#x27;,&#x27;&#x27;)#始发        dg=city_city.split(&#x27;=&#x27;)[-1]#飞往        ft=(bg+dg)        print ft        if BeautifulSoup(hbpage, &#x27;lxml&#x27;).select(&#x27;p[class=&quot;msg2&quot;]&#x27;):            print &#x27;此线路无航班&#x27;        else:            hblc = BeautifulSoup(hbpage, &#x27;lxml&#x27;).select(&#x27;em&#x27;)[0].get_text()            print hblc            #航班班次 第一列            hbtitle=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;title&quot;]&#x27;)            hbbc1=[]            hkgs1=[]            jixing1=[]            for ht in hbtitle:                hbbc=re.findall(r&#x27;\w.?\d*&#x27;,ht.get_text())[0]#航班班次                hkgs=ht.get_text().split(hbbc)[0]#航空公司                jixing=ht.get_text().split(hbbc)[1]#机型                hbbc1.append(hbbc)                hkgs1.append(hkgs)                jixing1.append(jixing)            #起降时间 第二列            hbtime=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c2&quot;]&#x27;)[1:]            qfsj1=[]            jlsj1=[]            for qj in hbtime:                qfsj=qj.get_text()[:5]#起飞时间                jlsj=qj.get_text()[5:]#降落时间                qfsj1.append(qfsj)                jlsj1.append(jlsj)            #机场 第三列            hbjc=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c3&quot;]&#x27;)[1:]            qfjc1=[]            jljc1=[]            for jc in hbjc:                qfjc=jc.get_text().split(&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;))[0]+&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;)#起飞机场                jljc=jc.get_text().split(&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;))[1]+&#x27;机场&#x27;.decode(&#x27;utf-8&#x27;)#降落机场                qfjc1.append(qfjc)                jljc1.append(jljc)            #准点率 第四列            zdl=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c4&quot;]&#x27;)[1:]            zdl1=[]            wdsj1=[]            for zd in zdl:                zdlv=zd.get_text().split(&#x27;%&#x27;)[0]+&#x27;%&#x27;                wdsj=zd.get_text().split(&#x27;%&#x27;)[1]                zdl1.append(zdlv)                wdsj1.append(wdsj)            #班期 第五列            bq=BeautifulSoup(hbpage,&#x27;lxml&#x27;).select(&#x27;span[class=&quot;c5&quot;]&#x27;)[1:]            # xx=[]            duty1 = []            for xq in bq:                week=re.split(&#x27;\&quot;&gt;\d&lt;/span&gt;&#x27;,str(xq))[:-1]                week1=[]                ii=1                for day in week:                    if ii==1:                        dd=&#x27;周一&#x27;                    elif ii==2:                        dd = &#x27;周二&#x27;                    elif ii==3:                        dd = &#x27;周三&#x27;                    elif ii==4:                        dd = &#x27;周四&#x27;                    elif ii==5:                        dd = &#x27;周五&#x27;                    elif ii==6:                        dd = &#x27;周六&#x27;                    elif ii==7:                        dd = &#x27;周日&#x27;                    if day[-4:]==&#x27;blue&#x27;:                        duty=&#x27;%s有班期&#x27;%dd                    else:                        duty=&#x27;%s没有班期&#x27;%dd                    ii+=1                    week1.append(duty)                duty1.append(week1)            #班期有效期 第七列            bqyxq = BeautifulSoup(hbpage, &#x27;lxml&#x27;).select(&#x27;span[class=&quot;c7&quot;]&#x27;)[1:]            qs1=[]            js1=[]            for yxq in bqyxq:                yxs=yxq.get_text()[:10]#起始                yxe=yxq.get_text()[:10]#结束                qs1.append(yxs)                js1.append(yxe)            print hbbc1            for li in range(len(hbbc1)):                print &#x27;标记&#x27;                pageinfo.append(bg + &#x27;,&#x27; + dg + &#x27;,&#x27; + hblc + &#x27;,&#x27; + hbbc1[li] + &#x27;,&#x27; + hkgs1[li] + &#x27;,&#x27; + jixing1[li] + &#x27;,&#x27; + qfsj1[li] + &#x27;,&#x27; + jlsj1[li] + &#x27;,&#x27; + qfjc1[li] + &#x27;,&#x27; + jljc1[li] + &#x27;,&#x27; + zdl1[li] + &#x27;,&#x27; + wdsj1[li] + &#x27;,&#x27; + duty1[li][0] + &#x27;,&#x27; + duty1[li][1] + &#x27;,&#x27; + duty1[li][2] + &#x27;,&#x27; +duty1[li][3] + &#x27;,&#x27; + duty1[li][4] + &#x27;,&#x27; + duty1[li][5] + &#x27;,&#x27; + duty1[li][6] + &#x27;,&#x27; + qs1[li] + &#x27;,&#x27; + js1[li] + &#x27;\n&#x27;)                print bg + &#x27;,&#x27; + dg + &#x27;,&#x27; + hblc + &#x27;,&#x27; + hbbc1[li] + &#x27;,&#x27; + hkgs1[li] + &#x27;,&#x27; + jixing1[li] + &#x27;,&#x27; + qfsj1[li] + &#x27;,&#x27; + jlsj1[li] + &#x27;,&#x27; + qfjc1[li] + &#x27;,&#x27; + jljc1[li] + &#x27;,&#x27; + zdl1[li] + &#x27;,&#x27; + wdsj1[li] + &#x27;,&#x27; + duty1[li][0] + &#x27;,&#x27; + duty1[li][1] + &#x27;,&#x27; + duty1[li][2] + &#x27;,&#x27; +duty1[li][3] + &#x27;,&#x27; + duty1[li][4] + &#x27;,&#x27; + duty1[li][5] + &#x27;,&#x27; + duty1[li][6] + &#x27;,&#x27; + qs1[li] + &#x27;,&#x27; + js1[li] + &#x27;\n&#x27;    print pageinfo    return pageinfodef urlsplit(urls,jiange):    urli=[]    for newj in range(0,len(urls),jiange):        urli.append(urls[newj:newj+jiange])    return urliif __name__==&#x27;__main__&#x27;:    finalre=[]    files = open(r&#x27;C:\Users\username\Desktop\url.txt&#x27;, &#x27;r&#x27;)    urls=[]    for url in files.read().split():        urls.append(url)    urlss=urls[:6]    urlll=urlsplit(urlss,2)    p = Pool(2)    result=[]    for i in range(len(urlll)):        result.append(p.apply_async(flyin,args=(urlll[i],i)))    p.close()    p.join()    print result    for result_i in range(len(result)):        print result[result_i]        fin_info_result_list = result[result_i].get().decode(&#x27;utf-8&#x27;)        finalre.extend(fin_info_result_list)    filers=open(r&#x27;C:\Users\username\Desktop\url55.txt&#x27;,&#x27;a+&#x27;)    for fll in finalre:        filers.write(str(fll).encode(&#x27;utf-8&#x27;))]]></content>
-  </entry>
-  <entry>
-    <title>使用ModelBuilder批量处理和命名问题解决</title>
-    <url>/2017/01/12/50252.html</url>
-    <content><![CDATA[社会分工是动物社会的标志之一，也是人类出现商品经济发展的基础。这不，因为分工，我们可能得到一个地区不同部分的数据，这时想将其合并在一块，两三个还行，使用merge（合并）工具轻松解决，如果是10个，100个甚至成千上万个，那就难办了，这时使用ModelBuilder是最方便快捷的。
-
-首先我们在catalog中右击新创建一个工具箱，命名为“批处理”然后右击批处理工具箱，新建一个模型工具然后我们看到出现的模型构建器界面如下：现在我们有一些shp文件（放在同一个文件夹），所以先插入要素选择迭代器，目的是选取所有的shp文件然后双击下图中的六边形选择shp文件所在的文件夹,然后点击确定接下来插入collect value (不会翻译:-D)，目的是将选取的所有shp文件放在一起最后是全场核心合并工具上场，在系统工具箱中找到合并工具，直接拖到ModelBuilder中，PS：我这里是直接通过搜索找到，更为方便快捷，平时我们想实现某种功能时，可以使用关键字在搜索框中尝试搜索点击模型验证，确认整个模型是否OK，确认无误后，就可以执行批量合并处理了实际上在ModelBuilder中批量处理本质就是先能找到数据，然后合理的组织、处理和输出。
-
-这里还有个问题是：比如但我们使用Zonal Statistics as Table工具，利用ModelBuilder批量统计栅格区域时，输出表格名字为%Name%，运行会出现报错，提示名字不合法目前还没有直接的解决办法，我这里提供办法是：将tif文件都导入gdb中，能够完美解决，可能是因为Esri鼓励大家将数据存储到gdb中，然后进行处理操作。
-
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ModelBuilder</tag>
-        <tag>批量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于bash中的2&gt;&amp;1 &amp;理解</title>
-    <url>/2023/06/01/62539.html</url>
-    <content><![CDATA[经常运行一些python脚本或者jar包，如果直接运行python *.py，或者 java -jar *.jar,再进行其他操作，需要终止运行，所以应该是后台运行。这也就经常看到这样的句式：
-nohup python *.py &gt; nohup.log 2&gt;&amp;1 &amp;
-
-1、开始的nohup（no hang up, 不挂起），用于系统后台不挂断的运行命令；2、中间的python *.py我们好理解，就是运行脚本；3、&gt; nohup.log 意思将新建nohup.log文件，并将运行日志写到该文件中，我们可以使用&gt;&gt;，表示追加日志内容；4、bash中0，1，2分别表示STDIN_FILENO（标准输入）,STDOUT_FILENO（ 标准输出）,STDERR_FILENO（标准错误），输入输出可以重定向，如cat &lt; text.c将test.c重定向为cat命令的输入源，输出重定向就是将指定具体的输出目标以替换默认的标准输出。默认输入只有一个（0，STDIN_FILENO），而默认输出有两个（标准输出1，STDOUT_FILENO，标准错误输出2，STDERR_FILENO），因此输出的错误信息会被输出到2，而普通信息会输出到1，但我们希望在一个终端下看到所有的信息，那么综上就应该是2&gt;1,而2&gt;&amp;1中&amp;是为了bash将1解释成标准输出而不是文件1，至于2&gt;&amp;1 &amp;中最后一个&amp;则是让bash在后台运行。
-]]></content>
-      <tags>
-        <tag>bash</tag>
-      </tags>
   </entry>
   <entry>
     <title>使用Python进行语音识别---将音频转为文字</title>
@@ -1570,18 +1602,16 @@ nohup python *.py &gt; nohup.log 2&gt;&amp;1 &amp;
 ]]></content>
   </entry>
   <entry>
-    <title>发现一个大坑！！！</title>
-    <url>/2019/06/14/38442.html</url>
-    <content><![CDATA[本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。然后捯饬了半天，一直到今天上午，what the f/*/*K!。这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。下午决定再次攻克一下：
-**使用排除法
-1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；2、排除代码错误：都在git上同一分支下；3、排除接口数据：都是同一个后台接口环境；
-以上，那么真相只有一个：都是蛋疼惹的事—依赖版本
-**破案过程：由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，于是回退版本，这个鸟问题终于解决了！目前的解决方案是将将package.json中的
-&quot;element-ui&quot;: &quot;^2.8.2&quot;,
-改为
-&quot;element-ui&quot;: &quot;2.8.2&quot;,
+    <title>关于bash中的2&gt;&amp;1 &amp;理解</title>
+    <url>/2023/06/01/62539.html</url>
+    <content><![CDATA[经常运行一些python脚本或者jar包，如果直接运行python *.py，或者 java -jar *.jar,再进行其他操作，需要终止运行，所以应该是后台运行。这也就经常看到这样的句式：
+nohup python *.py &gt; nohup.log 2&gt;&amp;1 &amp;
 
+1、开始的nohup（no hang up, 不挂起），用于系统后台不挂断的运行命令；2、中间的python *.py我们好理解，就是运行脚本；3、&gt; nohup.log 意思将新建nohup.log文件，并将运行日志写到该文件中，我们可以使用&gt;&gt;，表示追加日志内容；4、bash中0，1，2分别表示STDIN_FILENO（标准输入）,STDOUT_FILENO（ 标准输出）,STDERR_FILENO（标准错误），输入输出可以重定向，如cat &lt; text.c将test.c重定向为cat命令的输入源，输出重定向就是将指定具体的输出目标以替换默认的标准输出。默认输入只有一个（0，STDIN_FILENO），而默认输出有两个（标准输出1，STDOUT_FILENO，标准错误输出2，STDERR_FILENO），因此输出的错误信息会被输出到2，而普通信息会输出到1，但我们希望在一个终端下看到所有的信息，那么综上就应该是2&gt;1,而2&gt;&amp;1中&amp;是为了bash将1解释成标准输出而不是文件1，至于2&gt;&amp;1 &amp;中最后一个&amp;则是让bash在后台运行。
 ]]></content>
+      <tags>
+        <tag>bash</tag>
+      </tags>
   </entry>
   <entry>
     <title>内牛满面装Portal for ArcGIS</title>
@@ -1594,6 +1624,20 @@ nohup python *.py &gt; nohup.log 2&gt;&amp;1 &amp;
       <tags>
         <tag>GIS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>发现一个大坑！！！</title>
+    <url>/2019/06/14/38442.html</url>
+    <content><![CDATA[本篇文章是为了重现element-ui的新版本（2.9.1）BUG所提交的issue前几天没事重新安装了依赖，也是闲的蛋疼，更新完后就悲剧了，表格高度全都变为100px。然后捯饬了半天，一直到今天上午，what the f/*/*K!。这个问题解决不了，因此自己无法打包工程部署，只能麻烦组员了。下午决定再次攻克一下：
+**使用排除法
+1、排除开发环境：操作系统+idea+npm+node+vue版本都一致；2、排除代码错误：都在git上同一分支下；3、排除接口数据：都是同一个后台接口环境；
+以上，那么真相只有一个：都是蛋疼惹的事—依赖版本
+**破案过程：由于package.json中声明所有依赖使用最新版本，所以写了一个脚本放在我和组员的依赖文件夹（node_modules）下，获取安装依赖的名称和版本；然后使用notepad++中的compare插件对比，才发现是element-ui的版本不一致，去其官网查看，果然半个月前更新了版本，然后区GitHub的代码仓库查看release，下图可以说明一些问题，于是回退版本，这个鸟问题终于解决了！目前的解决方案是将将package.json中的
+&quot;element-ui&quot;: &quot;^2.8.2&quot;,
+改为
+&quot;element-ui&quot;: &quot;2.8.2&quot;,
+
+]]></content>
   </entry>
   <entry>
     <title>变换矩阵（Transformation matrix）详解</title>
@@ -1651,21 +1695,6 @@ location cesium/ &#123;    root html/test/;    try_files $uri $uri/ test/index.h
       </tags>
   </entry>
   <entry>
-    <title>基于Docker搭建自己的定制化地图服务器</title>
-    <url>/2019/07/02/956.html</url>
-    <content><![CDATA[–==========================–产品经理是帮你成长的最强动力。–==========================–这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色
-
-于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；打开其官网OpenMapTiles Map Server，越看越激动，终于有了转机。我们可以基于OpenMapTiles Map Server构建自己的自定义离线底图服务，支持OGC标准的WMS，WMTS，矢量和栅格切片都是ok的。由于基于Docker搭建，过程及其简单，跟将大象装进冰箱一样样的，小伙伴们不用慌。搭建过程如下：一、安装虚拟机和centos系统，版本如下1)vmware：15.0.4 build-12990004，【下载地址：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe】2)centos: 7.3.1611，【下载地址：http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/】二、安装Docker执行以下语句就ok了
-curl -sSL https://get.docker.com/ | sh
-三、安装应用
-docker run --rm -it -v $(pwd):/data -p 8080:80 klokantech/openmaptiles-server
-这里会提示你在浏览器中通过8080端口访问配置页面https://localhost:8080最主要的是第三步样式配置这里单击Advanced options,会看到上传样式配置文件json的地方，  关于生成json文件的地方，我们可以去自定义样式https://editor.openmaptiles.org/  
-【笔记】：每次开机手动启动docker命令为
-systemctl start docker 
- 这样，we choose freedom! 
-]]></content>
-  </entry>
-  <entry>
     <title>如何在ArcGIS中绘制漂亮的萤火图</title>
     <url>/2018/04/24/14122.html</url>
     <content><![CDATA[这几天看到有人在一些群里问下面的图是怎么做的该图叫做萤火图，看起来非常漂亮、酷炫。那么在ArcGIS平台中如何制作这样的地图呢？
@@ -1682,6 +1711,21 @@ systemctl start docker
         <tag>ArcGIS</tag>
         <tag>萤火图</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>基于Docker搭建自己的定制化地图服务器</title>
+    <url>/2019/07/02/956.html</url>
+    <content><![CDATA[–==========================–产品经理是帮你成长的最强动力。–==========================–这不，饱受吐槽的UI终于被产品经理提上了日程，第一个献祭的就是地图底图修改。之前一直用的是捷泰午夜蓝地图，这个配色是我个人最喜欢的但是产品经理要求是这样的配色
+
+于是找了一圈，类似的样式倒是有，细节仍然不中，接连被否遂暂时搁置，今天查资料的时候，偶然看到OpenMapTiles Map Server这个神奇的宝贝；打开其官网OpenMapTiles Map Server，越看越激动，终于有了转机。我们可以基于OpenMapTiles Map Server构建自己的自定义离线底图服务，支持OGC标准的WMS，WMTS，矢量和栅格切片都是ok的。由于基于Docker搭建，过程及其简单，跟将大象装进冰箱一样样的，小伙伴们不用慌。搭建过程如下：一、安装虚拟机和centos系统，版本如下1)vmware：15.0.4 build-12990004，【下载地址：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.0.4-12990004.exe】2)centos: 7.3.1611，【下载地址：http://mirror.nsc.liu.se/centos-store/7.3.1611/isos/x86_64/】二、安装Docker执行以下语句就ok了
+curl -sSL https://get.docker.com/ | sh
+三、安装应用
+docker run --rm -it -v $(pwd):/data -p 8080:80 klokantech/openmaptiles-server
+这里会提示你在浏览器中通过8080端口访问配置页面https://localhost:8080最主要的是第三步样式配置这里单击Advanced options,会看到上传样式配置文件json的地方，  关于生成json文件的地方，我们可以去自定义样式https://editor.openmaptiles.org/  
+【笔记】：每次开机手动启动docker命令为
+systemctl start docker 
+ 这样，we choose freedom! 
+]]></content>
   </entry>
   <entry>
     <title>如何让Arcmap支持加载Excel 2003以上的xlsx格式文件</title>
@@ -1785,6 +1829,21 @@ self.params[1].filter.list = [&#x27;横向&#x27;,&#x27;纵向&#x27;]self.params[
       </tags>
   </entry>
   <entry>
+    <title>年底-昨天、今天、明天</title>
+    <url>/2018/12/17/24576.html</url>
+    <content><![CDATA[眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。如果要用两个字形容这一年，那就是：【折腾】，不过人生不就是折腾来折腾去么，倒也符合常态。但总有些与众不同，有些注定在未来某一天成为突然想起的尘封记忆，或喜、或悲、或怒、亦或是波澜不惊，也许现在难以想象的到。
+那就开始蒙太奇的回忆吧。。。
+从去年2017的年底开始，当时对于下一年的所思所想做了一些SWOT的分析，之后充满了焦虑，还自诩为我的”焦虑元年“，然而确实就这样伴随了我的2018年，90后的”中年危机“就这么来了，有时感觉自己特没主见，作为一个男人真不应该，别人稍微将你聊开了，你就和盘托出，于是逢人就像祥林嫂一样诉说自己的忧虑和担心，但是回过头来，读了一些书，看了一些东西，这样做没有什么意义，将自己切身的感受说给别人听，不管你描述得多么生动，别人几乎是随心而过，感同身受是无法实现的，大家作为一个个个体，又无责为你承担些什么。有些时候，未来的路只能沉默的走下去，要面对这个现实。
+《月亮与六便士》里有这么一段描述：我们每个人生在这个世界上都是孤独的。每个人都被囚禁在一座铁塔里，只能靠一些符号同别人传达自己的思想；而这些符号并没有共同的价值，因此他们的意义是模糊的、不确定的。我们非常可怜地想把自己心中的财富传送给别人，但是他们却没有接受这些财富的能力。因此我们只能孤独地行走，尽管身体互相依傍却并不在一起，即不了解别人也不能为别人所了解。这句话简直妙不可及。
+有这么个映像：人们对于第一件事，不管其为自己带来了什么，或许都难以忘怀，比如第一份工作、第一次做饭、第一次青涩感情的投入（提到这个，翻涌出阵呕~~~）。
+从2016年乘着火车，穿过漫天黄沙的戈壁，从西北一所垂垂老矣、难以回春的大学（所以也没有跟着老师继续读博，容我目光所限）来到帝都，经过数不清的面试，终于进入了一家业内有名气的公司，接到录用通知时，和2013年考上研究生一样，兴奋了许久，倍感珍惜（这词在第一次做的事情上应该通用），想想当时也够单纯，各种正当的要求都没认真的去了解和争取，都草草的入了职，丝毫没有人生规划和职业发展的战略思考。接下来的两年里学习了一些东西，重点是认识了不少人，好像每天感觉很充实，当时自己精力充沛，极力摸索，早出晚归，不放过周末节假日，不去了解除工作意外的东西，像上学一样封闭自己，两耳不闻世事，但年初的总结里，隐隐约约里看到了虚假的充实，这种带有自欺欺人、难以有较大提升的感觉，充斥每天的情绪，周围的同事很好、领导也很好，不好的是自己。然后还有前面提到的原因（可能这个是最大的原因所在，下面细说），最后得到了答案：该换份工作了。
+马云曾说，换工作无非有两个原因：一是对老板不爽；二是对工资不满意。实话说我来这个公司两年，虽然时不时见到大BOSS，但真的从来没说过话，交集为零，直属的三个（没错，就是三个，两个女领导，一个男领导）领导都很不错，所以这一条不存在。然后应该就是第二个，没错，我承认自己很俗，也没办法，当时促使我慎重思考薪资的，是因为一件事。在一线租房真是很痛苦的事，想想每天早出晚归，累的不行，每个月将自己工资的很大部分，给了每天提着鸟笼子的北京土著房东（这里没有地域感情色彩），真的很心痛，但是没办法，谁让自己来大城市求食、求生存呢。然后就是这么操着某地域口音（这里有些地域色彩，但我非以偏概全，）的一群人，接管了房东（懒成啥样。。。，最后不还是自己自作自受）的房子，用一些下三滥的手段诈取钱财，让北漂们露宿街头。光天化日，朗朗乾坤，帝都就这么真真切切发生近似明抢的强盗行为。作为当时的受害者，真是气愤呀！！！某个夜晚有了单纯的世俗想法：再挣多点，心就不会这么疼了。
+都说开发工资高，凭着两年的自学和积累，然后从公司的开发者大会之前开始，那段时间每晚在一些招聘网站，像两年前一样海投了一番，陆陆续续接到一些求职反馈，基本是拒绝的，大概是看到没有实际的开发经验，然后就在开发者大会那天,终于接到来自深圳座机来电，聊了一些后，下午从会场直接过了去。
+。。。。。待续
+多读书、多思考、会折腾（突然想到这句话，暂时记上）
+]]></content>
+  </entry>
+  <entry>
     <title>巧用Excel透视表计算每个公交站点的人数</title>
     <url>/2016/10/27/29903.html</url>
     <content><![CDATA[今天早晨看到有人在ArcGIS上问了如何计算每个公交站点的人数，部分数据如下图：虽然不是GIS的问题，但是觉得很有趣，看到有个ID叫turtle的已经回答了，并且自己也学到不少，他的实现步骤如下：遇到在excel中分类统计汇总的可优先考虑透视表（具体操作题主自己搜索，透视表用起来很爽）；针对题主所提到的多条件查询汇总的可使用sumifs()函数（支持多条件汇总，应该是从office2007引入的）；下面我简单选择了部分数据进行实现，公式详见附件
@@ -1808,21 +1867,6 @@ Sheet1!$B$2:$B$26,Sheet2!B$2表示第三个统计条件为站名，这里需要�
         <tag>Excel</tag>
         <tag>透视表</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>年底-昨天、今天、明天</title>
-    <url>/2018/12/17/24576.html</url>
-    <content><![CDATA[眼见2018年的最后一个月已过了一半，真快！回想这一年，心中不免五味杂陈。如果要用两个字形容这一年，那就是：【折腾】，不过人生不就是折腾来折腾去么，倒也符合常态。但总有些与众不同，有些注定在未来某一天成为突然想起的尘封记忆，或喜、或悲、或怒、亦或是波澜不惊，也许现在难以想象的到。
-那就开始蒙太奇的回忆吧。。。
-从去年2017的年底开始，当时对于下一年的所思所想做了一些SWOT的分析，之后充满了焦虑，还自诩为我的”焦虑元年“，然而确实就这样伴随了我的2018年，90后的”中年危机“就这么来了，有时感觉自己特没主见，作为一个男人真不应该，别人稍微将你聊开了，你就和盘托出，于是逢人就像祥林嫂一样诉说自己的忧虑和担心，但是回过头来，读了一些书，看了一些东西，这样做没有什么意义，将自己切身的感受说给别人听，不管你描述得多么生动，别人几乎是随心而过，感同身受是无法实现的，大家作为一个个个体，又无责为你承担些什么。有些时候，未来的路只能沉默的走下去，要面对这个现实。
-《月亮与六便士》里有这么一段描述：我们每个人生在这个世界上都是孤独的。每个人都被囚禁在一座铁塔里，只能靠一些符号同别人传达自己的思想；而这些符号并没有共同的价值，因此他们的意义是模糊的、不确定的。我们非常可怜地想把自己心中的财富传送给别人，但是他们却没有接受这些财富的能力。因此我们只能孤独地行走，尽管身体互相依傍却并不在一起，即不了解别人也不能为别人所了解。这句话简直妙不可及。
-有这么个映像：人们对于第一件事，不管其为自己带来了什么，或许都难以忘怀，比如第一份工作、第一次做饭、第一次青涩感情的投入（提到这个，翻涌出阵呕~~~）。
-从2016年乘着火车，穿过漫天黄沙的戈壁，从西北一所垂垂老矣、难以回春的大学（所以也没有跟着老师继续读博，容我目光所限）来到帝都，经过数不清的面试，终于进入了一家业内有名气的公司，接到录用通知时，和2013年考上研究生一样，兴奋了许久，倍感珍惜（这词在第一次做的事情上应该通用），想想当时也够单纯，各种正当的要求都没认真的去了解和争取，都草草的入了职，丝毫没有人生规划和职业发展的战略思考。接下来的两年里学习了一些东西，重点是认识了不少人，好像每天感觉很充实，当时自己精力充沛，极力摸索，早出晚归，不放过周末节假日，不去了解除工作意外的东西，像上学一样封闭自己，两耳不闻世事，但年初的总结里，隐隐约约里看到了虚假的充实，这种带有自欺欺人、难以有较大提升的感觉，充斥每天的情绪，周围的同事很好、领导也很好，不好的是自己。然后还有前面提到的原因（可能这个是最大的原因所在，下面细说），最后得到了答案：该换份工作了。
-马云曾说，换工作无非有两个原因：一是对老板不爽；二是对工资不满意。实话说我来这个公司两年，虽然时不时见到大BOSS，但真的从来没说过话，交集为零，直属的三个（没错，就是三个，两个女领导，一个男领导）领导都很不错，所以这一条不存在。然后应该就是第二个，没错，我承认自己很俗，也没办法，当时促使我慎重思考薪资的，是因为一件事。在一线租房真是很痛苦的事，想想每天早出晚归，累的不行，每个月将自己工资的很大部分，给了每天提着鸟笼子的北京土著房东（这里没有地域感情色彩），真的很心痛，但是没办法，谁让自己来大城市求食、求生存呢。然后就是这么操着某地域口音（这里有些地域色彩，但我非以偏概全，）的一群人，接管了房东（懒成啥样。。。，最后不还是自己自作自受）的房子，用一些下三滥的手段诈取钱财，让北漂们露宿街头。光天化日，朗朗乾坤，帝都就这么真真切切发生近似明抢的强盗行为。作为当时的受害者，真是气愤呀！！！某个夜晚有了单纯的世俗想法：再挣多点，心就不会这么疼了。
-都说开发工资高，凭着两年的自学和积累，然后从公司的开发者大会之前开始，那段时间每晚在一些招聘网站，像两年前一样海投了一番，陆陆续续接到一些求职反馈，基本是拒绝的，大概是看到没有实际的开发经验，然后就在开发者大会那天,终于接到来自深圳座机来电，聊了一些后，下午从会场直接过了去。
-。。。。。待续
-多读书、多思考、会折腾（突然想到这句话，暂时记上）
-]]></content>
   </entry>
   <entry>
     <title>我国光伏产品报告2024，未来展望</title>
@@ -1871,6 +1915,14 @@ Sheet1!$B$2:$B$26,Sheet2!B$2表示第三个统计条件为站名，这里需要�
 ]]></content>
   </entry>
   <entry>
+    <title>【批量代码分享】不同gdb批量投影 批量要素类复制</title>
+    <url>/2016/09/24/18549.html</url>
+    <content><![CDATA[不同gdb批量投影 
+#coding:utf-8import arcpyimport osarcpy.env.workspace = &quot;C:\\Users\\Esri\\Desktop\\test__20160919\\qian&quot;arcpy.env.overwriteOutput = TrueoutWorkspace = &quot;C:\\Users\\Esri\\Desktop\\test__20160919\\hou&quot;workspacess = arcpy.ListWorkspaces(&quot;*&quot;, &quot;FileGDB&quot;)for filenamegdb in os.listdir(arcpy.env.workspace):   arcpy.CreateFileGDB_management(outWorkspace,filenamegdb)for workspace in workspacess:    walk = arcpy.da.Walk(workspace, datatype=&quot;FeatureClass&quot;)    for dirpath, dirnames, filenames in walk:        for filename in filenames:            facname=os.path.join(dirpath, filename)            asss=dirpath.split(&quot;\\&quot;)[-1]            outfea = os.path.join(outWorkspace,asss,filename)            arcpy.Project_management(facname,outfea,&quot;PROJCS[&#x27;CGCS2000_GK_CM_117E&#x27;,GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]],PROJECTION[&#x27;Gauss_Kruger&#x27;],PARAMETER[&#x27;False_Easting&#x27;,500000.0],PARAMETER[&#x27;False_Northing&#x27;,0.0],PARAMETER[&#x27;Central_Meridian&#x27;,117.0],PARAMETER[&#x27;Scale_Factor&#x27;,1.0],PARAMETER[&#x27;Latitude_Of_Origin&#x27;,0.0],UNIT[&#x27;Meter&#x27;,1.0]]&quot;, &quot;&quot;, &quot;GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]]&quot;)
+批量要素类复制
+# -*- coding: utf-8 -*-# ---------------------------------------------------------------------------# Pretreatment.py# Created on: 2016-09-22#   (generated# Description:。# Import arcpy moduleimport osimport arcpyinputDir = &quot;C:\\Users\\Esri\\Desktop\\testdata&quot;Output = &quot;C:\\Users\\Esri\\Desktop\\new&quot;arcpy.env.workspace = &quot;C:\\Users\\Esri\\Desktop\\testdata&quot;workspacess = arcpy.ListWorkspaces(&quot;*&quot;,&quot;Access&quot;)for workspace in workspacess:    asss = workspace.split(&quot;\\&quot;)[-1]    arcpy.CreatePersonalGDB_management(Output, asss)    dimao=os.path.join(workspace,u&quot;地貌&quot;)    walk = arcpy.da.Walk(dimao, datatype=&quot;FeatureClass&quot;)    for root, dirs, files in walk:        for f in files:            fc=os.path.join(dimao,f)            out_data =os.path.join(Output,asss,f)            arcpy.Copy_management(fc, out_data)print(&quot;处理完成&quot;)]]></content>
+  </entry>
+  <entry>
     <title>打开Portal后页面空白问题解决案例</title>
     <url>/2018/01/25/6720.html</url>
     <content><![CDATA[昨晚吃完饭回来，操作系统莫名其妙在自动升级等了大概有2个小时，看来是大版本更新呀
@@ -1881,12 +1933,14 @@ Sheet1!$B$2:$B$26,Sheet2!B$2表示第三个统计条件为站名，这里需要�
 ]]></content>
   </entry>
   <entry>
-    <title>【批量代码分享】不同gdb批量投影 批量要素类复制</title>
-    <url>/2016/09/24/18549.html</url>
-    <content><![CDATA[不同gdb批量投影 
-#coding:utf-8import arcpyimport osarcpy.env.workspace = &quot;C:\\Users\\Esri\\Desktop\\test__20160919\\qian&quot;arcpy.env.overwriteOutput = TrueoutWorkspace = &quot;C:\\Users\\Esri\\Desktop\\test__20160919\\hou&quot;workspacess = arcpy.ListWorkspaces(&quot;*&quot;, &quot;FileGDB&quot;)for filenamegdb in os.listdir(arcpy.env.workspace):   arcpy.CreateFileGDB_management(outWorkspace,filenamegdb)for workspace in workspacess:    walk = arcpy.da.Walk(workspace, datatype=&quot;FeatureClass&quot;)    for dirpath, dirnames, filenames in walk:        for filename in filenames:            facname=os.path.join(dirpath, filename)            asss=dirpath.split(&quot;\\&quot;)[-1]            outfea = os.path.join(outWorkspace,asss,filename)            arcpy.Project_management(facname,outfea,&quot;PROJCS[&#x27;CGCS2000_GK_CM_117E&#x27;,GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]],PROJECTION[&#x27;Gauss_Kruger&#x27;],PARAMETER[&#x27;False_Easting&#x27;,500000.0],PARAMETER[&#x27;False_Northing&#x27;,0.0],PARAMETER[&#x27;Central_Meridian&#x27;,117.0],PARAMETER[&#x27;Scale_Factor&#x27;,1.0],PARAMETER[&#x27;Latitude_Of_Origin&#x27;,0.0],UNIT[&#x27;Meter&#x27;,1.0]]&quot;, &quot;&quot;, &quot;GEOGCS[&#x27;GCS_China_Geodetic_Coordinate_System_2000&#x27;,DATUM[&#x27;D_China_2000&#x27;,SPHEROID[&#x27;CGCS2000&#x27;,6378137.0,298.257222101]],PRIMEM[&#x27;Greenwich&#x27;,0.0],UNIT[&#x27;Degree&#x27;,0.0174532925199433]]&quot;)
-批量要素类复制
-# -*- coding: utf-8 -*-# ---------------------------------------------------------------------------# Pretreatment.py# Created on: 2016-09-22#   (generated# Description:。# Import arcpy moduleimport osimport arcpyinputDir = &quot;C:\\Users\\Esri\\Desktop\\testdata&quot;Output = &quot;C:\\Users\\Esri\\Desktop\\new&quot;arcpy.env.workspace = &quot;C:\\Users\\Esri\\Desktop\\testdata&quot;workspacess = arcpy.ListWorkspaces(&quot;*&quot;,&quot;Access&quot;)for workspace in workspacess:    asss = workspace.split(&quot;\\&quot;)[-1]    arcpy.CreatePersonalGDB_management(Output, asss)    dimao=os.path.join(workspace,u&quot;地貌&quot;)    walk = arcpy.da.Walk(dimao, datatype=&quot;FeatureClass&quot;)    for root, dirs, files in walk:        for f in files:            fc=os.path.join(dimao,f)            out_data =os.path.join(Output,asss,f)            arcpy.Copy_management(fc, out_data)print(&quot;处理完成&quot;)]]></content>
+    <title>接下来假期的安排</title>
+    <url>/2019/01/28/29651.html</url>
+    <content><![CDATA[调休了这么多天，终于迎来了14天的假期1、一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！2、学习Spring Boot3、学习Spring Cloud
+以上的目标，就是为了写接口不再求人。
+期间顺便将2018没读完的书看完。
+去国家图书馆呆一天，爬爬香山。
+================2019，只关心粮食和蔬菜。
+]]></content>
   </entry>
   <entry>
     <title>搜房网多进程代码-python</title>
@@ -1900,16 +1954,6 @@ Sheet1!$B$2:$B$26,Sheet2!B$2表示第三个统计条件为站名，这里需要�
         <tag>python</tag>
         <tag>多进程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>接下来假期的安排</title>
-    <url>/2019/01/28/29651.html</url>
-    <content><![CDATA[调休了这么多天，终于迎来了14天的假期1、一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！一定要将JAVA基础看一遍！！！2、学习Spring Boot3、学习Spring Cloud
-以上的目标，就是为了写接口不再求人。
-期间顺便将2018没读完的书看完。
-去国家图书馆呆一天，爬爬香山。
-================2019，只关心粮食和蔬菜。
-]]></content>
   </entry>
   <entry>
     <title>无人机（UAV）影像处理最佳实践</title>
@@ -1960,6 +2004,18 @@ PS：ArcGIS Web Adaptor看来是不能随意更换，特别是ArcGIS Web Adaptor
       </tags>
   </entry>
   <entry>
+    <title>欲戴其冠,必承其重---谈谈ArcGIS制图表达</title>
+    <url>/2016/11/01/7022.html</url>
+    <content><![CDATA[很早的时候，ArcGIS中就增加了制图表达的功能，只是用的人不多，所以一直不为大多数人所知。本来ArcGIS的基本标注已经满足大部分的出图需求，制图表达如同没有开封的美酒，一直等待去开启，但是任何东西都要有个度，如果酒喝多了也不好，影像做事效率。例如，以下是广州的行政区划图，很简单的一张图，根据不同区域分类着色，然后添加文字标注就行了，放大缩小加载都很快，但是看起来很单调，没有美观可言。下图简单增加制图表达后，如颜色渐变和缓冲区立体效果，立刻显得很有艺术的气息 (^__^) 嘻嘻……)，但是美丽的背后带来不小的副作用，图层缩放加载非常慢，影响制图效率，所以预先要将一些简单地标注完成再转为制图表达。有一句话说得好，”欲戴其冠,必承其重“，对于制图表达加载效率的这个问题，需要以后版本的改进，也有可能我没触及到，比如ArcGIS Pro中是否已经解决这个问题。虽然官方在ArcGIS 10.1版本的时候就说过支持制图表达发布为服务，但是支持的范围是有限的，目前来说10.4.1依然没多大，报错的情况还挺多的，希望以后的server能做一下改进，但是结合Arcgis API for js，应该也可以实现我们所要求的一些效果。总而言之，对于专题出图和打印，制图表达仍然是非常有用的功能，他让你的地图抽象地更接地气，更为合理，更为美观，也希望以后愈加完美生动地展示在不同的平台。
+]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>欧洲是中国光伏企业进军海外的唯一发力点？</title>
     <url>/2025/03/02/11399.html</url>
     <content><![CDATA[答案明显不是！
@@ -1992,18 +2048,6 @@ PS：ArcGIS Web Adaptor看来是不能随意更换，特别是ArcGIS Web Adaptor
     <url>/2020/05/19/59224.html</url>
     <content><![CDATA[1、总是钟情于一，难以自拔，这可能是我最大的可悲之处。2、可能受制于眼界，困囿于自己，无法走出自己的圈子。3、从未如此长时间的想念一个人这么久、这么频繁，每天每个小时，除了至亲。4、时不时看到罗曼罗兰的英雄主义，我认为这种阐释很有道理，但是自己却没有深刻体会到。5、这次身体的异样算是给自己敲响了警钟，体会到极致的孤独就是自己一个在医院，各种检查用尽，不知是否虚惊一场，未来是不是也这样。6、从前排斥的东西，是否需要重新审视，因为我也知道那是在压抑自己，实际自己内心也无比渴望。7、从前纵情挥霍的东西，现在也需要收敛抑或是改正了，真的不好。8、昨天跟人说自己年纪大了，任何事还是悠着点，旁人听完笑说你才多大，不知安慰还是事实，但是三十而立的坎儿算是来了。9、周末去和家人好好说说吧，毕竟这次疫情半年多没见面了，我决定摊牌了。10、深夜纵有千言胆，天明必悔，所以我还是光天化日琢磨一下，除了白日做梦，其他的就很理性了。
 ]]></content>
-  </entry>
-  <entry>
-    <title>欲戴其冠,必承其重---谈谈ArcGIS制图表达</title>
-    <url>/2016/11/01/7022.html</url>
-    <content><![CDATA[很早的时候，ArcGIS中就增加了制图表达的功能，只是用的人不多，所以一直不为大多数人所知。本来ArcGIS的基本标注已经满足大部分的出图需求，制图表达如同没有开封的美酒，一直等待去开启，但是任何东西都要有个度，如果酒喝多了也不好，影像做事效率。例如，以下是广州的行政区划图，很简单的一张图，根据不同区域分类着色，然后添加文字标注就行了，放大缩小加载都很快，但是看起来很单调，没有美观可言。下图简单增加制图表达后，如颜色渐变和缓冲区立体效果，立刻显得很有艺术的气息 (^__^) 嘻嘻……)，但是美丽的背后带来不小的副作用，图层缩放加载非常慢，影响制图效率，所以预先要将一些简单地标注完成再转为制图表达。有一句话说得好，”欲戴其冠,必承其重“，对于制图表达加载效率的这个问题，需要以后版本的改进，也有可能我没触及到，比如ArcGIS Pro中是否已经解决这个问题。虽然官方在ArcGIS 10.1版本的时候就说过支持制图表达发布为服务，但是支持的范围是有限的，目前来说10.4.1依然没多大，报错的情况还挺多的，希望以后的server能做一下改进，但是结合Arcgis API for js，应该也可以实现我们所要求的一些效果。总而言之，对于专题出图和打印，制图表达仍然是非常有用的功能，他让你的地图抽象地更接地气，更为合理，更为美观，也希望以后愈加完美生动地展示在不同的平台。
-]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-      </tags>
   </entry>
   <entry>
     <title>类型化数组</title>
@@ -2158,12 +2202,6 @@ SELECT ST_AsText(ST_LineInterpolatePoint(foo.the_line, ST_LineLocatePoint(foo.th
 ]]></content>
   </entry>
   <entry>
-    <title>记录贼坑一件事</title>
-    <url>/2019/04/25/24763.html</url>
-    <content><![CDATA[昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。最后发现是空间几何字段的空间参考不一致的问题，233333.
-]]></content>
-  </entry>
-  <entry>
     <title>记postgresql无法启动案例（could not flush dirty data: 结构需要清理）</title>
     <url>/2023/08/22/37039.html</url>
     <content><![CDATA[1、问题：
@@ -2179,6 +2217,12 @@ fsync = offdata_sync_retry = true
         <tag>启动</tag>
         <tag>pg</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>记录贼坑一件事</title>
+    <url>/2019/04/25/24763.html</url>
+    <content><![CDATA[昨天下班前将某个地区的所有站点发布成服务，数据保存在mysql中，但是老是显示不了，中间考虑了特殊字符，站点堆叠的原因，都不对。最后发现是空间几何字段的空间参考不一致的问题，233333.
+]]></content>
   </entry>
   <entry>
     <title>记述二三事</title>
@@ -2240,30 +2284,6 @@ fsync = offdata_sync_retry = true
       </tags>
   </entry>
   <entry>
-    <title>顶点着色器与片元着色器通信</title>
-    <url>/2023/06/05/54833.html</url>
-    <content><![CDATA[通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器，
-attribute vec4 a_Color;varying vec4 v_Color;
-那么片元着色器如何接收到这个变量呢，很简单，同样声明一个
-varying vec4 v_Color;
-
-这是因为在WebGL中，如果顶点着色器和片元着色器同时有类型和命名相同的varying变量，那么顶点着色器会自动地将该变量的值传入片元着色器。
-]]></content>
-      <tags>
-        <tag>WebGL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高斯泼溅中粒子的协方差矩阵是做什么的</title>
-    <url>/2025/11/25/4244.html</url>
-    <content><![CDATA[协方差矩阵在高斯泼溅（Gaussian splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。要点说明：  
-表示含义：协方差矩阵 Σ 描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆/椭球的尺度与朝向。在渲染中的作用：像素权重按马氏距离计算，典型权重形式为 w(x) ∝ exp(-0.5 * (x-μ)^T Σ^{-1} (x-μ)) / sqrt((2π)^k * det Σ) 其中 Σ^{-1} 控制衰减速率和方向，det Σ 用于归一化。视觉效果：较大协方差 → 更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。估计方式：常用局部邻域 PCA（特征分解）从点云或法线推断 Σ，或由场景尺度/先验设定；实现上需保证 Σ 正定（通常在对角加小常数以稳定求逆）。实践注意：可在世界空间使用 3x3 矩阵，或投影到屏幕使用 2x2 矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。]]></content>
-      <tags>
-        <tag>Cesium</tag>
-        <tag>高斯泼溅</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>长城符号制作---图层叠加 vs 制图表达</title>
     <url>/2016/12/15/4666.html</url>
     <content><![CDATA[主要有两种方法1、图层叠加：在符号编辑器中通过三个图层符号叠加作出来，参数设置如下：
@@ -2278,6 +2298,30 @@ varying vec4 v_Color;
       </tags>
   </entry>
   <entry>
+    <title>高斯泼溅中粒子的协方差矩阵是做什么的</title>
+    <url>/2025/11/25/4244.html</url>
+    <content><![CDATA[协方差矩阵在高斯泼溅（Gaussian splatting）中主要用于描述每个粒子高斯核的形状、尺度和方向，从而决定它对像素的贡献和可见效果。要点说明：  
+表示含义：协方差矩阵 Σ 描述高斯核的各轴方差和轴间相关性（各向异性）。等于一个椭圆/椭球的尺度与朝向。在渲染中的作用：像素权重按马氏距离计算，典型权重形式为 w(x) ∝ exp(-0.5 * (x-μ)^T Σ^{-1} (x-μ)) / sqrt((2π)^k * det Σ) 其中 Σ^{-1} 控制衰减速率和方向，det Σ 用于归一化。视觉效果：较大协方差 → 更模糊、覆盖更广；各向异性协方差可表达沿某方向延伸的细节（例如法线方向相关的拉伸）。估计方式：常用局部邻域 PCA（特征分解）从点云或法线推断 Σ，或由场景尺度/先验设定；实现上需保证 Σ 正定（通常在对角加小常数以稳定求逆）。实践注意：可在世界空间使用 3x3 矩阵，或投影到屏幕使用 2x2 矩阵以加速；需计算逆矩阵和行列式，注意数值稳定性。简言之，协方差矩阵决定每个粒子泼溅的“形状与模糊度”，对渲染质量与细节表现至关重要。]]></content>
+      <tags>
+        <tag>Cesium</tag>
+        <tag>高斯泼溅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>顶点着色器与片元着色器通信</title>
+    <url>/2023/06/05/54833.html</url>
+    <content><![CDATA[通常我们在顶点着色器中声明一个attribute变量a_Color用以接受颜色，然后再用varying（只能是float以及vec2,vec3,vec4,mat2,mat3和mat4）声明变量v_Color，该变量负责将颜色值传给着色器，
+attribute vec4 a_Color;varying vec4 v_Color;
+那么片元着色器如何接收到这个变量呢，很简单，同样声明一个
+varying vec4 v_Color;
+
+这是因为在WebGL中，如果顶点着色器和片元着色器同时有类型和命名相同的varying变量，那么顶点着色器会自动地将该变量的值传入片元着色器。
+]]></content>
+      <tags>
+        <tag>WebGL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index%20-%20%E5%89%AF%E6%9C%AC.html</url>
     <content><![CDATA[64mm 255 275 SANGUANG50  MARK
@@ -2286,7 +2330,7 @@ varying vec4 v_Color;
   <entry>
     <title>about</title>
     <url>/about/index.html</url>
-    <content><![CDATA[Money, Money, just do it!微博：XXXXXXXX微信：XXXXXXXX知乎：安乎挚邮箱：&#x6a;&#97;&#109;&#101;&#x73;&#x72;&#x6f;&#x63;&#x6b;&#x36;&#54;&#54;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;64mm 255 275 SANGUANG50  MARK
+    <content><![CDATA[Money, Money, just do it!微博：XXXXXXXX微信：XXXXXXXX知乎：安乎挚邮箱：&#106;&#x61;&#x6d;&#x65;&#115;&#x72;&#111;&#x63;&#107;&#54;&#54;&#54;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;64mm 255 275 SANGUANG50  MARK
 ]]></content>
   </entry>
   <entry>
